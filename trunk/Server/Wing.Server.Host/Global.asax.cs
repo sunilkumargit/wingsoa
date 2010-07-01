@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Configuration;
 using Wing.Server.Core;
+using System.IO;
 
 namespace Wing.Server.Host
 {
@@ -30,23 +31,24 @@ namespace Wing.Server.Host
         {
             RegisterRoutes(RouteTable.Routes);
 
-            PrepareServerAssemblyStore();
-            CreateServerBootstrapper();
+            var settings = new BootstrapSettings();
+            var basePath = Server.MapPath("~");
+            settings.ServerAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerAssemblyStorePath"]));
+            settings.ClientAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ClientAssemblyStorePath"]));
+
+            PrepareServerAssemblyStore(settings);
+            CreateServerBootstrapper(settings);
         }
 
-        private void PrepareServerAssemblyStore()
+        private void PrepareServerAssemblyStore(BootstrapSettings settings)
         {
             var assemblyStore = new FileSystemAssemblyStore();
-            assemblyStore.SetBasePath(Server.MapPath(ConfigurationManager.AppSettings["ServerAssemblyStorePath"]));
+            assemblyStore.SetBasePath(settings.ServerAssemblyStorePath);
             assemblyStore.ConsolidateStore();
         }
 
-        private void CreateServerBootstrapper()
+        private void CreateServerBootstrapper(BootstrapSettings settings)
         {
-            var settings = new BootstrapSettings();
-            settings.ServerAssemblyStorePath = Server.MapPath(ConfigurationManager.AppSettings["ServerAssemblyStorePath"]);
-            settings.ClientAssemblyStorePath = Server.MapPath(ConfigurationManager.AppSettings["ClientAssemblyStorePath"]);
-
             //criar um AssemblyResolver
             var resolver = new StoreAssemblyResolver(settings.ServerAssemblyStorePath, null);
             var bootstrapAssembly = ConfigurationManager.AppSettings["ServerBootstrapperFile"];
