@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Wing.Client
 {
@@ -17,19 +18,43 @@ namespace Wing.Client
         public MainPage()
         {
             InitializeComponent();
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                Helper.DelayExecution(TimeSpan.FromMilliseconds(500), () =>
+                {
+                    StatusText.Text = "Procurando atualizações...";
+                    App.Current.CheckAndDownloadUpdateCompleted += new CheckAndDownloadUpdateCompletedEventHandler(Current_CheckAndDownloadUpdateCompleted);
+                    App.Current.CheckAndDownloadUpdateAsync();
+                    return false;
+                });
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        void Current_CheckAndDownloadUpdateCompleted(object sender, CheckAndDownloadUpdateCompletedEventArgs e)
         {
-            var web = new WebClient();
-            web.BaseAddress = App.Current.Host.GetBaseUrl().ToString();
-            web.DownloadStringCompleted += new DownloadStringCompletedEventHandler(web_DownloadStringCompleted);
-            web.DownloadStringAsync(new Uri("Loader/GetInfo", UriKind.Relative));
+            if (e.UpdateAvailable)
+            {
+                MessageBox.Show("A aplicacação foi atualizada para uma nova versão. Por favor, reinicie o aplicativo.");
+                StatusText.Text = "Aplicação atualizada. Reinicie por favor.";
+            }
+            else if (e.Error != null &&
+               e.Error is PlatformNotSupportedException)
+            {
+                MessageBox.Show("Uma nova versão da aplicação está disponível, mas não é compatível com a versão do Silverlight instalada em seu computador. Por favor, visite o site do Silverlight e baixe uma nova versão do plug-in.");
+            }
+            else
+            {
+                Helper.DelayExecution(TimeSpan.FromMilliseconds(1500), () =>
+                {
+                    BeginBootstrap();
+                    return false;
+                });
+            }
         }
 
-        void web_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        void BeginBootstrap()
         {
-            MessageBox.Show(e.Result);
+            StatusText.Text = "Inicializando...";
         }
     }
 }

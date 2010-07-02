@@ -18,6 +18,20 @@ namespace Wing.Soa
         {
             host.Open();
         }
+
+        #region ISoaServiceHost Members
+
+        public SoaServiceDescriptor Descriptor
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public ServiceHost Host
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        #endregion
     }
 
     /*
