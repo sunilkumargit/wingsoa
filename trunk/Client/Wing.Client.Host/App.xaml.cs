@@ -25,14 +25,13 @@ namespace Wing.Client
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            this.RootVisual = new MainPage();
-
+            this.RootVisual = new EntryPage();
         }
 
         private void Application_Exit(object sender, EventArgs e)
         {
-
         }
+
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
             // If the app is running outside of the debugger then report the exception using

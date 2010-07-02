@@ -22,6 +22,9 @@ namespace Wing.Modularity
     /// <summary>
     /// Defines the metadata that describes a module.
     /// </summary>
+#if (!SILVERLIGHT)
+    [Serializable]
+#endif
     public partial class ModuleInfo : IModuleCatalogItem
     {
         /// <summary>

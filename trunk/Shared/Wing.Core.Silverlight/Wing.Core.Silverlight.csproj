@@ -163,11 +163,14 @@
     <Compile Include="..\..\Shared\Wing.Core\Modularity\ModuleTypeLoadingException.cs">
       <Link>Modularity\ModuleTypeLoadingException.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Core\Modularity\ModuleCategory.cs">
+      <Link>Modularity\ModuleCategory.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\Modularity\ModuleCategoryAttribute.cs">
+      <Link>Modularity\ModuleCategoryAttribute.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Core\Modularity\ModuleDescriptionAttribute.cs">
       <Link>Modularity\ModuleDescriptionAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\Wing.Core\Modularity\ModuleSystemAttribute.cs">
-      <Link>Modularity\ModuleSystemAttribute.cs</Link>
     </Compile>
     <Compile Include="ListExtensions.Silverlight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

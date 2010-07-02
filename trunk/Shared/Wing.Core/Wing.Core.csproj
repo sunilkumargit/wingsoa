@@ -74,6 +74,7 @@
     <Compile Include="Modularity\ModularityException.cs" />
     <Compile Include="Modularity\ModuleAttribute.cs" />
     <Compile Include="Modularity\ModuleCatalog.cs" />
+    <Compile Include="Modularity\ModuleCategory.cs" />
     <Compile Include="Modularity\ModuleDependencyAttribute.cs" />
     <Compile Include="Modularity\ModuleDependencySolver.cs" />
     <Compile Include="Modularity\ModuleDescriptionAttribute.cs" />
@@ -84,7 +85,7 @@
     <Compile Include="Modularity\ModuleManager.Desktop.cs" />
     <Compile Include="Modularity\ModuleNotFoundException.cs" />
     <Compile Include="Modularity\ModuleState.cs" />
-    <Compile Include="Modularity\ModuleSystemAttribute.cs" />
+    <Compile Include="Modularity\ModuleCategoryAttribute.cs" />
     <Compile Include="Modularity\ModuleTypeLoaderNotFoundException.cs" />
     <Compile Include="Modularity\ModuleTypeLoadingException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
