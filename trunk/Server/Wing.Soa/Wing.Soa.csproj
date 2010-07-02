@@ -48,14 +48,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISoaServicesProvider.cs" />
-    <Compile Include="SoaServicesProvider.cs" />
+    <Compile Include="ISoaServiceHostBuilder.cs" />
+    <Compile Include="ISoaServiceHostBuildPolicy.cs" />
+    <Compile Include="ISoaServicesManager.cs" />
+    <Compile Include="ISoaServiceHost.cs" />
+    <Compile Include="SoaServiceDescriptor.cs" />
+    <Compile Include="SoaServiceHostBuildContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Wing.Core\Wing.Core.csproj">
       <Project>{0FB48CFD-AC85-4207-93B5-AB3E1F1798F4}</Project>
       <Name>Wing.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Wing.Utils\Wing.Utils.csproj">
+      <Project>{B85562FD-9A9B-438E-928D-B12C7DF3CF2E}</Project>
+      <Name>Wing.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
