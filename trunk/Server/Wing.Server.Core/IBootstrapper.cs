@@ -9,10 +9,4 @@ namespace Wing.Server.Core
     {
         void Run(BootstrapSettings settings);
     }
-
-    public class BootstrapSettings
-    {
-        public String ServerAssemblyStorePath { get; set; }
-        public String ClientAssemblyStorePath { get; set; }
-    }
 }

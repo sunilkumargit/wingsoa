@@ -8,6 +8,7 @@ using Wing.Logging;
 using Wing.Modularity;
 using System.Configuration;
 using Wing.Events;
+using System.Web.Mvc;
 
 namespace Wing.Server.Bootstrap
 {
@@ -46,10 +47,16 @@ namespace Wing.Server.Bootstrap
             //agregador de eventos
             ServiceLocator.Current.Register<IEventAggregator, EventAggregator>(true);
 
+            //localizador de controllers mvc
+            ServiceLocator.Current.Register<IMvcControllerTypeLocator, MvcControllerTypeLocator>(true);
+
+            System.Web.Mvc.ControllerBuilder.Current.SetControllerFactory(new MvcControllerFactory());
+
             //carregar os modulos
             ServiceLocator.Current.GetInstance<IModuleManager>().Run();
         }
 
         #endregion
     }
+
 }
