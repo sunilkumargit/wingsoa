@@ -44,10 +44,20 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Wing.Utils\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\AssemblyInfoCollection.cs">
+      <Link>AssemblyInfoCollection.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Utils\Assert.cs">
       <Link>Assert.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\Converter.cs">
+      <Link>Converter.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

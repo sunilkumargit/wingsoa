@@ -100,13 +100,15 @@ namespace Wing.Server.Core
         {
             var path = GetAssemblyPath("", mode);
             return Directory.GetFiles(path, "*.dll", SearchOption.TopDirectoryOnly)
-                .Select(f => Path.GetFileNameWithoutExtension(f))
+                .Select(f => Path.GetFileName(f))
                 .ToArray();
         }
 
         public byte[] GetAssemblyData(String name)
         {
             var filePath = GetAssemblyPath(name, PathMode.Store);
+            if (!File.Exists(filePath))
+                filePath = filePath += ".dll";
             return File.ReadAllBytes(filePath);
         }
         #endregion
