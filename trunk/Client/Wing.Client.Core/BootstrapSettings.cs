@@ -8,6 +8,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace Wing.Client.Core
 {
@@ -15,5 +17,6 @@ namespace Wing.Client.Core
     {
         public String ServerBaseAddress { get; set; }
         public String SoaEndpointAddressServiceUri { get; set; }
+        public List<Assembly> Assemblies { get; set; }
     }
 }

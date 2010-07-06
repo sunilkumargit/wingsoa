@@ -1,7 +1,7 @@
 <OutOfBrowserSettings ShortName="Wing Applications Client" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
   <OutOfBrowserSettings.Blurb>Wing Applications Client</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="Wing Applications Client" />
+    <WindowSettings Title="Wing Applications Client" Height="650" Width="980" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.Icons>
     <Icon Size="16,16">Icons/Globe_16x16.png</Icon>

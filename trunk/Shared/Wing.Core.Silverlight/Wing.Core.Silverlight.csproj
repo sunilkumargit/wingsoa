@@ -163,6 +163,9 @@
     <Compile Include="..\..\Shared\Wing.Core\Modularity\ModuleTypeLoadingException.cs">
       <Link>Modularity\ModuleTypeLoadingException.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Core\Logging\DebugLogger.cs">
+      <Link>DebugLogger.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Core\Modularity\ModuleCategory.cs">
       <Link>Modularity\ModuleCategory.cs</Link>
     </Compile>

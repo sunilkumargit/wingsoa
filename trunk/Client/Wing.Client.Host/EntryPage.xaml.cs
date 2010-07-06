@@ -70,6 +70,8 @@ namespace Wing.Client
                 {
                     StatusText.Text = "Baixando atualizações...";
                     assemblyInfo = AssemblyInfoCollection.DeserializeFromXml(e.Result);
+                    InitProgressBar.IsIndeterminate = false;
+                    InitProgressBar.Maximum = assemblyInfo.Assemblies.Sum(i => i.Size);
                     DownloadAssembly(assemblyInfo.Assemblies, 0, null);
                 }
             });
@@ -82,13 +84,17 @@ namespace Wing.Client
             {
                 if (store != null)
                     store.Unload();
-                Bootstrap(list);
+                Helper.DelayExecution(TimeSpan.FromMilliseconds(400), () =>
+                {
+                    Bootstrap(list);
+                    return false;
+                });
                 return;
             }
             store = store ?? new ClientAssemblyStore();
             var info = list[nextIndex];
 
-            Helper.DelayExecution(TimeSpan.FromMilliseconds(500), () =>
+            Helper.DelayExecution(TimeSpan.FromMilliseconds(100), () =>
             {
                 StatusText.Text = String.Format("Baixando atualização {0} de {1}", nextIndex + 1, list.Count);
                 var client = new WebClient();
@@ -96,11 +102,12 @@ namespace Wing.Client
                 {
                     var data = new byte[e.Result.Length];
                     e.Result.Read(data, 0, data.Length);
+                    InitProgressBar.Value += data.Length;
                     store.AddAssembly(info.AssemblyName, data);
                     DownloadAssembly(list, nextIndex + 1, store);
                 });
                 var uri = new Uri(App.Current.Host.GetBaseUrl(), "/WingCltAppSupport/GetAssemblyData?file=" + info.AssemblyName);
-                client.OpenReadAsync(uri, null);
+                client.OpenReadAsync(uri, info);
                 return false;
             });
         }
@@ -108,7 +115,8 @@ namespace Wing.Client
 
         void Bootstrap(List<AssemblyInfo> list)
         {
-            StatusText.Text = "Iniciando o sistema...";
+            InitProgressBar.IsIndeterminate = true;
+            StatusText.Text = "Carregando...";
 
             var assemblies = LoadAssemblies(list);
             var bootstrapper = CreateBootstrapper(assemblies);
@@ -116,6 +124,7 @@ namespace Wing.Client
             var settings = new BootstrapSettings();
             settings.ServerBaseAddress = "";
             settings.SoaEndpointAddressServiceUri = "";
+            settings.Assemblies = assemblies;
 
             bootstrapper.Run(settings);
         }
@@ -129,7 +138,8 @@ namespace Wing.Client
             {
                 var stream = new System.IO.MemoryStream(store.GetAssemblyData(asmInfo.AssemblyName));
                 var part = new AssemblyPart();
-                assemblies.Add(part.Load(stream));
+                var assembly = part.Load(stream);
+                assemblies.Add(assembly);
                 stream.Close();
                 stream.Dispose();
             }

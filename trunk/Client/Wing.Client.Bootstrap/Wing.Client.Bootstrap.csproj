@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\AssemblyOutput\Client\Add\</OutputPath>
+    <OutputPath>bin\debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
@@ -37,6 +37,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="mscorlib" />
     <Reference Include="system" />
@@ -47,12 +51,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="InMemoryModuleCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
       <Project>{A8340CDA-5F58-49DD-A30F-E65376471CAB}</Project>
       <Name>Wing.Core.Silverlight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Wing.UnityServiceLocator.Silverlight\Wing.UnityServiceLocator.Silverlight.csproj">
+      <Project>{2503AD7B-4B19-4AE2-8D7F-39811FFEB13A}</Project>
+      <Name>Wing.UnityServiceLocator.Silverlight</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wing.Client.Core\Wing.Client.Core.csproj">
       <Project>{28374482-C3AB-4F4C-A1DD-A8167D7F23D7}</Project>
@@ -74,4 +83,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetDir)*.*  $(SolutionDir)\AssemblyOutput\Client\Add</PostBuildEvent>
+  </PropertyGroup>
 </Project>

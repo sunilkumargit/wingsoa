@@ -94,5 +94,15 @@ namespace Wing.Modularity
         /// Gets or sets the state of the <see cref="ModuleInfo"/> with regards to the module loading and initialization process.
         /// </summary>
         public ModuleState State { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="ModuleCategory"/> for this module
+        /// </summary>
+        public ModuleCategory ModuleCategory { get; set; }
+
+        /// <summary>
+        /// Gets or sets a description for this module. 
+        /// </summary>
+        public string ModuleDescription { get; set; }
     }
 }
