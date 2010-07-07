@@ -1,3 +1,4 @@
+using System.Windows;
 namespace Wing.Client.Core
 {
     /// <summary>

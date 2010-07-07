@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Wing.Client.Core;
 
 namespace Wing.Client
 {
@@ -25,7 +26,33 @@ namespace Wing.Client
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            this.RootVisual = new EntryPage();
+            //application starter
+            var rootVisual = new Grid();
+            App.Current.RootVisual = rootVisual;
+            var splashUi = new EntryPage();
+            rootVisual.Children.Add(splashUi);
+            var starter = new ApplicationStarter(splashUi, new GridRootVisualManager(rootVisual));
+            starter.Run();
+        }
+
+        private class GridRootVisualManager : IRootVisualManager
+        {
+            private Grid _grid;
+
+            public GridRootVisualManager(Grid grid)
+            {
+                _grid = grid;
+            }
+
+            #region IRootVisualManager Members
+
+            public void SetRootElement(UIElement element)
+            {
+                _grid.Children.RemoveAt(0);
+                _grid.Children.Add(element);
+            }
+
+            #endregion
         }
 
         private void Application_Exit(object sender, EventArgs e)

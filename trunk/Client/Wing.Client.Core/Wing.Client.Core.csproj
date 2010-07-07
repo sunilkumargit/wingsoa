@@ -46,12 +46,16 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationStarter.cs" />
     <Compile Include="BootstrapSettings.cs" />
     <Compile Include="ClientAssemblyStore.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IRootVisualManager.cs" />
     <Compile Include="IsolatedStorageAssemblyStore.cs" />
     <Compile Include="IAssemblyResolver.cs" />
     <Compile Include="IAssemblyStore.cs" />
     <Compile Include="IBootstrapper.cs" />
+    <Compile Include="ISplashUI.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

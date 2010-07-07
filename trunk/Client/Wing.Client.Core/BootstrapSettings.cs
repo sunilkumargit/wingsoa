@@ -15,8 +15,9 @@ namespace Wing.Client.Core
 {
     public class BootstrapSettings
     {
-        public String ServerBaseAddress { get; set; }
-        public String SoaEndpointAddressServiceUri { get; set; }
+        public Uri ServerBaseAddress { get; set; }
+        public Uri SoaEndpointAddressServiceUri { get; set; }
+        public IRootVisualManager RootVisualManager { get; set; }
         public List<Assembly> Assemblies { get; set; }
     }
 }
