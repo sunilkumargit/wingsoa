@@ -12,5 +12,10 @@
             <TextBlock Text="Wing" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="16" Foreground="White" FontWeight="Normal" Margin="6,0,0,0"/>
             <TextBlock Text="Applications" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="10" Foreground="White" Margin="3,6,0,0"/>
         </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Button x:Name="InstallButton" Content="Instalar" HorizontalAlignment="Right" Margin="5" FontSize="9" FontFamily="Tahoma" Background="Transparent" 
+                    BorderBrush="Transparent" Foreground="Blue" Click="Button_Click">
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>
