@@ -13,6 +13,7 @@ using System.Windows.Threading;
 using Wing.Utils;
 using Wing.Client.Core;
 using System.Reflection;
+using System.IO.IsolatedStorage;
 
 namespace Wing.Client
 {

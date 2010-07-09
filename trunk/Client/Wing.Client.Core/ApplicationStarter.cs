@@ -44,6 +44,7 @@ namespace Wing.Client.Core
 
             _startActions.Add(CheckForUpdates);
             _startActions.Add(GetAssembliesMetadata);
+            _startActions.Add(CheckQuotaSize);
             _startActions.Add(DownloadAssemblies);
             _startActions.Add(LoadAssemblies);
             _startActions.Add(CreateBootstrapperAndRun);
@@ -67,7 +68,6 @@ namespace Wing.Client.Core
             if (CurrentApp.IsRunningOutOfBrowser)
             {
                 _splash.DisplayMessage("Procurando por atualizações...");
-
                 CheckAndDownloadUpdateCompletedEventHandler downloadUpdateCompleted = null;
                 downloadUpdateCompleted = new CheckAndDownloadUpdateCompletedEventHandler((sender, args) =>
                 {
@@ -106,6 +106,7 @@ namespace Wing.Client.Core
 
         void GetAssembliesMetadata()
         {
+            _splash.DisplayMessage("Conectando...");
             var client = new WebClient();
 
             // uri for assemblies metadata
@@ -142,6 +143,7 @@ namespace Wing.Client.Core
 
         void DownloadAssemblies()
         {
+            //requisitar espaço para o usuário
             _splash.DisplayMessage("Carregando...");
             _splash.DisplayProgressBar(_assemblyInfo.Assemblies.Sum(a => a.Size));
 
@@ -234,6 +236,19 @@ namespace Wing.Client.Core
 
             // and run
             bootstrapperInstance.Run(_bootstrapSettings);
+        }
+
+        void CheckQuotaSize()
+        {
+            var storage = IsolatedStorageFile.GetUserStoreForApplication();
+            var size = 1024 * 1024 * 150;
+            if (storage.Quota < size)
+            {
+                _splash.DisplayMessage("Não é possível continuar: espaço insuficiente no disco.");
+                return;
+            }
+            else
+                PerformNextAction();
         }
     }
 }
