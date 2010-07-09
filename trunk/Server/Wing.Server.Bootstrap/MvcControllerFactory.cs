@@ -14,11 +14,11 @@ namespace Wing.Server.Bootstrap
 {
     public class MvcControllerFactory : DefaultControllerFactory
     {
-        protected override Type GetControllerType(string controllerName)
+        protected override Type GetControllerType(System.Web.Routing.RequestContext requestContext, string controllerName)
         {
             var controllerTypeLocator = ServiceLocator.Current.GetInstance<IMvcControllerTypeLocator>();
             return controllerTypeLocator.GetControllerType(controllerName)
-                ?? base.GetControllerType(controllerName);
+                ?? base.GetControllerType(requestContext, controllerName);
         }
     }
 }
