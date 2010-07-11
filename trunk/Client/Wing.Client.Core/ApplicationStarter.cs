@@ -42,7 +42,9 @@ namespace Wing.Client.Core
                 RootVisualManager = _rootVisualManager
             };
 
+#if !DEBUG
             _startActions.Add(CheckForUpdates);
+#endif
             _startActions.Add(GetAssembliesMetadata);
             _startActions.Add(CheckQuotaSize);
             _startActions.Add(DownloadAssemblies);

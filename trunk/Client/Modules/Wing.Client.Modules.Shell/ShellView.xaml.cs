@@ -17,13 +17,20 @@ namespace Wing.Client.Modules.Shell
         public ShellView()
         {
             InitializeComponent();
-            if (Application.Current.InstallState == InstallState.Installed)
-                InstallButton.Visibility = Visibility.Collapsed;
+            MenuHolder.Visibility = System.Windows.Visibility.Collapsed;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Install();
+            MenuHolder.Visibility = System.Windows.Visibility.Visible;
         }
+
+        private void MenuHolder_MouseLeave(object sender, MouseEventArgs e)
+        {
+            MenuHolder.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+       
+
     }
 }
