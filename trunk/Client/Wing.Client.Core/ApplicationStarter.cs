@@ -145,8 +145,18 @@ namespace Wing.Client.Core
 
         void DownloadAssemblies()
         {
-            //requisitar espaço para o usuário
-            _splash.DisplayMessage("Carregando...");
+            //verificar se é a primeira vez que esta aplicação será executada neste computador, se for, exibir
+            //a mensagem "Preparando para usar pela primeira vez neste computador"
+            var isFirstTime = true;
+            var storage = IsolatedStorageFile.GetUserStoreForApplication();
+            if (storage.FileExists("firsttime.tmp"))
+            {
+                _splash.DisplayMessage("Carregando...");
+                isFirstTime = false;
+            }
+            else
+                _splash.DisplayMessage("O Wing está preparando a aplicação para ser executada pela primeira vez \n isto pode levar alguns minutos, aguarde por favor...");
+
             _splash.DisplayProgressBar(_assemblyInfo.Assemblies.Sum(a => a.Size));
 
             var assemblies = new Stack<AssemblyInfo>(_assemblyInfo.Assemblies);
@@ -160,7 +170,25 @@ namespace Wing.Client.Core
                 // continue load assemblies
                 currentInfo = assemblies.Pop();
                 var uri = new Uri(CurrentApp.Host.GetBaseUrl(), "WingCltAppSupport/GetAssemblyData?file=" + currentInfo.AssemblyName);
+                _splash.UpdateProgressBar(0, currentInfo.Size);
                 client.OpenReadAsync(uri);
+            });
+
+            var checkAndGoToNextAction = new Action(() =>
+            {
+                // assemblies list is empty = all assemblies download, perform next action
+                if (assemblies.Count == 0)
+                {
+                    if (isFirstTime)
+                    {
+                        var tmpFile = storage.CreateFile("firsttime.tmp");
+                        tmpFile.WriteByte(65);
+                        tmpFile.Close();
+                    }
+                    PerformNextAction();
+                }
+                else
+                    downloadNextAssemblyAction();
             });
 
             // bind to open read completed to update UI and load next assembly
@@ -173,20 +201,11 @@ namespace Wing.Client.Core
                 }
                 var data = new byte[e.Result.Length];
                 e.Result.Read(data, 0, data.Length);
-                _splash.UpdateProgressBar(0, data.Length);
                 _store.AddAssembly(currentInfo.AssemblyName, data);
-
-                // assemblies list is empty = all assemblies download, perform next action
-                if (assemblies.Count == 0)
-                    PerformNextAction();
-                else
-                    downloadNextAssemblyAction();
+                checkAndGoToNextAction();
             });
 
-            if (assemblies.Count > 0)
-                downloadNextAssemblyAction();
-            else
-                PerformNextAction();
+            checkAndGoToNextAction();
         }
 
         void LoadAssemblies()

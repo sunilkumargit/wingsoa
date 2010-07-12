@@ -55,25 +55,33 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShellModule.cs" />
-    <Compile Include="ShellView.xaml.cs">
+    <Compile Include="Views\ButtonSeven.xaml.cs">
+      <DependentUpon>ButtonSeven.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="ShellView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ShellBar.xaml.cs">
+      <DependentUpon>ShellBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellMenu.xaml.cs">
+      <DependentUpon>ShellMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShellModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
@@ -84,6 +92,33 @@
       <Project>{28374482-C3AB-4F4C-A1DD-A8167D7F23D7}</Project>
       <Name>Wing.Client.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\ButtonSeven.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShellBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShellMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Chat2.png" />
+    <Resource Include="Assets\home1.png" />
+    <Resource Include="Assets\home2.png" />
+    <Resource Include="Assets\home3.png" />
+    <Resource Include="Assets\home4.png" />
+    <Resource Include="Assets\menu_view.png" />
+    <Resource Include="Assets\workflow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
