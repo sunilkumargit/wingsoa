@@ -1,0 +1,31 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:Wing.Client.Modules.Shell.Views"
+	mc:Ignorable="d"
+	x:Class="Wing.Client.Modules.Shell.Views.ShellBar"
+	d:DesignWidth="640" d:DesignHeight="480" Width="Auto" Height="51">
+
+	<Grid x:Name="LayoutRoot" Background="#25000000">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="199"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Orientation="Horizontal" Margin="4">
+			<local:ButtonSeven HorizontalAlignment="Left" d:LayoutOverrides="Width" ImageSource="../Assets/home1.png" BorderThickness="0"/>
+			<TextBox Text="Digite sua pesquisa..." Margin="10,10,10,10"/>
+		</StackPanel>
+		<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="4">
+			<local:ButtonSeven Width="45" ImageSource="../Assets/Home4.png" />
+			<local:ButtonSeven Width="45" ImageSource="../Assets/Home3.png" />
+			<local:ButtonSeven Width="45" ImageSource="../Assets/Home2.png" />
+		</StackPanel>
+		<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,4,4">
+			<local:ButtonSeven Width="45" ImageSource="../Assets/workflow.png" />
+			<local:ButtonSeven Width="45" ImageSource="../Assets/chat2.png" />
+			<local:ButtonSeven Width="Auto" ImageSource="../Assets/menu_view.png" Title="Marcelo" />
+		</StackPanel>
+	</Grid>
+</UserControl>
