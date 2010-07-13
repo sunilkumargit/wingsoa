@@ -68,16 +68,10 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\ButtonSeven.xaml.cs">
-      <DependentUpon>ButtonSeven.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ShellBar.xaml.cs">
-      <DependentUpon>ShellBar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ShellMenu.xaml.cs">
       <DependentUpon>ShellMenu.xaml</DependentUpon>
     </Compile>
@@ -92,17 +86,13 @@
       <Project>{28374482-C3AB-4F4C-A1DD-A8167D7F23D7}</Project>
       <Name>Wing.Client.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Wing.Client.Sdk\Wing.Client.Sdk.csproj">
+      <Project>{A52229CB-C24D-4B2E-AEB9-5E3519CD94CF}</Project>
+      <Name>Wing.Client.Sdk</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\ButtonSeven.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ShellView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ShellBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -119,6 +109,9 @@
     <Resource Include="Assets\home4.png" />
     <Resource Include="Assets\menu_view.png" />
     <Resource Include="Assets\workflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\install.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

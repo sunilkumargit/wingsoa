@@ -59,6 +59,10 @@ namespace Wing.Client.Bootstrap
             ServiceLocator.Current.GetInstance<ILogger>().Log("module initialized", Category.Info, Priority.Low);
         }
 
+
+        public void Initialized()
+        {
+        }
         #endregion
     }
 }

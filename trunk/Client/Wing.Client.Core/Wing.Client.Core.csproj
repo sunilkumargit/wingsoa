@@ -75,6 +75,7 @@
     <Compile Include="ApplicationStarter.cs" />
     <Compile Include="BootstrapSettings.cs" />
     <Compile Include="ClientAssemblyStore.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IRootVisualManager.cs" />
     <Compile Include="IsolatedStorageAssemblyStore.cs" />

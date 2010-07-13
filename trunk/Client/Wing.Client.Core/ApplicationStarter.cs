@@ -157,9 +157,12 @@ namespace Wing.Client.Core
             else
                 _splash.DisplayMessage("O Wing está preparando a aplicação para ser executada pela primeira vez \n isto pode levar alguns minutos, aguarde por favor...");
 
-            _splash.DisplayProgressBar(_assemblyInfo.Assemblies.Sum(a => a.Size));
+            var assemblies = GetAssembliesToDownload();
+            var downloadSize = assemblies.Sum(a => a.Size);
 
-            var assemblies = new Stack<AssemblyInfo>(_assemblyInfo.Assemblies);
+            _splash.DisplayProgressBar(downloadSize);
+
+
             var client = new WebClient();
 
             AssemblyInfo currentInfo = null;
@@ -169,6 +172,7 @@ namespace Wing.Client.Core
             {
                 // continue load assemblies
                 currentInfo = assemblies.Pop();
+
                 var uri = new Uri(CurrentApp.Host.GetBaseUrl(), "WingCltAppSupport/GetAssemblyData?file=" + currentInfo.AssemblyName);
                 _splash.UpdateProgressBar(0, currentInfo.Size);
                 client.OpenReadAsync(uri);
@@ -185,6 +189,7 @@ namespace Wing.Client.Core
                         tmpFile.WriteByte(65);
                         tmpFile.Close();
                     }
+                    _splash.UpdateProgressBar(downloadSize, 0);
                     PerformNextAction();
                 }
                 else
@@ -208,8 +213,33 @@ namespace Wing.Client.Core
             checkAndGoToNextAction();
         }
 
+        private Stack<AssemblyInfo> GetAssembliesToDownload()
+        {
+            var result = new Stack<AssemblyInfo>();
+#if DEBUG
+            return new Stack<AssemblyInfo>(_assemblyInfo.Assemblies);
+#endif
+            foreach (var asmInfo in _assemblyInfo.Assemblies)
+            {
+                //verificar se o arquivo é diferente do servidor
+                var asmData = _store.GetAssemblyData(asmInfo.AssemblyName);
+                if (asmData != null)
+                {
+                    var hash = AssemblyInfo.CalculateHashString(asmData);
+                    //se o hash for igual, ir para o próximo assembly
+                    if (hash.Equals(asmInfo.HashString))
+                        continue;
+                }
+                result.Push(asmInfo);
+            }
+            return result;
+        }
+
         void LoadAssemblies()
         {
+            _splash.DisplayMessage("Inicializando...");
+            _splash.DisplayLoadingBar();
+
             var assemblies = new List<Assembly>();
             foreach (var asmInfo in _assemblyInfo.Assemblies)
             {
@@ -230,8 +260,6 @@ namespace Wing.Client.Core
 
         void CreateBootstrapperAndRun()
         {
-            _splash.DisplayMessage("Inicializando...");
-            _splash.DisplayLoadingBar();
             //search for bootstrapper class in assemblies
             Type bootstrapperType = null;
             foreach (var assembly in _bootstrapSettings.Assemblies)
@@ -262,8 +290,7 @@ namespace Wing.Client.Core
         void CheckQuotaSize()
         {
             var storage = IsolatedStorageFile.GetUserStoreForApplication();
-            var size = 1024 * 1024 * 150;
-            if (storage.Quota < size)
+            if (storage.Quota < Constants.ClientQuotaSize)
             {
                 _splash.DisplayMessage("Não é possível continuar: espaço insuficiente no disco.");
                 return;

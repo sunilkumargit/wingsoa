@@ -73,17 +73,22 @@ namespace Wing.Client.Core
         public byte[] GetAssemblyData(String name)
         {
             var asmPath = GetAssemblyPath(name);
-            var stream = _storage.OpenFile(asmPath, FileMode.Open, FileAccess.Read);
-            try
+            if (_storage.FileExists(asmPath))
             {
-                var data = new byte[stream.Length];
-                stream.Read(data, 0, data.Length);
-                return data;
+                var stream = _storage.OpenFile(asmPath, FileMode.Open, FileAccess.Read);
+                try
+                {
+                    var data = new byte[stream.Length];
+                    stream.Read(data, 0, data.Length);
+                    return data;
+                }
+                finally
+                {
+                    stream.Close();
+                }
             }
-            finally
-            {
-                stream.Close();
-            }
+            else
+                return null;
         }
         #endregion
 

@@ -16,6 +16,29 @@ namespace Wing.Client.Modules.Shell.Views
 		{
 			// Required to initialize variables
 			InitializeComponent();
+            this.HideMenuAnim.Completed += new EventHandler((e, args) =>
+            {
+                this.Visibility = System.Windows.Visibility.Collapsed;
+            });
 		}
+
+        public void ShowMenu()
+        {
+            this.Visibility = System.Windows.Visibility.Visible;
+            this.ShowMenuAnim.Begin();
+        }
+
+        public void HideMenu()
+        {
+            this.HideMenuAnim.Begin();
+        }
+
+        public void TroggleMenu()
+        {
+            if (Visibility == System.Windows.Visibility.Collapsed)
+                ShowMenu();
+            else
+                HideMenu();
+        }
 	}
 }

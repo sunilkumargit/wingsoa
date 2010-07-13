@@ -1,7 +1,7 @@
-<OutOfBrowserSettings ShortName="Wing Applications Client" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+<OutOfBrowserSettings ShortName="Wing Applications Client" EnableGPUAcceleration="True" ShowInstallMenuItem="False">
   <OutOfBrowserSettings.Blurb>Wing Applications Client</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="Wing Applications Client" Height="650" Width="980" />
+    <WindowSettings Title="Wing Applications Client" Height="650" Width="980"/>
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.Icons>
     <Icon Size="16,16">Icons/Globe_16x16.png</Icon>
@@ -9,4 +9,7 @@
     <Icon Size="48,48">Icons/Globe_48x48.png</Icon>
     <Icon Size="128,128">Icons/Globe_256x256.png</Icon>
   </OutOfBrowserSettings.Icons>
+  <OutOfBrowserSettings.SecuritySettings>
+    <!--SecuritySettings ElevatedPermissions="Required" /-->
+  </OutOfBrowserSettings.SecuritySettings>
 </OutOfBrowserSettings>

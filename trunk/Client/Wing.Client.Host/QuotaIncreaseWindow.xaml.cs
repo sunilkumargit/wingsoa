@@ -25,7 +25,7 @@ namespace Wing.Client.Host
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            var requiredSize = 1024 * 1024 * 150;
+            var requiredSize = Wing.Client.Core.Constants.ClientQuotaSize;
             var storage = IsolatedStorageFile.GetUserStoreForApplication();
             this.DialogResult = storage.IncreaseQuotaTo(requiredSize);
             if (OkClick != null)
@@ -34,7 +34,7 @@ namespace Wing.Client.Host
 
         public static void CheckQuotaSize(Action onOk)
         {
-            var requiredSize = 1024 * 1024 * 150;
+            var requiredSize = Wing.Client.Core.Constants.ClientQuotaSize;
             var storage = IsolatedStorageFile.GetUserStoreForApplication();
             if (storage.Quota < requiredSize)
             {
