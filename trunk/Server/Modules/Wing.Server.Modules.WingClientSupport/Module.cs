@@ -22,6 +22,8 @@ namespace Wing.Server.Modules.WingClientSupport
             RegisterClientSupportController();
         }
 
+        public void Initialized() { }
+
         private void RegisterClientAssemblyStore()
         {
             var bootSettings = ServiceLocator.Current.GetInstance<BootstrapSettings>();

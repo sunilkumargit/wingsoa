@@ -43,6 +43,8 @@ namespace Wing.Modularity
         /// <param name="dependsOn">The modules this instance depends on.</param>
         public ModuleInfo(string name, string type, params string[] dependsOn)
         {
+            this.ModuleCategory = Modularity.ModuleCategory.Common;
+            this.ModulePriority = Modularity.ModulePriority.Normal;
             this.ModuleName = name;
             this.ModuleType = type;
             this.DependsOn = new Collection<string>();
@@ -104,5 +106,16 @@ namespace Wing.Modularity
         /// Gets or sets a description for this module. 
         /// </summary>
         public string ModuleDescription { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="ModulePriority"/> for this module
+        /// </summary>
+        public ModulePriority ModulePriority { get; set; }
+
+        internal int LoadOrderIndex { get { return (int)ModuleCategory * 10 + (int)ModulePriority; } }
+
+        public int LoadOrder { get; internal set; }
+
+        public IModule ModuleInstance { get; internal set; }
     }
 }

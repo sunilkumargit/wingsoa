@@ -74,6 +74,7 @@
     <Compile Include="Modularity\IModuleManager.cs" />
     <Compile Include="Modularity\IModuleTypeLoader.cs" />
     <Compile Include="ListDictionary.cs" />
+    <Compile Include="Modularity\InvalidCategoryDependencyException.cs" />
     <Compile Include="Modularity\Messages.cs" />
     <Compile Include="Modularity\ModularityException.cs" />
     <Compile Include="Modularity\ModuleAttribute.cs" />
@@ -88,6 +89,8 @@
     <Compile Include="Modularity\ModuleManager.cs" />
     <Compile Include="Modularity\ModuleManager.Desktop.cs" />
     <Compile Include="Modularity\ModuleNotFoundException.cs" />
+    <Compile Include="Modularity\ModulePriority.cs" />
+    <Compile Include="Modularity\ModulePriorityAttribute.cs" />
     <Compile Include="Modularity\ModuleState.cs" />
     <Compile Include="Modularity\ModuleCategoryAttribute.cs" />
     <Compile Include="Modularity\ModuleTypeLoaderNotFoundException.cs" />
@@ -97,6 +100,12 @@
     <Compile Include="ServiceLocation\IServiceLocator.cs" />
     <Compile Include="ServiceLocation\ServiceLocator.cs" />
     <Compile Include="ServiceLocation\ServiceLocatorProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wing.Utils\Wing.Utils.csproj">
+      <Project>{B85562FD-9A9B-438E-928D-B12C7DF3CF2E}</Project>
+      <Name>Wing.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,19 +9,20 @@ namespace Wing.Modularity
         /// core assets used by entire application.
         /// Core modules can depends only on another core modules. Depedency from Init or Common modules is not allowed.
         /// </summary>
-        Core,
+        Core = 1,
 
         /// <summary>
         /// Init modules are initialized after core modules and generally contains secondary services (not required for core funcionallity). 
         /// Init modules is used also to configure another system services. Init modules can depends on Core or another Init modules, 
         /// dependancy from Common modules are not allowed.
         /// </summary>
-        Init,
+        Init = 2,
 
         /// <summary>
         /// Common modules defines user-tasks. In another words, you should use Common modules to implement business logic, business services
         /// or application extensions.
         /// </summary>
-        Common
+        Common = 3
     }
+
 }

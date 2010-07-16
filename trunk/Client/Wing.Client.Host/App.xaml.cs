@@ -36,26 +36,6 @@ namespace Wing.Client
             QuotaIncreaseWindow.CheckQuotaSize(() => { starter.Run(); });
         }
 
-        private class GridRootVisualManager : IRootVisualManager
-        {
-            private Grid _grid;
-
-            public GridRootVisualManager(Grid grid)
-            {
-                _grid = grid;
-            }
-
-            #region IRootVisualManager Members
-
-            public void SetRootElement(UIElement element)
-            {
-                _grid.Children.RemoveAt(0);
-                _grid.Children.Add(element);
-            }
-
-            #endregion
-        }
-
         private void Application_Exit(object sender, EventArgs e)
         {
         }

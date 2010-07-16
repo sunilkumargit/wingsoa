@@ -12,11 +12,12 @@ using Wing.Modularity;
 using Wing.ServiceLocation;
 using Wing.Client.Core;
 using Wing.Client.Modules.Shell.Views;
+using Wing.Composite.Presentation.Regions;
 
 namespace Wing.Client.Modules.Shell
 {
     [ModuleCategory(ModuleCategory.Core)]
-    [ModulePriority(ModulePriority.Higher)]
+    [ModulePriority(ModulePriority.High)]
     [ModuleDescription("Provedor do shell do usuário")]
     public class ShellModule : IModule
     {
@@ -26,8 +27,8 @@ namespace Wing.Client.Modules.Shell
         public void Initialize()
         {
             //criar o view do shell aqui.
-            ServiceLocator.Current.Register<ShellView>(new ShellView());
-
+            var shellView = new ShellView();
+            ServiceLocator.Current.Register<ShellView>(shellView);
         }
 
         public void Initialized()
@@ -38,14 +39,5 @@ namespace Wing.Client.Modules.Shell
         }
 
         #endregion
-
-        /*
-        public void AddResourceDictionary(String assetName)
-        {
-            var resUri = new Uri(String.Format("/Wing.Client.Modules.Shell;component/Assets/{0}.xaml", assetName), UriKind.Relative);
-            var resDic = new ResourceDictionary();
-            resDic.Source = resUri;
-            Application.Current.Resources.MergedDictionaries.Add(resDic);
-        }*/
     }
 }

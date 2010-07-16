@@ -19,7 +19,7 @@ namespace Wing.Utils
         [XmlAttribute("hash")]
         public String HashString { get; set; }
 
-        public String CalculateHashString(byte[] assemblyData)
+        public static String CalculateHashString(byte[] assemblyData)
         {
             var hash = new SHA256Managed();
             var hashBytes = hash.ComputeHash(assemblyData);

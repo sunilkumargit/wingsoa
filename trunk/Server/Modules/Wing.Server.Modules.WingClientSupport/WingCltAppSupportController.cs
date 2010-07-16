@@ -20,6 +20,7 @@ namespace Wing.Server.Modules.WingClientSupport
         public ActionResult GetAssemblyData(String file)
         {
             var store = ServiceLocator.Current.GetInstance<IAssemblyStore>("Client");
+            store.ConsolidateStore();
             var data = store.GetAssemblyData(file);
             return File(data, "application/binary");
         }

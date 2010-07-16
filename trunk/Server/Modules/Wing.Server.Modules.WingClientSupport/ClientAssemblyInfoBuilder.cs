@@ -28,7 +28,7 @@ namespace Wing.Server.Modules.WingClientSupport
                     AssemblyName = asmName,
                     Size = asmData.Length
                 };
-                asmInfo.HashString = asmInfo.CalculateHashString(asmData);
+                asmInfo.HashString = AssemblyInfo.CalculateHashString(asmData);
                 info.Add(asmInfo);
             }
 

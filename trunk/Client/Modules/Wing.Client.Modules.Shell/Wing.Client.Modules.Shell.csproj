@@ -27,6 +27,7 @@
     <TargetFrameworkProfile />
     <Utf8Output>true</Utf8Output>
     <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,10 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows" />
     <Reference Include="mscorlib" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -68,14 +69,11 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShellModule.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ShellMenu.xaml.cs">
-      <DependentUpon>ShellMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ShellModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
@@ -90,28 +88,23 @@
       <Project>{A52229CB-C24D-4B2E-AEB9-5E3519CD94CF}</Project>
       <Name>Wing.Client.Sdk</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Wing.Composite\Wing.Composite.csproj">
+      <Project>{7A751BB0-5CB7-4429-86E6-760F47BA3369}</Project>
+      <Name>Wing.Composite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wing.Presentation\Wing.Composite.Presentation.csproj">
+      <Project>{C8D3B5A8-5985-4659-A49C-4CCFB0152676}</Project>
+      <Name>Wing.Composite.Presentation</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\ShellView.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ShellMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Chat2.png" />
-    <Resource Include="Assets\home1.png" />
-    <Resource Include="Assets\home2.png" />
-    <Resource Include="Assets\home3.png" />
-    <Resource Include="Assets\home4.png" />
-    <Resource Include="Assets\menu_view.png" />
-    <Resource Include="Assets\workflow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\install.png" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

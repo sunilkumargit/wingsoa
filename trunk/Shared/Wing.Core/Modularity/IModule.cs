@@ -26,5 +26,12 @@ namespace Wing.Modularity
         /// Notifies the module that it has be initialized.
         /// </summary>
         void Initialize();
+
+
+        /// <summary>
+        /// Notifies the module that has been initialized. This method invoke in reverse order of Initialze.
+        /// The last module initialized will be the first module that will called Initialized().
+        /// </summary>
+        void Initialized();
     }
 }

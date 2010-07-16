@@ -38,5 +38,7 @@ namespace Wing.Modularity
         public static readonly string NoRetrieverCanRetrieveModule = "There is currently no moduleTypeLoader in the ModuleManager that can retrieve the specified module.";
         public static readonly string StringCannotBeNullOrEmpty = "The provided String argument {0} must not be null or empty.";
         public static readonly string ValueMustBeOfTypeModuleInfo = "The value must be of type ModuleInfo.";
+        public static readonly string InvalidCategoryDependency = "The module {0} cannot depend on {1} because module {1} is in a low level category {2}";
+
     }
 }

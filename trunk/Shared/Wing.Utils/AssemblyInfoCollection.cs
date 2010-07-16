@@ -31,6 +31,7 @@ namespace Wing.Utils
             }).ToList();
         }
 
+
         public string SerializeToXml()
         {
             var serializer = new XmlSerializer(this.GetType());

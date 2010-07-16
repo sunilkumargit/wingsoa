@@ -18,6 +18,7 @@ using System;
 using System.Globalization;
 using Wing.ServiceLocation;
 using Wing.Logging;
+using System.Collections.Generic;
 
 
 namespace Wing.Modularity
@@ -58,19 +59,27 @@ namespace Wing.Modularity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Catches Exception to handle any exception thrown during the initialization process with the HandleModuleInitializationError method.")]
         public void Initialize(ModuleInfo moduleInfo)
         {
-            IModule moduleInstance = null;
             try
             {
-                moduleInstance = this.CreateModule(moduleInfo.ModuleType);
-                moduleInstance.Initialize();
+                if (moduleInfo.ModuleInstance == null)
+                    moduleInfo.ModuleInstance = this.CreateModule(moduleInfo.ModuleType);
+                moduleInfo.ModuleInstance.Initialize();
             }
             catch (Exception ex)
             {
                 this.HandleModuleInitializationError(
                     moduleInfo,
-                    moduleInstance != null ? moduleInstance.GetType().Assembly.FullName : null,
+                    moduleInfo.ModuleInstance != null ? moduleInfo.ModuleInstance.GetType().Assembly.FullName : null,
                     ex);
             }
+        }
+
+        public void PostInitialize(ModuleInfo moduleInfo)
+        {
+            if (moduleInfo.ModuleInstance == null)
+                throw new ModuleInitializeException(String.Format("The module {0} has no instance", moduleInfo.ModuleName));
+            if (moduleInfo.State == ModuleState.Initialized)
+                moduleInfo.ModuleInstance.Initialized();
         }
 
         /// <summary>

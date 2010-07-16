@@ -32,6 +32,7 @@ namespace Wing.Modularity
         private readonly IModuleCatalog moduleCatalog;
         private readonly ILogger loggerFacade;
         private IEnumerable<IModuleTypeLoader> typeLoaders;
+        private int _orderCount = 0;
 
         /// <summary>
         /// Initializes an instance of the <see cref="ModuleManager"/> class.
@@ -67,8 +68,7 @@ namespace Wing.Modularity
         public void Run()
         {
             this.moduleCatalog.Initialize();
-
-            this.LoadModulesWhenAvailable();
+            this.LoadModules();
         }
 
         /// <summary>
@@ -86,29 +86,6 @@ namespace Wing.Modularity
             IEnumerable<ModuleInfo> modulesToLoad = this.moduleCatalog.CompleteListWithDependencies(module);
 
             this.LoadModuleTypes(modulesToLoad);
-        }
-
-        /// <summary>
-        /// Checks if the module needs to be retrieved before it's initialized.
-        /// </summary>
-        /// <param name="moduleInfo">Module that is being checked if needs retrieval.</param>
-        /// <returns></returns>
-        protected virtual bool ModuleNeedsRetrieval(ModuleInfo moduleInfo)
-        {
-            if (moduleInfo.State == ModuleState.NotStarted)
-            {
-                // If we can instantiate the type, that means the module's assembly is already loaded into 
-                // the AppDomain and we don't need to retrieve it. 
-                bool isAvailable = Type.GetType(moduleInfo.ModuleType) != null;
-                if (isAvailable)
-                {
-                    moduleInfo.State = ModuleState.ReadyForInitialization;
-                }
-
-                return !isAvailable;
-            }
-
-            return false;
         }
 
         /// <summary>
@@ -133,10 +110,9 @@ namespace Wing.Modularity
             throw moduleTypeLoadingException;
         }
 
-        private void LoadModulesWhenAvailable()
+        private void LoadModules()
         {
-            IEnumerable<ModuleInfo> whenAvailableModules = this.moduleCatalog.Modules.Where(m => true);
-            IEnumerable<ModuleInfo> modulesToLoadTypes = this.moduleCatalog.CompleteListWithDependencies(whenAvailableModules);
+            IEnumerable<ModuleInfo> modulesToLoadTypes = this.moduleCatalog.CompleteListWithDependencies(moduleCatalog.Modules);
             if (modulesToLoadTypes != null)
             {
                 this.LoadModuleTypes(modulesToLoadTypes);
@@ -145,6 +121,9 @@ namespace Wing.Modularity
 
         private void LoadModuleTypes(IEnumerable<ModuleInfo> moduleInfos)
         {
+            List<ModuleInfo> availableModules = new List<ModuleInfo>();
+            List<ModuleInfo> loadedModules = new List<ModuleInfo>();
+
             if (moduleInfos == null)
             {
                 return;
@@ -154,64 +133,40 @@ namespace Wing.Modularity
             {
                 if (moduleInfo.State == ModuleState.NotStarted)
                 {
-                    if (this.ModuleNeedsRetrieval(moduleInfo))
-                    {
-                        this.BeginRetrievingModule(moduleInfo);
-                    }
-                    else
-                    {
-                        moduleInfo.State = ModuleState.ReadyForInitialization;
-                    }
+                    moduleInfo.State = ModuleState.ReadyForInitialization;
+                    availableModules.Add(moduleInfo);
                 }
             }
 
-            this.LoadModulesThatAreReadyForLoad();
-        }
-
-        private void BeginRetrievingModule(ModuleInfo moduleInfo)
-        {
-            ModuleInfo moduleInfoToLoadType = moduleInfo;
-            IModuleTypeLoader moduleTypeLoader = this.GetTypeLoaderForModule(moduleInfoToLoadType);
-            moduleInfoToLoadType.State = ModuleState.LoadingTypes;
-            moduleTypeLoader.BeginLoadModuleType(moduleInfo, this.OnModuleTypeLoaded);
-        }
-
-        private void OnModuleTypeLoaded(ModuleInfo typeLoadedModuleInfo, Exception error)
-        {
-            if (error == null)
+            Action<ModuleCategory> initMudulesByCategoryAction = new Action<ModuleCategory>(category =>
             {
-                typeLoadedModuleInfo.State = ModuleState.ReadyForInitialization;
-
-                // This callback may call back on the UI thread, but we are not guaranteeing it.
-                // If you were to add a custom retriever that retrieved in the background, you
-                // would need to consider dispatching to the UI thread.
-                this.LoadModulesThatAreReadyForLoad();
-            }
-            else
-            {
-                this.HandleModuleTypeLoadingError(typeLoadedModuleInfo, error);
-            }
-        }
-
-        private void LoadModulesThatAreReadyForLoad()
-        {
-            bool keepLoading = true;
-            while (keepLoading)
-            {
-                keepLoading = false;
-                IEnumerable<ModuleInfo> availableModules = this.moduleCatalog.Modules.Where(m => m.State == ModuleState.ReadyForInitialization);
-
-                foreach (ModuleInfo moduleInfo in availableModules)
+                bool keepLoading = true;
+                while (keepLoading)
                 {
-                    if (this.AreDependenciesLoaded(moduleInfo))
+                    keepLoading = false;
+                    var tempList = availableModules.Where(m => m.State == ModuleState.ReadyForInitialization 
+                        && m.ModuleCategory==category);
+
+                    foreach (ModuleInfo moduleInfo in tempList)
                     {
-                        moduleInfo.State = ModuleState.Initializing;
-                        this.InitializeModule(moduleInfo);
-                        keepLoading = true;
-                        break;
+                        if (this.AreDependenciesLoaded(moduleInfo))
+                        {
+                            moduleInfo.State = ModuleState.Initializing;
+                            this.InitializeModule(moduleInfo);
+                            loadedModules.Add(moduleInfo);
+                            keepLoading = true;
+                            break;
+                        }
                     }
                 }
-            }
+            });
+
+            initMudulesByCategoryAction(ModuleCategory.Core);
+            initMudulesByCategoryAction(ModuleCategory.Init);
+            initMudulesByCategoryAction(ModuleCategory.Common);
+
+            for (var i = loadedModules.Count - 1; i > -1; i--)
+                this.PostInitializeModule(loadedModules[i]);
         }
 
         private bool AreDependenciesLoaded(ModuleInfo moduleInfo)
@@ -245,9 +200,16 @@ namespace Wing.Modularity
         {
             if (moduleInfo.State == ModuleState.Initializing)
             {
+                moduleInfo.LoadOrder = ++_orderCount;
                 this.moduleInitializer.Initialize(moduleInfo);
                 moduleInfo.State = ModuleState.Initialized;
             }
+        }
+
+        private void PostInitializeModule(ModuleInfo moduleInfo)
+        {
+            if (moduleInfo.State == ModuleState.Initialized)
+                this.moduleInitializer.PostInitialize(moduleInfo);
         }
     }
 }

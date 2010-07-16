@@ -21,6 +21,7 @@ using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Wing.Utils;
 
 
 namespace Wing.Modularity
@@ -153,7 +154,8 @@ namespace Wing.Modularity
             this.EnsureCatalogValidated();
 
             List<ModuleInfo> completeList = new List<ModuleInfo>();
-            List<ModuleInfo> pendingList = modules.ToList();
+            List<ModuleInfo> pendingList = modules.OrderBy(k => k, new ComparerDelegate<ModuleInfo>((m1, m2) => m1.LoadOrderIndex - m2.LoadOrderIndex)).ToList();
+
             while (pendingList.Count > 0)
             {
                 ModuleInfo moduleInfo = pendingList[0];
@@ -170,8 +172,7 @@ namespace Wing.Modularity
                 completeList.Add(moduleInfo);
             }
 
-            IEnumerable<ModuleInfo> sortedList = this.Sort(completeList);
-            return sortedList;
+            return completeList;
         }
 
         /// <summary>
@@ -182,6 +183,7 @@ namespace Wing.Modularity
         {
             this.ValidateUniqueModules();
             this.ValidateDependencyGraph();
+            this.ValidateCategoryDependencies();
             this.Validated = true;
         }
 
@@ -312,20 +314,6 @@ namespace Wing.Modularity
         }
 
         /// <summary>
-        /// Sorts a list of <see cref="ModuleInfo"/>s. This method is called by <see cref="CompleteListWithDependencies"/>
-        /// to return a sorted list. 
-        /// </summary>
-        /// <param name="modules">The <see cref="ModuleInfo"/>s to sort.</param>
-        /// <returns>Sorted list of <see cref="ModuleInfo"/>s</returns>
-        protected virtual IEnumerable<ModuleInfo> Sort(IEnumerable<ModuleInfo> modules)
-        {
-            foreach (string moduleName in SolveDependencies(modules))
-            {
-                yield return modules.First(m => m.ModuleName == moduleName);
-            }
-        }
-
-        /// <summary>
         /// Makes sure all modules have an Unique name. 
         /// </summary>
         /// <exception cref="DuplicateModuleException">
@@ -350,6 +338,24 @@ namespace Wing.Modularity
         protected virtual void ValidateDependencyGraph()
         {
             SolveDependencies(this.Modules);
+        }
+
+        protected virtual void ValidateCategoryDependencies()
+        {
+            foreach (ModuleInfo data in this.Modules)
+            {
+                var dependents = this.GetDependentModulesInner(data);
+                //if a dependent module category is greater than the module category, then the dependency
+                //is not allowed.
+                foreach (var dependent in dependents)
+                {
+                    if (((int)dependent.ModuleCategory) > ((int)data.ModuleCategory))
+                    {
+                        throw new InvalidCategoryDependencyException(data.ModuleName,
+                            String.Format(CultureInfo.CurrentCulture, Messages.InvalidCategoryDependency, data.ModuleName, dependent.ModuleName, dependent.ModuleName, dependent.ModuleCategory.ToString()));
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -424,6 +430,8 @@ namespace Wing.Modularity
                     moduleInfo.ModuleCategory = ((ModuleCategoryAttribute)attr).Category;
                 else if (attr is ModuleDescriptionAttribute)
                     moduleInfo.ModuleDescription = ((ModuleDescriptionAttribute)attr).Description;
+                else if (attr is ModulePriorityAttribute)
+                    moduleInfo.ModulePriority = ((ModulePriorityAttribute)attr).Priority;
             }
             return moduleInfo;
         }

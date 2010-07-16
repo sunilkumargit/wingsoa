@@ -26,5 +26,11 @@ namespace Wing.Modularity
         /// </summary>
         /// <param name="moduleInfo">The module to initialize</param>
         void Initialize(ModuleInfo moduleInfo);
+
+        /// <summary>
+        /// Process the post initialization.
+        /// </summary>
+        /// <param name="moduleInfo"></param>
+        void PostInitialize(ModuleInfo moduleInfo);
     }
 }

@@ -52,7 +52,9 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="AssemblyInfoCollection.cs" />
     <Compile Include="Assert.cs" />
+    <Compile Include="ComparerDelegate.cs" />
     <Compile Include="Converter.cs" />
+    <Compile Include="EqualityComparerDelegate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
