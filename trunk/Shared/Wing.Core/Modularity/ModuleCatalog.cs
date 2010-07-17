@@ -407,35 +407,4 @@ namespace Wing.Modularity
             }
         }
     }
-
-    public interface IModuleInfoBuilder
-    {
-        ModuleInfo BuildFromType(Type type);
-    }
-
-    public class ModuleInfoBuilder : IModuleInfoBuilder
-    {
-
-        #region IModuleInfoBuilder Members
-
-        public ModuleInfo BuildFromType(Type type)
-        {
-            var moduleInfo = new ModuleInfo(type.Name, type.AssemblyQualifiedName);
-            //procurar pelos atributos no tipo
-            foreach (var attr in type.GetCustomAttributes(true))
-            {
-                if (attr is ModuleDependencyAttribute)
-                    moduleInfo.DependsOn.Add(((ModuleDependencyAttribute)attr).ModuleName);
-                else if (attr is ModuleCategoryAttribute)
-                    moduleInfo.ModuleCategory = ((ModuleCategoryAttribute)attr).Category;
-                else if (attr is ModuleDescriptionAttribute)
-                    moduleInfo.ModuleDescription = ((ModuleDescriptionAttribute)attr).Description;
-                else if (attr is ModulePriorityAttribute)
-                    moduleInfo.ModulePriority = ((ModulePriorityAttribute)attr).Priority;
-            }
-            return moduleInfo;
-        }
-
-        #endregion
-    }
 }

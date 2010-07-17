@@ -14,15 +14,16 @@ using Wing.Client.Core;
 
 namespace Wing.Client.Modules.DefaultTheme
 {
-    [ModuleCategory(ModuleCategory.Init)]
-    [ModulePriority(ModulePriority.Higher)]
+    [Module("Theme")]
+    [ModuleCategory(ModuleCategory.Core)]
+    [ModulePriority(ModulePriority.Low)]
     [ModuleDescription("Tema padrão da interface do usuário")]
-    public class DefaultThemeModule:IModule
+    public class DefaultThemeModule: IModule
     {
         public void Initialize()
         {
             var visualManager = ServiceLocator.Current.GetInstance<IRootVisualManager>();
-            visualManager.AddResourceDictionary("Wing.Client.Modules.DefaultTheme", "Brushes");
+            visualManager.AddResourceDictionary("Wing.Client.Modules.DefaultTheme", "WingTheme");
         }
 
         public void Initialized()

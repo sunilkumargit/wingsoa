@@ -13,12 +13,14 @@ using Wing.ServiceLocation;
 using Wing.Client.Core;
 using Wing.Client.Modules.Shell.Views;
 using Wing.Composite.Presentation.Regions;
+using Wing.Composite.Regions;
 
 namespace Wing.Client.Modules.Shell
 {
     [ModuleCategory(ModuleCategory.Core)]
-    [ModulePriority(ModulePriority.High)]
+    [ModulePriority(ModulePriority.Low)]
     [ModuleDescription("Provedor do shell do usuário")]
+    [ModuleDependency("Theme")]
     public class ShellModule : IModule
     {
 
@@ -29,6 +31,8 @@ namespace Wing.Client.Modules.Shell
             //criar o view do shell aqui.
             var shellView = new ShellView();
             ServiceLocator.Current.Register<ShellView>(shellView);
+            ServiceLocator.Current.Register<IRegionManager, RegionManager>(true);
+            RegionManager.SetRegionManager(shellView, ServiceLocator.Current.GetInstance<IRegionManager>());
         }
 
         public void Initialized()

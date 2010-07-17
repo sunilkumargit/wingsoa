@@ -64,26 +64,55 @@
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Priority.cs" />
     <Compile Include="Logging\TraceLogger.cs" />
-    <Compile Include="Modularity\CollectionExtensions.cs" />
-    <Compile Include="Modularity\CyclicDependencyFoundException.cs" />
-    <Compile Include="Modularity\DuplicateModuleException.cs" />
-    <Compile Include="Modularity\IModule.cs" />
-    <Compile Include="Modularity\IModuleCatalog.cs" />
-    <Compile Include="Modularity\IModuleCatalogItem.cs" />
-    <Compile Include="Modularity\IModuleInitializer.cs" />
-    <Compile Include="Modularity\IModuleManager.cs" />
-    <Compile Include="Modularity\IModuleTypeLoader.cs" />
     <Compile Include="ListDictionary.cs" />
-    <Compile Include="Modularity\InvalidCategoryDependencyException.cs" />
-    <Compile Include="Modularity\Messages.cs" />
-    <Compile Include="Modularity\ModularityException.cs" />
-    <Compile Include="Modularity\ModuleAttribute.cs" />
+    <Compile Include="Modularity\CollectionExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\CyclicDependencyFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\DuplicateModuleException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\IModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\IModuleCatalog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\IModuleCatalogItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\IModuleInfoBuilder.cs" />
+    <Compile Include="Modularity\IModuleInitializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\IModuleManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\IModuleTypeLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\InvalidCategoryDependencyException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\Messages.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\ModularityException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modularity\ModuleAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Modularity\ModuleCatalog.cs" />
     <Compile Include="Modularity\ModuleCategory.cs" />
     <Compile Include="Modularity\ModuleDependencyAttribute.cs" />
     <Compile Include="Modularity\ModuleDependencySolver.cs" />
     <Compile Include="Modularity\ModuleDescriptionAttribute.cs" />
     <Compile Include="Modularity\ModuleInfo.cs" />
+    <Compile Include="Modularity\ReflectionOnlyModuleInfoBuilder.cs" />
+    <Compile Include="Modularity\ModuleInfoBuilder.cs" />
     <Compile Include="Modularity\ModuleInitializeException.cs" />
     <Compile Include="Modularity\ModuleInitializer.cs" />
     <Compile Include="Modularity\ModuleManager.cs" />

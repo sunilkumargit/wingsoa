@@ -177,6 +177,9 @@
     <Compile Include="..\Wing.Core\Logging\DebugLogger.cs">
       <Link>DebugLogger.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Core\Modularity\IModuleInfoBuilder.cs">
+      <Link>Modularity\IModuleInfoBuilder.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Core\Modularity\InvalidCategoryDependencyException.cs">
       <Link>Modularity\InvalidCategoryDependencyException.cs</Link>
     </Compile>
@@ -188,6 +191,9 @@
     </Compile>
     <Compile Include="..\Wing.Core\Modularity\ModuleDescriptionAttribute.cs">
       <Link>Modularity\ModuleDescriptionAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\Modularity\ModuleInfoBuilder.cs">
+      <Link>Modularity\ModuleInfoBuilder.cs</Link>
     </Compile>
     <Compile Include="..\Wing.Core\Modularity\ModulePriority.cs">
       <Link>Modularity\ModulePriority.cs</Link>

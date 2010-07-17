@@ -189,43 +189,11 @@ namespace Wing.Modularity
                 }
             }
 
+            private static IModuleInfoBuilder _moduleInfoBuilder;
             private static ModuleInfo CreateModuleInfo(Type type)
             {
-                string moduleName = type.Name;
-                List<string> dependsOn = new List<string>();
-                var moduleAttribute =
-                    CustomAttributeData.GetCustomAttributes(type).FirstOrDefault(
-                        cad => cad.Constructor.DeclaringType.FullName == typeof(ModuleAttribute).FullName);
-
-                if (moduleAttribute != null)
-                {
-                    foreach (CustomAttributeNamedArgument argument in moduleAttribute.NamedArguments)
-                    {
-                        string argumentName = argument.MemberInfo.Name;
-                        switch (argumentName)
-                        {
-                            case "ModuleName":
-                                moduleName = (string)argument.TypedValue.Value;
-                                break;
-                        }
-                    }
-                }
-
-                var moduleDependencyAttributes =
-                    CustomAttributeData.GetCustomAttributes(type).Where(
-                        cad => cad.Constructor.DeclaringType.FullName == typeof(ModuleDependencyAttribute).FullName);
-
-                foreach (CustomAttributeData cad in moduleDependencyAttributes)
-                {
-                    dependsOn.Add((string)cad.ConstructorArguments[0].Value);
-                }
-
-                ModuleInfo moduleInfo = new ModuleInfo(moduleName, type.AssemblyQualifiedName)
-                                            {
-                                                Ref = type.Assembly.CodeBase
-                                            };
-                moduleInfo.DependsOn.AddRange(dependsOn);
-                return moduleInfo;
+                _moduleInfoBuilder = _moduleInfoBuilder ?? new ReflectionOnlyModuleInfoBuilder();
+                return _moduleInfoBuilder.BuildModuleInfo(type);
             }
         }
     }

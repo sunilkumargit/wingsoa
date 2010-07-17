@@ -44,25 +44,9 @@ namespace Wing.Client.Bootstrap
                         && !type.IsAbstract
                         && !type.IsGenericType))
                 {
-                    AddModule(moduleInfoBuilder.BuildFromType(moduleType));
+                    AddModule(moduleInfoBuilder.BuildModuleInfo(moduleType));
                 }
             }
         }
-    }
-
-    public class TestModule : IModule
-    {
-        #region IModule Members
-
-        public void Initialize()
-        {
-            ServiceLocator.Current.GetInstance<ILogger>().Log("module initialized", Category.Info, Priority.Low);
-        }
-
-
-        public void Initialized()
-        {
-        }
-        #endregion
     }
 }

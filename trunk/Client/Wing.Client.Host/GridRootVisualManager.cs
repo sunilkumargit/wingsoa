@@ -33,7 +33,7 @@ namespace Wing.Client.Host
         {
             foreach (var assetName in assetsNames)
             {
-                var resUri = new Uri(String.Format("/{0};component/{1}.xaml", assetName), UriKind.Relative);
+                var resUri = new Uri(String.Format("/{0};Component/{1}.xaml", assemblyName, assetName), UriKind.Relative);
                 var resDic = new ResourceDictionary();
                 resDic.Source = resUri;
                 Application.Current.Resources.MergedDictionaries.Add(resDic);

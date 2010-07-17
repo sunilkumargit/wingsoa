@@ -25,31 +25,15 @@ namespace Wing.Modularity
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public sealed class ModuleAttribute : Attribute
     {
-        /// <summary>
-        /// Gets or sets the name of the module.
-        /// </summary>
-        /// <value>The name of the module.</value>
-        public string ModuleName { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the module should be loaded at startup. 
-        /// </summary>
-        /// When <see langword="true"/> (default value), it indicates that this module should be loaded at startup. 
-        /// Otherwise you should explicitly load this module on demand.
-        /// <value>A <see cref="bool"/> value.</value>
-        [Obsolete("StartupLoaded has been replaced by the OnDemand property.")]
-        public bool StartupLoaded
+        public ModuleAttribute(String moduleName)
         {
-            get { return !OnDemand; }
-            set { OnDemand = !value; }
+            ModuleName = moduleName;
         }
 
-
         /// <summary>
-        /// Gets or sets the value indicating whether the module should be loaded OnDemand.
+        /// Gets the name of the module.
         /// </summary>
-        /// When <see langword="false"/> (default value), it indicates the module should be loaded as soon as it's dependencies are satisfied.
-        /// Otherwise you should explicitily load this module via the <see cref="ModuleManager"/>.
-        public bool OnDemand { get; set; }
+        /// <value>The name of the module.</value>
+        public string ModuleName { get; private set; }
     }
 }
