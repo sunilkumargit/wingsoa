@@ -39,7 +39,8 @@ namespace Wing.Client.Core
             _bootstrapSettings = new BootstrapSettings()
             {
                 ServerBaseAddress = CurrentApp.Host.GetBaseUrl(),
-                RootVisualManager = _rootVisualManager
+                RootVisualManager = _rootVisualManager,
+                Splash = _splash
             };
 
 #if !DEBUG
@@ -239,16 +240,23 @@ namespace Wing.Client.Core
         {
             _splash.DisplayMessage("Inicializando...");
             _splash.DisplayLoadingBar();
-
             var assemblies = new List<Assembly>();
-            foreach (var asmInfo in _assemblyInfo.Assemblies)
+            try
             {
-                var stream = new System.IO.MemoryStream(_store.GetAssemblyData(asmInfo.AssemblyName));
-                var part = new AssemblyPart();
-                var assembly = part.Load(stream);
-                assemblies.Add(assembly);
-                stream.Close();
-                stream.Dispose();
+                foreach (var asmInfo in _assemblyInfo.Assemblies)
+                {
+                    var stream = new System.IO.MemoryStream(_store.GetAssemblyData(asmInfo.AssemblyName));
+                    var part = new AssemblyPart();
+                    var assembly = part.Load(stream);
+                    assemblies.Add(assembly);
+                    stream.Close();
+                    stream.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                _splash.DisplayMessage("Ocorreu um erro ao carregar os arquivos: " + ex.Message);
+                return;
             }
 
             //set loaded assemblies in bootstrapp settings
@@ -260,6 +268,7 @@ namespace Wing.Client.Core
 
         void CreateBootstrapperAndRun()
         {
+            _splash.DisplayMessage("Carregando a interface do usuário...");
             //search for bootstrapper class in assemblies
             Type bootstrapperType = null;
             foreach (var assembly in _bootstrapSettings.Assemblies)

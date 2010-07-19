@@ -22,6 +22,7 @@ namespace Wing.Client
         public EntryPage()
         {
             InitializeComponent();
+            InitProgressBar.IsIndeterminate = true;
         }
 
         #region ISplashUI Members

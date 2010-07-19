@@ -71,9 +71,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShellModule.cs" />
+    <Compile Include="Views\IShellView.cs" />
+    <Compile Include="Views\IShellViewPresenter.cs" />
+    <Compile Include="Views\ShellController.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShellViewPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
@@ -104,7 +108,25 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Resource Include="Assets\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\option_arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp\finance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp\sales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp\bi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

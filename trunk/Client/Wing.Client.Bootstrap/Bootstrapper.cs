@@ -32,12 +32,15 @@ namespace Wing.Client.Bootstrap
 
         public void Run(BootstrapSettings settings)
         {
+            settings.Splash.DisplayMessage("Iniciando o bootstrapper...");
             var _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
             //registrar o ServiceLocator
             ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(() => _serviceLocator));
 
             //registrar o locator
             ServiceLocator.Current.Register<IServiceLocator>(_serviceLocator);
+
+            ServiceLocator.Current.Register<ISplashUI>(settings.Splash);
 
             //registrar o logger
             ServiceLocator.Current.Register<ILogger, DebugLogger>(true);
@@ -66,6 +69,7 @@ namespace Wing.Client.Bootstrap
 
 
             //carregar os modulos
+            settings.Splash.DisplayMessage("Carregando os módulos...");
             ServiceLocator.Current.GetInstance<IModuleManager>().Run();
         }
 

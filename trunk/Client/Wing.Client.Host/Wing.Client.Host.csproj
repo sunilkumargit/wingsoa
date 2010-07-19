@@ -54,6 +54,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -141,9 +143,10 @@
     <Content Include="Icons\Globe_48x48.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Splash\background.jpg" />
     <Resource Include="Splash\logo.png" />
     <Resource Include="Splash\loader.png" />
-    <Resource Include="Splash\background.jpg" />
+    <Resource Include="Splash\logocompany.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Wing.Utils.Silverlight\Wing.Utils.Silverlight.csproj">

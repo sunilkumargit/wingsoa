@@ -5,24 +5,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480">
-    <Grid x:Name="LayoutRoot">
-        <Grid.Background>
+
+    <Border CornerRadius="4" BorderBrush="LightBlue" BorderThickness="1" Padding="2,2,2,2">
+        <Border.Background>
             <ImageBrush Stretch="UniformToFill" 
                         ImageSource="Splash/Background.jpg">
             </ImageBrush>
-        </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*">
-            </RowDefinition>
-            <RowDefinition Height="250">
-            </RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0">
-            <Image Source="Splash/logo.png" Stretch="Uniform" Width="180" Height="90"></Image>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <TextBlock x:Name="StatusText" Text="Aguarde..." Foreground="White" Margin="6" FontWeight="Bold" TextAlignment="Center"></TextBlock>
-            <ProgressBar x:Name="InitProgressBar"  IsIndeterminate="True" Width="200" Height="12" Background="White" Foreground="Black"></ProgressBar>
-        </StackPanel>
-    </Grid>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*">
+                </RowDefinition>
+                <RowDefinition Height="0.65*">
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0">
+                <Image Source="Splash/logocompany.png" Stretch="None"></Image>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <TextBlock x:Name="StatusText" Text="Aguarde..." Foreground="White" Margin="6" FontWeight="Bold" TextAlignment="Center"></TextBlock>
+                <ProgressBar x:Name="InitProgressBar"  IsIndeterminate="False" Width="450" Height="16" Foreground="Navy"  Value="50" Background="White"></ProgressBar>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,10,10,10">
+                <Image Source="Splash/logo.png" Stretch="Uniform" Height="30"></Image>
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>

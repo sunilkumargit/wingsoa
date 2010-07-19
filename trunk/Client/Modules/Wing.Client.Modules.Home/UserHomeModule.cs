@@ -23,15 +23,17 @@ namespace Wing.Client.Modules.Home
         public void Initialize()
         {
             var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            var homeView = new HomeView();
-            ServiceLocator.Current.Register<HomeView>(homeView);
-            regionManager.RegisterViewWithRegion(RegionNames.ShellMainContent, () => homeView);
+            ServiceLocator.Current.Register<HomeView, HomeView>(true);
+            regionManager.RegisterViewWithRegion(RegionNames.ShellMainContent, () =>
+            {
+                return ServiceLocator.Current.GetInstance<HomeView>();
+            });
         }
 
         public void Initialized()
         {
-            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            regionManager.Regions[RegionNames.ShellMainContent].Activate(ServiceLocator.Current.GetInstance<HomeView>());
+//            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+//            regionManager.Regions[RegionNames.ShellMainContent].Activate(ServiceLocator.Current.GetInstance<HomeView>());
         }
     }
 }

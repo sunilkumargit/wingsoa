@@ -13,8 +13,9 @@ namespace Wing.Client.Sdk
 {
     public static class RegionNames
     {
-        public static readonly string ShellMainBar = "ShellMainBar";
-        public static readonly string ShellMainBarRight = "ShellMainBarRight";
-        public static readonly string ShellMainContent = "ShellMainContent";
+        public static string ShellOptionsBar { get { return "ShellOptionsBar"; } }
+        public static string ShellMainBar { get { return "ShellMainBar"; } }
+        public static string ShellToolsBar { get { return "ShellToolsBar"; } }
+        public static string ShellMainContent { get { return "ShellMainContent"; } }
     }
 }

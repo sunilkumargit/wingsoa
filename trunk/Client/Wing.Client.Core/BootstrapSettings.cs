@@ -19,5 +19,6 @@ namespace Wing.Client.Core
         public Uri SoaEndpointAddressServiceUri { get; set; }
         public IRootVisualManager RootVisualManager { get; set; }
         public List<Assembly> Assemblies { get; set; }
+        public ISplashUI Splash { get; set; }
     }
 }

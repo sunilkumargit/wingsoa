@@ -33,6 +33,12 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="1"/>
     </Style>
+     
+    <Style x:Key="LightToolbarSeparator" TargetType="Rectangle">
+        <Setter Property="Fill" Value="{StaticResource LightToolbarBorderColor}"/>
+        <Setter Property="Width" Value="1"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
+     </Style>
 
     <Style x:Key="PageSideBarTitle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource DarkGreenColor}"/>

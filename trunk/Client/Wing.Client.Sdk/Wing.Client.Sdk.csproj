@@ -59,7 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlHelper.cs" />
+    <Compile Include="Controls\Toolbar.xaml.cs">
+      <DependentUpon>Toolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToolButton.xaml.cs">
+      <DependentUpon>ToolButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Events\UserLoginEvent.cs" />
+    <Compile Include="IShellService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Events\UserLoginEventArgs.cs" />
     <Compile Include="RegionNames.cs" />
@@ -87,7 +94,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <Page Include="Controls\Toolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ToolButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
