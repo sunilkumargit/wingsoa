@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Client.Core;
 using Wing.Client.Host;
+using System.Threading;
 
 namespace Wing.Client
 {
@@ -33,7 +34,7 @@ namespace Wing.Client
             var splashUi = new EntryPage();
             rootVisual.Children.Add(splashUi);
             var starter = new ApplicationStarter(splashUi, new GridRootVisualManager(rootVisual));
-            QuotaIncreaseWindow.CheckQuotaSize(() => { starter.Run(); });
+            QuotaIncreaseWindow.CheckQuotaSize(() => starter.Run());
         }
 
         private void Application_Exit(object sender, EventArgs e)

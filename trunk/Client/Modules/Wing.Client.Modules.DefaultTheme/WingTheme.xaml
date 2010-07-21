@@ -7,7 +7,9 @@
     Brushes
     
     -->
-    
+
+    <Color x:Key="WindowBorderBackgroundColor">Navy</Color>
+    <Color x:Key="WindowTitleForegroundColor">White</Color>
     <Color x:Key="DarkGreenColor">#FF07721C</Color>
     <Color x:Key="LightToolbarBorderColor">#FF94C6F3</Color>
 
@@ -18,11 +20,31 @@
         <GradientStop Color="#FFD2E5FD" Offset="0.396"/>
     </LinearGradientBrush>
 
+    <SolidColorBrush x:Key="WindowBorderBackgroundBrush" Color="{StaticResource WindowBorderBackgroundColor}"/>
+
     <!--
     
     Basic controls    
     
     -->
+    <Style x:Key="WindowBorder" TargetType="Border">
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <SolidColorBrush Color="{StaticResource WindowBorderBackgroundColor}"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="{StaticResource LightToolbarBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="CornerRadius" Value="0"/>
+    </Style>
+    
+    <Style x:Key="WindowTitle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Trebuchet MS"/>
+        <Setter Property="Foreground" Value="{StaticResource WindowTitleForegroundColor}"/>
+    </Style>
+
+
     <Style x:Key="LightToolbarBorder" TargetType="Border">
         <Setter Property="BorderBrush">
             <Setter.Value>

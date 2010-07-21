@@ -7,6 +7,7 @@ using System.IO.IsolatedStorage;
 using System.Windows;
 using System.Net;
 using Wing.Utils;
+using System.Threading;
 
 namespace Wing.Client.Core
 {
@@ -28,6 +29,12 @@ namespace Wing.Client.Core
             _splash = splashUI;
             _startActions = new List<Action>();
             _rootVisualManager = rootVisualManager;
+            _bootstrapSettings = new BootstrapSettings()
+            {
+                ServerBaseAddress = CurrentApp.Host.GetBaseUrl(),
+                RootVisualManager = _rootVisualManager,
+                Splash = _splash
+            };
         }
 
         private Application CurrentApp { get { return Application.Current; } }
@@ -35,13 +42,6 @@ namespace Wing.Client.Core
         public void Run()
         {
             _store = new ClientAssemblyStore();
-
-            _bootstrapSettings = new BootstrapSettings()
-            {
-                ServerBaseAddress = CurrentApp.Host.GetBaseUrl(),
-                RootVisualManager = _rootVisualManager,
-                Splash = _splash
-            };
 
 #if !DEBUG
             _startActions.Add(CheckForUpdates);
@@ -77,12 +77,17 @@ namespace Wing.Client.Core
                     //unregister this event from app
                     CurrentApp.CheckAndDownloadUpdateCompleted -= downloadUpdateCompleted;
 
-                    // if a update is available, notify the user don't perform any subsequent action.
+                    // if a update is available, notify the user and don't perform any subsequent action.
                     if (args.UpdateAvailable)
                     {
                         _splash.HideProgressBar();
                         MessageBox.Show("A aplicacação foi atualizada para uma nova versão. Por favor, reinicie o aplicativo.", "Atualização", MessageBoxButton.OK);
                         _splash.DisplayMessage("Aplicação foi atualizada. Reinicie por favor.");
+                        Helper.DelayExecution(TimeSpan.FromSeconds(5), new Func<bool>(() =>
+                        {
+                            Application.Current.MainWindow.Close();
+                            return false;
+                        }));
                     }
 
                     // check if the version of silverlight is compatible with update, if not, notify user and stop start process.
@@ -289,11 +294,13 @@ namespace Wing.Client.Core
                 return;
             }
 
-            // instantiate the bootstrapper class
-            var bootstrapperInstance = (IBootstrapper)Activator.CreateInstance(bootstrapperType);
-
-            // and run
-            bootstrapperInstance.Run(_bootstrapSettings);
+            ThreadPool.QueueUserWorkItem((state) =>
+            {
+                // instantiate the bootstrapper class
+                var bootstrapperInstance = (IBootstrapper)Activator.CreateInstance(bootstrapperType);
+                // and run
+                bootstrapperInstance.Run(_bootstrapSettings);
+            });
         }
 
         void CheckQuotaSize()

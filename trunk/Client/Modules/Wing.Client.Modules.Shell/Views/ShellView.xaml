@@ -7,80 +7,98 @@
     xmlns:wsdk="clr-namespace:Wing.Client.Sdk;assembly=Wing.Client.Sdk"
     xmlns:wingcontrols="clr-namespace:Wing.Client.Sdk.Controls;assembly=Wing.Client.Sdk"
     mc:Ignorable="d"
-    MinWidth="800" MinHeight="600">
+    d:DesignWidth="800" d:DesignHeight="600">
 
-    <Grid x:Name="LayoutRoot" Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="22"/>
-        </Grid.RowDefinitions>
-        <Grid>
+    <Border Style="{StaticResource WindowBorder}">
+        <Grid x:Name="LayoutRoot" Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="22" />
-                <RowDefinition Height="34" />
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="22"/>
             </Grid.RowDefinitions>
-            <wingcontrols:Toolbar BarStyle="{StaticResource LightToolbarBorder}">
-                <wingcontrols:Toolbar.LeftItems>
-                    <TextBlock Foreground="DarkBlue" Text="Vendas > Pedido de Venda > Pesquisar" Margin="3,0,0,0"/>
-                </wingcontrols:Toolbar.LeftItems>
-                <wingcontrols:Toolbar.RightItems>
-                    <ItemsControl wingp:RegionManager.RegionName="ShellOptionsBar">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="[2000 - Empresa XYZ]" ImageAlign="Right" TitleFontSize="10"/>
-                        <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="01/08/2010" ImageAlign="Right" TitleFontSize="10"/>
-                        <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="[Usuário]" ImageAlign="Right" TitleFontSize="10"/>
-                    </ItemsControl>
-                </wingcontrols:Toolbar.RightItems>
-            </wingcontrols:Toolbar>
-            <wingcontrols:Toolbar BarStyle="{StaticResource LightToolbarBorder}" Grid.Row="1">
-                <wingcontrols:Toolbar.LeftItems>
-                    <wingcontrols:ToolButton ImageSource="../Assets/back.png"/>
-                    <wingcontrols:ToolButton ImageSource="../Assets/home.png"/>
-                    <Rectangle Style="{StaticResource LightToolbarSeparator}"/>
-                    <ItemsControl wingp:RegionManager.RegionName="ShellMainBar">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <wingcontrols:ToolButton ImageSource="../temp/bi.png" Title="Business Intelligence"/>
-                        <wingcontrols:ToolButton ImageSource="../temp/finance.png" Title="Finanças"/>
-                        <wingcontrols:ToolButton ImageSource="../temp/sales.png" Title="Vendas"/>
-                    </ItemsControl>
-                </wingcontrols:Toolbar.LeftItems>
-                <wingcontrols:Toolbar.RightItems>
-                    <ItemsControl wingp:RegionManager.RegionName="ShellToolsBar">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <wingcontrols:ToolButton ImageSource="../temp/chat.png"/>
-                    </ItemsControl>
-                </wingcontrols:Toolbar.RightItems>
-            </wingcontrols:Toolbar>
-        </Grid>
-        <Grid Grid.Row="1" x:Name="MainContent" Margin="0" Visibility="Visible">
-            <ContentControl wingp:RegionManager.RegionName="ShellMainContent" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
-            </ContentControl>
-        </Grid>
-        <Border Style="{StaticResource LightToolbarBorder}" Grid.Row="2">
-            <Grid Background="{StaticResource LightToolbarBrush}">
+            <Grid Background="{StaticResource WindowBorderBackgroundBrush}">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition Width="200"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Pronto" VerticalAlignment="Center" Margin="5" x:Name="StatusText"/>
-                <ProgressBar Margin="3,3,3,3" Grid.Column="1" HorizontalAlignment="Stretch" Value="50" Foreground="DarkGreen" x:Name="StatusProgress"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+                    <TextBlock Text="FlexWeb Applications - Empflex software ltda"  Style="{StaticResource WindowTitle}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0">
+                    <wingcontrols:ToolButton ImageSource="../Assets/window_minimize.png" OnButtonClick="Minimize_OnButtonClick"/>
+                    <wingcontrols:ToolButton ImageSource="../Assets/window_maximize.png" OnButtonClick="MaximizeButton_OnButtonClick"  x:Name="MaximizeButton"/>
+                    <wingcontrols:ToolButton ImageSource="../Assets/window_restore.png" OnButtonClick="RestoreButton_OnButtonClick"  x:Name="RestoreButton"/>
+                    <wingcontrols:ToolButton ImageSource="../Assets/window_close.png" OnButtonClick="Close_OnButtonClick"/>
+                </StackPanel>
             </Grid>
-        </Border>
-    </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22" />
+                    <RowDefinition Height="34" />
+                </Grid.RowDefinitions>
+                <wingcontrols:Toolbar BarStyle="{StaticResource LightToolbarBorder}">
+                    <wingcontrols:Toolbar.LeftItems>
+                        <TextBlock Foreground="DarkBlue" Text="Business Intelligence > Home" Margin="3,0,0,0"/>
+                    </wingcontrols:Toolbar.LeftItems>
+                    <wingcontrols:Toolbar.RightItems>
+                        <ItemsControl wingp:RegionManager.RegionName="ShellOptionsBar">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="[2000 - Empresa XYZ]" ImageAlign="Right" TitleFontSize="10"/>
+                            <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="01/08/2010" ImageAlign="Right" TitleFontSize="10"/>
+                            <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="[Usuário]" ImageAlign="Right" TitleFontSize="10"/>
+                        </ItemsControl>
+                    </wingcontrols:Toolbar.RightItems>
+                </wingcontrols:Toolbar>
+                <wingcontrols:Toolbar BarStyle="{StaticResource LightToolbarBorder}" Grid.Row="1">
+                    <wingcontrols:Toolbar.LeftItems>
+                        <wingcontrols:ToolButton ImageSource="../Assets/back.png"/>
+                        <wingcontrols:ToolButton ImageSource="../Assets/home.png"/>
+                        <Rectangle Style="{StaticResource LightToolbarSeparator}"/>
+                        <ItemsControl wingp:RegionManager.RegionName="ShellMainBar">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <wingcontrols:ToolButton ImageSource="../temp/bi.png" Title="Business Intelligence"/>
+                            <wingcontrols:ToolButton ImageSource="../temp/finance.png" Title="Finanças"/>
+                            <wingcontrols:ToolButton ImageSource="../temp/sales.png" Title="Vendas"/>
+                        </ItemsControl>
+                    </wingcontrols:Toolbar.LeftItems>
+                    <wingcontrols:Toolbar.RightItems>
+                        <ItemsControl wingp:RegionManager.RegionName="ShellToolsBar">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <wingcontrols:ToolButton ImageSource="../temp/chat.png"/>
+                        </ItemsControl>
+                    </wingcontrols:Toolbar.RightItems>
+                </wingcontrols:Toolbar>
+            </Grid>
+            <Grid Grid.Row="2" x:Name="MainContent" Margin="0" Visibility="Visible">
+                <ContentControl wingp:RegionManager.RegionName="ShellMainContent" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                </ContentControl>
+            </Grid>
+            <Border Style="{StaticResource LightToolbarBorder}" Grid.Row="3">
+                <Grid Background="{StaticResource LightToolbarBrush}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Pronto" VerticalAlignment="Center" Margin="5" x:Name="StatusText"/>
+                    <ProgressBar Margin="3,3,3,3" Grid.Column="1" HorizontalAlignment="Stretch" Value="50" Foreground="DarkGreen" x:Name="StatusProgress"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
 </UserControl>
 
     

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\Temp\wingpublish" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="bin/Wing.Server.Host.pdb" publishTime="07/19/2010 03:56:47" />
+  <publishProfile publishUrl="C:\Temp\wingpublish" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Wing.Server.Host.pdb" publishTime="07/21/2010 09:26:31" />
     <file relUrl="bin/System.Web.Mvc.dll" publishTime="02/17/2010 09:24:14" />
     <file relUrl="Content/Scripts/Silverlight.js" publishTime="06/29/2010 22:37:42" />
     <file relUrl="Views/Shared/WingLoader.aspx" publishTime="07/06/2010 23:13:53" />
-    <file relUrl="bin/Wing.Server.Host.dll" publishTime="07/19/2010 03:56:47" />
-    <file relUrl="bin/Wing.Server.Core.pdb" publishTime="07/19/2010 03:56:44" />
+    <file relUrl="bin/Wing.Server.Host.dll" publishTime="07/21/2010 09:26:31" />
+    <file relUrl="bin/Wing.Server.Core.pdb" publishTime="07/20/2010 17:41:55" />
     <file relUrl="Web.config" publishTime="07/19/2010 03:40:21" />
     <file relUrl="Views/Web.config" publishTime="07/09/2010 02:20:10" />
-    <file relUrl="bin/Wing.Server.Core.dll" publishTime="07/19/2010 03:56:44" />
+    <file relUrl="bin/Wing.Server.Core.dll" publishTime="07/20/2010 17:41:56" />
     <file relUrl="Global.asax" publishTime="07/01/2010 14:08:30" />
-    <file relUrl="ClientBin/Wing.Client.xap" publishTime="07/19/2010 04:01:48" />
+    <file relUrl="ClientBin/Wing.Client.xap" publishTime="07/21/2010 09:26:31" />
     <file relUrl="Default.aspx" publishTime="07/01/2010 14:24:36" />
     <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/17/2010 09:22:24" />
   </publishProfile>

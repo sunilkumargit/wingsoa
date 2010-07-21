@@ -25,19 +25,31 @@ namespace Wing.Client.Host
 
         public void SetRootElement(UIElement element)
         {
-            _grid.Children.RemoveAt(0);
-            _grid.Children.Add(element);
+            _grid.Dispatcher.BeginInvoke(() =>
+            {
+                while (_grid.Children.Count > 0)
+                    _grid.Children.RemoveAt(0);
+                _grid.Children.Add(element);
+            });
         }
 
         public void AddResourceDictionary(String assemblyName, params String[] assetsNames)
         {
-            foreach (var assetName in assetsNames)
+            Dispatch(() =>
             {
-                var resUri = new Uri(String.Format("/{0};Component/{1}.xaml", assemblyName, assetName), UriKind.Relative);
-                var resDic = new ResourceDictionary();
-                resDic.Source = resUri;
-                Application.Current.Resources.MergedDictionaries.Add(resDic);
-            }
+                foreach (var assetName in assetsNames)
+                {
+                    var resUri = new Uri(String.Format("/{0};Component/{1}.xaml", assemblyName, assetName), UriKind.Relative);
+                    var resDic = new ResourceDictionary();
+                    resDic.Source = resUri;
+                    Application.Current.Resources.MergedDictionaries.Add(resDic);
+                }
+            });
+        }
+
+        public void Dispatch(Action action)
+        {
+            _grid.Dispatcher.BeginInvoke(() => action());
         }
         #endregion
     }

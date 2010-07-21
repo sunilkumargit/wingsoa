@@ -128,6 +128,20 @@
   <ItemGroup>
     <Resource Include="temp\bi.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="temp\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\window_close.png" />
+    <Resource Include="Assets\window_maximize.png" />
+    <Resource Include="Assets\window_minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\window_restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\settings.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

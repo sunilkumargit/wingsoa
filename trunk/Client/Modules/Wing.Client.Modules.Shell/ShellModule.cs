@@ -34,17 +34,26 @@ namespace Wing.Client.Modules.Shell
             ServiceLocator.Current.Register<IShellViewPresenter, ShellViewPresenter>(true);
             ServiceLocator.Current.Register<ShellController, ShellController>(true);
 
-            var controller = ServiceLocator.Current.GetInstance<ShellController>();
+            var visualManager = ServiceLocator.Current.GetInstance<IRootVisualManager>();
 
-            //setar o shell view como main view
-            ServiceLocator.Current.GetInstance<IRootVisualManager>().SetRootElement((UIElement)
-                ServiceLocator.Current.GetInstance<IShellView>());
+            visualManager.Dispatch(() =>
+            {
+                var controller = ServiceLocator.Current.GetInstance<ShellController>();
+                //setar o shell view como main view
+                ServiceLocator.Current.GetInstance<IRootVisualManager>().SetRootElement((UIElement)
+                    ServiceLocator.Current.GetInstance<IShellView>());
+            });
+
         }
 
         public void Initialized()
         {
-            if (Application.Current.IsRunningOutOfBrowser)
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            ServiceLocator.Current.GetInstance<IRootVisualManager>().Dispatch(() =>
+            {
+                if (Application.Current.IsRunningOutOfBrowser)
+                    Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            });
+
         }
 
         #endregion

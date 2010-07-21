@@ -1,7 +1,7 @@
-<OutOfBrowserSettings ShortName="Wing Applications Client" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
-  <OutOfBrowserSettings.Blurb>Wing Applications Client</OutOfBrowserSettings.Blurb>
+<OutOfBrowserSettings ShortName="FlexWeb Applications" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>FlexWeb Applications Client</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="Wing Applications Client" Height="375" Width="500" />
+    <WindowSettings Title="FlexWeb Applications Client" Height="600" Width="800" WindowStyle="BorderlessRoundCornersWindow" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />
