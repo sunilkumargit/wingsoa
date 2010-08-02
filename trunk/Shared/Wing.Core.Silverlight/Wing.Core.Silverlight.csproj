@@ -174,6 +174,27 @@
     <Compile Include="..\..\Shared\Wing.Core\Modularity\ModuleTypeLoadingException.cs">
       <Link>Modularity\ModuleTypeLoadingException.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\IEntityStore.cs">
+      <Link>EntityStore\IEntityStore.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\IEntityStoreCriteria.cs">
+      <Link>EntityStore\IEntityStoreCriteria.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\IStoreEntity.cs">
+      <Link>EntityStore\IStoreEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\PersistentMemberAttribute.cs">
+      <Link>EntityStore\PersistentMemberAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\StoreEntityBase.cs">
+      <Link>EntityStore\StoreEntityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\StoreEntityPropertyMetadata.cs">
+      <Link>EntityStore\StoreEntityPropertyMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\StoreEntityTypeMetadata.cs">
+      <Link>EntityStore\StoreEntityTypeMetadata.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Core\Logging\DebugLogger.cs">
       <Link>DebugLogger.cs</Link>
     </Compile>

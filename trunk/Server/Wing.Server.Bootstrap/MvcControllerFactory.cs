@@ -9,12 +9,13 @@ using Wing.Modularity;
 using System.Configuration;
 using Wing.Events;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Wing.Server.Bootstrap
 {
     public class MvcControllerFactory : DefaultControllerFactory
     {
-        protected override Type GetControllerType(System.Web.Routing.RequestContext requestContext, string controllerName)
+        protected override Type GetControllerType(RequestContext requestContext, string controllerName)
         {
             var controllerTypeLocator = ServiceLocator.Current.GetInstance<IMvcControllerTypeLocator>();
             return controllerTypeLocator.GetControllerType(controllerName)

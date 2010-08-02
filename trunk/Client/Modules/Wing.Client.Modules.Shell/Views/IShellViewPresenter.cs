@@ -5,6 +5,6 @@ namespace Wing.Client.Modules.Shell.Views
     {
         IShellView View { get; }
 
-        public event EventHandler OnNavigateBack;
+        event EventHandler OnNavigateBack;
     }
 }

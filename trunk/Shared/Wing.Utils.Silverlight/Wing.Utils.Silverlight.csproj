@@ -67,14 +67,56 @@
     <Compile Include="..\Wing.Utils\Assert.cs">
       <Link>Assert.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Utils\CollectionUtils.cs">
+      <Link>CollectionUtils.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Utils\ComparerDelegate.cs">
       <Link>ComparerDelegate.cs</Link>
     </Compile>
     <Compile Include="..\Wing.Utils\Converter.cs">
       <Link>Converter.cs</Link>
     </Compile>
-    <Compile Include="..\Wing.Utils\EqualityComparerDelegate.cs">
-      <Link>EqualityComparerDelegate.cs</Link>
+    <Compile Include="..\Wing.Utils\ConvertUtils.cs">
+      <Link>ConvertUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\CryptoUtils.cs">
+      <Link>CryptoUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\DateTimeUtils.cs">
+      <Link>DateTimeUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\FormatUtils.cs">
+      <Link>FormatUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\IUnitConverter.cs">
+      <Link>IUnitConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\MatchUtils.cs">
+      <Link>MatchUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\MathUtils.cs">
+      <Link>MathUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\RandomUtils.cs">
+      <Link>RandomUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\ReflectionUtils.cs">
+      <Link>ReflectionUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\StringUtils.cs">
+      <Link>StringUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\UnitConverter.cs">
+      <Link>UnitConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\UnitsUtils.cs">
+      <Link>UnitsUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\UnitTranslator.cs">
+      <Link>UnitTranslator.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Utils\UnitType.cs">
+      <Link>UnitType.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

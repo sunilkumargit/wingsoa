@@ -142,18 +142,34 @@ namespace Wing.Modularity
             private IEnumerable<ModuleInfo> GetNotAllreadyLoadedModuleInfos(DirectoryInfo directory, Type IModuleType)
             {
                 Assembly[] alreadyLoadedAssemblies = AppDomain.CurrentDomain.ReflectionOnlyGetAssemblies();
-                return directory.GetFiles("*.dll")
+                var assemblies = directory
+                    .GetFiles("*.dll")
                     .Where(file => alreadyLoadedAssemblies
                                        .FirstOrDefault(
                                        assembly =>
                                        String.Compare(Path.GetFileName(assembly.Location), file.Name,
-                                                      StringComparison.OrdinalIgnoreCase) == 0) == null)
-                    .SelectMany(file => Assembly.ReflectionOnlyLoadFrom(file.FullName)
-                                            .GetExportedTypes()
+                                                      StringComparison.OrdinalIgnoreCase) == 0) == null);
+
+                var result = new List<ModuleInfo>();
+                foreach (var asmFileInfo in assemblies)
+                {
+                    Assembly assembly = null;
+                    try
+                    {
+                        assembly = Assembly.ReflectionOnlyLoadFrom(asmFileInfo.FullName);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                    result.AddRange(assembly.GetExportedTypes()
                                             .Where(IModuleType.IsAssignableFrom)
                                             .Where(t => t != IModuleType)
                                             .Where(t => !t.IsAbstract)
                                             .Select(type => CreateModuleInfo(type)));
+                }
+
+                return result;
             }
 
             private Assembly OnReflectionOnlyResolve(ResolveEventArgs args, DirectoryInfo directory)

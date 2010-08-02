@@ -10,12 +10,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wing.Core</RootNamespace>
     <AssemblyName>Wing.Core</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityStore\IEntityStoreCriteria.cs" />
+    <Compile Include="EntityStore\IEntityStore.cs" />
+    <Compile Include="EntityStore\IStoreEntity.cs" />
+    <Compile Include="EntityStore\PersistentMemberAttribute.cs" />
+    <Compile Include="EntityStore\StoreEntityBase.cs" />
+    <Compile Include="EntityStore\StoreEntityPropertyMetadata.cs" />
+    <Compile Include="EntityStore\StoreEntityTypeMetadata.cs" />
     <Compile Include="Events\BackgroundEventSubscription.cs" />
     <Compile Include="Events\DataEventArgs.cs" />
     <Compile Include="Events\DelegateReference.cs" />
@@ -136,6 +144,7 @@
       <Name>Wing.Utils</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

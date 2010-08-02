@@ -20,5 +20,8 @@ namespace Wing.Client.Modules.Shell.Views
         {
             View = view;
         }
+
+
+        public event EventHandler OnNavigateBack;
     }
 }

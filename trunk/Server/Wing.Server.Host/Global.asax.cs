@@ -35,9 +35,10 @@ namespace Wing.Server.Host
             var basePath = Server.MapPath("~");
             settings.ServerAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerAssemblyStorePath"]));
             settings.ClientAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ClientAssemblyStorePath"]));
+            settings.ServerDataBasePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerDataBasePath"]));
 
             PrepareServerAssemblyStore(settings);
-            CreateServerBootstrapper(settings);
+            CreateServerBootstrapperAndRun(settings);
         }
 
         private void PrepareServerAssemblyStore(BootstrapSettings settings)
@@ -47,7 +48,7 @@ namespace Wing.Server.Host
             assemblyStore.ConsolidateStore();
         }
 
-        private void CreateServerBootstrapper(BootstrapSettings settings)
+        private void CreateServerBootstrapperAndRun(BootstrapSettings settings)
         {
             //criar um AssemblyResolver
             var resolver = new StoreAssemblyResolver(settings.ServerAssemblyStorePath, null);

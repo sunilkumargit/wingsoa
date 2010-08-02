@@ -66,7 +66,7 @@ namespace Wing.Server.Core
 
             if (!File.Exists(assemblyUri.LocalPath))
             {
-                throw new FileNotFoundException();
+                return;
             }
 
             AssemblyName assemblyName = AssemblyName.GetAssemblyName(assemblyUri.LocalPath);
