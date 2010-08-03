@@ -126,15 +126,20 @@ namespace Wing.Utils
                 | BindingFlags.FlattenHierarchy);
         }
 
-        public static Object ReadProperty(Object instance, String propertyName)
+        public static Object ReadProperty(Object instance, String propertyName, BindingFlags extraBindings)
         {
             return ReflectionUtils.InvokeMember(instance.GetType(), propertyName, instance,
-                BindingFlags.GetProperty | BindingFlags.Public | BindingFlags.Instance);
+                BindingFlags.GetProperty | BindingFlags.Public | BindingFlags.Instance | extraBindings);
         }
 
         public static TResultType ReadProperty<TResultType>(Object instance, String propertyName)
         {
-            return ConvertUtils.Coerce<TResultType>(ReadProperty(instance, propertyName));
+            return ConvertUtils.Coerce<TResultType>(ReadProperty(instance, propertyName, BindingFlags.Default));
+        }
+
+        public static TResultType ReadProperty<TResultType>(Object instance, String propertyName, BindingFlags extraBindings)
+        {
+            return ConvertUtils.Coerce<TResultType>(ReadProperty(instance, propertyName, extraBindings));
         }
 
         public static Object InvokeMember(Type type, String memberName, Object target, BindingFlags flags, params object[] args)
@@ -155,10 +160,15 @@ namespace Wing.Utils
             WriteProperty(instance, propertyName, ConvertUtils.Coerce(value, prop.PropertyType));
         }
 
-        public static TResultType InvokeMethod<TResultType>(Object instance, String methodName, params object[] args)
+        public static TResultType InvokeMethod<TResultType>(Object instance, String methodName, BindingFlags extraBindings, params object[] args)
         {
             return (TResultType)ReflectionUtils.InvokeMember(instance.GetType(), methodName, instance,
-                BindingFlags.Public | BindingFlags.Instance | BindingFlags.InvokeMethod, args);
+                BindingFlags.Public | BindingFlags.Instance | BindingFlags.InvokeMethod | extraBindings, args);
+        }
+
+        public static TResultType InvokeMethod<TResultType>(Object instance, String methodName, params object[] args)
+        {
+            return InvokeMethod<TResultType>(instance, methodName, BindingFlags.Default, args);
         }
 
         public static Object InvokeDefaultConstructor(Type type)

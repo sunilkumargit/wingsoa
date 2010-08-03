@@ -28,7 +28,13 @@ namespace Wing.Server.Modules.ServerStorage
 
             ServiceLocator.Current.Register<IServerEntityStoreService>(serverStorage);
 
+            // salvar uma entidade aqui para forçar a primeira conexão com o banco de dados
             serverStorage.Save(new ServerStoreTrace() { Date = DateTime.Now, DBPath = dbPath });
+
+            var query = serverStorage.CreateQuery<ServerStoreTrace>();
+            query.AddOrderDesc("Date");
+            var items = query.Find();
+            items.Clear();
         }
 
         public void Initialized()

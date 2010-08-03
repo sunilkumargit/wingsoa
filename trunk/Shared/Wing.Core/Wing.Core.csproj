@@ -50,8 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityStore\IEntityStoreCriteria.cs" />
+    <Compile Include="EntityStore\ComparisonType.cs" />
+    <Compile Include="EntityStore\DefaultStoreFilter.cs" />
+    <Compile Include="EntityStore\DefaultStoreOrder.cs" />
+    <Compile Include="EntityStore\EntityStoreQueryBase.cs" />
+    <Compile Include="EntityStore\IEntityStoreQuery.cs" />
     <Compile Include="EntityStore\IEntityStore.cs" />
+    <Compile Include="EntityStore\IEntityStoreFilter.cs" />
+    <Compile Include="EntityStore\IEntityStoreOrder.cs" />
     <Compile Include="EntityStore\IStoreEntity.cs" />
     <Compile Include="EntityStore\PersistentMemberAttribute.cs" />
     <Compile Include="EntityStore\StoreEntityBase.cs" />

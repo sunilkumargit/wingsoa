@@ -7,17 +7,12 @@ namespace Wing.EntityStore
 {
     public class StoreEntityBase : IStoreEntity
     {
-        private Guid _instanceid = Guid.Empty;
+        private Guid _instanceid = Guid.NewGuid();
 
         public Guid InstanceId
         {
             [System.Diagnostics.DebuggerStepThrough]
-            get
-            {
-                if (_instanceid == Guid.Empty)
-                    _instanceid = Guid.NewGuid();
-                return _instanceid;
-            }
+            get { return _instanceid; }
         }
     }
 }

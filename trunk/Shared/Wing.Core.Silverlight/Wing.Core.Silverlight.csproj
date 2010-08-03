@@ -174,11 +174,29 @@
     <Compile Include="..\..\Shared\Wing.Core\Modularity\ModuleTypeLoadingException.cs">
       <Link>Modularity\ModuleTypeLoadingException.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\ComparisonType.cs">
+      <Link>EntityStore\ComparisonType.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\DefaultStoreFilter.cs">
+      <Link>EntityStore\DefaultStoreFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\DefaultStoreOrder.cs">
+      <Link>EntityStore\DefaultStoreOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\EntityStoreQueryBase.cs">
+      <Link>EntityStore\EntityStoreQueryBase.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Core\EntityStore\IEntityStore.cs">
       <Link>EntityStore\IEntityStore.cs</Link>
     </Compile>
-    <Compile Include="..\Wing.Core\EntityStore\IEntityStoreCriteria.cs">
-      <Link>EntityStore\IEntityStoreCriteria.cs</Link>
+    <Compile Include="..\Wing.Core\EntityStore\IEntityStoreFilter.cs">
+      <Link>EntityStore\IEntityStoreFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\IEntityStoreOrder.cs">
+      <Link>EntityStore\IEntityStoreOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Core\EntityStore\IEntityStoreQuery.cs">
+      <Link>EntityStore\IEntityStoreQuery.cs</Link>
     </Compile>
     <Compile Include="..\Wing.Core\EntityStore\IStoreEntity.cs">
       <Link>EntityStore\IStoreEntity.cs</Link>

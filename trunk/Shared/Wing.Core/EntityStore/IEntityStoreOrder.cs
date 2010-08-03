@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Wing.EntityStore
 {
-    public interface IEntityStoreCriteria
+    public interface IEntityStoreOrder
     {
+        String PropertyName { get; set; }
+        bool Desc { get; set; }
     }
 }

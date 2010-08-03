@@ -11,6 +11,9 @@ using Wing.ServiceLocation;
 using Wing.Logging;
 using NHibernate;
 using Wing.Utils;
+using NHibernate.Tool.hbm2ddl;
+using NHibernate.Criterion;
+using System.Collections;
 
 namespace Wing.Server.Modules.ServerStorage
 {
@@ -91,19 +94,24 @@ namespace Wing.Server.Modules.ServerStorage
                 var dialect = NHibernate.Dialect.Dialect.GetDialect(_cfg.Properties);
                 if (dialect != null)
                 {
-                    var _session = _sessionFactory.OpenSession();
+                    var connection = new SqlCeConnection(ConnectionString);
                     try
                     {
-                        var commands = _cfg.GenerateSchemaUpdateScript(dialect, new NHibernate.Tool.hbm2ddl.DatabaseMetadata(
-                            (System.Data.Common.DbConnection)_session.Connection, dialect));
+                        connection.Open();
+                        var commands = _cfg.GenerateSchemaUpdateScript(dialect, new DatabaseMetadata(connection, dialect));
 
                         foreach (var cmd in commands)
                         {
-                            var cmdQuery = _session.CreateSQLQuery(cmd);
-                            cmdQuery.ExecuteUpdate();
+                            var dbCmd = connection.CreateCommand();
+                            dbCmd.CommandText = cmd;
+                            dbCmd.ExecuteNonQuery();
+                            dbCmd.Dispose();
                         }
                     }
-                    finally { _session.Close(); }
+                    finally
+                    {
+                        connection.Dispose();
+                    }
                 }
             }
             catch (System.Exception ex)
@@ -122,8 +130,9 @@ namespace Wing.Server.Modules.ServerStorage
             _cfg = null;
         }
 
-        private void ExecuteSession(Action<ISession> action)
+        private TResult Execute<TResult>(Func<ISession, TResult> action)
         {
+            TResult result = default(TResult);
             Sync(() =>
             {
                 if (_sessionFactory == null)
@@ -132,7 +141,7 @@ namespace Wing.Server.Modules.ServerStorage
                 var session = _sessionFactory.OpenSession();
                 try
                 {
-                    action(session);
+                    result = action(session);
                 }
                 finally
                 {
@@ -140,6 +149,7 @@ namespace Wing.Server.Modules.ServerStorage
                     session.Close();
                 }
             });
+            return result;
         }
 
         private string GetHBMappingXml(StoreEntityTypeMetadata entityMeta)
@@ -174,68 +184,126 @@ namespace Wing.Server.Modules.ServerStorage
             RegisterEntity(typeof(TEntityType));
         }
 
-        public object Get(Type entityType, Guid entityId)
+        public bool Save(params IStoreEntity[] entity)
         {
-            throw new NotImplementedException();
+            return Execute<bool>((session) =>
+            {
+                foreach (var instance in entity)
+                    session.Save(instance);
+                return true;
+            });
         }
 
         public TEntityType Get<TEntityType>(Guid entityId) where TEntityType : IStoreEntity
         {
-            throw new NotImplementedException();
-        }
-
-        public IEntityStoreCriteria CreateCriteria(Type entityType)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEntityStoreCriteria CreateCriteria<TEntityType>() where TEntityType : IStoreEntity
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<object> Find(object entityType, IEntityStoreCriteria criteria, int maxResults)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<object> Find(object entityType, IEntityStoreCriteria criteria)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<TEntityType> Find<TEntityType>(IEntityStoreCriteria criteria, int maxResults) where TEntityType : IStoreEntity
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<TEntityType> Find<TEntityType>(IEntityStoreCriteria criteria) where TEntityType : IStoreEntity
-        {
-            throw new NotImplementedException();
-        }
-
-        public object FindFirst(object entityType, IEntityStoreCriteria criteria)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TEntityType FindFirst<TEntityType>(IEntityStoreCriteria criteria) where TEntityType : IStoreEntity
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Save(params IStoreEntity[] entity)
-        {
-            ExecuteSession((session) =>
+            return Execute<TEntityType>((session) =>
             {
-                session.Save(entity);
+                return session.Get<TEntityType>(entityId);
             });
-            return true;
+        }
+
+        public object Get(Type entityType, Guid entityId)
+        {
+            return Execute<Object>((session) =>
+            {
+                return session.Get(entityType, entityId);
+            });
+        }
+
+        public IEntityStoreQuery CreateQuery(Type entityType)
+        {
+            return new NHibernateStoreQuery(entityType, this);
+        }
+
+        public IEntityStoreQuery<TEntityType> CreateQuery<TEntityType>() where TEntityType : IStoreEntity
+        {
+            return new NHibernateStoreQuery<TEntityType>(this);
         }
 
         public bool Remove(params IStoreEntity[] entity)
         {
-            throw new NotImplementedException();
+            return Execute<bool>((session) =>
+            {
+                foreach (var instance in entity)
+                    session.Delete(instance);
+                return true;
+            });
+        }
+
+        private class NHibernateStoreQuery : AbstractEntityStoreQuery
+        {
+            protected SqlCeServerStorageService _store;
+
+            public NHibernateStoreQuery(Type forType, SqlCeServerStorageService store)
+                : base(forType)
+            {
+                _store = store;
+            }
+
+            protected ICriteria CreateCriteria(ISession session, int maxResults)
+            {
+                var criteria = session.CreateCriteria(ForType);
+                foreach (var filter in Filters)
+                {
+                    switch (filter.Comparison)
+                    {
+                        case ComparisonType.EqualOrGreater: criteria.Add(Restrictions.Ge(filter.PropertyName, filter.Value)); break;
+                        case ComparisonType.EqualOrLess: criteria.Add(Restrictions.Le(filter.PropertyName, filter.Value)); break;
+                        case ComparisonType.Equals: criteria.Add(Restrictions.Eq(filter.PropertyName, filter.Value)); break;
+                        case ComparisonType.GreaterThan: criteria.Add(Restrictions.Gt(filter.PropertyName, filter.Value)); break;
+                        case ComparisonType.IsNotNull: criteria.Add(Restrictions.IsNotNull(filter.PropertyName)); break;
+                        case ComparisonType.IsNull: criteria.Add(Restrictions.IsNull(filter.PropertyName)); break;
+                        case ComparisonType.LessThan: criteria.Add(Restrictions.Lt(filter.PropertyName, filter.Value)); break;
+                        case ComparisonType.NotEqual: criteria.Add(Restrictions.Not(Restrictions.Eq(filter.PropertyName, filter.Value))); break;
+                    }
+                }
+                foreach (var order in Orders)
+                {
+                    if (order.Desc)
+                        criteria.AddOrder(Order.Desc(order.PropertyName));
+                    else
+                        criteria.AddOrder(Order.Asc(order.PropertyName));
+                }
+                if (maxResults > 0)
+                    criteria.SetMaxResults(maxResults);
+                return criteria;
+            }
+
+            public override IList FindObject(int maxResults)
+            {
+                return _store.Execute<IList>((session) => { return CreateCriteria(session, maxResults).List(); });
+            }
+
+            public override IList FindObject()
+            {
+                return FindObject(0);
+            }
+
+            public override object FindFirstObject()
+            {
+                return _store.Execute<Object>((session) => { return CreateCriteria(session, 1).UniqueResult(); });
+            }
+        }
+
+        private class NHibernateStoreQuery<TEntityType> : NHibernateStoreQuery, IEntityStoreQuery<TEntityType> where TEntityType : IStoreEntity
+        {
+            public NHibernateStoreQuery(SqlCeServerStorageService store)
+                : base(typeof(TEntityType), store) { }
+
+            public IList<TEntityType> Find()
+            {
+                return Find(0);
+            }
+
+            public IList<TEntityType> Find(int maxResults)
+            {
+                return _store.Execute<IList<TEntityType>>((session) => { return CreateCriteria(session, maxResults).List<TEntityType>(); });
+            }
+
+            public TEntityType FindFirst()
+            {
+                return _store.Execute<TEntityType>((session) => { return CreateCriteria(session, 1).UniqueResult<TEntityType>(); });
+            }
         }
     }
 }
