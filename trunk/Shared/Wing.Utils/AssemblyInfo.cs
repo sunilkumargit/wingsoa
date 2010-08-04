@@ -1,11 +1,7 @@
 ﻿
 using System;
-using System.Net;
-using System.Xml.Serialization;
 using System.Security.Cryptography;
-using Wing.Utils;
-using System.Collections.Generic;
-using System.Linq;
+using System.Xml.Serialization;
 
 namespace Wing.Utils
 {

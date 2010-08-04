@@ -167,6 +167,9 @@ namespace Wing.Modularity
 
             for (var i = loadedModules.Count - 1; i > -1; i--)
                 this.PostInitializeModule(loadedModules[i]);
+
+            for (var i = 0; i < loadedModules.Count; i++)
+                this.RunModule(loadedModules[i]);
         }
 
         private bool AreDependenciesLoaded(ModuleInfo moduleInfo)
@@ -209,7 +212,16 @@ namespace Wing.Modularity
         private void PostInitializeModule(ModuleInfo moduleInfo)
         {
             if (moduleInfo.State == ModuleState.Initialized)
+            {
                 this.moduleInitializer.PostInitialize(moduleInfo);
+                moduleInfo.State = ModuleState.Running;
+            }
+        }
+
+        private void RunModule(ModuleInfo moduleInfo)
+        {
+            if (moduleInfo.State == ModuleState.Running)
+                this.moduleInitializer.RunModule(moduleInfo);
         }
     }
 }

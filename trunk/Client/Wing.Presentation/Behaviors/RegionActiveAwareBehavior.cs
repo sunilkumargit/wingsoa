@@ -14,7 +14,6 @@
 // organization, product, domain name, email address, logo, person,
 // places, or events is intended or should be inferred.
 //===================================================================================
-using System;
 using System.Collections.Specialized;
 using Wing.Composite.Regions;
 

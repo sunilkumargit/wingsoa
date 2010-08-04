@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Utils;
 using System.Collections;
+using System.Collections.Generic;
+using Wing.Utils;
 
 namespace Wing.EntityStore
 {
@@ -38,7 +36,7 @@ namespace Wing.EntityStore
         public abstract IList FindObject(int maxResults);
         public abstract IList FindObject();
         public abstract Object FindFirstObject();
-        
+
         public virtual IEntityStoreQuery AddFilterEqual(string propertyName, object value)
         {
             return Add(new DefaultStoreFilter(propertyName, ComparisonType.Equals, value));

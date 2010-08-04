@@ -46,6 +46,7 @@ namespace Wing.Modularity
         /// <summary>
         /// The module is initialized and ready to be used. 
         /// </summary>
-        Initialized
+        Initialized,
+        Running
     }
 }

@@ -1,5 +1,5 @@
-using System.Windows;
 using System;
+using System.Windows;
 
 namespace Wing.Client.Core
 {

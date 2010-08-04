@@ -20,8 +20,8 @@ using System.Globalization;
 using System.Reflection;
 using Wing.Composite.Events;
 using Wing.Composite.Regions;
-using Wing.ServiceLocation;
 using Wing.Core;
+using Wing.ServiceLocation;
 
 namespace Wing.Composite.Presentation.Regions
 {

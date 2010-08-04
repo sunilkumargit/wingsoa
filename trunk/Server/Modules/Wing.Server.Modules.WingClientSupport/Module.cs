@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Modularity;
-using Wing.ServiceLocation;
+﻿using Wing.Modularity;
 using Wing.Server.Core;
+using Wing.ServiceLocation;
 using Wing.Utils;
 
 namespace Wing.Server.Modules.WingClientSupport
 {
+    [Module("WingClientSupport")]
     [ModuleDescription("Suporte ao client Wing")]
     [ModuleCategory(ModuleCategory.Core)]
-    public class Module : IModule
+    [ModulePriority(ModulePriority.Lower)]
+    public class WingClientSupportModule : ModuleBase
     {
         #region IModule Members
 
-        public void Initialize()
+        public override void Initialize()
         {
             RegisterClientAssemblyStore();
             RegisterClientAssemblyInfo();
             RegisterClientSupportController();
         }
-
-        public void Initialized() { }
 
         private void RegisterClientAssemblyStore()
         {

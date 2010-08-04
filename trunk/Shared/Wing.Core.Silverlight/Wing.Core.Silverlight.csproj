@@ -222,6 +222,9 @@
     <Compile Include="..\Wing.Core\Modularity\InvalidCategoryDependencyException.cs">
       <Link>Modularity\InvalidCategoryDependencyException.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Core\Modularity\ModuleBase.cs">
+      <Link>Modularity\ModuleBase.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Core\Modularity\ModuleCategory.cs">
       <Link>Modularity\ModuleCategory.cs</Link>
     </Compile>

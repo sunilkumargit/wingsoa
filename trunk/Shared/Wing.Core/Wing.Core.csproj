@@ -119,6 +119,7 @@
     <Compile Include="Modularity\ModuleAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Modularity\ModuleBase.cs" />
     <Compile Include="Modularity\ModuleCatalog.cs" />
     <Compile Include="Modularity\ModuleCategory.cs" />
     <Compile Include="Modularity\ModuleDependencyAttribute.cs" />

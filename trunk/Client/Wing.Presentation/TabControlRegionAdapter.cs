@@ -17,8 +17,8 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
-using Wing.Composite.Regions;
 using Wing.Composite.Presentation.Regions.Behaviors;
+using Wing.Composite.Regions;
 
 namespace Wing.Composite.Presentation.Regions
 {

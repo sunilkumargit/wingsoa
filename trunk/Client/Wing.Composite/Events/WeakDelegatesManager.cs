@@ -17,9 +17,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Wing.ServiceLocation;
-using Wing.Events;
 using Wing.Core;
+using Wing.Events;
 
 namespace Wing.Composite.Events
 {

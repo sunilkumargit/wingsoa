@@ -48,9 +48,6 @@
                                     <StackPanel Orientation="Horizontal"/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                            <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="[2000 - Empresa XYZ]" ImageAlign="Right" TitleFontSize="10"/>
-                            <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="01/08/2010" ImageAlign="Right" TitleFontSize="10"/>
-                            <wingcontrols:ToolButton ImageSource="../Assets/option_arrow_down.png" Title="[Usuário]" ImageAlign="Right" TitleFontSize="10"/>
                         </ItemsControl>
                     </wingcontrols:Toolbar.RightItems>
                 </wingcontrols:Toolbar>
@@ -65,9 +62,6 @@
                                     <StackPanel Orientation="Horizontal"/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                            <wingcontrols:ToolButton ImageSource="../temp/bi.png" Title="Business Intelligence"/>
-                            <wingcontrols:ToolButton ImageSource="../temp/finance.png" Title="Finanças"/>
-                            <wingcontrols:ToolButton ImageSource="../temp/sales.png" Title="Vendas"/>
                         </ItemsControl>
                     </wingcontrols:Toolbar.LeftItems>
                     <wingcontrols:Toolbar.RightItems>
@@ -77,7 +71,6 @@
                                     <StackPanel Orientation="Horizontal"/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                            <wingcontrols:ToolButton ImageSource="../temp/chat.png"/>
                         </ItemsControl>
                     </wingcontrols:Toolbar.RightItems>
                 </wingcontrols:Toolbar>

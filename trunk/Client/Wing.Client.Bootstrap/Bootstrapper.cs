@@ -1,27 +1,15 @@
 ﻿using System;
-using System.Net;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 using Wing.Client.Core;
-using Wing.ServiceLocation;
-using Wing.Modularity;
+using Wing.Composite;
+using Wing.Composite.Presentation.Regions;
+using Wing.Composite.Presentation.Regions.Behaviors;
+using Wing.Composite.Regions;
 using Wing.Events;
 using Wing.Logging;
-using System.Linq;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System.Reflection;
-using Wing.Composite.Presentation.Regions;
-using Wing.Composite.Regions;
-using System.Windows.Controls.Primitives;
-using Wing.Composite.Presentation.Regions.Behaviors;
-using Wing.Composite;
+using Wing.Modularity;
+using Wing.ServiceLocation;
 
 namespace Wing.Client.Bootstrap
 {

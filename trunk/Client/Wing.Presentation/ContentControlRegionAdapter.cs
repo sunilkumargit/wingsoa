@@ -18,7 +18,6 @@ using System;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows.Controls;
-using System.Windows.Data;
 using Wing.Composite.Regions;
 
 namespace Wing.Composite.Presentation.Regions

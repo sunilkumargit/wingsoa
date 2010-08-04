@@ -15,7 +15,6 @@
 // places, or events is intended or should be inferred.
 //===================================================================================
 using System;
-using System.Runtime.Serialization;
 
 namespace Wing.Composite.Presentation.Regions
 {

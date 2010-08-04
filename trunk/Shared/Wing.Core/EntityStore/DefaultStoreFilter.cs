@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Wing.EntityStore
 {
     public class DefaultStoreFilter : IEntityStoreFilter
     {
-        public DefaultStoreFilter(String propertyName, ComparisonType comparison, Object value){
+        public DefaultStoreFilter(String propertyName, ComparisonType comparison, Object value)
+        {
             this.PropertyName = propertyName;
             this.Comparison = comparison;
             this.Value = value;

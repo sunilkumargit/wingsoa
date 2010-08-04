@@ -16,9 +16,8 @@
 //===================================================================================
 using System;
 using System.Globalization;
-using Wing.ServiceLocation;
 using Wing.Logging;
-using System.Collections.Generic;
+using Wing.ServiceLocation;
 
 
 namespace Wing.Modularity
@@ -80,6 +79,14 @@ namespace Wing.Modularity
                 throw new ModuleInitializeException(String.Format("The module {0} has no instance", moduleInfo.ModuleName));
             if (moduleInfo.State == ModuleState.Initialized)
                 moduleInfo.ModuleInstance.Initialized();
+        }
+
+        public void RunModule(ModuleInfo moduleInfo)
+        {
+            if (moduleInfo.ModuleInstance == null)
+                throw new ModuleInitializeException(String.Format("The module {0} has no instance", moduleInfo.ModuleName));
+            if (moduleInfo.State == ModuleState.Running)
+                moduleInfo.ModuleInstance.Run();
         }
 
         /// <summary>

@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Data.SqlServerCe;
-using Wing.Server.Sdk;
-using Wing.EntityStore;
-using NHibernate.Cfg;
-using Wing.ServiceLocation;
-using Wing.Logging;
-using NHibernate;
-using Wing.Utils;
-using NHibernate.Tool.hbm2ddl;
-using NHibernate.Criterion;
 using System.Collections;
+using System.Collections.Generic;
+using System.Data.SqlServerCe;
+using System.IO;
+using System.Text;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Criterion;
+using NHibernate.Tool.hbm2ddl;
+using Wing.EntityStore;
+using Wing.Logging;
+using Wing.Server.Sdk;
+using Wing.ServiceLocation;
+using Wing.Utils;
 
 namespace Wing.Server.Modules.ServerStorage
 {
@@ -84,10 +83,9 @@ namespace Wing.Server.Modules.ServerStorage
                 _cfg.SetProperty("connection.connection_string", ConnectionString);
                 _cfg.SetProperty("proxyfactory.factory_class", "NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu");
                 _cfg.SetProperty("show_sql", "true");
+
                 foreach (var entityMeta in _entities.Values)
                     _cfg.AddXmlString(GetHBMappingXml(entityMeta));
-
-                var conn = new SqlCeConnection(ConnectionString);
 
                 _sessionFactory = _cfg.BuildSessionFactory();
 
@@ -126,7 +124,10 @@ namespace Wing.Server.Modules.ServerStorage
         private void InvalidateCurrentFactory()
         {
             if (_sessionFactory != null)
+            {
                 _sessionFactory.Dispose();
+                _sessionFactory = null;
+            }
             _cfg = null;
         }
 

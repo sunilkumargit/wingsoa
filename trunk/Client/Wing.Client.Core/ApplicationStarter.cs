@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.IO;
 using System.IO.IsolatedStorage;
-using System.Windows;
+using System.Linq;
 using System.Net;
-using Wing.Utils;
+using System.Reflection;
 using System.Threading;
+using System.Windows;
+using Wing.Utils;
 
 namespace Wing.Client.Core
 {

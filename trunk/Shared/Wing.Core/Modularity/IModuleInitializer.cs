@@ -32,5 +32,11 @@ namespace Wing.Modularity
         /// </summary>
         /// <param name="moduleInfo"></param>
         void PostInitialize(ModuleInfo moduleInfo);
+
+        /// <summary>
+        /// Call module Run() method.
+        /// </summary>
+        /// <param name="moduleInfo"></param>
+        void RunModule(ModuleInfo moduleInfo);
     }
 }

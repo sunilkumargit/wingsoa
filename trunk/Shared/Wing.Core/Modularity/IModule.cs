@@ -23,15 +23,21 @@ namespace Wing.Modularity
     public interface IModule
     {
         /// <summary>
-        /// Notifies the module that it has be initialized.
+        /// Notifies the module to be initialized.
         /// </summary>
         void Initialize();
 
 
         /// <summary>
-        /// Notifies the module that has been initialized. This method invoke in reverse order of Initialze.
-        /// The last module initialized will be the first module that will called Initialized().
+        /// Notifies the module that has been initialized. This method is invoked in reverse order of Initialze.
+        /// The last module initialized will be the first module that Initialized() will be called.
         /// </summary>
         void Initialized();
+
+
+        /// <summary>
+        /// Last phase of module initialization process. Is called after Initialized() in normal order.
+        /// </summary>
+        void Run();
     }
 }

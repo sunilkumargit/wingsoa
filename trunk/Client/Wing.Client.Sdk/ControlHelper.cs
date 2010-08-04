@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Net;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
-using System.Collections.Generic;
 
 namespace Wing.Client.Sdk
 {
@@ -71,7 +65,7 @@ namespace Wing.Client.Sdk
             while (parent != null)
             {
                 if (parent is UserControl)
-                    result.Add((UserControl)parent);    
+                    result.Add((UserControl)parent);
                 parent = VisualTreeHelper.GetParent(parent);
             }
             return result;

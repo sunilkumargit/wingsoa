@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Modularity;
-using Wing.ServiceLocation;
-using Wing.Server.Core;
 using System.IO;
-using System.Data.SqlServerCe;
+using Wing.Modularity;
+using Wing.Server.Core;
 using Wing.Server.Sdk;
-using Wing.EntityStore;
+using Wing.ServiceLocation;
 
 namespace Wing.Server.Modules.ServerStorage
 {
@@ -16,39 +11,20 @@ namespace Wing.Server.Modules.ServerStorage
     [ModuleCategory(ModuleCategory.Core)]
     [ModuleDescription("Controlador do armazenamento de dados do servidor")]
     [ModulePriority(ModulePriority.High)]
-    public class ServerStorageModule : IModule
+    public class ServerStorageModule : ModuleBase
     {
-        public void Initialize()
+        public override void Initialize()
         {
             var bootSettings = ServiceLocator.Current.GetInstance<BootstrapSettings>();
             var dbPath = Path.Combine(bootSettings.ServerDataBasePath, "ServerData", "server.sdf");
 
             var serverStorage = new SqlCeServerStorageService(dbPath);
-            serverStorage.RegisterEntity<ServerStoreTrace>();
+            serverStorage.RegisterEntity<ServerStoreTraceEntity>();
 
             ServiceLocator.Current.Register<IServerEntityStoreService>(serverStorage);
 
             // salvar uma entidade aqui para forçar a primeira conexão com o banco de dados
-            serverStorage.Save(new ServerStoreTrace() { Date = DateTime.Now, DBPath = dbPath });
-
-            var query = serverStorage.CreateQuery<ServerStoreTrace>();
-            query.AddOrderDesc("Date");
-            var items = query.Find();
-            items.Clear();
+            serverStorage.Save(new ServerStoreTraceEntity() { Date = DateTime.Now, DBPath = dbPath });
         }
-
-        public void Initialized()
-        {
-           //
-        }
-    }
-
-    public class ServerStoreTrace : StoreEntityBase
-    {
-        [PersistentMember]
-        public DateTime Date { get; set; }
-
-        [PersistentMember(maxLength: 512)]
-        public String DBPath { get; set; }
     }
 }

@@ -14,10 +14,6 @@
 // organization, product, domain name, email address, logo, person,
 // places, or events is intended or should be inferred.
 //===================================================================================
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Wing.Modularity
 {

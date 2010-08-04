@@ -1,15 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Server.Core;
-using Wing.ServiceLocation;
-using Wing.Logging;
-using Wing.Modularity;
-using System.Configuration;
-using Wing.Events;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Wing.Server.Core;
+using Wing.ServiceLocation;
 
 namespace Wing.Server.Bootstrap
 {

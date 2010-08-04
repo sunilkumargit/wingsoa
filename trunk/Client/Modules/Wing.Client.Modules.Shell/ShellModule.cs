@@ -1,19 +1,10 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Wing.Modularity;
-using Wing.ServiceLocation;
+﻿using System.Windows;
 using Wing.Client.Core;
 using Wing.Client.Modules.Shell.Views;
 using Wing.Composite.Presentation.Regions;
 using Wing.Composite.Regions;
+using Wing.Modularity;
+using Wing.ServiceLocation;
 
 namespace Wing.Client.Modules.Shell
 {
@@ -21,12 +12,12 @@ namespace Wing.Client.Modules.Shell
     [ModulePriority(ModulePriority.Low)]
     [ModuleDescription("Provedor do shell do usuário")]
     [ModuleDependency("Theme")]
-    public class ShellModule : IModule
+    public class ShellModule : ModuleBase
     {
 
         #region IModule Members
 
-        public void Initialize()
+        public override void Initialize()
         {
             //criar o view do shell aqui.
             ServiceLocator.Current.Register<IRegionManager, RegionManager>(true);
@@ -46,7 +37,7 @@ namespace Wing.Client.Modules.Shell
 
         }
 
-        public void Initialized()
+        public override void Initialized()
         {
             ServiceLocator.Current.GetInstance<IRootVisualManager>().Dispatch(() =>
             {

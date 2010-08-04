@@ -1,26 +1,16 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Wing.Modularity;
+﻿using Wing.Client.Sdk;
 using Wing.Composite.Regions;
+using Wing.Modularity;
 using Wing.ServiceLocation;
-using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.Home
 {
     [Module("Home")]
     [ModuleCategory(ModuleCategory.Init)]
     [ModuleDescription("Home do usuário")]
-    public class UserHomeModule : IModule
+    public class UserHomeModule : ModuleBase
     {
-        public void Initialize()
+        public override void Initialize()
         {
             var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
             ServiceLocator.Current.Register<HomeView, HomeView>(true);
@@ -28,12 +18,6 @@ namespace Wing.Client.Modules.Home
             {
                 return ServiceLocator.Current.GetInstance<HomeView>();
             });
-        }
-
-        public void Initialized()
-        {
-//            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-//            regionManager.Regions[RegionNames.ShellMainContent].Activate(ServiceLocator.Current.GetInstance<HomeView>());
         }
     }
 }
