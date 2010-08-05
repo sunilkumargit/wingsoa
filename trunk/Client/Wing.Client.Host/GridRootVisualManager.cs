@@ -18,7 +18,7 @@ namespace Wing.Client.Host
 
         public void SetRootElement(UIElement element)
         {
-            _grid.Dispatcher.BeginInvoke(() =>
+            Dispatch(() =>
             {
                 while (_grid.Children.Count > 0)
                     _grid.Children.RemoveAt(0);
@@ -42,7 +42,10 @@ namespace Wing.Client.Host
 
         public void Dispatch(Action action)
         {
-            _grid.Dispatcher.BeginInvoke(() => action());
+            if (_grid.Dispatcher.CheckAccess())
+                action();
+            else
+                _grid.Dispatcher.BeginInvoke(() => action());
         }
         #endregion
     }

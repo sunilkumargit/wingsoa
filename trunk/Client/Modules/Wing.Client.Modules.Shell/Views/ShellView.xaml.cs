@@ -6,12 +6,12 @@ namespace Wing.Client.Modules.Shell.Views
 {
     public partial class ShellView : UserControl, IShellView
     {
-        private bool isMaximized;
+        //private bool isMaximized;
 
         public ShellView()
         {
             InitializeComponent();
-            isMaximized = false;
+            //isMaximized = false;
             CheckWindowState();
         }
 
@@ -28,14 +28,14 @@ namespace Wing.Client.Modules.Shell.Views
         private void MaximizeButton_OnButtonClick(object sender, MouseButtonEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
-            isMaximized = true;
+            //isMaximized = true;
             CheckWindowState();
         }
 
         private void RestoreButton_OnButtonClick(object sender, MouseButtonEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Normal;
-            isMaximized = false;
+            //isMaximized = false;
             CheckWindowState();
         }
 

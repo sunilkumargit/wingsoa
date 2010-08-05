@@ -65,6 +65,7 @@
     <Compile Include="Controls\ToolButton.xaml.cs">
       <DependentUpon>ToolButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Events\UserLoginAction.cs" />
     <Compile Include="Events\UserLoginEvent.cs" />
     <Compile Include="IRootView.cs" />
     <Compile Include="IRootViewPresenter.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Events\UserLoginEventArgs.cs" />
     <Compile Include="RegionNames.cs" />
     <Compile Include="RootPresenterBase.cs" />
+    <Compile Include="Services\ILoginService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">

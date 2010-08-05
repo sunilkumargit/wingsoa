@@ -160,7 +160,7 @@ namespace Wing.Client.Core
                 isFirstTime = false;
             }
             else
-                _splash.DisplayMessage("O Wing está preparando a aplicação para ser executada pela primeira vez \n isto pode levar alguns minutos, aguarde por favor...");
+                _splash.DisplayMessage("O Wing está preparando a aplicação para ser executada pela primeira vez, \n isto pode levar alguns minutos, aguarde por favor...");
 
             var assemblies = GetAssembliesToDownload();
             var downloadSize = assemblies.Sum(a => a.Size);
@@ -294,13 +294,10 @@ namespace Wing.Client.Core
                 return;
             }
 
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                // instantiate the bootstrapper class
-                var bootstrapperInstance = (IBootstrapper)Activator.CreateInstance(bootstrapperType);
-                // and run
-                bootstrapperInstance.Run(_bootstrapSettings);
-            });
+            // instantiate the bootstrapper class
+            var bootstrapperInstance = (IBootstrapper)Activator.CreateInstance(bootstrapperType);
+            // and run
+            bootstrapperInstance.Run(_bootstrapSettings);
         }
 
         void CheckQuotaSize()

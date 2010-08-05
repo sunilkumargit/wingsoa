@@ -87,12 +87,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\Wing.Utils.Silverlight\Wing.Utils.Silverlight.csproj">
-      <Project>{800645BA-2D1E-4C5A-9CDD-8C5FF093EC31}</Project>
-      <Name>Wing.Utils.Silverlight</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -103,6 +97,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Wing.Utils.Silverlight\Wing.Utils.Silverlight.csproj">
+      <Project>{800645BA-2D1E-4C5A-9CDD-8C5FF093EC31}</Project>
+      <Name>Wing.Utils.Silverlight</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
