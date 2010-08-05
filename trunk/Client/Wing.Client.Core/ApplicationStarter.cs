@@ -223,7 +223,7 @@ namespace Wing.Client.Core
             var result = new Stack<AssemblyInfo>();
 #if DEBUG
             return new Stack<AssemblyInfo>(_assemblyInfo.Assemblies);
-#endif
+#else
             foreach (var asmInfo in _assemblyInfo.Assemblies)
             {
                 //verificar se o arquivo é diferente do servidor
@@ -238,6 +238,7 @@ namespace Wing.Client.Core
                 result.Push(asmInfo);
             }
             return result;
+#endif
         }
 
         void LoadAssemblies()

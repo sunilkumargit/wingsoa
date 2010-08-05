@@ -20,8 +20,7 @@ namespace Wing.Server.Modules.IdentityManagament
             serverStore.RegisterEntity<UserEntity>();
             serverStore.RegisterEntity<RoleEntity>();
 
-            // registrar o servico de identidade
-
+            //verificar o usuário system
             CheckSystemUser();
         }
 
