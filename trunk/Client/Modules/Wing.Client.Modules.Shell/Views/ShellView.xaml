@@ -39,7 +39,7 @@
                 </Grid.RowDefinitions>
                 <wingcontrols:Toolbar BarStyle="{StaticResource LightToolbarBorder}">
                     <wingcontrols:Toolbar.LeftItems>
-                        <TextBlock Foreground="DarkBlue" Text="Business Intelligence > Home" Margin="3,0,0,0"/>
+                        <TextBlock Foreground="DarkBlue" Text="{Binding Path=ActiveViewsText}" Margin="3,0,0,0" FontWeight="Bold"/>
                     </wingcontrols:Toolbar.LeftItems>
                     <wingcontrols:Toolbar.RightItems>
                         <ItemsControl wingp:RegionManager.RegionName="ShellOptionsBar">
@@ -86,8 +86,8 @@
                         <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Pronto" VerticalAlignment="Center" Margin="5" x:Name="StatusText"/>
-                    <ProgressBar Margin="3,3,3,3" Grid.Column="1" HorizontalAlignment="Stretch" Value="50" Foreground="DarkGreen" x:Name="StatusProgress"/>
+                    <TextBlock VerticalAlignment="Center" Margin="5" x:Name="StatusText" Text="{Binding Path=StatusMessage}"/>
+                    <ProgressBar Margin="3,3,3,3" Grid.Column="1" HorizontalAlignment="Stretch" Foreground="DarkGreen" x:Name="StatusProgress" IsIndeterminate="{Binding Path=ProgressBarIsIndeterminate}" Visibility="{Binding Path=ProgressBarVisibility}" Maximum="{Binding Path=ProgressMaxValue}" Value="{Binding Path=ProgressValue}"/>
                 </Grid>
             </Border>
         </Grid>

@@ -60,12 +60,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ILoginController.cs" />
     <Compile Include="Views\ILoginView.cs" />
-    <Compile Include="Views\ILoginViewPresenter.cs" />
+    <Compile Include="Views\ILoginPresentationModel.cs" />
     <Compile Include="Views\LoginController.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginViewPresenter.cs" />
+    <Compile Include="Views\LoginPresentationModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
@@ -87,6 +87,10 @@
     <ProjectReference Include="..\..\Wing.Composite\Wing.Composite.csproj">
       <Project>{7A751BB0-5CB7-4429-86E6-760F47BA3369}</Project>
       <Name>Wing.Composite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wing.Presentation\Wing.Composite.Presentation.csproj">
+      <Project>{C8D3B5A8-5985-4659-A49C-4CCFB0152676}</Project>
+      <Name>Wing.Composite.Presentation</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

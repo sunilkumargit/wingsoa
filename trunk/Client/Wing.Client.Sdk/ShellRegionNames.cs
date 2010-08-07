@@ -1,7 +1,7 @@
 ﻿
 namespace Wing.Client.Sdk
 {
-    public static class RegionNames
+    public static class ShellRegionNames
     {
         public static string ShellOptionsBar { get { return "ShellOptionsBar"; } }
         public static string ShellMainBar { get { return "ShellMainBar"; } }

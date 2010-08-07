@@ -1,0 +1,102 @@
+﻿using System;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using Wing.Utils;
+using System.Windows.Documents;
+using System.Windows.Ink;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using Wing.Client.Sdk;
+using System.Collections.Generic;
+
+namespace Wing.Client.Modules.Shell.Views
+{
+    public class ShellPresentationModel : PresentationModel, IShellPresentationModel
+    {
+        private string _statusMessage;
+        private bool _progressBarIsVisible;
+        private bool _progressBarIsIndeterminate;
+        private int _progressMaxValue;
+        private int _progressValue;
+        private List<IViewPresenter> _activeViews;
+        private string _activeViewsText;
+
+        public ShellPresentationModel()
+        {
+            this.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(ShellPresentationModel_PropertyChanged);
+        }
+
+        void ShellPresentationModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "ProgressBarIsVisible")
+                NotifyPropertyChanged("ProgressBarVisibility");
+        }
+
+        public string StatusMessage
+        {
+            get { return _statusMessage; }
+            set { _statusMessage = value; NotifyPropertyChanged("StatusMessage"); }
+        }
+
+        public bool ProgressBarIsVisible
+        {
+            get { return _progressBarIsVisible; }
+            set { _progressBarIsVisible = value; NotifyPropertyChanged("ProgressBarIsVisible"); }
+        }
+
+        public bool ProgressBarIsIndeterminate
+        {
+            get { return _progressBarIsIndeterminate; }
+            set { _progressBarIsIndeterminate = value; NotifyPropertyChanged("ProgressBarIsIndeterminate"); }
+        }
+
+        public int ProgressMaxValue
+        {
+            get { return _progressMaxValue; }
+            set { _progressMaxValue = value; NotifyPropertyChanged("ProgressMaxValue"); }
+        }
+
+        public int ProgressValue
+        {
+            get { return _progressValue; }
+            set { _progressValue = value; NotifyPropertyChanged("ProgressValue"); }
+        }
+
+        public Visibility ProgressBarVisibility
+        {
+            get { return ProgressBarIsVisible ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+        public String ActiveViewsText
+        {
+            get { return _activeViewsText; }
+            private set { _activeViewsText = value; NotifyPropertyChanged("ActiveViewsText"); }
+        }
+
+        public List<IViewPresenter> ActiveViews
+        {
+            get { return _activeViews; }
+            set
+            {
+                _activeViews = value; NotifyPropertyChanged("ActiveViews");
+                BuildActiveViewText();
+            }
+        }
+
+        void BuildActiveViewText()
+        {
+            if (ActiveViews == null)
+                ActiveViewsText = "";
+            var text = "";
+            foreach (var item in ActiveViews)
+            {
+                if (item.Caption.HasValue())
+                    text += (text.Length == 0 ? "" : " > ") + item.Caption;
+            }
+            ActiveViewsText = text;
+        }
+    }
+}

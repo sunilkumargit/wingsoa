@@ -14,6 +14,9 @@ namespace Wing.Services.IdentityManagerService
         [PersistentMember]
         public String Name { get; set; }
 
+        [PersistentMember]
+        public Boolean IsAdministrator { get; set; }
+
         [PersistentMember(maxLength: 100)]
         public String Email { get; set; }
     }

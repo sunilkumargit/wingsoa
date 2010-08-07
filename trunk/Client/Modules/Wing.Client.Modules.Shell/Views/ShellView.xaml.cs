@@ -48,5 +48,11 @@ namespace Wing.Client.Modules.Shell.Views
              */
         }
 
+        public IShellPresentationModel Model
+        {
+            get { return DataContext as IShellPresentationModel; }
+            set { DataContext = value; }
+        }
+
     }
 }

@@ -233,13 +233,19 @@ namespace Wing.Composite.Presentation.Regions
 
         #endregion
 
+        private static int _instanceCount = 0;
+
         private readonly RegionCollection regionCollection;
+
+
+        public int InstanceId { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of <see cref="RegionManager"/>.
         /// </summary>
         public RegionManager()
         {
+            InstanceId = ++_instanceCount;
             regionCollection = new RegionCollection(this);
         }
 

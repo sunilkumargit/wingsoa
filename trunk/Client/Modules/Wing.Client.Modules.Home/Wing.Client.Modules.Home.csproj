@@ -59,11 +59,27 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomeView.xaml.cs">
-      <DependentUpon>HomeView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserHomeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Home\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Home\HomeViewPresentationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Home\HomeViewPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Home\IHomeView.cs" />
+    <Compile Include="Views\Home\IHomeViewPresentationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Home\IHomeViewPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Root\HomeRootPresenter.cs" />
+    <Compile Include="Views\Root\IHomeRootPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
@@ -84,7 +100,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="HomeView.xaml">
+    <Page Include="Views\Home\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

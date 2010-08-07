@@ -73,6 +73,8 @@ namespace Wing.Composite.Regions
         /// <returns>The <see cref="IRegionManager"/> that is set on the view if it is a <see cref="DependencyObject"/>.</returns>
         IRegionManager Add(object view, string viewName, bool createRegionManagerScope);
 
+        IRegionManager Add(object view, IRegionManager scopedRegionManager);
+
         /// <summary>
         /// Removes the specified view from the region.
         /// </summary>

@@ -8,16 +8,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Wing.Composite.Events;
 
-namespace Wing.Client.Modules.IdentityManager.Views
+namespace Wing.Client.Sdk.Events
 {
-    public class LoginViewPresenter : ILoginViewPresenter
-    {
-        public ILoginView View { get; private set; }
-
-        public LoginViewPresenter(ILoginView view)
-        {
-            View = view;
-        }
-    }
+    public class ViewBagActiveViewChangedEvent : CompositePresentationEvent<ViewBagActiveViewChangedEventArgs>
+    { }
 }

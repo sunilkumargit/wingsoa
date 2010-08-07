@@ -27,7 +27,7 @@ namespace Wing.Client.Modules.IdentityManager
 
             ServiceLocator.Current.Register<ILoginView, LoginView>();
             ServiceLocator.Current.Register<ILoginController, LoginController>(true);
-            ServiceLocator.Current.Register<ILoginViewPresenter, LoginViewPresenter>();
+            ServiceLocator.Current.Register<ILoginPresentationModel, LoginPresentationModel>();
         }
 
         public override void Run()

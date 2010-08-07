@@ -28,13 +28,13 @@ namespace Wing.Server.Modules.IdentityManagament
         {
             var store = ServiceLocator.Current.GetInstance<IServerEntityStoreService>();
             var criteria = store.CreateQuery<UserEntity>();
-            criteria.AddFilterEqual("UserName", "system");
+            criteria.AddFilterEqual("UserName", "System");
             var existing = criteria.FindFirst();
             if (existing == null)
             {
                 existing = new UserEntity();
-                existing.UserName = "system";
-                existing.Password = "system";
+                existing.UserName = "System";
+                existing.Password = "System";
                 existing.Name = "Usuário de sistema";
 
                 store.Save(existing);

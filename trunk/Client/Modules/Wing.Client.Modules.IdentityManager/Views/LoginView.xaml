@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wingcontrols="clr-namespace:Wing.Client.Sdk.Controls;assembly=Wing.Client.Sdk"
+    xmlns:commands="clr-namespace:Wing.Composite.Presentation.Commands;assembly=Wing.Composite.Presentation"
     mc:Ignorable="d"
     d:DesignHeight="768" d:DesignWidth="1024">
 
@@ -12,7 +13,7 @@
             <ImageBrush ImageSource="../Assets/background.jpg"/>
         </Grid.Background>
         <TextBlock Text="Flex Web Applications" Foreground="Azure" Margin="20" FontSize="30" FontFamily="Trebuchet MS"/>
-        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="250">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="250" x:Name="LoginForm">
             <Border BorderThickness="0"  CornerRadius="6" Background="LightSkyBlue" Opacity=".6">
                 <Border.Effect>
                     <BlurEffect Radius="2" />
@@ -31,12 +32,15 @@
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <TextBlock Foreground="Azure" FontWeight="Bold" Text="Logon" Margin="5,5" FontSize="14"/>
-                <TextBlock Grid.Row="1" Text="Login" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12"/>
+                <TextBlock Grid.Row="1" Text="Login" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12" />
                 <TextBlock Grid.Row="2" Text="Senha" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12"/>
-                <TextBox Grid.Row="1" Grid.Column="1" MaxHeight="22" Margin="5,5,20,5" x:Name="UserName"/>
-                <TextBox Grid.Row="2" Grid.Column="1" MaxHeight="22" Margin="5,5,20,5" x:Name="Password"/>
-                <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Entrar" MaxHeight="20" MaxWidth="100"/>
+                <TextBox Grid.Row="1" Grid.Column="1" MaxHeight="22" Margin="5,5,20,5" x:Name="UserName" Text="{Binding Path=UserName, Mode=TwoWay}"/>
+                <PasswordBox Grid.Row="2" Grid.Column="1" MaxHeight="22" Margin="5,5,20,5" x:Name="Password" Password="{Binding Path=Password, Mode=TwoWay}"/>
+                <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Entrar" MaxHeight="20" MaxWidth="100" commands:Click.Command="{Binding Path=LoginCommand}"/>
             </Grid>
+        </Grid >
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" x:Name="LoggingInMessage">
+            <TextBlock Text="Entrando ..." Foreground="White" FontSize="36" FontFamily="Trebuchet MS" />
         </Grid>
         <TextBlock Text="(c) 2010 Empflex Software ltda e Marcelo Santos. Todos os direitos reservados. Este software contém partes ou todo o código de bibliotecas públicas, para mais informações consulte a seção Sobre." Foreground="WhiteSmoke" FontSize="8.5" VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="5,5,5,5" TextAlignment="Center"/>
     </Grid>

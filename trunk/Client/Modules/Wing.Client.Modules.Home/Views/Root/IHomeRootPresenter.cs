@@ -8,11 +8,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Wing.Client.Sdk;
+using Wing.Client.Sdk.Controls;
+using Wing.Composite.Regions;
 
-namespace Wing.Client.Modules.IdentityManager.Views
+namespace Wing.Client.Modules.Home.Views.Root
 {
-    public interface ILoginViewPresenter
-    {
-        ILoginView View { get; }
-    }
+    public interface IHomeRootPresenter : IViewBagPresenter { }
 }
