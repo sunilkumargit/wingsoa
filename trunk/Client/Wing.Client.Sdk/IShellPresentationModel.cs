@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Windows;
 using Wing.Client.Sdk;
 
-namespace Wing.Client.Modules.Shell.Views
+namespace Wing.Client.Sdk
 {
-    public interface IShellPresentationModel : IPresentationModel
+    public interface IShellPresentationModel : IViewPresentationModel
     {
         string StatusMessage { get; set; }
         Visibility ProgressBarVisibility { get; }

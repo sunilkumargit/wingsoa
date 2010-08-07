@@ -1,5 +1,5 @@
 
-namespace Wing.Client.Modules.Home.Views.Home
+namespace Wing.Client.Modules.Home
 {
     public interface IHomeView
     {
