@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using Wing.Composite.Regions;
-using Wing.Composite.Presentation.Regions;
 using System.Windows;
-using System.Collections.ObjectModel;
+using Wing.Composite.Regions;
 
 namespace Wing.Client.Sdk
 {

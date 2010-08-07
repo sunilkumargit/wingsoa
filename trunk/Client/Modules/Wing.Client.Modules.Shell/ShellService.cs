@@ -1,14 +1,13 @@
-﻿using System.Windows;
-using Wing.Composite.Presentation.Regions;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
+using Wing.Client.Core;
+using Wing.Client.Modules.Shell.Views;
+using Wing.Client.Sdk;
+using Wing.Client.Sdk.Events;
+using Wing.Composite.Events;
 using Wing.Composite.Regions;
 using Wing.Events;
-using Wing.Client.Sdk.Events;
-using Wing.Client.Core;
-using Wing.Composite.Events;
-using System;
-using Wing.Client.Sdk;
-using Wing.Client.Modules.Shell.Views;
-using System.Collections.Generic;
 
 namespace Wing.Client.Modules.Shell
 {

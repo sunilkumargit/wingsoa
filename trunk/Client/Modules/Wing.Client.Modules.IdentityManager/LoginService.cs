@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Wing.Client.Sdk.Events;
 using Wing.Client.Sdk.Services;
 using Wing.Events;
-using Wing.Client.Sdk.Events;
 
 namespace Wing.Client.Modules.IdentityManager
 {

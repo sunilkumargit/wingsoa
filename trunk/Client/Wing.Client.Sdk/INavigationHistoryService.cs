@@ -1,5 +1,3 @@
-using System;
-using Wing.Composite.Regions;
 
 namespace Wing.Client.Sdk
 {

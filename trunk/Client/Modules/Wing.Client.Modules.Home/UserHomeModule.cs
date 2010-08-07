@@ -1,9 +1,8 @@
-﻿using Wing.Client.Sdk;
-using Wing.Composite.Regions;
+﻿using Wing.Client.Modules.Home.Views.Home;
+using Wing.Client.Modules.Home.Views.Root;
+using Wing.Client.Sdk;
 using Wing.Modularity;
 using Wing.ServiceLocation;
-using Wing.Client.Modules.Home.Views.Home;
-using Wing.Client.Modules.Home.Views.Root;
 
 namespace Wing.Client.Modules.Home
 {

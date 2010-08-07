@@ -1,13 +1,10 @@
 using System;
-using System.Collections.Generic;
-using Wing.Composite.Regions;
-using Wing.Composite.Presentation.Regions;
-using System.Windows;
-using System.Linq;
 using System.Collections.ObjectModel;
-using Wing.ServiceLocation;
-using Wing.Events;
+using System.Linq;
 using Wing.Client.Sdk.Events;
+using Wing.Composite.Presentation.Regions;
+using Wing.Composite.Regions;
+using Wing.Events;
 
 namespace Wing.Client.Sdk
 {

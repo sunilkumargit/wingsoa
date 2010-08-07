@@ -4,7 +4,6 @@ using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Threading;
 using System.Windows;
 using Wing.Utils;
 

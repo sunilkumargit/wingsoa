@@ -1,6 +1,6 @@
-using Wing.Client.Sdk;
-using System.Windows;
 using System.Collections.Generic;
+using System.Windows;
+using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.Shell.Views
 {

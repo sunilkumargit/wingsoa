@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Client.Sdk;
+﻿using Wing.Client.Sdk;
 using Wing.Composite.Regions;
 
 namespace Wing.Client.Modules.Home.Views.Home

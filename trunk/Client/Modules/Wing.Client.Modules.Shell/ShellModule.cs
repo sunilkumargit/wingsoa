@@ -1,11 +1,9 @@
-﻿using System.Windows;
-using Wing.Client.Core;
-using Wing.Client.Modules.Shell.Views;
+﻿using Wing.Client.Modules.Shell.Views;
+using Wing.Client.Sdk;
 using Wing.Composite.Presentation.Regions;
 using Wing.Composite.Regions;
 using Wing.Modularity;
 using Wing.ServiceLocation;
-using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.Shell
 {

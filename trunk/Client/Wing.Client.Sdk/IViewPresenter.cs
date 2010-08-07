@@ -1,8 +1,5 @@
 using System;
 using Wing.Composite.Regions;
-using Wing.Composite.Presentation.Regions;
-using System.Windows;
-using System.Collections.ObjectModel;
 
 namespace Wing.Client.Sdk
 {

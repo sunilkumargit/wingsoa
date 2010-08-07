@@ -144,8 +144,8 @@ namespace Wing.Modularity
                 while (keepLoading)
                 {
                     keepLoading = false;
-                    var tempList = availableModules.Where(m => m.State == ModuleState.ReadyForInitialization 
-                        && m.ModuleCategory==category);
+                    var tempList = availableModules.Where(m => m.State == ModuleState.ReadyForInitialization
+                        && m.ModuleCategory == category);
 
                     foreach (ModuleInfo moduleInfo in tempList)
                     {
