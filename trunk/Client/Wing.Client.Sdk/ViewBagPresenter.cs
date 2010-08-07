@@ -5,6 +5,7 @@ using Wing.Client.Sdk.Events;
 using Wing.Composite.Presentation.Regions;
 using Wing.Composite.Regions;
 using Wing.Events;
+using Wing.ServiceLocation;
 
 namespace Wing.Client.Sdk
 {
@@ -14,13 +15,17 @@ namespace Wing.Client.Sdk
         private ReadOnlyObservableCollection<IViewPresenter> _readOnlyCollection;
         private string _contentRegion;
         private IEventAggregator _eventAggregator;
+        private INavigationHistoryService _history;
+        private IRegionManager _regionManager;
 
-        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, IEventAggregator eventAggregator, String contentRegionName)
+        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, String contentRegionName)
             : base(model, view, regionManager)
         {
+            _history = ServiceLocator.Current.GetInstance<INavigationHistoryService>();
+            _eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             _readOnlyCollection = new ReadOnlyObservableCollection<IViewPresenter>(_views);
+            _regionManager = regionManager ?? ServiceLocator.Current.GetInstance<IRegionManager>();
             _contentRegion = contentRegionName;
-            _eventAggregator = eventAggregator;
             regionManager.Regions[_contentRegion].ActiveViews.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(ActiveViews_CollectionChanged);
         }
 
@@ -29,16 +34,25 @@ namespace Wing.Client.Sdk
             UpdateActiveView();
         }
 
-        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, IEventAggregator eventAggregator)
-            : this(model, view, regionManager, eventAggregator, "Content") { }
+        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager)
+            : this(model, view, regionManager, "Content") { }
+
+        protected ViewBagPresenter(IViewPresentationModel model, Object view)
+            : this(model, view, null, "Content") { }
 
         public ReadOnlyObservableCollection<IViewPresenter> Views { get; private set; }
-        public void Navigate(IViewPresenter presenter)
+        public void Navigate(IViewPresenter presenter, bool addToHistory, bool forceHistory)
         {
             if (presenter.Parent == this || presenter.Parent == null)
             {
                 if (ActivePresenter != presenter)
                 {
+                    if (ActivePresenter != null)
+                    {
+                        if (addToHistory)
+                            _history.Push(ActivePresenter);
+                        RegionManager.Regions[_contentRegion].Deactivate(ActivePresenter.GetView());
+                    }
                     presenter.SetParent(this);
                     if (_views.Contains(presenter))
                         RegionManager.Regions[_contentRegion].Activate(presenter.GetView());
@@ -46,16 +60,29 @@ namespace Wing.Client.Sdk
                     {
                         _views.Add(presenter);
                         RegionManager.Regions[_contentRegion].Add(presenter.GetView(), presenter.RegionManager);
+                        RegionManager.Regions[_contentRegion].Activate(presenter.GetView());
                     }
                     UpdateActiveView();
                 }
+                else if (forceHistory)
+                    _history.Push(ActivePresenter);
             }
             else if (presenter.Parent != null && presenter.Parent is IViewBagPresenter)
             {
                 var parent = presenter.Parent as IViewBagPresenter;
-                Navigate(presenter.Parent);
-                parent.Navigate(presenter);
+                Navigate(presenter.Parent, false);
+                parent.Navigate(presenter, addToHistory, addToHistory);
             }
+        }
+
+        public void Navigate(IViewPresenter presenter)
+        {
+            Navigate(presenter, true, false);
+        }
+
+        public void Navigate(IViewPresenter presenter, bool addToHistory)
+        {
+            Navigate(presenter, addToHistory, false);
         }
 
         private void UpdateActiveView()
@@ -78,11 +105,14 @@ namespace Wing.Client.Sdk
 
     public abstract class ViewBagPresenter<TModel> : ViewBagPresenter, IViewBagPresenter<TModel> where TModel : IViewPresentationModel
     {
-        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, IEventAggregator eventAggregator, String contentRegionName)
-            : base(model, view, regionManager, eventAggregator, contentRegionName) { }
+        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, String contentRegionName)
+            : base(model, view, regionManager, contentRegionName) { }
 
-        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, IEventAggregator eventAggregator)
-            : base(model, view, regionManager, eventAggregator) { }
+        protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager)
+            : base(model, view, regionManager) { }
+
+        protected ViewBagPresenter(IViewPresentationModel model, Object view)
+            : base(model, view) { }
 
         public TModel Model
         {

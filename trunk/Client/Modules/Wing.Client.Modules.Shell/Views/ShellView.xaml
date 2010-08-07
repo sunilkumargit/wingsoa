@@ -53,8 +53,8 @@
                 </wingcontrols:Toolbar>
                 <wingcontrols:Toolbar BarStyle="{StaticResource LightToolbarBorder}" Grid.Row="1">
                     <wingcontrols:Toolbar.LeftItems>
-                        <wingcontrols:ToolButton ImageSource="../Assets/back.png"/>
-                        <wingcontrols:ToolButton ImageSource="../Assets/home.png"/>
+                        <wingcontrols:ToolButton ImageSource="../Assets/back.png" x:Name="BackButton" OnButtonClick="BackButton_OnButtonClick"/>
+                        <wingcontrols:ToolButton ImageSource="../Assets/home.png" x:Name="HomeButton" OnButtonClick="HomeButton_OnButtonClick"/>
                         <Rectangle Style="{StaticResource LightToolbarSeparator}"/>
                         <ItemsControl wingp:RegionManager.RegionName="ShellMainBar">
                             <ItemsControl.ItemsPanel>

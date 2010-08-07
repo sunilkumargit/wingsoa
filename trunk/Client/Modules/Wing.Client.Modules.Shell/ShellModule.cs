@@ -19,9 +19,10 @@ namespace Wing.Client.Modules.Shell
         public override void Initialize()
         {
             //criar o view do shell aqui.
-            ServiceLocator.Current.Register<IRegionManager, RegionManager>();
+            ServiceLocator.Current.Register<INavigationHistoryService, NavigationHistoryService>(true);
             ServiceLocator.Current.Register<IShellView, ShellView>(true);
             ServiceLocator.Current.Register<IShellPresentationModel, ShellPresentationModel>(true);
+            ServiceLocator.Current.Register<IShellViewPresenter, ShellViewPresenter>(true);
             ServiceLocator.Current.Register<IShellService, ShellService>(true);
         }
 

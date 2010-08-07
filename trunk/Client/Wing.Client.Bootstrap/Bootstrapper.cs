@@ -55,6 +55,7 @@ namespace Wing.Client.Bootstrap
             ConfigureDefaultRegionBehaviors();
             RegisterFrameworkExceptionTypes();
 
+            ServiceLocator.Current.Register<IRegionManager, RegionManager>();
 
             //carregar os modulos
             settings.Splash.DisplayMessage("Carregando os módulos...");

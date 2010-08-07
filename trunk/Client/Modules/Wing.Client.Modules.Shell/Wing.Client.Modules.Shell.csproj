@@ -69,15 +69,16 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NavigationHistoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShellMainContentPresenter.cs" />
     <Compile Include="ShellModule.cs" />
-    <Compile Include="Views\IShellPresentationModel.cs" />
-    <Compile Include="Views\IShellView.cs" />
     <Compile Include="ShellService.cs" />
     <Compile Include="Views\ShellPresentationModel.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShellViewPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
@@ -128,9 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="temp\sales.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="temp\bi.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="temp\settings.png" />

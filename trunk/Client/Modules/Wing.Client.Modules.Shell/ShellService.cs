@@ -13,24 +13,22 @@ namespace Wing.Client.Modules.Shell
 {
     public class ShellService : IShellService
     {
-        private IRegionManager _regionManager;
         private IEventAggregator _eventAggregator;
         private IRootVisualManager _visualManager;
-        private IShellView _shellView;
         private IShellPresentationModel _presentationModel;
         private List<IViewPresenter> _presenters;
+        private IShellViewPresenter _shellPresenter;
+        private INavigationHistoryService _navigationHistory;
 
-        public ShellService(IShellView view, IShellPresentationModel presentation, IRegionManager regionManager, IEventAggregator eventAggregator, IRootVisualManager rootVisualManager)
+        public ShellService(IShellViewPresenter shellPresenter, IEventAggregator eventAggregator, INavigationHistoryService navigationHistory, IRootVisualManager rootVisualManager)
         {
             _presenters = new List<IViewPresenter>();
-            _shellView = view;
-            _regionManager = regionManager;
             _eventAggregator = eventAggregator;
+            _shellPresenter = shellPresenter;
             _visualManager = rootVisualManager;
-            _presentationModel = presentation;
-            view.Model = presentation;
-            Wing.Composite.Presentation.Regions.RegionManager.SetRegionManager((DependencyObject)view, _regionManager);
-            MainContentPresenter = new ShellMainContentPresenter(view, regionManager, eventAggregator);
+            _navigationHistory = navigationHistory;
+            _presentationModel = shellPresenter.Model;
+            MainContentPresenter = new ShellMainContentPresenter((IShellView)shellPresenter.GetView(), shellPresenter.RegionManager);
         }
 
         public void StartShell()
@@ -39,15 +37,17 @@ namespace Wing.Client.Modules.Shell
             _eventAggregator.GetEvent<UserLoginEvent>().Subscribe(_UserLoginEvent, ThreadOption.UIThread);
             //registrar-se no evento de alteração de views ativas
             _eventAggregator.GetEvent<ViewBagActiveViewChangedEvent>().Subscribe(_ViewBagActiveViewChangedEvent);
+            //registrar-se no evento 'Back' do shell
+            _eventAggregator.GetEvent<ShellActionEvent>().Subscribe(_ShellActionEvent);
         }
 
         public void _UserLoginEvent(UserLoginEventArgs args)
         {
             if (args.Action == UserLoginAction.LoggedIn)
             {
-                Helper.DelayExecution(TimeSpan.FromSeconds(2), () =>
+                Helper.DelayExecution(TimeSpan.FromSeconds(1), () =>
                     {
-                        _visualManager.SetRootElement((UIElement)_shellView);
+                        _visualManager.SetRootElement((UIElement)_shellPresenter.GetView());
                         return false;
                     });
             }
@@ -56,6 +56,12 @@ namespace Wing.Client.Modules.Shell
         public void _ViewBagActiveViewChangedEvent(ViewBagActiveViewChangedEventArgs args)
         {
             _presentationModel.ActiveViews = GetActiveViews();
+        }
+
+        public void _ShellActionEvent(ShellActionEventArgs args)
+        {
+            if (args.Action == ShellAction.NavigateBack)
+                NavigateBack();
         }
 
         private List<IViewPresenter> GetActiveViews()
@@ -75,7 +81,7 @@ namespace Wing.Client.Modules.Shell
 
         public IRegionManager RegionManager
         {
-            get { return _regionManager; }
+            get { return _shellPresenter.RegionManager; }
         }
 
         public void StatusMessage(string message, params string[] values)
@@ -116,14 +122,13 @@ namespace Wing.Client.Modules.Shell
             MainContentPresenter.Navigate(viewPresenter);
         }
 
-        public void NavigateBack() { }
+        public void NavigateBack()
+        {
+            var previous = _navigationHistory.Pop();
+            if (previous != null)
+                MainContentPresenter.Navigate(previous, false);
+        }
 
         public IViewBagPresenter MainContentPresenter { get; private set; }
-    }
-
-    public class ShellMainContentPresenter : ViewBagPresenter<ViewPresentationModel>
-    {
-        public ShellMainContentPresenter(IShellView view, IRegionManager regionManager, IEventAggregator eventAggregator)
-            : base(new ViewPresentationModel(), view, regionManager, eventAggregator, ShellRegionNames.ShellMainContent) { }
     }
 }

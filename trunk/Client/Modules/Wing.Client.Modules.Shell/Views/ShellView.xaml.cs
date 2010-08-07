@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Wing.Client.Sdk;
+using System;
 
 namespace Wing.Client.Modules.Shell.Views
 {
@@ -54,5 +56,20 @@ namespace Wing.Client.Modules.Shell.Views
             set { DataContext = value; }
         }
 
+        public event EventHandler HomeButtonClicked;
+
+        public event EventHandler BackButtonClicked;
+
+        private void BackButton_OnButtonClick(object sender, MouseButtonEventArgs e)
+        {
+            if (BackButtonClicked != null)
+                BackButtonClicked.Invoke(this, new EventArgs());
+        }
+
+        private void HomeButton_OnButtonClick(object sender, MouseButtonEventArgs e)
+        {
+            if (HomeButtonClicked != null)
+                HomeButtonClicked.Invoke(this, new EventArgs());
+        }
     }
 }

@@ -6,7 +6,7 @@ using Wing.Utils;
 
 namespace Wing.Client.Modules.Shell.Views
 {
-    public class ShellPresentationModel : PresentationModel, IShellPresentationModel
+    public class ShellPresentationModel : ViewPresentationModel, IShellPresentationModel
     {
         private string _statusMessage;
         private bool _progressBarIsVisible;
@@ -17,6 +17,7 @@ namespace Wing.Client.Modules.Shell.Views
         private string _activeViewsText;
 
         public ShellPresentationModel()
+            : base("Shell", "Shell")
         {
             this.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(ShellPresentationModel_PropertyChanged);
         }
@@ -65,7 +66,7 @@ namespace Wing.Client.Modules.Shell.Views
         public String ActiveViewsText
         {
             get { return _activeViewsText; }
-            private set { _activeViewsText = value; NotifyPropertyChanged("ActiveViewsText"); }
+            set { _activeViewsText = value; NotifyPropertyChanged("ActiveViewsText"); }
         }
 
         public List<IViewPresenter> ActiveViews

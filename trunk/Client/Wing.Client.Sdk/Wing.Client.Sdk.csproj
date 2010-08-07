@@ -66,10 +66,16 @@
       <DependentUpon>ToolButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ViewBagDefaultContainer.cs" />
+    <Compile Include="Events\ShellAction.cs" />
+    <Compile Include="Events\ShellActionEvent.cs" />
+    <Compile Include="Events\ShellActionEventArgs.cs" />
     <Compile Include="Events\UserLoginAction.cs" />
     <Compile Include="Events\UserLoginEvent.cs" />
     <Compile Include="INavigationHistoryService.cs" />
     <Compile Include="IPresentationModel.cs" />
+    <Compile Include="IShellPresentationModel.cs" />
+    <Compile Include="IShellView.cs" />
+    <Compile Include="IShellViewPresenter.cs" />
     <Compile Include="IViewBagPresenter.cs" />
     <Compile Include="IViewPresentationModel.cs" />
     <Compile Include="IShellService.cs" />

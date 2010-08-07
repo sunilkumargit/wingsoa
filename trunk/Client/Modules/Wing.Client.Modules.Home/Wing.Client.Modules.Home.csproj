@@ -71,15 +71,7 @@
     <Compile Include="Views\Home\HomeViewPresenter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\Home\IHomeView.cs" />
-    <Compile Include="Views\Home\IHomeViewPresentationModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\Home\IHomeViewPresenter.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Views\Root\HomeRootPresenter.cs" />
-    <Compile Include="Views\Root\IHomeRootPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
@@ -97,6 +89,10 @@
     <ProjectReference Include="..\..\Wing.Composite\Wing.Composite.csproj">
       <Project>{7A751BB0-5CB7-4429-86E6-760F47BA3369}</Project>
       <Name>Wing.Composite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wing.Client.Modules.Home.Interop\Wing.Client.Modules.Home.Interop.csproj">
+      <Project>{22727935-E641-4B59-B329-ECEB6625A100}</Project>
+      <Name>Wing.Client.Modules.Home.Interop</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
