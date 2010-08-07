@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Windows;
-using Wing.Client.Sdk;
 
 namespace Wing.Client.Sdk
 {

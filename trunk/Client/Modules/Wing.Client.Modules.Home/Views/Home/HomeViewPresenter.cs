@@ -1,7 +1,7 @@
 ﻿using Wing.Client.Sdk;
+using Wing.Client.Sdk.Events;
 using Wing.Composite.Regions;
 using Wing.Events;
-using Wing.Client.Sdk.Events;
 
 namespace Wing.Client.Modules.Home.Views.Home
 {

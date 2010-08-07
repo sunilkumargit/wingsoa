@@ -1,7 +1,5 @@
 ﻿using Wing.Client.Modules.Shell.Views;
 using Wing.Client.Sdk;
-using Wing.Composite.Presentation.Regions;
-using Wing.Composite.Regions;
 using Wing.Modularity;
 using Wing.ServiceLocation;
 
