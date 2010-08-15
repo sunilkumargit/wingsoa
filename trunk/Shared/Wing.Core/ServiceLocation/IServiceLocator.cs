@@ -5,7 +5,7 @@ namespace Wing.ServiceLocation
 {
     /// <summary>
     /// The generic Service Locator interface. This interface is used
-    /// to retrieve services (instances identified by type and optional
+    /// to retrieve services (instances identified by type and an [optional]
     /// name) from a container.
     /// </summary>
     public interface IServiceLocator : IServiceProvider

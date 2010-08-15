@@ -15,7 +15,6 @@ namespace Wing.UnityServiceLocator
             _container = container ?? new UnityContainer();
         }
 
-
         #region IServiceLocator Members
 
         public object GetInstance(Type serviceType)
