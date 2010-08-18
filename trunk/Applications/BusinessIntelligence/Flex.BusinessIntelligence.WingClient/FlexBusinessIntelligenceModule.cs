@@ -1,6 +1,7 @@
 ﻿using Flex.BusinessIntelligence.WingClient.Views.Root;
 using Wing.Modularity;
 using Wing.ServiceLocation;
+using Flex.BusinessIntelligence.WingClient.Views.Home;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -13,12 +14,16 @@ namespace Flex.BusinessIntelligence.WingClient
         public override void Initialize()
         {
             ServiceLocator.Current.Register<IBIRootPresenter, BIRootPresenter>();
+
+            ServiceLocator.Current.Register<IBIHomeView, BIHomeView>();
+            ServiceLocator.Current.Register<BIHomePresenter, BIHomePresenter>();
         }
 
         public override void Initialized()
         {
             // ativar o presenter;
             var presenter = ServiceLocator.Current.GetInstance<IBIRootPresenter>();
+            presenter.Navigate(ServiceLocator.Current.GetInstance<BIHomePresenter>());
         }
     }
 
