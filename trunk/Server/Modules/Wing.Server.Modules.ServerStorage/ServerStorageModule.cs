@@ -16,7 +16,7 @@ namespace Wing.Server.Modules.ServerStorage
         public override void Initialize()
         {
             var bootSettings = ServiceLocator.Current.GetInstance<BootstrapSettings>();
-            var dbPath = Path.Combine(bootSettings.ServerDataBasePath, "ServerData", "server.sdf");
+            var dbPath = Path.Combine(bootSettings.ServerDataBasePath);
 
             var serverStorage = new SqlCeServerStorageService(dbPath);
             serverStorage.RegisterEntity<ServerStoreTraceEntity>();

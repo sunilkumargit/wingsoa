@@ -145,6 +145,7 @@
     <Resource Include="Assets\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common"/>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -159,7 +160,4 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)*.*  $(SolutionDir)\AssemblyOutput\Client\Add</PostBuildEvent>
-  </PropertyGroup>
 </Project>
