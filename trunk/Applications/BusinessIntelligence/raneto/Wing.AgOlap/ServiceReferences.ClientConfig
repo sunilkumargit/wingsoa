@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="OlapWebServiceSoap" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:1688/OlapWebService.asmx"
+                binding="basicHttpBinding" bindingConfiguration="OlapWebServiceSoap"
+                contract="OlapWebService.OlapWebServiceSoap" name="OlapWebServiceSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>
