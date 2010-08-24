@@ -1,0 +1,15 @@
+Copyright 2009 Galaktika Corporation ZAO. All rights reserved.
+
+Ranet.Json is Open Source Project hosted at http://code.google.com/p/ranet-json/
+It is based on source code provided by Jayrock project (http://jayrock.berlios.de/).
+
+Ranet.Json is a free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+
+A copy of the GNU Lesser General Public License is distributed along with Ranet.JSon.  If not, see http://www.gnu.org/licenses/.
+
+Galaktika Corporation ZAO provides Jayrock.AgJson.dll and Jayrock.Json.dll libraries in signed binary form.
+You do not need to acquire any other license from Galaktika Corporation ZAO to link and distribute these libraries with any (including commercial, closed-source) applications or libraries.
+
+If you need any support options please contact the appropriate project owner. Galaktika Corp can provide it too.
