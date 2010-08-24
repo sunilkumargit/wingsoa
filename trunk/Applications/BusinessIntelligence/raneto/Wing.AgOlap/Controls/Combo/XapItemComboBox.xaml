@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="Ranet.AgOlap.Controls.Combo.XapItemComboBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:combo="clr-namespace:Ranet.AgOlap.Controls.Combo" 
+    >
+    <Grid x:Name="LayoutRoot" Background="White">
+        <combo:RanetComboBox x:Name="ItemsComboBox" Height="22">
+        </combo:RanetComboBox>
+    </Grid>
+</UserControl>
