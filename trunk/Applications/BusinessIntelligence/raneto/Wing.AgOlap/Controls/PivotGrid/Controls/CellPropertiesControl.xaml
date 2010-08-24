@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Ranet.AgOlap.Controls.PivotGrid.Controls.CellPropertiesControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:general="clr-namespace:Ranet.AgOlap.Controls.General" 
+    xmlns:tuple="clr-namespace:Ranet.AgOlap.Controls.ValueDelivery" 
+    xmlns:tab="clr-namespace:Ranet.AgOlap.Controls.Tab" 
+    xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    >
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <tab:RanetTabControl x:Name="TabCtrl">
+        </tab:RanetTabControl>
+    </Grid>
+</UserControl>

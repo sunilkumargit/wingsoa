@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Ranet.AgOlap.Controls.PivotGrid.Conditions.CustomCellConditionsEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:conditions="clr-namespace:Ranet.AgOlap.Controls.PivotGrid.Conditions"
+    xmlns:toolbar="clr-namespace:Ranet.AgOlap.Controls.ToolBar" 
+    xmlns:controls="clr-namespace:Ranet.AgOlap.Controls.General"
+    xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    >
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Тулбар -->
+        <toolbar:RanetToolBar x:Name="ToolBar" Grid.ColumnSpan="2" Margin="0,0,0,3"></toolbar:RanetToolBar>
+        
+        <!-- Список стилей -->
+        <Grid Grid.Row="1" Margin="0,0,5,0">  
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" x:Name="lblStyles" Text="Styles:" Margin="0,0,0,3"></TextBlock>
+            <conditions:ConditionsDescriptorListControl x:Name="DescriptorsList" Grid.Row="1"></conditions:ConditionsDescriptorListControl>
+        </Grid>
+        
+        <!-- Разделитель -->
+        <controls:RanetGridSplitter Grid.Row="1" IsTabStop="False" VerticalAlignment="Stretch" HorizontalAlignment="Right"></controls:RanetGridSplitter>
+
+        <!-- Описание стиля -->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="1,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" x:Name="lblStyleDetails" Text="Style Details:" Margin="0,0,0,3"></TextBlock>
+            <Border Grid.Row="1" BorderBrush="DarkGray" Padding="3" BorderThickness="1">
+                <conditions:ConditionsDescriptorControl Grid.Row="1" x:Name="DescriptorDetails"></conditions:ConditionsDescriptorControl>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

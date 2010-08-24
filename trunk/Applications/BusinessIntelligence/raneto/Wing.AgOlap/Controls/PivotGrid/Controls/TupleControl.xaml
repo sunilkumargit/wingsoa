@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Ranet.AgOlap.Controls.PivotGrid.Controls.TupleControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:copy="clr-namespace:Ranet.AgOlap.Controls.ValueCopy"
+    xmlns:buttons="clr-namespace:Ranet.AgOlap.Controls.Buttons"
+    xmlns:general="clr-namespace:Ranet.AgOlap.Controls.General"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows"
+    xmlns:data="clr-namespace:Ranet.AgOlap.Controls.Data"
+    xmlns:swc_data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:combo="clr-namespace:Ranet.AgOlap.Controls.Combo"         
+    >
+    <!--	/*   
+    Copyright (C) 2009 Galaktika Corporation ZAO
+
+    This file is a part of Ranet.UILibrary.Olap
+ 
+    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+      
+    You should have received a copy of the GNU General Public License
+    along with Ranet.UILibrary.Olap.  If not, see
+  	<http://www.gnu.org/licenses/> 
+  
+    If GPL v.3 is not suitable for your products or company,
+    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    designed to meet your specific usage and distribution requirements.
+    If you have already obtained a commercial license from Galaktika Corp,
+    you can use this file under those license terms.
+*/ -->
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <data:RanetDataGrid x:Name="coordinatesGrid" AutoGenerateColumns="False">
+            <data:RanetDataGrid.Columns>
+                <swc_data:DataGridTemplateColumn Header="Hierarchy" Width="150" IsReadOnly="True">
+                    <swc_data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding HierarchyUniqueName, Mode=TwoWay}" Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </swc_data:DataGridTemplateColumn.CellTemplate>
+                </swc_data:DataGridTemplateColumn>
+
+                <swc_data:DataGridTemplateColumn Header="Member" Width="150" IsReadOnly="False">
+                    <swc_data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding MemberUniqueName, Mode=TwoWay}" Foreground="Black" Margin="5,0,0,0" VerticalAlignment="Center"></TextBlock>
+                                <buttons:RanetHotButton Grid.Column="1" Height="18" Width="18" Content="..."  x:Name="ChangeMember_Button" Margin="3,0,0,0"  Visibility="{Binding ModifyControlsVisibility}" Click="ChangeMember_Button_Click"></buttons:RanetHotButton>
+                                <copy:DeleteButton Grid.Column="2" x:Name="DeleteMember_Button" Margin="2,0,3,0" Visibility="{Binding ModifyControlsVisibility}" Click="DeleteMember_Button_Click"></copy:DeleteButton>
+                            </Grid>
+                        </DataTemplate>
+                    </swc_data:DataGridTemplateColumn.CellTemplate>
+                    <swc_data:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding MemberUniqueName, Mode=TwoWay}" Foreground="Blue" Margin="5,0,0,0" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </swc_data:DataGridTemplateColumn.CellEditingTemplate>
+                </swc_data:DataGridTemplateColumn>
+            </data:RanetDataGrid.Columns>
+        </data:RanetDataGrid>
+    </Grid>
+</UserControl>

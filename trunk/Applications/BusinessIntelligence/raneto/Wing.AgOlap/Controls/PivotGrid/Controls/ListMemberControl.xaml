@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Ranet.AgOlap.Controls.PivotGrid.Controls.ListMemberControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    >
+    
+        <Grid x:Name="LayoutRoot" Height="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="9">
+        <Border x:Name="border4" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" CornerRadius="4.5">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#88141414"/>
+                    <GradientStop Color="#88868686" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#CC868686"/>
+                    <GradientStop Color="#CC141414" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+        </Border> 
+    </Grid>
+</UserControl>
