@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers.NamedSetControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:general="clr-namespace:Ranet.AgOlap.Controls.General"
+    xmlns:calc_members="clr-namespace:Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers"
+    >
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <swc:TabControl x:Name="TabCtrl">
+            <swc:TabItem x:Name="tabScriptTab" Header="Script View">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!-- Имя -->
+                    <TextBlock Grid.Row="0" x:Name="lblName" Text="Name:"></TextBlock>
+                    <general:RichTextBox Grid.Row="1" x:Name="txtName" Margin="0,3,0,0"></general:RichTextBox>
+
+                    <!-- Скрипт -->
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" x:Name="lblExpression" Text="Expression:" Margin="0,3,0,0"></TextBlock>
+                        <general:RichTextBox Grid.Row="1" x:Name="txtExpression" AcceptsReturn="True" TextWrapping="Wrap" Margin="0,3,0,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"></general:RichTextBox>
+                    </Grid>
+                </Grid>
+            </swc:TabItem>
+        </swc:TabControl>
+    </Grid>
+</UserControl>

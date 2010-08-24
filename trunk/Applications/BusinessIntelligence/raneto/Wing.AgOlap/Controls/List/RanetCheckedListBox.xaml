@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Ranet.AgOlap.Controls.List.RanetCheckedListBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:List="clr-namespace:Ranet.AgOlap.Controls.List"    
+    >
+    <UserControl.Resources>
+        <Style x:Key="CheckedItemStyle" TargetType="List:RanetCheckedItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="List:RanetCheckedItem">
+                        <Grid>
+                            <CheckBox x:Name="checkBox" IsChecked="{Binding Path=IsChecked, Mode=TwoWay}" Content="{Binding Path=Text}" ClickMode="Press"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>    
+    <Grid x:Name="LayoutRoot">
+        <List:RanetListBox x:Name="ListBox">            
+        </List:RanetListBox>
+    </Grid>
+</UserControl>
