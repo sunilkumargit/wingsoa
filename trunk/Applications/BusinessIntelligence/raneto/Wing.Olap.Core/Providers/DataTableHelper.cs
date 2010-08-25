@@ -25,9 +25,9 @@ using System.Data;
 using System.Linq;
 using System.Web;
 
-namespace Ranet.Olap.Core.Providers
+namespace Wing.Olap.Core.Providers
 {
-    using Ranet.Olap.Core.Data;
+    using Wing.Olap.Core.Data;
 
     public static class DataTableHelper
     {

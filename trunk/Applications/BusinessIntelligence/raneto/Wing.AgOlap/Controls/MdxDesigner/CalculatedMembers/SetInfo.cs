@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers
+namespace Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers
 {
     public class CalculatedNamedSetInfo : CalculationInfoBase
     {

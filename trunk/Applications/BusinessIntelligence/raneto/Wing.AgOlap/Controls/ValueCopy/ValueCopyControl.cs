@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,24 +29,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.General.ClientServer;
-using Ranet.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Core.Metadata;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Ranet.AgOlap.Controls.Tab;
-using Ranet.AgOlap.Controls.General.ItemControls;
-using Ranet.AgOlap.Controls.Buttons;
-using Ranet.AgOlap.Controls.ValueDelivery;
-using Ranet.AgOlap.Controls.General.Tree;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Controls.ValueCopy.Wrappers;
-using Ranet.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.Tab;
+using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.AgOlap.Controls.Buttons;
+using Wing.AgOlap.Controls.ValueDelivery;
+using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Controls.ValueCopy.Wrappers;
+using Wing.AgOlap.Controls.ToolBar;
 using System.IO.IsolatedStorage;
 using System.IO;
-using Ranet.Olap.Core;
+using Wing.Olap.Core;
 
-namespace Ranet.AgOlap.Controls.ValueCopy
+namespace Wing.AgOlap.Controls.ValueCopy
 {
     public class ValueCopyControl : UserControl
     {
@@ -157,7 +157,7 @@ namespace Ranet.AgOlap.Controls.ValueCopy
             TextBlock Label_Coefficient = new TextBlock() { Text = Localization.ValueCopyControl_Сoefficient, Margin = new Thickness(0, 5, 0, 0) };
             Row0_LayoutRoot.Children.Add(Label_Coefficient);
             Grid.SetRow(Label_Coefficient, 2);
-            m_Coefficient = new Ranet.AgOlap.Controls.General.RichTextBox() { Text = "1", Margin = new Thickness(0, 5, 0, 0) };
+            m_Coefficient = new Wing.AgOlap.Controls.General.RichTextBox() { Text = "1", Margin = new Thickness(0, 5, 0, 0) };
             Row0_LayoutRoot.Children.Add(m_Coefficient);
             Grid.SetRow(m_Coefficient, 3);
 
@@ -166,7 +166,7 @@ namespace Ranet.AgOlap.Controls.ValueCopy
             Row0_LayoutRoot.Children.Add(Label_Value);
             Grid.SetRow(Label_Value, 2);
             Grid.SetColumn(Label_Value, 1);
-            m_Value = new Ranet.AgOlap.Controls.General.RichTextBox() { Text = "0", Margin = new Thickness(5, 5, 0, 0) };
+            m_Value = new Wing.AgOlap.Controls.General.RichTextBox() { Text = "0", Margin = new Thickness(5, 5, 0, 0) };
             Row0_LayoutRoot.Children.Add(m_Value);
             Grid.SetRow(m_Value, 3);
             Grid.SetColumn(m_Value, 1);

@@ -9,9 +9,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
-using Ranet.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.General;
 
-namespace Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers
+namespace Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers
 {
     [XmlInclude(typeof(CalcMemberInfo))]
     [XmlInclude(typeof(CalculatedNamedSetInfo))]

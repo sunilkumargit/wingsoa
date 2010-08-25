@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers.NamedSetControl"
+﻿<UserControl x:Class="Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers.NamedSetControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
     xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
-    xmlns:general="clr-namespace:Ranet.AgOlap.Controls.General"
-    xmlns:calc_members="clr-namespace:Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers"
+    xmlns:general="clr-namespace:Wing.AgOlap.Controls.General"
+    xmlns:calc_members="clr-namespace:Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers"
     >
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <swc:TabControl x:Name="TabCtrl">

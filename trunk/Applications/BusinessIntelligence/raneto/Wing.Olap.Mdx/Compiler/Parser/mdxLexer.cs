@@ -1,18 +1,18 @@
 /*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see <http://www.gnu.org/licenses/>.
+    along with Wing.UILibrary.Olap.  If not, see <http://www.gnu.org/licenses/>.
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -127,7 +127,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
         override public string GrammarFileName
         {
-            get { return "D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g"; }
+            get { return "D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g"; }
         }
 
         // $ANTLR start "T__53"
@@ -137,8 +137,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__53;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:10:7: ( '=' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:10:9: '='
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:10:7: ( '=' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:10:9: '='
                 {
                     Match('=');
 
@@ -160,8 +160,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__54;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:11:7: ( 'USE_EQUAL_ALLOCATION' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:11:9: 'USE_EQUAL_ALLOCATION'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:11:7: ( 'USE_EQUAL_ALLOCATION' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:11:9: 'USE_EQUAL_ALLOCATION'
                 {
                     Match("USE_EQUAL_ALLOCATION");
 
@@ -184,8 +184,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__55;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:12:7: ( 'USE_EQUAL_INCREMENT' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:12:9: 'USE_EQUAL_INCREMENT'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:12:7: ( 'USE_EQUAL_INCREMENT' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:12:9: 'USE_EQUAL_INCREMENT'
                 {
                     Match("USE_EQUAL_INCREMENT");
 
@@ -208,8 +208,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__56;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:13:7: ( 'USE_WEIGHTED_ALLOCATION' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:13:9: 'USE_WEIGHTED_ALLOCATION'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:13:7: ( 'USE_WEIGHTED_ALLOCATION' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:13:9: 'USE_WEIGHTED_ALLOCATION'
                 {
                     Match("USE_WEIGHTED_ALLOCATION");
 
@@ -232,8 +232,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__57;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:14:7: ( 'USE_WEIGHTED_INCREMENT' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:14:9: 'USE_WEIGHTED_INCREMENT'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:14:7: ( 'USE_WEIGHTED_INCREMENT' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:14:9: 'USE_WEIGHTED_INCREMENT'
                 {
                     Match("USE_WEIGHTED_INCREMENT");
 
@@ -256,8 +256,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__58;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:15:7: ( ',' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:15:9: ','
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:15:7: ( ',' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:15:9: ','
                 {
                     Match(',');
 
@@ -279,8 +279,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__59;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:16:7: ( '*' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:16:9: '*'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:16:7: ( '*' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:16:9: '*'
                 {
                     Match('*');
 
@@ -302,8 +302,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__60;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:17:7: ( '.' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:17:9: '.'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:17:7: ( '.' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:17:9: '.'
                 {
                     Match('.');
 
@@ -325,8 +325,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__61;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:18:7: ( '(' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:18:9: '('
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:18:7: ( '(' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:18:9: '('
                 {
                     Match('(');
 
@@ -348,8 +348,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__62;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:19:7: ( ')' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:19:9: ')'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:19:7: ( ')' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:19:9: ')'
                 {
                     Match(')');
 
@@ -371,8 +371,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__63;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:20:7: ( '<>' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:20:9: '<>'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:20:7: ( '<>' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:20:9: '<>'
                 {
                     Match("<>");
 
@@ -395,8 +395,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__64;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:21:7: ( '<' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:21:9: '<'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:21:7: ( '<' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:21:9: '<'
                 {
                     Match('<');
 
@@ -418,8 +418,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__65;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:22:7: ( '>' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:22:9: '>'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:22:7: ( '>' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:22:9: '>'
                 {
                     Match('>');
 
@@ -441,8 +441,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__66;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:23:7: ( '<=' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:23:9: '<='
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:23:7: ( '<=' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:23:9: '<='
                 {
                     Match("<=");
 
@@ -465,8 +465,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__67;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:7: ( '>=' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:9: '>='
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:7: ( '>=' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:9: '>='
                 {
                     Match(">=");
 
@@ -489,8 +489,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__68;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:25:7: ( '+' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:25:9: '+'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:25:7: ( '+' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:25:9: '+'
                 {
                     Match('+');
 
@@ -512,8 +512,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__69;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:26:7: ( '-' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:26:9: '-'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:26:7: ( '-' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:26:9: '-'
                 {
                     Match('-');
 
@@ -535,8 +535,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__70;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:27:7: ( '/' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:27:9: '/'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:27:7: ( '/' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:27:9: '/'
                 {
                     Match('/');
 
@@ -558,8 +558,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__71;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:28:7: ( '^' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:28:9: '^'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:28:7: ( '^' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:28:9: '^'
                 {
                     Match('^');
 
@@ -581,8 +581,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__72;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:7: ( ':' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:9: ':'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:7: ( ':' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:9: ':'
                 {
                     Match(':');
 
@@ -604,8 +604,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__73;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:30:7: ( '&' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:30:9: '&'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:30:7: ( '&' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:30:9: '&'
                 {
                     Match('&');
 
@@ -627,8 +627,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__74;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:31:7: ( '{' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:31:9: '{'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:31:7: ( '{' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:31:9: '{'
                 {
                     Match('{');
 
@@ -650,8 +650,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__75;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:32:7: ( '}' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:32:9: '}'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:32:7: ( '}' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:32:9: '}'
                 {
                     Match('}');
 
@@ -673,8 +673,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = T__76;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:33:7: ( '!' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:33:9: '!'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:33:7: ( '!' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:33:9: '!'
                 {
                     Match('!');
 
@@ -696,8 +696,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = AND;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:371:5: ( ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'D' | 'd' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:371:7: ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'D' | 'd' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:371:5: ( ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'D' | 'd' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:371:7: ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'D' | 'd' )
                 {
                     if (input.LA(1) == 'A' || input.LA(1) == 'a')
                     {
@@ -754,8 +754,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = AS;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:372:5: ( ( 'A' | 'a' ) ( 'S' | 's' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:372:7: ( 'A' | 'a' ) ( 'S' | 's' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:372:5: ( ( 'A' | 'a' ) ( 'S' | 's' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:372:7: ( 'A' | 'a' ) ( 'S' | 's' )
                 {
                     if (input.LA(1) == 'A' || input.LA(1) == 'a')
                     {
@@ -800,8 +800,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = BY;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:373:5: ( ( 'B' | 'b' ) ( 'Y' | 'y' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:373:7: ( 'B' | 'b' ) ( 'Y' | 'y' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:373:5: ( ( 'B' | 'b' ) ( 'Y' | 'y' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:373:7: ( 'B' | 'b' ) ( 'Y' | 'y' )
                 {
                     if (input.LA(1) == 'B' || input.LA(1) == 'b')
                     {
@@ -846,8 +846,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = CASE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:374:7: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:374:9: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:374:7: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:374:9: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'C' || input.LA(1) == 'c')
                     {
@@ -916,8 +916,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = CALCULATED;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:376:2: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:376:4: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:376:2: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:376:4: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' )
                 {
                     if (input.LA(1) == 'C' || input.LA(1) == 'c')
                     {
@@ -1058,8 +1058,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = CALCULATION;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:378:2: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:378:4: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:378:2: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:378:4: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'C' || input.LA(1) == 'c')
                     {
@@ -1212,8 +1212,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = CELL;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:379:7: ( ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:379:9: ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:379:7: ( ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:379:9: ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' )
                 {
                     if (input.LA(1) == 'C' || input.LA(1) == 'c')
                     {
@@ -1282,8 +1282,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = CELL_ORDINAL;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:2: ( ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( '_' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'L' | 'l' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:4: ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( '_' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'L' | 'l' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:2: ( ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( '_' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'L' | 'l' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:4: ( 'C' | 'c' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( '_' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'L' | 'l' )
                 {
                     if (input.LA(1) == 'C' || input.LA(1) == 'c')
                     {
@@ -1333,8 +1333,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:40: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:41: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:40: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:381:41: '_'
                     {
                         Match('_');
 
@@ -1443,8 +1443,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = CREATE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:382:9: ( ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:382:11: ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:382:9: ( ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:382:11: ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'C' || input.LA(1) == 'c')
                     {
@@ -1537,8 +1537,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = CUBE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:383:7: ( ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:383:9: ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:383:7: ( ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:383:9: ( 'C' | 'c' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'C' || input.LA(1) == 'c')
                     {
@@ -1607,8 +1607,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = DIMENSION;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:385:2: ( ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:385:4: ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:385:2: ( ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:385:4: ( 'D' | 'd' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'D' || input.LA(1) == 'd')
                     {
@@ -1737,8 +1737,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = ELSE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:386:6: ( ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:386:8: ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'S' | 's' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:386:6: ( ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:386:8: ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'S' | 's' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'E' || input.LA(1) == 'e')
                     {
@@ -1807,8 +1807,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = EMPTY;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:387:7: ( ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'T' | 't' ) ( 'Y' | 'y' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:387:9: ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'T' | 't' ) ( 'Y' | 'y' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:387:7: ( ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'T' | 't' ) ( 'Y' | 'y' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:387:9: ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'T' | 't' ) ( 'Y' | 'y' )
                 {
                     if (input.LA(1) == 'E' || input.LA(1) == 'e')
                     {
@@ -1889,8 +1889,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = END;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:388:5: ( ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'D' | 'd' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:388:7: ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'D' | 'd' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:388:5: ( ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'D' | 'd' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:388:7: ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'D' | 'd' )
                 {
                     if (input.LA(1) == 'E' || input.LA(1) == 'e')
                     {
@@ -1947,8 +1947,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = FORMATTED_VALUE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:2: ( ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'M' | 'm' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:4: ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'M' | 'm' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:2: ( ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'M' | 'm' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:4: ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' ) ( 'M' | 'm' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'F' || input.LA(1) == 'f')
                     {
@@ -2058,8 +2058,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:85: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:86: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:85: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:390:86: '_'
                     {
                         Match('_');
 
@@ -2144,8 +2144,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = FOR;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:391:5: ( ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:391:7: ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:391:5: ( ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:391:7: ( 'F' | 'f' ) ( 'O' | 'o' ) ( 'R' | 'r' )
                 {
                     if (input.LA(1) == 'F' || input.LA(1) == 'f')
                     {
@@ -2202,8 +2202,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = FROM;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:392:6: ( ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:392:8: ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:392:6: ( ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:392:8: ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' )
                 {
                     if (input.LA(1) == 'F' || input.LA(1) == 'f')
                     {
@@ -2272,8 +2272,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = SELECT;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:393:8: ( ( 'S' | 's' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'C' | 'c' ) ( 'T' | 't' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:393:10: ( 'S' | 's' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'C' | 'c' ) ( 'T' | 't' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:393:8: ( ( 'S' | 's' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'C' | 'c' ) ( 'T' | 't' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:393:10: ( 'S' | 's' ) ( 'E' | 'e' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'C' | 'c' ) ( 'T' | 't' )
                 {
                     if (input.LA(1) == 'S' || input.LA(1) == 's')
                     {
@@ -2366,8 +2366,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = IS;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:394:4: ( ( 'I' | 'i' ) ( 'S' | 's' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:394:6: ( 'I' | 'i' ) ( 'S' | 's' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:394:4: ( ( 'I' | 'i' ) ( 'S' | 's' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:394:6: ( 'I' | 'i' ) ( 'S' | 's' )
                 {
                     if (input.LA(1) == 'I' || input.LA(1) == 'i')
                     {
@@ -2412,8 +2412,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = GLOBAL;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:395:8: ( ( 'G' | 'g' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'B' | 'b' ) ( 'A' | 'a' ) ( 'L' | 'l' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:395:10: ( 'G' | 'g' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'B' | 'b' ) ( 'A' | 'a' ) ( 'L' | 'l' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:395:8: ( ( 'G' | 'g' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'B' | 'b' ) ( 'A' | 'a' ) ( 'L' | 'l' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:395:10: ( 'G' | 'g' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'B' | 'b' ) ( 'A' | 'a' ) ( 'L' | 'l' )
                 {
                     if (input.LA(1) == 'G' || input.LA(1) == 'g')
                     {
@@ -2506,8 +2506,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = MEMBER;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:396:8: ( ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:396:10: ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:396:8: ( ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:396:10: ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' )
                 {
                     if (input.LA(1) == 'M' || input.LA(1) == 'm')
                     {
@@ -2600,8 +2600,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = NON;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:397:5: ( ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:397:7: ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:397:5: ( ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:397:7: ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'N' || input.LA(1) == 'n')
                     {
@@ -2658,8 +2658,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = NOT;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:398:5: ( ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:398:7: ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:398:5: ( ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:398:7: ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' )
                 {
                     if (input.LA(1) == 'N' || input.LA(1) == 'n')
                     {
@@ -2716,8 +2716,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = ON;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:399:4: ( ( 'O' | 'o' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:399:6: ( 'O' | 'o' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:399:4: ( ( 'O' | 'o' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:399:6: ( 'O' | 'o' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'O' || input.LA(1) == 'o')
                     {
@@ -2762,8 +2762,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = OR;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:400:4: ( ( 'O' | 'o' ) ( 'R' | 'r' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:400:6: ( 'O' | 'o' ) ( 'R' | 'r' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:400:4: ( ( 'O' | 'o' ) ( 'R' | 'r' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:400:6: ( 'O' | 'o' ) ( 'R' | 'r' )
                 {
                     if (input.LA(1) == 'O' || input.LA(1) == 'o')
                     {
@@ -2808,8 +2808,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = PROPERTIES;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:402:2: ( ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'P' | 'p' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'E' | 'e' ) ( 'S' | 's' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:402:4: ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'P' | 'p' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'E' | 'e' ) ( 'S' | 's' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:402:2: ( ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'P' | 'p' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'E' | 'e' ) ( 'S' | 's' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:402:4: ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'P' | 'p' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'E' | 'e' ) ( 'S' | 's' )
                 {
                     if (input.LA(1) == 'P' || input.LA(1) == 'p')
                     {
@@ -2950,8 +2950,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = SESSION;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:403:9: ( ( 'S' | 's' ) ( 'E' | 'e' ) ( 'S' | 's' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:403:11: ( 'S' | 's' ) ( 'E' | 'e' ) ( 'S' | 's' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:403:9: ( ( 'S' | 's' ) ( 'E' | 'e' ) ( 'S' | 's' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:403:11: ( 'S' | 's' ) ( 'E' | 'e' ) ( 'S' | 's' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'S' || input.LA(1) == 's')
                     {
@@ -3056,8 +3056,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = SET;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:404:5: ( ( 'S' | 's' ) ( 'E' | 'e' ) ( 'T' | 't' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:404:7: ( 'S' | 's' ) ( 'E' | 'e' ) ( 'T' | 't' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:404:5: ( ( 'S' | 's' ) ( 'E' | 'e' ) ( 'T' | 't' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:404:7: ( 'S' | 's' ) ( 'E' | 'e' ) ( 'T' | 't' )
                 {
                     if (input.LA(1) == 'S' || input.LA(1) == 's')
                     {
@@ -3114,8 +3114,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = THEN;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:405:6: ( ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:405:8: ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:405:6: ( ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:405:8: ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'T' || input.LA(1) == 't')
                     {
@@ -3184,8 +3184,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = UPDATE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:406:8: ( ( 'U' | 'u' ) ( 'P' | 'p' ) ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:406:10: ( 'U' | 'u' ) ( 'P' | 'p' ) ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:406:8: ( ( 'U' | 'u' ) ( 'P' | 'p' ) ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:406:10: ( 'U' | 'u' ) ( 'P' | 'p' ) ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'U' || input.LA(1) == 'u')
                     {
@@ -3278,8 +3278,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = VALUE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:407:7: ( ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:407:9: ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:407:7: ( ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:407:9: ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'V' || input.LA(1) == 'v')
                     {
@@ -3360,8 +3360,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = USE_EQUAL_ALLOCATION;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'U' || input.LA(1) == 'u')
                     {
@@ -3399,8 +3399,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:31: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:32: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:31: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:32: '_'
                     {
                         Match('_');
 
@@ -3466,8 +3466,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:81: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:82: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:81: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:409:82: '_'
                     {
                         Match('_');
 
@@ -3612,8 +3612,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = USE_EQUAL_INCREMENT;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'E' | 'e' ) ( 'Q' | 'q' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' )
                 {
                     if (input.LA(1) == 'U' || input.LA(1) == 'u')
                     {
@@ -3651,8 +3651,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:31: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:32: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:31: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:32: '_'
                     {
                         Match('_');
 
@@ -3718,8 +3718,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:81: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:82: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:81: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:413:82: '_'
                     {
                         Match('_');
 
@@ -3852,8 +3852,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = USE_WEIGHTED_ALLOCATION;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'O' | 'o' ) ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'U' || input.LA(1) == 'u')
                     {
@@ -3891,8 +3891,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:31: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:32: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:31: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:32: '_'
                     {
                         Match('_');
 
@@ -3994,8 +3994,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:108: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:109: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:108: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:417:109: '_'
                     {
                         Match('_');
 
@@ -4140,8 +4140,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = USE_WEIGHTED_INCREMENT;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:2: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:4: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'E' | 'e' ) ( '_' ) ( 'W' | 'w' ) ( 'E' | 'e' ) ( 'I' | 'i' ) ( 'G' | 'g' ) ( 'H' | 'h' ) ( 'T' | 't' ) ( 'E' | 'e' ) ( 'D' | 'd' ) ( '_' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'R' | 'r' ) ( 'E' | 'e' ) ( 'M' | 'm' ) ( 'E' | 'e' ) ( 'N' | 'n' ) ( 'T' | 't' )
                 {
                     if (input.LA(1) == 'U' || input.LA(1) == 'u')
                     {
@@ -4179,8 +4179,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:31: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:32: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:31: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:32: '_'
                     {
                         Match('_');
 
@@ -4282,8 +4282,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:108: ( '_' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:109: '_'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:108: ( '_' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:421:109: '_'
                     {
                         Match('_');
 
@@ -4416,8 +4416,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = VISUAL;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:424:8: ( ( 'V' | 'v' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:424:10: ( 'V' | 'v' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:424:8: ( ( 'V' | 'v' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:424:10: ( 'V' | 'v' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'U' | 'u' ) ( 'A' | 'a' ) ( 'L' | 'l' )
                 {
                     if (input.LA(1) == 'V' || input.LA(1) == 'v')
                     {
@@ -4510,8 +4510,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = WITH;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:425:6: ( ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:425:8: ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:425:6: ( ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:425:8: ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' )
                 {
                     if (input.LA(1) == 'W' || input.LA(1) == 'w')
                     {
@@ -4580,8 +4580,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = WHEN;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:426:6: ( ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:426:8: ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:426:6: ( ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:426:8: ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'N' | 'n' )
                 {
                     if (input.LA(1) == 'W' || input.LA(1) == 'w')
                     {
@@ -4650,8 +4650,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = WHERE;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:427:7: ( ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'E' | 'e' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:427:9: ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'E' | 'e' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:427:7: ( ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'E' | 'e' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:427:9: ( 'W' | 'w' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'E' | 'e' )
                 {
                     if (input.LA(1) == 'W' || input.LA(1) == 'w')
                     {
@@ -4732,8 +4732,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = XOR;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:428:5: ( ( 'X' | 'x' ) ( 'O' | 'o' ) ( 'R' | 'r' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:428:7: ( 'X' | 'x' ) ( 'O' | 'o' ) ( 'R' | 'r' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:428:5: ( ( 'X' | 'x' ) ( 'O' | 'o' ) ( 'R' | 'r' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:428:7: ( 'X' | 'x' ) ( 'O' | 'o' ) ( 'R' | 'r' )
                 {
                     if (input.LA(1) == 'X' || input.LA(1) == 'x')
                     {
@@ -4790,10 +4790,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = FLOAT;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:7: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:7: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )*
                 {
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:9: ( '0' .. '9' )+
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:9: ( '0' .. '9' )+
                     int cnt1 = 0;
                     do
                     {
@@ -4809,7 +4809,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt1)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:9: '0' .. '9'
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:9: '0' .. '9'
                                 {
                                     MatchRange('0', '9');
 
@@ -4829,7 +4829,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     ;	// Stops C# compiler whinging that label 'loop1' has no statements
 
                     Match('.');
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:23: ( '0' .. '9' )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:23: ( '0' .. '9' )*
                     do
                     {
                         int alt2 = 2;
@@ -4844,7 +4844,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt2)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:23: '0' .. '9'
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:431:23: '0' .. '9'
                                 {
                                     MatchRange('0', '9');
 
@@ -4878,10 +4878,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = INTEGER;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:9: ( ( '0' .. '9' )+ )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:11: ( '0' .. '9' )+
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:9: ( ( '0' .. '9' )+ )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:11: ( '0' .. '9' )+
                 {
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:11: ( '0' .. '9' )+
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:11: ( '0' .. '9' )+
                     int cnt3 = 0;
                     do
                     {
@@ -4897,7 +4897,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt3)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:12: '0' .. '9'
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:432:12: '0' .. '9'
                                 {
                                     MatchRange('0', '9');
 
@@ -4935,8 +4935,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = ID;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:434:4: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '\\u0410' .. '\\u0451' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u0410' .. '\\u0451' )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:434:7: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '\\u0410' .. '\\u0451' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u0410' .. '\\u0451' )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:434:4: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '\\u0410' .. '\\u0451' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u0410' .. '\\u0451' )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:434:7: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '$' | '\\u0410' .. '\\u0451' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u0410' .. '\\u0451' )*
                 {
                     if (input.LA(1) == '$' || (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u0410' && input.LA(1) <= '\u0451'))
                     {
@@ -4950,7 +4950,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         throw mse;
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:434:54: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u0410' .. '\\u0451' )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:434:54: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '\\u0410' .. '\\u0451' )*
                     do
                     {
                         int alt4 = 2;
@@ -4965,7 +4965,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt4)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:
                                 {
                                     if ((input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') || (input.LA(1) >= '\u0410' && input.LA(1) <= '\u0451'))
                                     {
@@ -5010,14 +5010,14 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = QUOTED_ID;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:2: ( ( '[' (~ ']' )* ']' ) )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:4: ( '[' (~ ']' )* ']' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:2: ( ( '[' (~ ']' )* ']' ) )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:4: ( '[' (~ ']' )* ']' )
                 {
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:4: ( '[' (~ ']' )* ']' )
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:5: '[' (~ ']' )* ']'
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:4: ( '[' (~ ']' )* ']' )
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:5: '[' (~ ']' )* ']'
                     {
                         Match('[');
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:9: (~ ']' )*
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:9: (~ ']' )*
                         do
                         {
                             int alt5 = 2;
@@ -5032,7 +5032,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             switch (alt5)
                             {
                                 case 1:
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:10: ~ ']'
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:437:10: ~ ']'
                                     {
                                         if ((input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFF'))
                                         {
@@ -5081,7 +5081,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = STRING;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:9: ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:9: ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
                 int alt8 = 2;
                 int LA8_0 = input.LA(1);
 
@@ -5103,10 +5103,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt8)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:11: '\"' (~ '\"' )* '\"'
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:11: '\"' (~ '\"' )* '\"'
                         {
                             Match('\"');
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:15: (~ '\"' )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:15: (~ '\"' )*
                             do
                             {
                                 int alt6 = 2;
@@ -5121,7 +5121,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt6)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:16: ~ '\"'
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:439:16: ~ '\"'
                                         {
                                             if ((input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFF'))
                                             {
@@ -5152,10 +5152,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:440:4: '\\'' (~ '\\'' )* '\\''
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:440:4: '\\'' (~ '\\'' )* '\\''
                         {
                             Match('\'');
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:440:9: (~ '\\'' )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:440:9: (~ '\\'' )*
                             do
                             {
                                 int alt7 = 2;
@@ -5170,7 +5170,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt7)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:440:10: ~ '\\''
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:440:10: ~ '\\''
                                         {
                                             if ((input.LA(1) >= '\u0000' && input.LA(1) <= '&') || (input.LA(1) >= '(' && input.LA(1) <= '\uFFFF'))
                                             {
@@ -5218,12 +5218,12 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = RANET_EXPRESSION;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:2: ( '<%' ( options {greedy=false; } : . )+ '%>' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:4: '<%' ( options {greedy=false; } : . )+ '%>'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:2: ( '<%' ( options {greedy=false; } : . )+ '%>' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:4: '<%' ( options {greedy=false; } : . )+ '%>'
                 {
                     Match("<%");
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:9: ( options {greedy=false; } : . )+
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:9: ( options {greedy=false; } : . )+
                     int cnt9 = 0;
                     do
                     {
@@ -5254,7 +5254,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt9)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:38: .
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:443:38: .
                                 {
                                     MatchAny();
 
@@ -5294,10 +5294,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = WS;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:446:4: ( ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' | '\\u00A0' )+ )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:446:6: ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' | '\\u00A0' )+
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:446:4: ( ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' | '\\u00A0' )+ )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:446:6: ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' | '\\u00A0' )+
                 {
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:446:6: ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' | '\\u00A0' )+
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:446:6: ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' | '\\u00A0' )+
                     int cnt10 = 0;
                     do
                     {
@@ -5313,7 +5313,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt10)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:
                                 {
                                     if ((input.LA(1) >= '\t' && input.LA(1) <= '\n') || (input.LA(1) >= '\f' && input.LA(1) <= '\r') || input.LA(1) == ' ' || input.LA(1) == '\u00A0')
                                     {
@@ -5363,7 +5363,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = LINE_COMMENT;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:2: ( '//' (~ ( '\\n' | '\\r' ) )* | '--' (~ ( '\\n' | '\\r' ) )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:2: ( '//' (~ ( '\\n' | '\\r' ) )* | '--' (~ ( '\\n' | '\\r' ) )* )
                 int alt13 = 2;
                 int LA13_0 = input.LA(1);
 
@@ -5385,11 +5385,11 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt13)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:4: '//' (~ ( '\\n' | '\\r' ) )*
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:4: '//' (~ ( '\\n' | '\\r' ) )*
                         {
                             Match("//");
 
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:9: (~ ( '\\n' | '\\r' ) )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:9: (~ ( '\\n' | '\\r' ) )*
                             do
                             {
                                 int alt11 = 2;
@@ -5404,7 +5404,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt11)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:9: ~ ( '\\n' | '\\r' )
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:457:9: ~ ( '\\n' | '\\r' )
                                         {
                                             if ((input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF'))
                                             {
@@ -5435,11 +5435,11 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:459:4: '--' (~ ( '\\n' | '\\r' ) )*
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:459:4: '--' (~ ( '\\n' | '\\r' ) )*
                         {
                             Match("--");
 
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:459:9: (~ ( '\\n' | '\\r' ) )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:459:9: (~ ( '\\n' | '\\r' ) )*
                             do
                             {
                                 int alt12 = 2;
@@ -5454,7 +5454,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt12)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:459:9: ~ ( '\\n' | '\\r' )
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:459:9: ~ ( '\\n' | '\\r' )
                                         {
                                             if ((input.LA(1) >= '\u0000' && input.LA(1) <= '\t') || (input.LA(1) >= '\u000B' && input.LA(1) <= '\f') || (input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF'))
                                             {
@@ -5502,12 +5502,12 @@ namespace Wing.Olap.Mdx.Compiler.Parser
             {
                 int _type = COMMENT;
                 int _channel = DEFAULT_TOKEN_CHANNEL;
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:2: ( '/*' ( options {greedy=false; } : . )* '*/' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:4: '/*' ( options {greedy=false; } : . )* '*/'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:2: ( '/*' ( options {greedy=false; } : . )* '*/' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:4: '/*' ( options {greedy=false; } : . )* '*/'
                 {
                     Match("/*");
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:9: ( options {greedy=false; } : . )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:9: ( options {greedy=false; } : . )*
                     do
                     {
                         int alt14 = 2;
@@ -5537,7 +5537,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt14)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:37: .
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:463:37: .
                                 {
                                     MatchAny();
 
@@ -5569,517 +5569,517 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
         override public void mTokens() // throws RecognitionException 
         {
-            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:8: ( T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | AND | AS | BY | CASE | CALCULATED | CALCULATION | CELL | CELL_ORDINAL | CREATE | CUBE | DIMENSION | ELSE | EMPTY | END | FORMATTED_VALUE | FOR | FROM | SELECT | IS | GLOBAL | MEMBER | NON | NOT | ON | OR | PROPERTIES | SESSION | SET | THEN | UPDATE | VALUE | USE_EQUAL_ALLOCATION | USE_EQUAL_INCREMENT | USE_WEIGHTED_ALLOCATION | USE_WEIGHTED_INCREMENT | VISUAL | WITH | WHEN | WHERE | XOR | FLOAT | INTEGER | ID | QUOTED_ID | STRING | RANET_EXPRESSION | WS | LINE_COMMENT | COMMENT )
+            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:8: ( T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | AND | AS | BY | CASE | CALCULATED | CALCULATION | CELL | CELL_ORDINAL | CREATE | CUBE | DIMENSION | ELSE | EMPTY | END | FORMATTED_VALUE | FOR | FROM | SELECT | IS | GLOBAL | MEMBER | NON | NOT | ON | OR | PROPERTIES | SESSION | SET | THEN | UPDATE | VALUE | USE_EQUAL_ALLOCATION | USE_EQUAL_INCREMENT | USE_WEIGHTED_ALLOCATION | USE_WEIGHTED_INCREMENT | VISUAL | WITH | WHEN | WHERE | XOR | FLOAT | INTEGER | ID | QUOTED_ID | STRING | RANET_EXPRESSION | WS | LINE_COMMENT | COMMENT )
             int alt15 = 73;
             alt15 = dfa15.Predict(input);
             switch (alt15)
             {
                 case 1:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:10: T__53
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:10: T__53
                     {
                         mT__53();
 
                     }
                     break;
                 case 2:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:16: T__54
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:16: T__54
                     {
                         mT__54();
 
                     }
                     break;
                 case 3:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:22: T__55
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:22: T__55
                     {
                         mT__55();
 
                     }
                     break;
                 case 4:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:28: T__56
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:28: T__56
                     {
                         mT__56();
 
                     }
                     break;
                 case 5:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:34: T__57
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:34: T__57
                     {
                         mT__57();
 
                     }
                     break;
                 case 6:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:40: T__58
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:40: T__58
                     {
                         mT__58();
 
                     }
                     break;
                 case 7:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:46: T__59
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:46: T__59
                     {
                         mT__59();
 
                     }
                     break;
                 case 8:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:52: T__60
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:52: T__60
                     {
                         mT__60();
 
                     }
                     break;
                 case 9:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:58: T__61
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:58: T__61
                     {
                         mT__61();
 
                     }
                     break;
                 case 10:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:64: T__62
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:64: T__62
                     {
                         mT__62();
 
                     }
                     break;
                 case 11:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:70: T__63
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:70: T__63
                     {
                         mT__63();
 
                     }
                     break;
                 case 12:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:76: T__64
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:76: T__64
                     {
                         mT__64();
 
                     }
                     break;
                 case 13:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:82: T__65
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:82: T__65
                     {
                         mT__65();
 
                     }
                     break;
                 case 14:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:88: T__66
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:88: T__66
                     {
                         mT__66();
 
                     }
                     break;
                 case 15:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:94: T__67
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:94: T__67
                     {
                         mT__67();
 
                     }
                     break;
                 case 16:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:100: T__68
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:100: T__68
                     {
                         mT__68();
 
                     }
                     break;
                 case 17:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:106: T__69
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:106: T__69
                     {
                         mT__69();
 
                     }
                     break;
                 case 18:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:112: T__70
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:112: T__70
                     {
                         mT__70();
 
                     }
                     break;
                 case 19:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:118: T__71
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:118: T__71
                     {
                         mT__71();
 
                     }
                     break;
                 case 20:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:124: T__72
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:124: T__72
                     {
                         mT__72();
 
                     }
                     break;
                 case 21:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:130: T__73
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:130: T__73
                     {
                         mT__73();
 
                     }
                     break;
                 case 22:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:136: T__74
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:136: T__74
                     {
                         mT__74();
 
                     }
                     break;
                 case 23:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:142: T__75
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:142: T__75
                     {
                         mT__75();
 
                     }
                     break;
                 case 24:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:148: T__76
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:148: T__76
                     {
                         mT__76();
 
                     }
                     break;
                 case 25:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:154: AND
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:154: AND
                     {
                         mAND();
 
                     }
                     break;
                 case 26:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:158: AS
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:158: AS
                     {
                         mAS();
 
                     }
                     break;
                 case 27:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:161: BY
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:161: BY
                     {
                         mBY();
 
                     }
                     break;
                 case 28:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:164: CASE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:164: CASE
                     {
                         mCASE();
 
                     }
                     break;
                 case 29:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:169: CALCULATED
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:169: CALCULATED
                     {
                         mCALCULATED();
 
                     }
                     break;
                 case 30:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:180: CALCULATION
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:180: CALCULATION
                     {
                         mCALCULATION();
 
                     }
                     break;
                 case 31:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:192: CELL
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:192: CELL
                     {
                         mCELL();
 
                     }
                     break;
                 case 32:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:197: CELL_ORDINAL
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:197: CELL_ORDINAL
                     {
                         mCELL_ORDINAL();
 
                     }
                     break;
                 case 33:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:210: CREATE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:210: CREATE
                     {
                         mCREATE();
 
                     }
                     break;
                 case 34:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:217: CUBE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:217: CUBE
                     {
                         mCUBE();
 
                     }
                     break;
                 case 35:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:222: DIMENSION
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:222: DIMENSION
                     {
                         mDIMENSION();
 
                     }
                     break;
                 case 36:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:232: ELSE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:232: ELSE
                     {
                         mELSE();
 
                     }
                     break;
                 case 37:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:237: EMPTY
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:237: EMPTY
                     {
                         mEMPTY();
 
                     }
                     break;
                 case 38:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:243: END
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:243: END
                     {
                         mEND();
 
                     }
                     break;
                 case 39:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:247: FORMATTED_VALUE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:247: FORMATTED_VALUE
                     {
                         mFORMATTED_VALUE();
 
                     }
                     break;
                 case 40:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:263: FOR
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:263: FOR
                     {
                         mFOR();
 
                     }
                     break;
                 case 41:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:267: FROM
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:267: FROM
                     {
                         mFROM();
 
                     }
                     break;
                 case 42:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:272: SELECT
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:272: SELECT
                     {
                         mSELECT();
 
                     }
                     break;
                 case 43:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:279: IS
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:279: IS
                     {
                         mIS();
 
                     }
                     break;
                 case 44:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:282: GLOBAL
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:282: GLOBAL
                     {
                         mGLOBAL();
 
                     }
                     break;
                 case 45:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:289: MEMBER
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:289: MEMBER
                     {
                         mMEMBER();
 
                     }
                     break;
                 case 46:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:296: NON
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:296: NON
                     {
                         mNON();
 
                     }
                     break;
                 case 47:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:300: NOT
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:300: NOT
                     {
                         mNOT();
 
                     }
                     break;
                 case 48:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:304: ON
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:304: ON
                     {
                         mON();
 
                     }
                     break;
                 case 49:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:307: OR
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:307: OR
                     {
                         mOR();
 
                     }
                     break;
                 case 50:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:310: PROPERTIES
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:310: PROPERTIES
                     {
                         mPROPERTIES();
 
                     }
                     break;
                 case 51:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:321: SESSION
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:321: SESSION
                     {
                         mSESSION();
 
                     }
                     break;
                 case 52:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:329: SET
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:329: SET
                     {
                         mSET();
 
                     }
                     break;
                 case 53:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:333: THEN
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:333: THEN
                     {
                         mTHEN();
 
                     }
                     break;
                 case 54:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:338: UPDATE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:338: UPDATE
                     {
                         mUPDATE();
 
                     }
                     break;
                 case 55:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:345: VALUE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:345: VALUE
                     {
                         mVALUE();
 
                     }
                     break;
                 case 56:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:351: USE_EQUAL_ALLOCATION
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:351: USE_EQUAL_ALLOCATION
                     {
                         mUSE_EQUAL_ALLOCATION();
 
                     }
                     break;
                 case 57:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:372: USE_EQUAL_INCREMENT
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:372: USE_EQUAL_INCREMENT
                     {
                         mUSE_EQUAL_INCREMENT();
 
                     }
                     break;
                 case 58:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:392: USE_WEIGHTED_ALLOCATION
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:392: USE_WEIGHTED_ALLOCATION
                     {
                         mUSE_WEIGHTED_ALLOCATION();
 
                     }
                     break;
                 case 59:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:416: USE_WEIGHTED_INCREMENT
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:416: USE_WEIGHTED_INCREMENT
                     {
                         mUSE_WEIGHTED_INCREMENT();
 
                     }
                     break;
                 case 60:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:439: VISUAL
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:439: VISUAL
                     {
                         mVISUAL();
 
                     }
                     break;
                 case 61:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:446: WITH
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:446: WITH
                     {
                         mWITH();
 
                     }
                     break;
                 case 62:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:451: WHEN
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:451: WHEN
                     {
                         mWHEN();
 
                     }
                     break;
                 case 63:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:456: WHERE
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:456: WHERE
                     {
                         mWHERE();
 
                     }
                     break;
                 case 64:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:462: XOR
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:462: XOR
                     {
                         mXOR();
 
                     }
                     break;
                 case 65:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:466: FLOAT
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:466: FLOAT
                     {
                         mFLOAT();
 
                     }
                     break;
                 case 66:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:472: INTEGER
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:472: INTEGER
                     {
                         mINTEGER();
 
                     }
                     break;
                 case 67:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:480: ID
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:480: ID
                     {
                         mID();
 
                     }
                     break;
                 case 68:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:483: QUOTED_ID
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:483: QUOTED_ID
                     {
                         mQUOTED_ID();
 
                     }
                     break;
                 case 69:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:493: STRING
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:493: STRING
                     {
                         mSTRING();
 
                     }
                     break;
                 case 70:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:500: RANET_EXPRESSION
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:500: RANET_EXPRESSION
                     {
                         mRANET_EXPRESSION();
 
                     }
                     break;
                 case 71:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:517: WS
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:517: WS
                     {
                         mWS();
 
                     }
                     break;
                 case 72:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:520: LINE_COMMENT
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:520: LINE_COMMENT
                     {
                         mLINE_COMMENT();
 
                     }
                     break;
                 case 73:
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:533: COMMENT
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:1:533: COMMENT
                     {
                         mCOMMENT();
 

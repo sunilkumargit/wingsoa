@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -24,23 +24,23 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Ranet.AgOlap.Controls.Buttons;
-using Ranet.AgOlap.Controls.General.Tree;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.AgOlap.Providers;
-using Ranet.Olap.Core;
-using Ranet.Olap.Core.Data;
-using Ranet.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.Buttons;
+using Wing.AgOlap.Controls.General.Tree;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Providers;
+using Wing.Olap.Core;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Metadata;
 using System.Collections.Generic;
-using Ranet.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.General;
 using System.Windows.Data;
-using Ranet.AgOlap.Controls.General.DataGrid;
-using Ranet.Olap.Core.Providers;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.AgOlap.Commands;
-using Ranet.AgOlap.Controls.List;
+using Wing.AgOlap.Controls.General.DataGrid;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Commands;
+using Wing.AgOlap.Controls.List;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
     public class KpiViewer : AgControlBase
     {
@@ -101,7 +101,7 @@ namespace Ranet.AgOlap.Controls
 
             RanetToggleButton showAllButton = new RanetToggleButton();
             showAllButton.ClickMode = ClickMode.Press;
-            showAllButton.Content = UiHelper.CreateIcon(UriResources.GetImage("/Ranet.AgOlap;component/Controls/Images/OLAP/KPI/ShowAll.png"));
+            showAllButton.Content = UiHelper.CreateIcon(UriResources.GetImage("/Wing.AgOlap;component/Controls/Images/OLAP/KPI/ShowAll.png"));
             showAllButton.Checked += new RoutedEventHandler(showAllButton_Checked);
             showAllButton.Unchecked += new RoutedEventHandler(showAllButton_Unchecked);
             ToolTipService.SetToolTip(showAllButton,Localization.ShowAll_Check);

@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Ranet.AgOlap.Providers
+namespace Wing.AgOlap.Providers
 {
     public class ShortMemberInfo
     {

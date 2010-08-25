@@ -8,11 +8,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core.Data;
-using Ranet.AgOlap.Providers;
+using Wing.Olap.Core.Data;
+using Wing.AgOlap.Providers;
 using System.Windows.Data;
 
-namespace Ranet.AgOlap.Controls.Data
+namespace Wing.AgOlap.Controls.Data
 {
     public class RanetDataGrid : DataGrid
     {

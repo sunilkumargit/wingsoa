@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,17 +29,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.General;
 using System.Windows.Browser;
-using Ranet.AgOlap.Controls.PivotGrid.Controls;
+using Wing.AgOlap.Controls.PivotGrid.Controls;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Controls.PivotGrid.Conditions;
-using Ranet.AgOlap.Providers;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Controls.PivotGrid.Conditions;
+using Wing.AgOlap.Providers;
 using System.Windows.Media.Imaging;
 using System.Globalization;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public class CellClickEventArgs : EventArgs
     {
@@ -66,7 +66,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public CellInfo Cell
         {
             get { return m_Cell; }
-            set {
+            set
+            {
                 if (m_Cell != value)
                 {
                     m_Cell = value;
@@ -163,7 +164,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
         void ApplySettings()
         {
-//            CalculateCustomCellCondidtions();
+            //            CalculateCustomCellCondidtions();
 
             ApplyBorderSettings();
 
@@ -171,7 +172,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
             ApplyValueSettings();
 
-//            ApplyHintSettings();
+            //            ApplyHintSettings();
         }
 
         /// <summary>
@@ -216,14 +217,14 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                             if (Cell.CellDescr != null &&
                                 Cell.CellDescr.Value != null)
                             {
-                                    try
-                                    {
-                                        double value = Cell.CellDescr.Value.Value != null ? Convert.ToDouble(Cell.CellDescr.Value.Value) : double.NaN;
-                                        usedConditions = CellConditionsDescriptor.TestToConditions(value, conditions_descr);
-                                    }
-                                    catch (System.InvalidCastException)
-                                    {
-                                    }
+                                try
+                                {
+                                    double value = Cell.CellDescr.Value.Value != null ? Convert.ToDouble(Cell.CellDescr.Value.Value) : double.NaN;
+                                    usedConditions = CellConditionsDescriptor.TestToConditions(value, conditions_descr);
+                                }
+                                catch (System.InvalidCastException)
+                                {
+                                }
                             }
                         }
 
@@ -321,7 +322,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 }
             }
         }
-        
+
         void ApplyBackgroundSettings()
         {
             if (Cell == null)
@@ -373,7 +374,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                                 // Фон по-умолчанию
                                 if (Owner != null)
                                 {
-                                    if(Background != Owner.CellsBackground)
+                                    if (Background != Owner.CellsBackground)
                                         Background = Owner.CellsBackground;
                                 }
                                 else
@@ -444,7 +445,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
         public String Text
         {
-            get {
+            get
+            {
                 return m_Caption_Text.Text;
             }
         }
@@ -491,7 +493,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                     m_ProgressBar.HorizontalAlignment = HorizontalAlignment.Stretch;
                     m_LayoutPanel.Children.Add(m_ProgressBar);
                     Grid.SetColumnSpan(m_ProgressBar, 3);
-                    
+
                     // Текстовое поле поверх прогресса
                     m_LayoutPanel.Children.Remove(m_Caption_Text);
                     m_LayoutPanel.Children.Add(m_Caption_Text);
@@ -528,7 +530,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             }
             else
             {
-                if(m_ProgressBar != null)
+                if (m_ProgressBar != null)
                     m_ProgressBar.Visibility = Visibility.Collapsed;
             }
 

@@ -9,10 +9,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core.Providers;
-using Ranet.Olap.Core.Data;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Core.Data;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public partial class DrillThroughControl : UserControl
     {

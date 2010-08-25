@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -22,9 +22,9 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
-using Ranet.Olap.Core.Providers;
+using Wing.Olap.Core.Providers;
 
-namespace Ranet.AgOlap.Controls.General.DataGrid
+namespace Wing.AgOlap.Controls.General.DataGrid
 {
     public class IconDataGridColumn : DataGridTemplateColumn
     {
@@ -62,7 +62,7 @@ namespace Ranet.AgOlap.Controls.General.DataGrid
 
         private string GetKpiIconByPath(string path, string name)
         {
-            return String.Format("/Ranet.AgOlap;component/Controls/Images/OLAP/KPI/{0}/{1}", path, name);
+            return String.Format("/Wing.AgOlap;component/Controls/Images/OLAP/KPI/{0}/{1}", path, name);
         }
         
         public string Resource

@@ -9,13 +9,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.AgOlap.Controls.General;
-using Ranet.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.General;
+using Wing.Olap.Core.Metadata;
 using System.Windows.Controls.Primitives;
-using Ranet.AgOlap.Controls.General.Tree;
+using Wing.AgOlap.Controls.General.Tree;
 
-namespace Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers
+namespace Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers
 {
     public partial class CalculationsEditor : UserControl
     {

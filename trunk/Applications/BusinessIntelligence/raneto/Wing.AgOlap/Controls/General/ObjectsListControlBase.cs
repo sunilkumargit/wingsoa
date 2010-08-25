@@ -8,13 +8,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General.Tree;
-using Ranet.AgOlap.Controls.Storage;
+using Wing.AgOlap.Controls.General.Tree;
+using Wing.AgOlap.Controls.Storage;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
-using Ranet.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.ToolBar;
 
-namespace Ranet.AgOlap.Controls.General
+namespace Wing.AgOlap.Controls.General
 {
     public class CustomEventArgs<T> : EventArgs
     {

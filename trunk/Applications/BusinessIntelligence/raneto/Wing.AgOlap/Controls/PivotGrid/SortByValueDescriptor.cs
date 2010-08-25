@@ -8,10 +8,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core.Providers;
+using Wing.Olap.Core.Providers;
 using System.Collections.Generic;
 
-namespace Ranet.AgOlap.Controls.PivotGrid
+namespace Wing.AgOlap.Controls.PivotGrid
 {
     /// <summary>
     /// Описывает сортировку оси по конкретному таплу

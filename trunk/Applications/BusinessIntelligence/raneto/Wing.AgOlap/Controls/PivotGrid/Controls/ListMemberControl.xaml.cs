@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public partial class ListMemberControl : UserControl
     {

@@ -10,7 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 
-namespace Ranet.AgOlap.Controls.General
+namespace Wing.AgOlap.Controls.General
 {
     public class PlusMinusButton : ToggleButton
     {

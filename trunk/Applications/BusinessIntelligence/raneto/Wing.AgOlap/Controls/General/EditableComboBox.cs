@@ -9,9 +9,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
-using Ranet.AgOlap.Controls.General.ItemControls;
+using Wing.AgOlap.Controls.General.ItemControls;
 
-namespace Ranet.AgOlap.Controls.General
+namespace Wing.AgOlap.Controls.General
 {
     public class EditableComboBox : UserControl
     {

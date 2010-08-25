@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,10 +29,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.MdxDesigner.Wrappers;
-using Ranet.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
+using Wing.AgOlap.Controls.General;
 
-namespace Ranet.AgOlap.Controls.MdxDesigner.Filters
+namespace Wing.AgOlap.Controls.MdxDesigner.Filters
 {
     public class LabelFilterControl : FilterControlBase
     {
@@ -70,7 +70,7 @@ namespace Ranet.AgOlap.Controls.MdxDesigner.Filters
             Grid.SetColumn(comboFilterType, 1);
 
             // Текстовое поле
-            text_1 = new Ranet.AgOlap.Controls.General.RichTextBox() { Margin = new Thickness(5,0,0,0), Text = String.Empty };
+            text_1 = new Wing.AgOlap.Controls.General.RichTextBox() { Margin = new Thickness(5,0,0,0), Text = String.Empty };
             LayoutRoot.Children.Add(text_1);
             Grid.SetRow(text_1, 1);
             Grid.SetColumn(text_1, 2);
@@ -82,7 +82,7 @@ namespace Ranet.AgOlap.Controls.MdxDesigner.Filters
             Grid.SetRow(lblAnd, 1);
 
             // Текстовое поле
-            text_2 = new Ranet.AgOlap.Controls.General.RichTextBox() { Margin = new Thickness(5, 0, 0, 0), Text = String.Empty };
+            text_2 = new Wing.AgOlap.Controls.General.RichTextBox() { Margin = new Thickness(5, 0, 0, 0), Text = String.Empty };
             LayoutRoot.Children.Add(text_2);
             Grid.SetRow(text_2, 1);
             Grid.SetColumn(text_2, 4);

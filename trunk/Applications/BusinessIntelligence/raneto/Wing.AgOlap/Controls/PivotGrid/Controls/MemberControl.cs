@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,19 +29,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.PivotGrid.Data;
+using Wing.AgOlap.Controls.PivotGrid.Data;
 using System.Windows.Browser;
 using System.Collections.Generic;
 using System.Text;
-using Ranet.AgOlap.Controls.General;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Controls.ContextMenu;
-using Ranet.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Controls.General;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Core.Providers.ClientServer;
 using System.Windows.Media.Imaging;
-using Ranet.Olap.Core.Data;
-using Ranet.AgOlap.Providers;
+using Wing.Olap.Core.Data;
+using Wing.AgOlap.Providers;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public class MemberActionEventArgs : EventArgs
     {
@@ -114,9 +114,9 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             HorizontalContentAlignment = HorizontalAlignment.Stretch;
             VerticalContentAlignment = VerticalAlignment.Top;
 
-            if(info == null)
+            if (info == null)
                 throw new ArgumentNullException("info");
-            
+
             m_Member = info;
 
             m_LayoutRoot = new Grid();
@@ -174,7 +174,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 // CUSTOM_ROLLUP отображается своей иконкой.
                 // UNARY_OPERATOR - каждый своей иконкой.
                 // Если оба свойства установлены, то отображаем скомбинированную иконку
-                if(String.IsNullOrEmpty(Member.Unary_Operator))
+                if (String.IsNullOrEmpty(Member.Unary_Operator))
                 {
                     // Только CUSTOM_ROLLUP
                     if (Member.HasCustomRollup)
@@ -292,7 +292,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             m_SortByValueImage.Visibility = Visibility.Collapsed;
             //var m_SortSelector = new SortTypeSelector() { VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Center };
             m_LayoutRoot.Children.Add(m_SortByValueImage);
-            Grid.SetColumn(m_SortByValueImage, 4); 
+            Grid.SetColumn(m_SortByValueImage, 4);
         }
 
         Image m_SortByValueImage;
@@ -338,7 +338,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 Raise_ExecuteMemberAction(MemberActionType.Default);
             }
         }
-        
+
         void expander_CheckedChanged(object sender, EventArgs e)
         {
             MemberActionType action = MemberActionType.Expand;
@@ -420,7 +420,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 {
                     memberVisualizationType = Owner.MemberVisualizationType;
                     SortDescriptor sortDescr = Owner.GetAxisPropertySort(this);
-                    if(sortDescr != null)
+                    if (sortDescr != null)
                         sortType = sortDescr.Type;
                 }
 
@@ -459,7 +459,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         }
 
         Grid m_LayoutRoot;
-       
+
         #region События
         public event MemberActionEventHandler ExecuteMemberAction;
         public void Raise_ExecuteMemberAction(MemberActionType action)
@@ -467,7 +467,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             MemberActionEventHandler handler = this.ExecuteMemberAction;
             if (handler != null)
             {
-                if(this is ColumnMemberControl)
+                if (this is ColumnMemberControl)
                     handler(this, new MemberActionEventArgs(0, this.Member, action));
                 if (this is RowMemberControl)
                     handler(this, new MemberActionEventArgs(1, this.Member, action));

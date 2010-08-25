@@ -8,9 +8,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core.Providers;
+using Wing.Olap.Core.Providers;
 
-namespace Ranet.AgOlap.Controls.PivotGrid
+namespace Wing.AgOlap.Controls.PivotGrid
 {
     public class SortByMeasureDescriptor : SortDescriptor
     {

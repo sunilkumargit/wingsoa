@@ -9,16 +9,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Controls.General;
-using Ranet.Olap.Core.Data;
-using Ranet.AgOlap.Controls.ValueDelivery;
-using Ranet.AgOlap.Controls.Tab;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.AgOlap.Features;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Controls.General;
+using Wing.Olap.Core.Data;
+using Wing.AgOlap.Controls.ValueDelivery;
+using Wing.AgOlap.Controls.Tab;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Features;
 using System.Text;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public partial class CellPropertiesControl : UserControl
     {
@@ -75,7 +75,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                         foreach (PropertyData pair in m_Cell.CellDescr.Value.Properties)
                         {
                             sb.AppendFormat("{0}\t", pair.Name);
-                            if(pair.Value != null)
+                            if (pair.Value != null)
                                 sb.Append(pair.Value.ToString());
                             sb.Append(Environment.NewLine);
                         }
@@ -86,12 +86,12 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             {
                 foreach (var uniqueName in m_Cell.Tuple.Values)
                 {
-                    if(sb.Length != 0)
+                    if (sb.Length != 0)
                         sb.Append(", ");
                     sb.Append(uniqueName);
                 }
             }
-            Ranet.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
+            Wing.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
         }
 
         CellInfo m_Cell;

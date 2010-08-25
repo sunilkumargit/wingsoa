@@ -27,9 +27,9 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections.ObjectModel;
-using Ranet.Olap.Core.Data;
+using Wing.Olap.Core.Data;
 
-namespace Ranet.AgOlap.Providers
+namespace Wing.AgOlap.Providers
 {
     public class DataTable 
     {

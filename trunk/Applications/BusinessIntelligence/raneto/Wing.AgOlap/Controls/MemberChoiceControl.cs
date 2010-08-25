@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -32,28 +32,28 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Text;
 using System.Windows.Media.Imaging;
-using Ranet.Olap.Core.Data;
-using Ranet.AgOlap.Controls.MemberChoice.Info;
+using Wing.Olap.Core.Data;
+using Wing.AgOlap.Controls.MemberChoice.Info;
 using System.ComponentModel;
-using Ranet.AgOlap.Controls.MemberChoice.ClientServer;
-using Ranet.AgOlap.Controls.General.Tree;
+using Wing.AgOlap.Controls.MemberChoice.ClientServer;
+using Wing.AgOlap.Controls.General.Tree;
 using System.Threading;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Commands;
-using Ranet.Olap.Core;
-using Ranet.AgOlap.Controls.General.ClientServer;
-using Ranet.Olap.Core.Metadata;
-using Ranet.AgOlap.Controls.MemberChoice.Filter;
-using Ranet.AgOlap.Controls.Buttons;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.AgOlap.Controls.MemberChoice;
-using Ranet.AgOlap.Controls.General.ItemControls;
-using Ranet.AgOlap.Controls.Tab;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Providers;
-using Ranet.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Commands;
+using Wing.Olap.Core;
+using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.MemberChoice.Filter;
+using Wing.AgOlap.Controls.Buttons;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.MemberChoice;
+using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.AgOlap.Controls.Tab;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Providers;
+using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
     // Подумать:
     // Как сделать переход из дерева найденных на дерево выбора, по двойному клику идет раскрытие узла - значит это нам не подходит
@@ -73,7 +73,7 @@ namespace Ranet.AgOlap.Controls
 
         TextBlock m_Find_Count;
         TextBlock m_Selected_Count;
-    
+
         RanetTabControl tabControl;
         TabItem membersTab;
         TabItem findTab;
@@ -306,7 +306,8 @@ namespace Ranet.AgOlap.Controls
 
                 this.Content = LayoutRoot;
             }
-            finally {
+            finally
+            {
                 m_Initializing = false;
             }
         }
@@ -411,8 +412,8 @@ namespace Ranet.AgOlap.Controls
             MemberTreeNode treeNode = e.NewValue as MemberTreeNode;
             // Если одиночный выбор элементов, и включен режим выбирать только листы, то кнопку ОК делаем доступной только для листьев 
             if (MultiSelect == false && SelectLeafs)
-            { 
-                if(treeNode == null)
+            {
+                if (treeNode == null)
                 {
                     m_IsReadyToSelection = false;
                 }
@@ -447,7 +448,7 @@ namespace Ranet.AgOlap.Controls
             }
 
             Raise_SelectedItemChanged(null);
-            
+
             if (MultiSelect == false)
             {
                 GenerateSetBySelectionState();
@@ -1220,7 +1221,7 @@ namespace Ranet.AgOlap.Controls
 
             if (String.IsNullOrEmpty(Set))
             {
-//                GetRootMembersCount();
+                //                GetRootMembersCount();
                 Load();
                 return memberInfoHierarchy;
             }
@@ -1401,7 +1402,7 @@ namespace Ranet.AgOlap.Controls
                 {
                     Clear_Choice_Button.Visibility = Visibility.Visible;
                 }
-                else 
+                else
                 {
                     Clear_Choice_Button.Visibility = Visibility.Collapsed;
                 }
@@ -1586,7 +1587,7 @@ namespace Ranet.AgOlap.Controls
                     }
                 }
             }
-            else 
+            else
             {
                 if (parent != null)
                     parent.IsFullLoaded = true;
@@ -2048,14 +2049,15 @@ namespace Ranet.AgOlap.Controls
 
         Dictionary<String, OlapMemberInfo> m_MembersInSet = null;
         public Dictionary<String, OlapMemberInfo> MembersInSet
-        { 
-            get{
-                if(m_MembersInSet == null)
+        {
+            get
+            {
+                if (m_MembersInSet == null)
                 {
                     m_MembersInSet = new Dictionary<String, OlapMemberInfo>();
                 }
                 return m_MembersInSet;
-                }
+            }
         }
 
         /// <summary>
@@ -2324,7 +2326,7 @@ namespace Ranet.AgOlap.Controls
             }
 
             MemberTreeNode memberNode = null;
-            if (infos.Count > 0 && m_TreeNodes.ContainsKey(infos[infos.Count -1].UniqueName))
+            if (infos.Count > 0 && m_TreeNodes.ContainsKey(infos[infos.Count - 1].UniqueName))
             {
                 memberNode = m_TreeNodes[infos[infos.Count - 1].UniqueName];
             }

@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -30,16 +30,16 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
-using Ranet.AgOlap.Controls.PivotGrid.Controls;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Providers;
+using Wing.AgOlap.Controls.PivotGrid.Controls;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Providers;
 
-namespace Ranet.AgOlap.Controls.PivotGrid
+namespace Wing.AgOlap.Controls.PivotGrid
 {
     public class CellChangesCache
     {
         List<UpdateEntry> m_CellChanges;
-        
+
         /// <summary>
         /// Кэш измененных ячеек
         /// </summary>
@@ -57,7 +57,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid
 
         public int Count
         {
-            get{
+            get
+            {
                 return CellChanges.Count;
             }
         }
@@ -92,7 +93,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid
         {
             foreach (UpdateEntry arg in CellChanges)
             {
-                if(CompareTuples(arg.Tuple, args.Tuple))
+                if (CompareTuples(arg.Tuple, args.Tuple))
                     return arg;
             }
             return null;
@@ -125,9 +126,9 @@ namespace Ranet.AgOlap.Controls.PivotGrid
 
             foreach (var key1 in tuple1.Keys)
             {
-                if(!tuple2.ContainsKey(key1))
+                if (!tuple2.ContainsKey(key1))
                     return false;
-                if(tuple1[key1] != tuple2[key1])
+                if (tuple1[key1] != tuple2[key1])
                     return false;
             }
             return true;

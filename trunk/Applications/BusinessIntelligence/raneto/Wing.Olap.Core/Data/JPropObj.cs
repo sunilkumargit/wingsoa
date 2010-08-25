@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ranet.Olap.Core.Data
+namespace Wing.Olap.Core.Data
 {
 
     public class JPropObj

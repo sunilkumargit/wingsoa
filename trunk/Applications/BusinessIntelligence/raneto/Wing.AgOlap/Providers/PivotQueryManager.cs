@@ -8,18 +8,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core;
-using Ranet.AgOlap.Providers.MemberActions;
+using Wing.Olap.Core;
+using Wing.AgOlap.Providers.MemberActions;
 using Wing.Olap.Mdx.Compiler;
 using System.Text;
 using Wing.Olap.Mdx;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.Olap.Core.Data;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Controls;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Controls;
 
-namespace Ranet.AgOlap.Providers
+namespace Wing.AgOlap.Providers
 {
     public enum ServiceCommandType
     {

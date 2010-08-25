@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,16 +29,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core;
-using Ranet.AgOlap.Controls.General.ClientServer;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.ZipLib;
+using Wing.Olap.Core;
+using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.ZipCompression;
 using System.Collections.Generic;
 using System.Linq;
-using Ranet.AgOlap.Providers;
-using Ranet.AgOlap.Controls.PivotGrid;
+using Wing.AgOlap.Providers;
+using Wing.AgOlap.Controls.PivotGrid;
 
-namespace Ranet.AgOlap.Controls.General
+namespace Wing.AgOlap.Controls.General
 {
 	public class OlapDataLoader : IDataLoader
 	{
@@ -70,11 +70,11 @@ namespace Ranet.AgOlap.Controls.General
             {
                 mdxQuery.SessionId = IdHolder[mdxQuery.Connection];
             }
-			service.PerformOlapServiceActionCompleted += new EventHandler<Ranet.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs>(service_PerformOlapServiceActionCompleted);
+			service.PerformOlapServiceActionCompleted += new EventHandler<Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs>(service_PerformOlapServiceActionCompleted);
 			service.PerformOlapServiceActionAsync(schema.ActionType.ToString(), XmlSerializationUtility.Obj2XmlStr(schema, Common.Namespace), state);
 		}
 
-		void service_PerformOlapServiceActionCompleted(object sender, Ranet.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
+		void service_PerformOlapServiceActionCompleted(object sender, Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
 		{
 			InvokeResultDescriptor result = null;
 			if (e.Error == null)

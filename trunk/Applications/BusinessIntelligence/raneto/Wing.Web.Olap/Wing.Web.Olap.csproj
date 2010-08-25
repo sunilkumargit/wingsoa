@@ -72,10 +72,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Ranet.ZipLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6411e51d1da2afdf, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\dll\Ranet.ZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -88,6 +84,9 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Wing.ZipCompression.Silverlight">
+      <HintPath>..\..\..\..\Shared\Wing.ZipCompression.Silverlight\Bin\Debug\Wing.ZipCompression.Silverlight.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Wing.AgOlap\Common.cs">

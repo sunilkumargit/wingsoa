@@ -9,14 +9,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Controls.General.ItemControls;
-using Ranet.Olap.Core.Metadata;
-using Ranet.AgOlap.Controls.General.Tree;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.ValueCopy;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.General.Tree;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.ValueCopy;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public enum PivotTableSortTypes
     { 

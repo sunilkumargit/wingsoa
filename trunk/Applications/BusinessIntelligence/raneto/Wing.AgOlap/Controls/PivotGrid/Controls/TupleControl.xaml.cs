@@ -9,12 +9,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.ValueCopy;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.MemberChoice.Info;
+using Wing.AgOlap.Controls.ValueCopy;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.MemberChoice.Info;
 using System.ComponentModel;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public partial class TupleControl : UserControl
     {

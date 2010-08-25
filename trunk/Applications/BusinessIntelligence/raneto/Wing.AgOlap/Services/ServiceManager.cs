@@ -2,7 +2,7 @@
 using System.Net;
 using System.ServiceModel;
 
-namespace Ranet.AgOlap.Services
+namespace Wing.AgOlap.Services
 {
 	/// <summary>
 	/// Class for create and initialize services.

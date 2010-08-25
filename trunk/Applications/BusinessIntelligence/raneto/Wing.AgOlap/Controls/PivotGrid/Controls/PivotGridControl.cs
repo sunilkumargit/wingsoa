@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,22 +29,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core.Providers;
-using Ranet.AgOlap.Controls.PivotGrid.Layout;
+using Wing.Olap.Core.Providers;
+using Wing.AgOlap.Controls.PivotGrid.Layout;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Data;
+using Wing.Olap.Core.Data;
 using System.Windows.Controls.Primitives;
-using Ranet.AgOlap.Controls.ContextMenu;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.PivotGrid.Conditions;
-using Ranet.AgOlap.Controls.PivotGrid.Editors;
-using Ranet.AgOlap.Features;
+using Wing.AgOlap.Controls.ContextMenu;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.PivotGrid.Conditions;
+using Wing.AgOlap.Controls.PivotGrid.Editors;
+using Wing.AgOlap.Features;
 using System.Windows.Browser;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.Olap.Core;
-using Ranet.AgOlap.Providers;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.Olap.Core;
+using Wing.AgOlap.Providers;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public delegate void PerformMemberActionEventHandler(object sender, PerformMemberActionArgs args);
     public delegate void MemberActionEventHandler(object sender, MemberActionEventArgs args);
@@ -59,14 +59,14 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             get { return m_DEFAULT_WIDTH; }
             set { m_DEFAULT_WIDTH = value; }
         }
-        
+
         double m_DEFAULT_HEIGHT = 22;
         public double DEFAULT_HEIGHT
         {
             get { return m_DEFAULT_HEIGHT; }
             set { m_DEFAULT_HEIGHT = value; }
         }
-        
+
         public const int SPLITTER_SIZE = 3;
 
         double m_MIN_WIDTH = 38;
@@ -98,10 +98,10 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         Grid ItemsLayoutRoot;
         ScrollBar m_HorizontalScroll;
         ScrollBar m_VerticalScroll;
-        
+
         Cache2D<CellControl> m_CellControls_Cache = new Cache2D<CellControl>();
         Grid LayoutRoot;
-        
+
         Brush m_MembersBackground = null;
         internal Brush MembersBackground
         {
@@ -273,7 +273,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public bool UseContextMenu
         {
             get { return m_UseContextMenu; }
-            set 
+            set
             {
                 m_UseContextMenu = value;
                 if (value)
@@ -349,7 +349,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
         void PivotGridControl_GotFocus(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         #region Свойства
@@ -358,7 +358,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public double Scale
         {
             get { return m_Scale; }
-            set {
+            set
+            {
                 double delta_scale = value - m_Scale;
                 if (delta_scale != 0)
                 {
@@ -372,7 +373,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                     // OldSize  ->  OldScale
                     // X        ->  NewScale
                     // X = OldSize * NewScale/OldScale;
-                    
+
                     double scale_coeff = NewScale / OldScale;
 
                     Dictionary<int, double> tmp = new Dictionary<int, double>();
@@ -453,7 +454,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public MemberVisualizationTypes MemberVisualizationType
         {
             get { return m_MemberVisualizationType; }
-            set {
+            set
+            {
                 m_MemberVisualizationType = value;
                 Refresh(RefreshType.Refresh);
             }
@@ -465,8 +467,9 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         /// </summary>
         public bool IsUpdateable
         {
-            get { 
-                return m_IsUpdateable; 
+            get
+            {
+                return m_IsUpdateable;
             }
             set { m_IsUpdateable = value; }
         }
@@ -499,10 +502,10 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         }
 
         String m_UpdateScript = String.Empty;
-        public String UpdateScript 
+        public String UpdateScript
         {
             get { return m_UpdateScript; }
-            set { m_UpdateScript = value; } 
+            set { m_UpdateScript = value; }
         }
 
         bool m_Axis0_IsInteractive = true;
@@ -599,7 +602,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         }
         #endregion Свойства
 
-        #region События         
+        #region События
         public event MemberActionEventHandler ExecuteMemberAction;
         protected void Raise_ExecuteMemberAction(MemberActionEventArgs args)
         {
@@ -729,7 +732,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 m_VericalScroll_Timer.Stop();
                 RowsArea_FirstVisible_Coordinate.Row = val;
                 m_VericalScroll_Timer.Begin();
-            }     
+            }
         }
 
         void m_HorizontalScroll_Scroll(object sender, ScrollEventArgs e)
@@ -829,7 +832,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 {
                     if (FocusedCell.NotRecalculatedChange != null)
                     {
-                         CellEditor.Value = FocusedCell.NotRecalculatedChange.NewValue;
+                        CellEditor.Value = FocusedCell.NotRecalculatedChange.NewValue;
                     }
                     else
                     {
@@ -930,7 +933,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         CellSetDataProvider m_CellSetProvider;
         internal PivotLayoutProvider m_LayoutProvider;
         private enum RefreshType
-        { 
+        {
             BuildEndRefresh,
             Refresh,
             RefreshByColumns,
@@ -999,7 +1002,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 DateTime stop = DateTime.Now;
                 System.Diagnostics.Debug.WriteLine("PivotGrid refreshing time: " + (stop - start).ToString());
             }
-            finally {
+            finally
+            {
                 TooltipManager.IsPaused = false;
             }
         }
@@ -1079,7 +1083,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 {
                     CellInfo info = provider.GetCellInfo(FocusedCellView.CellDescr.Axis0_Coord, FocusedCellView.CellDescr.Axis1_Coord);
                     IDictionary<String, MemberInfo> tuple = FocusedCellView.GetTuple();
-                    if(info != null && info.CompareByTuple(tuple))
+                    if (info != null && info.CompareByTuple(tuple))
                     {
                         // Соответствие сразу найдено (в идеале)
                     }
@@ -1107,7 +1111,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                     {
                         CellInfo cell_new = provider.GetCellInfo(ColumnsArea_FirstVisible_Coordinate.Column, RowsArea_FirstVisible_Coordinate.Row);
                         if (cell_new != null)
-                        { 
+                        {
                             // Сверяем по координатам
                             stick = cell_new.CompareByTuple(cell_old.GetTuple());
                         }
@@ -1183,7 +1187,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         {
             get { return m_PivotArea_BeginRowIndex; }
         }
-        
+
         int m_PivotArea_BeginColumnIndex = 0;
         int PivotArea_BeginColumnIndex
         {
@@ -1197,11 +1201,12 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
         int RowsArea_EndRowIndex
         {
-            get { 
-                if(RowsArea_RowsCount > 0)
-                    return CellsArea_BeginRowIndex + RowsArea_RowsCount - 1; 
+            get
+            {
+                if (RowsArea_RowsCount > 0)
+                    return CellsArea_BeginRowIndex + RowsArea_RowsCount - 1;
                 else
-                    return CellsArea_BeginRowIndex; 
+                    return CellsArea_BeginRowIndex;
             }
         }
 
@@ -1217,11 +1222,12 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
         int ColumnsArea_EndColumnIndex
         {
-            get { 
-                if(ColumnsArea_ColumnsCount > 0)
+            get
+            {
+                if (ColumnsArea_ColumnsCount > 0)
                     return ColumnsArea_BeginColumnIndex + ColumnsArea_ColumnsCount - 1;
                 else
-                    return ColumnsArea_BeginColumnIndex; 
+                    return ColumnsArea_BeginColumnIndex;
             }
         }
 
@@ -1241,7 +1247,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         {
             get { return m_ColumnsArea_ColumnsCount; }
         }
-        
+
         int m_ColumnsArea_RowsCount = 0;
         int ColumnsArea_RowsCount
         {
@@ -1294,7 +1300,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         #region Коллекции для хранения информации о размерах элементов
         Dictionary<int, double> m_Rows_ColumnWidthes = new Dictionary<int, double>();
         Dictionary<int, double> m_Columns_RowsHeightes = new Dictionary<int, double>();
-        
+
         Dictionary<String, double> m_MembersWidthes = new Dictionary<string, double>();
         double GetMaxWidth()
         {
@@ -1323,7 +1329,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         /// </summary>
         double Columns_VisibleWidth
         {
-            get {
+            get
+            {
                 // Ширина области строк
                 double rows_area_width = 0;
                 if (RowsArea_ColumnsCount > 0)
@@ -1358,7 +1365,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         }
 
         #region Построение областей
-        
+
         void BuildAreasLayout()
         {
             m_ColumnsArea_ColumnsCount = 0;
@@ -1587,7 +1594,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                     m_HorizontalScroll.Visibility = Visibility.Collapsed;
                 }
             }
-            else 
+            else
             {
                 m_HorizontalScroll.Visibility = Visibility.Collapsed;
             }
@@ -1814,7 +1821,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             //    }
             //}
 
-            
+
             // Сплиттеры ширины на область строк
             for (int i = PivotArea_BeginColumnIndex; i < RowsArea_ColumnsCount; i++)
             {
@@ -1922,7 +1929,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             get
             {
                 if (m_ColumnsArea_LovestMemberControls == null)
-               {
+                {
                     m_ColumnsArea_LovestMemberControls = new List<MemberControl>();
                 }
                 return m_ColumnsArea_LovestMemberControls;
@@ -1933,7 +1940,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public readonly CellCoordinate RowsArea_FirstVisible_Coordinate = new CellCoordinate();
         public CellCoordinate CellsArea_FirstVisible_Coordinate
         {
-            get {
+            get
+            {
                 return new CellCoordinate(ColumnsArea_FirstVisible_Coordinate.Column, RowsArea_FirstVisible_Coordinate.Row);
             }
         }
@@ -1962,7 +1970,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             m_ColumnsArea_Splitters = new Cache2D<GridSplitter>();
 
             ColumnsArea_LovestMemberControls.Clear();
-            
+
             // Получаем сортировку по значению для противоположной оси
             SortByValueDescriptor value_sort = null;
             if (QueryManager != null)
@@ -2094,12 +2102,12 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 ItemsLayoutRoot.Children.Remove(ctrl);
             }
             m_RowsMembers.Clear();
-            
-            for(int c = 0; c < m_RowsArea_Splitters.Columns_Size; c++)
-                for(int r = 0; r < m_RowsArea_Splitters.Rows_Size; r++)
+
+            for (int c = 0; c < m_RowsArea_Splitters.Columns_Size; c++)
+                for (int r = 0; r < m_RowsArea_Splitters.Rows_Size; r++)
                 {
                     var splitter = m_RowsArea_Splitters[c, r];
-                    if(splitter != null)
+                    if (splitter != null)
                     {
                         ItemsLayoutRoot.Children.Remove(splitter);
                     }
@@ -2184,7 +2192,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
                                 if ((member_item.PivotMember.IsFirstDrillDownChild && member_item.IsExtension == false) || (row_indx == 0/* && member_item.IsExtension == false*/))
                                 {
-                                    member_Control.ShowUpBorder= true;
+                                    member_Control.ShowUpBorder = true;
                                     //if (member_item.IsExtension)
                                     //{
                                     //    member_Control.Opacity = 0.3;
@@ -2276,9 +2284,9 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             }
 
             int Axis0Coord = -1;
-            for(int column = 0; column < columnsCount; column++)
+            for (int column = 0; column < columnsCount; column++)
             {
-                if(hasColumnsArea && ColumnsArea_LovestMemberControls.Count > column)
+                if (hasColumnsArea && ColumnsArea_LovestMemberControls.Count > column)
                 {
                     Axis0Coord = ColumnsArea_LovestMemberControls[column].Member.MemberIndexInAxis;
                 }
@@ -2421,7 +2429,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
         CustomContextMenu GetCurrentContextMenu(Point p)
         {
-            m_ContextMenu = null; 
+            m_ContextMenu = null;
             PivotGridItem grid_item = null;
 
             if (AgControlBase.GetSLBounds(ItemsLayoutRoot).Contains(p))
@@ -2890,7 +2898,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
             return null;
         }
 
-        #region Навигация по ячейкам 
+        #region Навигация по ячейкам
 
         private SelectionManager<CellInfo> m_SelectionManager = new SelectionManager<CellInfo>();
 
@@ -2949,7 +2957,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         CellInfo FocusedCellView
         {
             get { return m_FocusedCellView; }
-            set {
+            set
+            {
                 // Предыдущую ячейку с фокусом отменяем
                 if (FocusedCell != null)
                 {
@@ -2972,7 +2981,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
                 if (m_FocusedCellView != null)
                 {
-                    SelectionManager.AddSelectionArea(new List<CellInfo>() { m_FocusedCellView });  
+                    SelectionManager.AddSelectionArea(new List<CellInfo>() { m_FocusedCellView });
                 }
             }
         }
@@ -3065,7 +3074,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                     case Key.D7:
                     case Key.D8:
                     case Key.D9:
-                         return true;
+                        return true;
                     case Key.Subtract:
                     case Key.Add:
                         if ((Keyboard.Modifiers & ModifierKeys.Control) != ModifierKeys.Control &&
@@ -3181,9 +3190,9 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         bool TestCellToInteractive(CellInfo cell, int axis, MemberActionType action)
         {
             MemberInfo member = null;
-            if(cell != null && (axis ==0 || axis == 1))
+            if (cell != null && (axis == 0 || axis == 1))
             {
-                if(axis == 0)
+                if (axis == 0)
                 {
                     if (Columns_IsInteractive)
                     {
@@ -3230,9 +3239,9 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                     case Key.Left:
                     case Key.Right:
                         return;
-                }   
+                }
             }
-            
+
             switch (e.Key)
             {
                 case Key.Up:
@@ -3397,7 +3406,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                                     }
                                 }
                             }
-                            
+
                             e.Handled = true;
                             return;
                         }
@@ -3432,7 +3441,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                     int columns_scroll_value = 0;
 
                     // Ctrl+Shift+ENTER - детализация элемента в области колонок
-                    if(e.Key == Key.Enter && 
+                    if (e.Key == Key.Enter &&
                         (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control &&
                         (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
                         return;
@@ -3517,8 +3526,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                             layout_row_index += rows_scroll_value;
 
                             // Сдвиг вниз
-                            if (isVisibleCell && 
-                                ( layout_row_index >= RowsArea_FirstVisible_Coordinate.Row + Rows_VisibleRowsCount/* || 
+                            if (isVisibleCell &&
+                                (layout_row_index >= RowsArea_FirstVisible_Coordinate.Row + Rows_VisibleRowsCount/* || 
                                 layout_row_index > Rows_Max_LovestMember_Index*/))
                             {
                                 if (ScrollVertical(rows_scroll_value) == true)
@@ -3736,7 +3745,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                                     member_width = m_AnalyticInfo.GetEstimatedColumnSizeForColumnsArea(memberIndex) + 10 + 10 * Scale;    // 10-для красоты, 10* - на плюсики
                                 // Желаемая ширина ячейки
                                 MinMaxDescriptor<CellInfo> minmax = null;
-                                if(m_AnalyticInfo.Cells_DisplayValueLength_MinMax.ContainsKey(member_item.PivotMember.Member))
+                                if (m_AnalyticInfo.Cells_DisplayValueLength_MinMax.ContainsKey(member_item.PivotMember.Member))
                                     minmax = m_AnalyticInfo.Cells_DisplayValueLength_MinMax[member_item.PivotMember.Member];
                                 double cell_width = DEFAULT_WIDTH;
                                 if (minmax != null && minmax.Max != null)
@@ -3763,7 +3772,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 {
                     // Получаем СУММАРНУЮ ширину области с учетом текущей колонки
                     width += GetEstimatedColumnSize(i);
-                    
+
                     // Если вычисленная суммарная ширина превышает видимый размер, топредел достигнут
                     if (width > Columns_VisibleWidth)
                     {
@@ -3848,13 +3857,14 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
         int Columns_VisibleColumnsCount
         {
-            get {
+            get
+            {
                 for (int i = 0; i <= ColumnsArea_ColumnsCount; i++)
                 {
                     int layout_column_index = ColumnsArea_BeginColumnIndex + i;
                     // Пытаемся ПОЛУЧИТЬ данную колонку в гриде
                     ColumnDefinition current_column = null;
-                    if (layout_column_index  < ItemsLayoutRoot.ColumnDefinitions.Count)
+                    if (layout_column_index < ItemsLayoutRoot.ColumnDefinitions.Count)
                     {
                         current_column = ItemsLayoutRoot.ColumnDefinitions[layout_column_index];
                     }
@@ -4015,7 +4025,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                         for (int rowIndex = beginRowIndex; rowIndex <= endRowIndex; rowIndex++)
                         {
 
-                            CellInfo cell_Info = m_LayoutProvider.PivotProvider.Provider.GetCellInfo(m_LayoutProvider.PivotProvider.Provider.GetAxisCoord(0, columnIndex), 
+                            CellInfo cell_Info = m_LayoutProvider.PivotProvider.Provider.GetCellInfo(m_LayoutProvider.PivotProvider.Provider.GetAxisCoord(0, columnIndex),
                                 m_LayoutProvider.PivotProvider.Provider.GetAxisCoord(1, rowIndex));
                             if (cell_Info != null)
                             {
@@ -4188,7 +4198,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
                 //    }
                 //}
                 Refresh(RefreshType.RefreshByRows);
-            } 
+            }
         }
 
         protected void OnExecuteMemberAction(object sender, MemberActionEventArgs args)
@@ -4408,7 +4418,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public bool AutoWidthColumns
         {
             get { return m_AutoWidthColumns; }
-            set {
+            set
+            {
                 m_AutoWidthColumns = value;
                 if (value)
                 {
@@ -4421,7 +4432,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public ViewModeTypes ColumnsViewMode
         {
             get { return m_ColumnsViewMode; }
-            set { 
+            set
+            {
                 m_ColumnsViewMode = value;
                 if (m_AnalyticInfo != null)
                     m_AnalyticInfo.ClearMembersAnalytic();
@@ -4432,7 +4444,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
         public ViewModeTypes RowsViewMode
         {
             get { return m_RowsViewMode; }
-            set { 
+            set
+            {
                 m_RowsViewMode = value;
                 if (m_AnalyticInfo != null)
                     m_AnalyticInfo.ClearMembersAnalytic();

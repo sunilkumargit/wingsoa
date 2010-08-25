@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,12 +29,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.MemberChoice.Info;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.MemberChoice.Info;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Data;
+using Wing.Olap.Core.Data;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
     public class MemberChoicePopUp : AgPopUpControlBase
     {
@@ -82,7 +82,7 @@ namespace Ranet.AgOlap.Controls
                 m_ChoiceControl.ApplySelection += new EventHandler(m_ChoiceControl_ApplySelection);
                 //m_ChoiceControl.CancelSelection += new EventHandler(m_ChoiceControl_CancelSelection);
                 m_ChoiceControl.SelectedItemChanged += new EventHandler<ItemEventArgs>(m_ChoiceControl_SelectedItemChanged);
-                
+
                 ContentControl = m_ChoiceControl;
                 PopUpContainer.PopupControl.Caption = Localization.MemberChoice_Caption + "...";
             }
@@ -122,11 +122,14 @@ namespace Ranet.AgOlap.Controls
         }
 
         String m_SelectedSet = String.Empty;
-        public String SelectedSet {
-            get {
+        public String SelectedSet
+        {
+            get
+            {
                 return m_SelectedSet;
             }
-            set {
+            set
+            {
                 m_SelectedSet = value;
                 NeedReload = true;
             }
@@ -233,7 +236,7 @@ namespace Ranet.AgOlap.Controls
             //        throw ex;
             //}
         }
-        
+
         //protected readonly PopUpContainerControl m_Popup = new PopUpContainerControl();
 
         protected bool NeedReload = true;

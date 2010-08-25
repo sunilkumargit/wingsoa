@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -30,12 +30,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.AgOlap.Controls.General;
-using Ranet.Olap.Core.Storage;
-using Ranet.Olap.Core;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.General;
+using Wing.Olap.Core.Storage;
+using Wing.Olap.Core;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Conditions
+namespace Wing.AgOlap.Controls.PivotGrid.Conditions
 {
     public partial class CustomCellConditionsEditor : UserControl
     {
@@ -137,7 +137,8 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Conditions
             {
                 return m_StorageManager;
             }
-            set {
+            set
+            {
                 m_StorageManager = value;
             }
         }

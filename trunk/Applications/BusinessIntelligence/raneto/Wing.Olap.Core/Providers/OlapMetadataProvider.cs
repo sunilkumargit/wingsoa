@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -24,10 +24,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AnalysisServices.AdomdClient;
-using Ranet.Olap.Core.Metadata;
+using Wing.Olap.Core.Metadata;
 using System.Data;
 
-namespace Ranet.Olap.Core.Providers
+namespace Wing.Olap.Core.Providers
 {
     public class OlapMetadataProvider 
     {
@@ -37,7 +37,7 @@ namespace Ranet.Olap.Core.Providers
         {
             if (connection == null)
             {
-                System.Diagnostics.Trace.TraceError("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Connection in Constructor equal Null \r\n",
+                System.Diagnostics.Trace.TraceError("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Connection in Constructor equal Null \r\n",
                     DateTime.Now.ToString());
 
                 throw new ArgumentNullException("connection");
@@ -50,7 +50,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Measures List Started \r\n cubeName: '{1}'",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Measures List Started \r\n cubeName: '{1}'",
                     DateTime.Now.ToString(), cubeName);
 
                 Dictionary<String, MeasureInfo> list = new Dictionary<String, MeasureInfo>();
@@ -72,7 +72,7 @@ namespace Ranet.Olap.Core.Providers
                 return list;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Measures List Completed ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Measures List Completed ",
                     DateTime.Now.ToString(), cubeName);
             }
         }
@@ -81,7 +81,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Measure '{1}' Started \r\n cubeName: '{2}'",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Measure '{1}' Started \r\n cubeName: '{2}'",
                     DateTime.Now.ToString(), measureUniqueName, cubeName);
 
                 if (String.IsNullOrEmpty(measureUniqueName))
@@ -105,7 +105,7 @@ namespace Ranet.Olap.Core.Providers
             }
             finally
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Measure '{1}' Completed ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Measure '{1}' Completed ",
                     DateTime.Now.ToString(), measureUniqueName, cubeName);
             }
         }
@@ -126,7 +126,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Kpis List Started \r\n cubeName: '{1}'", 
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Kpis List Started \r\n cubeName: '{1}'", 
                     DateTime.Now.ToString(), cubeName);
 
                 Dictionary<String, KpiInfo> list = new Dictionary<String, KpiInfo>();
@@ -147,7 +147,7 @@ namespace Ranet.Olap.Core.Providers
                 else
                 {
                     String str = String.Format(Localization.MetadataResponseException_CubeNotFound, cubeName, Connection.ConnectionID);
-                    System.Diagnostics.Trace.TraceError("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
+                    System.Diagnostics.Trace.TraceError("{0} Wing.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
                         DateTime.Now.ToString(), cubeName, str); 
                     throw new OlapMetadataResponseException(str);
                 }
@@ -155,7 +155,7 @@ namespace Ranet.Olap.Core.Providers
                 return list;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Kpis List Completed \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Kpis List Completed \r\n", DateTime.Now.ToString());
             }
         }
 
@@ -168,7 +168,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Kpi '{1}' Started \r\n cubeName: '{2}'", 
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Kpi '{1}' Started \r\n cubeName: '{2}'", 
                     DateTime.Now.ToString(), kpiName, cubeName);
 
                 if (String.IsNullOrEmpty(kpiName))
@@ -189,7 +189,7 @@ namespace Ranet.Olap.Core.Providers
                 return null;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Kpi '{1}' Completed \r\n", DateTime.Now.ToString(), kpiName);
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Kpi '{1}' Completed \r\n", DateTime.Now.ToString(), kpiName);
             }
         }
 
@@ -197,7 +197,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Levels List Started \r\n cubeName: '{1}' \r\n dimensionUniqueName: '{2}' \r\n hierarchyUniqueName: '{3}' ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Levels List Started \r\n cubeName: '{1}' \r\n dimensionUniqueName: '{2}' \r\n hierarchyUniqueName: '{3}' ",
                     DateTime.Now.ToString(), cubeName, dimensionUniqueName, hierarchyUniqueName);
 
                 Dictionary<String, LevelInfo> list = new Dictionary<String, LevelInfo>();
@@ -219,7 +219,7 @@ namespace Ranet.Olap.Core.Providers
                 return list;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Levels List Completed ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Levels List Completed ",
                     DateTime.Now.ToString());
             }
         }
@@ -228,7 +228,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Started \r\n cubeName: '{2}' \r\n dimensionUniqueName: '{3}'", 
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Started \r\n cubeName: '{2}' \r\n dimensionUniqueName: '{3}'", 
                     DateTime.Now.ToString(), levelUniqueName, cubeName, dimensionUniqueName);
 
                 // Ищем уровень
@@ -240,7 +240,7 @@ namespace Ranet.Olap.Core.Providers
                 return null;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Completed \r\n", DateTime.Now.ToString(), levelUniqueName);            
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Completed \r\n", DateTime.Now.ToString(), levelUniqueName);            
             }
         }
 
@@ -248,7 +248,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Properties Started \r\n cubeName: '{2}' \r\n dimensionUniqueName: '{3}' \r\n hierarchyUniqueName: '{4}' ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Properties Started \r\n cubeName: '{2}' \r\n dimensionUniqueName: '{3}' \r\n hierarchyUniqueName: '{4}' ",
                     DateTime.Now.ToString(), levelUniqueName, cubeName, dimensionUniqueName, hierarchyUniqueName);
 
                 Dictionary<String, LevelPropertyInfo> list = new Dictionary<String, LevelPropertyInfo>();
@@ -338,7 +338,7 @@ namespace Ranet.Olap.Core.Providers
                 return list;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Properties Completed ", DateTime.Now.ToString(), levelUniqueName);
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Level '{1}' Properties Completed ", DateTime.Now.ToString(), levelUniqueName);
             }
         }
 
@@ -346,7 +346,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Dimension To Hierarchy '{1}' Started \r\n cubeName: '{2}' ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Dimension To Hierarchy '{1}' Started \r\n cubeName: '{2}' ",
                     DateTime.Now.ToString(), hierarchyUniqueName, cubeName);
 
                 if (!String.IsNullOrEmpty(hierarchyUniqueName) && !String.IsNullOrEmpty(cubeName))
@@ -370,7 +370,7 @@ namespace Ranet.Olap.Core.Providers
                 return null;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Dimension To Hierarchy Completed \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Dimension To Hierarchy Completed \r\n", DateTime.Now.ToString());
             }
         }
 
@@ -378,7 +378,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Hierarchy '{1}' Started \r\n cubeName: '{2}'", 
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Hierarchy '{1}' Started \r\n cubeName: '{2}'", 
                     DateTime.Now.ToString(), hierarchyUniqueName, cubeName);
 
                 AdomdConnection conn = GetConnection();
@@ -392,7 +392,7 @@ namespace Ranet.Olap.Core.Providers
                 return null;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Hierarchy '{1}' Completed \r\n", DateTime.Now.ToString(), hierarchyUniqueName);
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Hierarchy '{1}' Completed \r\n", DateTime.Now.ToString(), hierarchyUniqueName);
             }
         }
 
@@ -400,7 +400,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Hierarchies Started \r\n cubeName: '{1}' \r\n dimensionUniqueName: '{2}'", 
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Hierarchies Started \r\n cubeName: '{1}' \r\n dimensionUniqueName: '{2}'", 
                     DateTime.Now.ToString(), cubeName, dimensionUniqueName);
 
                 Dictionary<String, HierarchyInfo> list = new Dictionary<String, HierarchyInfo>();
@@ -423,7 +423,7 @@ namespace Ranet.Olap.Core.Providers
                 return list;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Hierarchies Completed \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Hierarchies Completed \r\n", DateTime.Now.ToString());
             }
         }
 
@@ -431,7 +431,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Dimensions List Started \r\n cubeName: '{1}' ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Dimensions List Started \r\n cubeName: '{1}' ",
                     DateTime.Now.ToString(), cubeName);
 
                 Dictionary<String, DimensionInfo> list = new Dictionary<String, DimensionInfo>();
@@ -454,7 +454,7 @@ namespace Ranet.Olap.Core.Providers
                 return list;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Dimensions List Completed \r\n ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Dimensions List Completed \r\n ",
                     DateTime.Now.ToString(), cubeName);
             }
         }
@@ -463,7 +463,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Dimension '{1}' Started \r\n cubeName: '{2}' ", 
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Dimension '{1}' Started \r\n cubeName: '{2}' ", 
                     DateTime.Now.ToString(), dimensionUniqueName, cubeName);
 
                 AdomdConnection conn = GetConnection();
@@ -476,7 +476,7 @@ namespace Ranet.Olap.Core.Providers
                 return null;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Dimension '{1}' From Cube '{2}' Completed", DateTime.Now.ToString(), dimensionUniqueName, cubeName);
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Dimension '{1}' From Cube '{2}' Completed", DateTime.Now.ToString(), dimensionUniqueName, cubeName);
             }
         }
 
@@ -488,7 +488,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Getting Cube '{1}' Metadata Started",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Getting Cube '{1}' Metadata Started",
                     DateTime.Now.ToString(), cubeName);
 
                 CubeDef cube = FindCube(cubeName);
@@ -641,7 +641,7 @@ namespace Ranet.Olap.Core.Providers
                 return null;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Getting Cube '{1}' Metadata Completed",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Getting Cube '{1}' Metadata Completed",
     DateTime.Now.ToString(), cubeName);
             }
         }
@@ -655,7 +655,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Getting Cubes List Started", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Getting Cubes List Started", DateTime.Now.ToString());
 
                 Dictionary<String, CubeDefInfo> list = new Dictionary<String, CubeDefInfo>();
                 AdomdConnection conn = GetConnection();
@@ -671,7 +671,7 @@ namespace Ranet.Olap.Core.Providers
                 return list;
             }
             finally {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Getting Cubes List Completed", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Getting Cubes List Completed", DateTime.Now.ToString());
             }
         }
 
@@ -691,7 +691,7 @@ namespace Ranet.Olap.Core.Providers
             }
 
             String str = String.Format(Localization.MetadataResponseException_CubeNotFound, cubeName, Connection.ConnectionID);
-            System.Diagnostics.Trace.TraceError("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
+            System.Diagnostics.Trace.TraceError("{0} Wing.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
                 DateTime.Now.ToString(), cubeName, str);
             throw new OlapMetadataResponseException(str);
             //return null;
@@ -713,7 +713,7 @@ namespace Ranet.Olap.Core.Providers
             }
 
             String str = String.Format(Localization.MetadataResponseException_DimensionByUniqueName_InCube_NotFound, dimensionUniqueName, cubeName, Connection.ConnectionID);
-            System.Diagnostics.Trace.TraceError("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
+            System.Diagnostics.Trace.TraceError("{0} Wing.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
                 DateTime.Now.ToString(), cubeName, str);
             throw new OlapMetadataResponseException(str);
 
@@ -737,7 +737,7 @@ namespace Ranet.Olap.Core.Providers
                     }
                 }
                 String str = String.Format(Localization.MetadataResponseException_HierarchyByUniqueName_InDimension_NotFound, hierarchyUniqueName, dimensionUniqueName, Connection.ConnectionID);
-                System.Diagnostics.Trace.TraceError("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
+                System.Diagnostics.Trace.TraceError("{0} Wing.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
                     DateTime.Now.ToString(), cubeName, str);
                 throw new OlapMetadataResponseException(str);
             }
@@ -758,7 +758,7 @@ namespace Ranet.Olap.Core.Providers
                     }
                 }
                 String str = String.Format(Localization.MetadataResponseException_HierarchyByUniqueName_InCube_NotFound, hierarchyUniqueName, cubeName, Connection.ConnectionID);
-                System.Diagnostics.Trace.TraceError("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
+                System.Diagnostics.Trace.TraceError("{0} Wing.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
                     DateTime.Now.ToString(), cubeName, str);
                 throw new OlapMetadataResponseException(str);
             }
@@ -777,7 +777,7 @@ namespace Ranet.Olap.Core.Providers
                 }
             }
             String str = String.Format(Localization.MetadataResponseException_LevelByUniqueName_InHierarchy_NotFound, levelUniqueName, hierarchyUniqueName, Connection.ConnectionID);
-            System.Diagnostics.Trace.TraceError("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
+            System.Diagnostics.Trace.TraceError("{0} Wing.Olap.Core.Providers.OlapMetadataProvider: {1} \r\n",
                 DateTime.Now.ToString(), cubeName, str);
             throw new OlapMetadataResponseException(str);
             //return null;
@@ -787,7 +787,7 @@ namespace Ranet.Olap.Core.Providers
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Measures Groups List Started \r\n cubeName: '{1}'",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Measures Groups List Started \r\n cubeName: '{1}'",
                     DateTime.Now.ToString(), cubeName);
 
                 Dictionary<String, MeasureGroupInfo> list = new Dictionary<String, MeasureGroupInfo>();
@@ -998,7 +998,7 @@ namespace Ranet.Olap.Core.Providers
             }
             finally
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Providers.OlapMetadataProvider Get Measures Groups List Completed ",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Providers.OlapMetadataProvider Get Measures Groups List Completed ",
                     DateTime.Now.ToString());
             }
         }

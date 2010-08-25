@@ -8,9 +8,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers;
+using Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers;
 
-namespace Ranet.AgOlap.Controls.MdxDesigner.Wrappers
+namespace Wing.AgOlap.Controls.MdxDesigner.Wrappers
 {
     public class Calculated_AreaItemWrapper : AreaItemWrapper
     {

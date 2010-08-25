@@ -21,9 +21,9 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Ranet.AgOlap;
+using Wing.AgOlap;
 
-namespace Ranet.Olap.Core.Data
+namespace Wing.Olap.Core.Data
 {   
 
     [XmlRoot("tbl", Namespace = Common.Namespace)]

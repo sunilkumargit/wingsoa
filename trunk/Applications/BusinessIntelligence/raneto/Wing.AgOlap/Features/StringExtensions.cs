@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Ranet.AgOlap.Features
+namespace Wing.AgOlap.Features
 {
     static class StringExtensions
     {

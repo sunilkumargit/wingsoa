@@ -1,8 +1,8 @@
-﻿<UserControl x:Class="Ranet.AgOlap.Controls.PivotGrid.Controls.SortPropertiesControl"
+﻿<UserControl x:Class="Wing.AgOlap.Controls.PivotGrid.Controls.SortPropertiesControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:combo="clr-namespace:Ranet.AgOlap.Controls.Combo"
-    xmlns:pivot="clr-namespace:Ranet.AgOlap.Controls.PivotGrid.Controls"
+    xmlns:combo="clr-namespace:Wing.AgOlap.Controls.Combo"
+    xmlns:pivot="clr-namespace:Wing.AgOlap.Controls.PivotGrid.Controls"
 >
     <Grid x:Name="LayoutRoot" Background="White">
         <Grid.RowDefinitions>

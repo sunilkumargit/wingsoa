@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,22 +29,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.Tab;
-using Ranet.AgOlap.Controls.Buttons;
-using Ranet.AgOlap.Features;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.AgOlap.Providers;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.Tab;
+using Wing.AgOlap.Controls.Buttons;
+using Wing.AgOlap.Features;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Providers;
 
-namespace Ranet.AgOlap.Controls.DataSourceInfo
+namespace Wing.AgOlap.Controls.DataSourceInfo
 {
     public class DataSourceInfoControl : UserControl
     {
-        Ranet.AgOlap.Controls.General.RichTextBox connectionString;
-        Ranet.AgOlap.Controls.General.RichTextBox mdxQuery;
-        Ranet.AgOlap.Controls.General.RichTextBox movedAxes_MdxQuery;
-        Ranet.AgOlap.Controls.General.RichTextBox updateScript;
+        Wing.AgOlap.Controls.General.RichTextBox connectionString;
+        Wing.AgOlap.Controls.General.RichTextBox mdxQuery;
+        Wing.AgOlap.Controls.General.RichTextBox movedAxes_MdxQuery;
+        Wing.AgOlap.Controls.General.RichTextBox updateScript;
         CheckBox parseMdx;
         CheckBox parseMovedAxesMdx;
         CheckBox parseUpdateScript;
@@ -65,7 +65,7 @@ namespace Ranet.AgOlap.Controls.DataSourceInfo
             TextBlock connectionString_Label = new TextBlock() { Text = Localization.Connection + ":" };
             LayoutRoot.Children.Add(connectionString_Label);
 
-            connectionString = new Ranet.AgOlap.Controls.General.RichTextBox() {IsReadOnly = true };
+            connectionString = new Wing.AgOlap.Controls.General.RichTextBox() {IsReadOnly = true };
             connectionString.Height = 22;
             connectionString.Margin = new Thickness(0, 5, 0, 0);
             LayoutRoot.Children.Add(connectionString);
@@ -88,7 +88,7 @@ namespace Ranet.AgOlap.Controls.DataSourceInfo
             queryTabLayoutRoot.RowDefinitions.Add(new RowDefinition());
             queryTabLayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
-            mdxQuery = new Ranet.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
+            mdxQuery = new Wing.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
             mdxQuery.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             mdxQuery.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             queryTabLayoutRoot.Children.Add(mdxQuery);
@@ -113,7 +113,7 @@ namespace Ranet.AgOlap.Controls.DataSourceInfo
             movedAxesTabLayoutRoot.RowDefinitions.Add(new RowDefinition());
             movedAxesTabLayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
-            movedAxes_MdxQuery = new Ranet.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
+            movedAxes_MdxQuery = new Wing.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
             movedAxes_MdxQuery.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             movedAxes_MdxQuery.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             movedAxesTabLayoutRoot.Children.Add(movedAxes_MdxQuery);
@@ -138,7 +138,7 @@ namespace Ranet.AgOlap.Controls.DataSourceInfo
             scriptTabLayoutRoot.RowDefinitions.Add(new RowDefinition());
             scriptTabLayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
-            updateScript = new Ranet.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
+            updateScript = new Wing.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
             updateScript.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             updateScript.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             scriptTabLayoutRoot.Children.Add(updateScript);
@@ -170,17 +170,17 @@ namespace Ranet.AgOlap.Controls.DataSourceInfo
         {
             if (queryInfoTabControl.TabCtrl.SelectedIndex == 0)
             {
-                Ranet.AgOlap.Features.Clipboard.SetClipboardText(mdxQuery.Text);
+                Wing.AgOlap.Features.Clipboard.SetClipboardText(mdxQuery.Text);
                 return;
             }
             if (queryInfoTabControl.TabCtrl.SelectedIndex == 1)
             {
-                Ranet.AgOlap.Features.Clipboard.SetClipboardText(movedAxes_MdxQuery.Text);
+                Wing.AgOlap.Features.Clipboard.SetClipboardText(movedAxes_MdxQuery.Text);
                 return;
             }
             if (queryInfoTabControl.TabCtrl.SelectedIndex == 2)
             {
-                Ranet.AgOlap.Features.Clipboard.SetClipboardText(updateScript.Text);
+                Wing.AgOlap.Features.Clipboard.SetClipboardText(updateScript.Text);
                 return;
             }
         }

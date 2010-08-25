@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,25 +29,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.General.Tree;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.General.Tree;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Metadata;
-using Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers;
+using Wing.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers;
 using System.Windows.Controls.Primitives;
-using Ranet.Olap.Core;
-using Ranet.AgOlap.Commands;
-using Ranet.AgOlap.Controls.General.ClientServer;
-using Ranet.AgOlap.Controls.MemberChoice.ClientServer;
-using Ranet.AgOlap.Controls.MemberChoice;
-using Ranet.Olap.Core.Data;
-using Ranet.AgOlap.Controls.ValueCopy;
-using Ranet.AgOlap.Providers;
-using Ranet.Olap.Core.Providers.ClientServer;
+using Wing.Olap.Core;
+using Wing.AgOlap.Commands;
+using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.AgOlap.Controls.MemberChoice.ClientServer;
+using Wing.AgOlap.Controls.MemberChoice;
+using Wing.Olap.Core.Data;
+using Wing.AgOlap.Controls.ValueCopy;
+using Wing.AgOlap.Providers;
+using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
-    public class DragNodeArgs<T> : EventArgs 
+    public class DragNodeArgs<T> : EventArgs
     {
         public readonly TreeViewItem Node;
         public readonly T Args;
@@ -171,7 +171,8 @@ namespace Ranet.AgOlap.Controls
         /// </summary>
         public CustomTreeNode SelectedNode
         {
-            get {
+            get
+            {
                 return Tree.SelectedItem as CustomTreeNode;
             }
         }
@@ -281,7 +282,7 @@ namespace Ranet.AgOlap.Controls
             }
         }
 
-        String  m_MeasureGroupName = String.Empty;
+        String m_MeasureGroupName = String.Empty;
         /// <summary>
         /// Имя группы мер
         /// </summary>
@@ -301,7 +302,8 @@ namespace Ranet.AgOlap.Controls
 
         public String CurrentMeasureGroupName
         {
-            get {
+            get
+            {
                 if (m_ComboMeasureGroup.CurrentItem != null &&
                     m_ComboMeasureGroup.CurrentItem.Name != MeasureGroupCombo.ALL_MEASURES_GROUPS)
                     return m_ComboMeasureGroup.CurrentItem.Name;
@@ -336,8 +338,8 @@ namespace Ranet.AgOlap.Controls
 
             m_ComboMeasureGroup.SelectionChanged -= new EventHandler(comboMeasureGroup_SelectionChanged);
             m_ComboMeasureGroup.SelectionChanged += new EventHandler(comboMeasureGroup_SelectionChanged);
-            
-            if(m_CubeInfo != null)
+
+            if (m_CubeInfo != null)
             {
                 m_ComboMeasureGroup.Initialize(m_CubeInfo.MeasureGroups);
                 m_ComboMeasureGroup.SelectItem(MeasureGroupName);
@@ -502,21 +504,21 @@ namespace Ranet.AgOlap.Controls
 
         bool ValidateSettings()
         {
-    //        case OlapBrowserContentTypes.Measures:
-    //        if (String.IsNullOrEmpty(Connection) ||
-    //String.IsNullOrEmpty(CubeName))
-    //        {
-    //            // Сообщение в лог
-    //            StringBuilder builder = new StringBuilder();
-    //            if (String.IsNullOrEmpty(Connection))
-    //                builder.Append(Localization.Connection_PropertyDesc + ", ");
-    //            if (String.IsNullOrEmpty(CubeName))
-    //                builder.Append(Localization.CubeName_PropertyDesc);
-    //            LogManager.LogMessage(Localization.MeasureChoiceControl_Name, Localization.Error + "! " + String.Format(Localization.ControlSettingsNotInitialized_Message, builder.ToString()));
+            //        case OlapBrowserContentTypes.Measures:
+            //        if (String.IsNullOrEmpty(Connection) ||
+            //String.IsNullOrEmpty(CubeName))
+            //        {
+            //            // Сообщение в лог
+            //            StringBuilder builder = new StringBuilder();
+            //            if (String.IsNullOrEmpty(Connection))
+            //                builder.Append(Localization.Connection_PropertyDesc + ", ");
+            //            if (String.IsNullOrEmpty(CubeName))
+            //                builder.Append(Localization.CubeName_PropertyDesc);
+            //            LogManager.LogMessage(Localization.MeasureChoiceControl_Name, Localization.Error + "! " + String.Format(Localization.ControlSettingsNotInitialized_Message, builder.ToString()));
 
-    //            measuresNode.IsError = true;
-    //            return;
-    //        }
+            //            measuresNode.IsError = true;
+            //            return;
+            //        }
 
             return true;
         }
@@ -573,8 +575,8 @@ namespace Ranet.AgOlap.Controls
                             (m_ComboMeasureGroup.CurrentItem.Name == MeasureGroupCombo.ALL_MEASURES_GROUPS ||
                             m_ComboMeasureGroup.CurrentItem.Dimensions.Contains(info.UniqueName)))
                         {
-                            DimensionTreeNode dimNode = AddDimensionNode(parentNode, info);                      
-                            if(createHierarchies)
+                            DimensionTreeNode dimNode = AddDimensionNode(parentNode, info);
+                            if (createHierarchies)
                             {
                                 CreateHierarchies(dimNode, info, true);
                             }
@@ -599,7 +601,7 @@ namespace Ranet.AgOlap.Controls
                 parentNode.Items.Add(dimNode);
             return dimNode;
         }
- 
+
         //void dimNode_Expanded(object sender, RoutedEventArgs e)
         //{
         //    DimensionTreeNode dimNode = sender as DimensionTreeNode;
@@ -670,7 +672,7 @@ namespace Ranet.AgOlap.Controls
 
                     HierarchyTreeNode hierarchyNode = AddHierarchyNode(groupNode, info);
 
-                    if(createLevels)
+                    if (createLevels)
                     {
                         CreateLevels(hierarchyNode, info, true);
                     }
@@ -1020,7 +1022,7 @@ namespace Ranet.AgOlap.Controls
         //        CreateMeasures(measuresNode, m_CubeInfo);
         //    }
         //}
-        
+
         CustomTreeNode CrateMeasureGroupNode(CustomTreeNode parentNode, String measureGroupName, Dictionary<String, CustomTreeNode> nodesDict)
         {
             CustomTreeNode node = null;
@@ -1033,7 +1035,7 @@ namespace Ranet.AgOlap.Controls
                 node = new MeasureGroupTreeNode();
                 node.MouseDoubleClick += new EventHandler<CustomEventArgs<CustomTreeNode>>(TreeNode_MouseDoubleClick);
                 node.Text = measureGroupName;
-                if(nodesDict != null)
+                if (nodesDict != null)
                     nodesDict[measureGroupName] = node;
 
                 if (parentNode == null)
@@ -1382,7 +1384,7 @@ namespace Ranet.AgOlap.Controls
                 }
             }
             else
-            { 
+            {
                 // если до добавления узлов у parentNode уже были дочерние, то значит произведена дозагрузка элементов. В этом случае выбранным делаем последний из добавленных
                 if (nodes_count > 0 && node != null)
                 {
@@ -1402,7 +1404,7 @@ namespace Ranet.AgOlap.Controls
             {
                 memberNode.IsSelected = true;
                 memberNode.Loaded -= new RoutedEventHandler(node_Loaded);
-            }         
+            }
         }
 
         void loadNextNode_Loaded(object sender, RoutedEventArgs e)
@@ -1514,8 +1516,8 @@ namespace Ranet.AgOlap.Controls
             {
                 InfoBaseTreeNode infoNode = node as InfoBaseTreeNode;
                 if (infoNode != null && infoNode.Info != null)
-                { 
-                    if(infoNode.Info is CubeDefInfo)
+                {
+                    if (infoNode.Info is CubeDefInfo)
                     {
                         if (((CubeDefInfo)infoNode.Info).Name.IndexOf(" ") > 0)
                             return OlapHelper.ConvertToQueryStyle(((CubeDefInfo)infoNode.Info).Name);

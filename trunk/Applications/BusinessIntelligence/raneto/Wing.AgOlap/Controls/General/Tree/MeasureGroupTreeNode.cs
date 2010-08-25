@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Ranet.AgOlap.Controls.General.Tree
+namespace Wing.AgOlap.Controls.General.Tree
 {
     public class MeasureGroupTreeNode : FolderTreeNode
     {

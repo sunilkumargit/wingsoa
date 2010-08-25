@@ -1,18 +1,18 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see <http://www.gnu.org/licenses/>.
+    along with Wing.UILibrary.Olap.  If not, see <http://www.gnu.org/licenses/>.
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -22,24 +22,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Ranet.AgOlap.Controls.General.ClientServer;
-using Ranet.AgOlap;
-using Ranet.Olap.Core.Metadata;
-using Ranet.Olap.Core.Data;
-using Ranet.Olap.Core.Providers;
-using Ranet.Olap.Core;
-using Ranet.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.AgOlap;
+using Wing.Olap.Core.Metadata;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Core;
+using Wing.Olap.Core.Providers.ClientServer;
 using System.IO;
 using System.Xml;
 using Microsoft.AnalysisServices.AdomdClient;
-using Ranet.Olap.Core.Storage;
+using Wing.Olap.Core.Storage;
 using System.Web;
 using System.Configuration;
-using Ranet.ZipLib;
+using Wing.ZipCompression;
 using System.Web.Services;
 using System.Data;
 
-namespace Ranet.Web.Olap
+namespace Wing.Web.Olap
 {
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -70,7 +70,7 @@ namespace Ranet.Web.Olap
             DateTime start = DateTime.Now;
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} PerformOlapServiceAction \r\n SCHEMA_TYPE: {1} \r\n SCHEMA: {2} \r\n", 
+                System.Diagnostics.Trace.TraceInformation("{0} PerformOlapServiceAction \r\n SCHEMA_TYPE: {1} \r\n SCHEMA: {2} \r\n",
                     DateTime.Now.ToString(), schemaType, schema);
 
                 object type = OlapActionTypes.Parse(typeof(OlapActionTypes), schemaType, true);
@@ -102,7 +102,8 @@ namespace Ranet.Web.Olap
                     DateTime.Now.ToString(), ex.ToString());
                 return InvokeResultDescriptor.Serialize(result);
             }
-            finally {
+            finally
+            {
                 System.Diagnostics.Trace.TraceInformation("{0} PerformOlapServiceAction: {1} completed \r\n time: {2} \r\n",
                     DateTime.Now.ToString(), schemaType, (DateTime.Now - start).ToString());
             }
@@ -400,7 +401,7 @@ namespace Ranet.Web.Olap
                                     {
                                         results.Add(unknown_ex.Message);
                                     }
-                                    catch(InvalidOperationException invalid_ex)
+                                    catch (InvalidOperationException invalid_ex)
                                     {
                                         results.Add(invalid_ex.Message);
                                     }
@@ -480,7 +481,7 @@ namespace Ranet.Web.Olap
                     result.Content = compesed;
                     result.IsArchive = true;
                 }
-                
+
                 result.Headers.Add(new Header(InvokeResultDescriptor.SESSION_ID, sessionId));
                 result.Headers.Add(new Header(InvokeResultDescriptor.CONNECTION_ID, args.Connection));
             }

@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,31 +29,31 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.General;
 using System.Windows.Controls.Primitives;
 using System.Collections.Generic;
-using Ranet.AgOlap.Controls.MdxDesigner;
-using Ranet.AgOlap.Controls.General.Tree;
-using Ranet.Olap.Core.Metadata;
-using Ranet.AgOlap.Controls.ContextMenu;
+using Wing.AgOlap.Controls.MdxDesigner;
+using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.ContextMenu;
 using System.Text;
-using Ranet.AgOlap.Controls.Buttons;
-using Ranet.AgOlap.Controls.ValueCopy;
-using Ranet.AgOlap.Controls.MdxDesigner.Wrappers;
-using Ranet.Olap.Core;
-using Ranet.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.Buttons;
+using Wing.AgOlap.Controls.ValueCopy;
+using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
+using Wing.Olap.Core;
+using Wing.AgOlap.Controls.ToolBar;
 using System.IO;
 using System.IO.IsolatedStorage;
-using Ranet.AgOlap.Controls.MdxDesigner.Filters;
-using Ranet.AgOlap.Controls.Forms;
-using Ranet.Olap.Core.Storage;
-using Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers;
-using Ranet.AgOlap.Controls.MemberChoice.Info;
-using Ranet.AgOlap.Providers;
-using Ranet.Olap.Core.Data;
-using Ranet.Olap.Core.Providers;
+using Wing.AgOlap.Controls.MdxDesigner.Filters;
+using Wing.AgOlap.Controls.Forms;
+using Wing.Olap.Core.Storage;
+using Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers;
+using Wing.AgOlap.Controls.MemberChoice.Info;
+using Wing.AgOlap.Providers;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Providers;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
 	public class PivotMdxDesignerControl : AgControlBase
 	{
@@ -67,7 +67,7 @@ namespace Ranet.AgOlap.Controls
 		Grid LayoutRoot;
 		RanetToolBar m_ToolBar;
 
-		Ranet.AgOlap.Controls.General.RichTextBox m_MdxQuery;
+		Wing.AgOlap.Controls.General.RichTextBox m_MdxQuery;
 		UpdateablePivotGridControl m_PivotGrid;
 		protected UpdateablePivotGridControl PivotGrid
 		{
@@ -335,7 +335,7 @@ namespace Ranet.AgOlap.Controls
 			Mdx_LayotRoot.Children.Add(mdx_Header);
 
 			// Текст запроса
-			m_MdxQuery = new Ranet.AgOlap.Controls.General.RichTextBox();
+			m_MdxQuery = new Wing.AgOlap.Controls.General.RichTextBox();
 			m_MdxQuery.AcceptsReturn = true;
 			m_MdxQuery.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
 			m_MdxQuery.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;

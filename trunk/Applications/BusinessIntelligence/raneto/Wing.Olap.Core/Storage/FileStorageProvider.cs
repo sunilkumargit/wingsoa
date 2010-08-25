@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -26,7 +26,7 @@ using System.Text;
 using System.Security.Principal;
 using System.IO;
 
-namespace Ranet.Olap.Core.Storage
+namespace Wing.Olap.Core.Storage
 {
     public class FileStorageProvider : IStorageProvider
     {
@@ -36,7 +36,7 @@ namespace Ranet.Olap.Core.Storage
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider clear started.",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider clear started.",
                     DateTime.Now.ToString());
 
                 string folder = string.Empty;
@@ -55,7 +55,7 @@ namespace Ranet.Olap.Core.Storage
             }
             finally
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Saving File completed. \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Saving File completed. \r\n", DateTime.Now.ToString());
             }
         }
 
@@ -63,7 +63,7 @@ namespace Ranet.Olap.Core.Storage
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Saving File: '{1}' started.",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Saving File: '{1}' started.",
                     DateTime.Now.ToString(), name);
 
                 if (string.IsNullOrEmpty(name))
@@ -83,7 +83,7 @@ namespace Ranet.Olap.Core.Storage
             }
             finally
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Saving File completed. \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Saving File completed. \r\n", DateTime.Now.ToString());
             }
         }
 
@@ -91,7 +91,7 @@ namespace Ranet.Olap.Core.Storage
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Loading File: '{1}' started.",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Loading File: '{1}' started.",
                     DateTime.Now.ToString(), name);
 
                 String result = String.Empty;
@@ -112,7 +112,7 @@ namespace Ranet.Olap.Core.Storage
             }
             finally
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Loading File completed. \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Loading File completed. \r\n", DateTime.Now.ToString());
             }
         }
 
@@ -120,7 +120,7 @@ namespace Ranet.Olap.Core.Storage
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Loading File: '{1}' started.",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Loading File: '{1}' started.",
                     DateTime.Now.ToString(), name);
 
                 String result = String.Empty;
@@ -147,7 +147,7 @@ namespace Ranet.Olap.Core.Storage
             }
             finally
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Loading File completed. \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Loading File completed. \r\n", DateTime.Now.ToString());
             }
         }
 
@@ -157,7 +157,7 @@ namespace Ranet.Olap.Core.Storage
         {
             try
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Getting List by Mask: '{1}' started.",
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Getting List by Mask: '{1}' started.",
                     DateTime.Now.ToString(), mask);
 
                 List<ObjectStorageFileDescription> result = new List<ObjectStorageFileDescription>();
@@ -211,7 +211,7 @@ namespace Ranet.Olap.Core.Storage
             }
             finally
             {
-                System.Diagnostics.Trace.TraceInformation("{0} Ranet.Olap.Core.Storage.FileStorageProvider Getting List completed. \r\n", DateTime.Now.ToString());
+                System.Diagnostics.Trace.TraceInformation("{0} Wing.Olap.Core.Storage.FileStorageProvider Getting List completed. \r\n", DateTime.Now.ToString());
             }
         }
 

@@ -1,19 +1,19 @@
 /*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -23,15 +23,15 @@ using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Data;
+using Wing.Olap.Core.Data;
 
-namespace Ranet.AgOlap.Controls.MemberChoice.Info
+namespace Wing.AgOlap.Controls.MemberChoice.Info
 {
-	/// <summary>
-	/// Summary description for RootOlapMemberInfo.
-	/// </summary>
-	public class RootOlapMemberInfo : OlapMemberInfo
-	{
+    /// <summary>
+    /// Summary description for RootOlapMemberInfo.
+    /// </summary>
+    public class RootOlapMemberInfo : OlapMemberInfo
+    {
         Dictionary<String, OlapMemberInfo> m_AllMembers = null;
         public Dictionary<String, OlapMemberInfo> AllMembers
         {
@@ -45,10 +45,10 @@ namespace Ranet.AgOlap.Controls.MemberChoice.Info
             }
         }
 
-		public RootOlapMemberInfo(MemberData member)
-            : base (member)
-		{
-		}
+        public RootOlapMemberInfo(MemberData member)
+            : base(member)
+        {
+        }
 
         public OlapMemberInfo FindMember(String uniqueName)
         {
@@ -72,10 +72,10 @@ namespace Ranet.AgOlap.Controls.MemberChoice.Info
         //        return null;
         //}
 
-		public void ClearMembersState()
-		{
-			SetChildrenState (SelectStates.Not_Initialized, true);
-		}
+        public void ClearMembersState()
+        {
+            SetChildrenState(SelectStates.Not_Initialized, true);
+        }
 
         #region AddMemberToHierarchy - Добавление элемента в загруженную иерархию
         /// <summary>
@@ -130,7 +130,7 @@ namespace Ranet.AgOlap.Controls.MemberChoice.Info
 
                         // Ищем среди корневых элементы дочерние для данного
                         Dictionary<String, OlapMemberInfo> toDelete = new Dictionary<string, OlapMemberInfo>();
-                        foreach(var child in Children.Values)
+                        foreach (var child in Children.Values)
                         {
                             String pun = String.Empty;
                             if (child.Info != null)
@@ -206,9 +206,9 @@ namespace Ranet.AgOlap.Controls.MemberChoice.Info
 
         void memberInfo_HierarchyStateChanged(OlapMemberInfo sender)
         {
-            Raise_HierarchyStateChanged(sender);    
+            Raise_HierarchyStateChanged(sender);
         }
 
         #endregion AddMemberToHierarchy - Добавление элемента в загруженную иерархию
-	}
+    }
 }

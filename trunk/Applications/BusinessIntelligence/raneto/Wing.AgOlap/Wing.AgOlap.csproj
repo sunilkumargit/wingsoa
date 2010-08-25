@@ -85,12 +85,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Jayrock.AgJson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6411e51d1da2afdf, processorArchitecture=MSIL">
-      <HintPath>..\dll\Jayrock.AgJson.dll</HintPath>
-    </Reference>
-    <Reference Include="Ranet.AgZipLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6411e51d1da2afdf, processorArchitecture=MSIL">
-      <HintPath>..\dll\Ranet.AgZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -116,6 +110,12 @@
     <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Wing.Json.Silverlight">
+      <HintPath>..\..\..\..\Shared\Wing.Json.Silverlight\Bin\Debug\Wing.Json.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Wing.ZipCompression.Silverlight">
+      <HintPath>..\..\..\..\Shared\Wing.ZipCompression.Silverlight\Bin\Debug\Wing.ZipCompression.Silverlight.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -1102,6 +1102,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wing.AgOlap.Core\Wing.AgOlap.Core.csproj">
+      <Project>{47A463E4-EEB7-4FC1-AFD8-F200A29E05B6}</Project>
+      <Name>Wing.AgOlap.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wing.Olap.Mdx\Wing.AgOlap.Mdx.csproj">
+      <Project>{C431B16C-B74F-43FD-A60C-12B3F358E98F}</Project>
+      <Name>Wing.AgOlap.Mdx</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(Ranet)\BuildTools-1.0\TFScompatible.proj" Condition=" '$(Ranet)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

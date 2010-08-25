@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -30,16 +30,16 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
-using Ranet.AgOlap.Controls.Buttons;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.ValueCopy;
-using Ranet.AgOlap.Controls.ContextMenu;
-using Ranet.Olap.Core.Metadata;
-using Ranet.AgOlap.Controls.MdxDesigner.Wrappers;
-using Ranet.AgOlap.Controls.Forms;
-using Ranet.AgOlap.Controls.MdxDesigner.Filters;
+using Wing.AgOlap.Controls.Buttons;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.ValueCopy;
+using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
+using Wing.AgOlap.Controls.Forms;
+using Wing.AgOlap.Controls.MdxDesigner.Filters;
 
-namespace Ranet.AgOlap.Controls.MdxDesigner
+namespace Wing.AgOlap.Controls.MdxDesigner
 {
     public class FilteredItemControl : InfoItemControl
     {
@@ -137,7 +137,7 @@ namespace Ranet.AgOlap.Controls.MdxDesigner
         ContextMenuItem m_Cancel_Filter_MenuItem = null;
         ContextMenuItem m_MembersFilter_MenuItem = null;
 
-        protected override Ranet.AgOlap.Controls.ContextMenu.CustomContextMenu CreateContextMenu()
+        protected override Wing.AgOlap.Controls.ContextMenu.CustomContextMenu CreateContextMenu()
         {
             CustomContextMenu contextMenu = base.CreateContextMenu();
 

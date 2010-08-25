@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -30,39 +30,39 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.Olap.Core;
-using Ranet.Olap.Core.Data;
-using Ranet.AgOlap.Commands;
+using Wing.Olap.Core;
+using Wing.Olap.Core.Data;
+using Wing.AgOlap.Commands;
 using System.Collections.Generic;
-using Ranet.AgOlap.Controls.PivotGrid.Data;
-using Ranet.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.PivotGrid.Data;
+using Wing.AgOlap.Controls.General;
 using System.Windows.Controls.Primitives;
-using Ranet.AgOlap.Controls.DataSourceInfo;
-using Ranet.AgOlap.Features;
+using Wing.AgOlap.Controls.DataSourceInfo;
+using Wing.AgOlap.Features;
 using System.IO.IsolatedStorage;
 using System.IO;
-using Ranet.AgOlap.Controls.Buttons;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.AgOlap.Controls.PivotGrid.Controls;
-using Ranet.AgOlap.Controls.PivotGrid;
+using Wing.AgOlap.Controls.Buttons;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.PivotGrid.Controls;
+using Wing.AgOlap.Controls.PivotGrid;
 using System.Threading;
-using Ranet.AgOlap.Controls.Forms;
-using Ranet.AgOlap.Controls.PivotGrid.Conditions;
-using Ranet.AgOlap.Controls.ValueDelivery;
+using Wing.AgOlap.Controls.Forms;
+using Wing.AgOlap.Controls.PivotGrid.Conditions;
+using Wing.AgOlap.Controls.ValueDelivery;
 using System.Globalization;
 using System.Text;
-using Ranet.Olap.Core.Metadata;
-using Ranet.AgOlap.Controls.General.ClientServer;
-using Ranet.AgOlap.Controls.MemberChoice.ClientServer;
-using Ranet.AgOlap.Controls.ValueCopy;
-using Ranet.Olap.Core.Providers;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.AgOlap.Providers;
-using Ranet.AgOlap.Controls.Data;
-using Ranet.Olap.Core.Storage;
-using Ranet.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.AgOlap.Controls.MemberChoice.ClientServer;
+using Wing.AgOlap.Controls.ValueCopy;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Providers;
+using Wing.AgOlap.Controls.Data;
+using Wing.Olap.Core.Storage;
+using Wing.AgOlap.Controls.ContextMenu;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
 	public partial class UpdateablePivotGridControl : AgControlBase
 	{
@@ -1452,7 +1452,7 @@ namespace Ranet.AgOlap.Controls
 			if (!PivotGrid.CanEdit || !PivotGrid.EditMode)
 				return;
 
-			String text = Ranet.AgOlap.Features.Clipboard.GetClipboardText();
+			String text = Wing.AgOlap.Features.Clipboard.GetClipboardText();
 			if (!String.IsNullOrEmpty(text))
 			{
 				// В буфере ячейки хранятся разделенные табуляцией и переходом на новую строку. 
@@ -1698,7 +1698,7 @@ namespace Ranet.AgOlap.Controls
 						sb.Append(Environment.NewLine);
 					}
 
-					Ranet.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
+					Wing.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
 				}
 			}
 		}
@@ -2016,7 +2016,7 @@ namespace Ranet.AgOlap.Controls
 			}
 		}
 
-		//void UseChangesCasheButton_SaveChanges_DialogClosed(object sender, Ranet.AgOlap.Controls.Forms.DialogResultArgs e)
+		//void UseChangesCasheButton_SaveChanges_DialogClosed(object sender, Wing.AgOlap.Controls.Forms.DialogResultArgs e)
 		//{
 		//    dlg_CloseDialog(e.Result);
 		//    if (UseChangesCashe != UseChangesCasheButton.IsChecked.Value)
@@ -2041,7 +2041,7 @@ namespace Ranet.AgOlap.Controls
 			UpdateEditToolBarButtons(true);
 		}
 
-		//void EditButton_SaveChanges_DialogClosed(object sender, Ranet.AgOlap.Controls.Forms.DialogResultArgs e)
+		//void EditButton_SaveChanges_DialogClosed(object sender, Wing.AgOlap.Controls.Forms.DialogResultArgs e)
 		//{
 		//    dlg_CloseDialog(e.Result);
 		//    if (EditMode != EditButton.IsChecked.Value)
@@ -2579,7 +2579,7 @@ namespace Ranet.AgOlap.Controls
 					IsWaiting = true;
 					LogManager.LogInformation(this, this.Name + " - Initialization started.");
 					MdxQueryArgs query_args = CommandHelper.CreateMdxQueryArgs(Connection, DataManager.RefreshQuery());
-					// qContext = new Ranet.Olap.Mdx.MdxQueryContext(Query);
+					// qContext = new Wing.Olap.Mdx.MdxQueryContext(Query);
 					OlapDataLoader.LoadData(query_args, args);
 				}
 
@@ -2719,7 +2719,7 @@ namespace Ranet.AgOlap.Controls
 			}
 		}
 
-		//void RunService_SaveChanges_DialogClosed(object sender, Ranet.AgOlap.Controls.Forms.DialogResultArgs e)
+		//void RunService_SaveChanges_DialogClosed(object sender, Wing.AgOlap.Controls.Forms.DialogResultArgs e)
 		//{
 		//    dlg_CloseDialog(e.Result);
 

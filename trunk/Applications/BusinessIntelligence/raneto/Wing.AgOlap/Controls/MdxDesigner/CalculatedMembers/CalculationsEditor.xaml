@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers.CalculationsEditor"
+﻿<UserControl x:Class="Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers.CalculationsEditor"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
     xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
-    xmlns:toolbar="clr-namespace:Ranet.AgOlap.Controls.ToolBar" 
-    xmlns:ctrls="clr-namespace:Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers"
-    xmlns:controls="clr-namespace:Ranet.AgOlap.Controls"
-    xmlns:general="clr-namespace:Ranet.AgOlap.Controls.General"
+    xmlns:toolbar="clr-namespace:Wing.AgOlap.Controls.ToolBar" 
+    xmlns:ctrls="clr-namespace:Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers"
+    xmlns:controls="clr-namespace:Wing.AgOlap.Controls"
+    xmlns:general="clr-namespace:Wing.AgOlap.Controls.General"
 >
     <Grid x:Name="LayoutRoot" Background="White">
         <Grid.RowDefinitions>

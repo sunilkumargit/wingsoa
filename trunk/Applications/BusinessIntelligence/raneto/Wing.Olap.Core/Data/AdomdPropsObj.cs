@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.AnalysisServices.AdomdClient;
 
-namespace Ranet.Olap.Core.Data
+namespace Wing.Olap.Core.Data
 {
     class AdomdCellPropsObj
     {

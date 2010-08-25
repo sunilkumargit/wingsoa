@@ -8,16 +8,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.Tab;
-using Ranet.AgOlap.Controls.ToolBar;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.Tab;
+using Wing.AgOlap.Controls.ToolBar;
 using System.Text;
-using Ranet.AgOlap.Features;
+using Wing.AgOlap.Features;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Data;
-using Ranet.Olap.Core.Providers;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Providers;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.AgOlap.Controls.PivotGrid.Controls
 {
     public class MemberPropertiesControl : UserControl
     {
@@ -57,14 +57,14 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Controls
 
             if (TabCtrl.TabCtrl.SelectedIndex == 0)
             {
-                foreach(var prop in PropertiesCtrl.List)
+                foreach (var prop in PropertiesCtrl.List)
                 {
                     sb.AppendFormat("{0}\t", prop.Property);
                     sb.Append(prop.Value);
-                    sb.Append(Environment.NewLine);                                        
+                    sb.Append(Environment.NewLine);
                 }
             }
-            Ranet.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
+            Wing.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
         }
 
         public void Initialize(MemberData member)

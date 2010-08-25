@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.AnalysisServices.AdomdClient;
 using System.Data;
 
-namespace Ranet.Olap.Core.Providers
+namespace Wing.Olap.Core.Providers
 {
     public interface IMdxExecuter
     {

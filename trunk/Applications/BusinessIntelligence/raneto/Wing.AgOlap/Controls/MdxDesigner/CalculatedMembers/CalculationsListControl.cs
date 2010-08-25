@@ -8,11 +8,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General.Tree;
-using Ranet.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.General.Tree;
+using Wing.AgOlap.Controls.General;
 using System.Collections.Generic;
 
-namespace Ranet.AgOlap.Controls.MdxDesigner.CalculatedMembers
+namespace Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers
 {
     public class CalculationsListControl: UserControl
     {

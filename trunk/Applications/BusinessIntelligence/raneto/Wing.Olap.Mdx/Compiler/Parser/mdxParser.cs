@@ -1,18 +1,18 @@
 /*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see <http://www.gnu.org/licenses/>.
+    along with Wing.UILibrary.Olap.  If not, see <http://www.gnu.org/licenses/>.
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -215,7 +215,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
         override public string GrammarFileName
         {
-            get { return "D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g"; }
+            get { return "D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g"; }
         }
 
 
@@ -223,7 +223,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "mdx_statement"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:23:1: mdx_statement returns [MdxObject value] : mdx_statement_single EOF ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:23:1: mdx_statement returns [MdxObject value] : mdx_statement_single EOF ;
         public MdxObject mdx_statement() // throws RecognitionException [1]
         {
 
@@ -234,8 +234,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:2: ( mdx_statement_single EOF )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:4: mdx_statement_single EOF
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:2: ( mdx_statement_single EOF )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:24:4: mdx_statement_single EOF
                 {
                     PushFollow(FOLLOW_mdx_statement_single_in_mdx_statement67);
                     mdx_statement_single1 = mdx_statement_single();
@@ -261,7 +261,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "mdx_statement_single"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:28:1: mdx_statement_single returns [MdxStatement value] : ( select_statement | update_statement );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:28:1: mdx_statement_single returns [MdxStatement value] : ( select_statement | update_statement );
         public MdxStatement mdx_statement_single() // throws RecognitionException [1]
         {
 
@@ -274,7 +274,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:2: ( select_statement | update_statement )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:2: ( select_statement | update_statement )
                 int alt1 = 2;
                 int LA1_0 = input.LA(1);
 
@@ -296,7 +296,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt1)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:4: select_statement
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:29:4: select_statement
                         {
                             PushFollow(FOLLOW_select_statement_in_mdx_statement_single87);
                             select_statement2 = select_statement();
@@ -307,7 +307,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:31:4: update_statement
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:31:4: update_statement
                         {
                             PushFollow(FOLLOW_update_statement_in_mdx_statement_single95);
                             update_statement3 = update_statement();
@@ -334,7 +334,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "update_statement"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:37:1: update_statement returns [MdxUpdateStatement value] : UPDATE ( CUBE )? c= cube_specification SET dest= expression_property '=' source= expression_or_xor ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )? ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:37:1: update_statement returns [MdxUpdateStatement value] : UPDATE ( CUBE )? c= cube_specification SET dest= expression_property '=' source= expression_or_xor ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )? ;
         public MdxUpdateStatement update_statement() // throws RecognitionException [1]
         {
 
@@ -353,11 +353,11 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:2: ( UPDATE ( CUBE )? c= cube_specification SET dest= expression_property '=' source= expression_or_xor ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )? )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:4: UPDATE ( CUBE )? c= cube_specification SET dest= expression_property '=' source= expression_or_xor ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )?
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:2: ( UPDATE ( CUBE )? c= cube_specification SET dest= expression_property '=' source= expression_or_xor ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )? )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:4: UPDATE ( CUBE )? c= cube_specification SET dest= expression_property '=' source= expression_or_xor ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )?
                 {
                     Match(input, UPDATE, FOLLOW_UPDATE_in_update_statement116);
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:11: ( CUBE )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:11: ( CUBE )?
                     int alt2 = 2;
                     int LA2_0 = input.LA(1);
 
@@ -368,7 +368,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt2)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:11: CUBE
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:38:11: CUBE
                             {
                                 Match(input, CUBE, FOLLOW_CUBE_in_update_statement118);
 
@@ -395,7 +395,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     state.followingStackPointer--;
 
                     value.Source = source;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:46:7: ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:46:7: ( 'USE_EQUAL_ALLOCATION' | 'USE_EQUAL_INCREMENT' | 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )? )?
                     int alt5 = 4;
                     switch (input.LA(1))
                     {
@@ -419,7 +419,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt5)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:46:9: 'USE_EQUAL_ALLOCATION'
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:46:9: 'USE_EQUAL_ALLOCATION'
                             {
                                 Match(input, 54, FOLLOW_54_in_update_statement181);
                                 value.UpdateBehavior = UpdateBehavior.USE_EQUAL_ALLOCATION;
@@ -427,7 +427,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             }
                             break;
                         case 2:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:47:9: 'USE_EQUAL_INCREMENT'
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:47:9: 'USE_EQUAL_INCREMENT'
                             {
                                 Match(input, 55, FOLLOW_55_in_update_statement193);
                                 value.UpdateBehavior = UpdateBehavior.USE_EQUAL_INCREMENT;
@@ -435,11 +435,11 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             }
                             break;
                         case 3:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:48:9: 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )?
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:48:9: 'USE_WEIGHTED_ALLOCATION' ( BY w1= weight_value_expression )? 'USE_WEIGHTED_INCREMENT' ( BY w2= weight_value_expression )?
                             {
                                 Match(input, 56, FOLLOW_56_in_update_statement205);
                                 value.UpdateBehavior = UpdateBehavior.USE_WEIGHTED_ALLOCATION;
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:49:9: ( BY w1= weight_value_expression )?
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:49:9: ( BY w1= weight_value_expression )?
                                 int alt3 = 2;
                                 int LA3_0 = input.LA(1);
 
@@ -450,7 +450,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt3)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:49:10: BY w1= weight_value_expression
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:49:10: BY w1= weight_value_expression
                                         {
                                             Match(input, BY, FOLLOW_BY_in_update_statement219);
                                             PushFollow(FOLLOW_weight_value_expression_in_update_statement223);
@@ -466,7 +466,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
                                 Match(input, 57, FOLLOW_57_in_update_statement239);
                                 value.UpdateBehavior = UpdateBehavior.USE_WEIGHTED_INCREMENT;
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:51:9: ( BY w2= weight_value_expression )?
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:51:9: ( BY w2= weight_value_expression )?
                                 int alt4 = 2;
                                 int LA4_0 = input.LA(1);
 
@@ -477,7 +477,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt4)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:51:10: BY w2= weight_value_expression
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:51:10: BY w2= weight_value_expression
                                         {
                                             Match(input, BY, FOLLOW_BY_in_update_statement253);
                                             PushFollow(FOLLOW_weight_value_expression_in_update_statement257);
@@ -515,7 +515,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "weight_value_expression"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:55:1: weight_value_expression returns [MdxExpression value] : expression_property ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:55:1: weight_value_expression returns [MdxExpression value] : expression_property ;
         public MdxExpression weight_value_expression() // throws RecognitionException [1]
         {
 
@@ -526,8 +526,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:56:2: ( expression_property )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:56:4: expression_property
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:56:2: ( expression_property )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:56:4: expression_property
                 {
                     PushFollow(FOLLOW_expression_property_in_weight_value_expression294);
                     expression_property4 = expression_property();
@@ -552,7 +552,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "condition"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:60:1: condition returns [MdxExpression value] : expression_property ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:60:1: condition returns [MdxExpression value] : expression_property ;
         public MdxExpression condition() // throws RecognitionException [1]
         {
 
@@ -563,8 +563,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:61:2: ( expression_property )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:61:4: expression_property
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:61:2: ( expression_property )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:61:4: expression_property
                 {
                     PushFollow(FOLLOW_expression_property_in_condition312);
                     expression_property5 = expression_property();
@@ -589,7 +589,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "select_statement"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:65:1: select_statement returns [MdxSelectStatement value] : ( WITH ( with_clause_single )+ )? select_statement_subcube ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )? ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:65:1: select_statement returns [MdxSelectStatement value] : ( WITH ( with_clause_single )+ )? select_statement_subcube ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )? ;
         public MdxSelectStatement select_statement() // throws RecognitionException [1]
         {
 
@@ -606,11 +606,11 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:66:2: ( ( WITH ( with_clause_single )+ )? select_statement_subcube ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )? )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:66:4: ( WITH ( with_clause_single )+ )? select_statement_subcube ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )?
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:66:2: ( ( WITH ( with_clause_single )+ )? select_statement_subcube ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )? )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:66:4: ( WITH ( with_clause_single )+ )? select_statement_subcube ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )?
                 {
                     var withList = new List<MdxWithClauseItem>();
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:67:4: ( WITH ( with_clause_single )+ )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:67:4: ( WITH ( with_clause_single )+ )?
                     int alt7 = 2;
                     int LA7_0 = input.LA(1);
 
@@ -621,10 +621,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt7)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:67:6: WITH ( with_clause_single )+
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:67:6: WITH ( with_clause_single )+
                             {
                                 Match(input, WITH, FOLLOW_WITH_in_select_statement337);
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:68:6: ( with_clause_single )+
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:68:6: ( with_clause_single )+
                                 int cnt6 = 0;
                                 do
                                 {
@@ -640,7 +640,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt6)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:68:8: with_clause_single
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:68:8: with_clause_single
                                             {
                                                 PushFollow(FOLLOW_with_clause_single_in_select_statement347);
                                                 with_clause_single6 = with_clause_single();
@@ -677,7 +677,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     value = select_statement_subcube7;
                     if (value != null) value.With.AddRange(withList);
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:4: ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:4: ( ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )* )?
                     int alt10 = 2;
                     int LA10_0 = input.LA(1);
 
@@ -688,9 +688,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt10)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:6: ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:6: ( CELL )? PROPERTIES c1= cell_property ( ',' c2= cell_property )*
                             {
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:6: ( CELL )?
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:6: ( CELL )?
                                 int alt8 = 2;
                                 int LA8_0 = input.LA(1);
 
@@ -701,7 +701,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt8)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:6: CELL
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:77:6: CELL
                                         {
                                             Match(input, CELL, FOLLOW_CELL_in_select_statement389);
 
@@ -716,7 +716,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 state.followingStackPointer--;
 
                                 if (value != null) value.CellProperties.Add(new MdxObjectReferenceExpression(c1));
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:79:4: ( ',' c2= cell_property )*
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:79:4: ( ',' c2= cell_property )*
                                 do
                                 {
                                     int alt9 = 2;
@@ -731,7 +731,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt9)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:79:5: ',' c2= cell_property
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:79:5: ',' c2= cell_property
                                             {
                                                 Match(input, 58, FOLLOW_58_in_select_statement407);
                                                 PushFollow(FOLLOW_cell_property_in_select_statement411);
@@ -775,7 +775,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "select_statement_subcube"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:85:1: select_statement_subcube returns [MdxSelectStatement value] : SELECT ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )? FROM c= cube_specification ( WHERE t= condition )? ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:85:1: select_statement_subcube returns [MdxSelectStatement value] : SELECT ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )? FROM c= cube_specification ( WHERE t= condition )? ;
         public MdxSelectStatement select_statement_subcube() // throws RecognitionException [1]
         {
 
@@ -792,12 +792,12 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:86:2: ( SELECT ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )? FROM c= cube_specification ( WHERE t= condition )? )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:86:4: SELECT ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )? FROM c= cube_specification ( WHERE t= condition )?
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:86:2: ( SELECT ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )? FROM c= cube_specification ( WHERE t= condition )? )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:86:4: SELECT ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )? FROM c= cube_specification ( WHERE t= condition )?
                 {
                     Match(input, SELECT, FOLLOW_SELECT_in_select_statement_subcube445);
                     value = new MdxSelectStatement();
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:87:4: ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:87:4: ( '*' | a1= axis_specification ( ',' a2= axis_specification )* )?
                     int alt12 = 3;
                     int LA12_0 = input.LA(1);
 
@@ -812,21 +812,21 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt12)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:87:6: '*'
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:87:6: '*'
                             {
                                 Match(input, 59, FOLLOW_59_in_select_statement_subcube454);
 
                             }
                             break;
                         case 2:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:88:6: a1= axis_specification ( ',' a2= axis_specification )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:88:6: a1= axis_specification ( ',' a2= axis_specification )*
                             {
                                 PushFollow(FOLLOW_axis_specification_in_select_statement_subcube463);
                                 a1 = axis_specification();
                                 state.followingStackPointer--;
 
                                 value.Axes.Add(a1);
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:89:6: ( ',' a2= axis_specification )*
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:89:6: ( ',' a2= axis_specification )*
                                 do
                                 {
                                     int alt11 = 2;
@@ -841,7 +841,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt11)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:89:8: ',' a2= axis_specification
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:89:8: ',' a2= axis_specification
                                             {
                                                 Match(input, 58, FOLLOW_58_in_select_statement_subcube474);
                                                 PushFollow(FOLLOW_axis_specification_in_select_statement_subcube478);
@@ -873,7 +873,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     state.followingStackPointer--;
 
                     value.CubeSpecification = c;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:92:4: ( WHERE t= condition )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:92:4: ( WHERE t= condition )?
                     int alt13 = 2;
                     int LA13_0 = input.LA(1);
 
@@ -884,7 +884,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt13)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:92:6: WHERE t= condition
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:92:6: WHERE t= condition
                             {
                                 Match(input, WHERE, FOLLOW_WHERE_in_select_statement_subcube507);
                                 PushFollow(FOLLOW_condition_in_select_statement_subcube511);
@@ -916,7 +916,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "with_clause_single"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:96:1: with_clause_single returns [MdxWithClauseItem value] : ( ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS ) e2= expression ( ',' p1= property_definition )* | SET set_name AS e2= expression );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:96:1: with_clause_single returns [MdxWithClauseItem value] : ( ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS ) e2= expression ( ',' p1= property_definition )* | SET set_name AS e2= expression );
         public MdxWithClauseItem with_clause_single() // throws RecognitionException [1]
         {
 
@@ -935,7 +935,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:2: ( ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS ) e2= expression ( ',' p1= property_definition )* | SET set_name AS e2= expression )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:2: ( ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS ) e2= expression ( ',' p1= property_definition )* | SET set_name AS e2= expression )
                 int alt17 = 2;
                 int LA17_0 = input.LA(1);
 
@@ -957,9 +957,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt17)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:3: ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS ) e2= expression ( ',' p1= property_definition )*
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:3: ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS ) e2= expression ( ',' p1= property_definition )*
                         {
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:3: ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS )
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:3: ( ( CALCULATED )? MEMBER member_name AS | CELL CALCULATION FOR e3= expression AS )
                             int alt15 = 2;
                             int LA15_0 = input.LA(1);
 
@@ -981,9 +981,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             switch (alt15)
                             {
                                 case 1:
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:5: ( CALCULATED )? MEMBER member_name AS
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:5: ( CALCULATED )? MEMBER member_name AS
                                     {
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:5: ( CALCULATED )?
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:5: ( CALCULATED )?
                                         int alt14 = 2;
                                         int LA14_0 = input.LA(1);
 
@@ -994,7 +994,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                         switch (alt14)
                                         {
                                             case 1:
-                                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:5: CALCULATED
+                                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:97:5: CALCULATED
                                                 {
                                                     Match(input, CALCULATED, FOLLOW_CALCULATED_in_with_clause_single536);
 
@@ -1014,7 +1014,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     }
                                     break;
                                 case 2:
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:99:5: CELL CALCULATION FOR e3= expression AS
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:99:5: CELL CALCULATION FOR e3= expression AS
                                     {
                                         Match(input, CELL, FOLLOW_CELL_in_with_clause_single554);
                                         Match(input, CALCULATION, FOLLOW_CALCULATION_in_with_clause_single556);
@@ -1036,7 +1036,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             state.followingStackPointer--;
 
                             if (value != null) value.Expression = e2;
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:108:3: ( ',' p1= property_definition )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:108:3: ( ',' p1= property_definition )*
                             do
                             {
                                 int alt16 = 2;
@@ -1051,7 +1051,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt16)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:108:4: ',' p1= property_definition
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:108:4: ',' p1= property_definition
                                         {
                                             Match(input, 58, FOLLOW_58_in_with_clause_single596);
                                             PushFollow(FOLLOW_property_definition_in_with_clause_single600);
@@ -1075,7 +1075,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:109:4: SET set_name AS e2= expression
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:109:4: SET set_name AS e2= expression
                         {
                             Match(input, SET, FOLLOW_SET_in_with_clause_single612);
                             PushFollow(FOLLOW_set_name_in_with_clause_single614);
@@ -1108,7 +1108,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "member_name"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:144:1: member_name returns [string value] : compound_id ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:144:1: member_name returns [string value] : compound_id ;
         public string member_name() // throws RecognitionException [1]
         {
 
@@ -1119,8 +1119,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:145:2: ( compound_id )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:145:4: compound_id
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:145:2: ( compound_id )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:145:4: compound_id
                 {
                     PushFollow(FOLLOW_compound_id_in_member_name650);
                     compound_id10 = compound_id();
@@ -1145,7 +1145,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "property_definition"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:149:1: property_definition returns [MdxCalcProperty value] : identifier '=' expression_or_xor ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:149:1: property_definition returns [MdxCalcProperty value] : identifier '=' expression_or_xor ;
         public MdxCalcProperty property_definition() // throws RecognitionException [1]
         {
 
@@ -1158,8 +1158,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:150:2: ( identifier '=' expression_or_xor )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:150:4: identifier '=' expression_or_xor
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:150:2: ( identifier '=' expression_or_xor )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:150:4: identifier '=' expression_or_xor
                 {
                     PushFollow(FOLLOW_identifier_in_property_definition669);
                     identifier11 = identifier();
@@ -1189,7 +1189,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "set_name"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:154:1: set_name returns [string value] : compound_id ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:154:1: set_name returns [string value] : compound_id ;
         public string set_name() // throws RecognitionException [1]
         {
 
@@ -1200,8 +1200,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:155:2: ( compound_id )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:155:4: compound_id
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:155:2: ( compound_id )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:155:4: compound_id
                 {
                     PushFollow(FOLLOW_compound_id_in_set_name701);
                     compound_id13 = compound_id();
@@ -1226,7 +1226,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "compound_id"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:157:1: compound_id returns [string value] : id= identifier ( '.' id2= identifier )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:157:1: compound_id returns [string value] : id= identifier ( '.' id2= identifier )* ;
         public string compound_id() // throws RecognitionException [1]
         {
 
@@ -1239,15 +1239,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:158:2: (id= identifier ( '.' id2= identifier )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:158:4: id= identifier ( '.' id2= identifier )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:158:2: (id= identifier ( '.' id2= identifier )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:158:4: id= identifier ( '.' id2= identifier )*
                 {
                     PushFollow(FOLLOW_identifier_in_compound_id723);
                     id = identifier();
                     state.followingStackPointer--;
 
                     value = id;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:159:3: ( '.' id2= identifier )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:159:3: ( '.' id2= identifier )*
                     do
                     {
                         int alt18 = 2;
@@ -1262,7 +1262,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt18)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:159:5: '.' id2= identifier
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:159:5: '.' id2= identifier
                                 {
                                     Match(input, 60, FOLLOW_60_in_compound_id731);
                                     PushFollow(FOLLOW_identifier_in_compound_id735);
@@ -1300,7 +1300,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "axis_specification"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:162:1: axis_specification returns [MdxAxis value] : ( NON EMPTY )? expression ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )? ON an= axis_name ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:162:1: axis_specification returns [MdxAxis value] : ( NON EMPTY )? expression ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )? ON an= axis_name ;
         public MdxAxis axis_specification() // throws RecognitionException [1]
         {
 
@@ -1317,11 +1317,11 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:163:2: ( ( NON EMPTY )? expression ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )? ON an= axis_name )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:163:4: ( NON EMPTY )? expression ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )? ON an= axis_name
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:163:2: ( ( NON EMPTY )? expression ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )? ON an= axis_name )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:163:4: ( NON EMPTY )? expression ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )? ON an= axis_name
                 {
                     bool NonEmpty = false;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:164:2: ( NON EMPTY )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:164:2: ( NON EMPTY )?
                     int alt19 = 2;
                     int LA19_0 = input.LA(1);
 
@@ -1332,7 +1332,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt19)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:164:3: NON EMPTY
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:164:3: NON EMPTY
                             {
                                 Match(input, NON, FOLLOW_NON_in_axis_specification765);
                                 Match(input, EMPTY, FOLLOW_EMPTY_in_axis_specification767);
@@ -1351,7 +1351,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     value.NonEmpty = NonEmpty;
 
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:3: ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:3: ( ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )* )?
                     int alt22 = 2;
                     int LA22_0 = input.LA(1);
 
@@ -1362,9 +1362,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt22)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:4: ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:4: ( DIMENSION )? PROPERTIES p1= property ( ',' p2= property )*
                             {
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:4: ( DIMENSION )?
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:4: ( DIMENSION )?
                                 int alt20 = 2;
                                 int LA20_0 = input.LA(1);
 
@@ -1375,7 +1375,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 switch (alt20)
                                 {
                                     case 1:
-                                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:4: DIMENSION
+                                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:170:4: DIMENSION
                                         {
                                             Match(input, DIMENSION, FOLLOW_DIMENSION_in_axis_specification784);
 
@@ -1390,7 +1390,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                 state.followingStackPointer--;
 
                                 if (value != null) value.DimensionProperties.Add(p1);
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:171:5: ( ',' p2= property )*
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:171:5: ( ',' p2= property )*
                                 do
                                 {
                                     int alt21 = 2;
@@ -1405,7 +1405,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt21)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:171:7: ',' p2= property
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:171:7: ',' p2= property
                                             {
                                                 Match(input, 58, FOLLOW_58_in_axis_specification801);
                                                 PushFollow(FOLLOW_property_in_axis_specification805);
@@ -1455,7 +1455,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "axis_name"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:177:1: axis_name returns [string value] : ( identifier | INTEGER );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:177:1: axis_name returns [string value] : ( identifier | INTEGER );
         public string axis_name() // throws RecognitionException [1]
         {
 
@@ -1467,7 +1467,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:178:2: ( identifier | INTEGER )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:178:2: ( identifier | INTEGER )
                 int alt23 = 2;
                 int LA23_0 = input.LA(1);
 
@@ -1489,7 +1489,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt23)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:178:4: identifier
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:178:4: identifier
                         {
                             PushFollow(FOLLOW_identifier_in_axis_name847);
                             identifier15 = identifier();
@@ -1500,7 +1500,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:179:4: INTEGER
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:179:4: INTEGER
                         {
                             INTEGER16 = (IToken)Match(input, INTEGER, FOLLOW_INTEGER_in_axis_name854);
                             value = ((INTEGER16 != null) ? INTEGER16.Text : null);
@@ -1524,7 +1524,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "property"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:182:1: property returns [MdxExpression value] : compound_id ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:182:1: property returns [MdxExpression value] : compound_id ;
         public MdxExpression property() // throws RecognitionException [1]
         {
 
@@ -1535,8 +1535,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:183:2: ( compound_id )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:183:4: compound_id
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:183:2: ( compound_id )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:183:4: compound_id
                 {
                     PushFollow(FOLLOW_compound_id_in_property871);
                     compound_id17 = compound_id();
@@ -1561,7 +1561,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "cube_specification"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:186:1: cube_specification returns [MdxObject value] : ( cube_name | ( NON VISUAL )? '(' select_statement_subcube ')' );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:186:1: cube_specification returns [MdxObject value] : ( cube_name | ( NON VISUAL )? '(' select_statement_subcube ')' );
         public MdxObject cube_specification() // throws RecognitionException [1]
         {
 
@@ -1574,7 +1574,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:187:2: ( cube_name | ( NON VISUAL )? '(' select_statement_subcube ')' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:187:2: ( cube_name | ( NON VISUAL )? '(' select_statement_subcube ')' )
                 int alt25 = 2;
                 int LA25_0 = input.LA(1);
 
@@ -1596,7 +1596,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt25)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:187:4: cube_name
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:187:4: cube_name
                         {
                             PushFollow(FOLLOW_cube_name_in_cube_specification893);
                             cube_name18 = cube_name();
@@ -1607,9 +1607,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:189:4: ( NON VISUAL )? '(' select_statement_subcube ')'
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:189:4: ( NON VISUAL )? '(' select_statement_subcube ')'
                         {
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:189:4: ( NON VISUAL )?
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:189:4: ( NON VISUAL )?
                             int alt24 = 2;
                             int LA24_0 = input.LA(1);
 
@@ -1620,7 +1620,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             switch (alt24)
                             {
                                 case 1:
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:189:6: NON VISUAL
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:189:6: NON VISUAL
                                     {
                                         Match(input, NON, FOLLOW_NON_in_cube_specification904);
                                         Match(input, VISUAL, FOLLOW_VISUAL_in_cube_specification906);
@@ -1657,7 +1657,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "cube_name"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:193:1: cube_name returns [string value] : ( compound_id | RANET_EXPRESSION );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:193:1: cube_name returns [string value] : ( compound_id | RANET_EXPRESSION );
         public string cube_name() // throws RecognitionException [1]
         {
 
@@ -1669,7 +1669,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:194:3: ( compound_id | RANET_EXPRESSION )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:194:3: ( compound_id | RANET_EXPRESSION )
                 int alt26 = 2;
                 int LA26_0 = input.LA(1);
 
@@ -1691,7 +1691,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt26)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:194:5: compound_id
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:194:5: compound_id
                         {
                             PushFollow(FOLLOW_compound_id_in_cube_name935);
                             compound_id20 = compound_id();
@@ -1702,7 +1702,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:195:5: RANET_EXPRESSION
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:195:5: RANET_EXPRESSION
                         {
                             RANET_EXPRESSION21 = (IToken)Match(input, RANET_EXPRESSION, FOLLOW_RANET_EXPRESSION_in_cube_name943);
                             value = ((RANET_EXPRESSION21 != null) ? RANET_EXPRESSION21.Text : null);
@@ -1726,7 +1726,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "cell_property"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:198:1: cell_property returns [string value] : ( CELL_ORDINAL | VALUE | FORMATTED_VALUE | provider_specific_cell_property );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:198:1: cell_property returns [string value] : ( CELL_ORDINAL | VALUE | FORMATTED_VALUE | provider_specific_cell_property );
         public string cell_property() // throws RecognitionException [1]
         {
 
@@ -1740,7 +1740,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:199:2: ( CELL_ORDINAL | VALUE | FORMATTED_VALUE | provider_specific_cell_property )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:199:2: ( CELL_ORDINAL | VALUE | FORMATTED_VALUE | provider_specific_cell_property )
                 int alt27 = 4;
                 switch (input.LA(1))
                 {
@@ -1777,7 +1777,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt27)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:199:4: CELL_ORDINAL
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:199:4: CELL_ORDINAL
                         {
                             CELL_ORDINAL22 = (IToken)Match(input, CELL_ORDINAL, FOLLOW_CELL_ORDINAL_in_cell_property963);
                             value = ((CELL_ORDINAL22 != null) ? CELL_ORDINAL22.Text : null);
@@ -1785,7 +1785,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:200:4: VALUE
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:200:4: VALUE
                         {
                             VALUE23 = (IToken)Match(input, VALUE, FOLLOW_VALUE_in_cell_property970);
                             value = ((VALUE23 != null) ? VALUE23.Text : null);
@@ -1793,7 +1793,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 3:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:201:4: FORMATTED_VALUE
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:201:4: FORMATTED_VALUE
                         {
                             FORMATTED_VALUE24 = (IToken)Match(input, FORMATTED_VALUE, FOLLOW_FORMATTED_VALUE_in_cell_property977);
                             value = ((FORMATTED_VALUE24 != null) ? FORMATTED_VALUE24.Text : null);
@@ -1801,7 +1801,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 4:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:202:4: provider_specific_cell_property
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:202:4: provider_specific_cell_property
                         {
                             PushFollow(FOLLOW_provider_specific_cell_property_in_cell_property984);
                             provider_specific_cell_property25 = provider_specific_cell_property();
@@ -1828,7 +1828,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "provider_specific_cell_property"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:204:1: provider_specific_cell_property returns [string value] : identifier ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:204:1: provider_specific_cell_property returns [string value] : identifier ;
         public string provider_specific_cell_property() // throws RecognitionException [1]
         {
 
@@ -1839,8 +1839,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:205:2: ( identifier )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:205:4: identifier
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:205:2: ( identifier )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:205:4: identifier
                 {
                     PushFollow(FOLLOW_identifier_in_provider_specific_cell_property1001);
                     identifier26 = identifier();
@@ -1865,7 +1865,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:208:1: expression returns [MdxExpression value] : v1= expression_or_xor ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:208:1: expression returns [MdxExpression value] : v1= expression_or_xor ;
         public MdxExpression expression() // throws RecognitionException [1]
         {
 
@@ -1876,8 +1876,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:209:2: (v1= expression_or_xor )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:209:4: v1= expression_or_xor
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:209:2: (v1= expression_or_xor )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:209:4: v1= expression_or_xor
                 {
                     PushFollow(FOLLOW_expression_or_xor_in_expression1032);
                     v1 = expression_or_xor();
@@ -1902,7 +1902,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_or_xor"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:212:1: expression_or_xor returns [MdxExpression value] : t1= expression_and ( ( XOR | OR ) t2= expression_and )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:212:1: expression_or_xor returns [MdxExpression value] : t1= expression_and ( ( XOR | OR ) t2= expression_and )* ;
         public MdxExpression expression_or_xor() // throws RecognitionException [1]
         {
 
@@ -1915,15 +1915,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:213:2: (t1= expression_and ( ( XOR | OR ) t2= expression_and )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:213:4: t1= expression_and ( ( XOR | OR ) t2= expression_and )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:213:2: (t1= expression_and ( ( XOR | OR ) t2= expression_and )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:213:4: t1= expression_and ( ( XOR | OR ) t2= expression_and )*
                 {
                     PushFollow(FOLLOW_expression_and_in_expression_or_xor1052);
                     t1 = expression_and();
                     state.followingStackPointer--;
 
                     value = t1; string op = "";
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:214:3: ( ( XOR | OR ) t2= expression_and )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:214:3: ( ( XOR | OR ) t2= expression_and )*
                     do
                     {
                         int alt29 = 2;
@@ -1938,9 +1938,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt29)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:215:5: ( XOR | OR ) t2= expression_and
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:215:5: ( XOR | OR ) t2= expression_and
                                 {
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:215:5: ( XOR | OR )
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:215:5: ( XOR | OR )
                                     int alt28 = 2;
                                     int LA28_0 = input.LA(1);
 
@@ -1962,7 +1962,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt28)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:215:7: XOR
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:215:7: XOR
                                             {
                                                 Match(input, XOR, FOLLOW_XOR_in_expression_or_xor1066);
                                                 op = "XOR";
@@ -1970,7 +1970,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 2:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:216:7: OR
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:216:7: OR
                                             {
                                                 Match(input, OR, FOLLOW_OR_in_expression_or_xor1076);
                                                 op = "OR";
@@ -2015,7 +2015,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_and"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:221:1: expression_and returns [MdxExpression value] : t1= expression_compare ( AND t2= expression_compare )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:221:1: expression_and returns [MdxExpression value] : t1= expression_compare ( AND t2= expression_compare )* ;
         public MdxExpression expression_and() // throws RecognitionException [1]
         {
 
@@ -2028,15 +2028,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:222:2: (t1= expression_compare ( AND t2= expression_compare )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:222:4: t1= expression_compare ( AND t2= expression_compare )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:222:2: (t1= expression_compare ( AND t2= expression_compare )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:222:4: t1= expression_compare ( AND t2= expression_compare )*
                 {
                     PushFollow(FOLLOW_expression_compare_in_expression_and1118);
                     t1 = expression_compare();
                     state.followingStackPointer--;
 
                     value = t1;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:223:3: ( AND t2= expression_compare )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:223:3: ( AND t2= expression_compare )*
                     do
                     {
                         int alt30 = 2;
@@ -2051,7 +2051,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt30)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:223:5: AND t2= expression_compare
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:223:5: AND t2= expression_compare
                                 {
                                     Match(input, AND, FOLLOW_AND_in_expression_and1127);
                                     PushFollow(FOLLOW_expression_compare_in_expression_and1131);
@@ -2089,7 +2089,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_compare"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:226:1: expression_compare returns [MdxExpression value] : t1= expression_add ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:226:1: expression_compare returns [MdxExpression value] : t1= expression_add ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )* ;
         public MdxExpression expression_compare() // throws RecognitionException [1]
         {
 
@@ -2102,15 +2102,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:227:2: (t1= expression_add ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:227:4: t1= expression_add ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:227:2: (t1= expression_add ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:227:4: t1= expression_add ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )*
                 {
                     PushFollow(FOLLOW_expression_add_in_expression_compare1154);
                     t1 = expression_add();
                     state.followingStackPointer--;
 
                     value = t1; string op = "";
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:228:3: ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:228:3: ( ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add )*
                     do
                     {
                         int alt32 = 2;
@@ -2125,9 +2125,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt32)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:229:4: ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:229:4: ( '=' | '<>' | '<' | '>' | '<=' | '>=' ) t2= expression_add
                                 {
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:229:4: ( '=' | '<>' | '<' | '>' | '<=' | '>=' )
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:229:4: ( '=' | '<>' | '<' | '>' | '<=' | '>=' )
                                     int alt31 = 6;
                                     switch (input.LA(1))
                                     {
@@ -2171,7 +2171,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt31)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:229:6: '='
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:229:6: '='
                                             {
                                                 Match(input, 53, FOLLOW_53_in_expression_compare1167);
                                                 op = "=";
@@ -2179,7 +2179,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 2:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:230:6: '<>'
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:230:6: '<>'
                                             {
                                                 Match(input, 63, FOLLOW_63_in_expression_compare1176);
                                                 op = "<>";
@@ -2187,7 +2187,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 3:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:231:6: '<'
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:231:6: '<'
                                             {
                                                 Match(input, 64, FOLLOW_64_in_expression_compare1185);
                                                 op = "<";
@@ -2195,7 +2195,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 4:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:232:6: '>'
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:232:6: '>'
                                             {
                                                 Match(input, 65, FOLLOW_65_in_expression_compare1194);
                                                 op = ">";
@@ -2203,7 +2203,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 5:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:233:6: '<='
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:233:6: '<='
                                             {
                                                 Match(input, 66, FOLLOW_66_in_expression_compare1203);
                                                 op = "<=";
@@ -2211,7 +2211,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 6:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:234:6: '>='
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:234:6: '>='
                                             {
                                                 Match(input, 67, FOLLOW_67_in_expression_compare1212);
                                                 op = ">=";
@@ -2256,7 +2256,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_add"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:239:1: expression_add returns [MdxExpression value] : t1= expression_mult ( ( '+' | '-' ) t2= expression_mult )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:239:1: expression_add returns [MdxExpression value] : t1= expression_mult ( ( '+' | '-' ) t2= expression_mult )* ;
         public MdxExpression expression_add() // throws RecognitionException [1]
         {
 
@@ -2269,15 +2269,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:240:2: (t1= expression_mult ( ( '+' | '-' ) t2= expression_mult )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:240:4: t1= expression_mult ( ( '+' | '-' ) t2= expression_mult )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:240:2: (t1= expression_mult ( ( '+' | '-' ) t2= expression_mult )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:240:4: t1= expression_mult ( ( '+' | '-' ) t2= expression_mult )*
                 {
                     PushFollow(FOLLOW_expression_mult_in_expression_add1253);
                     t1 = expression_mult();
                     state.followingStackPointer--;
 
                     value = t1; string op = "";
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:241:3: ( ( '+' | '-' ) t2= expression_mult )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:241:3: ( ( '+' | '-' ) t2= expression_mult )*
                     do
                     {
                         int alt34 = 2;
@@ -2292,9 +2292,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt34)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:242:4: ( '+' | '-' ) t2= expression_mult
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:242:4: ( '+' | '-' ) t2= expression_mult
                                 {
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:242:4: ( '+' | '-' )
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:242:4: ( '+' | '-' )
                                     int alt33 = 2;
                                     int LA33_0 = input.LA(1);
 
@@ -2316,7 +2316,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt33)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:242:6: '+'
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:242:6: '+'
                                             {
                                                 Match(input, 68, FOLLOW_68_in_expression_add1266);
                                                 op = "+";
@@ -2324,7 +2324,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 2:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:243:6: '-'
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:243:6: '-'
                                             {
                                                 Match(input, 69, FOLLOW_69_in_expression_add1275);
                                                 op = "-";
@@ -2369,7 +2369,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_mult"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:250:1: expression_mult returns [MdxExpression value] : f1= expression_power ( (op1= '/' | op2= '*' ) f2= expression_power )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:250:1: expression_mult returns [MdxExpression value] : f1= expression_power ( (op1= '/' | op2= '*' ) f2= expression_power )* ;
         public MdxExpression expression_mult() // throws RecognitionException [1]
         {
 
@@ -2384,15 +2384,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:251:3: (f1= expression_power ( (op1= '/' | op2= '*' ) f2= expression_power )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:251:5: f1= expression_power ( (op1= '/' | op2= '*' ) f2= expression_power )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:251:3: (f1= expression_power ( (op1= '/' | op2= '*' ) f2= expression_power )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:251:5: f1= expression_power ( (op1= '/' | op2= '*' ) f2= expression_power )*
                 {
                     PushFollow(FOLLOW_expression_power_in_expression_mult1318);
                     f1 = expression_power();
                     state.followingStackPointer--;
 
                     value = f1; string op = "";
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:252:4: ( (op1= '/' | op2= '*' ) f2= expression_power )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:252:4: ( (op1= '/' | op2= '*' ) f2= expression_power )*
                     do
                     {
                         int alt36 = 2;
@@ -2407,9 +2407,9 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt36)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:253:6: (op1= '/' | op2= '*' ) f2= expression_power
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:253:6: (op1= '/' | op2= '*' ) f2= expression_power
                                 {
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:253:6: (op1= '/' | op2= '*' )
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:253:6: (op1= '/' | op2= '*' )
                                     int alt35 = 2;
                                     int LA35_0 = input.LA(1);
 
@@ -2431,7 +2431,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt35)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:253:8: op1= '/'
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:253:8: op1= '/'
                                             {
                                                 op1 = (IToken)Match(input, 70, FOLLOW_70_in_expression_mult1337);
                                                 op = ((op1 != null) ? op1.Text : null);
@@ -2439,7 +2439,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 2:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:254:7: op2= '*'
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:254:7: op2= '*'
                                             {
                                                 op2 = (IToken)Match(input, 59, FOLLOW_59_in_expression_mult1349);
                                                 op = ((op2 != null) ? op2.Text : null);
@@ -2484,7 +2484,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_power"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:260:1: expression_power returns [MdxExpression value] : f1= expression_unary ( '^' f2= expression_unary )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:260:1: expression_power returns [MdxExpression value] : f1= expression_unary ( '^' f2= expression_unary )* ;
         public MdxExpression expression_power() // throws RecognitionException [1]
         {
 
@@ -2497,15 +2497,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:261:3: (f1= expression_unary ( '^' f2= expression_unary )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:261:5: f1= expression_unary ( '^' f2= expression_unary )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:261:3: (f1= expression_unary ( '^' f2= expression_unary )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:261:5: f1= expression_unary ( '^' f2= expression_unary )*
                 {
                     PushFollow(FOLLOW_expression_unary_in_expression_power1396);
                     f1 = expression_unary();
                     state.followingStackPointer--;
 
                     value = f1;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:262:4: ( '^' f2= expression_unary )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:262:4: ( '^' f2= expression_unary )*
                     do
                     {
                         int alt37 = 2;
@@ -2520,7 +2520,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt37)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:262:6: '^' f2= expression_unary
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:262:6: '^' f2= expression_unary
                                 {
                                     Match(input, 71, FOLLOW_71_in_expression_power1405);
                                     PushFollow(FOLLOW_expression_unary_in_expression_power1409);
@@ -2558,7 +2558,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_unary"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:266:1: expression_unary returns [MdxExpression value] : ( '-' e1= expression_range_is | '+' e2= expression_range_is | NOT t1= expression_range_is | e3= expression_range_is );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:266:1: expression_unary returns [MdxExpression value] : ( '-' e1= expression_range_is | '+' e2= expression_range_is | NOT t1= expression_range_is | e3= expression_range_is );
         public MdxExpression expression_unary() // throws RecognitionException [1]
         {
 
@@ -2575,7 +2575,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:267:2: ( '-' e1= expression_range_is | '+' e2= expression_range_is | NOT t1= expression_range_is | e3= expression_range_is )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:267:2: ( '-' e1= expression_range_is | '+' e2= expression_range_is | NOT t1= expression_range_is | e3= expression_range_is )
                 int alt38 = 4;
                 switch (input.LA(1))
                 {
@@ -2619,7 +2619,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt38)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:267:4: '-' e1= expression_range_is
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:267:4: '-' e1= expression_range_is
                         {
                             Match(input, 69, FOLLOW_69_in_expression_unary1438);
                             PushFollow(FOLLOW_expression_range_is_in_expression_unary1442);
@@ -2631,7 +2631,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:268:4: '+' e2= expression_range_is
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:268:4: '+' e2= expression_range_is
                         {
                             Match(input, 68, FOLLOW_68_in_expression_unary1449);
                             PushFollow(FOLLOW_expression_range_is_in_expression_unary1453);
@@ -2643,7 +2643,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 3:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:269:4: NOT t1= expression_range_is
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:269:4: NOT t1= expression_range_is
                         {
                             Match(input, NOT, FOLLOW_NOT_in_expression_unary1461);
                             PushFollow(FOLLOW_expression_range_is_in_expression_unary1465);
@@ -2655,7 +2655,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 4:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:270:4: e3= expression_range_is
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:270:4: e3= expression_range_is
                         {
                             PushFollow(FOLLOW_expression_range_is_in_expression_unary1475);
                             e3 = expression_range_is();
@@ -2682,7 +2682,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_range_is"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:273:1: expression_range_is returns [MdxExpression value] : e1= expression_property ( ':' e2= expression_property | IS e3= expression_property )? ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:273:1: expression_range_is returns [MdxExpression value] : e1= expression_property ( ':' e2= expression_property | IS e3= expression_property )? ;
         public MdxExpression expression_range_is() // throws RecognitionException [1]
         {
 
@@ -2697,15 +2697,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:274:2: (e1= expression_property ( ':' e2= expression_property | IS e3= expression_property )? )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:274:4: e1= expression_property ( ':' e2= expression_property | IS e3= expression_property )?
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:274:2: (e1= expression_property ( ':' e2= expression_property | IS e3= expression_property )? )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:274:4: e1= expression_property ( ':' e2= expression_property | IS e3= expression_property )?
                 {
                     PushFollow(FOLLOW_expression_property_in_expression_range_is1494);
                     e1 = expression_property();
                     state.followingStackPointer--;
 
                     value = e1;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:275:4: ( ':' e2= expression_property | IS e3= expression_property )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:275:4: ( ':' e2= expression_property | IS e3= expression_property )?
                     int alt39 = 3;
                     int LA39_0 = input.LA(1);
 
@@ -2720,7 +2720,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt39)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:275:6: ':' e2= expression_property
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:275:6: ':' e2= expression_property
                             {
                                 Match(input, 72, FOLLOW_72_in_expression_range_is1503);
                                 PushFollow(FOLLOW_expression_property_in_expression_range_is1507);
@@ -2732,7 +2732,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             }
                             break;
                         case 2:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:276:6: IS e3= expression_property
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:276:6: IS e3= expression_property
                             {
                                 Match(input, IS, FOLLOW_IS_in_expression_range_is1517);
                                 PushFollow(FOLLOW_expression_property_in_expression_range_is1521);
@@ -2764,7 +2764,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_property"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:280:1: expression_property returns [MdxExpression value] : e1= expression_simple ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:280:1: expression_property returns [MdxExpression value] : e1= expression_simple ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )* ;
         public MdxExpression expression_property() // throws RecognitionException [1]
         {
 
@@ -2785,15 +2785,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:281:2: (e1= expression_simple ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:281:4: e1= expression_simple ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:281:2: (e1= expression_simple ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:281:4: e1= expression_simple ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )*
                 {
                     PushFollow(FOLLOW_expression_simple_in_expression_property1547);
                     e1 = expression_simple();
                     state.followingStackPointer--;
 
                     value = e1;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:282:3: ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:282:3: ( '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function ) )*
                     do
                     {
                         int alt42 = 2;
@@ -2808,10 +2808,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt42)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:282:5: '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function )
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:282:5: '.' (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function )
                                 {
                                     Match(input, 60, FOLLOW_60_in_expression_property1555);
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:283:4: (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function )
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:283:4: (id1= unquoted_identifier | '&' id2= quoted_identifier ( '&' id21= quoted_identifier )* | id3= quoted_identifier | f1= expression_function )
                                     int alt41 = 4;
                                     switch (input.LA(1))
                                     {
@@ -2914,7 +2914,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt41)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:283:6: id1= unquoted_identifier
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:283:6: id1= unquoted_identifier
                                             {
                                                 PushFollow(FOLLOW_unquoted_identifier_in_expression_property1565);
                                                 id1 = unquoted_identifier();
@@ -2925,7 +2925,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 2:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:285:6: '&' id2= quoted_identifier ( '&' id21= quoted_identifier )*
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:285:6: '&' id2= quoted_identifier ( '&' id21= quoted_identifier )*
                                             {
                                                 Match(input, 73, FOLLOW_73_in_expression_property1578);
                                                 PushFollow(FOLLOW_quoted_identifier_in_expression_property1582);
@@ -2933,7 +2933,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                                 state.followingStackPointer--;
 
                                                 string _UniqueName = "&" + ((id2 != null) ? input.ToString((IToken)(id2.Start), (IToken)(id2.Stop)) : null);
-                                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:286:6: ( '&' id21= quoted_identifier )*
+                                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:286:6: ( '&' id21= quoted_identifier )*
                                                 do
                                                 {
                                                     int alt40 = 2;
@@ -2948,7 +2948,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                                     switch (alt40)
                                                     {
                                                         case 1:
-                                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:286:8: '&' id21= quoted_identifier
+                                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:286:8: '&' id21= quoted_identifier
                                                             {
                                                                 Match(input, 73, FOLLOW_73_in_expression_property1596);
                                                                 PushFollow(FOLLOW_quoted_identifier_in_expression_property1600);
@@ -2973,7 +2973,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 3:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:288:6: id3= quoted_identifier
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:288:6: id3= quoted_identifier
                                             {
                                                 PushFollow(FOLLOW_quoted_identifier_in_expression_property1623);
                                                 id3 = quoted_identifier();
@@ -2984,7 +2984,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                             }
                                             break;
                                         case 4:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:290:6: f1= expression_function
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:290:6: f1= expression_function
                                             {
                                                 PushFollow(FOLLOW_expression_function_in_expression_property1638);
                                                 f1 = expression_function();
@@ -3027,7 +3027,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_simple"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:296:1: expression_simple returns [MdxExpression value] : ( expression_function | '(' expressions_list ')' | '{' ( expressions_list )? '}' | expression_case | STRING | INTEGER | FLOAT | identifier | RANET_EXPRESSION );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:296:1: expression_simple returns [MdxExpression value] : ( expression_function | '(' expressions_list ')' | '{' ( expressions_list )? '}' | expression_case | STRING | INTEGER | FLOAT | identifier | RANET_EXPRESSION );
         public MdxExpression expression_simple() // throws RecognitionException [1]
         {
 
@@ -3050,13 +3050,13 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:297:2: ( expression_function | '(' expressions_list ')' | '{' ( expressions_list )? '}' | expression_case | STRING | INTEGER | FLOAT | identifier | RANET_EXPRESSION )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:297:2: ( expression_function | '(' expressions_list ')' | '{' ( expressions_list )? '}' | expression_case | STRING | INTEGER | FLOAT | identifier | RANET_EXPRESSION )
                 int alt44 = 9;
                 alt44 = dfa44.Predict(input);
                 switch (alt44)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:297:4: expression_function
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:297:4: expression_function
                         {
                             PushFollow(FOLLOW_expression_function_in_expression_simple1668);
                             expression_function27 = expression_function();
@@ -3067,7 +3067,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:298:4: '(' expressions_list ')'
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:298:4: '(' expressions_list ')'
                         {
                             Match(input, 61, FOLLOW_61_in_expression_simple1675);
                             PushFollow(FOLLOW_expressions_list_in_expression_simple1677);
@@ -3089,10 +3089,10 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 3:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:309:4: '{' ( expressions_list )? '}'
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:309:4: '{' ( expressions_list )? '}'
                         {
                             Match(input, 74, FOLLOW_74_in_expression_simple1688);
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:309:8: ( expressions_list )?
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:309:8: ( expressions_list )?
                             int alt43 = 2;
                             int LA43_0 = input.LA(1);
 
@@ -3103,7 +3103,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                             switch (alt43)
                             {
                                 case 1:
-                                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:309:9: expressions_list
+                                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:309:9: expressions_list
                                     {
                                         PushFollow(FOLLOW_expressions_list_in_expression_simple1691);
                                         expressions_list29 = expressions_list();
@@ -3121,7 +3121,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 4:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:311:4: expression_case
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:311:4: expression_case
                         {
                             PushFollow(FOLLOW_expression_case_in_expression_simple1704);
                             expression_case30 = expression_case();
@@ -3132,7 +3132,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 5:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:312:4: STRING
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:312:4: STRING
                         {
                             STRING31 = (IToken)Match(input, STRING, FOLLOW_STRING_in_expression_simple1711);
                             value = new MdxConstantExpression(((STRING31 != null) ? STRING31.Text : null), MdxConstantKind.String);
@@ -3140,7 +3140,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 6:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:313:4: INTEGER
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:313:4: INTEGER
                         {
                             INTEGER32 = (IToken)Match(input, INTEGER, FOLLOW_INTEGER_in_expression_simple1718);
                             value = new MdxConstantExpression(((INTEGER32 != null) ? INTEGER32.Text : null), MdxConstantKind.Integer);
@@ -3148,7 +3148,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 7:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:314:4: FLOAT
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:314:4: FLOAT
                         {
                             FLOAT33 = (IToken)Match(input, FLOAT, FOLLOW_FLOAT_in_expression_simple1725);
                             value = new MdxConstantExpression(((FLOAT33 != null) ? FLOAT33.Text : null), MdxConstantKind.Float);
@@ -3156,7 +3156,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 8:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:315:4: identifier
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:315:4: identifier
                         {
                             PushFollow(FOLLOW_identifier_in_expression_simple1732);
                             identifier34 = identifier();
@@ -3167,7 +3167,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 9:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:316:4: RANET_EXPRESSION
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:316:4: RANET_EXPRESSION
                         {
                             RANET_EXPRESSION35 = (IToken)Match(input, RANET_EXPRESSION, FOLLOW_RANET_EXPRESSION_in_expression_simple1739);
                             value = new MdxObjectReferenceExpression(((RANET_EXPRESSION35 != null) ? RANET_EXPRESSION35.Text : null));
@@ -3191,7 +3191,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expressions_list"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:319:1: expressions_list returns [List<MdxExpression> value] : e1= expression ( ',' e2= expression )* ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:319:1: expressions_list returns [List<MdxExpression> value] : e1= expression ( ',' e2= expression )* ;
         public List<MdxExpression> expressions_list() // throws RecognitionException [1]
         {
 
@@ -3204,15 +3204,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:320:2: (e1= expression ( ',' e2= expression )* )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:320:4: e1= expression ( ',' e2= expression )*
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:320:2: (e1= expression ( ',' e2= expression )* )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:320:4: e1= expression ( ',' e2= expression )*
                 {
                     PushFollow(FOLLOW_expression_in_expressions_list1767);
                     e1 = expression();
                     state.followingStackPointer--;
 
                     value = new List<MdxExpression>(); value.Add(e1);
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:322:3: ( ',' e2= expression )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:322:3: ( ',' e2= expression )*
                     do
                     {
                         int alt45 = 2;
@@ -3227,7 +3227,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt45)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:322:5: ',' e2= expression
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:322:5: ',' e2= expression
                                 {
                                     Match(input, 58, FOLLOW_58_in_expressions_list1777);
                                     PushFollow(FOLLOW_expression_in_expressions_list1781);
@@ -3265,7 +3265,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_function"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:324:1: expression_function returns [MdxFunctionExpression value] : id1= identifier ( '!' id2= identifier )* '(' ( expressions_list )? ')' ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:324:1: expression_function returns [MdxFunctionExpression value] : id1= identifier ( '!' id2= identifier )* '(' ( expressions_list )? ')' ;
         public MdxFunctionExpression expression_function() // throws RecognitionException [1]
         {
 
@@ -3280,15 +3280,15 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:325:2: (id1= identifier ( '!' id2= identifier )* '(' ( expressions_list )? ')' )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:325:4: id1= identifier ( '!' id2= identifier )* '(' ( expressions_list )? ')'
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:325:2: (id1= identifier ( '!' id2= identifier )* '(' ( expressions_list )? ')' )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:325:4: id1= identifier ( '!' id2= identifier )* '(' ( expressions_list )? ')'
                 {
                     PushFollow(FOLLOW_identifier_in_expression_function1802);
                     id1 = identifier();
                     state.followingStackPointer--;
 
                     var funcName = id1;
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:326:4: ( '!' id2= identifier )*
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:326:4: ( '!' id2= identifier )*
                     do
                     {
                         int alt46 = 2;
@@ -3303,7 +3303,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         switch (alt46)
                         {
                             case 1:
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:326:5: '!' id2= identifier
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:326:5: '!' id2= identifier
                                 {
                                     Match(input, 76, FOLLOW_76_in_expression_function1810);
                                     PushFollow(FOLLOW_identifier_in_expression_function1814);
@@ -3324,7 +3324,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     ;	// Stops C# compiler whining that label 'loop46' has no statements
 
                     Match(input, 61, FOLLOW_61_in_expression_function1824);
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:327:7: ( expressions_list )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:327:7: ( expressions_list )?
                     int alt47 = 2;
                     int LA47_0 = input.LA(1);
 
@@ -3335,7 +3335,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt47)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:327:9: expressions_list
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:327:9: expressions_list
                             {
                                 PushFollow(FOLLOW_expressions_list_in_expression_function1828);
                                 expressions_list36 = expressions_list();
@@ -3367,7 +3367,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "expression_case"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:330:1: expression_case returns [MdxCaseExpression value] : CASE (ve1= expression )? (w1= when_clause (w2= when_clause )* )? ( ELSE ve2= expression )? END ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:330:1: expression_case returns [MdxCaseExpression value] : CASE (ve1= expression )? (w1= when_clause (w2= when_clause )* )? ( ELSE ve2= expression )? END ;
         public MdxCaseExpression expression_case() // throws RecognitionException [1]
         {
 
@@ -3384,11 +3384,11 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:2: ( CASE (ve1= expression )? (w1= when_clause (w2= when_clause )* )? ( ELSE ve2= expression )? END )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:4: CASE (ve1= expression )? (w1= when_clause (w2= when_clause )* )? ( ELSE ve2= expression )? END
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:2: ( CASE (ve1= expression )? (w1= when_clause (w2= when_clause )* )? ( ELSE ve2= expression )? END )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:4: CASE (ve1= expression )? (w1= when_clause (w2= when_clause )* )? ( ELSE ve2= expression )? END
                 {
                     Match(input, CASE, FOLLOW_CASE_in_expression_case1850);
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:9: (ve1= expression )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:9: (ve1= expression )?
                     int alt48 = 2;
                     int LA48_0 = input.LA(1);
 
@@ -3399,7 +3399,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt48)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:10: ve1= expression
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:331:10: ve1= expression
                             {
                                 PushFollow(FOLLOW_expression_in_expression_case1855);
                                 ve1 = expression();
@@ -3412,7 +3412,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     }
 
                     var wl = new List<MdxWhenClause>();
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:333:5: (w1= when_clause (w2= when_clause )* )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:333:5: (w1= when_clause (w2= when_clause )* )?
                     int alt50 = 2;
                     int LA50_0 = input.LA(1);
 
@@ -3423,14 +3423,14 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt50)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:333:6: w1= when_clause (w2= when_clause )*
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:333:6: w1= when_clause (w2= when_clause )*
                             {
                                 PushFollow(FOLLOW_when_clause_in_expression_case1872);
                                 w1 = when_clause();
                                 state.followingStackPointer--;
 
                                 wl.Add(w1);
-                                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:334:6: (w2= when_clause )*
+                                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:334:6: (w2= when_clause )*
                                 do
                                 {
                                     int alt49 = 2;
@@ -3445,7 +3445,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                                     switch (alt49)
                                     {
                                         case 1:
-                                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:334:8: w2= when_clause
+                                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:334:8: w2= when_clause
                                             {
                                                 PushFollow(FOLLOW_when_clause_in_expression_case1885);
                                                 w2 = when_clause();
@@ -3470,7 +3470,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
                     }
 
-                    // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:336:5: ( ELSE ve2= expression )?
+                    // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:336:5: ( ELSE ve2= expression )?
                     int alt51 = 2;
                     int LA51_0 = input.LA(1);
 
@@ -3481,7 +3481,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                     switch (alt51)
                     {
                         case 1:
-                            // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:336:7: ELSE ve2= expression
+                            // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:336:7: ELSE ve2= expression
                             {
                                 Match(input, ELSE, FOLLOW_ELSE_in_expression_case1906);
                                 PushFollow(FOLLOW_expression_in_expression_case1910);
@@ -3514,7 +3514,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "when_clause"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:341:1: when_clause returns [MdxWhenClause value] : WHEN e1= expression THEN e2= expression ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:341:1: when_clause returns [MdxWhenClause value] : WHEN e1= expression THEN e2= expression ;
         public MdxWhenClause when_clause() // throws RecognitionException [1]
         {
 
@@ -3527,8 +3527,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:342:2: ( WHEN e1= expression THEN e2= expression )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:342:4: WHEN e1= expression THEN e2= expression
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:342:2: ( WHEN e1= expression THEN e2= expression )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:342:4: WHEN e1= expression THEN e2= expression
                 {
                     Match(input, WHEN, FOLLOW_WHEN_in_when_clause1943);
                     PushFollow(FOLLOW_expression_in_when_clause1947);
@@ -3559,7 +3559,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "identifier"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:347:1: identifier returns [string value] : ( unquoted_identifier | quoted_identifier );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:347:1: identifier returns [string value] : ( unquoted_identifier | quoted_identifier );
         public string identifier() // throws RecognitionException [1]
         {
 
@@ -3572,7 +3572,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:348:2: ( unquoted_identifier | quoted_identifier )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:348:2: ( unquoted_identifier | quoted_identifier )
                 int alt52 = 2;
                 int LA52_0 = input.LA(1);
 
@@ -3594,7 +3594,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt52)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:348:4: unquoted_identifier
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:348:4: unquoted_identifier
                         {
                             PushFollow(FOLLOW_unquoted_identifier_in_identifier1981);
                             unquoted_identifier37 = unquoted_identifier();
@@ -3605,7 +3605,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:349:8: quoted_identifier
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:349:8: quoted_identifier
                         {
                             PushFollow(FOLLOW_quoted_identifier_in_identifier1992);
                             quoted_identifier38 = quoted_identifier();
@@ -3632,7 +3632,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "unquoted_identifier"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:352:1: unquoted_identifier returns [string value] : ( ID | keyword );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:352:1: unquoted_identifier returns [string value] : ( ID | keyword );
         public string unquoted_identifier() // throws RecognitionException [1]
         {
 
@@ -3644,7 +3644,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:353:2: ( ID | keyword )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:353:2: ( ID | keyword )
                 int alt53 = 2;
                 int LA53_0 = input.LA(1);
 
@@ -3666,7 +3666,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt53)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:353:4: ID
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:353:4: ID
                         {
                             ID39 = (IToken)Match(input, ID, FOLLOW_ID_in_unquoted_identifier2013);
                             value = ((ID39 != null) ? ID39.Text : null);
@@ -3674,7 +3674,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:354:4: keyword
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:354:4: keyword
                         {
                             PushFollow(FOLLOW_keyword_in_unquoted_identifier2020);
                             keyword40 = keyword();
@@ -3705,7 +3705,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
         };
 
         // $ANTLR start "quoted_identifier"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:357:1: quoted_identifier returns [string value] : QUOTED_ID ;
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:357:1: quoted_identifier returns [string value] : QUOTED_ID ;
         public mdxParser.quoted_identifier_return quoted_identifier() // throws RecognitionException [1]
         {
             mdxParser.quoted_identifier_return retval = new mdxParser.quoted_identifier_return();
@@ -3715,8 +3715,8 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:358:2: ( QUOTED_ID )
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:358:4: QUOTED_ID
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:358:2: ( QUOTED_ID )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:358:4: QUOTED_ID
                 {
                     QUOTED_ID41 = (IToken)Match(input, QUOTED_ID, FOLLOW_QUOTED_ID_in_quoted_identifier2037);
                     retval.value = ((QUOTED_ID41 != null) ? QUOTED_ID41.Text : null);
@@ -3740,7 +3740,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
 
         // $ANTLR start "keyword"
-        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:361:1: keyword returns [string value] : ( DIMENSION | PROPERTIES );
+        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:361:1: keyword returns [string value] : ( DIMENSION | PROPERTIES );
         public string keyword() // throws RecognitionException [1]
         {
 
@@ -3751,7 +3751,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
 
             try
             {
-                // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:362:2: ( DIMENSION | PROPERTIES )
+                // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:362:2: ( DIMENSION | PROPERTIES )
                 int alt54 = 2;
                 int LA54_0 = input.LA(1);
 
@@ -3773,7 +3773,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                 switch (alt54)
                 {
                     case 1:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:362:4: DIMENSION
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:362:4: DIMENSION
                         {
                             DIMENSION42 = (IToken)Match(input, DIMENSION, FOLLOW_DIMENSION_in_keyword2054);
                             value = ((DIMENSION42 != null) ? DIMENSION42.Text : null);
@@ -3781,7 +3781,7 @@ namespace Wing.Olap.Mdx.Compiler.Parser
                         }
                         break;
                     case 2:
-                        // D:\\tfs\\Ranet.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Ranet.Olap.Mdx\\Compiler\\Parser\\mdx.g:363:4: PROPERTIES
+                        // D:\\tfs\\Wing.UILibrary.OLAP4\\trunk\\UILibrary.Olap\\Wing.Olap.Mdx\\Compiler\\Parser\\mdx.g:363:4: PROPERTIES
                         {
                             PROPERTIES43 = (IToken)Match(input, PROPERTIES, FOLLOW_PROPERTIES_in_keyword2061);
                             value = ((PROPERTIES43 != null) ? PROPERTIES43.Text : null);

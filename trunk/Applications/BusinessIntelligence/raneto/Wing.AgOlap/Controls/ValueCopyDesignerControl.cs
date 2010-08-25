@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -29,25 +29,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
-using Ranet.AgOlap.Controls.ToolBar;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.AgOlap.Commands;
-using Ranet.Olap.Core;
-using Ranet.Olap.Core.Data;
-using Ranet.Olap.Core.Providers;
+using Wing.AgOlap.Controls.General;
+using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Commands;
+using Wing.Olap.Core;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Providers;
 using System.Collections.Generic;
-using Ranet.Olap.Core.Metadata;
-using Ranet.AgOlap.Controls.General.ClientServer;
-using Ranet.AgOlap.Controls.PivotGrid;
-using Ranet.AgOlap.Controls.ValueCopy;
-using Ranet.AgOlap.Controls.ValueCopy.Wrappers;
+using Wing.Olap.Core.Metadata;
+using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.AgOlap.Controls.PivotGrid;
+using Wing.AgOlap.Controls.ValueCopy;
+using Wing.AgOlap.Controls.ValueCopy.Wrappers;
 using System.IO.IsolatedStorage;
 using System.IO;
-using Ranet.AgOlap.Controls.Forms;
-using Ranet.Olap.Core.Storage;
+using Wing.AgOlap.Controls.Forms;
+using Wing.Olap.Core.Storage;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
     public class ValueCopyDesignerControl : AgControlBase
     {

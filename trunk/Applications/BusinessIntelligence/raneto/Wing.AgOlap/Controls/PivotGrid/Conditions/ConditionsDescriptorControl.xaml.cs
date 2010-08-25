@@ -1,19 +1,19 @@
 ﻿/*   
     Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Ranet.UILibrary.Olap
+    This file is a part of Wing.UILibrary.Olap
  
-    Ranet.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
       
     You should have received a copy of the GNU General Public License
-    along with Ranet.UILibrary.Olap.  If not, see
+    along with Wing.UILibrary.Olap.  If not, see
   	<http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Ranet.UILibrary.Olap under a flexible commercial license
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
     designed to meet your specific usage and distribution requirements.
     If you have already obtained a commercial license from Galaktika Corp,
     you can use this file under those license terms.
@@ -31,7 +31,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Ranet.AgOlap.Controls.PivotGrid.Conditions
+namespace Wing.AgOlap.Controls.PivotGrid.Conditions
 {
     public partial class ConditionsDescriptorControl : UserControl
     {
@@ -43,7 +43,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Conditions
             lblConditions.Text = Localization.Conditions_Label;
 
             MemberControl.KeyDown += new KeyEventHandler(MemberControl_KeyDown);
-            ConditionsList.SelectionChanged += new EventHandler<Ranet.AgOlap.Controls.General.SelectionChangedEventArgs<CellCondition>>(ConditionsList_SelectionChanged);
+            ConditionsList.SelectionChanged += new EventHandler<Wing.AgOlap.Controls.General.SelectionChangedEventArgs<CellCondition>>(ConditionsList_SelectionChanged);
             ConditionDetails.PropertyChanged += new EventHandler(ConditionDetails_PropertyChanged);
         }
 
@@ -52,7 +52,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Conditions
             ConditionsList.Refresh();
         }
 
-        void ConditionsList_SelectionChanged(object sender, Ranet.AgOlap.Controls.General.SelectionChangedEventArgs<CellCondition> e)
+        void ConditionsList_SelectionChanged(object sender, Wing.AgOlap.Controls.General.SelectionChangedEventArgs<CellCondition> e)
         {
             EndEdit();
             ConditionDetails.Initialize(e.NewValue);
@@ -97,7 +97,7 @@ namespace Ranet.AgOlap.Controls.PivotGrid.Conditions
                 }
 
                 Descriptor.Conditions.Clear();
-                foreach(var item in ConditionsList.List)
+                foreach (var item in ConditionsList.List)
                 {
                     Descriptor.Conditions.Add(item);
                 }

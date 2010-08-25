@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Ranet.Olap.Core.Providers.ClientServer
+namespace Wing.Olap.Core.Providers.ClientServer
 {
     public enum OlapActionTypes
     { 

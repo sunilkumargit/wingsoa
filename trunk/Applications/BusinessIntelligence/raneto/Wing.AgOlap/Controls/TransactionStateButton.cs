@@ -9,14 +9,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ranet.AgOlap.Controls.General;
-using Ranet.Olap.Core.Providers.ClientServer;
-using Ranet.AgOlap.Commands;
-using Ranet.Olap.Core;
+using Wing.AgOlap.Controls.General;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.AgOlap.Commands;
+using Wing.Olap.Core;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ranet.AgOlap.Controls
+namespace Wing.AgOlap.Controls
 {
     public class TransactionStateButton : AgControlBase
     {

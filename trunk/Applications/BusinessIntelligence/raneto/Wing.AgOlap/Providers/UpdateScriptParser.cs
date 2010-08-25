@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Ranet.Olap.Core.Providers.ClientServer;
+using Wing.Olap.Core.Providers.ClientServer;
 using System.Text.RegularExpressions;
 
-namespace Ranet.AgOlap.Providers
+namespace Wing.AgOlap.Providers
 {
     public static class UpdateScriptParser
     {
