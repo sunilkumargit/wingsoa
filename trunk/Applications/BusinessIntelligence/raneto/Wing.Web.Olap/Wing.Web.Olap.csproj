@@ -103,16 +103,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ranet.Olap.Core\Ranet.Olap.Core.csproj">
-      <Project>{5ED667AE-F7AA-4553-BEE2-A0DD4C83D6D2}</Project>
-      <Name>Ranet.Olap.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ranet.Olap.Mdx\Wing.Olap.Mdx.csproj">
-      <Project>{42A2C4B9-CBD4-4304-938D-EDD5F3631553}</Project>
-      <Name>Wing.Olap.Mdx</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +121,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wing.Olap.Core\Wing.Olap.Core.csproj">
+      <Project>{815DC245-EB7F-4C0B-A682-09065F76520A}</Project>
+      <Name>Wing.Olap.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(Ranet)\BuildTools-1.0\TFScompatible.proj" Condition=" '$(Ranet)' != '' " />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

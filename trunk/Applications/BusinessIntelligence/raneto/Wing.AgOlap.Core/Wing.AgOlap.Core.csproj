@@ -101,169 +101,169 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Ranet.AgOlap\Common.cs">
+    <Compile Include="..\Wing.AgOlap\Common.cs">
       <Link>Common.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Cache2D.cs">
+    <Compile Include="..\Wing.Olap.Core\Cache2D.cs">
       <Link>Cache2D.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\ConnectionInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\ConnectionInfo.cs">
       <Link>ConnectionInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\AxisData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\AxisData.cs">
       <Link>Data\AxisData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\CellData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\CellData.cs">
       <Link>Data\CellData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\CellSetData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\CellSetData.cs">
       <Link>Data\CellSetData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\CellValueData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\CellValueData.cs">
       <Link>Data\CellValueData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\DataBase.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\DataBase.cs">
       <Link>Data\DataBase.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\DataTableWrapper.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\DataTableWrapper.cs">
       <Link>Data\DataTableWrapper.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\IPropertiesData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\IPropertiesData.cs">
       <Link>Data\IPropertiesData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\JPropObj.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\JPropObj.cs">
       <Link>Data\JPropObj.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\JPropsObj.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\JPropsObj.cs">
       <Link>Data\JPropsObj.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\MemberData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\MemberData.cs">
       <Link>Data\MemberData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\PositionData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\PositionData.cs">
       <Link>Data\PositionData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Data\PositionMemberData.cs">
+    <Compile Include="..\Wing.Olap.Core\Data\PositionMemberData.cs">
       <Link>Data\PositionMemberData.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\HeaderCollection.cs">
+    <Compile Include="..\Wing.Olap.Core\HeaderCollection.cs">
       <Link>HeaderCollection.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\InvokeResultDescriptor.cs">
+    <Compile Include="..\Wing.Olap.Core\InvokeResultDescriptor.cs">
       <Link>InvokeResultDescriptor.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\CubeDefInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\CubeDefInfo.cs">
       <Link>Metadata\CubeDefInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\DimensionInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\DimensionInfo.cs">
       <Link>Metadata\DimensionInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\HierarchyInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\HierarchyInfo.cs">
       <Link>Metadata\HierarchyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\InfoBase.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\InfoBase.cs">
       <Link>Metadata\InfoBase.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\KpiInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\KpiInfo.cs">
       <Link>Metadata\KpiInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\LevelInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\LevelInfo.cs">
       <Link>Metadata\LevelInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\LevelPropertyInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\LevelPropertyInfo.cs">
       <Link>Metadata\LevelPropertyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\MeasureGroupInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\MeasureGroupInfo.cs">
       <Link>Metadata\MeasureGroupInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\MeasureInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\MeasureInfo.cs">
       <Link>Metadata\MeasureInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\MemberPropertyInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\MemberPropertyInfo.cs">
       <Link>Metadata\MemberPropertyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\MetadataQueryType.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\MetadataQueryType.cs">
       <Link>Metadata\MetadataQueryType.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\NamedSetInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\NamedSetInfo.cs">
       <Link>Metadata\NamedSetInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\OlapTerms.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\OlapTerms.cs">
       <Link>Metadata\OlapTerms.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Metadata\PropertyInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Metadata\PropertyInfo.cs">
       <Link>Metadata\PropertyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\ObjectDescription.cs">
+    <Compile Include="..\Wing.Olap.Core\ObjectDescription.cs">
       <Link>ObjectDescription.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\ObjectStorageFileDescription.cs">
+    <Compile Include="..\Wing.Olap.Core\ObjectStorageFileDescription.cs">
       <Link>ObjectStorageFileDescription.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\OlapHelper.cs">
+    <Compile Include="..\Wing.Olap.Core\OlapHelper.cs">
       <Link>OlapHelper.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\CellInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\CellInfo.cs">
       <Link>Providers\CellInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\CellSetDataProvider.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\CellSetDataProvider.cs">
       <Link>Providers\CellSetDataProvider.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\CellValueInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\CellValueInfo.cs">
       <Link>Providers\CellValueInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\ClientServer\MdxQueryArgs.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\ClientServer\MdxQueryArgs.cs">
       <Link>Providers\ClientServer\MdxQueryArgs.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\ClientServer\OlapActionBase.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\ClientServer\OlapActionBase.cs">
       <Link>Providers\ClientServer\OlapActionBase.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\FilterOperand.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\FilterOperand.cs">
       <Link>Providers\FilterOperand.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\FilterOperation.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\FilterOperation.cs">
       <Link>Providers\FilterOperation.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\FilterOperationBase.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\FilterOperationBase.cs">
       <Link>Providers\FilterOperationBase.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\InfoBase.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\InfoBase.cs">
       <Link>Providers\InfoBase.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\InvisibleMemberInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\InvisibleMemberInfo.cs">
       <Link>Providers\InvisibleMemberInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\IPivotTableDataProvider.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\IPivotTableDataProvider.cs">
       <Link>Providers\IPivotTableDataProvider.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\IProperties.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\IProperties.cs">
       <Link>Providers\IProperties.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\MemberInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\MemberInfo.cs">
       <Link>Providers\MemberInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\MemberInfoCollection.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\MemberInfoCollection.cs">
       <Link>Providers\MemberInfoCollection.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\MembersAreaInfo.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\MembersAreaInfo.cs">
       <Link>Providers\MembersAreaInfo.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\OlapMetadataResponseException.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\OlapMetadataResponseException.cs">
       <Link>Providers\OlapMetadataResponseException.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\PivotDataProvider.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\PivotDataProvider.cs">
       <Link>Providers\PivotDataProvider.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\PivotMemberItem.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\PivotMemberItem.cs">
       <Link>Providers\PivotMemberItem.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Providers\KpiView.cs">
+    <Compile Include="..\Wing.Olap.Core\Providers\KpiView.cs">
       <Link>Providers\KpiView.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\Storage\StorageActionArgs.cs">
+    <Compile Include="..\Wing.Olap.Core\Storage\StorageActionArgs.cs">
       <Link>Storage\StorageActionArgs.cs</Link>
     </Compile>
-    <Compile Include="..\Ranet.Olap.Core\XmlSerializationUtility.cs">
+    <Compile Include="..\Wing.Olap.Core\XmlSerializationUtility.cs">
       <Link>XmlSerializationUtility.cs</Link>
     </Compile>
     <Compile Include="Providers\IQueryExecuter.cs" />

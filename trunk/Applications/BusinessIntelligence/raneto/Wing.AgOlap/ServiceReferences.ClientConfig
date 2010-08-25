@@ -4,7 +4,9 @@
             <basicHttpBinding>
                 <binding name="OlapWebServiceSoap" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
+                    <security mode="None">
+                        <message algorithmSuite="Default" />
+                    </security>
                 </binding>
             </basicHttpBinding>
         </bindings>
