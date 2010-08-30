@@ -1,0 +1,1148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="Clipboard_ClipboardUnavailable" xml:space="preserve">
+    <value>Буфер обмена не доступен</value>
+  </data>
+  <data name="Clipboard_UnableCopy" xml:space="preserve">
+    <value>Невозможно скопировать текст</value>
+  </data>
+  <data name="ConnectionString" xml:space="preserve">
+    <value>Строка соединения</value>
+  </data>
+  <data name="ContextCmd_Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="ContextCmd_Cut" xml:space="preserve">
+    <value>Вырезать</value>
+  </data>
+  <data name="ContextCmd_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ContextCmd_Paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="ContextCmd_SelectAll" xml:space="preserve">
+    <value>Выделить все</value>
+  </data>
+  <data name="ContextMenu_Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="ContextMenu_CopyValue" xml:space="preserve">
+    <value>Копировать данные</value>
+  </data>
+  <data name="ContextMenu_CustomProperties" xml:space="preserve">
+    <value>Пользовательские свойства</value>
+  </data>
+  <data name="ContextMenu_DeliveryValue" xml:space="preserve">
+    <value>Распределить значение</value>
+  </data>
+  <data name="ContextMenu_Paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="ContextMenu_Properties" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="ContextMenu_ShowMDX" xml:space="preserve">
+    <value>Показать MDX</value>
+  </data>
+  <data name="CopyToClipboard_ToolTip" xml:space="preserve">
+    <value>Скопировать в буфер</value>
+  </data>
+  <data name="CustomPropertiesDialog_Caption" xml:space="preserve">
+    <value>Пользовательские свойства</value>
+  </data>
+  <data name="DataSourceInfoDialog_Caption" xml:space="preserve">
+    <value>Информация об источнике данных</value>
+  </data>
+  <data name="DataSourceInfo_MovedAxes" xml:space="preserve">
+    <value>MDX запрос (2 оси)</value>
+  </data>
+  <data name="DataSourceInfo_ShowParsedQuery" xml:space="preserve">
+    <value>Показывать разобранный запрос</value>
+  </data>
+  <data name="DataSourceInfo_ShowParsedScript" xml:space="preserve">
+    <value>Показывать разобранный скрипт</value>
+  </data>
+  <data name="DateChoice_Caption" xml:space="preserve">
+    <value>Выбор даты</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="DialogButton_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="DialogButton_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Filter_AddOperand" xml:space="preserve">
+    <value>Добавить операнд</value>
+  </data>
+  <data name="Filter_AddOperation" xml:space="preserve">
+    <value>Добавить операцию</value>
+  </data>
+  <data name="Filter_Contains" xml:space="preserve">
+    <value>Содержит</value>
+  </data>
+  <data name="Filter_Equal" xml:space="preserve">
+    <value>Равно</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="KPIChoice_Caption" xml:space="preserve">
+    <value>Выбор KPI</value>
+  </data>
+  <data name="LevelChoice_Caption" xml:space="preserve">
+    <value>Выбор уровня</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="MdxDesigner_ColumnsArea_Caption" xml:space="preserve">
+    <value>Колонки</value>
+  </data>
+  <data name="MdxDesigner_DataArea_Caption" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="MdxDesigner_FilterArea_Caption" xml:space="preserve">
+    <value>Фильтры</value>
+  </data>
+  <data name="MdxDesigner_RowsArea_Caption" xml:space="preserve">
+    <value>Строки</value>
+  </data>
+  <data name="MDXQuery" xml:space="preserve">
+    <value>MDX запрос</value>
+  </data>
+  <data name="MeasureChoice_Caption" xml:space="preserve">
+    <value>Выбор меры</value>
+  </data>
+  <data name="MemberChoice_Caption" xml:space="preserve">
+    <value>Выбор элементов измерения</value>
+  </data>
+  <data name="MemberChoice_ClearSelection_ToolTip" xml:space="preserve">
+    <value>Сбросить выбранные</value>
+  </data>
+  <data name="MemberChoice_LoadAll" xml:space="preserve">
+    <value>Загрузить все ...</value>
+  </data>
+  <data name="MemberChoice_LoadNext" xml:space="preserve">
+    <value>Загрузить далее ...</value>
+  </data>
+  <data name="MemberChoice_MembersFound" xml:space="preserve">
+    <value>Элементов найдено: </value>
+  </data>
+  <data name="MemberChoice_MembersSelected" xml:space="preserve">
+    <value>Элементов выбрано: </value>
+  </data>
+  <data name="MemberChoice_MultiSelect" xml:space="preserve">
+    <value>&lt;Множественный выбор&gt;</value>
+  </data>
+  <data name="MemberChoice_Refresh_ToolTip" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="MemberChoice_Selected" xml:space="preserve">
+    <value>Выбранные</value>
+  </data>
+  <data name="MemberChoice_ShowMemberProperties_ToolTip" xml:space="preserve">
+    <value>Показывать пользовательские свойства элементов</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Элементы</value>
+  </data>
+  <data name="MessageBox_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="MessageBox_Warning" xml:space="preserve">
+    <value>Внимание</value>
+  </data>
+  <data name="PivotGrid_BackButton_ToolTip" xml:space="preserve">
+    <value>Назад (Ctrl+Влево)</value>
+  </data>
+  <data name="PivotGrid_CancelEditButton_ToolTip" xml:space="preserve">
+    <value>Восстановить данные таблицы в первоначальное состояние или состояние до пересчета</value>
+  </data>
+  <data name="PivotGrid_CellsCopyAreaError" xml:space="preserve">
+    <value>Данная команда неприменима для несвязных диапазонов.</value>
+  </data>
+  <data name="PivotGrid_Collapse" xml:space="preserve">
+    <value>Свернуть</value>
+  </data>
+  <data name="PivotGrid_ConfirmEditButton_ToolTip" xml:space="preserve">
+    <value>Пересчитать данные таблицы с учетом внесенных изменений</value>
+  </data>
+  <data name="PivotGrid_DrillDown" xml:space="preserve">
+    <value>Детализировать</value>
+  </data>
+  <data name="PivotGrid_EditButton_ToolTip" xml:space="preserve">
+    <value>Режим редактирования</value>
+  </data>
+  <data name="PivotGrid_Expand" xml:space="preserve">
+    <value>Развернуть</value>
+  </data>
+  <data name="PivotGrid_ForwardButton_ToolTip" xml:space="preserve">
+    <value>Вперед (Ctrl+Вправо)</value>
+  </data>
+  <data name="PivotGrid_HideEmptyColumnsButton_ToolTip" xml:space="preserve">
+    <value>Спрятать пустые колонки</value>
+  </data>
+  <data name="PivotGrid_HideEmptyRowsButton_ToolTip" xml:space="preserve">
+    <value>Спрятать пустые строки</value>
+  </data>
+  <data name="PivotGrid_RefreshButton_ToolTip" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="PivotGrid_RestoreDefaultSize_ToolTip" xml:space="preserve">
+    <value>Восстановить размеры по-умолчанию</value>
+  </data>
+  <data name="PivotGrid_SaveCachedChanges" xml:space="preserve">
+    <value>Операция требует пересчета данных с учетом внесенных изменений. 
+
+Пересчитайте данные или отмените изменения.</value>
+  </data>
+  <data name="PivotGrid_ToBeginButton_ToolTip" xml:space="preserve">
+    <value>В начало (Ctrl+Shift+Влево)</value>
+  </data>
+  <data name="PivotGrid_ToEndButton_ToolTip" xml:space="preserve">
+    <value>В конец (Ctrl+Shift+Вправо)</value>
+  </data>
+  <data name="PivotGrid_UseChangesCasheButton_ToolTip" xml:space="preserve">
+    <value>Использовать отложенный пересчет</value>
+  </data>
+  <data name="PropertiesDialog_Caption" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="PropertiesList_PropertyColumn" xml:space="preserve">
+    <value>Свойство</value>
+  </data>
+  <data name="PropertiesList_ValueColumn" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="TreeNode_ErrorLoadingData" xml:space="preserve">
+    <value>Ошибка загрузки данных</value>
+  </data>
+  <data name="UpdateScript" xml:space="preserve">
+    <value>Скрипт обновления</value>
+  </data>
+  <data name="ValueCopyControl_Coordinates" xml:space="preserve">
+    <value>Координаты:</value>
+  </data>
+  <data name="ValueCopyControl_CopyButton_Caption" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="ValueCopyControl_CopyValueFromSource" xml:space="preserve">
+    <value>Копировать значение из источника</value>
+  </data>
+  <data name="ValueCopyControl_DeliveryValuePropotrionalSource" xml:space="preserve">
+    <value>Распределить значение пропорционально источнику</value>
+  </data>
+  <data name="ValueCopyControl_DestFieldIsAllMember" xml:space="preserve">
+    <value>В координатах приемника не должены содержаться элементы типа 'All'.</value>
+  </data>
+  <data name="ValueCopyControl_Destination" xml:space="preserve">
+    <value>Приемник</value>
+  </data>
+  <data name="ValueCopyControl_Dimension" xml:space="preserve">
+    <value>Измерение</value>
+  </data>
+  <data name="ValueCopyControl_Hierarchy" xml:space="preserve">
+    <value>Иерархия</value>
+  </data>
+  <data name="ValueCopyControl_ShowNotEmpty_Caption" xml:space="preserve">
+    <value>Указаны источник или приемник </value>
+  </data>
+  <data name="ValueCopyControl_Source" xml:space="preserve">
+    <value>Источник</value>
+  </data>
+  <data name="ValueCopyControl_SourceAndDestFieldNotFilled_Warning" xml:space="preserve">
+    <value>Не заполнены некоторые поля в источнике и приемнике.</value>
+  </data>
+  <data name="ValueCopyControl_SourceAndDestIsEqual_Warning" xml:space="preserve">
+    <value>Настройки источника и приемника должны отличаться.</value>
+  </data>
+  <data name="ValueCopyControl_TypeOfCopying" xml:space="preserve">
+    <value>Тип копирования:</value>
+  </data>
+  <data name="ValueCopyControl_Value" xml:space="preserve">
+    <value>Значение:</value>
+  </data>
+  <data name="ValueCopyControl_Сoefficient" xml:space="preserve">
+    <value>Коэффициент:</value>
+  </data>
+  <data name="ValueCopyDialog_Caption" xml:space="preserve">
+    <value>Копирование данных</value>
+  </data>
+  <data name="ValueDeliveryControl_ChildrenMembers" xml:space="preserve">
+    <value>Дочерние элементы</value>
+  </data>
+  <data name="ValueDeliveryControl_Delivered" xml:space="preserve">
+    <value>Распределено</value>
+  </data>
+  <data name="ValueDeliveryControl_DeliveredCellSettings" xml:space="preserve">
+    <value>Информация о ячейке:</value>
+  </data>
+  <data name="ValueDeliveryControl_DeliveryTo" xml:space="preserve">
+    <value>Распределить на:</value>
+  </data>
+  <data name="ValueDeliveryControl_Hierarchy" xml:space="preserve">
+    <value>Иерархия</value>
+  </data>
+  <data name="ValueDeliveryControl_Member" xml:space="preserve">
+    <value>Элемент</value>
+  </data>
+  <data name="ValueDeliveryControl_MembersToDelivery" xml:space="preserve">
+    <value>Элементы для распределения:</value>
+  </data>
+  <data name="ValueDeliveryControl_NewValue" xml:space="preserve">
+    <value>Новое значение</value>
+  </data>
+  <data name="ValueDeliveryControl_OriginalValue" xml:space="preserve">
+    <value>Начальное значение</value>
+  </data>
+  <data name="ValueDeliveryControl_SelectedMembers" xml:space="preserve">
+    <value>Выбранные элементы</value>
+  </data>
+  <data name="ValueDeliveryControl_SiblingsMembers" xml:space="preserve">
+    <value>Соседние элементы</value>
+  </data>
+  <data name="ValueDeliveryDialog_Caption" xml:space="preserve">
+    <value>Распределение значения</value>
+  </data>
+  <data name="ValueDeliveryDialog_Delivered" xml:space="preserve">
+    <value>Распределено:</value>
+  </data>
+  <data name="ValueDeliveryDialog_RestToDelivery" xml:space="preserve">
+    <value>Остаток к распределению:</value>
+  </data>
+  <data name="ValueDeliveryDialog_ValueToDelivery" xml:space="preserve">
+    <value>Значение к распределению:</value>
+  </data>
+  <data name="MdxDesigner_ValuesNode_Caption" xml:space="preserve">
+    <value>Значения</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_MoveDown" xml:space="preserve">
+    <value>Переместить Вниз</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_MoveToColumnsArea" xml:space="preserve">
+    <value>Переместить в Колонки</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_MoveToFiltersArea" xml:space="preserve">
+    <value>Переместить в Фильтры</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_MoveToRowsArea" xml:space="preserve">
+    <value>Переместить в Строки</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_MoveUp" xml:space="preserve">
+    <value>Переместить Вверх</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_RemoveField" xml:space="preserve">
+    <value>Удалить элемент</value>
+  </data>
+  <data name="MdxDesigner_CubeMetadata" xml:space="preserve">
+    <value>Метаданные куба</value>
+  </data>
+  <data name="MdxDesigner_MdxQuery" xml:space="preserve">
+    <value>MDX запрос</value>
+  </data>
+  <data name="MdxDesigner_ExecuteQuery" xml:space="preserve">
+    <value>Выполнить MDX запрос</value>
+  </data>
+  <data name="MdxDesigner_QueryResult" xml:space="preserve">
+    <value>Результат запроса</value>
+  </data>
+  <data name="MdxDesigner_RunQueryAutomatic" xml:space="preserve">
+    <value>Выполнять MDX запрос автоматически</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_ChangeFilter" xml:space="preserve">
+    <value>Изменить фильтр</value>
+  </data>
+  <data name="MdxDesigner_ShowQueryWizard_ToolTip" xml:space="preserve">
+    <value>Показать/Cпрятать дизайнер запроса</value>
+  </data>
+  <data name="MdxDesigner_ShowQuery_ToolTip" xml:space="preserve">
+    <value>Показать/Cпрятать MDX запрос</value>
+  </data>
+  <data name="PivotGrid_CopyToClipboardButton_ToolTip" xml:space="preserve">
+    <value>Копировать выделенные ячейки в буфер</value>
+  </data>
+  <data name="PivotGrid_ExportToExcelButton_ToolTip" xml:space="preserve">
+    <value>Экспорт в Microsoft Excel</value>
+  </data>
+  <data name="PivotGrid_PasteFromClipboardButton_ToolTip" xml:space="preserve">
+    <value>Вставить ячейки из буфера</value>
+  </data>
+  <data name="SaveDialog_Filter_XmlFiles" xml:space="preserve">
+    <value>Xml файлы (.xml)|*.xml</value>
+  </data>
+  <data name="SaveDialog_Filter_XlsFiles" xml:space="preserve">
+    <value>Xls файлы (.xls)|*.xls</value>
+  </data>
+  <data name="PivotGrid_GoToFocusedCellButton_ToolTip" xml:space="preserve">
+    <value>Перейти к ячейке с фокусом</value>
+  </data>
+  <data name="MdxDesigner_ExportLayout_ToolTip" xml:space="preserve">
+    <value>Экспортировать настройки запроса</value>
+  </data>
+  <data name="MdxDesigner_ImportLayout_ToolTip" xml:space="preserve">
+    <value>Импортировать настройки запроса</value>
+  </data>
+  <data name="Connection_PropertyDesc" xml:space="preserve">
+    <value>Соединение</value>
+  </data>
+  <data name="ControlSettingsNotInitialized_Message" xml:space="preserve">
+    <value>Не настроены свойства: {0}</value>
+  </data>
+  <data name="CubeName_PropertyDesc" xml:space="preserve">
+    <value>Имя куба</value>
+  </data>
+  <data name="DateChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора даты</value>
+  </data>
+  <data name="DimensionUniqueName_PropertyDesc" xml:space="preserve">
+    <value>Уникальное имя измерения</value>
+  </data>
+  <data name="HierarchyUniqueName_PropertyDesc" xml:space="preserve">
+    <value>Уникальное имя иерархии</value>
+  </data>
+  <data name="KpiChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора KPI</value>
+  </data>
+  <data name="LevelChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора уровня</value>
+  </data>
+  <data name="MeasureChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора меры</value>
+  </data>
+  <data name="Filter_BeginWith" xml:space="preserve">
+    <value>Начинается с</value>
+  </data>
+  <data name="PivotGrid_RotateAxesButton_ToolTip" xml:space="preserve">
+    <value>Повернуть оси</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="PivotGridControl_Name" xml:space="preserve">
+    <value>Сводная таблица</value>
+  </data>
+  <data name="UpdateScript_PropertyDesc" xml:space="preserve">
+    <value>Скрипт обновления</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_TopFilter" xml:space="preserve">
+    <value>Первые N</value>
+  </data>
+  <data name="Filter_Type_Bottom" xml:space="preserve">
+    <value>Наименьших</value>
+  </data>
+  <data name="Filter_Type_Top" xml:space="preserve">
+    <value>Наибольших</value>
+  </data>
+  <data name="TopFilterDialog_Caption" xml:space="preserve">
+    <value>Фильтр 'Первые N'</value>
+  </data>
+  <data name="MdxDesigner_ContextMenu_CancelFilter" xml:space="preserve">
+    <value>Отменить фильтр</value>
+  </data>
+  <data name="Filter_Label_By" xml:space="preserve">
+    <value>по</value>
+  </data>
+  <data name="Filter_Target_Items" xml:space="preserve">
+    <value>Элементов списка</value>
+  </data>
+  <data name="Filter_Target_Percent" xml:space="preserve">
+    <value>Процентов от числа эл-тов</value>
+  </data>
+  <data name="Filter_Target_Sum" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="FilterBuilder_Caption" xml:space="preserve">
+    <value>Построение фильтра</value>
+  </data>
+  <data name="FilterControl_Caption" xml:space="preserve">
+    <value>Фильтр</value>
+  </data>
+  <data name="FilterControl_Label_FilterSettings" xml:space="preserve">
+    <value>Свойства фильтра:</value>
+  </data>
+  <data name="FilterControl_Label_FilterType" xml:space="preserve">
+    <value>Тип фильтра:</value>
+  </data>
+  <data name="LabelFilter_Name" xml:space="preserve">
+    <value>Фильтр по подписи</value>
+  </data>
+  <data name="TopFilter_Name" xml:space="preserve">
+    <value>Первые N</value>
+  </data>
+  <data name="ValueFilter_Name" xml:space="preserve">
+    <value>Фильтр по значению</value>
+  </data>
+  <data name="Filter_Label_And" xml:space="preserve">
+    <value>и</value>
+  </data>
+  <data name="LabelFilter_BeginWith" xml:space="preserve">
+    <value>Начинается с</value>
+  </data>
+  <data name="LabelFilter_Contain" xml:space="preserve">
+    <value>Содержит</value>
+  </data>
+  <data name="LabelFilter_EndWith" xml:space="preserve">
+    <value>Заканчивается на</value>
+  </data>
+  <data name="LabelFilter_NotBeginWith" xml:space="preserve">
+    <value>Не начинается с</value>
+  </data>
+  <data name="LabelFilter_NotContain" xml:space="preserve">
+    <value>Не содержит</value>
+  </data>
+  <data name="LabelFilter_NotEndWith" xml:space="preserve">
+    <value>Не заканчивается на</value>
+  </data>
+  <data name="ValueFilter_Between" xml:space="preserve">
+    <value>Между</value>
+  </data>
+  <data name="ValueFilter_Equal" xml:space="preserve">
+    <value>Равно</value>
+  </data>
+  <data name="ValueFilter_Greater" xml:space="preserve">
+    <value>Больше чем</value>
+  </data>
+  <data name="ValueFilter_GreaterOrEqual" xml:space="preserve">
+    <value>Больше или равно</value>
+  </data>
+  <data name="ValueFilter_Less" xml:space="preserve">
+    <value>Меньше чем</value>
+  </data>
+  <data name="ValueFilter_LessOrEqual" xml:space="preserve">
+    <value>Меньше или равно</value>
+  </data>
+  <data name="ValueFilter_NotBetween" xml:space="preserve">
+    <value>Вне</value>
+  </data>
+  <data name="ValueFilter_NotEqual" xml:space="preserve">
+    <value>Не равно</value>
+  </data>
+  <data name="CubeBrowserControl_Name" xml:space="preserve">
+    <value>Контрол просмотра куба</value>
+  </data>
+  <data name="CubeChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора куба</value>
+  </data>
+  <data name="DimensionChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора измерения</value>
+  </data>
+  <data name="HierarchyChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора иерархии</value>
+  </data>
+  <data name="MemberChoiceControl_Name" xml:space="preserve">
+    <value>Контрол выбора элементов измерения</value>
+  </data>
+  <data name="ServerExplorerControl_Name" xml:space="preserve">
+    <value>Контрол просмотра OLAP сервера</value>
+  </data>
+  <data name="ValueCopyControl_ExportSettings_ToolTip" xml:space="preserve">
+    <value>Экспорт настроек</value>
+  </data>
+  <data name="ValueCopyControl_ImportSettings_ToolTip" xml:space="preserve">
+    <value>Импорт настроек</value>
+  </data>
+  <data name="ValueCopyDesignerControl_Name" xml:space="preserve">
+    <value>Дизайнер копирования данных</value>
+  </data>
+  <data name="ValueCopyControl_Accessibility" xml:space="preserve">
+    <value>Доступность</value>
+  </data>
+  <data name="ValueCopyControl_CoordinateState_Disabled" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
+  <data name="ValueCopyControl_CoordinateState_Enabled" xml:space="preserve">
+    <value>Полный доступ</value>
+  </data>
+  <data name="ValueCopyControl_CoordinateState_Readonly" xml:space="preserve">
+    <value>Только просмотр</value>
+  </data>
+  <data name="ValueCopyControl_CoordinateState_Unknown" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="ValueCopyControl_RunCopyForm_Tooltip" xml:space="preserve">
+    <value>Запустить форму копирования</value>
+  </data>
+  <data name="ObjectDescriptionControl_Caption" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="ObjectDescriptionControl_Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ObjectDescriptionControl_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="SaveAsDialog_Caption" xml:space="preserve">
+    <value>Сохранить как</value>
+  </data>
+  <data name="LoadDialog_Caption" xml:space="preserve">
+    <value>Загрузить из</value>
+  </data>
+  <data name="ObjectLoadDialog_ContentError_Message" xml:space="preserve">
+    <value>Объект поврежден. Загрузка невозможна.</value>
+  </data>
+  <data name="ObjectSaveDialog_NameIsEmpty_Message" xml:space="preserve">
+    <value>Не указано имя объекта. Пожалуйста заполните поле 'Имя'.</value>
+  </data>
+  <data name="ObjectSaveDialog_Replace_Message" xml:space="preserve">
+    <value>Объект с таким именем уже существует. Хотите перезаписать его?</value>
+  </data>
+  <data name="MeasureGroup" xml:space="preserve">
+    <value>Группа мер</value>
+  </data>
+  <data name="MeasureGroup_All" xml:space="preserve">
+    <value>&lt;Все&gt;</value>
+  </data>
+  <data name="ControlPropertyNotInitialized_Message" xml:space="preserve">
+    <value>Свойство '{0}' элемента управления не настроено.</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="PivotGrid_CancelEditButton_Question" xml:space="preserve">
+    <value>Восстановить данные таблицы в первоначальное состояние или состояние до пересчета?</value>
+  </data>
+  <data name="PivotGrid_ConfirmEditButton_Caption" xml:space="preserve">
+    <value>Пересчитать</value>
+  </data>
+  <data name="PivotGrid_ConfirmEditButton_Question" xml:space="preserve">
+    <value>Пересчитать данные таблицы с учетом внесенных изменений?</value>
+  </data>
+  <data name="Tooltip_Cube" xml:space="preserve">
+    <value>Куб: {0}</value>
+  </data>
+  <data name="Tooltip_Dimension" xml:space="preserve">
+    <value>Измерение: {0}</value>
+  </data>
+  <data name="Tooltip_Hierarchy" xml:space="preserve">
+    <value>Иерархия: {0}</value>
+  </data>
+  <data name="Tooltip_Level" xml:space="preserve">
+    <value>Уровень: {0}</value>
+  </data>
+  <data name="PivotGrid_HideHintsButton_ToolTip" xml:space="preserve">
+    <value>Спрятать подсказки для элементов и ячеек</value>
+  </data>
+  <data name="PivotGrid_ZoomingControl_ToolTip" xml:space="preserve">
+    <value>Масштаб</value>
+  </data>
+  <data name="PivotGrid_Columns_Collapse_ShortCut" xml:space="preserve">
+    <value>(Ctrl+Shift+Минус)</value>
+  </data>
+  <data name="PivotGrid_Columns_Drilldown_ShortCut" xml:space="preserve">
+    <value>(Ctrl+Shift+Enter)</value>
+  </data>
+  <data name="PivotGrid_Columns_Expand_ShortCut" xml:space="preserve">
+    <value>(Ctrl+Shift+Плюс)</value>
+  </data>
+  <data name="PivotGrid_Rows_Collapse_ShortCut" xml:space="preserve">
+    <value>(Ctrl+Минус)</value>
+  </data>
+  <data name="PivotGrid_Rows_Drilldown_ShortCut" xml:space="preserve">
+    <value>(Ctrl+Enter)</value>
+  </data>
+  <data name="PivotGrid_Rows_Expand_ShortCut" xml:space="preserve">
+    <value>(Ctrl+Плюс)</value>
+  </data>
+  <data name="PivotGrid_CustomProperties_NotFound" xml:space="preserve">
+    <value>Пользовательские свойства для элемента не найдены. Возможно элемент вычисляемый.</value>
+  </data>
+  <data name="MdxDesigner_CalculatedMemberEditor" xml:space="preserve">
+    <value>Редактор пользовательских вычислений</value>
+  </data>
+  <data name="CalcMemberEditor_DialogCaption" xml:space="preserve">
+    <value>Редактор пользовательских вычислений</value>
+  </data>
+  <data name="CalcMemberEditor_MemberTab" xml:space="preserve">
+    <value>Элемент</value>
+  </data>
+  <data name="CalcMemberEditor_ScriptTab" xml:space="preserve">
+    <value>Скрипт</value>
+  </data>
+  <data name="CalcMemberEditor_DisplayFolderLabel" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="CalcMemberEditor_ExpressionLabel" xml:space="preserve">
+    <value>Выражение:</value>
+  </data>
+  <data name="CalcMemberEditor_MeasureGroupLabel" xml:space="preserve">
+    <value>Группа мер:</value>
+  </data>
+  <data name="CalcMemberEditor_NameLabel" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="CalcMemberEditor_ScriptLabel" xml:space="preserve">
+    <value>Скрипт:</value>
+  </data>
+  <data name="CalcMemberEditor_AddMember" xml:space="preserve">
+    <value>Добавить вычисляемый элемент</value>
+  </data>
+  <data name="CalcMemberEditor_AddSet" xml:space="preserve">
+    <value>Добавить именованный набор</value>
+  </data>
+  <data name="CalcMemberEditor_DeleteMember" xml:space="preserve">
+    <value>Удалить текущее вычисление</value>
+  </data>
+  <data name="ComboBoxItem_New" xml:space="preserve">
+    <value>&lt;Создать...&gt;</value>
+  </data>
+  <data name="ComboBoxItem_None" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="FolderComboBox_NewFolder" xml:space="preserve">
+    <value>Новая папка</value>
+  </data>
+  <data name="CalcMemberEditor_FormatStringLabel" xml:space="preserve">
+    <value>Строка форматирования:</value>
+  </data>
+  <data name="CalcMemberEditor_AddNamedSet" xml:space="preserve">
+    <value>Добавить именованный набор</value>
+  </data>
+  <data name="ComboBoxItem_NewItem" xml:space="preserve">
+    <value>Новый элемент</value>
+  </data>
+  <data name="CalcMemberEditor_MembersNamesMustBeUnique" xml:space="preserve">
+    <value>В списке содержатся вычисляемые элементы с одинаковыми именами. Исправить данную ошибку автоматически?</value>
+  </data>
+  <data name="CalcMemberEditor_NamedSetsNamesMustBeUnique" xml:space="preserve">
+    <value>В списке содержатся именованные наборы с одинаковыми именами. Исправить данную ошибку автоматически?</value>
+  </data>
+  <data name="MdxDesigner_EditQuery_ToolTip" xml:space="preserve">
+    <value>Редактировать MDX запрос</value>
+  </data>
+  <data name="CalculationsListControl_CalculatedMembers_TreeNode" xml:space="preserve">
+    <value>Элементы</value>
+  </data>
+  <data name="CalculationsListControl_NamedSets_TreeNode" xml:space="preserve">
+    <value>Наборы</value>
+  </data>
+  <data name="MetadataResponseException_CubeNotFound" xml:space="preserve">
+    <value>Не удалось найти куб с именем '{0}'.</value>
+  </data>
+  <data name="MetadataResponseException_DimensionByUniqueName_InCube_NotFound" xml:space="preserve">
+    <value>Не удалось найти измерение с уникальным именем '{0}' в кубе '{1}'.</value>
+  </data>
+  <data name="MetadataResponseException_HierarchyByUniqueName_InCube_NotFound" xml:space="preserve">
+    <value>Не удалось найти иерархию с уникальным именем '{0}' в кубе '{1}'.</value>
+  </data>
+  <data name="MetadataResponseException_HierarchyByUniqueName_InDimension_NotFound" xml:space="preserve">
+    <value>Не удалось найти иерархию с уникальным именем '{0}' в измерении '{1}'.</value>
+  </data>
+  <data name="MetadataResponseException_LevelByUniqueName_InHierarchy_NotFound" xml:space="preserve">
+    <value>Не удалось найти уровень с уникальным именем '{0}' в иерархии '{1}'.</value>
+  </data>
+  <data name="CalcMemberEditor_Clear" xml:space="preserve">
+    <value>Удалить все вычисления</value>
+  </data>
+  <data name="CalcMemberEditor_BackColorLabel" xml:space="preserve">
+    <value>Цвет фона:</value>
+  </data>
+  <data name="CalcMemberEditor_ForeColorLabel" xml:space="preserve">
+    <value>Цвет шрифта:</value>
+  </data>
+  <data name="CellPropertiesDialog_Caption" xml:space="preserve">
+    <value>Свойства ячейки</value>
+  </data>
+  <data name="MemberPropertiesDialog_Caption" xml:space="preserve">
+    <value>Свойства элемента</value>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Соединение</value>
+  </data>
+  <data name="Dialog_CloseButton_ToolTip" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Dialog_MaximizeButton_ToolTip" xml:space="preserve">
+    <value>Развернуть</value>
+  </data>
+  <data name="Dialog_RestoreDownButton_ToolTip" xml:space="preserve">
+    <value>Свернуть</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="Tuple" xml:space="preserve">
+    <value>Координаты</value>
+  </data>
+  <data name="TransactionStateButton_Name" xml:space="preserve">
+    <value>Кнопка управления транзакциями</value>
+  </data>
+  <data name="MdxDesigner_Cube" xml:space="preserve">
+    <value>Куб</value>
+  </data>
+  <data name="MdxDesigner_SaveCustomCalculations_Message" xml:space="preserve">
+    <value>Текущие настройки запроса  будут утеряны при смене куба. Вы хотите сохранить эти настройки?</value>
+  </data>
+  <data name="ServerExplorer_CubePropertyError" xml:space="preserve">
+    <value>Ошибка инициализации. Куб по умолчанию не задан. Пожалуйста, задайте имя куба.</value>
+  </data>
+  <data name="LoadingDialog_Name" xml:space="preserve">
+    <value>Диалог "Загрузить"</value>
+  </data>
+  <data name="MdxDesignerControl_Name" xml:space="preserve">
+    <value>Дизайнер MDX</value>
+  </data>
+  <data name="OlapBrowserControl_Name" xml:space="preserve">
+    <value>Просмотрщик метаданных</value>
+  </data>
+  <data name="SaveAsDialog_Name" xml:space="preserve">
+    <value>Диалог "Сохранить как"</value>
+  </data>
+  <data name="CalcMemberEditor_NonEmpty" xml:space="preserve">
+    <value>Выражение для Non-empty:</value>
+  </data>
+  <data name="MdxDesigner_Calculations" xml:space="preserve">
+    <value>Вычисления</value>
+  </data>
+  <data name="ContextMenu_DrillThrough" xml:space="preserve">
+    <value>DrillThrough</value>
+  </data>
+  <data name="CellValue_Label" xml:space="preserve">
+    <value>Значение ячейки:</value>
+  </data>
+  <data name="DeleteAll_Question" xml:space="preserve">
+    <value>Вы действительно хотите удалить все элементы?</value>
+  </data>
+  <data name="DeleteAll_ToolTip" xml:space="preserve">
+    <value>Удалить все</value>
+  </data>
+  <data name="DeleteCurrent_Question" xml:space="preserve">
+    <value>Вы действительно хотите удалить текущий элемент?</value>
+  </data>
+  <data name="DeleteCurrent_ToolTip" xml:space="preserve">
+    <value>Удалить текущий</value>
+  </data>
+  <data name="DrillthroughDialog_Caption" xml:space="preserve">
+    <value>Результат Drillthrough</value>
+  </data>
+  <data name="CellsConditionsDesignerDialog_Caption" xml:space="preserve">
+    <value>Дизайнер стилей ячеек</value>
+  </data>
+  <data name="PivotGrid_CellsConditionsDesignerButton_ToolTip" xml:space="preserve">
+    <value>Дизайнер стилей ячеек</value>
+  </data>
+  <data name="Toolbar_DeleteAllButton_ToolTip" xml:space="preserve">
+    <value>Удалить все</value>
+  </data>
+  <data name="Toolbar_DeleteButton_ToolTip" xml:space="preserve">
+    <value>Удалить текущий элемент</value>
+  </data>
+  <data name="Toolbar_NewButton_ToolTip" xml:space="preserve">
+    <value>Создать новый</value>
+  </data>
+  <data name="ConditionsDesigner_Appearance_Label" xml:space="preserve">
+    <value>Внешний вид ячейки</value>
+  </data>
+  <data name="ConditionsDesigner_Condition_Label" xml:space="preserve">
+    <value>Условие для значения ячейки:</value>
+  </data>
+  <data name="ImageChoiceDialog_Caption" xml:space="preserve">
+    <value>Выбор изображения</value>
+  </data>
+  <data name="BackColor_Label" xml:space="preserve">
+    <value>Цвет фона:</value>
+  </data>
+  <data name="BorderColor_Label" xml:space="preserve">
+    <value>Цвет границы:</value>
+  </data>
+  <data name="CellConditionControl_AppearanceItem" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="CellConditionControl_CellAppearanceItem" xml:space="preserve">
+    <value>Вид ячейки</value>
+  </data>
+  <data name="CellConditionControl_ImageItem" xml:space="preserve">
+    <value>Настройки изображения</value>
+  </data>
+  <data name="CellConditionControl_ProgressBarItem" xml:space="preserve">
+    <value>Настройки индикатора выполнения</value>
+  </data>
+  <data name="ChangeCustomImage_Caption" xml:space="preserve">
+    <value>Изменить изображение</value>
+  </data>
+  <data name="Conditions_Label" xml:space="preserve">
+    <value>Условия:</value>
+  </data>
+  <data name="EndColor_Label" xml:space="preserve">
+    <value>Конечный цвет:</value>
+  </data>
+  <data name="ForeColor_Label" xml:space="preserve">
+    <value>Цвет шрифта:</value>
+  </data>
+  <data name="IgnoreAllOptions_Check" xml:space="preserve">
+    <value>Игнорировать все опции</value>
+  </data>
+  <data name="Image_Label" xml:space="preserve">
+    <value>Изображение:</value>
+  </data>
+  <data name="LoadSettings_ToolTip" xml:space="preserve">
+    <value>Загрузить настройки</value>
+  </data>
+  <data name="MaxValue_Label" xml:space="preserve">
+    <value>Максимум:</value>
+  </data>
+  <data name="MemberUniqueName_Label" xml:space="preserve">
+    <value>Уникальное имя элемента:</value>
+  </data>
+  <data name="MinValue_Label" xml:space="preserve">
+    <value>Минимум:</value>
+  </data>
+  <data name="SaveSettings_ToolTip" xml:space="preserve">
+    <value>Сохранить настройки</value>
+  </data>
+  <data name="ShowImage_Check" xml:space="preserve">
+    <value>Отображать изображение</value>
+  </data>
+  <data name="ShowProgressBar_Check" xml:space="preserve">
+    <value>Отображать индикатор выполнения</value>
+  </data>
+  <data name="ShowValue_Check" xml:space="preserve">
+    <value>Отображать значение</value>
+  </data>
+  <data name="StartColor_Label" xml:space="preserve">
+    <value>Начальный цвет:</value>
+  </data>
+  <data name="StyleDetails_Label" xml:space="preserve">
+    <value>Настройки стиля:</value>
+  </data>
+  <data name="Styles_Label" xml:space="preserve">
+    <value>Стили:</value>
+  </data>
+  <data name="UseAllOptions_Check" xml:space="preserve">
+    <value>Использовать все опции</value>
+  </data>
+  <data name="UseBackColor_Check" xml:space="preserve">
+    <value>Использовать цвет фона</value>
+  </data>
+  <data name="UseBorderColor_Check" xml:space="preserve">
+    <value>Использовать цвет границы</value>
+  </data>
+  <data name="UseForeColor_Check" xml:space="preserve">
+    <value>Использовать цвет шрифта</value>
+  </data>
+  <data name="ValueCondition_Label" xml:space="preserve">
+    <value>Условие для значения:</value>
+  </data>
+  <data name="Assembly_Label" xml:space="preserve">
+    <value>Сборка:</value>
+  </data>
+  <data name="ImagePreview_Label" xml:space="preserve">
+    <value>Просмотр изображения:</value>
+  </data>
+  <data name="Images_Label" xml:space="preserve">
+    <value>Изображения:</value>
+  </data>
+  <data name="SortingSettingsDialog_Caption" xml:space="preserve">
+    <value>Настройки сортировки</value>
+  </data>
+  <data name="ContextMenu_SortingByMeasure" xml:space="preserve">
+    <value>Сортировка оси по мере</value>
+  </data>
+  <data name="ContextMenu_SortingByProperty" xml:space="preserve">
+    <value>Сортировка по свойству</value>
+  </data>
+  <data name="ContextMenu_ClearAxisSorting" xml:space="preserve">
+    <value>Удалить сортировку</value>
+  </data>
+  <data name="SortingPropertiesDialog_MeasureNotSelected_Message" xml:space="preserve">
+    <value>Не выбрана мера для сортировки. Пожалуйста выберете меру из выпадающего списка.</value>
+  </data>
+  <data name="Measure_Label" xml:space="preserve">
+    <value>Мера:</value>
+  </data>
+  <data name="Property_Label" xml:space="preserve">
+    <value>Свойство:</value>
+  </data>
+  <data name="SortingBy_Label" xml:space="preserve">
+    <value>Сортировать по:</value>
+  </data>
+  <data name="SortingDirection_Label" xml:space="preserve">
+    <value>Направление сортировки:</value>
+  </data>
+  <data name="Sorting_Ascending_Label" xml:space="preserve">
+    <value>По возрастанию</value>
+  </data>
+  <data name="Sorting_Descending_Label" xml:space="preserve">
+    <value>По убыванию</value>
+  </data>
+  <data name="Sorting_None_Label" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="ContextMenu_AutoWidthColumns" xml:space="preserve">
+    <value>Автоподбор ширины</value>
+  </data>
+  <data name="CubeNotFound_Message" xml:space="preserve">
+    <value>Не удалось найти куб  '{0}'.</value>
+  </data>
+  <data name="MeasureGroupNotFound_Message" xml:space="preserve">
+    <value>Не удалось найти группу мер '{0}' в кубе {1}.</value>
+  </data>
+  <data name="KPIViewer_ColumnGoal" xml:space="preserve">
+    <value>Цель</value>
+  </data>
+  <data name="KPIViewer_ColumnName" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="KPIViewer_ColumnStatus" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="KPIViewer_ColumnTrend" xml:space="preserve">
+    <value>Направление</value>
+  </data>
+  <data name="KPIViewer_ColumnValue" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="KPIViewer_ColumnVariance" xml:space="preserve">
+    <value>Изменение</value>
+  </data>
+  <data name="ContextMenu_DataReorganizationType" xml:space="preserve">
+    <value>Режим группировки элементов</value>
+  </data>
+  <data name="ContextMenu_DataReorganizationType_HitchToParent" xml:space="preserve">
+    <value>Объединять в иерархию</value>
+  </data>
+  <data name="ContextMenu_DataReorganizationType_MergeNeighbors" xml:space="preserve">
+    <value>Объединять соседние</value>
+  </data>
+  <data name="ContextMenu_DataReorganizationType_None" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="ColumnsHeader" xml:space="preserve">
+    <value>Выбор колонок</value>
+  </data>
+  <data name="ShowAll_Check" xml:space="preserve">
+    <value>Показать все</value>
+  </data>
+  <data name="ContextMenu_SortingByValue" xml:space="preserve">
+    <value>Сортировка по значению</value>
+  </data>
+</root>
