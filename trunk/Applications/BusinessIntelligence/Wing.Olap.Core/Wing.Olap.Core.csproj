@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{815DC245-EB7F-4C0B-A682-09065F76520A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wing.Olap.Core</RootNamespace>
+    <AssemblyName>Wing.Olap.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BI_Develop|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\BI_Develop\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache2D.cs" />
+    <Compile Include="ConnectionInfo.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Data\AdomdPropsObj.cs" />
+    <Compile Include="Data\AxisData.cs" />
+    <Compile Include="Data\CellData.cs" />
+    <Compile Include="Data\CellSetData.cs" />
+    <Compile Include="Data\CellValueData.cs" />
+    <Compile Include="Data\DataBase.cs" />
+    <Compile Include="Data\DataTableWrapper.cs" />
+    <Compile Include="Data\IPropertiesData.cs" />
+    <Compile Include="Data\JPropObj.cs" />
+    <Compile Include="Data\JPropsObj.cs" />
+    <Compile Include="Data\MemberData.cs" />
+    <Compile Include="Data\PositionData.cs" />
+    <Compile Include="Data\PositionMemberData.cs" />
+    <Compile Include="ExportHelper.cs" />
+    <Compile Include="HeaderCollection.cs" />
+    <Compile Include="InvokeResultDescriptor.cs" />
+    <Compile Include="Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Metadata\CubeDefInfo.cs" />
+    <Compile Include="Metadata\DimensionInfo.cs" />
+    <Compile Include="Metadata\HierarchyInfo.cs" />
+    <Compile Include="Metadata\InfoBase.cs" />
+    <Compile Include="Metadata\InfoHelper.cs" />
+    <Compile Include="Metadata\KpiInfo.cs" />
+    <Compile Include="Metadata\LevelInfo.cs" />
+    <Compile Include="Metadata\LevelPropertyInfo.cs" />
+    <Compile Include="Metadata\MeasureGroupInfo.cs" />
+    <Compile Include="Metadata\MeasureInfo.cs" />
+    <Compile Include="Metadata\MemberPropertyInfo.cs" />
+    <Compile Include="Metadata\MetadataQueryType.cs" />
+    <Compile Include="Metadata\NamedSetInfo.cs" />
+    <Compile Include="Metadata\OlapTerms.cs" />
+    <Compile Include="Metadata\OleDbTypeConverter.cs" />
+    <Compile Include="Metadata\PropertyInfo.cs" />
+    <Compile Include="ObjectDescription.cs" />
+    <Compile Include="ObjectStorageFileDescription.cs" />
+    <Compile Include="OlapHelper.cs" />
+    <Compile Include="Providers\CellInfo.cs" />
+    <Compile Include="Providers\CellSetDataProvider.cs" />
+    <Compile Include="Providers\CellSetDescriptionProvider.cs" />
+    <Compile Include="Providers\CellValueInfo.cs" />
+    <Compile Include="Providers\ClientServer\MdxQueryArgs.cs" />
+    <Compile Include="Providers\ClientServer\OlapActionBase.cs" />
+    <Compile Include="Providers\DataTableHelper.cs" />
+    <Compile Include="Providers\FilterOperand.cs" />
+    <Compile Include="Providers\FilterOperation.cs" />
+    <Compile Include="Providers\FilterOperationBase.cs" />
+    <Compile Include="Providers\IMdxExecuter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Providers\InfoBase.cs" />
+    <Compile Include="Providers\InvisibleMemberInfo.cs" />
+    <Compile Include="Providers\IPivotTableDataProvider.cs" />
+    <Compile Include="Providers\IProperties.cs" />
+    <Compile Include="Providers\KpiView.cs" />
+    <Compile Include="Providers\MemberActions\DrillActionContainer.cs" />
+    <Compile Include="Providers\MemberActions\HistoryItem.cs" />
+    <Compile Include="Providers\MemberActions\HistoryManager.cs" />
+    <Compile Include="Providers\MemberInfo.cs" />
+    <Compile Include="Providers\MemberInfoCollection.cs" />
+    <Compile Include="Providers\MembersAreaInfo.cs" />
+    <Compile Include="Providers\OlapMetadataProvider.cs" />
+    <Compile Include="Providers\OlapMetadataResponseException.cs" />
+    <Compile Include="Providers\PivotDataProvider.cs" />
+    <Compile Include="Providers\PivotMemberItem.cs" />
+    <Compile Include="Storage\FileStorageProvider.cs" />
+    <Compile Include="Storage\IStorageProvider.cs" />
+    <Compile Include="Storage\StorageActionArgs.cs" />
+    <Compile Include="XmlSerializationUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Wing.Json\Wing.Json.csproj">
+      <Project>{C3EF42AD-B8F6-4067-AD53-515473C7FE14}</Project>
+      <Name>Wing.Json</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(Ranet)\BuildTools-1.0\TFScompatible.proj" Condition=" '$(Ranet)' != '' " />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent Condition=" '$(Configuration)' == 'BI_Develop' ">
+      copy $(TargetPath) C:\WINDOWS\assembly\GAC_MSIL\$(TargetName)\9.1.0.0__b5573042f1727a10\$(TargetFileName)
+      copy $(TargetDir)$(TargetName).pdb C:\WINDOWS\assembly\GAC_MSIL\$(TargetName)\9.1.0.0__b5573042f1727a10\$(TargetName).pdb
+      copy $(TargetDir)ru\$(TargetName).resources.dll C:\WINDOWS\assembly\GAC_MSIL\$(TargetName).resources\9.1.0.0_ru_b5573042f1727a10\$(TargetName).resources.dll
+
+      copy $(TargetPath) "C:\Program Files\Galaktika\Ranet.UILibrary.Olap-1.0\Framework\bin\$(TargetFileName)"
+      copy $(TargetDir)$(TargetName).pdb "C:\Program Files\Galaktika\Ranet.UILibrary.Olap-1.0\Framework\symbols\$(TargetName).pdb"
+      copy $(TargetDir)ru\$(TargetName).resources.dll "C:\Program Files\Galaktika\Ranet.UILibrary.Olap-1.0\Framework\bin\ru\$(TargetName).resources.dll"
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
