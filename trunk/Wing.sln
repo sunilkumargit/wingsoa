@@ -97,7 +97,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Olap.Classic", "Olap.Classi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Olap.Silverlight", "Olap.Silverlight", "{F7132C7D-49AE-4F82-B91C-CD6C2445B9F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wing.Olap.Silverlight", "Applications\BusinessIntelligence\Wing.Olap.Controls\Wing.Olap.Silverlight.csproj", "{F3D7C6C7-B9FF-47E6-A347-C98891CF95A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wing.Olap.Silverlight", "Applications\BusinessIntelligence\Wing.Olap.Silverlight\Wing.Olap.Silverlight.csproj", "{F3D7C6C7-B9FF-47E6-A347-C98891CF95A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wing.Olap.Core", "Applications\BusinessIntelligence\Wing.Olap.Core\Wing.Olap.Core.csproj", "{815DC245-EB7F-4C0B-A682-09065F76520A}"
 EndProject

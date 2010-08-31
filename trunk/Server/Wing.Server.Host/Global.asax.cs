@@ -28,11 +28,13 @@ namespace Wing.Server.Host
         {
             RegisterRoutes(RouteTable.Routes);
 
+
             var settings = new BootstrapSettings();
             var basePath = Server.MapPath("~");
             settings.ServerAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerAssemblyStorePath"]));
             settings.ClientAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ClientAssemblyStorePath"]));
             settings.ServerDataBasePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerDataBasePath"]));
+
 
             PrepareServerAssemblyStore(settings);
             CreateServerBootstrapperAndRun(settings);

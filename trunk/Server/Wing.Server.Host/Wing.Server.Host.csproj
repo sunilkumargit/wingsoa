@@ -46,6 +46,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,18 +77,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="OlapWebService.asmx.cs">
+      <DependentUpon>OlapWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\Wing.Client.xap" />
+    <Content Include="crossdomain.xml" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Content\Scripts\Silverlight.js" />
+    <Content Include="OlapWebService.asmx" />
+    <Content Include="Views\Shared\ServerTest.ascx" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\WingLoader.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Applications\BusinessIntelligence\Wing.Web.Olap\Wing.Web.Olap.csproj">
+      <Project>{D0729020-B33F-4B52-BA07-D747CA37F15E}</Project>
+      <Name>Wing.Web.Olap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wing.Server.Core\Wing.Server.Core.csproj">
       <Project>{46126CDD-E535-4655-B974-EEE76830F75B}</Project>
       <Name>Wing.Server.Core</Name>

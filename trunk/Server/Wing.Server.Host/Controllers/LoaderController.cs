@@ -9,9 +9,9 @@ namespace Wing.Server.Host.Controllers
             return View("WingLoader");
         }
 
-        public ActionResult GetInfo()
+        public ActionResult Test()
         {
-            return Content("teste de conteudo", "text/plain");
+            return View("ServerTest");
         }
     }
 }
