@@ -50,12 +50,14 @@ namespace Wing.Olap.Mdx
         {
             DimensionProperties.ListChanged += _ClearChildTokens;
         }
+
         public MdxAxis(string name, MdxExpression expression)
             : this()
         {
             this.Name = name;
             this.Expression = expression;
         }
+
         public MdxAxis(
                 string name,
                 MdxExpression expression,
