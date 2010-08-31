@@ -28,7 +28,6 @@ namespace Wing.Json.Conversion
     using System.Collections;
     using System.Configuration;
     using System.Diagnostics;
-    using System.Runtime.Serialization;
     using Wing.Json.Conversion.Converters;
 
     #endregion

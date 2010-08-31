@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.AnalysisServices.AdomdClient;
 using System.Data;
+using Microsoft.AnalysisServices.AdomdClient;
 
 namespace Wing.Olap.Core.Providers
 {

@@ -55,10 +55,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
-	using StreamReader = System.IO.StreamReader;
-	using FileInfo = System.IO.FileInfo;
-	using Encoding = System.Text.Encoding;
+    using System;
+    using Encoding = System.Text.Encoding;
+    using FileInfo = System.IO.FileInfo;
+    using StreamReader = System.IO.StreamReader;
 
 	/// <summary>
 	/// A character stream - an <see cref="ICharStream"/> - that loads 

@@ -26,8 +26,8 @@ namespace Wing.Json.Conversion.Converters
 
     using System;
     using System.Diagnostics;
-    using Wing.Json.Diagnostics;
     using Wing.Json.Conversion;
+    using Wing.Json.Diagnostics;
 
     #endregion
 

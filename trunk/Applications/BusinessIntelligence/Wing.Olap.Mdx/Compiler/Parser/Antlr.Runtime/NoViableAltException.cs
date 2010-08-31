@@ -57,9 +57,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	public class NoViableAltException : RecognitionException
+    public class NoViableAltException : RecognitionException
 	{
 		public string grammarDecisionDescription;
 		public int decisionNumber;

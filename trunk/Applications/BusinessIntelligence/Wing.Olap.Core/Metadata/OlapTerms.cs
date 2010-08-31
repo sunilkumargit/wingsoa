@@ -4,10 +4,6 @@
   (C)2010 Marcelo R Santos (mdezem@hotmail.com)
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Wing.Olap.Core.Metadata
 {

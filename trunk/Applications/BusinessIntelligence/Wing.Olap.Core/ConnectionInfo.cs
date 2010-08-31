@@ -5,11 +5,8 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
 using System.Globalization;
+using System.Xml;
 
 namespace Wing.Olap.Core
 {

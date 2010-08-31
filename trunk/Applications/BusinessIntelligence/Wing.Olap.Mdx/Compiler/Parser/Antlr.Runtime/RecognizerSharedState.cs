@@ -57,8 +57,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
 	/// <summary>
 	/// The set of fields needed by an abstract recognizer to recognize input

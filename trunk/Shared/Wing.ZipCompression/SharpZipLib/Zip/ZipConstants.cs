@@ -39,7 +39,7 @@
 
 using System;
 using System.Text;
-using System.Threading;
+
 
 #if NETCF_1_0 || NETCF_2_0
 using System.Globalization;

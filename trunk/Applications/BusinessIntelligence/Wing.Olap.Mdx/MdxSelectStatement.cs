@@ -4,9 +4,7 @@
   (C)2010 Marcelo R Santos (mdezem@hotmail.com)
 */
 
-using System;
 using System.Collections.Generic;
-using System.Collections;
 
 namespace Wing.Olap.Mdx
 {

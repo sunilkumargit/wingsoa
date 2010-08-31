@@ -10,12 +10,11 @@
 // Unreachable code detected.
 #pragma warning disable 162
 
-using System;
 
 namespace Wing.Olap.Mdx.Compiler.Parser
 {
-    using Antlr.Runtime;
     using System.Collections.Generic;
+    using Antlr.Runtime;
 
     public partial class mdxParser : Parser
     {

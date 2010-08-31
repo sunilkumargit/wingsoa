@@ -35,9 +35,8 @@
 
 
 using System;
-using System.Collections;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace ICSharpCode.SharpZipLib.Core
 {

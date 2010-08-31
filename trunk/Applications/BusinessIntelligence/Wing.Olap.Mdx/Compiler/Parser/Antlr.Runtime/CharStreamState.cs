@@ -56,9 +56,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	/// <summary>
+    /// <summary>
 	/// This is the complete state of a stream.
 	/// 
 	/// When walking ahead with cyclic DFA for syntactic predicates, we 

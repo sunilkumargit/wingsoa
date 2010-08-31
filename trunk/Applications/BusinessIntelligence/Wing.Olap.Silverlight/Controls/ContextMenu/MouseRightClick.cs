@@ -5,11 +5,9 @@
 */
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Browser;
-using System.Windows.Media;
 
 namespace Wing.Olap.Controls.ContextMenu
 {

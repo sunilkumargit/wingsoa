@@ -6,11 +6,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using Microsoft.AnalysisServices.AdomdClient;
 using Wing.Olap.Core.Metadata;
-using System.Data;
 
 namespace Wing.Olap.Core.Providers
 {

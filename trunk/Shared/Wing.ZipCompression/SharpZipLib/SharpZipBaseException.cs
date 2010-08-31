@@ -36,7 +36,7 @@
 using System;
 
 #if !NETCF_1_0 && !NETCF_2_0
-using System.Runtime.Serialization;
+
 #endif
 
 namespace ICSharpCode.SharpZipLib

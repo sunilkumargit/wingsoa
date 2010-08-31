@@ -5,10 +5,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Olap.Core.Metadata;
 using Microsoft.AnalysisServices.AdomdClient;
 
 namespace Wing.Olap.Core.Metadata

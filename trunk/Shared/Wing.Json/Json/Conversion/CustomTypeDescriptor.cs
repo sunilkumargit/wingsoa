@@ -26,23 +26,21 @@ namespace Wing.Json.Conversion
 
     using System;
     using System.Collections;
-    using System.Diagnostics;
     using System.Globalization;
     using System.Reflection;
-    
+    using AttributeCollection = System.ComponentModel.AttributeCollection;
+    using EventDescriptor = System.ComponentModel.EventDescriptor;
+    using EventDescriptorCollection = System.ComponentModel.EventDescriptorCollection;
     //
     // Types from System.ComponentModel must be imported explicitly because
     // .NET Framework 2.0 also contains a CustomTypeDescriptor in 
     // System.ComponentModel.
     //
-    
+
     using ICustomTypeDescriptor = System.ComponentModel.ICustomTypeDescriptor;
-    using PropertyDescriptorCollection = System.ComponentModel.PropertyDescriptorCollection;
     using PropertyDescriptor = System.ComponentModel.PropertyDescriptor;
-    using AttributeCollection= System.ComponentModel.AttributeCollection;
+    using PropertyDescriptorCollection = System.ComponentModel.PropertyDescriptorCollection;
     using TypeConverter = System.ComponentModel.TypeConverter;
-    using EventDescriptor = System.ComponentModel.EventDescriptor;
-    using EventDescriptorCollection = System.ComponentModel.EventDescriptorCollection;
     
     #endregion
     

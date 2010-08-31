@@ -18,7 +18,6 @@
     you can use this file under those license terms.
 */
 
-using System;
 
 namespace Wing.Olap.Mdx.Compiler
 {

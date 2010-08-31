@@ -38,7 +38,6 @@
 // exception statement from your version.
 
 using System;
-using System.Text;
 using System.IO;
 
 using ICSharpCode.SharpZipLib.Checksums;

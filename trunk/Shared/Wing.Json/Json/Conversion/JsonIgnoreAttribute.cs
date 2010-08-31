@@ -25,7 +25,7 @@ namespace Wing.Json.Conversion
     #region Imports
 
     using System;
-    using System.Reflection;
+
 
     #endregion
 

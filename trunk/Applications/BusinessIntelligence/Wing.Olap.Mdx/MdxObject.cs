@@ -5,8 +5,8 @@
 */
 
 using System;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Wing.Olap.Mdx
 {

@@ -56,9 +56,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	/// <summary>
+    /// <summary>
 	/// Rules that return more than a single value must return an object
 	/// containing all the values.  Besides the properties defined in
 	/// RuleLabelScope.PredefinedRulePropertiesScope there may be user-defined

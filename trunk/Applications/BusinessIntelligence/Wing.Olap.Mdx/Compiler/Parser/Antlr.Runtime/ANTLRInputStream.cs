@@ -56,8 +56,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
-	using Encoding = System.Text.Encoding;
+    using Encoding = System.Text.Encoding;
 	using Stream = System.IO.Stream;
 	using StreamReader = System.IO.StreamReader;
 

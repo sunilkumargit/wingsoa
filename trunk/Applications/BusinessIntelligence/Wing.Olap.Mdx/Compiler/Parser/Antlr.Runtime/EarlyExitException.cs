@@ -56,9 +56,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	/// <summary>
+    /// <summary>
 	/// The recognizer did not match anything for a (..)+ loop.
 	/// </summary>
 

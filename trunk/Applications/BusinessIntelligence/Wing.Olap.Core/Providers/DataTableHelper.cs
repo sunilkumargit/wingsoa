@@ -19,11 +19,8 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.Data;
-using System.Linq;
-using System.Web;
+using System.Globalization;
 
 namespace Wing.Olap.Core.Providers
 {

@@ -57,7 +57,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
+
 
 #if DOTNET1
 	public sealed class Token {
@@ -67,7 +67,7 @@ namespace Antlr.Runtime
 		private Token() {
 		}
 #else
-	public static class Token
+    public static class Token
 	{
 #endif
 

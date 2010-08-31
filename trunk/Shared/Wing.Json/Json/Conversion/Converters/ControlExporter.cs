@@ -27,7 +27,6 @@ namespace Wing.Json.Conversion.Converters
     using System;
     using System.Diagnostics;
     using System.IO;
-    using System.Reflection;
     using System.Web;
     using System.Web.UI;
 

@@ -25,7 +25,6 @@ namespace Wing.Json.Configuration
     #region Imports
 
     using System;
-    using System.Collections;
     using System.Configuration;
     using System.Xml;
 

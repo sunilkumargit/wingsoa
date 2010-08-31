@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net;
-
+﻿
 namespace Wing.Olap.Core.Providers.ClientServer
 {
     public enum OlapActionTypes

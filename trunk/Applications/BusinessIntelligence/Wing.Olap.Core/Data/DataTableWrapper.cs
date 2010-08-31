@@ -21,7 +21,6 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Wing.Olap.Core;
 
 namespace Wing.Olap.Core.Data
 {   

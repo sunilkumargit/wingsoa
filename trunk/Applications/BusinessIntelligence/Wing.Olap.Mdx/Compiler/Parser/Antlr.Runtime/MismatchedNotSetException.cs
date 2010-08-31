@@ -56,9 +56,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	public class MismatchedNotSetException : MismatchedSetException
+    public class MismatchedNotSetException : MismatchedSetException
 	{
 
 		/// <summary>Used for remote debugger deserialization </summary>

@@ -5,7 +5,6 @@
 */
 
 using System;
-using System.Net;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers.ClientServer;
 

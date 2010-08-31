@@ -6,12 +6,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using Microsoft.AnalysisServices.AdomdClient;
 using Wing.Olap.Core.Data;
-using System.Xml;
-using System.Globalization;
 
 namespace Wing.Olap.Core.Providers
 {

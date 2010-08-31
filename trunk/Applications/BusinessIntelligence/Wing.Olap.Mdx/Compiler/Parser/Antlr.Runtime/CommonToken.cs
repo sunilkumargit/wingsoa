@@ -57,9 +57,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	public class CommonToken : IToken
+    public class CommonToken : IToken
 	{
 		#region Constructors
 

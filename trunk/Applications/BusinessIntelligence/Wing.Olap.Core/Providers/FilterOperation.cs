@@ -4,8 +4,6 @@
   (C)2010 Marcelo R Santos (mdezem@hotmail.com)
 */
 
-using System;
-using System.Net;
 using System.Collections.Generic;
 
 namespace Wing.Olap.Core.Providers

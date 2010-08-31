@@ -5,21 +5,11 @@
 */
 
 using System;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Wing.Olap.Controls.General;
 using Wing.Olap.Controls.Tab;
-using Wing.Olap.Controls.Buttons;
-using Wing.Olap.Features;
 using Wing.Olap.Controls.ToolBar;
-using Wing.Olap.Core.Providers.ClientServer;
 using Wing.Olap.Providers;
 
 namespace Wing.Olap.Controls.DataSourceInfo

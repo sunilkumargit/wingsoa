@@ -24,7 +24,6 @@ namespace Wing.Json
 {
     #region Imports
 
-    using System;
     using System.Globalization;
     using System.IO;
     using System.Text;

@@ -5,10 +5,8 @@
 */
 
 using System;
-using Wing.Olap.Controls.General.ClientServer;
-using Wing.Olap.Controls.MemberChoice.ClientServer;
-using Wing.Olap.Controls.PivotGrid;
 using System.Collections.Generic;
+using Wing.Olap.Controls.General.ClientServer;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers;
 using Wing.Olap.Core.Providers.ClientServer;

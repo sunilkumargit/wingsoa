@@ -56,9 +56,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	/// <summary>
+    /// <summary>
 	/// A semantic predicate failed during validation.  Validation of predicates
 	/// occurs when normally parsing the alternative just like matching a token.
 	/// Disambiguating predicate evaluation occurs when we hoist a predicate into

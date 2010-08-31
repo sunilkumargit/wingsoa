@@ -5,13 +5,9 @@
 */
 
 using System;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using Wing.Olap.Controls.Data;
-using Wing.Olap.Controls.MdxDesigner;
-using Wing.Olap.Core.Providers;
 using Wing.Olap.Controls.General.Tree;
 
 namespace Wing.Olap.Controls.General.DataGrid

@@ -37,8 +37,6 @@
 // exception statement from your version.
 
 using System;
-using System.Runtime.Serialization;
-using System.Xml.Serialization;
 
 
 namespace ICSharpCode.SharpZipLib.Zip 

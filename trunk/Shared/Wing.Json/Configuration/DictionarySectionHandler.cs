@@ -27,7 +27,6 @@ namespace Wing.Json.Configuration
     using System;
     using System.Collections;
     using System.Configuration;
-    using System.Globalization;
     using System.Xml;
 
     #endregion

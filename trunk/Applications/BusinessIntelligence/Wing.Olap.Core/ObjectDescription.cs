@@ -5,7 +5,6 @@
 */
 
 using System;
-using System.Net;
 
 namespace Wing.Olap.Core
 {

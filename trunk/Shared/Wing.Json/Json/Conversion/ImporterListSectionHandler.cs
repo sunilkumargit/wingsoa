@@ -24,7 +24,6 @@ namespace Wing.Json.Conversion
 {
     #region Imports
 
-    using System;
     using Wing.Json.Configuration;
 
     #endregion

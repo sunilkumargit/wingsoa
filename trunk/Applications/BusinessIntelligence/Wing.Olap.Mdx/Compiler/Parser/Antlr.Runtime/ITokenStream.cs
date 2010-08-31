@@ -56,9 +56,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	/// <summary>A stream of tokens accessing tokens from a TokenSource </summary>
+    /// <summary>A stream of tokens accessing tokens from a TokenSource </summary>
 	public interface ITokenStream : IIntStream
 	{
 		/// <summary>

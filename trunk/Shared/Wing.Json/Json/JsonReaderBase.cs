@@ -24,10 +24,10 @@ namespace Wing.Json
 {
     #region Imports
 
-    using System;
+
 
     #endregion
-    
+
     /// <summary>
     /// Base implementation of <see cref="JsonReader"/> that can be used
     /// as a starting point for sub-classes of <see cref="JsonReader"/>.

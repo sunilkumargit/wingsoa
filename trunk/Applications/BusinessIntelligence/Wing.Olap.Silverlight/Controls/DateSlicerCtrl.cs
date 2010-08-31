@@ -6,23 +6,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Wing.Olap.Commands;
+using Wing.Olap.Controls.Buttons;
 using Wing.Olap.Controls.General;
 using Wing.Olap.Core;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.Olap.Controls.Buttons;
 
 namespace Wing.Olap.Controls
 {    

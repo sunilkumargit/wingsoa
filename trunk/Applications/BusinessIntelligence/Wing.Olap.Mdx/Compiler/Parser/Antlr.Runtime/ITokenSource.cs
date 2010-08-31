@@ -57,9 +57,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace Antlr.Runtime
 {
-	using System;
 
-	/// <summary>
+    /// <summary>
 	/// A source of tokens must provide a sequence of tokens via NextToken()
 	/// and also must reveal it's source of characters; CommonToken's text is
 	/// computed from a CharStream; it only store indices into the char stream.

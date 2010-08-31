@@ -5,19 +5,11 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using System.Windows.Controls.Primitives;
-using Wing.Olap.Features;
 using System.Windows.Browser;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using Wing.Olap.Controls.General;
 
 namespace Wing.Olap.Controls.ContextMenu
