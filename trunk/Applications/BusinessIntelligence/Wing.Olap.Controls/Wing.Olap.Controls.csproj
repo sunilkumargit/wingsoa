@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ranet.AgOlap</RootNamespace>
-    <AssemblyName>Ranet.AgOlap</AssemblyName>
+    <RootNamespace>Wing.Olap.Controls</RootNamespace>
+    <AssemblyName>Wing.Olap.Controls</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SilverlightApplication>false</SilverlightApplication>
     <ValidateXaml>true</ValidateXaml>
@@ -546,6 +546,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Services\ServiceManager.cs" />
+    <None Include="Service References\OlapWebService\Wing.Olap.Controls.OlapWebService.PerformOlapServiceActionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\Combo\ColorPicker.xaml">
@@ -1061,9 +1064,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\OlapWebService\OlapWebService.wsdl" />
-    <None Include="Service References\OlapWebService\Ranet.AgOlap.OlapWebService.PerformOlapServiceActionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -1104,13 +1104,13 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wing.AgOlap.Core\Wing.AgOlap.Core.csproj">
+    <ProjectReference Include="..\Wing.Olap.Core.Silverlight\Wing.Olap.Core.Silverlight.csproj">
       <Project>{47A463E4-EEB7-4FC1-AFD8-F200A29E05B6}</Project>
-      <Name>Wing.AgOlap.Core</Name>
+      <Name>Wing.Olap.Core.Silverlight</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Wing.Olap.Mdx\Wing.AgOlap.Mdx.csproj">
+    <ProjectReference Include="..\Wing.Olap.Mdx\Wing.Olap.Mdx.Silverlight.csproj">
       <Project>{C431B16C-B74F-43FD-A60C-12B3F358E98F}</Project>
-      <Name>Wing.AgOlap.Mdx</Name>
+      <Name>Wing.Olap.Mdx.Silverlight</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(Ranet)\BuildTools-1.0\TFScompatible.proj" Condition=" '$(Ranet)' != '' " />
