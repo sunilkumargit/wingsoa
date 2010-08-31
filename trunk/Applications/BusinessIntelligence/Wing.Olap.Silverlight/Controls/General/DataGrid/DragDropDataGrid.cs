@@ -9,12 +9,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
-using Wing.AgOlap.Controls.Data;
-using Wing.AgOlap.Controls.MdxDesigner;
+using Wing.Olap.Controls.Data;
+using Wing.Olap.Controls.MdxDesigner;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.General.Tree;
 
-namespace Wing.AgOlap.Controls.General.DataGrid
+namespace Wing.Olap.Controls.General.DataGrid
 {
     public class DragGridItemArgs<T> : EventArgs
     {

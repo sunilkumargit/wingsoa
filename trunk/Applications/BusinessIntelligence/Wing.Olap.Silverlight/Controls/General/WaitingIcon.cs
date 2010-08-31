@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     /// <summary>
     /// Represents a Vista busy cursor like control, can be used as a budy indicator.

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Wing.AgOlap.Providers.MemberActions
+namespace Wing.Olap.Providers.MemberActions
 {
 	public interface IHistoryItem<HistoryItem> where HistoryItem : class, new()
 	{

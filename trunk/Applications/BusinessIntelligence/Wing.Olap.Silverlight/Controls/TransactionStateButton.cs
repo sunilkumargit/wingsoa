@@ -9,14 +9,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Commands;
 using Wing.Olap.Core;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class TransactionStateButton : AgControlBase
     {

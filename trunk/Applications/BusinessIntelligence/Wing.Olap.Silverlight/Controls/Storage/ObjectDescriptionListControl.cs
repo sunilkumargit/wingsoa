@@ -14,13 +14,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.Storage
+namespace Wing.Olap.Controls.Storage
 {
     public class ObjectDescriptionListControl : ObjectsListControlBase<ObjectStorageFileDescription>
     {

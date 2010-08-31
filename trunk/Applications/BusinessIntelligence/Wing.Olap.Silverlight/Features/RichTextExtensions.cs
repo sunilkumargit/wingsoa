@@ -14,9 +14,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Features
+namespace Wing.Olap.Features
 {
     public static class RichTextExtensions
     {
@@ -29,7 +29,7 @@ namespace Wing.AgOlap.Features
         /// </summary>
         /// <param name="textBox">The text box.</param>
         /// <returns>The <see cref="TextBox"/>.</returns>
-        public static TextBox AddMouseWheelSupport(this Wing.AgOlap.Controls.General.RichTextBox textBox)
+        public static TextBox AddMouseWheelSupport(this Wing.Olap.Controls.General.RichTextBox textBox)
         {
             return AddMouseWheelSupport(textBox, DEFAULT_SCROLL_AMOUNT);
         }
@@ -42,12 +42,12 @@ namespace Wing.AgOlap.Features
         /// <param name="textBox">The text box.</param>
         /// <param name="scrollAmount">The amount to scroll by when the mouse wheel is moved.</param>
         /// <returns>The <see cref="TextBox"/>.</returns>
-        public static TextBox AddMouseWheelSupport(this Wing.AgOlap.Controls.General.RichTextBox textBox, double scrollAmount)
+        public static TextBox AddMouseWheelSupport(this Wing.Olap.Controls.General.RichTextBox textBox, double scrollAmount)
         {
             ScrollViewer scrollViewer = textBox.GetScroller();
             if (scrollViewer != null)
             {
-                Wing.AgOlap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(scrollViewer, scrollAmount);
+                Wing.Olap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(scrollViewer, scrollAmount);
                 textBox.IsMouseWheelAttached = true;
             }
 

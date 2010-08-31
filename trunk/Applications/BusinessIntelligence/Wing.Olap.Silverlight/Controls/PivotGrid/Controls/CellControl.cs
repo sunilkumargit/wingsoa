@@ -14,17 +14,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using System.Windows.Browser;
-using Wing.AgOlap.Controls.PivotGrid.Controls;
+using Wing.Olap.Controls.PivotGrid.Controls;
 using System.Collections.Generic;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.PivotGrid.Conditions;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Controls.PivotGrid.Conditions;
+using Wing.Olap.Providers;
 using System.Windows.Media.Imaging;
 using System.Globalization;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public class CellClickEventArgs : EventArgs
     {

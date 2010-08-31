@@ -15,11 +15,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.PivotGrid.Data;
+using Wing.Olap.Controls.PivotGrid.Data;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class PropertyItem
     {

@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Browser;
 
-namespace Wing.AgOlap.Controls.PivotGrid
+namespace Wing.Olap.Controls.PivotGrid
 {
     public class CustomGridSplitter : GridSplitter
     {

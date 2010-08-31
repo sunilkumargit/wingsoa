@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     public enum MemberActionType
     {

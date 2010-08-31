@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Layout
+namespace Wing.Olap.Controls.PivotGrid.Layout
 {
     public class MemberLayoutItem : LayoutItem
     {

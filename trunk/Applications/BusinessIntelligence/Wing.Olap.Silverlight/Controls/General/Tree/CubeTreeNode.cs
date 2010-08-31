@@ -8,7 +8,7 @@ using System;
 using Wing.Olap.Core.Metadata;
 using System.Windows.Controls;
 
-namespace Wing.AgOlap.Controls.General.Tree
+namespace Wing.Olap.Controls.General.Tree
 {
     public class CubeTreeNode : InfoBaseTreeNode
     {

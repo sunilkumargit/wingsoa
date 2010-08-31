@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls.Primitives;
 
-namespace Wing.AgOlap.Controls.General.Tree
+namespace Wing.Olap.Controls.General.Tree
 {
     public class CustomTreeNode : TreeViewItem
     {

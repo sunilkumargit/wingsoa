@@ -15,9 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers;
+using Wing.Olap.Controls.MdxDesigner.CalculatedMembers;
 
-namespace Wing.AgOlap.Controls.General.Tree
+namespace Wing.Olap.Controls.General.Tree
 {
     public class CalculatedMemberTreeNode : CustomTreeNode
     {

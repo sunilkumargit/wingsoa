@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class HeaderControl : UserControl
     {

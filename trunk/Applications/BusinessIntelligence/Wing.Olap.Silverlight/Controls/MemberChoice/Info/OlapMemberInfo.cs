@@ -9,9 +9,9 @@ using System.Collections;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Providers;
 
-namespace Wing.AgOlap.Controls.MemberChoice.Info
+namespace Wing.Olap.Controls.MemberChoice.Info
 {
     #region Возможные состояния
     //Любой элемент OlapMemberInfo в иерархии может находиться в одном из 3 состояний

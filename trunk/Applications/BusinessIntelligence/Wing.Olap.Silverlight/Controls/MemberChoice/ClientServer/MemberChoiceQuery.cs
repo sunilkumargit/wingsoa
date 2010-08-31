@@ -9,10 +9,10 @@ using System.Net;
 using System.Collections.Generic;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Controls.General.ClientServer;
 using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Wing.AgOlap.Controls.MemberChoice.ClientServer
+namespace Wing.Olap.Controls.MemberChoice.ClientServer
 {
     public enum MemberChoiceQueryType
     {

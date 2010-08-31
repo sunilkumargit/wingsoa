@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Conditions
+namespace Wing.Olap.Controls.PivotGrid.Conditions
 {
     public partial class ConditionsDescriptorControl : UserControl
     {
@@ -28,7 +28,7 @@ namespace Wing.AgOlap.Controls.PivotGrid.Conditions
             lblConditions.Text = Localization.Conditions_Label;
 
             MemberControl.KeyDown += new KeyEventHandler(MemberControl_KeyDown);
-            ConditionsList.SelectionChanged += new EventHandler<Wing.AgOlap.Controls.General.SelectionChangedEventArgs<CellCondition>>(ConditionsList_SelectionChanged);
+            ConditionsList.SelectionChanged += new EventHandler<Wing.Olap.Controls.General.SelectionChangedEventArgs<CellCondition>>(ConditionsList_SelectionChanged);
             ConditionDetails.PropertyChanged += new EventHandler(ConditionDetails_PropertyChanged);
         }
 
@@ -37,7 +37,7 @@ namespace Wing.AgOlap.Controls.PivotGrid.Conditions
             ConditionsList.Refresh();
         }
 
-        void ConditionsList_SelectionChanged(object sender, Wing.AgOlap.Controls.General.SelectionChangedEventArgs<CellCondition> e)
+        void ConditionsList_SelectionChanged(object sender, Wing.Olap.Controls.General.SelectionChangedEventArgs<CellCondition> e)
         {
             EndEdit();
             ConditionDetails.Initialize(e.NewValue);

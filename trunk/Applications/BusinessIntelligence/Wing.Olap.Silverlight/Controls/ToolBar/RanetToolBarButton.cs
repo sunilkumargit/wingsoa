@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.ToolBar
+namespace Wing.Olap.Controls.ToolBar
 {
     public class RanetToolBarButton :Button
     {

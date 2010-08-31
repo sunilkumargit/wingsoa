@@ -15,16 +15,16 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.ValueCopy;
-using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.ValueCopy;
+using Wing.Olap.Controls.ContextMenu;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
-using Wing.AgOlap.Controls.Forms;
-using Wing.AgOlap.Controls.MdxDesigner.Filters;
+using Wing.Olap.Controls.MdxDesigner.Wrappers;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.MdxDesigner.Filters;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     public class FilteredItemControl : InfoItemControl
     {
@@ -122,7 +122,7 @@ namespace Wing.AgOlap.Controls.MdxDesigner
         ContextMenuItem m_Cancel_Filter_MenuItem = null;
         ContextMenuItem m_MembersFilter_MenuItem = null;
 
-        protected override Wing.AgOlap.Controls.ContextMenu.CustomContextMenu CreateContextMenu()
+        protected override Wing.Olap.Controls.ContextMenu.CustomContextMenu CreateContextMenu()
         {
             CustomContextMenu contextMenu = base.CreateContextMenu();
 

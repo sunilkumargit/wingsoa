@@ -14,11 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.General.ItemControls;
-using Wing.AgOlap.Controls.Combo;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.General.ItemControls;
+using Wing.Olap.Controls.Combo;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class ComboBoxEx : UserControl
     {

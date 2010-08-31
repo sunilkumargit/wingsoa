@@ -14,9 +14,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.MdxDesigner.Filters;
+using Wing.Olap.Controls.MdxDesigner.Filters;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Wrappers
+namespace Wing.Olap.Controls.MdxDesigner.Wrappers
 {
     public class Filter_FilterWrapper : FilterWrapperBase
     {

@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     /// <summary>
     /// Форматирует строку с текстом команды обновления, чтобы она была более читабельной для человека.

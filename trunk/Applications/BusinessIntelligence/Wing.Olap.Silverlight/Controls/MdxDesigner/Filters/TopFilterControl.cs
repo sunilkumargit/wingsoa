@@ -15,10 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
+using Wing.Olap.Controls.MdxDesigner.Wrappers;
 using System.Threading;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Filters
+namespace Wing.Olap.Controls.MdxDesigner.Filters
 {
     public class TopFilterControl : FilterControlBase
     {

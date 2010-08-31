@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls.ValueCopy.Wrappers
+namespace Wing.Olap.Controls.ValueCopy.Wrappers
 {
     public class ValueCopySettingsWrapper
     {

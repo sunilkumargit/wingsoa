@@ -14,31 +14,31 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using System.Windows.Controls.Primitives;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.MdxDesigner;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.MdxDesigner;
+using Wing.Olap.Controls.General.Tree;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Controls.ContextMenu;
 using System.Text;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.ValueCopy;
-using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.ValueCopy;
+using Wing.Olap.Controls.MdxDesigner.Wrappers;
 using Wing.Olap.Core;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.ToolBar;
 using System.IO;
 using System.IO.IsolatedStorage;
-using Wing.AgOlap.Controls.MdxDesigner.Filters;
-using Wing.AgOlap.Controls.Forms;
+using Wing.Olap.Controls.MdxDesigner.Filters;
+using Wing.Olap.Controls.Forms;
 using Wing.Olap.Core.Storage;
-using Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers;
-using Wing.AgOlap.Controls.MemberChoice.Info;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Controls.MdxDesigner.CalculatedMembers;
+using Wing.Olap.Controls.MemberChoice.Info;
+using Wing.Olap.Providers;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
 	public class PivotMdxDesignerControl : AgControlBase
 	{
@@ -52,7 +52,7 @@ namespace Wing.AgOlap.Controls
 		Grid LayoutRoot;
 		RanetToolBar m_ToolBar;
 
-		Wing.AgOlap.Controls.General.RichTextBox m_MdxQuery;
+		Wing.Olap.Controls.General.RichTextBox m_MdxQuery;
 		UpdateablePivotGridControl m_PivotGrid;
 		protected UpdateablePivotGridControl PivotGrid
 		{
@@ -320,7 +320,7 @@ namespace Wing.AgOlap.Controls
 			Mdx_LayotRoot.Children.Add(mdx_Header);
 
 			// Текст запроса
-			m_MdxQuery = new Wing.AgOlap.Controls.General.RichTextBox();
+			m_MdxQuery = new Wing.Olap.Controls.General.RichTextBox();
 			m_MdxQuery.AcceptsReturn = true;
 			m_MdxQuery.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
 			m_MdxQuery.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;

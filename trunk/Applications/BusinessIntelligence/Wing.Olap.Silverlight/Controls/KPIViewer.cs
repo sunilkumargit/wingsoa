@@ -9,23 +9,23 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.ToolBar;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.ToolBar;
+using Wing.Olap.Providers;
 using Wing.Olap.Core;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Metadata;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using System.Windows.Data;
-using Wing.AgOlap.Controls.General.DataGrid;
+using Wing.Olap.Controls.General.DataGrid;
 using Wing.Olap.Core.Providers;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.AgOlap.Commands;
-using Wing.AgOlap.Controls.List;
+using Wing.Olap.Commands;
+using Wing.Olap.Controls.List;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class KpiViewer : AgControlBase
     {

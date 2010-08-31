@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 
-namespace Wing.AgOlap.Controls.Buttons
+namespace Wing.Olap.Controls.Buttons
 {
 	public class RanetToggleButton : ToggleButton
 	{

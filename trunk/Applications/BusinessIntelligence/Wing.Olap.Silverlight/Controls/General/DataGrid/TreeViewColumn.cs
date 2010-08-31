@@ -6,7 +6,7 @@
 
 using System.Windows.Controls;
 
-namespace Wing.AgOlap.Controls.General.DataGrid
+namespace Wing.Olap.Controls.General.DataGrid
 {
     public class TreeViewColumn : DataGridTemplateColumn
     {

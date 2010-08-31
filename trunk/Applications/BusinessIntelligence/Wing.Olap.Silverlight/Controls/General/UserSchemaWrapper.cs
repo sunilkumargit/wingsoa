@@ -14,10 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.General.ClientServer;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class UserSchemaWrapper<SchemaType, ValueType>
     {

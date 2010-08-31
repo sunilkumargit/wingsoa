@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     internal class CellControlsCache
     {

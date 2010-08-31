@@ -29,7 +29,7 @@ using System.Text.RegularExpressions;
 using System.Collections.ObjectModel;
 using Wing.Olap.Core.Data;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     public class DataTable 
     {

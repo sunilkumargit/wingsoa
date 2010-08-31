@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.PivotGrid
+namespace Wing.Olap.Controls.PivotGrid
 {
     public enum ControlActionType
     {

@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.General.ItemControls
+namespace Wing.Olap.Controls.General.ItemControls
 {
     public class ErrorItemControl : ItemControlBase
     {

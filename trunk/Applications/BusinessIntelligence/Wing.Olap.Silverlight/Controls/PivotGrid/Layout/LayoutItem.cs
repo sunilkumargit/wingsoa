@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Layout
+namespace Wing.Olap.Controls.PivotGrid.Layout
 {
     /// <summary>
     /// Описатель элемента для расположения в сетке

@@ -22,7 +22,7 @@ using System.Threading;
 using System.Collections;
 using System.IO;
 
-namespace Wing.AgOlap.Controls.Combo
+namespace Wing.Olap.Controls.Combo
 {
     public partial class ImagePicker : UserControl
     {

@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     internal static class UriResources
     {

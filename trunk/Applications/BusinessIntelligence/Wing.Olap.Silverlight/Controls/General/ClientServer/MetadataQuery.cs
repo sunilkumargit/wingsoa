@@ -9,7 +9,7 @@ using System.Net;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Wing.AgOlap.Controls.General.ClientServer
+namespace Wing.Olap.Controls.General.ClientServer
 {
     public class MetadataQuery : OlapActionBase
     {

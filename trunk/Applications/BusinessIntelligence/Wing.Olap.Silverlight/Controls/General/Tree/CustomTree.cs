@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Controls;
 
-namespace Wing.AgOlap.Controls.General.Tree
+namespace Wing.Olap.Controls.General.Tree
 {
     public enum SpecialNodes
     {
@@ -35,7 +35,7 @@ namespace Wing.AgOlap.Controls.General.Tree
 
         ~CustomTree()
         {
-            Wing.AgOlap.Features.ScrollViewerMouseWheelSupport.RemoveMouseWheelSupport(this);
+            Wing.Olap.Features.ScrollViewerMouseWheelSupport.RemoveMouseWheelSupport(this);
         }
 
         void CustomTree_MouseEnter(object sender, MouseEventArgs e)
@@ -51,7 +51,7 @@ namespace Wing.AgOlap.Controls.General.Tree
             Scroller = base.GetTemplateChild("ScrollViewer") as ScrollViewer;
             if (Scroller != null)
             {
-                Wing.AgOlap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(Scroller, this);
+                Wing.Olap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(Scroller, this);
             }
         }
 

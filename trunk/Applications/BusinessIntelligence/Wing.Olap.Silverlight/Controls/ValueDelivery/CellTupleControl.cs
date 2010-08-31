@@ -17,10 +17,10 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using System.ServiceModel.Channels;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.Data;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.Data;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Controls.ValueDelivery
+namespace Wing.Olap.Controls.ValueDelivery
 {
     public class TupleItemArgs : EventArgs
     {

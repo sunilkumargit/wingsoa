@@ -15,12 +15,12 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.General.Tree;
 using System.Windows.Media.Imaging;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using System.Windows.Controls.Primitives;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     public class DragAreaItemArgs<T> : EventArgs
     {

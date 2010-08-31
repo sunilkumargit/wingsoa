@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Media;
 
-namespace Wing.AgOlap.Controls.ContextMenu
+namespace Wing.Olap.Controls.ContextMenu
 {
     [ScriptableType]
     public class MouseRightClick

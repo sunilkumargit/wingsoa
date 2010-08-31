@@ -5,16 +5,16 @@
 */
 
 using System;
-using Wing.AgOlap.Controls.General.ClientServer;
-using Wing.AgOlap.Controls.MemberChoice.ClientServer;
-using Wing.AgOlap.Controls.PivotGrid;
+using Wing.Olap.Controls.General.ClientServer;
+using Wing.Olap.Controls.MemberChoice.ClientServer;
+using Wing.Olap.Controls.PivotGrid;
 using System.Collections.Generic;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Providers;
 
-namespace Wing.AgOlap.Commands
+namespace Wing.Olap.Commands
 {
     public static class CommandHelper
     {
@@ -267,7 +267,7 @@ namespace Wing.AgOlap.Commands
             return args;
         }
 
-        public static PerformMemberActionArgs CreatePerformMemberActionArgs( 
+        public static PerformMemberActionArgs CreatePerformMemberActionArgs(
             MemberInfo member,
             int axisIndex,
             MemberActionType action,

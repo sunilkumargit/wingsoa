@@ -15,10 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.MemberChoice.Info;
-using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Controls.MemberChoice.Info;
+using Wing.Olap.Controls.General.ItemControls;
 
-namespace Wing.AgOlap.Controls.MemberChoice
+namespace Wing.Olap.Controls.MemberChoice
 {
     public class ItemSelectedEventArgs : EventArgs
     {

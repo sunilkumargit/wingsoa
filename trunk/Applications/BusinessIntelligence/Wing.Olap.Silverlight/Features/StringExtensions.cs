@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Features
+namespace Wing.Olap.Features
 {
     static class StringExtensions
     {

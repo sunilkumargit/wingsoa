@@ -11,7 +11,7 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:1688/OlapWebService.asmx"
+            <endpoint address="http://localhost:16580/OlapWebService.asmx"
                 binding="basicHttpBinding" bindingConfiguration="OlapWebServiceSoap"
                 contract="OlapWebService.OlapWebServiceSoap" name="OlapWebServiceSoap" />
         </client>

@@ -14,16 +14,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.General.ClientServer;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Controls.General.ClientServer;
+using Wing.Olap.Commands;
 using Wing.Olap.Core;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Controls.General.ItemControls;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class ServerExplorerCtrl : AgTreeControlBase
     {

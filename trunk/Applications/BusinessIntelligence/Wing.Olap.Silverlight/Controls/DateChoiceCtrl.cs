@@ -14,17 +14,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Commands;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.ValueDelivery;
-using Wing.AgOlap.Controls.PivotGrid.Data;
+using Wing.Olap.Controls.ValueDelivery;
+using Wing.Olap.Controls.PivotGrid.Data;
 using System.Globalization;
 using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class DateEventArgs : EventArgs
     {

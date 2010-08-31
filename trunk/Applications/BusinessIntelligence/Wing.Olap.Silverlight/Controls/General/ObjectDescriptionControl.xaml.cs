@@ -17,7 +17,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public partial class ObjectDescriptionControl : UserControl
     {

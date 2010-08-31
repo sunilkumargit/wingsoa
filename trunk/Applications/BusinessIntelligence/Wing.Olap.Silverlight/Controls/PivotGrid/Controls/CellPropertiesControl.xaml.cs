@@ -10,15 +10,15 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Controls.ValueDelivery;
-using Wing.AgOlap.Controls.Tab;
-using Wing.AgOlap.Controls.ToolBar;
-using Wing.AgOlap.Features;
+using Wing.Olap.Controls.ValueDelivery;
+using Wing.Olap.Controls.Tab;
+using Wing.Olap.Controls.ToolBar;
+using Wing.Olap.Features;
 using System.Text;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public partial class CellPropertiesControl : UserControl
     {
@@ -91,7 +91,7 @@ namespace Wing.AgOlap.Controls.PivotGrid.Controls
                     sb.Append(uniqueName);
                 }
             }
-            Wing.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
+            Wing.Olap.Features.Clipboard.SetClipboardText(sb.ToString());
         }
 
         CellInfo m_Cell;

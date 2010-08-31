@@ -10,13 +10,13 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Controls.General.ItemControls;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.ValueCopy;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.ValueCopy;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public enum PivotTableSortTypes
     { 

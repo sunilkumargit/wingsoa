@@ -15,15 +15,15 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.General.Tree;
 using System.Windows.Media.Imaging;
-using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
+using Wing.Olap.Controls.MdxDesigner.Wrappers;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.MemberChoice.Info;
+using Wing.Olap.Controls.MemberChoice.Info;
 using System.Text;
-using Wing.AgOlap.Controls.PivotGrid.Controls;
+using Wing.Olap.Controls.PivotGrid.Controls;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     public class Hierarchy_AreaItemControl : FilteredItemControl
     {

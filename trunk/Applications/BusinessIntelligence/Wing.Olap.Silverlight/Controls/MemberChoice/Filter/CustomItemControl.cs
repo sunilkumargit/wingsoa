@@ -14,10 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.General.ItemControls;
 
-namespace Wing.AgOlap.Controls.MemberChoice.Filter
+namespace Wing.Olap.Controls.MemberChoice.Filter
 {
     public enum CustomControlTypes 
     {

@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.General.DataGrid
+namespace Wing.Olap.Controls.General.DataGrid
 {
     public class IconDataGridColumn : DataGridTemplateColumn
     {

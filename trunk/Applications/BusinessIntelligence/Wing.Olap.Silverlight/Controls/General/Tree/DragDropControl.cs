@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 
-namespace Wing.AgOlap.Controls.General.Tree
+namespace Wing.Olap.Controls.General.Tree
 {
     public class DragDropControl : UserControl
     {

@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using System.Text;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers
+namespace Wing.Olap.Controls.MdxDesigner.CalculatedMembers
 {
     public class CalcMemberInfo : CalculationInfoBase
     {

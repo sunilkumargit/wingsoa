@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
 
-namespace Wing.AgOlap.Controls.ContextMenu
+namespace Wing.Olap.Controls.ContextMenu
 {
     public class MouseRightClickEventArgs : EventArgs
     {

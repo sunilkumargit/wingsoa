@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.Gauge
+namespace Wing.Olap.Controls.Gauge
 {
     [Description("Main gauge panel.  All gauges (radial, linear, digital panel, and state indicator) should be placed here. It can have flexible content layout. Any Silverlight panel object can be used as content of the gauge panel.")]
     public class Gauge : ContentControl

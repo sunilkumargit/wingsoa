@@ -14,10 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.MdxDesigner.Wrappers;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Filters
+namespace Wing.Olap.Controls.MdxDesigner.Filters
 {
     public class LabelFilterControl : FilterControlBase
     {
@@ -55,7 +55,7 @@ namespace Wing.AgOlap.Controls.MdxDesigner.Filters
             Grid.SetColumn(comboFilterType, 1);
 
             // Текстовое поле
-            text_1 = new Wing.AgOlap.Controls.General.RichTextBox() { Margin = new Thickness(5,0,0,0), Text = String.Empty };
+            text_1 = new Wing.Olap.Controls.General.RichTextBox() { Margin = new Thickness(5,0,0,0), Text = String.Empty };
             LayoutRoot.Children.Add(text_1);
             Grid.SetRow(text_1, 1);
             Grid.SetColumn(text_1, 2);
@@ -67,7 +67,7 @@ namespace Wing.AgOlap.Controls.MdxDesigner.Filters
             Grid.SetRow(lblAnd, 1);
 
             // Текстовое поле
-            text_2 = new Wing.AgOlap.Controls.General.RichTextBox() { Margin = new Thickness(5, 0, 0, 0), Text = String.Empty };
+            text_2 = new Wing.Olap.Controls.General.RichTextBox() { Margin = new Thickness(5, 0, 0, 0), Text = String.Empty };
             LayoutRoot.Children.Add(text_2);
             Grid.SetRow(text_2, 1);
             Grid.SetColumn(text_2, 4);

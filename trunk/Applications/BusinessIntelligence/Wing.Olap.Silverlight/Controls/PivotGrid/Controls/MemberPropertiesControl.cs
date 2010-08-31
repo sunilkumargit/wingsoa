@@ -8,16 +8,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.Tab;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.Tab;
+using Wing.Olap.Controls.ToolBar;
 using System.Text;
-using Wing.AgOlap.Features;
+using Wing.Olap.Features;
 using System.Collections.Generic;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public class MemberPropertiesControl : UserControl
     {
@@ -64,7 +64,7 @@ namespace Wing.AgOlap.Controls.PivotGrid.Controls
                     sb.Append(Environment.NewLine);
                 }
             }
-            Wing.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
+            Wing.Olap.Features.Clipboard.SetClipboardText(sb.ToString());
         }
 
         public void Initialize(MemberData member)

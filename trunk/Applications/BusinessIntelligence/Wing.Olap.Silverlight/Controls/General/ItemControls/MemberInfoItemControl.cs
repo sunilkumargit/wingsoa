@@ -14,11 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.PivotGrid.Data;
+using Wing.Olap.Controls.PivotGrid.Data;
 using System.Windows.Media.Imaging;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.General.ItemControls
+namespace Wing.Olap.Controls.General.ItemControls
 {
     public class MemberInfoItemControl : ItemControlBase
     {

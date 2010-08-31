@@ -16,10 +16,10 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.ValueCopy.Wrappers;
+using Wing.Olap.Controls.ValueCopy.Wrappers;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls.ValueCopy
+namespace Wing.Olap.Controls.ValueCopy
 {
     public class CoordinateItem : INotifyPropertyChanged
     {

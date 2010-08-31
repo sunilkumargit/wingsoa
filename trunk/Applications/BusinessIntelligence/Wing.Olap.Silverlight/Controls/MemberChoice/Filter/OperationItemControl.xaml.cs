@@ -15,12 +15,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.MemberChoice.ClientServer;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.MemberChoice.ClientServer;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.Buttons;
+using Wing.Olap.Controls.Buttons;
 
-namespace Wing.AgOlap.Controls.MemberChoice.Filter
+namespace Wing.Olap.Controls.MemberChoice.Filter
 {
     public partial class OperationItemControl : UserControl
     {

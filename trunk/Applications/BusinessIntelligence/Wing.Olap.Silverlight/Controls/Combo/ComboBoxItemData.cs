@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 
-namespace Wing.AgOlap.Controls.Combo
+namespace Wing.Olap.Controls.Combo
 {
     public class ComboBoxItemData : INotifyPropertyChanged
     {

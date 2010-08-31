@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls.Primitives;
 
-namespace Wing.AgOlap.Features
+namespace Wing.Olap.Features
 {
 	internal class MouseWheelSupport
 	{

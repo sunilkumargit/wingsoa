@@ -15,15 +15,15 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core;
-using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Controls.General.ClientServer;
 using Wing.Olap.Core.Providers.ClientServer;
 using Wing.ZipCompression;
 using System.Collections.Generic;
 using System.Linq;
-using Wing.AgOlap.Providers;
-using Wing.AgOlap.Controls.PivotGrid;
+using Wing.Olap.Providers;
+using Wing.Olap.Controls.PivotGrid;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
 	public class OlapDataLoader : IDataLoader
 	{
@@ -55,11 +55,11 @@ namespace Wing.AgOlap.Controls.General
             {
                 mdxQuery.SessionId = IdHolder[mdxQuery.Connection];
             }
-			service.PerformOlapServiceActionCompleted += new EventHandler<Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs>(service_PerformOlapServiceActionCompleted);
+			service.PerformOlapServiceActionCompleted += new EventHandler<Wing.Olap.OlapWebService.PerformOlapServiceActionCompletedEventArgs>(service_PerformOlapServiceActionCompleted);
 			service.PerformOlapServiceActionAsync(schema.ActionType.ToString(), XmlSerializationUtility.Obj2XmlStr(schema, Constants.XmlNamespace), state);
 		}
 
-		void service_PerformOlapServiceActionCompleted(object sender, Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
+		void service_PerformOlapServiceActionCompleted(object sender, Wing.Olap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
 		{
 			InvokeResultDescriptor result = null;
 			if (e.Error == null)

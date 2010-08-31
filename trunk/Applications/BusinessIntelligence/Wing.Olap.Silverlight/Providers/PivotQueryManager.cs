@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core;
-using Wing.AgOlap.Providers.MemberActions;
+using Wing.Olap.Providers.MemberActions;
 using Wing.Olap.Mdx.Compiler;
 using System.Text;
 using Wing.Olap.Mdx;
@@ -17,9 +17,9 @@ using System.Collections.Generic;
 using Wing.Olap.Core.Providers.ClientServer;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls;
+using Wing.Olap.Controls;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     public enum ServiceCommandType
     {

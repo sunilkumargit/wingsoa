@@ -15,13 +15,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using System.Reflection;
-using Wing.AgOlap.Controls.Forms;
-using Wing.AgOlap.Controls.Combo;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.Combo;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Conditions
+namespace Wing.Olap.Controls.PivotGrid.Conditions
 {
     public partial class CellConditionControl : UserControl
     {
@@ -60,12 +60,12 @@ namespace Wing.AgOlap.Controls.PivotGrid.Conditions
                 Scroller.Style = styleContainer.Resources["ScrollViewerGlowStyle"] as Style;
             }
 
-            Wing.AgOlap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(Scroller);
+            Wing.Olap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(Scroller);
         }
 
         ~CellConditionControl()
         {
-            Wing.AgOlap.Features.ScrollViewerMouseWheelSupport.RemoveMouseWheelSupport(Scroller);
+            Wing.Olap.Features.ScrollViewerMouseWheelSupport.RemoveMouseWheelSupport(Scroller);
         }
 
         CellCondition m_Condition = null;

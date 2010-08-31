@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Editors
+namespace Wing.Olap.Controls.PivotGrid.Editors
 {
     public interface ICustomCellEditor
     {

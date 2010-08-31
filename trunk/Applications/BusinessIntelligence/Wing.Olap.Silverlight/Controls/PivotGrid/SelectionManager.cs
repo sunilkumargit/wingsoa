@@ -15,9 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.PivotGrid.Controls;
+using Wing.Olap.Controls.PivotGrid.Controls;
 
-namespace Wing.AgOlap.Controls.PivotGrid
+namespace Wing.Olap.Controls.PivotGrid
 {
     public class SelectionManager<T>
     {

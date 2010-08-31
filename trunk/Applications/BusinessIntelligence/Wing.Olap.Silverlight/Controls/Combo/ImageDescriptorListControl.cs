@@ -14,11 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using System.Windows.Media.Imaging;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.General.Tree;
 
-namespace Wing.AgOlap.Controls.Combo
+namespace Wing.Olap.Controls.Combo
 {
     public class ImageDescriptor
     {

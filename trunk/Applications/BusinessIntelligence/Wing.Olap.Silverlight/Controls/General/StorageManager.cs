@@ -32,7 +32,7 @@ using System.Windows.Shapes;
 using Wing.Olap.Core;
 using Wing.ZipCompression;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class StorageManager : IStorageManager
     {
@@ -65,7 +65,7 @@ namespace Wing.AgOlap.Controls.General
 
         #region IStorageManager Members
 
-        void service_PerformStorageActionCompleted(object sender, Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
+        void service_PerformStorageActionCompleted(object sender, Wing.Olap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
         {
             InvokeResultDescriptor result = null;
             if (e.Error == null)
@@ -100,8 +100,8 @@ namespace Wing.AgOlap.Controls.General
 
             OlapWebService.OlapWebServiceSoapClient service =
              Services.ServiceManager.CreateService
-                         < Wing.AgOlap.OlapWebService.OlapWebServiceSoapClient
-                         , Wing.AgOlap.OlapWebService.OlapWebServiceSoap
+                         < Wing.Olap.OlapWebService.OlapWebServiceSoapClient
+                         , Wing.Olap.OlapWebService.OlapWebServiceSoap
                          >(URL);
             // ModifyEndPoint(service);
             service.PerformOlapServiceActionCompleted += service_PerformStorageActionCompleted;

@@ -16,9 +16,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 using System.Windows.Browser;
-using Wing.AgOlap.Features;
+using Wing.Olap.Features;
 
-namespace Wing.AgOlap.Controls.Forms
+namespace Wing.Olap.Controls.Forms
 {
     public enum DialogResult
     {

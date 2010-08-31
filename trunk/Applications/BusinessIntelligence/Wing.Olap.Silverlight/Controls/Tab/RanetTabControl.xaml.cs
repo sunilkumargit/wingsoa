@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.Tab
+namespace Wing.Olap.Controls.Tab
 {
     public partial class RanetTabControl : UserControl
     {

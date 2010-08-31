@@ -14,12 +14,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.MemberChoice.Info;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.MemberChoice.Info;
 using System.Collections.Generic;
 using Wing.Olap.Core.Data;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class MemberChoicePopUp : AgPopUpControlBase
     {

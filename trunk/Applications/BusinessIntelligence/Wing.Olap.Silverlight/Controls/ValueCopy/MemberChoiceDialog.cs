@@ -14,10 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.Forms;
-using Wing.AgOlap.Controls.Buttons;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.Buttons;
 
-namespace Wing.AgOlap.Controls.ValueCopy
+namespace Wing.Olap.Controls.ValueCopy
 {
     public class MemberChoiceDialog : IChoiceDialog
     {

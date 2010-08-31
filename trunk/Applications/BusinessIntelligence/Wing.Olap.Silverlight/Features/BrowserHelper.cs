@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Browser;
 
-namespace Wing.AgOlap.Features
+namespace Wing.Olap.Features
 {
     public class BrowserHelper
     {

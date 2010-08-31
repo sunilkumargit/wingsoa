@@ -4,7 +4,7 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d"
-	x:Class="Wing.AgOlap.Controls.Tab.TabToolBar" d:DesignHeight="27.25" VerticalAlignment="Stretch" d:DesignWidth="122.75" >
+	x:Class="Wing.Olap.Controls.Tab.TabToolBar" d:DesignHeight="27.25" VerticalAlignment="Stretch" d:DesignWidth="122.75" >
 
 	<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" MinHeight="22" MaxHeight="22" x:Name="LayoutRoot">
 		<!--<Button HorizontalAlignment="Right" Width="20" Content="A" Style="{StaticResource ButtonToolBar}" Height="20" Margin="4,0,1,0"/>

@@ -7,9 +7,9 @@
 using System;
 using System.Collections.Generic;
 using Wing.Olap.Mdx;
-using Wing.AgOlap.Controls;
+using Wing.Olap.Controls;
 
-namespace Wing.AgOlap.Providers.MemberActions
+namespace Wing.Olap.Providers.MemberActions
 {
     public abstract class MemberAction
     {

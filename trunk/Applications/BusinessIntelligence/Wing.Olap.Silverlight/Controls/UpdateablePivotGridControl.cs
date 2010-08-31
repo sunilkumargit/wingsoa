@@ -17,37 +17,37 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Commands;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.PivotGrid.Data;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.PivotGrid.Data;
+using Wing.Olap.Controls.General;
 using System.Windows.Controls.Primitives;
-using Wing.AgOlap.Controls.DataSourceInfo;
-using Wing.AgOlap.Features;
+using Wing.Olap.Controls.DataSourceInfo;
+using Wing.Olap.Features;
 using System.IO.IsolatedStorage;
 using System.IO;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.ToolBar;
-using Wing.AgOlap.Controls.PivotGrid.Controls;
-using Wing.AgOlap.Controls.PivotGrid;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.ToolBar;
+using Wing.Olap.Controls.PivotGrid.Controls;
+using Wing.Olap.Controls.PivotGrid;
 using System.Threading;
-using Wing.AgOlap.Controls.Forms;
-using Wing.AgOlap.Controls.PivotGrid.Conditions;
-using Wing.AgOlap.Controls.ValueDelivery;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.PivotGrid.Conditions;
+using Wing.Olap.Controls.ValueDelivery;
 using System.Globalization;
 using System.Text;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.General.ClientServer;
-using Wing.AgOlap.Controls.MemberChoice.ClientServer;
-using Wing.AgOlap.Controls.ValueCopy;
+using Wing.Olap.Controls.General.ClientServer;
+using Wing.Olap.Controls.MemberChoice.ClientServer;
+using Wing.Olap.Controls.ValueCopy;
 using Wing.Olap.Core.Providers;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.AgOlap.Providers;
-using Wing.AgOlap.Controls.Data;
+using Wing.Olap.Providers;
+using Wing.Olap.Controls.Data;
 using Wing.Olap.Core.Storage;
-using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Controls.ContextMenu;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
 	public partial class UpdateablePivotGridControl : AgControlBase
 	{
@@ -1437,7 +1437,7 @@ namespace Wing.AgOlap.Controls
 			if (!PivotGrid.CanEdit || !PivotGrid.EditMode)
 				return;
 
-			String text = Wing.AgOlap.Features.Clipboard.GetClipboardText();
+			String text = Wing.Olap.Features.Clipboard.GetClipboardText();
 			if (!String.IsNullOrEmpty(text))
 			{
 				// В буфере ячейки хранятся разделенные табуляцией и переходом на новую строку. 
@@ -1683,7 +1683,7 @@ namespace Wing.AgOlap.Controls
 						sb.Append(Environment.NewLine);
 					}
 
-					Wing.AgOlap.Features.Clipboard.SetClipboardText(sb.ToString());
+					Wing.Olap.Features.Clipboard.SetClipboardText(sb.ToString());
 				}
 			}
 		}
@@ -2001,7 +2001,7 @@ namespace Wing.AgOlap.Controls
 			}
 		}
 
-		//void UseChangesCasheButton_SaveChanges_DialogClosed(object sender, Wing.AgOlap.Controls.Forms.DialogResultArgs e)
+		//void UseChangesCasheButton_SaveChanges_DialogClosed(object sender, Wing.Olap.Controls.Forms.DialogResultArgs e)
 		//{
 		//    dlg_CloseDialog(e.Result);
 		//    if (UseChangesCashe != UseChangesCasheButton.IsChecked.Value)
@@ -2026,7 +2026,7 @@ namespace Wing.AgOlap.Controls
 			UpdateEditToolBarButtons(true);
 		}
 
-		//void EditButton_SaveChanges_DialogClosed(object sender, Wing.AgOlap.Controls.Forms.DialogResultArgs e)
+		//void EditButton_SaveChanges_DialogClosed(object sender, Wing.Olap.Controls.Forms.DialogResultArgs e)
 		//{
 		//    dlg_CloseDialog(e.Result);
 		//    if (EditMode != EditButton.IsChecked.Value)
@@ -2704,7 +2704,7 @@ namespace Wing.AgOlap.Controls
 			}
 		}
 
-		//void RunService_SaveChanges_DialogClosed(object sender, Wing.AgOlap.Controls.Forms.DialogResultArgs e)
+		//void RunService_SaveChanges_DialogClosed(object sender, Wing.Olap.Controls.Forms.DialogResultArgs e)
 		//{
 		//    dlg_CloseDialog(e.Result);
 

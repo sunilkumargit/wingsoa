@@ -1,8 +1,8 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.General.PropertiesListControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.General.PropertiesListControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
     xmlns:my="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
-    xmlns:data="clr-namespace:Wing.AgOlap.Controls.Data"
+    xmlns:data="clr-namespace:Wing.Olap.Controls.Data"
 >
 	<!--	/*   
     Copyright (C) 2009 Galaktika Corporation ZAO

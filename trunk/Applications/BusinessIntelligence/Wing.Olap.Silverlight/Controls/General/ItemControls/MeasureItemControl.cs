@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
 
-namespace Wing.AgOlap.Controls.General.ItemControls
+namespace Wing.Olap.Controls.General.ItemControls
 {
     public class MeasureItemControl : ItemControlBase
     {

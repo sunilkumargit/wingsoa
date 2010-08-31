@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.Combo.ImageItemControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.Combo.ImageItemControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
     >

@@ -11,10 +11,10 @@ using System.Text;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls;
+using Wing.Olap.Controls;
 using Wing.Olap.Core;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     public class QueryProvider
     {

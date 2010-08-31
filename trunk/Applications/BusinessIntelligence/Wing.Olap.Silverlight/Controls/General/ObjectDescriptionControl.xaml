@@ -1,7 +1,7 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.General.ObjectDescriptionControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.General.ObjectDescriptionControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:General="clr-namespace:Wing.AgOlap.Controls.General" 
+    xmlns:General="clr-namespace:Wing.Olap.Controls.General" 
     >
 	<!--	/*   
     Copyright (C) 2009 Galaktika Corporation ZAO

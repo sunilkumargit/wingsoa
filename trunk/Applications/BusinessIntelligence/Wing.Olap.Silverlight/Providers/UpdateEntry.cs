@@ -17,12 +17,12 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     /// <summary>
     /// Класс, задающий правило обновления для ячейки
     /// </summary> 
-    public class UpdateEntry : Wing.AgOlap.Controls.General.ICloneable
+    public class UpdateEntry : Wing.Olap.Controls.General.ICloneable
     {
         public UpdateEntry()
         {

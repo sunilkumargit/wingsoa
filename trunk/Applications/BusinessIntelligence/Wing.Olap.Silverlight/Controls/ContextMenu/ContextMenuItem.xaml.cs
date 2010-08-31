@@ -17,7 +17,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.ContextMenu
+namespace Wing.Olap.Controls.ContextMenu
 {
     public partial class ContextMenuItem : UserControl
     {

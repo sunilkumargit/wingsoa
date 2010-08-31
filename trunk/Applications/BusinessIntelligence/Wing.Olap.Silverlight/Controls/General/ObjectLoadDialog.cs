@@ -14,15 +14,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.Forms;
+using Wing.Olap.Controls.Forms;
 using Wing.Olap.Core;
 using Wing.Olap.Core.Storage;
-using Wing.AgOlap.Controls.ValueCopy.Wrappers;
+using Wing.Olap.Controls.ValueCopy.Wrappers;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.Storage;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.Storage;
+using Wing.Olap.Controls.ToolBar;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class ObjectLoadDialog
     {

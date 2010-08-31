@@ -1,7 +1,7 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.General.Tree.WaitTreeControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.General.Tree.WaitTreeControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:controls="clr-namespace:Wing.AgOlap.Controls.General"
+    xmlns:controls="clr-namespace:Wing.Olap.Controls.General"
 >
     <Grid x:Name="LayoutRoot">
         <Grid.ColumnDefinitions>

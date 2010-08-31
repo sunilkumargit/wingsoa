@@ -14,8 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Commands;
 using Wing.Olap.Core;
 using Wing.Olap.Core.Data;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ using System.Windows.Controls.Primitives;
 using System.Text;
 using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class DatePickerEx : DatePicker
     {

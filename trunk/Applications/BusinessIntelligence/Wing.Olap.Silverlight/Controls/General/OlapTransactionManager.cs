@@ -9,10 +9,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
-using Wing.AgOlap.Providers;
-using Wing.AgOlap.Controls.PivotGrid;
+using Wing.Olap.Providers;
+using Wing.Olap.Controls.PivotGrid;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public static class OlapTransactionManager
     {

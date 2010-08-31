@@ -14,11 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.Forms;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.General.Tree;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class PopUpContainerControl : UserControl
     {

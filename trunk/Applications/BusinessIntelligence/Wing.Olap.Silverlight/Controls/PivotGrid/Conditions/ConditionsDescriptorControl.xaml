@@ -1,8 +1,8 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.PivotGrid.Conditions.ConditionsDescriptorControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.PivotGrid.Conditions.ConditionsDescriptorControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:conditions="clr-namespace:Wing.AgOlap.Controls.PivotGrid.Conditions"
-    xmlns:controls="clr-namespace:Wing.AgOlap.Controls.General"         
+    xmlns:conditions="clr-namespace:Wing.Olap.Controls.PivotGrid.Conditions"
+    xmlns:controls="clr-namespace:Wing.Olap.Controls.General"         
     >
     <Grid x:Name="LayoutRoot" Background="White">
         <Grid.RowDefinitions>

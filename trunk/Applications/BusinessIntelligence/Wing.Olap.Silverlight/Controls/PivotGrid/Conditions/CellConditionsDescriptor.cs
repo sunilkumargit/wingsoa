@@ -23,7 +23,7 @@ using System.Windows.Media.Imaging;
 using Wing.Json;
 using Wing.Olap.Core.Data;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Conditions
+namespace Wing.Olap.Controls.PivotGrid.Conditions
 {
     public class CellConditionsDescriptor
     {

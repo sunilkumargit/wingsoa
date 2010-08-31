@@ -16,9 +16,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
 using System.Windows.Media.Imaging;
-using Wing.AgOlap.Controls.MdxDesigner.Wrappers;
+using Wing.Olap.Controls.MdxDesigner.Wrappers;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     public class CalculatedMember_AreaItemControl : InfoItemControl
     {

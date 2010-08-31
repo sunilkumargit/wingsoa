@@ -14,17 +14,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.General.ClientServer;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.General.ClientServer;
+using Wing.Olap.Commands;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core;
 using System.Collections.Generic;
 using System.Windows.Controls.Primitives;
-using Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers;
+using Wing.Olap.Controls.MdxDesigner.CalculatedMembers;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
 
     public class CubeBrowserCtrl : OlapBrowserControl

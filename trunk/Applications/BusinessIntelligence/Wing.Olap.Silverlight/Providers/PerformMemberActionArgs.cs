@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using Wing.Olap.Core.Providers.ClientServer;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     public class PerformMemberActionArgs
     {

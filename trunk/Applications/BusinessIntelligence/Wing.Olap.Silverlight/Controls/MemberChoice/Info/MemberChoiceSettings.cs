@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using Wing.Olap.Core.Data;
 
-namespace Wing.AgOlap.Controls.MemberChoice.Info
+namespace Wing.Olap.Controls.MemberChoice.Info
 {
     public class MemberChoiceSettings
     {

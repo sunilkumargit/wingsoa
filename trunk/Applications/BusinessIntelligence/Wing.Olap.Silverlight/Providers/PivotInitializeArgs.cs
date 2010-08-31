@@ -7,7 +7,7 @@
 using System;
 using System.Net;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     public class PivotInitializeArgs
     {

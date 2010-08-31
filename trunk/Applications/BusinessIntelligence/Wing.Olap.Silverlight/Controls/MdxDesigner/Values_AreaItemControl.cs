@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     public class Values_AreaItemControl : AreaItemControl
     {

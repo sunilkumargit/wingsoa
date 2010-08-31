@@ -14,9 +14,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.Buttons;
+using Wing.Olap.Controls.Buttons;
 
-namespace Wing.AgOlap.Controls.Forms
+namespace Wing.Olap.Controls.Forms
 {
     public enum ModalDialogStyles
     { 

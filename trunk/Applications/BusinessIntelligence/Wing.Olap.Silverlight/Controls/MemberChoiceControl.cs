@@ -18,27 +18,27 @@ using System.Windows.Shapes;
 using System.Text;
 using System.Windows.Media.Imaging;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Controls.MemberChoice.Info;
+using Wing.Olap.Controls.MemberChoice.Info;
 using System.ComponentModel;
-using Wing.AgOlap.Controls.MemberChoice.ClientServer;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.MemberChoice.ClientServer;
+using Wing.Olap.Controls.General.Tree;
 using System.Threading;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Commands;
 using Wing.Olap.Core;
-using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Controls.General.ClientServer;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.MemberChoice.Filter;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.ToolBar;
-using Wing.AgOlap.Controls.MemberChoice;
-using Wing.AgOlap.Controls.General.ItemControls;
-using Wing.AgOlap.Controls.Tab;
+using Wing.Olap.Controls.MemberChoice.Filter;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.ToolBar;
+using Wing.Olap.Controls.MemberChoice;
+using Wing.Olap.Controls.General.ItemControls;
+using Wing.Olap.Controls.Tab;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Providers;
 using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     // Подумать:
     // Как сделать переход из дерева найденных на дерево выбора, по двойному клику идет раскрытие узла - значит это нам не подходит

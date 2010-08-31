@@ -11,7 +11,7 @@ using System.Text;
 using Wing.Olap.Mdx;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Providers.MemberActions
+namespace Wing.Olap.Providers.MemberActions
 {
     public class HistoryItem4MdxQuery : IHistoryItem<HistoryItem4MdxQuery>
     {

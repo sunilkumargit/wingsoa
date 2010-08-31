@@ -18,7 +18,7 @@ using Wing.Olap.Core.Metadata;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Wrappers
+namespace Wing.Olap.Controls.MdxDesigner.Wrappers
 {
     [XmlInclude(typeof(NamedSet_AreaItemWrapper))]
     [XmlInclude(typeof(Calculated_AreaItemWrapper))]

@@ -24,7 +24,7 @@
 //using System.Text;
 //using Wing.Olap.Mdx;
 
-//namespace Wing.AgOlap.Providers.MemberActions
+//namespace Wing.Olap.Providers.MemberActions
 //{
 //  public class DrillActionContainer // : IMdxFastClonable
 //  {

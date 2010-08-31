@@ -9,9 +9,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers
+namespace Wing.Olap.Controls.MdxDesigner.CalculatedMembers
 {
     public partial class NamedSetControl : UserControl
     {

@@ -10,7 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.PivotGrid
+namespace Wing.Olap.Controls.PivotGrid
 {
     public class SortByMeasureDescriptor : SortDescriptor
     {

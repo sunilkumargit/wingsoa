@@ -10,7 +10,7 @@ using System.Collections.Specialized;
 using System.Collections.Generic;
 using Wing.Olap.Core.Data;
 
-namespace Wing.AgOlap.Controls.MemberChoice.Info
+namespace Wing.Olap.Controls.MemberChoice.Info
 {
     /// <summary>
     /// Summary description for RootOlapMemberInfo.

@@ -1,7 +1,7 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.Forms.FloatingWindowControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.Forms.FloatingWindowControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:controls="clr-namespace:Wing.AgOlap.Controls.General" 
+    xmlns:controls="clr-namespace:Wing.Olap.Controls.General" 
 MinWidth="100" MinHeight="50">
 	<!--	/*   
     Copyright (C) 2009 Galaktika Corporation ZAO

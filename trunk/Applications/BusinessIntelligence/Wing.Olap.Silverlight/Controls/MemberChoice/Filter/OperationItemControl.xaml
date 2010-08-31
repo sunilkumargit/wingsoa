@@ -1,8 +1,8 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.MemberChoice.Filter.OperationItemControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.MemberChoice.Filter.OperationItemControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
     xmlns:plex="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
-    xmlns:combo="clr-namespace:Wing.AgOlap.Controls.Combo"         
+    xmlns:combo="clr-namespace:Wing.Olap.Controls.Combo"         
     Height="22">
 	<!--	/*   
     Copyright (C) 2009 Galaktika Corporation ZAO

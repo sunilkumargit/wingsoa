@@ -16,11 +16,11 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
-using Wing.AgOlap.Features;
+using Wing.Olap.Features;
 using System.Windows.Browser;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Controls.ContextMenu
+namespace Wing.Olap.Controls.ContextMenu
 {
     public partial class CustomContextMenu : UserControl
     {

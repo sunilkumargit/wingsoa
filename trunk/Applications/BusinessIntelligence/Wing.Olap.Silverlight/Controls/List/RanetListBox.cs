@@ -5,7 +5,7 @@
 */
 using System.Windows.Controls;
 
-namespace Wing.AgOlap.Controls.List
+namespace Wing.Olap.Controls.List
 {
     public class RanetListBox : ListBox
     {
@@ -22,14 +22,14 @@ namespace Wing.AgOlap.Controls.List
             Scroller = base.GetTemplateChild("ScrollViewer") as ScrollViewer;
             if (Scroller != null)
             {
-                Wing.AgOlap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(Scroller, this);
+                Wing.Olap.Features.ScrollViewerMouseWheelSupport.AddMouseWheelSupport(Scroller, this);
             }
         }
 
 
         ~RanetListBox()
         {
-            Wing.AgOlap.Features.ScrollViewerMouseWheelSupport.RemoveMouseWheelSupport(this);
+            Wing.Olap.Features.ScrollViewerMouseWheelSupport.RemoveMouseWheelSupport(this);
         }
     }
 }

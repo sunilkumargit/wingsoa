@@ -14,11 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Controls.ContextMenu;
 using System.Windows.Browser;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Controls.Gauge
+namespace Wing.Olap.Controls.Gauge
 {
 	public class RoundGauge : Canvas
 	{

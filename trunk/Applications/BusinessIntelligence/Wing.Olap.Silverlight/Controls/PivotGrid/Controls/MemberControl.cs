@@ -14,19 +14,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.PivotGrid.Data;
+using Wing.Olap.Controls.PivotGrid.Data;
 using System.Windows.Browser;
 using System.Collections.Generic;
 using System.Text;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Controls.ContextMenu;
 using Wing.Olap.Core.Providers.ClientServer;
 using System.Windows.Media.Imaging;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Providers;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public class MemberActionEventArgs : EventArgs
     {

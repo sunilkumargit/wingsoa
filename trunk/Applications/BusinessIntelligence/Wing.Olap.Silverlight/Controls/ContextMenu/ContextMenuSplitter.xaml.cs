@@ -17,7 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.ContextMenu
+namespace Wing.Olap.Controls.ContextMenu
 {
     public partial class ContextMenuSplitter : UserControl
     {

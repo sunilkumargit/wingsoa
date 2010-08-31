@@ -14,25 +14,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.ToolBar;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.AgOlap.Commands;
+using Wing.Olap.Commands;
 using Wing.Olap.Core;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Providers;
 using System.Collections.Generic;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.General.ClientServer;
-using Wing.AgOlap.Controls.PivotGrid;
-using Wing.AgOlap.Controls.ValueCopy;
-using Wing.AgOlap.Controls.ValueCopy.Wrappers;
+using Wing.Olap.Controls.General.ClientServer;
+using Wing.Olap.Controls.PivotGrid;
+using Wing.Olap.Controls.ValueCopy;
+using Wing.Olap.Controls.ValueCopy.Wrappers;
 using System.IO.IsolatedStorage;
 using System.IO;
-using Wing.AgOlap.Controls.Forms;
+using Wing.Olap.Controls.Forms;
 using Wing.Olap.Core.Storage;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class ValueCopyDesignerControl : AgControlBase
     {

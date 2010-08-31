@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 using Wing.Olap.Core.Providers;
 using Wing.Olap.Core.Data;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public partial class DrillThroughControl : UserControl
     {

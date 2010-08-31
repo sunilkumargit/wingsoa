@@ -14,22 +14,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.Tab;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Features;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.Tab;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Features;
+using Wing.Olap.Controls.ToolBar;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Providers;
 
-namespace Wing.AgOlap.Controls.DataSourceInfo
+namespace Wing.Olap.Controls.DataSourceInfo
 {
     public class DataSourceInfoControl : UserControl
     {
-        Wing.AgOlap.Controls.General.RichTextBox connectionString;
-        Wing.AgOlap.Controls.General.RichTextBox mdxQuery;
-        Wing.AgOlap.Controls.General.RichTextBox movedAxes_MdxQuery;
-        Wing.AgOlap.Controls.General.RichTextBox updateScript;
+        Wing.Olap.Controls.General.RichTextBox connectionString;
+        Wing.Olap.Controls.General.RichTextBox mdxQuery;
+        Wing.Olap.Controls.General.RichTextBox movedAxes_MdxQuery;
+        Wing.Olap.Controls.General.RichTextBox updateScript;
         CheckBox parseMdx;
         CheckBox parseMovedAxesMdx;
         CheckBox parseUpdateScript;
@@ -50,7 +50,7 @@ namespace Wing.AgOlap.Controls.DataSourceInfo
             TextBlock connectionString_Label = new TextBlock() { Text = Localization.Connection + ":" };
             LayoutRoot.Children.Add(connectionString_Label);
 
-            connectionString = new Wing.AgOlap.Controls.General.RichTextBox() {IsReadOnly = true };
+            connectionString = new Wing.Olap.Controls.General.RichTextBox() {IsReadOnly = true };
             connectionString.Height = 22;
             connectionString.Margin = new Thickness(0, 5, 0, 0);
             LayoutRoot.Children.Add(connectionString);
@@ -73,7 +73,7 @@ namespace Wing.AgOlap.Controls.DataSourceInfo
             queryTabLayoutRoot.RowDefinitions.Add(new RowDefinition());
             queryTabLayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
-            mdxQuery = new Wing.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
+            mdxQuery = new Wing.Olap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
             mdxQuery.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             mdxQuery.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             queryTabLayoutRoot.Children.Add(mdxQuery);
@@ -98,7 +98,7 @@ namespace Wing.AgOlap.Controls.DataSourceInfo
             movedAxesTabLayoutRoot.RowDefinitions.Add(new RowDefinition());
             movedAxesTabLayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
-            movedAxes_MdxQuery = new Wing.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
+            movedAxes_MdxQuery = new Wing.Olap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
             movedAxes_MdxQuery.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             movedAxes_MdxQuery.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             movedAxesTabLayoutRoot.Children.Add(movedAxes_MdxQuery);
@@ -123,7 +123,7 @@ namespace Wing.AgOlap.Controls.DataSourceInfo
             scriptTabLayoutRoot.RowDefinitions.Add(new RowDefinition());
             scriptTabLayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
-            updateScript = new Wing.AgOlap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
+            updateScript = new Wing.Olap.Controls.General.RichTextBox() { AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, IsReadOnly = true };
             updateScript.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             updateScript.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             scriptTabLayoutRoot.Children.Add(updateScript);
@@ -155,17 +155,17 @@ namespace Wing.AgOlap.Controls.DataSourceInfo
         {
             if (queryInfoTabControl.TabCtrl.SelectedIndex == 0)
             {
-                Wing.AgOlap.Features.Clipboard.SetClipboardText(mdxQuery.Text);
+                Wing.Olap.Features.Clipboard.SetClipboardText(mdxQuery.Text);
                 return;
             }
             if (queryInfoTabControl.TabCtrl.SelectedIndex == 1)
             {
-                Wing.AgOlap.Features.Clipboard.SetClipboardText(movedAxes_MdxQuery.Text);
+                Wing.Olap.Features.Clipboard.SetClipboardText(movedAxes_MdxQuery.Text);
                 return;
             }
             if (queryInfoTabControl.TabCtrl.SelectedIndex == 2)
             {
-                Wing.AgOlap.Features.Clipboard.SetClipboardText(updateScript.Text);
+                Wing.Olap.Features.Clipboard.SetClipboardText(updateScript.Text);
                 return;
             }
         }

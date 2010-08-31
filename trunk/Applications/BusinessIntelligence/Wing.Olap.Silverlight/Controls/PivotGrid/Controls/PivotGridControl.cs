@@ -15,21 +15,21 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.PivotGrid.Layout;
+using Wing.Olap.Controls.PivotGrid.Layout;
 using System.Collections.Generic;
 using Wing.Olap.Core.Data;
 using System.Windows.Controls.Primitives;
-using Wing.AgOlap.Controls.ContextMenu;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.PivotGrid.Conditions;
-using Wing.AgOlap.Controls.PivotGrid.Editors;
-using Wing.AgOlap.Features;
+using Wing.Olap.Controls.ContextMenu;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.PivotGrid.Conditions;
+using Wing.Olap.Controls.PivotGrid.Editors;
+using Wing.Olap.Features;
 using System.Windows.Browser;
 using Wing.Olap.Core.Providers.ClientServer;
 using Wing.Olap.Core;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Providers;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public delegate void PerformMemberActionEventHandler(object sender, PerformMemberActionArgs args);
     public delegate void MemberActionEventHandler(object sender, MemberActionEventArgs args);

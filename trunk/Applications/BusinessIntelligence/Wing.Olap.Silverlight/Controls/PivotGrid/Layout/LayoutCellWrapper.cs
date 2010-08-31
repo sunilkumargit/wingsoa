@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Layout
+namespace Wing.Olap.Controls.PivotGrid.Layout
 {
     /// <summary>
     /// Описатель для ячейки сетки расположения элементов. В ячейке может быть коллекция элементов

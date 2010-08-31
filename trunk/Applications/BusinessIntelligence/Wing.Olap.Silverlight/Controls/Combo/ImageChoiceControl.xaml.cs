@@ -22,7 +22,7 @@ using System.Collections;
 using System.Windows.Media.Imaging;
 using System.Threading;
 
-namespace Wing.AgOlap.Controls.Combo
+namespace Wing.Olap.Controls.Combo
 {
     public partial class ImageChoiceControl : UserControl
     {
@@ -37,10 +37,10 @@ namespace Wing.AgOlap.Controls.Combo
             ImagePreviewCtrl.Stretch = Stretch.None;
             ImagePreviewCtrl.Width = ImagePreviewCtrl.Height = 0;
             comboAssembly.ItemsComboBox.SelectionChanged += new SelectionChangedEventHandler(ItemsComboBox_SelectionChanged);
-            ImagesList.SelectionChanged += new EventHandler<Wing.AgOlap.Controls.General.SelectionChangedEventArgs<ImageDescriptor>>(ImagesList_SelectionChanged);
+            ImagesList.SelectionChanged += new EventHandler<Wing.Olap.Controls.General.SelectionChangedEventArgs<ImageDescriptor>>(ImagesList_SelectionChanged);
         }
 
-        void ImagesList_SelectionChanged(object sender, Wing.AgOlap.Controls.General.SelectionChangedEventArgs<ImageDescriptor> e)
+        void ImagesList_SelectionChanged(object sender, Wing.Olap.Controls.General.SelectionChangedEventArgs<ImageDescriptor> e)
         {
             BitmapImage img = null;
             if (e != null && e.NewValue != null)

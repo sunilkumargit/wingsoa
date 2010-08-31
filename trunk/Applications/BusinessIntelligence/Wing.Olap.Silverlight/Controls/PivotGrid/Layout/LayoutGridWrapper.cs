@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Layout
+namespace Wing.Olap.Controls.PivotGrid.Layout
 {
     /// <summary>
     /// Враппер, описывающий сетку расположения элементов

@@ -15,10 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.General.ItemControls
+namespace Wing.Olap.Controls.General.ItemControls
 {
     public class MemberItemControl : ItemControlBase
     {

@@ -15,9 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.List;
+using Wing.Olap.Controls.List;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     public class AreaItemArgs : EventArgs
     {

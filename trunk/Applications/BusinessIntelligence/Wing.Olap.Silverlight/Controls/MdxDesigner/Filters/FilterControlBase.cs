@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Filters
+namespace Wing.Olap.Controls.MdxDesigner.Filters
 {
     public abstract class FilterControlBase : UserControl
     {

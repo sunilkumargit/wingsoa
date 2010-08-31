@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.PivotGrid.Controls.DrillThroughControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.PivotGrid.Controls.DrillThroughControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:tuple="clr-namespace:Wing.AgOlap.Controls.ValueDelivery"
-    xmlns:controls="clr-namespace:Wing.AgOlap.Controls.General"
-    xmlns:data="clr-namespace:Wing.AgOlap.Controls.Data"
+    xmlns:tuple="clr-namespace:Wing.Olap.Controls.ValueDelivery"
+    xmlns:controls="clr-namespace:Wing.Olap.Controls.General"
+    xmlns:data="clr-namespace:Wing.Olap.Controls.Data"
     xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
     >
     <Grid x:Name="LayoutRoot" Background="White">

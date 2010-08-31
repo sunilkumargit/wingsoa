@@ -14,10 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.Combo;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.Combo;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Filters
+namespace Wing.Olap.Controls.MdxDesigner.Filters
 {
     public class ValueFilterTypeCombo : UserControl
     {

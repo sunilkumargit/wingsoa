@@ -14,23 +14,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.General.Tree;
 using System.Collections.Generic;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers;
+using Wing.Olap.Controls.MdxDesigner.CalculatedMembers;
 using System.Windows.Controls.Primitives;
 using Wing.Olap.Core;
-using Wing.AgOlap.Commands;
-using Wing.AgOlap.Controls.General.ClientServer;
-using Wing.AgOlap.Controls.MemberChoice.ClientServer;
-using Wing.AgOlap.Controls.MemberChoice;
+using Wing.Olap.Commands;
+using Wing.Olap.Controls.General.ClientServer;
+using Wing.Olap.Controls.MemberChoice.ClientServer;
+using Wing.Olap.Controls.MemberChoice;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Controls.ValueCopy;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Controls.ValueCopy;
+using Wing.Olap.Providers;
 using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Wing.AgOlap.Controls
+namespace Wing.Olap.Controls
 {
     public class DragNodeArgs<T> : EventArgs
     {

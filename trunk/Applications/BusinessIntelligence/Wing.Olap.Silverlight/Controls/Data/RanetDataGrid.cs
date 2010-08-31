@@ -9,10 +9,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Data;
-using Wing.AgOlap.Providers;
+using Wing.Olap.Providers;
 using System.Windows.Data;
 
-namespace Wing.AgOlap.Controls.Data
+namespace Wing.Olap.Controls.Data
 {
     public class RanetDataGrid : DataGrid
     {

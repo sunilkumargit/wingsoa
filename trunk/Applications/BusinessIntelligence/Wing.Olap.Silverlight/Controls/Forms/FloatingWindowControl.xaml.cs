@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.Forms
+namespace Wing.Olap.Controls.Forms
 {
     public partial class FloatingWindowControl : UserControl
     {

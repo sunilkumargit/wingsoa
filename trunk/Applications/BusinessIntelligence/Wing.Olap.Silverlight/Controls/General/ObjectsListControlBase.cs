@@ -8,13 +8,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.Storage;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.Storage;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.ToolBar;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class CustomEventArgs<T> : EventArgs
     {

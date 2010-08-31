@@ -14,15 +14,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.General;
 using System.Windows.Media.Imaging;
-using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Controls.ContextMenu;
 using System.Windows.Browser;
-using Wing.AgOlap.Controls.PivotGrid.Controls;
+using Wing.Olap.Controls.PivotGrid.Controls;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     public class PositionArgs : EventArgs
     { 

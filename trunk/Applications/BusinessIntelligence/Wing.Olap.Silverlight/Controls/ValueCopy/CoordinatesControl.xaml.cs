@@ -15,11 +15,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.Forms;
-using Wing.AgOlap.Controls.MemberChoice.Info;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.MemberChoice.Info;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Controls.ValueCopy
+namespace Wing.Olap.Controls.ValueCopy
 {
     public class GetIDataLoaderArgs : EventArgs
     {

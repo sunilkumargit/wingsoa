@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.Buttons
+namespace Wing.Olap.Controls.Buttons
 {
     public class RanetButton : Button
     {

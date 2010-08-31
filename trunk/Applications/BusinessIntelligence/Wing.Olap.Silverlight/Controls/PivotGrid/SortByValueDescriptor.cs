@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 using Wing.Olap.Core.Providers;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls.PivotGrid
+namespace Wing.Olap.Controls.PivotGrid
 {
     /// <summary>
     /// Описывает сортировку оси по конкретному таплу

@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using Wing.Olap.Mdx;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.PivotGrid;
+using Wing.Olap.Controls.PivotGrid;
 
-namespace Wing.AgOlap.Providers.MemberActions
+namespace Wing.Olap.Providers.MemberActions
 {
     internal class AxisInfo
     {

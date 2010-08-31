@@ -14,11 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Features;
+using Wing.Olap.Features;
 using System.Windows.Browser;
-using Wing.AgOlap.Controls.ContextMenu;
+using Wing.Olap.Controls.ContextMenu;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public class RichTextBox : TextBox
     {
@@ -68,7 +68,7 @@ namespace Wing.AgOlap.Controls.General
         void itemCopy_ItemClick(object sender, EventArgs e)
         {
             this.Focus();
-            Wing.AgOlap.Features.Clipboard.SetClipboardText(base.SelectedText);
+            Wing.Olap.Features.Clipboard.SetClipboardText(base.SelectedText);
         }
 
         void itemDelete_ItemClick(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace Wing.AgOlap.Controls.General
         void itemPaste_ItemClick(object sender, EventArgs e)
         {
             this.Focus();
-            Wing.AgOlap.Features.Clipboard.SetClipboardText(base.SelectedText);
+            Wing.Olap.Features.Clipboard.SetClipboardText(base.SelectedText);
         }
 
         void itemSelectAll_ItemClick(object sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace Wing.AgOlap.Controls.General
                 m_ItemCopy.IsEnabled = base.SelectionLength > 0;
                 m_ItemDelete.IsEnabled = m_ItemCut.IsEnabled =
                     m_ItemCopy.IsEnabled && !base.IsReadOnly;
-                m_ItemPaste.IsEnabled = !base.IsReadOnly && !string.IsNullOrEmpty(Wing.AgOlap.Features.Clipboard.GetClipboardText());
+                m_ItemPaste.IsEnabled = !base.IsReadOnly && !string.IsNullOrEmpty(Wing.Olap.Features.Clipboard.GetClipboardText());
 
                 return m_ContextMenu;
             }

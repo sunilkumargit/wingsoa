@@ -14,11 +14,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.MemberChoice.Info;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.MemberChoice.Info;
+using Wing.Olap.Controls.General.Tree;
 using Wing.Olap.Core.Data;
 
-namespace Wing.AgOlap.Controls.General.Tree
+namespace Wing.Olap.Controls.General.Tree
 {
     public class MemberTreeNode : CustomTreeNode
     {

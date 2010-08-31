@@ -9,9 +9,9 @@ using System.Windows.Browser;
 using System.Windows.Controls;
 using System.Windows;
 using System.Reflection;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.General.Tree;
 
-namespace Wing.AgOlap.Features
+namespace Wing.Olap.Features
 {
     public enum MouseWheelAssociationMode
     {

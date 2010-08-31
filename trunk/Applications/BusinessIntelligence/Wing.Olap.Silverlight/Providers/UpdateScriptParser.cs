@@ -5,7 +5,7 @@ using System.Text;
 using Wing.Olap.Core.Providers.ClientServer;
 using System.Text.RegularExpressions;
 
-namespace Wing.AgOlap.Providers
+namespace Wing.Olap.Providers
 {
     public static class UpdateScriptParser
     {

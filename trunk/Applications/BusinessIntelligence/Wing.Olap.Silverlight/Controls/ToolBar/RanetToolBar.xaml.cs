@@ -17,7 +17,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 
-namespace Wing.AgOlap.Controls.ToolBar
+namespace Wing.Olap.Controls.ToolBar
 {
     public delegate void ItemClickEventHandler(object sender, ItemClickEventArgs e);
 

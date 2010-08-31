@@ -9,14 +9,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Metadata;
-using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Controls.General.ItemControls;
 using System.Text;
 using System.Windows.Controls.Primitives;
-using Wing.AgOlap.Controls.Combo;
+using Wing.Olap.Controls.Combo;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.CalculatedMembers
+namespace Wing.Olap.Controls.MdxDesigner.CalculatedMembers
 {
     public partial class CalcMemberControl : UserControl
     {

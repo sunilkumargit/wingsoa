@@ -15,13 +15,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.PivotGrid.Controls;
-using Wing.AgOlap.Controls.PivotGrid.Layout;
+using Wing.Olap.Controls.PivotGrid.Controls;
+using Wing.Olap.Controls.PivotGrid.Layout;
 using System.Collections.Generic;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Features;
+using Wing.Olap.Features;
 
-namespace Wing.AgOlap.Controls.PivotGrid
+namespace Wing.Olap.Controls.PivotGrid
 {
     /// <summary>
     /// Класс предназначен для сбора информации о многомерных данных (макс. и мин. длина, макс. и мин. значение и т.д.)

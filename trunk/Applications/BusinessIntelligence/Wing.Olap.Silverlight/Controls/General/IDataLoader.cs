@@ -15,10 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core;
-using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Controls.General.ClientServer;
 using Wing.Olap.Core.Providers.ClientServer;
 
-namespace Wing.AgOlap.Controls.General
+namespace Wing.Olap.Controls.General
 {
     public interface IDataLoader
     {

@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Wrappers
+namespace Wing.Olap.Controls.MdxDesigner.Wrappers
 {
     public class Kpi_AreaItemWrapper : AreaItemWrapper
     {

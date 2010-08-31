@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Conditions
+namespace Wing.Olap.Controls.PivotGrid.Conditions
 {
     public class CellAppearanceObject
     {

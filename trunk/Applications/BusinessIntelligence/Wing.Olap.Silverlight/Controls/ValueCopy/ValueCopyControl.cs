@@ -14,24 +14,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General;
-using Wing.AgOlap.Controls.General.ClientServer;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.General.ClientServer;
 using Wing.Olap.Core.Metadata;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Wing.AgOlap.Controls.Tab;
-using Wing.AgOlap.Controls.General.ItemControls;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.ValueDelivery;
-using Wing.AgOlap.Controls.General.Tree;
+using Wing.Olap.Controls.Tab;
+using Wing.Olap.Controls.General.ItemControls;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.ValueDelivery;
+using Wing.Olap.Controls.General.Tree;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.ValueCopy.Wrappers;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.ValueCopy.Wrappers;
+using Wing.Olap.Controls.ToolBar;
 using System.IO.IsolatedStorage;
 using System.IO;
 using Wing.Olap.Core;
 
-namespace Wing.AgOlap.Controls.ValueCopy
+namespace Wing.Olap.Controls.ValueCopy
 {
     public class ValueCopyControl : UserControl
     {
@@ -142,7 +142,7 @@ namespace Wing.AgOlap.Controls.ValueCopy
             TextBlock Label_Coefficient = new TextBlock() { Text = Localization.ValueCopyControl_Сoefficient, Margin = new Thickness(0, 5, 0, 0) };
             Row0_LayoutRoot.Children.Add(Label_Coefficient);
             Grid.SetRow(Label_Coefficient, 2);
-            m_Coefficient = new Wing.AgOlap.Controls.General.RichTextBox() { Text = "1", Margin = new Thickness(0, 5, 0, 0) };
+            m_Coefficient = new Wing.Olap.Controls.General.RichTextBox() { Text = "1", Margin = new Thickness(0, 5, 0, 0) };
             Row0_LayoutRoot.Children.Add(m_Coefficient);
             Grid.SetRow(m_Coefficient, 3);
 
@@ -151,7 +151,7 @@ namespace Wing.AgOlap.Controls.ValueCopy
             Row0_LayoutRoot.Children.Add(Label_Value);
             Grid.SetRow(Label_Value, 2);
             Grid.SetColumn(Label_Value, 1);
-            m_Value = new Wing.AgOlap.Controls.General.RichTextBox() { Text = "0", Margin = new Thickness(5, 5, 0, 0) };
+            m_Value = new Wing.Olap.Controls.General.RichTextBox() { Text = "0", Margin = new Thickness(5, 5, 0, 0) };
             Row0_LayoutRoot.Children.Add(m_Value);
             Grid.SetRow(m_Value, 3);
             Grid.SetColumn(m_Value, 1);

@@ -14,12 +14,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.MemberChoice.ClientServer;
+using Wing.Olap.Controls.MemberChoice.ClientServer;
 using System.Collections.Generic;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers;
 
-namespace Wing.AgOlap.Controls.MemberChoice.Filter
+namespace Wing.Olap.Controls.MemberChoice.Filter
 {
     public class OperationTreeNode : FilterTreeNode
     {

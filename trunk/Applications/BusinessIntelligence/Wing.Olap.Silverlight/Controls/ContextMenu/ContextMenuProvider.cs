@@ -17,7 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Wing.AgOlap.Controls.ContextMenu
+namespace Wing.Olap.Controls.ContextMenu
 {
     /// <summary>
     /// Класс содержит extension-методы для централизованного подключения
@@ -35,7 +35,7 @@ namespace Wing.AgOlap.Controls.ContextMenu
         /// Делегат, описывающий метод, возвращающий текущее контекстное меню для контрола.
         /// </summary>
         /// <returns></returns>
-        public delegate Wing.AgOlap.Controls.ContextMenu.CustomContextMenu GetContextMenuDelegate(Point point);
+        public delegate Wing.Olap.Controls.ContextMenu.CustomContextMenu GetContextMenuDelegate(Point point);
 
         /// <summary>
         /// Attached-свойство, используемое для назначения контекстного меню контролу.

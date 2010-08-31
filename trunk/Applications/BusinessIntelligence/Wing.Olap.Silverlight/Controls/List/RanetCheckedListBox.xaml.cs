@@ -7,7 +7,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Wing.AgOlap.Controls.List
+namespace Wing.Olap.Controls.List
 {
     public partial class RanetCheckedListBox : UserControl
     {

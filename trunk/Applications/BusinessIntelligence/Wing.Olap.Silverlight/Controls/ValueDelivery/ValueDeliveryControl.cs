@@ -14,19 +14,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.Buttons;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Core.Data;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
-using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Controls.General.ItemControls;
 using Wing.Olap.Core.Providers;
-using Wing.AgOlap.Controls.Data;
+using Wing.Olap.Controls.Data;
 using Wing.Olap.Core;
 
-namespace Wing.AgOlap.Controls.ValueDelivery
+namespace Wing.Olap.Controls.ValueDelivery
 {
     public class QueryEventArgs : EventArgs
     {

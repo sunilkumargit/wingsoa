@@ -14,9 +14,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.PivotGrid.Controls;
+using Wing.Olap.Controls.PivotGrid.Controls;
 
-namespace Wing.AgOlap.Controls.MdxDesigner
+namespace Wing.Olap.Controls.MdxDesigner
 {
     // Не используется. Добавлен для проведения работ по формированию команд DrillDown, Expand, Collapse самим MDX дизайнером.
     public class DesignerPivotGridControl : UpdateablePivotGridControl

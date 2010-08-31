@@ -14,10 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.Forms;
-using Wing.AgOlap.Controls.Buttons;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.Buttons;
 
-namespace Wing.AgOlap.Controls.ValueCopy
+namespace Wing.Olap.Controls.ValueCopy
 {
     public class MeasureChoiceDialog : IChoiceDialog
     {
@@ -46,7 +46,7 @@ namespace Wing.AgOlap.Controls.ValueCopy
             m_ChoiceControl = new MeasureChoiceCtrl();
             m_ChoiceControl.Margin = new Thickness(5);
             m_ChoiceControl.ApplySelection += new EventHandler(m_ChoiceControl_ApplySelection);
-            m_ChoiceControl.SelectedItemChanged += new EventHandler<Wing.AgOlap.Controls.General.ItemEventArgs>(m_ChoiceControl_SelectedItemChanged);
+            m_ChoiceControl.SelectedItemChanged += new EventHandler<Wing.Olap.Controls.General.ItemEventArgs>(m_ChoiceControl_SelectedItemChanged);
 
             // Кнопки OK и Cancel
             StackPanel buttonsPanel = new StackPanel() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
@@ -74,7 +74,7 @@ namespace Wing.AgOlap.Controls.ValueCopy
             UpdateButtonsState();
         }
 
-        void m_ChoiceControl_SelectedItemChanged(object sender, Wing.AgOlap.Controls.General.ItemEventArgs e)
+        void m_ChoiceControl_SelectedItemChanged(object sender, Wing.Olap.Controls.General.ItemEventArgs e)
         {
             UpdateButtonsState();
         }

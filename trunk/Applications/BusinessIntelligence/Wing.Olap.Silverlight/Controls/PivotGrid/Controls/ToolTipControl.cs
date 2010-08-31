@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using Wing.Olap.Core.Providers;
 using System.Text;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Controls
+namespace Wing.Olap.Controls.PivotGrid.Controls
 {
     public class ToolTipControl : UserControl
     {

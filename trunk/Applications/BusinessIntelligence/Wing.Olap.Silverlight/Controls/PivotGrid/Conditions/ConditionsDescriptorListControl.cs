@@ -14,13 +14,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Wing.AgOlap.Controls.General.Tree;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.General;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.ToolBar;
+using Wing.Olap.Controls.ToolBar;
 using System.Windows.Media.Imaging;
 
-namespace Wing.AgOlap.Controls.PivotGrid.Conditions
+namespace Wing.Olap.Controls.PivotGrid.Conditions
 {
     public class ConditionsDescriptorListControl : ObjectsListControlBase<CellConditionsDescriptor>
     {

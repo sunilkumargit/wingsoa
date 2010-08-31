@@ -19,9 +19,9 @@ using System.IO;
 using System.Windows.Resources;
 using System.Xml.Linq;
 using System.Reflection;
-using Wing.AgOlap.Controls.General.ItemControls;
+using Wing.Olap.Controls.General.ItemControls;
 
-namespace Wing.AgOlap.Controls.Combo
+namespace Wing.Olap.Controls.Combo
 {
     public partial class XapItemComboBox : UserControl
     {

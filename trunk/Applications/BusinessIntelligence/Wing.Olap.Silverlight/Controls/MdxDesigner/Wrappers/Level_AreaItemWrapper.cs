@@ -16,10 +16,10 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Wing.Olap.Core.Metadata;
 using System.Xml.Serialization;
-using Wing.AgOlap.Controls.MemberChoice.Info;
+using Wing.Olap.Controls.MemberChoice.Info;
 using System.Collections.Generic;
 
-namespace Wing.AgOlap.Controls.MdxDesigner.Wrappers
+namespace Wing.Olap.Controls.MdxDesigner.Wrappers
 {
     public class Level_AreaItemWrapper : Filtered_AreaItemWrapper
     {

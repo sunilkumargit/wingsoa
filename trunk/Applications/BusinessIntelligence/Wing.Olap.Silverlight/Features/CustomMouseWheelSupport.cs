@@ -16,9 +16,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Browser;
 using System.Collections.Generic;
-using Wing.AgOlap.Controls.General;
+using Wing.Olap.Controls.General;
 
-namespace Wing.AgOlap.Features
+namespace Wing.Olap.Features
 {
     internal class CustomMouseWheelSupport
     {

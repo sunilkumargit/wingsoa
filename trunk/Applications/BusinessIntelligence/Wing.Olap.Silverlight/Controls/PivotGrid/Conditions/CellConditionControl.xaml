@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="Wing.AgOlap.Controls.PivotGrid.Conditions.CellConditionControl"
+﻿<UserControl x:Class="Wing.Olap.Controls.PivotGrid.Conditions.CellConditionControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:conditions="clr-namespace:Wing.AgOlap.Controls.PivotGrid.Conditions"
+    xmlns:conditions="clr-namespace:Wing.Olap.Controls.PivotGrid.Conditions"
     xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
     xmlns:swcToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
-    xmlns:tab="clr-namespace:Wing.AgOlap.Controls.Tab"
+    xmlns:tab="clr-namespace:Wing.Olap.Controls.Tab"
     xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
-    xmlns:combo="clr-namespace:Wing.AgOlap.Controls.Combo"
+    xmlns:combo="clr-namespace:Wing.Olap.Controls.Combo"
 >
     <Grid x:Name="LayoutRoot" Background="White">
             <Grid.RowDefinitions>
