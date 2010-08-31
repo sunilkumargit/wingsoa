@@ -13,9 +13,9 @@ namespace Wing.Olap.Core
 {
     public class OlapHelper
     {
-        #region Методы для преобразования строк
+        #region Methods for converting strings
         /// <summary>
-        /// Преобразует строку в формат пригодный для запросов - обрамляет [] ели нужно
+        /// Converts a string into a format suitable for queries
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -29,15 +29,9 @@ namespace Wing.Olap.Core
                 {
                     result = str;
 
-                    //Обрамляем исходную строку [] если она еще не обрамлена
-                    if (str[0] == '[' && str[str.Length - 1] == ']')
-                    {
-                        // Строка уже обрамлена
-                    }
-                    else
-                    {
+                    //Framing the original string [] if it is not framed
+                    if (!(str[0] == '[' && str[str.Length - 1] == ']'))
                         result = "[" + str + "]";
-                    }
                 }
                 return result;
             }
@@ -90,7 +84,7 @@ namespace Wing.Olap.Core
                     //Обрамляем исходную строку () если она еще не обрамлена. Причем если исходная строка обрамлена [], то обрамлять не нужно
                     if ((result[0] == '(' && result[result.Length - 1] == ')') ||
                         (result[0] == '[' && result[result.Length - 1] == ']'))
-                    { 
+                    {
                         // Строка уже обрамлена
                     }
                     else

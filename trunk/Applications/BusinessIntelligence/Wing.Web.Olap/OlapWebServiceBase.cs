@@ -95,12 +95,6 @@ namespace Wing.Web.Olap
             }
         }
 
-        [WebMethod]
-        public String About()
-        {
-            return "Web Service for Visual OLAP Controls Library";
-        }
-
         #region Загрузка метаданных
         String GetMetaData(String schema)
         {
@@ -250,7 +244,7 @@ namespace Wing.Web.Olap
                 }
             }
 
-            return XmlSerializationUtility.Obj2XmlStr(list, Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list, Constants.XmlNamespace);
         }
 
         String GetKPIs(MetadataQuery args)
@@ -259,7 +253,7 @@ namespace Wing.Web.Olap
 
             Dictionary<String, KpiInfo> list = provider.GetKPIs(args.CubeName);
 
-            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Constants.XmlNamespace);
         }
 
         String GetMeasureGroups(MetadataQuery args)
@@ -268,7 +262,7 @@ namespace Wing.Web.Olap
 
             List<MeasureGroupInfo> list = provider.GetMeasureGroups(args.CubeName);
 
-            return XmlSerializationUtility.Obj2XmlStr(list, Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list, Constants.XmlNamespace);
         }
 
         String GetCubeMetadata(MetadataQuery args)
@@ -277,7 +271,7 @@ namespace Wing.Web.Olap
 
             CubeDefInfo info = provider.GetCubeMetadata(args.CubeName, args.QueryType);
 
-            return XmlSerializationUtility.Obj2XmlStr(info, Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(info, Constants.XmlNamespace);
         }
 
         String GetCubes(MetadataQuery args)
@@ -286,7 +280,7 @@ namespace Wing.Web.Olap
 
             Dictionary<String, CubeDefInfo> list = provider.GetCubes();
 
-            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Constants.XmlNamespace);
         }
 
         String GetMeasures(MetadataQuery args)
@@ -295,7 +289,7 @@ namespace Wing.Web.Olap
 
             Dictionary<String, MeasureInfo> list = provider.GetMeasures(args.CubeName);
 
-            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Constants.XmlNamespace);
         }
 
         String GetLevels(MetadataQuery args)
@@ -304,7 +298,7 @@ namespace Wing.Web.Olap
 
             Dictionary<String, LevelInfo> list = provider.GetLevels(args.CubeName, args.DimensionUniqueName, args.HierarchyUniqueName);
 
-            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Constants.XmlNamespace);
         }
 
         String GetDimensions(MetadataQuery args)
@@ -313,7 +307,7 @@ namespace Wing.Web.Olap
 
             Dictionary<String, DimensionInfo> list = provider.GetDimensions(args.CubeName);
 
-            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Constants.XmlNamespace);
         }
 
         String GetHierarchies(MetadataQuery args)
@@ -322,7 +316,7 @@ namespace Wing.Web.Olap
 
             Dictionary<String, HierarchyInfo> list = provider.GetHierarchies(args.CubeName, args.DimensionUniqueName);
 
-            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(list.Values.ToList(), Constants.XmlNamespace);
         }
 
         String GetDimension(MetadataQuery args)
@@ -330,14 +324,14 @@ namespace Wing.Web.Olap
             OlapMetadataProvider provider = new OlapMetadataProvider(new ConnectionInfo(args.Connection, GetConnectionString(args.Connection)));
 
             DimensionInfo info = provider.GetDimension(args.CubeName, args.DimensionUniqueName);
-            return XmlSerializationUtility.Obj2XmlStr(info, Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(info, Constants.XmlNamespace);
         }
 
         String GetHierarchy(MetadataQuery args)
         {
             OlapMetadataProvider provider = new OlapMetadataProvider(new ConnectionInfo(args.Connection, GetConnectionString(args.Connection)));
             HierarchyInfo info = provider.GetHierarchy(args.CubeName, args.DimensionUniqueName, args.HierarchyUniqueName);
-            return XmlSerializationUtility.Obj2XmlStr(info, Common.Namespace);
+            return XmlSerializationUtility.Obj2XmlStr(info, Constants.XmlNamespace);
         }
         #endregion Загрузка метаданных
 
@@ -392,7 +386,7 @@ namespace Wing.Web.Olap
                                         results.Add(invalid_ex.Message);
                                     }
                                 }
-                                res = XmlSerializationUtility.Obj2XmlStr(results, Common.Namespace);
+                                res = XmlSerializationUtility.Obj2XmlStr(results, Constants.XmlNamespace);
                                 break;
                             case QueryTypes.Select:
                                 try
@@ -570,7 +564,7 @@ namespace Wing.Web.Olap
                             res = storageProvider.Load(HttpContext.Current.User, args.FileDescription.ContentFileName);
                             break;
                         case StorageActionTypes.GetList:
-                            res = XmlSerializationUtility.Obj2XmlStr(storageProvider.GetList(HttpContext.Current.User, "*." + FileStorageProvider.GetFilteExtension(args.ContentType)), Common.Namespace);
+                            res = XmlSerializationUtility.Obj2XmlStr(storageProvider.GetList(HttpContext.Current.User, "*." + FileStorageProvider.GetFilteExtension(args.ContentType)), Constants.XmlNamespace);
                             break;
                         case StorageActionTypes.Clear:
                             res = XmlSerializationUtility.Obj2XmlStr(storageProvider.Clear(HttpContext.Current.User, "*." + FileStorageProvider.GetFilteExtension(args.ContentType)));
@@ -578,7 +572,7 @@ namespace Wing.Web.Olap
                         case StorageActionTypes.Delete:
                             storageProvider.Delete(HttpContext.Current.User, args.FileDescription.Description.Name + "." + FileStorageProvider.GetFilteExtension(args.ContentType));
                             storageProvider.Delete(HttpContext.Current.User, args.FileDescription.ContentFileName);
-                            res = XmlSerializationUtility.Obj2XmlStr(storageProvider.GetList(HttpContext.Current.User, "*." + FileStorageProvider.GetFilteExtension(args.ContentType)), Common.Namespace);
+                            res = XmlSerializationUtility.Obj2XmlStr(storageProvider.GetList(HttpContext.Current.User, "*." + FileStorageProvider.GetFilteExtension(args.ContentType)), Constants.XmlNamespace);
                             break;
                     }
                 }

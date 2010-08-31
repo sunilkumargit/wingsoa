@@ -21,7 +21,7 @@
     <SccProvider>
     </SccProvider>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\!ProductInfo\Galaktika.OpenSource.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -89,7 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Wing.AgOlap\Controls\General\ClientServer\MetadataQuery.cs">
+    <Compile Include="..\Wing.Olap\Controls\General\ClientServer\MetadataQuery.cs">
       <Link>MetadataQuery.cs</Link>
     </Compile>
     <Compile Include="AdomdConnectionPool.cs" />

@@ -23,10 +23,11 @@ namespace Wing.Web.Olap
         ConnectionInfo m_Connection = null;
         public ConnectionInfo Connection
         {
-            get {
+            get
+            {
                 if (m_Connection == null)
                     m_Connection = new ConnectionInfo();
-                return m_Connection; 
+                return m_Connection;
             }
         }
 
@@ -90,46 +91,6 @@ namespace Wing.Web.Olap
             }
         }
 
-        //public CellSetData ExecuteQuery(string query)
-        //{
-        //    try
-        //    {
-        //        if (Connection != null)
-        //        {
-        //            AdomdConnection conn = AdomdConnectionPool.GetConnection(Connection.ConnectionString);
-        //            lock (conn)
-        //            {
-        //                using (AdomdCommand cmd = new AdomdCommand(query, conn))
-        //                {
-        //                    DateTime start = DateTime.Now;
-        //                    CellSet cs = cmd.ExecuteCellSet();
-        //                    System.Diagnostics.Debug.WriteLine("MDX query executimg time: " + (DateTime.Now - start).ToString());
-
-        //                    CellSetDescriptionProvider provider = new CellSetDescriptionProvider(cs);
-        //                    provider.CellSet.Connection.ConnectionString = Connection.ConnectionString;
-        //                    provider.CellSet.Connection.ConnectionID = Connection.ConnectionID;
-        //                    if (cs.OlapInfo != null &&
-        //                        cs.OlapInfo.CubeInfo != null &&
-        //                        cs.OlapInfo.CubeInfo.Cubes != null &&
-        //                        cs.OlapInfo.CubeInfo.Cubes.Count > 0)
-        //                    {
-        //                        provider.CellSet.CubeName = cs.OlapInfo.CubeInfo.Cubes[0].CubeName;
-        //                    }
-
-        //                    return provider.CellSet;
-        //                }
-        //            }
-        //        }
-        //        return null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Diagnostics.Trace.TraceError("{0} ExecuteQuery ERROR: {1}\r\n Connection String: {2} \r\n Query: {3}\r\n",
-        //            DateTime.Now.ToString(), ex.ToString(), Connection.ConnectionString, query);
-        //        throw ex;
-        //    }
-        //}
-
         public DataTable ExecuteReader(string query)
         {
             String sessionId = String.Empty;
@@ -148,7 +109,7 @@ namespace Wing.Web.Olap
                         sessionId = conn.SessionID;
                         using (AdomdCommand cmd = new AdomdCommand(query, conn))
                         {
-                            
+
                             DateTime start = DateTime.Now;
                             using (var reader = cmd.ExecuteReader())
                             {
