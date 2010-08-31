@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Wing.AgOlap.Controls.Forms.FloatingWindowControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:controls="clr-namespace:Wing.AgOlap.Controls.General" 
+MinWidth="100" MinHeight="50">
+	<!--	/*   
+    Copyright (C) 2009 Galaktika Corporation ZAO
+
+    This file is a part of Wing.UILibrary.Olap
+ 
+    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+      
+    You should have received a copy of the GNU General Public License
+    along with Wing.UILibrary.Olap.  If not, see
+  	<http://www.gnu.org/licenses/> 
+  
+    If GPL v.3 is not suitable for your products or company,
+    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
+    designed to meet your specific usage and distribution requirements.
+    If you have already obtained a commercial license from Galaktika Corp,
+    you can use this file under those license terms.
+*/ -->
+	<Grid x:Name="LayoutRoot" Background="#FF475A8D">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" MouseLeftButtonDown="LeftSide_MouseLeftButtonDown" Cursor="SizeWE" x:Name="LeftSide" Width="2" Fill="#00FFFFFF" />
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" MouseLeftButtonDown="TopSide_MouseLeftButtonDown" Height="2" x:Name="TopSide" Fill="#00FFFFFF" Cursor="SizeNS" Margin="0"/>
+
+        <!-- Нижняя граница. Для того чтобы тягать за правый нижний угол добавляем лишний грид -->
+        <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Background="#00FFFFFF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" MouseLeftButtonDown="BottomSide_MouseLeftButtonDown" Cursor="SizeNS" Height="2" x:Name="BottomSide" Fill="#00FFFFFF" />
+            <Rectangle Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" MouseLeftButtonDown="DiagonalSide_MouseLeftButtonDown" Cursor="Hand" Height="2" Width="4" x:Name="BottomDiagonalSide" Fill="#00FFFFFF" />
+        </Grid>
+
+        <!-- Правая граница. Для того чтобы тягать за правый нижний угол добавляем лишний грид -->
+        <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" Background="#00FFFFFF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" MouseLeftButtonDown="RightSide_MouseLeftButtonDown" x:Name="RightSide" Width="2" Fill="#00FFFFFF" Cursor="SizeWE" />
+            <Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" MouseLeftButtonDown="DiagonalSide_MouseLeftButtonDown" Cursor="Hand" Height="4" Width="2" x:Name="RightDiagonalSide" Fill="#00FFFFFF" />
+        </Grid>
+
+        <!--<Rectangle Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" MouseLeftButtonDown="RightSide_MouseLeftButtonDown" x:Name="RightSide" Width="3.03" Fill="#FF556797" Stroke="#FF000000" Cursor="SizeWE" StrokeThickness="0"/>-->
+        <!--<Rectangle Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" MouseLeftButtonDown="BottomSide_MouseLeftButtonDown" Cursor="SizeNS" Height="2.977" x:Name="BottomSide" Fill="#FF6576A5" Stroke="#FF000000" StrokeThickness="0"/>-->
+
+        <Rectangle Grid.Column="2" Grid.Row="4" MouseLeftButtonDown="DiagonalSide_MouseLeftButtonDown" Height="2" x:Name="DiagonalSide" Fill="#00FFFFFF" Cursor="Hand" />
+        
+        <Grid Grid.Row="1" Grid.Column="1" Margin="0" Background="#00FFFFFF" MouseLeftButtonDown="DragBar_MouseLeftButtonDown"  x:Name="DragBar" Cursor="Hand" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="CaptionTextBlock" Text="" Foreground="White" Margin="5,3,0,3"></TextBlock>
+            <controls:ButtonMinMaxForm x:Name="MaximizeButton" Grid.Column="1" Width="22" Height="22"></controls:ButtonMinMaxForm>
+            <controls:ButtonCloseForm x:Name="CloseButton"  Grid.Column="2" Click="CloseButton_Click"></controls:ButtonCloseForm>
+        </Grid>
+        <Grid x:Name="ContentRoot" Grid.Row="2" Grid.Column="1" Background="White">
+        </Grid>
+    </Grid>
+</UserControl>
