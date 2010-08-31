@@ -24,14 +24,14 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Globalization;
-using Jayrock.Json;
+using Wing.Json;
 
 namespace Wing.Olap.Core.Data
 {
     public class AxisData
     {
         public AxisData()
-        { 
+        {
         }
 
         public int AxisNum = -1;
@@ -64,7 +64,8 @@ namespace Wing.Olap.Core.Data
         Dictionary<int, MemberData> m_Members;
         public Dictionary<int, MemberData> Members
         {
-            get {
+            get
+            {
                 if (m_Members == null)
                 {
                     m_Members = new Dictionary<int, MemberData>();

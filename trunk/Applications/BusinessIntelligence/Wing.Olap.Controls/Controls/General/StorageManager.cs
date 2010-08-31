@@ -10,7 +10,7 @@
       
     You should have received a copy of the GNU General Public License
     along with Wing.UILibrary.Olap.  If not, see
-  	<http://www.gnu.org/licenses/> 
+    <http://www.gnu.org/licenses/> 
   
     If GPL v.3 is not suitable for your products or company,
     Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
@@ -34,82 +34,82 @@ using Wing.ZipCompression;
 
 namespace Wing.AgOlap.Controls.General
 {
-	public class StorageManager : IStorageManager
-	{
-		String m_URL = String.Empty;
-		public String URL
-		{
-			get { return m_URL; }
-			set { m_URL = value; }
-		}
+    public class StorageManager : IStorageManager
+    {
+        String m_URL = String.Empty;
+        public String URL
+        {
+            get { return m_URL; }
+            set { m_URL = value; }
+        }
 
-		public StorageManager(String url)
-		{
-			URL = url;
-		}
+        public StorageManager(String url)
+        {
+            URL = url;
+        }
 
-		//void ModifyEndPoint(OlapWebService.OlapWebServiceSoapClient service)
-		//{
-		//  if (service != null)
-		//  {
-		//    if (!String.IsNullOrEmpty(URL))
-		//    {
-		//      service.Endpoint.Address = new System.ServiceModel.EndpointAddress(new Uri(URL));
-		//    }
-		//    else
-		//    {
-		//      service.Endpoint.Address = new System.ServiceModel.EndpointAddress(new Uri(Application.Current.Host.Source, "/OlapWebService.asmx"));
-		//    }
-		//  }
-		//}
+        //void ModifyEndPoint(OlapWebService.OlapWebServiceSoapClient service)
+        //{
+        //  if (service != null)
+        //  {
+        //    if (!String.IsNullOrEmpty(URL))
+        //    {
+        //      service.Endpoint.Address = new System.ServiceModel.EndpointAddress(new Uri(URL));
+        //    }
+        //    else
+        //    {
+        //      service.Endpoint.Address = new System.ServiceModel.EndpointAddress(new Uri(Application.Current.Host.Source, "/OlapWebService.asmx"));
+        //    }
+        //  }
+        //}
 
-		#region IStorageManager Members
+        #region IStorageManager Members
 
-		void service_PerformStorageActionCompleted(object sender, Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
-		{
+        void service_PerformStorageActionCompleted(object sender, Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)
+        {
             InvokeResultDescriptor result = null;
             if (e.Error == null)
             {
                 result = InvokeResultDescriptor.Deserialize(e.Result);
             }
-			if (result != null)
-			{
-				if (result.IsArchive)
-				{
-					result.Content = ZipCompressor.DecompressFromBase64String(result.Content);
-					result.IsArchive = false;
-				}
+            if (result != null)
+            {
+                if (result.IsArchive)
+                {
+                    result.Content = ZipCompressor.DecompressFromBase64String(result.Content);
+                    result.IsArchive = false;
+                }
 
-				Raise_InvokeCompleted(new DataLoaderEventArgs(result, e.Error, e.UserState));
-			}
-		}
+                Raise_InvokeCompleted(new DataLoaderEventArgs(result, e.Error, e.UserState));
+            }
+        }
 
-		void Raise_InvokeCompleted(DataLoaderEventArgs args)
-		{
-			EventHandler<DataLoaderEventArgs> handler = this.InvokeCompleted;
-			if (handler != null)
-			{
-				handler(this, args);
-			}
-		}
+        void Raise_InvokeCompleted(DataLoaderEventArgs args)
+        {
+            EventHandler<DataLoaderEventArgs> handler = this.InvokeCompleted;
+            if (handler != null)
+            {
+                handler(this, args);
+            }
+        }
 
-		public void Invoke(object schema, object state)
+        public void Invoke(object schema, object state)
         {
             if (schema == null)
                 throw new ArgumentNullException("schema");
 
             OlapWebService.OlapWebServiceSoapClient service =
              Services.ServiceManager.CreateService
-						 < Wing.AgOlap.OlapWebService.OlapWebServiceSoapClient
-						 , Wing.AgOlap.OlapWebService.OlapWebServiceSoap
-						 >(URL);
+                         < Wing.AgOlap.OlapWebService.OlapWebServiceSoapClient
+                         , Wing.AgOlap.OlapWebService.OlapWebServiceSoap
+                         >(URL);
             // ModifyEndPoint(service);
             service.PerformOlapServiceActionCompleted += service_PerformStorageActionCompleted;
             service.PerformOlapServiceActionAsync("StorageAction" ,schema.ToString(), state);
         }
 
-		public event EventHandler<DataLoaderEventArgs> InvokeCompleted;
+        public event EventHandler<DataLoaderEventArgs> InvokeCompleted;
 
-		#endregion
-	}
+        #endregion
+    }
 }

@@ -268,7 +268,7 @@ namespace Wing.AgOlap.Controls
             ValueCopySettingsWrapper wrapper = m_CopyControl.GetCopySettings();
             if (wrapper != null)
             {
-                str = XmlSerializationUtility.Obj2XmlStr(wrapper, Common.Namespace);
+                str = XmlSerializationUtility.Obj2XmlStr(wrapper, Constants.XmlNamespace);
             }
 
             StorageActionArgs args = new StorageActionArgs();
@@ -281,7 +281,7 @@ namespace Wing.AgOlap.Controls
                 if (String.IsNullOrEmpty(descr.Caption))
                     descr.Caption = descr.Name;
                 args.FileDescription = new ObjectStorageFileDescription(descr);
-                StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+                StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
             }
             else
             {
@@ -309,7 +309,7 @@ namespace Wing.AgOlap.Controls
                 args.ActionType = StorageActionTypes.Load;
                 args.ContentType = StorageContentTypes.ValueCopySettings;
                 args.FileDescription = dlg.CurrentObject;
-                StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+                StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
             }
         }
         #endregion Экспорт-импорт настроек

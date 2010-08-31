@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\!ProductInfo\Galaktika.OpenSource.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -128,9 +128,7 @@
     <Compile Include="Compiler\Parser\mdxLexer.cs" />
     <Compile Include="Compiler\Parser\mdxParser.cs" />
     <Compile Include="MdxQueryContext.cs" />
-    <Compile Include="IMdxFastClonable.cs" />
     <Compile Include="IMdxIdentifier.cs" />
-    <Compile Include="MdxAssignmentStatement.cs" />
     <Compile Include="MdxAxis.cs" />
     <Compile Include="MdxBinaryExpression.cs" />
     <Compile Include="MdxCalcProperty.cs" />

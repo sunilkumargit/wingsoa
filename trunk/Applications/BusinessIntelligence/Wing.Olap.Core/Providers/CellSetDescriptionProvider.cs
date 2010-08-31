@@ -640,12 +640,12 @@ namespace Wing.Olap.Core.Providers
                 axes.Add(axis_data.ToArray());
             }
 
-            writer.WriteString(Jayrock.Json.Conversion.JsonConvert.ExportToString(data.ToArray()));
+            writer.WriteString(Wing.Json.Conversion.JsonConvert.ExportToString(data.ToArray()));
 
             // Оси - начало
             writer.WriteStartElement("Axes");
 
-            var result = Jayrock.Json.Conversion.JsonConvert.ExportToString(axes.ToArray());
+            var result = Wing.Json.Conversion.JsonConvert.ExportToString(axes.ToArray());
             writer.WriteString(result);
 
             // Оси - конец
@@ -771,7 +771,7 @@ namespace Wing.Olap.Core.Providers
             }
             data.Add(propNames.ToArray());
 
-            var result = Jayrock.Json.Conversion.JsonConvert.ExportToString(data.ToArray());
+            var result = Wing.Json.Conversion.JsonConvert.ExportToString(data.ToArray());
             return result;
         }
 

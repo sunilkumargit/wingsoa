@@ -121,7 +121,7 @@ namespace Wing.AgOlap.Controls.General
             StorageActionArgs args = new StorageActionArgs();
             args.ActionType = StorageActionTypes.Clear;
             args.ContentType = ContentType;
-            m_StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+            m_StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
         }
 
         void m_List_DeleteButtonClick(object sender, CustomEventArgs<ObjectStorageFileDescription> e)
@@ -133,7 +133,7 @@ namespace Wing.AgOlap.Controls.General
                 args.ActionType = StorageActionTypes.Delete;
                 args.ContentType = ContentType;
                 args.FileDescription = m_List.CurrentObject;
-                m_StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+                m_StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
             }
         }
 
@@ -265,7 +265,7 @@ namespace Wing.AgOlap.Controls.General
                 StorageActionArgs args = new StorageActionArgs();
                 args.ActionType = StorageActionTypes.GetList;
                 args.ContentType = ContentType;
-                m_StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+                m_StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
             }
         }
     }

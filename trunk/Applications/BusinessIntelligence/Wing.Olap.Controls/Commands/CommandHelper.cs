@@ -309,7 +309,7 @@ namespace Wing.AgOlap.Commands
         //    InvokeSchema schema = new InvokeSchema(Commands.CommandId.HistoryNavigationCommandId);
         //    schema.Args.Add(new InvokeArg(KnownInvokeArgs.ContextId, contextId));
         //    schema.Args.Add(new InvokeArg(KnownInvokeArgs.DataSourceId, dataSourceId));
-        //    schema.Args.Add(new InvokeArg(KnownInvokeArgs.PivotGridHistoryNavigation, XmlUtility.Obj2XmlStr(actionType, Common.Namespace)));
+        //    schema.Args.Add(new InvokeArg(KnownInvokeArgs.PivotGridHistoryNavigation, XmlUtility.Obj2XmlStr(actionType, Constants.XmlNamespace)));
 
         //    return schema;
         //}

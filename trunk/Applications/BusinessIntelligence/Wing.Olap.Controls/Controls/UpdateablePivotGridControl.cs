@@ -558,7 +558,7 @@ namespace Wing.AgOlap.Controls
 				args.FileDescription = e.Args;
 				if (StorageManager != null)
 				{
-					StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+					StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
 				}
 			}
 		}
@@ -582,7 +582,7 @@ namespace Wing.AgOlap.Controls
 					if (String.IsNullOrEmpty(descr.Caption))
 						descr.Caption = descr.Name;
 					args.FileDescription = new ObjectStorageFileDescription(descr);
-					StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+					StorageManager.Invoke(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
 
 				}
 			}
@@ -2731,7 +2731,7 @@ namespace Wing.AgOlap.Controls
 		//    }
 
 		//    ServiceCommandArgs args = new ServiceCommandArgs(actionType);
-		//    Loader.PerformServiceCommand(XmlSerializationUtility.Obj2XmlStr(args, Common.Namespace), args);
+		//    Loader.PerformServiceCommand(XmlSerializationUtility.Obj2XmlStr(args, Constants.XmlNamespace), args);
 		//}
 
 		#region Настройки шрифтов, размеров по умолчанию

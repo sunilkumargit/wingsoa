@@ -8,12 +8,13 @@
     <ProjectGuid>{815DC245-EB7F-4C0B-A682-09065F76520A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ranet.Olap.Core</RootNamespace>
-    <AssemblyName>Ranet.Olap.Core</AssemblyName>
+    <RootNamespace>Wing.Olap.Core</RootNamespace>
+    <AssemblyName>Wing.Olap.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\!ProductInfo\Galaktika.OpenSource.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -70,10 +71,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Jayrock.Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6411e51d1da2afdf, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dll\Jayrock.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -90,11 +87,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Wing.AgOlap\Common.cs">
-      <Link>Common.cs</Link>
-    </Compile>
     <Compile Include="Cache2D.cs" />
     <Compile Include="ConnectionInfo.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Data\AdomdPropsObj.cs" />
     <Compile Include="Data\AxisData.cs" />
     <Compile Include="Data\CellData.cs" />
@@ -173,7 +168,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Localization.ru.resx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -194,6 +188,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Wing.Json\Wing.Json.csproj">
+      <Project>{C3EF42AD-B8F6-4067-AD53-515473C7FE14}</Project>
+      <Name>Wing.Json</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(Ranet)\BuildTools-1.0\TFScompatible.proj" Condition=" '$(Ranet)' != '' " />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

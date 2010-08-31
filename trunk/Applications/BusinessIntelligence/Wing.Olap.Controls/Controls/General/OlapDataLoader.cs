@@ -71,7 +71,7 @@ namespace Wing.AgOlap.Controls.General
                 mdxQuery.SessionId = IdHolder[mdxQuery.Connection];
             }
 			service.PerformOlapServiceActionCompleted += new EventHandler<Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs>(service_PerformOlapServiceActionCompleted);
-			service.PerformOlapServiceActionAsync(schema.ActionType.ToString(), XmlSerializationUtility.Obj2XmlStr(schema, Common.Namespace), state);
+			service.PerformOlapServiceActionAsync(schema.ActionType.ToString(), XmlSerializationUtility.Obj2XmlStr(schema, Constants.XmlNamespace), state);
 		}
 
 		void service_PerformOlapServiceActionCompleted(object sender, Wing.AgOlap.OlapWebService.PerformOlapServiceActionCompletedEventArgs e)

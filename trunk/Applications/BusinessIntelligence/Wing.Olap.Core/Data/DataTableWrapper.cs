@@ -21,12 +21,12 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Wing.AgOlap;
+using Wing.Olap.Core;
 
 namespace Wing.Olap.Core.Data
 {   
 
-    [XmlRoot("tbl", Namespace = Common.Namespace)]
+    [XmlRoot("tbl", Namespace = Constants.XmlNamespace)]
     public class DataTableWrapper
     {
         public DataTableWrapper()
@@ -95,7 +95,7 @@ namespace Wing.Olap.Core.Data
         }
     }
 
-    [XmlRoot("col", Namespace = Common.Namespace)]
+    [XmlRoot("col", Namespace = Constants.XmlNamespace)]
     public class DataTableColumnDefinition
     {
         public DataTableColumnDefinition()
@@ -127,7 +127,7 @@ namespace Wing.Olap.Core.Data
         public TypeCode Type { get; set; }
     }
 
-    [XmlRoot("cell", Namespace = Common.Namespace)]
+    [XmlRoot("cell", Namespace = Constants.XmlNamespace)]
     public class DataTableCellDefinition
     {
         public DataTableCellDefinition()
@@ -162,7 +162,7 @@ namespace Wing.Olap.Core.Data
     }
 
 
-    [XmlRoot("row", Namespace = Common.Namespace)]
+    [XmlRoot("row", Namespace = Constants.XmlNamespace)]
     public class DataTableRowDefinition
     {
         public DataTableRowDefinition()
@@ -182,7 +182,7 @@ namespace Wing.Olap.Core.Data
 
     }
 
-    //[XmlRoot("dbnull", Namespace = Common.Namespace)]
+    //[XmlRoot("dbnull", Namespace = Constants.XmlNamespace)]
     //public class DbNull
     //{
     //    public DbNull()

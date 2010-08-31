@@ -26,8 +26,8 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.IO;
 using System.Globalization;
-using Jayrock.Json.Conversion;
-using Jayrock.Json;
+using Wing.Json.Conversion;
+using Wing.Json;
 
 namespace Wing.Olap.Core.Data
 {
@@ -151,7 +151,7 @@ namespace Wing.Olap.Core.Data
 
         internal void DeserializeData(string DataStr)
         {
-            var cellDatas = Jayrock.Json.Conversion.JsonConvert.Import(DataStr) as JsonArray;
+            var cellDatas = Wing.Json.Conversion.JsonConvert.Import(DataStr) as JsonArray;
             var Values = cellDatas.GetArray(0);
             var DisplayValues = cellDatas.GetArray(1);
             var Styles = cellDatas.GetArray(2);
@@ -217,7 +217,7 @@ namespace Wing.Olap.Core.Data
                     // Начало - CellSetData
                     reader.ReadStartElement(XML_CellSetData);
 
-                    var data = Jayrock.Json.Conversion.JsonConvert.Import(reader.Value) as JsonArray;
+                    var data = Wing.Json.Conversion.JsonConvert.Import(reader.Value) as JsonArray;
                     
                     // Имя куба
                     target.CubeName = data[0] != null ? data[0].ToString() : String.Empty;
@@ -232,7 +232,7 @@ namespace Wing.Olap.Core.Data
                     // Оси
                     reader.ReadStartElement("Axes");
 
-                    var axes = Jayrock.Json.Conversion.JsonConvert.Import(reader.Value) as JsonArray;
+                    var axes = Wing.Json.Conversion.JsonConvert.Import(reader.Value) as JsonArray;
                     for (int a = 0; a < axes.Count; a++)
                     {
                         var axis_data = axes.GetArray(a);

@@ -232,7 +232,7 @@ namespace Wing.AgOlap.Controls.ValueCopy
             ValueCopySettingsWrapper wrapper = GetCopySettings();
             if (wrapper != null)
             {
-                String str = XmlSerializationUtility.Obj2XmlStr(wrapper, Common.Namespace);
+                String str = XmlSerializationUtility.Obj2XmlStr(wrapper, Constants.XmlNamespace);
                 ExportToStorage(str);
             }
         }
