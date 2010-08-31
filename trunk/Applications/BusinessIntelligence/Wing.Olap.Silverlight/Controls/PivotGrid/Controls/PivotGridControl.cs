@@ -3908,9 +3908,6 @@ namespace Wing.Olap.Controls.PivotGrid.Controls
 
         void CellsAreaControl_MouseLeave(object sender, MouseEventArgs e)
         {
-            HtmlPage.Document.DetachEvent("onmousedown", new EventHandler<HtmlEventArgs>(Document_OnMouseDown));
-            HtmlPage.Document.DetachEvent("onmouseup", new EventHandler<HtmlEventArgs>(Document_OnMouseUp));
-            HtmlPage.Document.DetachEvent("onmouseout", new EventHandler<HtmlEventArgs>(Document_OnMouseLeave));
             if (m_VericalMouseWhellSupport != null)
                 m_VericalMouseWhellSupport.ScrollAlways = false;
             if (m_HorizontalMouseWhellSupport != null)
@@ -3919,9 +3916,6 @@ namespace Wing.Olap.Controls.PivotGrid.Controls
 
         void CellsAreaControl_MouseEnter(object sender, MouseEventArgs e)
         {
-            HtmlPage.Document.AttachEvent("onmousedown", new EventHandler<HtmlEventArgs>(Document_OnMouseDown));
-            HtmlPage.Document.AttachEvent("onmouseup", new EventHandler<HtmlEventArgs>(Document_OnMouseUp));
-            HtmlPage.Document.AttachEvent("onmouseout", new EventHandler<HtmlEventArgs>(Document_OnMouseLeave));
             if (m_VericalMouseWhellSupport != null)
                 m_VericalMouseWhellSupport.ScrollAlways = true;
             if (m_HorizontalMouseWhellSupport != null)

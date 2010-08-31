@@ -24,7 +24,6 @@ namespace Wing.Olap.Features
     {
         public bool ScrollAlways { get; set; }
         private static Point currentMousePosition;
-        private static BrowserMouseWheelEventListener browserListener;
 
         public event EventHandler<MouseWheelEventArgs> MouseWheelMoved;
 
@@ -33,105 +32,17 @@ namespace Wing.Olap.Features
         public CustomMouseWheelSupport(FrameworkElement elementToAddMouseWheelSupportTo, FrameworkElement parentElementWithMouseWheelSupport)
         {
             ElementToAddMouseWheelSupportTo = elementToAddMouseWheelSupportTo;
-
-            //Make sure the browser listener is setup
-            if (browserListener == null)
-                browserListener = new BrowserMouseWheelEventListener();
-
-            //Add an event handler to the browser listener for this particular Silverlight element
-            browserListener.Moved += this.HandleBrowserMouseWheelMoved;
-        }
-
-        public void RemoveWheelSupport(FrameworkElement elementToAddMouseWheelSupportTo)
-        {
-            if (browserListener == null)
-                browserListener = new BrowserMouseWheelEventListener();
-            browserListener.RemoveMouseWheelListener();
-            browserListener.Moved -= this.HandleBrowserMouseWheelMoved;
-        }
-
-        private void HandleBrowserMouseWheelMoved(object sender, MouseWheelEventArgs e)
-        {
-            //Only fire the mouse wheel moved event if this is the top-most
-            //scrolling element in the UI tree.
-            if (IsActive())
-                this.MouseWheelMoved(this, e);
         }
 
         bool IsActive()
         {
-            if(ElementToAddMouseWheelSupportTo != null)
+            if (ElementToAddMouseWheelSupportTo != null)
             {
-                if (ScrollAlways || AgControlBase.GetSLBounds(ElementToAddMouseWheelSupportTo).Contains(browserListener.MousePosition))
+                if (ScrollAlways)
                     return true;
             }
 
             return false;
-        }
-
-        private class BrowserMouseWheelEventListener
-        {
-            public event EventHandler<MouseWheelEventArgs> Moved;
-            public Point MousePosition { get; private set; }
-
-            public BrowserMouseWheelEventListener()
-            {
-                if (HtmlPage.IsEnabled)
-                {
-                    HtmlPage.Window.AttachEvent("DOMMouseScroll", this.HandleMouseWheel);
-                    HtmlPage.Window.AttachEvent("onmousewheel", this.HandleMouseWheel);
-                    HtmlPage.Document.AttachEvent("onmousewheel", this.HandleMouseWheel);
-                    HtmlPage.Document.AttachEvent("onmousemove", this.HandleMouseMove);
-                }
-            }
-
-            public void RemoveMouseWheelListener()
-            {
-                if (HtmlPage.IsEnabled)
-                {
-                    HtmlPage.Window.DetachEvent("DOMMouseScroll", this.HandleMouseWheel);
-                    HtmlPage.Window.DetachEvent("onmousewheel", this.HandleMouseWheel);
-                    HtmlPage.Document.DetachEvent("onmousewheel", this.HandleMouseWheel);
-                    HtmlPage.Document.DetachEvent("onmousemove", this.HandleMouseMove);
-                }
-            }
-
-            private void HandleMouseMove(object sender, HtmlEventArgs args)
-            {
-                MousePosition = new Point(args.ClientX, args.ClientY);
-            }
-
-            private void HandleMouseWheel(object sender, HtmlEventArgs args)
-            {
-                double delta = 0;
-
-                ScriptObject eventObj = args.EventObject;
-
-                if (eventObj.GetProperty("wheelDelta") != null)
-                {
-                    delta = ((double)eventObj.GetProperty("wheelDelta")) / 120;
-
-
-                    if (HtmlPage.Window.GetProperty("opera") != null)
-                        delta = -delta;
-                }
-                else if (eventObj.GetProperty("detail") != null)
-                {
-                    delta = -((double)eventObj.GetProperty("detail")) / 3;
-
-                    if (HtmlPage.BrowserInformation.UserAgent.IndexOf("Macintosh") != -1)
-                        delta = delta * 3;
-                }
-
-                if (delta != 0 && this.Moved != null)
-                {
-                    MouseWheelEventArgs wheelArgs = new MouseWheelEventArgs(delta);
-                    this.Moved(this, wheelArgs);
-
-                    if (wheelArgs.BrowserEventHandled)
-                        args.PreventDefault();
-                }
-            }
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Wing.Olap.Controls.Forms
         {
             Show(new Point(double.NaN, double.NaN));
         }
-        
+
         public virtual void Show(Point position)
         {
             if (_isShowing)
@@ -101,7 +101,6 @@ namespace Wing.Olap.Controls.Forms
 
         public void Close(DialogResult result)
         {
-            // Даем возможность отменить закрытие
             DialogResultArgs args = new DialogResultArgs(result);
             Raise_BeforeClosed(args);
             if (!args.Cancel)
@@ -123,19 +122,10 @@ namespace Wing.Olap.Controls.Forms
         bool IsEnsured = false;
         private void EnsurePopup(FloatingDialogStyle style, Point position)
         {
-            //if (_popup != null)
-            //if (_grid != null)
-            //    return;
-
             if (IsEnsured)
                 return;
 
             IsEnsured = true;
-            //_popup = new Popup();
-            //_grid = new Grid();
-            //_popup.Child = _grid;
-            _popup.Closed += new EventHandler(_popup_Closed);
-            _popup.Opened += new EventHandler(_popup_Opened);
 
             if (style != FloatingDialogStyle.NonModal)
             {
@@ -177,42 +167,6 @@ namespace Wing.Olap.Controls.Forms
             {
                 Close(DialogResult.Cancel);
             }
-        }
-
-        public void ListenKeys(bool value)
-        {
-            if (value)
-            {
-                if (BrowserHelper.IsMozilla)
-                {
-                    HtmlPage.Document.AttachEvent("onkeydown", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-                }
-                else
-                {
-                    HtmlPage.Document.AttachEvent("onkeypress", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-                }
-            }
-            else
-            {
-                if (BrowserHelper.IsMozilla)
-                {
-                    HtmlPage.Document.DetachEvent("onkeydown", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-                }
-                else
-                {
-                    HtmlPage.Document.DetachEvent("onkeypress", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-                }
-            }
-        }
-
-        void _popup_Opened(object sender, EventArgs e)
-        {
-            ListenKeys(true);
-        }
-
-        void _popup_Closed(object sender, EventArgs e)
-        {
-            ListenKeys(false);
         }
 
         void _canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

@@ -86,7 +86,7 @@ namespace Wing.Olap.Controls
 
             RanetToggleButton showAllButton = new RanetToggleButton();
             showAllButton.ClickMode = ClickMode.Press;
-            showAllButton.Content = UiHelper.CreateIcon(UriResources.GetImage("/Wing.AgOlap;component/Controls/Images/OLAP/KPI/ShowAll.png"));
+            showAllButton.Content = UiHelper.CreateIcon(UriResources.GetImage("/Wing.Olap.Silverlight;component/Controls/Images/OLAP/KPI/ShowAll.png"));
             showAllButton.Checked += new RoutedEventHandler(showAllButton_Checked);
             showAllButton.Unchecked += new RoutedEventHandler(showAllButton_Unchecked);
             ToolTipService.SetToolTip(showAllButton,Localization.ShowAll_Check);

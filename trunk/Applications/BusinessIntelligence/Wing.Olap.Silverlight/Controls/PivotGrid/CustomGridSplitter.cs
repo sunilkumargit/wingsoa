@@ -23,15 +23,15 @@ namespace Wing.Olap.Controls.PivotGrid
 
         public CustomGridSplitter()
             : base()
-        { 
-        
+        {
+
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
 
-            HtmlPage.Document.AttachEvent("onmousemove", new EventHandler<HtmlEventArgs>(Document_OnMouseMove));
+            //   HtmlPage.Document.AttachEvent("onmousemove", new EventHandler<HtmlEventArgs>(Document_OnMouseMove));
         }
 
         void Document_OnMouseMove(object sender, HtmlEventArgs e)
@@ -47,7 +47,7 @@ namespace Wing.Olap.Controls.PivotGrid
         {
             base.OnMouseLeftButtonUp(e);
 
-            HtmlPage.Document.DetachEvent("onmousemove", new EventHandler<HtmlEventArgs>(Document_OnMouseMove));
+            //  HtmlPage.Document.DetachEvent("onmousemove", new EventHandler<HtmlEventArgs>(Document_OnMouseMove));
         }
     }
 }

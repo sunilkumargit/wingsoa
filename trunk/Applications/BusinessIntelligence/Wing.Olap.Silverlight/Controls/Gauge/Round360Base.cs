@@ -43,12 +43,12 @@ namespace Wing.Olap.Controls.Gauge
 
         void OnMouseEnter(object sender, MouseEventArgs e)
         {
-            HtmlPage.Document.AttachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
+            //HtmlPage.Document.AttachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
         }
 
         void OnMouseLeave(object sender, MouseEventArgs e)
         {
-            HtmlPage.Document.DetachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
+            //HtmlPage.Document.DetachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
         }
 
         void ContentMenu_EventHandler(object sender, HtmlEventArgs e)
@@ -119,7 +119,7 @@ namespace Wing.Olap.Controls.Gauge
             {
                 this.OnMouseDoubleClick(m_LastArgs);
             }
-            m_ClickCount = 0;   
+            m_ClickCount = 0;
         }
 
         Storyboard m_DoubleClick_Story;
@@ -175,10 +175,12 @@ namespace Wing.Olap.Controls.Gauge
         /// </summary>
         public String Text
         {
-            get {
+            get
+            {
                 return m_Text;
             }
-            set {
+            set
+            {
                 m_Text = value;
                 Refresh();
             }
@@ -224,10 +226,12 @@ namespace Wing.Olap.Controls.Gauge
         /// </summary>
         public double HighValue
         {
-            get {
+            get
+            {
                 return m_HeightValue;
             }
-            set {
+            set
+            {
                 m_HeightValue = value;
                 Refresh();
             }
@@ -290,18 +294,20 @@ namespace Wing.Olap.Controls.Gauge
         double m_MeterMargin = 0;
         public double MeterMargin
         {
-            get {
+            get
+            {
                 double margin = m_MeterMargin;
                 margin = Math.Max(0, m_MeterMargin);
                 margin = Math.Min(m_MeterMargin, 100);
-                return m_MeterMargin; 
+                return m_MeterMargin;
             }
             set { m_MeterMargin = value; }
         }
 
         double m_MeterSize
         {
-            get {
+            get
+            {
                 double meter_size = Math.Min(LayoutRoot.ActualWidth, LayoutRoot.ActualHeight);
                 meter_size = meter_size - (meter_size / 100) * MeterMargin;
                 meter_size = Math.Max(meter_size, 0);
@@ -334,7 +340,7 @@ namespace Wing.Olap.Controls.Gauge
             LayoutRoot.Children.Clear();
 
             LayoutRoot.Background = new SolidColorBrush(m_BackgroundColor);
-            
+
             // Граница спидометра
             // Внешний контур
             Ellipse outer_ellipse1 = new Ellipse() { Height = m_MeterSize, Width = m_MeterSize };
@@ -363,7 +369,7 @@ namespace Wing.Olap.Controls.Gauge
             outerSize = outer_ellipse1.StrokeThickness; // outer_ellipse1.StrokeThickness + outer_ellipse2.StrokeThickness;
 
             // Область под циферблат
-            Ellipse calibration_ellipse1 = new Ellipse() { Height = m_MeterSize - outerSize*2 + 2, Width = m_MeterSize - outerSize*2 + 2};
+            Ellipse calibration_ellipse1 = new Ellipse() { Height = m_MeterSize - outerSize * 2 + 2, Width = m_MeterSize - outerSize * 2 + 2 };
             LinearGradientBrush calibration_brush1 = new LinearGradientBrush();
             calibration_brush1.GradientStops.Add(new GradientStop() { Color = Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF) });
             calibration_brush1.GradientStops.Add(new GradientStop() { Color = m_RoundBackgroundColor, Offset = 1 });
@@ -377,7 +383,7 @@ namespace Wing.Olap.Controls.Gauge
             double cX = m_MeterSize / 2;
             double cY = m_MeterSize / 2;
             double center_size = m_MeterSize * 0.1;
-            Ellipse center_ellipse1 = new Ellipse() { Height = center_size, Width = center_size};
+            Ellipse center_ellipse1 = new Ellipse() { Height = center_size, Width = center_size };
             center_ellipse1.Fill = new SolidColorBrush(Colors.Black);
             center_ellipse1.SetValue(Canvas.TopProperty, m_MeterTop + cX - center_size / 2);
             center_ellipse1.SetValue(Canvas.LeftProperty, m_MeterLeft + cY - center_size / 2);
@@ -404,12 +410,13 @@ namespace Wing.Olap.Controls.Gauge
             {
                 num = CurrentValue.ToString(this.CurrentValueFormatString);
             }
-            catch { 
-                num = CurrentValue.ToString(); 
+            catch
+            {
+                num = CurrentValue.ToString();
             }
 
             if (HidePercentageInValue)
-            { 
+            {
                 num = num.Replace("%", String.Empty);
             }
             currentValueText.Text = num;
@@ -442,7 +449,7 @@ namespace Wing.Olap.Controls.Gauge
             LayoutRoot.Children.Add(captionText);
             captionText.SetValue(Canvas.TopProperty, m_MeterTop + cY + center_size + m_MeterSize * 0.05);
             captionText.SetValue(Canvas.LeftProperty, m_MeterLeft + cX - captionText.ActualWidth / 2);
-            
+
             // Рисуем стрелку
             DrawArrow(RoundedCurrentValue);
         }
@@ -499,10 +506,12 @@ namespace Wing.Olap.Controls.Gauge
         /// </summary>
         public int DivisionsCount
         {
-            get {
+            get
+            {
                 return m_DivisionsCount;
             }
-            set {
+            set
+            {
                 m_DivisionsCount = value;
                 Refresh();
             }
@@ -670,7 +679,7 @@ namespace Wing.Olap.Controls.Gauge
                 // Отношение:
                 // m_MaxValue - m_MinValue  => m_ToAngle - m_FromAngle
                 // value - m_MinValue       => X - m_FromAngle
-                angle = ((m_ToAngle - m_FromAngle) * (value - m_MinValue)) / (m_MaxValue - m_MinValue) + m_FromAngle; 
+                angle = ((m_ToAngle - m_FromAngle) * (value - m_MinValue)) / (m_MaxValue - m_MinValue) + m_FromAngle;
             }
             return angle;
         }
@@ -734,7 +743,7 @@ namespace Wing.Olap.Controls.Gauge
                 // Толщина линий
                 double line_size = offset;
                 // Внешний радиус для рисок - Смещаем риски ближе к центру
-                division_outer_radius -= offset/2;
+                division_outer_radius -= offset / 2;
                 // Дуги для допустимых значений
                 double arc_radius = division_outer_radius;
 
@@ -834,7 +843,7 @@ namespace Wing.Olap.Controls.Gauge
                 border.Height = 2;
                 border.SetValue(Canvas.TopProperty, m_MeterTop + cY + division_outer_radius * Math.Sin(currentAngle_rad));
                 border.SetValue(Canvas.LeftProperty, m_MeterLeft + cX + division_outer_radius * Math.Cos(currentAngle_rad));
-                border.RenderTransform = new RotateTransform() { Angle = currentAngle + 180};
+                border.RenderTransform = new RotateTransform() { Angle = currentAngle + 180 };
                 border.Effect = new System.Windows.Media.Effects.DropShadowEffect();
                 LayoutRoot.Children.Add(border);
 
@@ -906,7 +915,7 @@ namespace Wing.Olap.Controls.Gauge
                         currentAngle_rad += incr_rad;
                         currentAngle += incr;
                     }
-                    
+
                     // Рисуем риску
                     Border sub_border = new Border();
                     sub_border.BorderThickness = new Thickness(2);
@@ -918,7 +927,7 @@ namespace Wing.Olap.Controls.Gauge
                     sub_border.RenderTransform = new RotateTransform() { Angle = currentAngle + 180 };
                     sub_border.Effect = new System.Windows.Media.Effects.DropShadowEffect();
                     LayoutRoot.Children.Add(sub_border);
-                    
+
                     //// Рисуем риску
                     //Line subivisionLine = new Line();
                     //subivisionLine.Stroke = subdivisionsBrush;

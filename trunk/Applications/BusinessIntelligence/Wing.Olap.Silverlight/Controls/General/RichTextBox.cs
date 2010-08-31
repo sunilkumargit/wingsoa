@@ -46,7 +46,7 @@ namespace Wing.Olap.Controls.General
             {
                 readOnlyVisualElement.Background = new SolidColorBrush(Colors.Transparent);
             }
-        } 
+        }
 
         public bool IsMouseWheelAttached { get; set; }
 
@@ -91,12 +91,12 @@ namespace Wing.Olap.Controls.General
 
         void RichTextBox_MouseLeave(object sender, MouseEventArgs e)
         {
-            HtmlPage.Document.DetachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
+            //   HtmlPage.Document.DetachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
         }
 
         void RichTextBox_MouseEnter(object sender, MouseEventArgs e)
         {
-            HtmlPage.Document.AttachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
+            //  HtmlPage.Document.AttachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
         }
 
         ContextMenuItem m_ItemDelete;
@@ -178,7 +178,7 @@ namespace Wing.Olap.Controls.General
             {
                 readOnlyVisualElement.Background = new SolidColorBrush(Colors.Transparent);
             }
-        } 
+        }
     }
 
     public class SingleLineTextBox : SimpleTextBox
@@ -186,7 +186,7 @@ namespace Wing.Olap.Controls.General
         public SingleLineTextBox()
             : base()
         {
-            
+
         }
 
         public override void OnApplyTemplate()
@@ -198,6 +198,6 @@ namespace Wing.Olap.Controls.General
             {
                 scrollViewer.Style = null;
             }
-        } 
+        }
     }
 }

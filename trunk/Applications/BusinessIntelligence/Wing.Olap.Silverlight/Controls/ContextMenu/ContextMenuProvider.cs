@@ -211,45 +211,6 @@ namespace Wing.Olap.Controls.ContextMenu
                 }
             }
         }
-
-        //static void element_MouseLeave(object sender, MouseEventArgs e)
-        //{
-        //    if (System.Windows.Browser.HtmlPage.IsEnabled)
-        //    {
-        //        HtmlPage.Document.DetachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
-        //    }
-        //}
-
-        //static void element_MouseEnter(object sender, MouseEventArgs e)
-        //{
-        //    if (System.Windows.Browser.HtmlPage.IsEnabled)
-        //    {
-        //        HtmlPage.Document.AttachEvent("oncontextmenu", new EventHandler<HtmlEventArgs>(ContentMenu_EventHandler));
-        //    }
-        //}
-
-        //static void ContentMenu_EventHandler(object sender, HtmlEventArgs e)
-        //{
-        //    e.PreventDefault();
-        //    e.StopPropagation();
-        //    var p = new Point(e.OffsetX, e.OffsetY);
-        //    foreach (UIElement element in
-        //        VisualTreeHelper.FindElementsInHostCoordinates(p, Application.Current.RootVisual))
-        //    {
-        //        var getMenu = GetContextMenu(element);
-        //        if (getMenu == null) continue;
-
-        //        HideCurrentMenu();
-        //        var menu = getMenu(p);
-        //        if (menu != null)
-        //        {
-        //            m_CurrentMenu = menu;
-        //            menu.SetLocation(p);
-        //            menu.IsDropDownOpen = true;
-        //        }
-        //        break;
-        //    }
-        //}
     }
 
     /// <summary>

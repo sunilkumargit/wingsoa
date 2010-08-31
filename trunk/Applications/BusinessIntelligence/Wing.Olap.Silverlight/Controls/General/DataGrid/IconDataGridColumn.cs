@@ -47,7 +47,7 @@ namespace Wing.Olap.Controls.General.DataGrid
 
         private string GetKpiIconByPath(string path, string name)
         {
-            return String.Format("/Wing.AgOlap;component/Controls/Images/OLAP/KPI/{0}/{1}", path, name);
+            return String.Format("/Wing.Olap.Silverlight;component/Controls/Images/OLAP/KPI/{0}/{1}", path, name);
         }
         
         public string Resource

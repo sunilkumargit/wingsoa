@@ -17,7 +17,7 @@ namespace Wing.Olap.Controls.Gauge
     [Description("Main gauge panel.  All gauges (radial, linear, digital panel, and state indicator) should be placed here. It can have flexible content layout. Any Silverlight panel object can be used as content of the gauge panel.")]
     public class Gauge : ContentControl
     {
-        private const string ResourceUri = "/Wing.AgOlap;component/Themes/Gauges.xaml";
+        private const string ResourceUri = "/Wing.Olap.Silverlight;component/Themes/Gauges.xaml";
         // Fields
         //private const string defaultThemeUri = "/Telerik.Windows.Controls.Gauge;component/Themes/generic.xaml";
         //private static readonly DependencyPropertyKey LogicalChildrenKey = DependencyPropertyExtensions.RegisterReadOnly("LogicalChildren", typeof(ObservableCollection<object>), typeof(Gauge), new PropertyMetadata(new ObservableCollection<object>(), null, null));

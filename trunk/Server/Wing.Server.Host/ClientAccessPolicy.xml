@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--access-policy>
+<access-policy>
   <cross-domain-access>
     <policy>
       <allow-from http-request-headers="Content-Type,SOAPAction">
@@ -10,8 +10,4 @@
       </grant-to>
     </policy>
   </cross-domain-access>
-</access-policy-->
-<cross-domain-policy>
-  <allow-access-from domain="*" />
-  <allow-http-request-headers-from domain="*" headers="SOAPAction,Content-Type" />
-</cross-domain-policy>
+</access-policy>

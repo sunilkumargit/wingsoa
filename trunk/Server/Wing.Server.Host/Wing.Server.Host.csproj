@@ -84,8 +84,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientAccessPolicy.xml" />
     <Content Include="ClientBin\Wing.Client.xap" />
-    <Content Include="crossdomain.xml" />
+    <Content Include="CrossDomain.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Content\Scripts\Silverlight.js" />

@@ -1,7 +1,7 @@
-﻿using Flex.BusinessIntelligence.WingClient.Views.Root;
+﻿using Flex.BusinessIntelligence.WingClient.Views.Home;
+using Flex.BusinessIntelligence.WingClient.Views.Root;
 using Wing.Modularity;
 using Wing.ServiceLocation;
-using Flex.BusinessIntelligence.WingClient.Views.Home;
 
 namespace Flex.BusinessIntelligence.WingClient
 {

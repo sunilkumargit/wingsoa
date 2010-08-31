@@ -574,8 +574,8 @@ namespace Wing.Olap.Controls
 			if (m_CalculatedItemsEditor == null)
 			{
 				m_CalculatedItemsEditor = new CalculationsEditor();
-				m_CalculatedItemsEditor.EditEnd += (s, args) => { m_CalculatedMemberEditorModalDialog.ListenKeys(true); };
-				m_CalculatedItemsEditor.EditStart += (s, args) => { m_CalculatedMemberEditorModalDialog.ListenKeys(false); };
+				m_CalculatedItemsEditor.EditEnd += (s, args) => { /*m_CalculatedMemberEditorModalDialog.ListenKeys(true);*/ };
+				m_CalculatedItemsEditor.EditStart += (s, args) => { /*m_CalculatedMemberEditorModalDialog.ListenKeys(false)*/ };
 				m_CalculatedMemberEditorModalDialog.Content = m_CalculatedItemsEditor;
 				m_CalculatedItemsEditor.CubeBrowser.OlapDataLoader = GetOlapDataLoader();
 			}

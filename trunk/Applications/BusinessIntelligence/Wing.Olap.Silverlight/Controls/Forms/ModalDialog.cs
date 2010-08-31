@@ -19,7 +19,7 @@ using Wing.Olap.Controls.Buttons;
 namespace Wing.Olap.Controls.Forms
 {
     public enum ModalDialogStyles
-    { 
+    {
         OK,
         OKCancel
     }
@@ -39,7 +39,7 @@ namespace Wing.Olap.Controls.Forms
             get { return Dialog.MinHeight; }
             set { Dialog.MinHeight = value; }
         }
-        
+
         public double Width
         {
             get { return Dialog.Width; }
@@ -51,7 +51,7 @@ namespace Wing.Olap.Controls.Forms
             get { return Dialog.Height; }
             set { Dialog.Height = value; }
         }
-        
+
         public String Caption
         {
             get { return Dialog.Caption; }
@@ -118,10 +118,12 @@ namespace Wing.Olap.Controls.Forms
         ModalDialogStyles m_DialogStyle = ModalDialogStyles.OKCancel;
         public ModalDialogStyles DialogStyle
         {
-            get{
+            get
+            {
                 return m_DialogStyle;
             }
-            set {
+            set
+            {
                 m_DialogStyle = value;
                 switch (value)
                 {
@@ -153,7 +155,7 @@ namespace Wing.Olap.Controls.Forms
 
         void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            Dialog.Close(DialogResult.Cancel); 
+            Dialog.Close(DialogResult.Cancel);
         }
 
         void OkButton_Click(object sender, RoutedEventArgs e)
@@ -162,7 +164,7 @@ namespace Wing.Olap.Controls.Forms
             if (args.Cancel)
                 return;
 
-            Dialog.Close(DialogResult.OK); 
+            Dialog.Close(DialogResult.OK);
         }
 
         public void Show()
@@ -200,9 +202,5 @@ namespace Wing.Olap.Controls.Forms
 
         public object Tag = null;
 
-        public void ListenKeys(bool value)
-        {
-            Dialog.ListenKeys(value);
-        }
     }
 }

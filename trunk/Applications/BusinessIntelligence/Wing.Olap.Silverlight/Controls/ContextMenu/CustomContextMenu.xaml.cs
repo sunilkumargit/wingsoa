@@ -51,7 +51,8 @@ namespace Wing.Olap.Controls.ContextMenu
         Popup m_PopupControl = null;
         public Popup PopupControl
         {
-            get {
+            get
+            {
                 if (m_PopupControl == null)
                 {
                     m_PopupControl = new Popup();
@@ -70,15 +71,6 @@ namespace Wing.Olap.Controls.ContextMenu
 
         void m_PopupControl_Closed(object sender, EventArgs e)
         {
-            if (BrowserHelper.IsMozilla)
-            {
-                HtmlPage.Document.DetachEvent("onkeydown", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-            }
-            else
-            {
-                HtmlPage.Document.DetachEvent("onkeypress", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-            }
-
             EventHandler handler = Closed;
             if (handler != null)
             {
@@ -88,15 +80,6 @@ namespace Wing.Olap.Controls.ContextMenu
 
         void m_PopupControl_Opened(object sender, EventArgs e)
         {
-            if (BrowserHelper.IsMozilla)
-            {
-                HtmlPage.Document.AttachEvent("onkeydown", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-            }
-            else
-            {
-                HtmlPage.Document.AttachEvent("onkeypress", new EventHandler<HtmlEventArgs>(Document_OnKeyDown));
-            }
-            
             EventHandler handler = Opened;
             if (handler != null)
             {
@@ -168,7 +151,7 @@ namespace Wing.Olap.Controls.ContextMenu
 
         public void AddMenuItem(ContextMenuItem item)
         {
-            if(item != null)
+            if (item != null)
             {
                 itemsPanel.Children.Add(item);
 
@@ -254,7 +237,8 @@ namespace Wing.Olap.Controls.ContextMenu
 
         public UIElementCollection Items
         {
-            get {
+            get
+            {
                 return itemsPanel.Children;
             }
         }

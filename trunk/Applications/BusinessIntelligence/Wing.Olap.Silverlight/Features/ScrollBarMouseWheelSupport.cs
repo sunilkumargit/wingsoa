@@ -18,20 +18,21 @@ using System.Windows.Controls.Primitives;
 
 namespace Wing.Olap.Features
 {
-   
+
     /// <summary>
     /// Utility class for adding mouse wheel scrolling to ScrollBar controls
     /// </summary>
     public class ScrollBarMouseWheelSupport
     {
-        public bool IsHorizontal { get; set; } 
+        public bool IsHorizontal { get; set; }
 
-        public bool ScrollAlways 
+        public bool ScrollAlways
         {
-            get {
+            get
+            {
                 if (mouseWheelHelper != null)
                     return mouseWheelHelper.ScrollAlways;
-                return false; 
+                return false;
             }
             set
             {
@@ -112,20 +113,20 @@ namespace Wing.Olap.Features
 
         public bool RemoveMouseWheelSupport(ScrollBar scrollBar)
         {
-           if (mouseWheelHelper!= null)
-           {
-               try
-               {
-                   mouseWheelHelper.RemoveWheelSupport(scrollBar);
-                   mouseWheelHelper = null;
-                   return true;
-               }
-               catch 
-               {
-                   return false;
-               }               
-           }
-           return false;
+            if (mouseWheelHelper != null)
+            {
+                try
+                {
+                    //mouseWheelHelper.RemoveWheelSupport(scrollBar);
+                    mouseWheelHelper = null;
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }
