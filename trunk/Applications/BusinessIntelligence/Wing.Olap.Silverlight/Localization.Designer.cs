@@ -61,7 +61,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply.
+        ///   Looks up a localized string similar to Aplicar.
         /// </summary>
         public static string Apply {
             get {
@@ -79,7 +79,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Back Color:.
+        ///   Looks up a localized string similar to Cor de fundo:.
         /// </summary>
         public static string BackColor_Label {
             get {
@@ -88,7 +88,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Border Color:.
+        ///   Looks up a localized string similar to Cor da borda:.
         /// </summary>
         public static string BorderColor_Label {
             get {
@@ -97,7 +97,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Calculated Member.
+        ///   Looks up a localized string similar to Adicionar membro calculado.
         /// </summary>
         public static string CalcMemberEditor_AddMember {
             get {
@@ -106,7 +106,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Named Set.
+        ///   Looks up a localized string similar to Adicionar conjunto nomeado.
         /// </summary>
         public static string CalcMemberEditor_AddNamedSet {
             get {
@@ -115,7 +115,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Named Set.
+        ///   Looks up a localized string similar to Adicionar conjunto nomeado.
         /// </summary>
         public static string CalcMemberEditor_AddSet {
             get {
@@ -124,7 +124,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Background Color:.
+        ///   Looks up a localized string similar to Cor de fundo:.
         /// </summary>
         public static string CalcMemberEditor_BackColorLabel {
             get {
@@ -133,7 +133,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete All Calculations.
+        ///   Looks up a localized string similar to Excluir todos os calculos.
         /// </summary>
         public static string CalcMemberEditor_Clear {
             get {
@@ -142,7 +142,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete Current Calculation.
+        ///   Looks up a localized string similar to Excluir calculo corrente.
         /// </summary>
         public static string CalcMemberEditor_DeleteMember {
             get {
@@ -151,7 +151,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer Calculations Editor.
+        ///   Looks up a localized string similar to Editor de cálculos.
         /// </summary>
         public static string CalcMemberEditor_DialogCaption {
             get {
@@ -160,7 +160,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display Folder:.
+        ///   Looks up a localized string similar to Pasta de exibição:.
         /// </summary>
         public static string CalcMemberEditor_DisplayFolderLabel {
             get {
@@ -169,7 +169,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expression:.
+        ///   Looks up a localized string similar to Expressão:.
         /// </summary>
         public static string CalcMemberEditor_ExpressionLabel {
             get {
@@ -178,7 +178,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Foreground Color:.
+        ///   Looks up a localized string similar to Cor da fonte:.
         /// </summary>
         public static string CalcMemberEditor_ForeColorLabel {
             get {
@@ -187,7 +187,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Format String:.
+        ///   Looks up a localized string similar to Formato:.
         /// </summary>
         public static string CalcMemberEditor_FormatStringLabel {
             get {
@@ -196,7 +196,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Measure Group:.
+        ///   Looks up a localized string similar to Grupo de medidas:.
         /// </summary>
         public static string CalcMemberEditor_MeasureGroupLabel {
             get {
@@ -205,7 +205,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Calculated Members contains in list with alike names. Correct the givenned mistake automatically?.
+        ///   Looks up a localized string similar to Os membros calculados na lista contém nomes parecidos. Corrigir o erro automaticamente?.
         /// </summary>
         public static string CalcMemberEditor_MembersNamesMustBeUnique {
             get {
@@ -214,7 +214,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member View.
+        ///   Looks up a localized string similar to Membros.
         /// </summary>
         public static string CalcMemberEditor_MemberTab {
             get {
@@ -223,7 +223,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Named Sets elements contains In list with alike names. Correct the givenned mistake automatically?.
+        ///   Looks up a localized string similar to Os conjuntos nomeados contém elementos com nomes parecidos. Corrigir o erro automaticamente?.
         /// </summary>
         public static string CalcMemberEditor_NamedSetsNamesMustBeUnique {
             get {
@@ -232,7 +232,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name:.
+        ///   Looks up a localized string similar to Nome:.
         /// </summary>
         public static string CalcMemberEditor_NameLabel {
             get {
@@ -241,7 +241,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Non-empty Behavior:.
+        ///   Looks up a localized string similar to Comportamento não-vazio:.
         /// </summary>
         public static string CalcMemberEditor_NonEmpty {
             get {
@@ -259,7 +259,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Script View.
+        ///   Looks up a localized string similar to Script.
         /// </summary>
         public static string CalcMemberEditor_ScriptTab {
             get {
@@ -268,7 +268,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Members.
+        ///   Looks up a localized string similar to Membros.
         /// </summary>
         public static string CalculationsListControl_CalculatedMembers_TreeNode {
             get {
@@ -277,7 +277,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sets.
+        ///   Looks up a localized string similar to Conjuntos.
         /// </summary>
         public static string CalculationsListControl_NamedSets_TreeNode {
             get {
@@ -286,7 +286,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Options.
+        ///   Looks up a localized string similar to Opções.
         /// </summary>
         public static string CellConditionControl_AppearanceItem {
             get {
@@ -295,7 +295,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cell Appearance.
+        ///   Looks up a localized string similar to Aparência da célula.
         /// </summary>
         public static string CellConditionControl_CellAppearanceItem {
             get {
@@ -304,7 +304,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image Settings.
+        ///   Looks up a localized string similar to Opções de imagem.
         /// </summary>
         public static string CellConditionControl_ImageItem {
             get {
@@ -313,7 +313,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ProgressBar Settings.
+        ///   Looks up a localized string similar to Opções da barra de progresso.
         /// </summary>
         public static string CellConditionControl_ProgressBarItem {
             get {
@@ -322,7 +322,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cell Properties.
+        ///   Looks up a localized string similar to Propriedades da célula.
         /// </summary>
         public static string CellPropertiesDialog_Caption {
             get {
@@ -331,7 +331,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cells styles designer.
+        ///   Looks up a localized string similar to Editor de estilos da célula.
         /// </summary>
         public static string CellsConditionsDesignerDialog_Caption {
             get {
@@ -340,7 +340,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cell value:.
+        ///   Looks up a localized string similar to Valor da célula:.
         /// </summary>
         public static string CellValue_Label {
             get {
@@ -349,7 +349,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change image.
+        ///   Looks up a localized string similar to Alterar imagem.
         /// </summary>
         public static string ChangeCustomImage_Caption {
             get {
@@ -358,7 +358,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear.
+        ///   Looks up a localized string similar to Limpar.
         /// </summary>
         public static string Clear {
             get {
@@ -367,7 +367,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clipboard is unavailable.
+        ///   Looks up a localized string similar to Area de transferência está indisponível.
         /// </summary>
         public static string Clipboard_ClipboardUnavailable {
             get {
@@ -376,7 +376,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to copy the text.
+        ///   Looks up a localized string similar to Não foi possivel copiar o texto.
         /// </summary>
         public static string Clipboard_UnableCopy {
             get {
@@ -394,7 +394,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;Create...&gt;.
+        ///   Looks up a localized string similar to &lt;Novo...&gt;.
         /// </summary>
         public static string ComboBoxItem_New {
             get {
@@ -403,7 +403,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Item.
+        ///   Looks up a localized string similar to Novo item.
         /// </summary>
         public static string ComboBoxItem_NewItem {
             get {
@@ -412,7 +412,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to None.
+        ///   Looks up a localized string similar to Nenhum.
         /// </summary>
         public static string ComboBoxItem_None {
             get {
@@ -421,7 +421,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conditions:.
+        ///   Looks up a localized string similar to Condições:.
         /// </summary>
         public static string Conditions_Label {
             get {
@@ -430,7 +430,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cell Appearance.
+        ///   Looks up a localized string similar to Aparência da célula.
         /// </summary>
         public static string ConditionsDesigner_Appearance_Label {
             get {
@@ -439,7 +439,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cell Value Condition:.
+        ///   Looks up a localized string similar to Condição do valor:.
         /// </summary>
         public static string ConditionsDesigner_Condition_Label {
             get {
@@ -448,7 +448,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirmation.
+        ///   Looks up a localized string similar to Confirmação.
         /// </summary>
         public static string Confirmation {
             get {
@@ -457,7 +457,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connection.
+        ///   Looks up a localized string similar to Conexão.
         /// </summary>
         public static string Connection {
             get {
@@ -466,7 +466,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connection.
+        ///   Looks up a localized string similar to Conexão.
         /// </summary>
         public static string Connection_PropertyDesc {
             get {
@@ -475,7 +475,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connection String.
+        ///   Looks up a localized string similar to String de conexão.
         /// </summary>
         public static string ConnectionString {
             get {
@@ -484,7 +484,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy.
+        ///   Looks up a localized string similar to Copiar.
         /// </summary>
         public static string ContextCmd_Copy {
             get {
@@ -493,7 +493,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cut.
+        ///   Looks up a localized string similar to Recortar.
         /// </summary>
         public static string ContextCmd_Cut {
             get {
@@ -502,7 +502,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to Excluir.
         /// </summary>
         public static string ContextCmd_Delete {
             get {
@@ -511,7 +511,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paste.
+        ///   Looks up a localized string similar to Colar.
         /// </summary>
         public static string ContextCmd_Paste {
             get {
@@ -520,7 +520,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select All.
+        ///   Looks up a localized string similar to Selecionar tudo.
         /// </summary>
         public static string ContextCmd_SelectAll {
             get {
@@ -529,7 +529,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto Width.
+        ///   Looks up a localized string similar to Largura automática das colunas.
         /// </summary>
         public static string ContextMenu_AutoWidthColumns {
             get {
@@ -538,7 +538,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove Sorting.
+        ///   Looks up a localized string similar to Limpar ordenação.
         /// </summary>
         public static string ContextMenu_ClearAxisSorting {
             get {
@@ -547,7 +547,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy.
+        ///   Looks up a localized string similar to Copiar.
         /// </summary>
         public static string ContextMenu_Copy {
             get {
@@ -556,7 +556,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy value.
+        ///   Looks up a localized string similar to Copiar valor.
         /// </summary>
         public static string ContextMenu_CopyValue {
             get {
@@ -565,7 +565,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Custom properties.
+        ///   Looks up a localized string similar to Outras propriedades.
         /// </summary>
         public static string ContextMenu_CustomProperties {
             get {
@@ -574,7 +574,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Members Group Mode.
+        ///   Looks up a localized string similar to Modo de agrupamento dos membros.
         /// </summary>
         public static string ContextMenu_DataReorganizationType {
             get {
@@ -583,7 +583,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Group to Hierarchy.
+        ///   Looks up a localized string similar to Grupo para hierarquia.
         /// </summary>
         public static string ContextMenu_DataReorganizationType_HitchToParent {
             get {
@@ -592,7 +592,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Group Neighbors.
+        ///   Looks up a localized string similar to Agrupar vizinhos.
         /// </summary>
         public static string ContextMenu_DataReorganizationType_MergeNeighbors {
             get {
@@ -601,7 +601,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to None.
+        ///   Looks up a localized string similar to Nenhum.
         /// </summary>
         public static string ContextMenu_DataReorganizationType_None {
             get {
@@ -610,7 +610,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delivery value.
+        ///   Looks up a localized string similar to Valor.
         /// </summary>
         public static string ContextMenu_DeliveryValue {
             get {
@@ -619,7 +619,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DrillThrough.
+        ///   Looks up a localized string similar to Detalhamento.
         /// </summary>
         public static string ContextMenu_DrillThrough {
             get {
@@ -628,7 +628,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paste.
+        ///   Looks up a localized string similar to Colar.
         /// </summary>
         public static string ContextMenu_Paste {
             get {
@@ -637,7 +637,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Properties.
+        ///   Looks up a localized string similar to Propriedades.
         /// </summary>
         public static string ContextMenu_Properties {
             get {
@@ -646,7 +646,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show MDX.
+        ///   Looks up a localized string similar to Mostrar expressão MDX.
         /// </summary>
         public static string ContextMenu_ShowMDX {
             get {
@@ -655,7 +655,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorting Axis by Measure.
+        ///   Looks up a localized string similar to Ordenar o eixo pelo valor.
         /// </summary>
         public static string ContextMenu_SortingByMeasure {
             get {
@@ -664,7 +664,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorting by Property.
+        ///   Looks up a localized string similar to Ordenar pela propriedade.
         /// </summary>
         public static string ContextMenu_SortingByProperty {
             get {
@@ -673,7 +673,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorting by Value.
+        ///   Looks up a localized string similar to Ordenar pelo alor.
         /// </summary>
         public static string ContextMenu_SortingByValue {
             get {
@@ -700,7 +700,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy to clipboard.
+        ///   Looks up a localized string similar to Copiar para a area de transferência.
         /// </summary>
         public static string CopyToClipboard_ToolTip {
             get {
@@ -727,7 +727,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cube Name.
+        ///   Looks up a localized string similar to Cubo.
         /// </summary>
         public static string CubeName_PropertyDesc {
             get {
@@ -736,7 +736,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cube with name &apos;{0}&apos; not found..
+        ///   Looks up a localized string similar to Cubo com o nome &apos;{0}&apos; não foi encontrado..
         /// </summary>
         public static string CubeNotFound_Message {
             get {
@@ -745,7 +745,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Custom Properties.
+        ///   Looks up a localized string similar to Outras Propriedades.
         /// </summary>
         public static string CustomPropertiesDialog_Caption {
             get {
@@ -808,7 +808,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to Excluir.
         /// </summary>
         public static string Delete {
             get {
@@ -817,7 +817,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You want delete all items permanently?.
+        ///   Looks up a localized string similar to Excluir todos os items permatentemente?.
         /// </summary>
         public static string DeleteAll_Question {
             get {
@@ -826,7 +826,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete All.
+        ///   Looks up a localized string similar to Excluir tudo.
         /// </summary>
         public static string DeleteAll_ToolTip {
             get {
@@ -835,7 +835,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You want delete current item permanently?.
+        ///   Looks up a localized string similar to Excluir o item permanentemente?.
         /// </summary>
         public static string DeleteCurrent_Question {
             get {
@@ -844,7 +844,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete Current.
+        ///   Looks up a localized string similar to Excluir.
         /// </summary>
         public static string DeleteCurrent_ToolTip {
             get {
@@ -853,7 +853,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close.
+        ///   Looks up a localized string similar to Fechar.
         /// </summary>
         public static string Dialog_CloseButton_ToolTip {
             get {
@@ -862,7 +862,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximize.
+        ///   Looks up a localized string similar to Maximizar.
         /// </summary>
         public static string Dialog_MaximizeButton_ToolTip {
             get {
@@ -871,7 +871,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restore Down.
+        ///   Looks up a localized string similar to Restaurar.
         /// </summary>
         public static string Dialog_RestoreDownButton_ToolTip {
             get {
@@ -880,7 +880,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel.
+        ///   Looks up a localized string similar to Cancelar.
         /// </summary>
         public static string DialogButton_Cancel {
             get {
@@ -916,7 +916,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drillthroug:.
+        ///   Looks up a localized string similar to Detalhamento.
         /// </summary>
         public static string Drillthrough_Label {
             get {
@@ -925,7 +925,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drillthrough result.
+        ///   Looks up a localized string similar to Resultado do detalhamento.
         /// </summary>
         public static string DrillthroughDialog_Caption {
             get {
@@ -934,7 +934,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to End Color:.
+        ///   Looks up a localized string similar to Cor final:.
         /// </summary>
         public static string EndColor_Label {
             get {
@@ -943,7 +943,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
+        ///   Looks up a localized string similar to Erro.
         /// </summary>
         public static string Error {
             get {
@@ -952,7 +952,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Operand.
+        ///   Looks up a localized string similar to Adicionar operando.
         /// </summary>
         public static string Filter_AddOperand {
             get {
@@ -961,7 +961,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Operation.
+        ///   Looks up a localized string similar to Adicionar operação.
         /// </summary>
         public static string Filter_AddOperation {
             get {
@@ -970,7 +970,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Begin with.
+        ///   Looks up a localized string similar to Começando com.
         /// </summary>
         public static string Filter_BeginWith {
             get {
@@ -979,7 +979,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contains.
+        ///   Looks up a localized string similar to Contendo.
         /// </summary>
         public static string Filter_Contains {
             get {
@@ -988,7 +988,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Equal.
+        ///   Looks up a localized string similar to Igual.
         /// </summary>
         public static string Filter_Equal {
             get {
@@ -997,7 +997,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to and.
+        ///   Looks up a localized string similar to E.
         /// </summary>
         public static string Filter_Label_And {
             get {
@@ -1006,7 +1006,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to by.
+        ///   Looks up a localized string similar to por.
         /// </summary>
         public static string Filter_Label_By {
             get {
@@ -1024,7 +1024,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Percent.
+        ///   Looks up a localized string similar to Porcento.
         /// </summary>
         public static string Filter_Target_Percent {
             get {
@@ -1033,7 +1033,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sum.
+        ///   Looks up a localized string similar to Soma.
         /// </summary>
         public static string Filter_Target_Sum {
             get {
@@ -1042,7 +1042,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bottom.
+        ///   Looks up a localized string similar to Ultimos.
         /// </summary>
         public static string Filter_Type_Bottom {
             get {
@@ -1051,7 +1051,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Top.
+        ///   Looks up a localized string similar to Primeiros.
         /// </summary>
         public static string Filter_Type_Top {
             get {
@@ -1060,7 +1060,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter building.
+        ///   Looks up a localized string similar to Construção do filtro.
         /// </summary>
         public static string FilterBuilder_Caption {
             get {
@@ -1069,7 +1069,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter.
+        ///   Looks up a localized string similar to Filtro.
         /// </summary>
         public static string FilterControl_Caption {
             get {
@@ -1078,7 +1078,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter settings:.
+        ///   Looks up a localized string similar to Configurações do filtro:.
         /// </summary>
         public static string FilterControl_Label_FilterSettings {
             get {
@@ -1087,7 +1087,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter type:.
+        ///   Looks up a localized string similar to Tipo de filtro:.
         /// </summary>
         public static string FilterControl_Label_FilterType {
             get {
@@ -1096,7 +1096,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find.
+        ///   Looks up a localized string similar to Procurar.
         /// </summary>
         public static string Find {
             get {
@@ -1105,7 +1105,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Folder.
+        ///   Looks up a localized string similar to Nova pasta.
         /// </summary>
         public static string FolderComboBox_NewFolder {
             get {
@@ -1114,7 +1114,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fore Color:.
+        ///   Looks up a localized string similar to Cor da fonte:.
         /// </summary>
         public static string ForeColor_Label {
             get {
@@ -1141,7 +1141,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ignore All Options.
+        ///   Looks up a localized string similar to Ignorar todas as opções.
         /// </summary>
         public static string IgnoreAllOptions_Check {
             get {
@@ -1150,7 +1150,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image:.
+        ///   Looks up a localized string similar to Imagem:.
         /// </summary>
         public static string Image_Label {
             get {
@@ -1159,7 +1159,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image Choice.
+        ///   Looks up a localized string similar to Selecionar imagem.
         /// </summary>
         public static string ImageChoiceDialog_Caption {
             get {
@@ -1168,7 +1168,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image preview:.
+        ///   Looks up a localized string similar to Pré-visualizar imagem.
         /// </summary>
         public static string ImagePreview_Label {
             get {
@@ -1177,7 +1177,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Images:.
+        ///   Looks up a localized string similar to Imagems:.
         /// </summary>
         public static string Images_Label {
             get {
@@ -1213,7 +1213,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Nome.
         /// </summary>
         public static string KPIViewer_ColumnName {
             get {
@@ -1258,7 +1258,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Begin with.
+        ///   Looks up a localized string similar to Começando com.
         /// </summary>
         public static string LabelFilter_BeginWith {
             get {
@@ -1267,7 +1267,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contains.
+        ///   Looks up a localized string similar to Contendo.
         /// </summary>
         public static string LabelFilter_Contain {
             get {
@@ -1276,7 +1276,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to End with.
+        ///   Looks up a localized string similar to Terminando com.
         /// </summary>
         public static string LabelFilter_EndWith {
             get {
@@ -1285,7 +1285,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Label Filter.
+        ///   Looks up a localized string similar to Filtro.
         /// </summary>
         public static string LabelFilter_Name {
             get {
@@ -1294,7 +1294,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Does not begin with.
+        ///   Looks up a localized string similar to Não começando com.
         /// </summary>
         public static string LabelFilter_NotBeginWith {
             get {
@@ -1303,7 +1303,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Does not contain.
+        ///   Looks up a localized string similar to Não contendo.
         /// </summary>
         public static string LabelFilter_NotContain {
             get {
@@ -1312,7 +1312,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Does not end with.
+        ///   Looks up a localized string similar to Não terminando com.
         /// </summary>
         public static string LabelFilter_NotEndWith {
             get {
@@ -1348,7 +1348,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Loading....
+        ///   Looks up a localized string similar to Pesquisando....
         /// </summary>
         public static string Loading {
             get {
@@ -1375,7 +1375,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max Value:.
+        ///   Looks up a localized string similar to Valor máximo:.
         /// </summary>
         public static string MaxValue_Label {
             get {
@@ -1384,7 +1384,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer Calculations Editor.
+        ///   Looks up a localized string similar to Editor de calculos.
         /// </summary>
         public static string MdxDesigner_CalculatedMemberEditor {
             get {
@@ -1393,7 +1393,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Calculations.
+        ///   Looks up a localized string similar to Calculos.
         /// </summary>
         public static string MdxDesigner_Calculations {
             get {
@@ -1402,7 +1402,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Columns.
+        ///   Looks up a localized string similar to Colunas.
         /// </summary>
         public static string MdxDesigner_ColumnsArea_Caption {
             get {
@@ -1411,7 +1411,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel Filter.
+        ///   Looks up a localized string similar to Limpar filtro.
         /// </summary>
         public static string MdxDesigner_ContextMenu_CancelFilter {
             get {
@@ -1420,7 +1420,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Filter.
+        ///   Looks up a localized string similar to Alterar filtro.
         /// </summary>
         public static string MdxDesigner_ContextMenu_ChangeFilter {
             get {
@@ -1429,7 +1429,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move Down.
+        ///   Looks up a localized string similar to Mover para baixo.
         /// </summary>
         public static string MdxDesigner_ContextMenu_MoveDown {
             get {
@@ -1438,7 +1438,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move to Columns.
+        ///   Looks up a localized string similar to Mover para colunas.
         /// </summary>
         public static string MdxDesigner_ContextMenu_MoveToColumnsArea {
             get {
@@ -1447,7 +1447,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move to Filters.
+        ///   Looks up a localized string similar to Mover para filtros.
         /// </summary>
         public static string MdxDesigner_ContextMenu_MoveToFiltersArea {
             get {
@@ -1456,7 +1456,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move to Rows.
+        ///   Looks up a localized string similar to Mover para linhas.
         /// </summary>
         public static string MdxDesigner_ContextMenu_MoveToRowsArea {
             get {
@@ -1465,7 +1465,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move Up.
+        ///   Looks up a localized string similar to Mover para cima.
         /// </summary>
         public static string MdxDesigner_ContextMenu_MoveUp {
             get {
@@ -1474,7 +1474,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove Field.
+        ///   Looks up a localized string similar to Remover campo.
         /// </summary>
         public static string MdxDesigner_ContextMenu_RemoveField {
             get {
@@ -1483,7 +1483,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Top N.
+        ///   Looks up a localized string similar to Primeiros N.
         /// </summary>
         public static string MdxDesigner_ContextMenu_TopFilter {
             get {
@@ -1492,7 +1492,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cube.
+        ///   Looks up a localized string similar to Cubo.
         /// </summary>
         public static string MdxDesigner_Cube {
             get {
@@ -1510,7 +1510,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data.
+        ///   Looks up a localized string similar to Dados.
         /// </summary>
         public static string MdxDesigner_DataArea_Caption {
             get {
@@ -1519,7 +1519,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit MDX query.
+        ///   Looks up a localized string similar to Editar consulta MDX.
         /// </summary>
         public static string MdxDesigner_EditQuery_ToolTip {
             get {
@@ -1528,7 +1528,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Execute MDX query.
+        ///   Looks up a localized string similar to Executar MDX.
         /// </summary>
         public static string MdxDesigner_ExecuteQuery {
             get {
@@ -1537,7 +1537,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export query layout settings.
+        ///   Looks up a localized string similar to Exportar configurações de layout.
         /// </summary>
         public static string MdxDesigner_ExportLayout_ToolTip {
             get {
@@ -1546,7 +1546,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filters.
+        ///   Looks up a localized string similar to Filtros.
         /// </summary>
         public static string MdxDesigner_FilterArea_Caption {
             get {
@@ -1555,7 +1555,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Import query layout settings.
+        ///   Looks up a localized string similar to Impotar configurações de layout.
         /// </summary>
         public static string MdxDesigner_ImportLayout_ToolTip {
             get {
@@ -1573,7 +1573,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Query result.
+        ///   Looks up a localized string similar to Resultado da consulta.
         /// </summary>
         public static string MdxDesigner_QueryResult {
             get {
@@ -1582,7 +1582,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rows.
+        ///   Looks up a localized string similar to Linhas.
         /// </summary>
         public static string MdxDesigner_RowsArea_Caption {
             get {
@@ -1591,7 +1591,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Run MDX query automatic.
+        ///   Looks up a localized string similar to Executar consulta MDX automaticamente.
         /// </summary>
         public static string MdxDesigner_RunQueryAutomatic {
             get {
@@ -1600,7 +1600,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current query setting will are lost when change cube. You want to save settings?.
+        ///   Looks up a localized string similar to A consulta atual será perdida ao se alterar o cubo. Deseja salvar a consulta atual?.
         /// </summary>
         public static string MdxDesigner_SaveCustomCalculations_Message {
             get {
@@ -1609,7 +1609,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show/Hide MDX query.
+        ///   Looks up a localized string similar to Exibir/esconder painel MDX.
         /// </summary>
         public static string MdxDesigner_ShowQuery_ToolTip {
             get {
@@ -1618,7 +1618,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show/Hide query designer.
+        ///   Looks up a localized string similar to Exibir/esconder o designer de consultas.
         /// </summary>
         public static string MdxDesigner_ShowQueryDesigner_ToolTip {
             get {
@@ -1627,7 +1627,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Values.
+        ///   Looks up a localized string similar to Valores.
         /// </summary>
         public static string MdxDesigner_ValuesNode_Caption {
             get {
@@ -1654,7 +1654,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Measure:.
+        ///   Looks up a localized string similar to Medida:.
         /// </summary>
         public static string Measure_Label {
             get {
@@ -1681,7 +1681,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Measure Group.
+        ///   Looks up a localized string similar to Grupo de medidas.
         /// </summary>
         public static string MeasureGroup {
             get {
@@ -1690,7 +1690,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;All&gt;.
+        ///   Looks up a localized string similar to &lt;Todos&gt;.
         /// </summary>
         public static string MeasureGroup_All {
             get {
@@ -1699,7 +1699,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Measure Group with name &apos;{0}&apos; not found in Cube &apos;{1}&apos;..
+        ///   Looks up a localized string similar to Grupo de medida &apos;{0}&apos; não encontrado no cubo &apos;{1}&apos;..
         /// </summary>
         public static string MeasureGroupNotFound_Message {
             get {
@@ -1717,7 +1717,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear Selection.
+        ///   Looks up a localized string similar to Limpar seleção.
         /// </summary>
         public static string MemberChoice_ClearSelection_ToolTip {
             get {
@@ -1726,7 +1726,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Load All ....
+        ///   Looks up a localized string similar to Carregar todos....
         /// </summary>
         public static string MemberChoice_LoadAll {
             get {
@@ -1735,7 +1735,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Load Next ....
+        ///   Looks up a localized string similar to Carregar próximos....
         /// </summary>
         public static string MemberChoice_LoadNext {
             get {
@@ -1744,7 +1744,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Members found: .
+        ///   Looks up a localized string similar to Membros encontrados:.
         /// </summary>
         public static string MemberChoice_MembersFound {
             get {
@@ -1753,7 +1753,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Members selected: .
+        ///   Looks up a localized string similar to Membros selecionados:.
         /// </summary>
         public static string MemberChoice_MembersSelected {
             get {
@@ -1762,7 +1762,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;Multi Select&gt;.
+        ///   Looks up a localized string similar to &lt;Seleção múltipla&gt;.
         /// </summary>
         public static string MemberChoice_MultiSelect {
             get {
@@ -1771,7 +1771,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Refresh.
+        ///   Looks up a localized string similar to Atualizar.
         /// </summary>
         public static string MemberChoice_Refresh_ToolTip {
             get {
@@ -1780,7 +1780,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selected.
+        ///   Looks up a localized string similar to Selecionado.
         /// </summary>
         public static string MemberChoice_Selected {
             get {
@@ -1789,7 +1789,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Custom Member Properties.
+        ///   Looks up a localized string similar to Exibir propriedades customizadas dos membros.
         /// </summary>
         public static string MemberChoice_ShowMemberProperties_ToolTip {
             get {
@@ -1816,7 +1816,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Members.
+        ///   Looks up a localized string similar to Membros.
         /// </summary>
         public static string Members {
             get {
@@ -1825,7 +1825,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member unique name:.
+        ///   Looks up a localized string similar to Nome único do membro:.
         /// </summary>
         public static string MemberUniqueName_Label {
             get {
@@ -1834,7 +1834,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
+        ///   Looks up a localized string similar to Erro.
         /// </summary>
         public static string MessageBox_Error {
             get {
@@ -1843,7 +1843,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning.
+        ///   Looks up a localized string similar to Atenção.
         /// </summary>
         public static string MessageBox_Warning {
             get {
@@ -1852,7 +1852,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cube with name &apos;{0}&apos; not found..
+        ///   Looks up a localized string similar to Cubo com o nome &apos;{0}&apos; não foi encontrado..
         /// </summary>
         public static string MetadataResponseException_CubeNotFound {
             get {
@@ -1897,7 +1897,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Min Value:.
+        ///   Looks up a localized string similar to Valor mínimo:.
         /// </summary>
         public static string MinValue_Label {
             get {
@@ -1906,7 +1906,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caption.
+        ///   Looks up a localized string similar to Título.
         /// </summary>
         public static string ObjectDescriptionControl_Caption {
             get {
@@ -1915,7 +1915,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Description.
+        ///   Looks up a localized string similar to Descrição.
         /// </summary>
         public static string ObjectDescriptionControl_Description {
             get {
@@ -1924,7 +1924,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Nome.
         /// </summary>
         public static string ObjectDescriptionControl_Name {
             get {
@@ -2014,7 +2014,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Collapse.
+        ///   Looks up a localized string similar to Recolher.
         /// </summary>
         public static string PivotGrid_Collapse {
             get {
@@ -2050,7 +2050,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Recalculate.
+        ///   Looks up a localized string similar to Recalcular.
         /// </summary>
         public static string PivotGrid_ConfirmEditButton_Caption {
             get {
@@ -2077,7 +2077,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy selected cells to Clipboard.
+        ///   Looks up a localized string similar to Copiar as células selecionadas para a Area de Transferência..
         /// </summary>
         public static string PivotGrid_CopyToClipboardButton_ToolTip {
             get {
@@ -2104,7 +2104,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On/Off Editing Mode.
+        ///   Looks up a localized string similar to Ativar/desativar modo de edição.
         /// </summary>
         public static string PivotGrid_EditButton_ToolTip {
             get {
@@ -2113,7 +2113,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expand.
+        ///   Looks up a localized string similar to Expandir.
         /// </summary>
         public static string PivotGrid_Expand {
             get {
@@ -2122,7 +2122,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export to Microsoft Excel.
+        ///   Looks up a localized string similar to Exportar para o Excel.
         /// </summary>
         public static string PivotGrid_ExportToExcelButton_ToolTip {
             get {
@@ -2140,7 +2140,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go to Focused Cell.
+        ///   Looks up a localized string similar to Ir para a célula selecionada.
         /// </summary>
         public static string PivotGrid_GoToFocusedCellButton_ToolTip {
             get {
@@ -2149,7 +2149,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide Empty Columns.
+        ///   Looks up a localized string similar to Esconder colunas em branco.
         /// </summary>
         public static string PivotGrid_HideEmptyColumnsButton_ToolTip {
             get {
@@ -2158,7 +2158,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide Empty Rows.
+        ///   Looks up a localized string similar to Esconder linhas em branco.
         /// </summary>
         public static string PivotGrid_HideEmptyRowsButton_ToolTip {
             get {
@@ -2167,7 +2167,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide members and cells hints.
+        ///   Looks up a localized string similar to Esconder dicas de células.
         /// </summary>
         public static string PivotGrid_HideHintsButton_ToolTip {
             get {
@@ -2176,7 +2176,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paste cells from Clipboard.
+        ///   Looks up a localized string similar to Colar células da area de transferência.
         /// </summary>
         public static string PivotGrid_PasteFromClipboardButton_ToolTip {
             get {
@@ -2185,7 +2185,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Refresh.
+        ///   Looks up a localized string similar to Atualizar.
         /// </summary>
         public static string PivotGrid_RefreshButton_ToolTip {
             get {
@@ -2194,7 +2194,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restore default size for columns and rows members.
+        ///   Looks up a localized string similar to Restaurar largura e altura padrão para linhas e colunas..
         /// </summary>
         public static string PivotGrid_RestoreDefaultSize_ToolTip {
             get {
@@ -2203,7 +2203,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rotate axes.
+        ///   Looks up a localized string similar to Inverter eixos.
         /// </summary>
         public static string PivotGrid_RotateAxesButton_ToolTip {
             get {
@@ -2250,7 +2250,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Navigate To Begin (Ctrl+Shift+Left).
+        ///   Looks up a localized string similar to Ir para inicio (Ctrl+Shift+Left).
         /// </summary>
         public static string PivotGrid_ToBeginButton_ToolTip {
             get {
@@ -2259,7 +2259,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Navigate To End (Ctrl+Shift+Right).
+        ///   Looks up a localized string similar to Ir para o fim (Ctrl+Shift+Right).
         /// </summary>
         public static string PivotGrid_ToEndButton_ToolTip {
             get {
@@ -2295,7 +2295,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Properties.
+        ///   Looks up a localized string similar to Propriedades.
         /// </summary>
         public static string Properties {
             get {
@@ -2304,7 +2304,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Properties.
+        ///   Looks up a localized string similar to Propriedades.
         /// </summary>
         public static string PropertiesDialog_Caption {
             get {
@@ -2313,7 +2313,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Property.
+        ///   Looks up a localized string similar to Propriedade.
         /// </summary>
         public static string PropertiesList_PropertyColumn {
             get {
@@ -2322,7 +2322,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value.
+        ///   Looks up a localized string similar to Valor.
         /// </summary>
         public static string PropertiesList_ValueColumn {
             get {
@@ -2331,7 +2331,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Property:.
+        ///   Looks up a localized string similar to Propriedade:.
         /// </summary>
         public static string Property_Label {
             get {
@@ -2340,7 +2340,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save As.
+        ///   Looks up a localized string similar to Salvar como.
         /// </summary>
         public static string SaveAsDialog_Caption {
             get {
@@ -2349,7 +2349,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save as Dialog.
+        ///   Looks up a localized string similar to Salvar como.
         /// </summary>
         public static string SaveAsDialog_Name {
             get {
@@ -2358,7 +2358,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xls Files (.xls)|*.xls.
+        ///   Looks up a localized string similar to Xls (.xls)|*.xls.
         /// </summary>
         public static string SaveDialog_Filter_XlsFiles {
             get {
@@ -2367,7 +2367,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xml Files (.xml)|*.xml.
+        ///   Looks up a localized string similar to Xml (.xml)|*.xml.
         /// </summary>
         public static string SaveDialog_Filter_XmlFiles {
             get {
@@ -2376,7 +2376,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save Settings.
+        ///   Looks up a localized string similar to Opções de salvamento.
         /// </summary>
         public static string SaveSettings_ToolTip {
             get {
@@ -2403,7 +2403,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show all.
+        ///   Looks up a localized string similar to Exibir todos.
         /// </summary>
         public static string ShowAll_Check {
             get {
@@ -2412,7 +2412,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Image.
+        ///   Looks up a localized string similar to Exibir imagem.
         /// </summary>
         public static string ShowImage_Check {
             get {
@@ -2421,7 +2421,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show ProgressBar.
+        ///   Looks up a localized string similar to Exibir barra de progresso.
         /// </summary>
         public static string ShowProgressBar_Check {
             get {
@@ -2430,7 +2430,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Value.
+        ///   Looks up a localized string similar to Exibir valor.
         /// </summary>
         public static string ShowValue_Check {
             get {
@@ -2439,7 +2439,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ascending.
+        ///   Looks up a localized string similar to Ascendente.
         /// </summary>
         public static string Sorting_Ascending_Label {
             get {
@@ -2448,7 +2448,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Descending.
+        ///   Looks up a localized string similar to Descendente.
         /// </summary>
         public static string Sorting_Descending_Label {
             get {
@@ -2457,7 +2457,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to None.
+        ///   Looks up a localized string similar to Nenhum.
         /// </summary>
         public static string Sorting_None_Label {
             get {
@@ -2466,7 +2466,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorting by:.
+        ///   Looks up a localized string similar to Ordenando por:.
         /// </summary>
         public static string SortingBy_Label {
             get {
@@ -2475,7 +2475,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorting direction:.
+        ///   Looks up a localized string similar to Direção da ordenação:.
         /// </summary>
         public static string SortingDirection_Label {
             get {
@@ -2493,7 +2493,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorting Settings.
+        ///   Looks up a localized string similar to Configurações de ordenação.
         /// </summary>
         public static string SortingSettingsDialog_Caption {
             get {
@@ -2502,7 +2502,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start Color:.
+        ///   Looks up a localized string similar to Cor inicial:.
         /// </summary>
         public static string StartColor_Label {
             get {
@@ -2511,7 +2511,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Style Details:.
+        ///   Looks up a localized string similar to Detalhes do estilo:.
         /// </summary>
         public static string StyleDetails_Label {
             get {
@@ -2520,7 +2520,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Styles:.
+        ///   Looks up a localized string similar to Estilos:.
         /// </summary>
         public static string Styles_Label {
             get {
@@ -2529,7 +2529,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete all.
+        ///   Looks up a localized string similar to Excluir tudo.
         /// </summary>
         public static string Toolbar_DeleteAllButton_ToolTip {
             get {
@@ -2538,7 +2538,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete current item.
+        ///   Looks up a localized string similar to Excluir corrente.
         /// </summary>
         public static string Toolbar_DeleteButton_ToolTip {
             get {
@@ -2547,7 +2547,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create new.
+        ///   Looks up a localized string similar to Novo.
         /// </summary>
         public static string Toolbar_NewButton_ToolTip {
             get {
@@ -2556,7 +2556,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cube: {0}.
+        ///   Looks up a localized string similar to Cubo: {0}.
         /// </summary>
         public static string Tooltip_Cube {
             get {
@@ -2565,7 +2565,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dimension: {0}.
+        ///   Looks up a localized string similar to Dimensão: {0}.
         /// </summary>
         public static string Tooltip_Dimension {
             get {
@@ -2574,7 +2574,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hierarchy: {0}.
+        ///   Looks up a localized string similar to Hierarquia: {0}.
         /// </summary>
         public static string Tooltip_Hierarchy {
             get {
@@ -2583,7 +2583,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Level: {0}.
+        ///   Looks up a localized string similar to Nível: {0}.
         /// </summary>
         public static string Tooltip_Level {
             get {
@@ -2592,7 +2592,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Top N.
+        ///   Looks up a localized string similar to Primeiros N.
         /// </summary>
         public static string TopFilter_Name {
             get {
@@ -2601,7 +2601,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;Top N&apos; Filter.
+        ///   Looks up a localized string similar to &apos;Primeiros N&apos; - Filtro.
         /// </summary>
         public static string TopFilterDialog_Caption {
             get {
@@ -2619,7 +2619,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error loading data.
+        ///   Looks up a localized string similar to Erro ao carregar os dados.
         /// </summary>
         public static string TreeNode_ErrorLoadingData {
             get {
@@ -2628,7 +2628,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tuple.
+        ///   Looks up a localized string similar to Tupla.
         /// </summary>
         public static string Tuple {
             get {
@@ -2655,7 +2655,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use All Options.
+        ///   Looks up a localized string similar to Usar todas as opções.
         /// </summary>
         public static string UseAllOptions_Check {
             get {
@@ -2664,7 +2664,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Back Color.
+        ///   Looks up a localized string similar to Usar cor de fundo.
         /// </summary>
         public static string UseBackColor_Check {
             get {
@@ -2673,7 +2673,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Border Color.
+        ///   Looks up a localized string similar to Usar cor da borda.
         /// </summary>
         public static string UseBorderColor_Check {
             get {
@@ -2682,7 +2682,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Fore Color.
+        ///   Looks up a localized string similar to Usar cor da fonte.
         /// </summary>
         public static string UseForeColor_Check {
             get {
@@ -2691,7 +2691,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value Condition:.
+        ///   Looks up a localized string similar to Condição do valor:.
         /// </summary>
         public static string ValueCondition_Label {
             get {
@@ -2700,7 +2700,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accessibility.
+        ///   Looks up a localized string similar to Acessibilidade.
         /// </summary>
         public static string ValueCopyControl_Accessibility {
             get {
@@ -2709,7 +2709,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coordinates:.
+        ///   Looks up a localized string similar to Coordenadas:.
         /// </summary>
         public static string ValueCopyControl_Coordinates {
             get {
@@ -2718,7 +2718,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hidden.
+        ///   Looks up a localized string similar to Oculto.
         /// </summary>
         public static string ValueCopyControl_CoordinateState_Disabled {
             get {
@@ -2727,7 +2727,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Full access.
+        ///   Looks up a localized string similar to Acesso total.
         /// </summary>
         public static string ValueCopyControl_CoordinateState_Enabled {
             get {
@@ -2736,7 +2736,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Readonly.
+        ///   Looks up a localized string similar to Somente leitura.
         /// </summary>
         public static string ValueCopyControl_CoordinateState_Readonly {
             get {
@@ -2745,7 +2745,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unknown.
+        ///   Looks up a localized string similar to Desconhecido.
         /// </summary>
         public static string ValueCopyControl_CoordinateState_Unknown {
             get {
@@ -2754,7 +2754,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy.
+        ///   Looks up a localized string similar to Copiar.
         /// </summary>
         public static string ValueCopyControl_CopyButton_Caption {
             get {
@@ -2763,7 +2763,7 @@ namespace Wing.Olap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy value from source.
+        ///   Looks up a localized string similar to Copiar valor da fonte.
         /// </summary>
         public static string ValueCopyControl_CopyValueFromSource {
             get {

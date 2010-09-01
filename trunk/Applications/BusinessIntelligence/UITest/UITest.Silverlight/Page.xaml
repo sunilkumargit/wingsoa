@@ -1,0 +1,406 @@
+﻿<UserControl
+        x:Class="UILibrary.Olap.UITestApplication.Page"
+        xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:Samples="clr-namespace:UILibrary.Olap.UITestApplication;assembly=UILibrary.Olap.UITestApplication"
+
+    xmlns:kpi_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:measure_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:level_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:member_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:pivotgrid_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:cube_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:dimension_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:hierarchy_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:server_controls="clr-namespace:Wing.Olap.Controls;assembly=Wing.Olap.Silverlight"
+    xmlns:general="clr-namespace:Wing.Olap.Controls.General;assembly=Wing.Olap.Silverlight"
+    xmlns:gauge="clr-namespace:Wing.Olap.Controls.Gauge;assembly=Wing.Olap.Silverlight"
+    xmlns:ds_info="clr-namespace:Wing.Olap.Controls.DataSourceInfo;assembly=Wing.Olap.Silverlight"
+>
+
+    <Grid x:Name="LayoutRoot" MouseRightButtonDown="LayoutRoot_MouseRightButtonDown">
+        <swc:TabControl SelectedIndex="0"  Background="{Binding ElementName=cbBackGroundColor, Path=SelectedItem.Tag}" >
+            <swc:TabItem Header="Configuração" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="BackGroundColor:" />
+                    <Samples:ComboBoxColors x:Name="cbBackGroundColor" SelectedIndex="7" Grid.Column="1" Grid.Row="0" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" Text="OlapWebService Url:"/>
+                    <TextBox x:Name="tbOlapWebServiceUrl" Grid.Row="1" Grid.Column="1" IsReadOnly="True" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="2" Margin="0,0,0,0" Text="OLAPConnectionString:" />
+                    <TextBox x:Name="tbOLAPConnectionString" Grid.Column="1" Grid.Row="2"/>
+                    <TextBlock x:Name="CheckedInfo" Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" Text="" />
+                    <Button
+                            Content="Conectar ao servidor OLAP" 
+                            x:Name="CheckConnection"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Click="CheckConnection_Click"
+                        />
+                    <Grid Grid.Row="5" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Visibility="Collapsed"
+                            Content="Set default values" 
+                            x:Name="SetDefaultValues"
+                            Grid.Column="0"
+                            Click="SetDefaultValues_Click" />
+                        <Button Visibility="Collapsed"
+                            Content="Load last saved values" 
+                            x:Name="LoadLastSavedValues"
+                            Grid.Column="1"
+                            Click="LoadLastSavedValues_Click"
+                        />
+                        <Button Visibility="Collapsed"
+                            Content="Save current values" 
+                            x:Name="SaveCurrentValues"
+                            Grid.Column="2"
+                            Click="SaveCurrentValues_Click"
+                        />
+                    </Grid>
+                    <TextBox x:Name="tbLastError" Grid.Row="6" Grid.Column="1" IsReadOnly="True" Background="Transparent" />
+                </Grid>
+            </swc:TabItem>
+            <swc:TabItem Header="Mdx Designer">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" Content="Iniciar MdxDesigner" x:Name="initmdxDesignerButton" Click="initmdxDesignerButton_Click"/>
+                        <Button Grid.Row="0" Grid.Column="1" Content="Exportar Layout" x:Name="exportMdxLayoutButton" Click="exportMdxLayoutButton_Click"/>
+                        <Button Grid.Row="0" Grid.Column="2" Content="Importar Layout" x:Name="importMdxLayoutButton" Click="importMdxLayoutButton_Click"/>
+                        <Button Grid.Row="0" Grid.Column="3" Content="Exportar Query" x:Name="exportMDXQueryButton" Click="exportMDXQueryButton_Click"/>
+                    </Grid>
+                    <Samples:MyDesigner Grid.Row="1" x:Name="pivotMdxDesignerControl" />
+                </Grid>
+            </swc:TabItem>
+            <swc:TabItem Header="Designer Layout">
+                <TextBox  x:Name="tbMdxDesignerLayout" AcceptsReturn="True" Text="{Binding Path=MdxDesignerLayout}"/>
+            </swc:TabItem>
+            <swc:TabItem Header="Mdx Query">
+                <TextBox  x:Name="tbMdxQuery" AcceptsReturn="True" Text="{Binding Path=MdxQuery}"/>
+            </swc:TabItem>
+            <swc:TabItem Header="Mdx Update Script" Visibility="Collapsed">
+                <TextBox  x:Name="tbUpdateScript" AcceptsReturn="True" Text="{Binding Path=UpdateScript}" />
+            </swc:TabItem>
+            <swc:TabItem Header="Pivot Grid">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Button   Grid.Row="0" Content="Iniciar PivotGrid" Height="60" x:Name="initPivotGridButton"  Click="initPivotGridButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <CheckBox Grid.Row="1" Name="ckbAutoWidthColumns" IsChecked="true" Content="AutoWidthColumns"  Visibility="Collapsed"/>
+                        <CheckBox Grid.Row="2" Name="ckbColumnsIsInteractive" IsChecked="true" Content="ColumnsIsInteractive" Visibility="Collapsed"/>
+                        <CheckBox Grid.Row="3" Name="ckbRowsIsInteractive" IsChecked="true" Content="RowsIsInteractive" Visibility="Collapsed"/>
+                        <CheckBox Grid.Row="4" Name="ckbUseColumnsAreaHint" IsChecked="true" Content="UseColumnsAreaHint" Visibility="Collapsed"/>
+                        <CheckBox Grid.Row="5" Name="ckbUseRowsAreaHint" IsChecked="true" Content="UseRowsAreaHint" Visibility="Collapsed"/>
+                        <CheckBox Grid.Row="6" Name="ckbUseCellsAreaHint" IsChecked="true" Content="UseCellsAreaHint" Visibility="Collapsed"/>
+                        <CheckBox Grid.Row="7" Name="ckbUseCellConditionsDesigner" IsChecked="false" Content="UseCellConditionsDesigner"/>
+                        <CheckBox Grid.Row="8" Name="ckbIsUpdateable" IsChecked="true" Content="IsUpdateable" />
+                        <TextBlock Grid.Row="9" Text="Vis. do membro:" />
+                        <ComboBox Grid.Row="10" Name="cbMemberVisualizationType" SelectedIndex="0">
+                            <ComboBoxItem Content="Caption"/>
+                            <ComboBoxItem Content="Key"/>
+                            <ComboBoxItem Content="KeyAndCaption" />
+                            <ComboBoxItem Content="UniqueName"/>
+                        </ComboBox>
+                        <TextBlock Grid.Row="12" Text="Modo de vis.:" />
+                        <ComboBox Grid.Row="13" Name="cbMembersViewMode" SelectedIndex="0">
+                            <ComboBoxItem Content="Tree"/>
+                            <ComboBoxItem Content="Grid"/>
+                        </ComboBox>
+                        <TextBlock Grid.Row="15" Text="DataReorganizationType:" Visibility="Collapsed"/>
+                        <ComboBox Grid.Row="16" Name="cbDataReorganizationType" SelectedIndex="2" Visibility="Collapsed">
+                            <ComboBoxItem Content="None"/>
+                            <ComboBoxItem Content="MergeNeighbors"/>
+                            <ComboBoxItem Content="LinkToParent" />
+                        </ComboBox>
+                        <TextBlock Grid.Row="18" Text="Ação default:" />
+                        <ComboBox Grid.Row="19" Name="cbDefaultMemberAction" SelectedIndex="1">
+                            <ComboBoxItem Content="None"/>
+                            <ComboBoxItem Content="DrillDown"/>
+                            <ComboBoxItem Content="ExpandCollapse" />
+                            <ComboBoxItem Content="SortByProperty"/>
+                        </ComboBox>
+                        <TextBlock Grid.Row="21" Text="ColumnTitleClickBehavior:" />
+                        <ComboBox Grid.Row="22" Name="cbColumnTitleClickBehavior" SelectedIndex="5">
+                            <ComboBoxItem Content="None"/>
+                            <ComboBoxItem Content="DrillDown"/>
+                            <ComboBoxItem Content="ExpandCollapse" />
+                            <ComboBoxItem Content="SortByProperty"/>
+                            <ComboBoxItem Content="SameAsRows"/>
+                            <ComboBoxItem Content="SortByValue"/>
+                        </ComboBox>
+                        <TextBlock Grid.Row="24" Text="modo de DrillDown:" />
+                        <ComboBox Grid.Row="25" Name="cbDrillDownMode" SelectedIndex="0">
+                            <ComboBoxItem Content="ByCurrentTupleShowSelf"/>
+                            <ComboBoxItem Content="BySingleDimensionShowSelf"/>
+                            <ComboBoxItem Content="ByCurrentTupleHideSelf" />
+                            <ComboBoxItem Content="BySingleDimensionHideSelf"/>
+                        </ComboBox>
+                    </Grid>
+                    <basics:GridSplitter x:Name="grsplSplitter" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Background="Silver" Width="5"/>
+                    <pivotgrid_controls:UpdateablePivotGridControl Grid.Column="2" x:Name="pivotGridControl" />
+                </Grid>
+            </swc:TabItem>
+            <swc:TabItem Header="Caixas de opções">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Iniciar"
+                     Height="22" x:Name="initCubeChoiceButton"
+                     Grid.Row="0" Grid.Column="0"
+                     Click="initCubeChoiceButton_Click"/>
+                    <cube_controls:CubeChoiceCtrl
+                     x:Name="cubeChoiceControl"
+                     Grid.Row="0"
+                     Grid.Column="1"
+                     SelectedItemChanged="cubeChoiceControl_SelectedItemChanged"
+                     />
+
+                    <Button Content="InitKPIChoice" Height="22" x:Name="getKPIsButton" Grid.Row="1" Grid.Column="0"
+                     Click="getKPIsButton_Click"/>
+                    <kpi_controls:KpiChoicePopUp x:Name="kpiChoiceControl" Grid.Row="1" Grid.Column="1" 
+                    />
+
+                    <Button Content="InitMeasureChoice" Height="22" x:Name="getMeasureChoice" Grid.Row="2" Grid.Column="0" Click="getKPIsButton_Click"/>
+                    <measure_controls:MeasureChoicePopUp x:Name="measureChoiceControl" Grid.Row="2" Grid.Column="1"/>
+
+                    <Button Content="InitDimensionChoice" Height="22" x:Name="initDimensionChoiceButton" Grid.Row="3" Grid.Column="0" Click="getKPIsButton_Click"/>
+                    <dimension_controls:DimensionChoiceCtrl x:Name="dimensionChoiceControl" Grid.Row="3" Grid.Column="1"
+                    SelectedItemChanged="dimensionChoiceControl_SelectedItemChanged"
+                    />
+
+                    <Button Content="InitHierarchyChoice" Height="22" x:Name="initHierarchyChoiceButton" Grid.Row="4" Grid.Column="0" Click="initHierarchyChoiceButton_Click"></Button>
+                    <hierarchy_controls:HierarchyChoiceCtrl x:Name="hierarchyChoiceControl" Grid.Row="4" Grid.Column="1"
+                    SelectedItemChanged="hierarchyChoiceControl_SelectedItemChanged"
+                    />
+                    <Button Content="InitMembersChoice" Height="22" x:Name="getMembersButton" Grid.Row="6" Grid.Column="0" Click="getMembersButton_Click"></Button>
+                    <member_controls:MemberChoiceControl x:Name="memberChoice" Grid.Row="6" Grid.Column="1"/>
+                </Grid>
+            </swc:TabItem>
+            <swc:TabItem Header="Server Explorer" Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="27"></RowDefinition>
+                        <RowDefinition Height ="27"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Row="0" x:Name="AllCubes" Content="All Cubes (including dimensions)"/>
+                    <Button Height="22" x:Name="initServerExplorerButton"
+                     Grid.Row="1"
+                     Click="initServerExplorerButton_Click"
+                     Content="InitServerExplorer"/>
+                    <server_controls:ServerExplorerCtrl
+                     x:Name="serverExplorerControl"
+                     Grid.Row="2" />
+                </Grid>
+            </swc:TabItem>
+            <swc:TabItem Header="RoundGauge" Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                            <RowDefinition Height="27"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="170"/>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" Text="Text:"/>
+                        <TextBox x:Name="tbGaugeText" Grid.Row="1" Grid.Column="1" AcceptsReturn="False"
+                            Text="Feel free to change."
+                         />
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="ToolTipText:"/>
+                        <TextBox x:Name="tbGaugeToolTipText" Grid.Row="2" Grid.Column="1" AcceptsReturn="True"
+                            Text="This is tooltip text.&#xD;&#xA;You can dynamically change all values."
+                        />
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="CurrentValue:"/>
+                        <TextBox x:Name="tbCurrentValue" Grid.Row="3" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=CurrentValue, Mode=TwoWay}"
+                        />
+                        <TextBlock Grid.Column="0" Grid.Row="4" Text="MinValue:"/>
+                        <TextBox x:Name="tbMinValue" Grid.Row="4" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=MinValue, Mode=TwoWay}"
+                        />
+                        <TextBlock Grid.Column="0" Grid.Row="5" Text="LowValue:"/>
+                        <TextBox x:Name="tbLowValue" Grid.Row="5" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=LowValue, Mode=TwoWay}"
+                        />
+                        <TextBlock Grid.Column="0" Grid.Row="6" Text="HighValue:"/>
+                        <TextBox x:Name="tbHighValue" Grid.Row="6" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=HighValue, Mode=TwoWay}"
+                        />
+                        <TextBlock Grid.Column="0" Grid.Row="7" Text="MaxValue:"/>
+                        <TextBox x:Name="tbMaxValue" Grid.Row="7" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=MaxValue, Mode=TwoWay}"
+                         />
+                        <TextBlock Grid.Column="0" Grid.Row="8" Text="MeterMargin(%):"/>
+                        <TextBox x:Name="tbMeterMargin" Grid.Row="8" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=MeterMargin, Mode=TwoWay}"
+                         />
+                        <TextBlock Grid.Column="0" Grid.Row="9" Text="LowColor:" />
+                        <Samples:ComboBoxColors x:Name="cbLowColor" SelectedIndex="11" Grid.Column="1" Grid.Row="9" />
+                        <TextBlock Grid.Column="0" Grid.Row="10" Text="MiddleColor:" />
+                        <Samples:ComboBoxColors x:Name="cbMiddleColor" SelectedIndex="14" Grid.Column="1" Grid.Row="10" />
+                        <TextBlock Grid.Column="0" Grid.Row="11" Text="HighColor:" />
+                        <Samples:ComboBoxColors x:Name="cbHighColor" SelectedIndex="6" Grid.Column="1" Grid.Row="11" />
+                        <TextBlock Grid.Column="0" Grid.Row="12" Text="MeterBackGroundColor:" />
+                        <Samples:ComboBoxColors x:Name="cbMeterBackGroundColor" SelectedIndex="2" Grid.Column="1" Grid.Row="12" />
+                        <TextBlock Grid.Column="0" Grid.Row="13" Text="Background:" />
+                        <Samples:ComboBoxColors x:Name="cbGaugeBackground" SelectedIndex="7" Grid.Column="1" Grid.Row="13" />
+                        <TextBlock Grid.Column="0" Grid.Row="14" Text="Foreground:" />
+                        <Samples:ComboBoxColors x:Name="cbGaugeForeground" SelectedIndex="0" Grid.Column="1" Grid.Row="14" />
+                        <TextBlock Grid.Column="0" Grid.Row="15" Text="DivisionsFormatString:"/>
+                        <TextBox x:Name="tbDivisionsFormatString"
+                            Grid.Row="15" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=DivisionsFormatString, Mode=TwoWay}"
+                         />
+                        <TextBlock Grid.Column="0"
+                            Grid.Row="16" Text="CurrentValueFormatString:"/>
+                        <TextBox x:Name="tbCurrentValueFormatString"
+                            Grid.Row="16" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=CurrentValueFormatString, Mode=TwoWay}"
+                        />
+                        <TextBlock Grid.Column="0"
+                            Grid.Row="17" Text="DivisionsCount:"/>
+                        <TextBox x:Name="tbDivisionsCount"
+                            Grid.Row="17" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=DivisionsCount, Mode=TwoWay}"
+                        />
+                        <TextBlock Grid.Column="0"
+                            Grid.Row="18" Text="SubDivisionsCount:"/>
+                        <TextBox x:Name="tbSubDivisionsCount"
+                            Grid.Row="18" Grid.Column="1" AcceptsReturn="False"
+                            Text="{Binding ElementName=RoundGauge, Path=SubDivisionsCount, Mode=TwoWay}"
+                        />
+                        <TextBlock Grid.Column="0" Grid.Row="19" Text="TextColor:" />
+                        <Samples:ComboBoxColors x:Name="cbGaugeTextColor" SelectedIndex="1" Grid.Column="1" Grid.Row="19" />
+                    </Grid>
+                    <gauge:RoundGauge Grid.Row="0" Grid.Column="1" x:Name="RoundGauge"
+                     Text="{Binding ElementName=tbGaugeText, Path=Text}"
+                     ToolTipService.ToolTip="{Binding ElementName=tbGaugeToolTipText, Path=Text}"
+                     LowColor="{Binding ElementName=cbLowColor, Path=SelectedItem.Tag.Color}"
+                     MiddleColor="{Binding ElementName=cbMiddleColor, Path=SelectedItem.Tag.Color}"
+                     HighColor="{Binding ElementName=cbHighColor, Path=SelectedItem.Tag.Color}"
+                     BackgroundColor="{Binding ElementName=cbGaugeBackground, Path=SelectedItem.Tag.Color}"
+                     ForeColor="{Binding ElementName=cbGaugeForeground, Path=SelectedItem.Tag.Color}"
+                     TextColor="{Binding ElementName=cbGaugeTextColor, Path=SelectedItem.Tag.Color}"
+                     MeterBackgroundColor="{Binding ElementName=cbMeterBackGroundColor, Path=SelectedItem.Tag.Color}"
+                    />
+                </Grid>
+            </swc:TabItem>
+        </swc:TabControl>
+    </Grid>
+</UserControl>

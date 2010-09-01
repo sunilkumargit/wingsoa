@@ -112,67 +112,67 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Apply" xml:space="preserve">
-    <value>Apply</value>
+    <value>Aplicar</value>
   </data>
   <data name="Clear" xml:space="preserve">
-    <value>Clear</value>
+    <value>Limpar</value>
   </data>
   <data name="Clipboard_ClipboardUnavailable" xml:space="preserve">
-    <value>Clipboard is unavailable</value>
+    <value>Area de transferência está indisponível</value>
   </data>
   <data name="Clipboard_UnableCopy" xml:space="preserve">
-    <value>Unable to copy the text</value>
+    <value>Não foi possivel copiar o texto</value>
   </data>
   <data name="ConnectionString" xml:space="preserve">
-    <value>Connection String</value>
+    <value>String de conexão</value>
   </data>
   <data name="ContextCmd_Copy" xml:space="preserve">
-    <value>Copy</value>
+    <value>Copiar</value>
   </data>
   <data name="ContextCmd_Cut" xml:space="preserve">
-    <value>Cut</value>
+    <value>Recortar</value>
   </data>
   <data name="ContextCmd_Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Excluir</value>
   </data>
   <data name="ContextCmd_Paste" xml:space="preserve">
-    <value>Paste</value>
+    <value>Colar</value>
   </data>
   <data name="ContextCmd_SelectAll" xml:space="preserve">
-    <value>Select All</value>
+    <value>Selecionar tudo</value>
   </data>
   <data name="ContextMenu_Copy" xml:space="preserve">
-    <value>Copy</value>
+    <value>Copiar</value>
   </data>
   <data name="ContextMenu_CopyValue" xml:space="preserve">
-    <value>Copy value</value>
+    <value>Copiar valor</value>
   </data>
   <data name="ContextMenu_CustomProperties" xml:space="preserve">
-    <value>Custom properties</value>
+    <value>Outras propriedades</value>
   </data>
   <data name="ContextMenu_DeliveryValue" xml:space="preserve">
-    <value>Delivery value</value>
+    <value>Valor</value>
   </data>
   <data name="ContextMenu_Paste" xml:space="preserve">
-    <value>Paste</value>
+    <value>Colar</value>
   </data>
   <data name="ContextMenu_Properties" xml:space="preserve">
-    <value>Properties</value>
+    <value>Propriedades</value>
   </data>
   <data name="ContextMenu_ShowMDX" xml:space="preserve">
-    <value>Show MDX</value>
+    <value>Mostrar expressão MDX</value>
   </data>
   <data name="CopyToClipboard_ToolTip" xml:space="preserve">
-    <value>Copy to clipboard</value>
+    <value>Copiar para a area de transferência</value>
   </data>
   <data name="CustomPropertiesDialog_Caption" xml:space="preserve">
-    <value>Custom Properties</value>
+    <value>Outras Propriedades</value>
   </data>
   <data name="DataSourceInfoDialog_Caption" xml:space="preserve">
     <value>Data Source Information</value>
@@ -190,28 +190,28 @@
     <value>Date choice</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Excluir</value>
   </data>
   <data name="DialogButton_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="DialogButton_Ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Filter_AddOperand" xml:space="preserve">
-    <value>Add Operand</value>
+    <value>Adicionar operando</value>
   </data>
   <data name="Filter_AddOperation" xml:space="preserve">
-    <value>Add Operation</value>
+    <value>Adicionar operação</value>
   </data>
   <data name="Filter_Contains" xml:space="preserve">
-    <value>Contains</value>
+    <value>Contendo</value>
   </data>
   <data name="Filter_Equal" xml:space="preserve">
-    <value>Equal</value>
+    <value>Igual</value>
   </data>
   <data name="Find" xml:space="preserve">
-    <value>Find</value>
+    <value>Procurar</value>
   </data>
   <data name="KPIChoice_Caption" xml:space="preserve">
     <value>KPI choice</value>
@@ -220,19 +220,19 @@
     <value>Level choice</value>
   </data>
   <data name="Loading" xml:space="preserve">
-    <value>Loading...</value>
+    <value>Pesquisando...</value>
   </data>
   <data name="MdxDesigner_ColumnsArea_Caption" xml:space="preserve">
-    <value>Columns</value>
+    <value>Colunas</value>
   </data>
   <data name="MdxDesigner_DataArea_Caption" xml:space="preserve">
-    <value>Data</value>
+    <value>Dados</value>
   </data>
   <data name="MdxDesigner_FilterArea_Caption" xml:space="preserve">
-    <value>Filters</value>
+    <value>Filtros</value>
   </data>
   <data name="MdxDesigner_RowsArea_Caption" xml:space="preserve">
-    <value>Rows</value>
+    <value>Linhas</value>
   </data>
   <data name="MDXQuery" xml:space="preserve">
     <value>MDX Query</value>
@@ -244,40 +244,40 @@
     <value>Members choice</value>
   </data>
   <data name="MemberChoice_ClearSelection_ToolTip" xml:space="preserve">
-    <value>Clear Selection</value>
+    <value>Limpar seleção</value>
   </data>
   <data name="MemberChoice_LoadAll" xml:space="preserve">
-    <value>Load All ...</value>
+    <value>Carregar todos...</value>
   </data>
   <data name="MemberChoice_LoadNext" xml:space="preserve">
-    <value>Load Next ...</value>
+    <value>Carregar próximos...</value>
   </data>
   <data name="MemberChoice_MembersFound" xml:space="preserve">
-    <value>Members found: </value>
+    <value>Membros encontrados:</value>
   </data>
   <data name="MemberChoice_MembersSelected" xml:space="preserve">
-    <value>Members selected: </value>
+    <value>Membros selecionados:</value>
   </data>
   <data name="MemberChoice_MultiSelect" xml:space="preserve">
-    <value>&lt;Multi Select&gt;</value>
+    <value>&lt;Seleção múltipla&gt;</value>
   </data>
   <data name="MemberChoice_Refresh_ToolTip" xml:space="preserve">
-    <value>Refresh</value>
+    <value>Atualizar</value>
   </data>
   <data name="MemberChoice_Selected" xml:space="preserve">
-    <value>Selected</value>
+    <value>Selecionado</value>
   </data>
   <data name="MemberChoice_ShowMemberProperties_ToolTip" xml:space="preserve">
-    <value>Show Custom Member Properties</value>
+    <value>Exibir propriedades customizadas dos membros</value>
   </data>
   <data name="Members" xml:space="preserve">
-    <value>Members</value>
+    <value>Membros</value>
   </data>
   <data name="MessageBox_Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Erro</value>
   </data>
   <data name="MessageBox_Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Atenção</value>
   </data>
   <data name="PivotGrid_BackButton_ToolTip" xml:space="preserve">
     <value>Navigate Backward (Ctrl+Left)</value>
@@ -289,7 +289,7 @@
     <value>That command cannot be use on multiple selections.</value>
   </data>
   <data name="PivotGrid_Collapse" xml:space="preserve">
-    <value>Collapse</value>
+    <value>Recolher</value>
   </data>
   <data name="PivotGrid_ConfirmEditButton_ToolTip" xml:space="preserve">
     <value>Recalculate table data with current changes</value>
@@ -298,25 +298,25 @@
     <value>DrillDown</value>
   </data>
   <data name="PivotGrid_EditButton_ToolTip" xml:space="preserve">
-    <value>On/Off Editing Mode</value>
+    <value>Ativar/desativar modo de edição</value>
   </data>
   <data name="PivotGrid_Expand" xml:space="preserve">
-    <value>Expand</value>
+    <value>Expandir</value>
   </data>
   <data name="PivotGrid_ForwardButton_ToolTip" xml:space="preserve">
     <value>Navigate Forward (Ctrl+Right)</value>
   </data>
   <data name="PivotGrid_HideEmptyColumnsButton_ToolTip" xml:space="preserve">
-    <value>Hide Empty Columns</value>
+    <value>Esconder colunas em branco</value>
   </data>
   <data name="PivotGrid_HideEmptyRowsButton_ToolTip" xml:space="preserve">
-    <value>Hide Empty Rows</value>
+    <value>Esconder linhas em branco</value>
   </data>
   <data name="PivotGrid_RefreshButton_ToolTip" xml:space="preserve">
-    <value>Refresh</value>
+    <value>Atualizar</value>
   </data>
   <data name="PivotGrid_RestoreDefaultSize_ToolTip" xml:space="preserve">
-    <value>Restore default size for columns and rows members</value>
+    <value>Restaurar largura e altura padrão para linhas e colunas.</value>
   </data>
   <data name="PivotGrid_SaveCachedChanges" xml:space="preserve">
     <value>The operation requires the recalculation given with provision for contributed change. 
@@ -324,37 +324,37 @@
 Please, recalculate data or cancel changes.</value>
   </data>
   <data name="PivotGrid_ToBeginButton_ToolTip" xml:space="preserve">
-    <value>Navigate To Begin (Ctrl+Shift+Left)</value>
+    <value>Ir para inicio (Ctrl+Shift+Left)</value>
   </data>
   <data name="PivotGrid_ToEndButton_ToolTip" xml:space="preserve">
-    <value>Navigate To End (Ctrl+Shift+Right)</value>
+    <value>Ir para o fim (Ctrl+Shift+Right)</value>
   </data>
   <data name="PivotGrid_UseChangesCasheButton_ToolTip" xml:space="preserve">
     <value>Use remitted recalculation</value>
   </data>
   <data name="PropertiesDialog_Caption" xml:space="preserve">
-    <value>Properties</value>
+    <value>Propriedades</value>
   </data>
   <data name="PropertiesList_PropertyColumn" xml:space="preserve">
-    <value>Property</value>
+    <value>Propriedade</value>
   </data>
   <data name="PropertiesList_ValueColumn" xml:space="preserve">
-    <value>Value</value>
+    <value>Valor</value>
   </data>
   <data name="TreeNode_ErrorLoadingData" xml:space="preserve">
-    <value>Error loading data</value>
+    <value>Erro ao carregar os dados</value>
   </data>
   <data name="UpdateScript" xml:space="preserve">
     <value>Update Script</value>
   </data>
   <data name="ValueCopyControl_Coordinates" xml:space="preserve">
-    <value>Coordinates:</value>
+    <value>Coordenadas:</value>
   </data>
   <data name="ValueCopyControl_CopyButton_Caption" xml:space="preserve">
-    <value>Copy</value>
+    <value>Copiar</value>
   </data>
   <data name="ValueCopyControl_CopyValueFromSource" xml:space="preserve">
-    <value>Copy value from source</value>
+    <value>Copiar valor da fonte</value>
   </data>
   <data name="ValueCopyControl_DeliveryValuePropotrionalSource" xml:space="preserve">
     <value>Delivery value proportional by source</value>
@@ -441,25 +441,25 @@ Please, recalculate data or cancel changes.</value>
     <value>Value to delivery:</value>
   </data>
   <data name="MdxDesigner_ValuesNode_Caption" xml:space="preserve">
-    <value>Values</value>
+    <value>Valores</value>
   </data>
   <data name="MdxDesigner_ContextMenu_MoveDown" xml:space="preserve">
-    <value>Move Down</value>
+    <value>Mover para baixo</value>
   </data>
   <data name="MdxDesigner_ContextMenu_MoveToColumnsArea" xml:space="preserve">
-    <value>Move to Columns</value>
+    <value>Mover para colunas</value>
   </data>
   <data name="MdxDesigner_ContextMenu_MoveToFiltersArea" xml:space="preserve">
-    <value>Move to Filters</value>
+    <value>Mover para filtros</value>
   </data>
   <data name="MdxDesigner_ContextMenu_MoveToRowsArea" xml:space="preserve">
-    <value>Move to Rows</value>
+    <value>Mover para linhas</value>
   </data>
   <data name="MdxDesigner_ContextMenu_MoveUp" xml:space="preserve">
-    <value>Move Up</value>
+    <value>Mover para cima</value>
   </data>
   <data name="MdxDesigner_ContextMenu_RemoveField" xml:space="preserve">
-    <value>Remove Field</value>
+    <value>Remover campo</value>
   </data>
   <data name="MdxDesigner_CubeMetadata" xml:space="preserve">
     <value>Cube Metadata</value>
@@ -468,55 +468,55 @@ Please, recalculate data or cancel changes.</value>
     <value>MDX Query</value>
   </data>
   <data name="MdxDesigner_ExecuteQuery" xml:space="preserve">
-    <value>Execute MDX query</value>
+    <value>Executar MDX</value>
   </data>
   <data name="MdxDesigner_QueryResult" xml:space="preserve">
-    <value>Query result</value>
+    <value>Resultado da consulta</value>
   </data>
   <data name="MdxDesigner_RunQueryAutomatic" xml:space="preserve">
-    <value>Run MDX query automatic</value>
+    <value>Executar consulta MDX automaticamente</value>
   </data>
   <data name="MdxDesigner_ContextMenu_ChangeFilter" xml:space="preserve">
-    <value>Change Filter</value>
+    <value>Alterar filtro</value>
   </data>
   <data name="MdxDesigner_ShowQueryDesigner_ToolTip" xml:space="preserve">
-    <value>Show/Hide query designer</value>
+    <value>Exibir/esconder o designer de consultas</value>
   </data>
   <data name="MdxDesigner_ShowQuery_ToolTip" xml:space="preserve">
-    <value>Show/Hide MDX query</value>
+    <value>Exibir/esconder painel MDX</value>
   </data>
   <data name="PivotGrid_CopyToClipboardButton_ToolTip" xml:space="preserve">
-    <value>Copy selected cells to Clipboard</value>
+    <value>Copiar as células selecionadas para a Area de Transferência.</value>
   </data>
   <data name="PivotGrid_ExportToExcelButton_ToolTip" xml:space="preserve">
-    <value>Export to Microsoft Excel</value>
+    <value>Exportar para o Excel</value>
   </data>
   <data name="PivotGrid_PasteFromClipboardButton_ToolTip" xml:space="preserve">
-    <value>Paste cells from Clipboard</value>
+    <value>Colar células da area de transferência</value>
   </data>
   <data name="SaveDialog_Filter_XmlFiles" xml:space="preserve">
-    <value>Xml Files (.xml)|*.xml</value>
+    <value>Xml (.xml)|*.xml</value>
   </data>
   <data name="SaveDialog_Filter_XlsFiles" xml:space="preserve">
-    <value>Xls Files (.xls)|*.xls</value>
+    <value>Xls (.xls)|*.xls</value>
   </data>
   <data name="PivotGrid_GoToFocusedCellButton_ToolTip" xml:space="preserve">
-    <value>Go to Focused Cell</value>
+    <value>Ir para a célula selecionada</value>
   </data>
   <data name="MdxDesigner_ExportLayout_ToolTip" xml:space="preserve">
-    <value>Export query layout settings</value>
+    <value>Exportar configurações de layout</value>
   </data>
   <data name="MdxDesigner_ImportLayout_ToolTip" xml:space="preserve">
-    <value>Import query layout settings</value>
+    <value>Impotar configurações de layout</value>
   </data>
   <data name="Connection_PropertyDesc" xml:space="preserve">
-    <value>Connection</value>
+    <value>Conexão</value>
   </data>
   <data name="ControlSettingsNotInitialized_Message" xml:space="preserve">
     <value>Settings not initialized: {0}</value>
   </data>
   <data name="CubeName_PropertyDesc" xml:space="preserve">
-    <value>Cube Name</value>
+    <value>Cubo</value>
   </data>
   <data name="DateChoiceControl_Name" xml:space="preserve">
     <value>Date choice control</value>
@@ -537,13 +537,13 @@ Please, recalculate data or cancel changes.</value>
     <value>Measure choice control</value>
   </data>
   <data name="Filter_BeginWith" xml:space="preserve">
-    <value>Begin with</value>
+    <value>Começando com</value>
   </data>
   <data name="PivotGrid_RotateAxesButton_ToolTip" xml:space="preserve">
-    <value>Rotate axes</value>
+    <value>Inverter eixos</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Erro</value>
   </data>
   <data name="PivotGridControl_Name" xml:space="preserve">
     <value>Pivot grid</value>
@@ -552,76 +552,76 @@ Please, recalculate data or cancel changes.</value>
     <value>Update script</value>
   </data>
   <data name="DrillthroughDialog_Caption" xml:space="preserve">
-    <value>Drillthrough result</value>
+    <value>Resultado do detalhamento</value>
   </data>
   <data name="MdxDesigner_ContextMenu_TopFilter" xml:space="preserve">
-    <value>Top N</value>
+    <value>Primeiros N</value>
   </data>
   <data name="Filter_Type_Bottom" xml:space="preserve">
-    <value>Bottom</value>
+    <value>Ultimos</value>
   </data>
   <data name="Filter_Type_Top" xml:space="preserve">
-    <value>Top</value>
+    <value>Primeiros</value>
   </data>
   <data name="TopFilterDialog_Caption" xml:space="preserve">
-    <value>'Top N' Filter</value>
+    <value>'Primeiros N' - Filtro</value>
   </data>
   <data name="MdxDesigner_ContextMenu_CancelFilter" xml:space="preserve">
-    <value>Cancel Filter</value>
+    <value>Limpar filtro</value>
   </data>
   <data name="Filter_Label_By" xml:space="preserve">
-    <value>by</value>
+    <value>por</value>
   </data>
   <data name="Filter_Target_Items" xml:space="preserve">
     <value>Items</value>
   </data>
   <data name="Filter_Target_Percent" xml:space="preserve">
-    <value>Percent</value>
+    <value>Porcento</value>
   </data>
   <data name="Filter_Target_Sum" xml:space="preserve">
-    <value>Sum</value>
+    <value>Soma</value>
   </data>
   <data name="FilterBuilder_Caption" xml:space="preserve">
-    <value>Filter building</value>
+    <value>Construção do filtro</value>
   </data>
   <data name="FilterControl_Caption" xml:space="preserve">
-    <value>Filter</value>
+    <value>Filtro</value>
   </data>
   <data name="FilterControl_Label_FilterSettings" xml:space="preserve">
-    <value>Filter settings:</value>
+    <value>Configurações do filtro:</value>
   </data>
   <data name="FilterControl_Label_FilterType" xml:space="preserve">
-    <value>Filter type:</value>
+    <value>Tipo de filtro:</value>
   </data>
   <data name="LabelFilter_Name" xml:space="preserve">
-    <value>Label Filter</value>
+    <value>Filtro</value>
   </data>
   <data name="TopFilter_Name" xml:space="preserve">
-    <value>Top N</value>
+    <value>Primeiros N</value>
   </data>
   <data name="ValueFilter_Name" xml:space="preserve">
     <value>Value Filter</value>
   </data>
   <data name="Filter_Label_And" xml:space="preserve">
-    <value>and</value>
+    <value>E</value>
   </data>
   <data name="LabelFilter_BeginWith" xml:space="preserve">
-    <value>Begin with</value>
+    <value>Começando com</value>
   </data>
   <data name="LabelFilter_Contain" xml:space="preserve">
-    <value>Contains</value>
+    <value>Contendo</value>
   </data>
   <data name="LabelFilter_EndWith" xml:space="preserve">
-    <value>End with</value>
+    <value>Terminando com</value>
   </data>
   <data name="LabelFilter_NotBeginWith" xml:space="preserve">
-    <value>Does not begin with</value>
+    <value>Não começando com</value>
   </data>
   <data name="LabelFilter_NotContain" xml:space="preserve">
-    <value>Does not contain</value>
+    <value>Não contendo</value>
   </data>
   <data name="LabelFilter_NotEndWith" xml:space="preserve">
-    <value>Does not end with</value>
+    <value>Não terminando com</value>
   </data>
   <data name="ValueFilter_Between" xml:space="preserve">
     <value>Is between</value>
@@ -675,34 +675,34 @@ Please, recalculate data or cancel changes.</value>
     <value>Value copy designer</value>
   </data>
   <data name="ValueCopyControl_Accessibility" xml:space="preserve">
-    <value>Accessibility</value>
+    <value>Acessibilidade</value>
   </data>
   <data name="ValueCopyControl_CoordinateState_Disabled" xml:space="preserve">
-    <value>Hidden</value>
+    <value>Oculto</value>
   </data>
   <data name="ValueCopyControl_CoordinateState_Enabled" xml:space="preserve">
-    <value>Full access</value>
+    <value>Acesso total</value>
   </data>
   <data name="ValueCopyControl_CoordinateState_Readonly" xml:space="preserve">
-    <value>Readonly</value>
+    <value>Somente leitura</value>
   </data>
   <data name="ValueCopyControl_CoordinateState_Unknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>Desconhecido</value>
   </data>
   <data name="ValueCopyControl_RunCopyForm_Tooltip" xml:space="preserve">
     <value>Run copy form</value>
   </data>
   <data name="ObjectDescriptionControl_Caption" xml:space="preserve">
-    <value>Caption</value>
+    <value>Título</value>
   </data>
   <data name="ObjectDescriptionControl_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Descrição</value>
   </data>
   <data name="ObjectDescriptionControl_Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Nome</value>
   </data>
   <data name="SaveAsDialog_Caption" xml:space="preserve">
-    <value>Save As</value>
+    <value>Salvar como</value>
   </data>
   <data name="LoadDialog_Caption" xml:space="preserve">
     <value>Load From</value>
@@ -717,40 +717,40 @@ Please, recalculate data or cancel changes.</value>
     <value>Object with such name already exists. Do you want to replace it?</value>
   </data>
   <data name="MeasureGroup" xml:space="preserve">
-    <value>Measure Group</value>
+    <value>Grupo de medidas</value>
   </data>
   <data name="MeasureGroup_All" xml:space="preserve">
-    <value>&lt;All&gt;</value>
+    <value>&lt;Todos&gt;</value>
   </data>
   <data name="ControlPropertyNotInitialized_Message" xml:space="preserve">
     <value>Property '{0}' for control is not initialized.</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
+    <value>Confirmação</value>
   </data>
   <data name="PivotGrid_CancelEditButton_Question" xml:space="preserve">
     <value>Restore table data in initial state or state before recalculation?</value>
   </data>
   <data name="PivotGrid_ConfirmEditButton_Caption" xml:space="preserve">
-    <value>Recalculate</value>
+    <value>Recalcular</value>
   </data>
   <data name="PivotGrid_ConfirmEditButton_Question" xml:space="preserve">
     <value>Recalculate table data with current changes?</value>
   </data>
   <data name="Tooltip_Cube" xml:space="preserve">
-    <value>Cube: {0}</value>
+    <value>Cubo: {0}</value>
   </data>
   <data name="Tooltip_Dimension" xml:space="preserve">
-    <value>Dimension: {0}</value>
+    <value>Dimensão: {0}</value>
   </data>
   <data name="Tooltip_Hierarchy" xml:space="preserve">
-    <value>Hierarchy: {0}</value>
+    <value>Hierarquia: {0}</value>
   </data>
   <data name="Tooltip_Level" xml:space="preserve">
-    <value>Level: {0}</value>
+    <value>Nível: {0}</value>
   </data>
   <data name="PivotGrid_HideHintsButton_ToolTip" xml:space="preserve">
-    <value>Hide members and cells hints</value>
+    <value>Esconder dicas de células</value>
   </data>
   <data name="PivotGrid_ZoomingControl_ToolTip" xml:space="preserve">
     <value>Zoom</value>
@@ -777,76 +777,76 @@ Please, recalculate data or cancel changes.</value>
     <value>Custom properties for member not found. Possible member is calculated.</value>
   </data>
   <data name="MdxDesigner_CalculatedMemberEditor" xml:space="preserve">
-    <value>Customer Calculations Editor</value>
+    <value>Editor de calculos</value>
   </data>
   <data name="CalcMemberEditor_MemberTab" xml:space="preserve">
-    <value>Member View</value>
+    <value>Membros</value>
   </data>
   <data name="CalcMemberEditor_ScriptTab" xml:space="preserve">
-    <value>Script View</value>
+    <value>Script</value>
   </data>
   <data name="CalcMemberEditor_DialogCaption" xml:space="preserve">
-    <value>Customer Calculations Editor</value>
+    <value>Editor de cálculos</value>
   </data>
   <data name="CalcMemberEditor_DisplayFolderLabel" xml:space="preserve">
-    <value>Display Folder:</value>
+    <value>Pasta de exibição:</value>
   </data>
   <data name="CalcMemberEditor_ExpressionLabel" xml:space="preserve">
-    <value>Expression:</value>
+    <value>Expressão:</value>
   </data>
   <data name="CalcMemberEditor_MeasureGroupLabel" xml:space="preserve">
-    <value>Measure Group:</value>
+    <value>Grupo de medidas:</value>
   </data>
   <data name="CalcMemberEditor_NameLabel" xml:space="preserve">
-    <value>Name:</value>
+    <value>Nome:</value>
   </data>
   <data name="CalcMemberEditor_ScriptLabel" xml:space="preserve">
     <value>Script:</value>
   </data>
   <data name="CalcMemberEditor_AddMember" xml:space="preserve">
-    <value>Add Calculated Member</value>
+    <value>Adicionar membro calculado</value>
   </data>
   <data name="CalcMemberEditor_AddSet" xml:space="preserve">
-    <value>Add Named Set</value>
+    <value>Adicionar conjunto nomeado</value>
   </data>
   <data name="CalcMemberEditor_DeleteMember" xml:space="preserve">
-    <value>Delete Current Calculation</value>
+    <value>Excluir calculo corrente</value>
   </data>
   <data name="ComboBoxItem_New" xml:space="preserve">
-    <value>&lt;Create...&gt;</value>
+    <value>&lt;Novo...&gt;</value>
   </data>
   <data name="ComboBoxItem_None" xml:space="preserve">
-    <value>None</value>
+    <value>Nenhum</value>
   </data>
   <data name="FolderComboBox_NewFolder" xml:space="preserve">
-    <value>New Folder</value>
+    <value>Nova pasta</value>
   </data>
   <data name="CalcMemberEditor_FormatStringLabel" xml:space="preserve">
-    <value>Format String:</value>
+    <value>Formato:</value>
   </data>
   <data name="CalcMemberEditor_AddNamedSet" xml:space="preserve">
-    <value>Add Named Set</value>
+    <value>Adicionar conjunto nomeado</value>
   </data>
   <data name="ComboBoxItem_NewItem" xml:space="preserve">
-    <value>New Item</value>
+    <value>Novo item</value>
   </data>
   <data name="CalcMemberEditor_MembersNamesMustBeUnique" xml:space="preserve">
-    <value>The Calculated Members contains in list with alike names. Correct the givenned mistake automatically?</value>
+    <value>Os membros calculados na lista contém nomes parecidos. Corrigir o erro automaticamente?</value>
   </data>
   <data name="CalcMemberEditor_NamedSetsNamesMustBeUnique" xml:space="preserve">
-    <value>The Named Sets elements contains In list with alike names. Correct the givenned mistake automatically?</value>
+    <value>Os conjuntos nomeados contém elementos com nomes parecidos. Corrigir o erro automaticamente?</value>
   </data>
   <data name="MdxDesigner_EditQuery_ToolTip" xml:space="preserve">
-    <value>Edit MDX query</value>
+    <value>Editar consulta MDX</value>
   </data>
   <data name="CalculationsListControl_CalculatedMembers_TreeNode" xml:space="preserve">
-    <value>Members</value>
+    <value>Membros</value>
   </data>
   <data name="CalculationsListControl_NamedSets_TreeNode" xml:space="preserve">
-    <value>Sets</value>
+    <value>Conjuntos</value>
   </data>
   <data name="MetadataResponseException_CubeNotFound" xml:space="preserve">
-    <value>Cube with name '{0}' not found.</value>
+    <value>Cubo com o nome '{0}' não foi encontrado.</value>
   </data>
   <data name="MetadataResponseException_DimensionByUniqueName_InCube_NotFound" xml:space="preserve">
     <value>Dimension with unique name '{0}' not found in cube '{1}'.</value>
@@ -861,46 +861,46 @@ Please, recalculate data or cancel changes.</value>
     <value>Level with unique name '{0}' not found in hierarchy '{1}'.</value>
   </data>
   <data name="CalcMemberEditor_Clear" xml:space="preserve">
-    <value>Delete All Calculations</value>
+    <value>Excluir todos os calculos</value>
   </data>
   <data name="CalcMemberEditor_BackColorLabel" xml:space="preserve">
-    <value>Background Color:</value>
+    <value>Cor de fundo:</value>
   </data>
   <data name="CalcMemberEditor_ForeColorLabel" xml:space="preserve">
-    <value>Foreground Color:</value>
+    <value>Cor da fonte:</value>
   </data>
   <data name="CellPropertiesDialog_Caption" xml:space="preserve">
-    <value>Cell Properties</value>
+    <value>Propriedades da célula</value>
   </data>
   <data name="MemberPropertiesDialog_Caption" xml:space="preserve">
     <value>Member Properties</value>
   </data>
   <data name="Connection" xml:space="preserve">
-    <value>Connection</value>
+    <value>Conexão</value>
   </data>
   <data name="Dialog_CloseButton_ToolTip" xml:space="preserve">
-    <value>Close</value>
+    <value>Fechar</value>
   </data>
   <data name="Dialog_MaximizeButton_ToolTip" xml:space="preserve">
-    <value>Maximize</value>
+    <value>Maximizar</value>
   </data>
   <data name="Dialog_RestoreDownButton_ToolTip" xml:space="preserve">
-    <value>Restore Down</value>
+    <value>Restaurar</value>
   </data>
   <data name="Properties" xml:space="preserve">
-    <value>Properties</value>
+    <value>Propriedades</value>
   </data>
   <data name="Tuple" xml:space="preserve">
-    <value>Tuple</value>
+    <value>Tupla</value>
   </data>
   <data name="TransactionStateButton_Name" xml:space="preserve">
     <value>Transaction State Button</value>
   </data>
   <data name="MdxDesigner_Cube" xml:space="preserve">
-    <value>Cube</value>
+    <value>Cubo</value>
   </data>
   <data name="MdxDesigner_SaveCustomCalculations_Message" xml:space="preserve">
-    <value>Current query setting will are lost when change cube. You want to save settings?</value>
+    <value>A consulta atual será perdida ao se alterar o cubo. Deseja salvar a consulta atual?</value>
   </data>
   <data name="ServerExplorer_CubePropertyError" xml:space="preserve">
     <value>Control initialization error. Cube by default is not defined. Please initialize Cube name.</value>
@@ -915,205 +915,205 @@ Please, recalculate data or cancel changes.</value>
     <value>Metadata Browser</value>
   </data>
   <data name="SaveAsDialog_Name" xml:space="preserve">
-    <value>Save as Dialog</value>
+    <value>Salvar como</value>
   </data>
   <data name="CalcMemberEditor_NonEmpty" xml:space="preserve">
-    <value>Non-empty Behavior:</value>
+    <value>Comportamento não-vazio:</value>
   </data>
   <data name="MdxDesigner_Calculations" xml:space="preserve">
-    <value>Calculations</value>
+    <value>Calculos</value>
   </data>
   <data name="ContextMenu_DrillThrough" xml:space="preserve">
-    <value>DrillThrough</value>
+    <value>Detalhamento</value>
   </data>
   <data name="CellValue_Label" xml:space="preserve">
-    <value>Cell value:</value>
+    <value>Valor da célula:</value>
   </data>
   <data name="DeleteAll_Question" xml:space="preserve">
-    <value>You want delete all items permanently?</value>
+    <value>Excluir todos os items permatentemente?</value>
   </data>
   <data name="DeleteAll_ToolTip" xml:space="preserve">
-    <value>Delete All</value>
+    <value>Excluir tudo</value>
   </data>
   <data name="DeleteCurrent_Question" xml:space="preserve">
-    <value>You want delete current item permanently?</value>
+    <value>Excluir o item permanentemente?</value>
   </data>
   <data name="DeleteCurrent_ToolTip" xml:space="preserve">
-    <value>Delete Current</value>
+    <value>Excluir</value>
   </data>
   <data name="Drillthrough_Label" xml:space="preserve">
-    <value>Drillthroug:</value>
+    <value>Detalhamento</value>
   </data>
   <data name="Warning" xml:space="preserve">
     <value>Warning</value>
   </data>
   <data name="CellsConditionsDesignerDialog_Caption" xml:space="preserve">
-    <value>Cells styles designer</value>
+    <value>Editor de estilos da célula</value>
   </data>
   <data name="PivotGrid_CellsConditionsDesignerButton_ToolTip" xml:space="preserve">
     <value>Cells styles designer</value>
   </data>
   <data name="Toolbar_DeleteAllButton_ToolTip" xml:space="preserve">
-    <value>Delete all</value>
+    <value>Excluir tudo</value>
   </data>
   <data name="Toolbar_DeleteButton_ToolTip" xml:space="preserve">
-    <value>Delete current item</value>
+    <value>Excluir corrente</value>
   </data>
   <data name="Toolbar_NewButton_ToolTip" xml:space="preserve">
-    <value>Create new</value>
+    <value>Novo</value>
   </data>
   <data name="ConditionsDesigner_Appearance_Label" xml:space="preserve">
-    <value>Cell Appearance</value>
+    <value>Aparência da célula</value>
   </data>
   <data name="ConditionsDesigner_Condition_Label" xml:space="preserve">
-    <value>Cell Value Condition:</value>
+    <value>Condição do valor:</value>
   </data>
   <data name="ImageChoiceDialog_Caption" xml:space="preserve">
-    <value>Image Choice</value>
+    <value>Selecionar imagem</value>
   </data>
   <data name="BackColor_Label" xml:space="preserve">
-    <value>Back Color:</value>
+    <value>Cor de fundo:</value>
   </data>
   <data name="BorderColor_Label" xml:space="preserve">
-    <value>Border Color:</value>
+    <value>Cor da borda:</value>
   </data>
   <data name="CellConditionControl_AppearanceItem" xml:space="preserve">
-    <value>Options</value>
+    <value>Opções</value>
   </data>
   <data name="CellConditionControl_CellAppearanceItem" xml:space="preserve">
-    <value>Cell Appearance</value>
+    <value>Aparência da célula</value>
   </data>
   <data name="CellConditionControl_ImageItem" xml:space="preserve">
-    <value>Image Settings</value>
+    <value>Opções de imagem</value>
   </data>
   <data name="CellConditionControl_ProgressBarItem" xml:space="preserve">
-    <value>ProgressBar Settings</value>
+    <value>Opções da barra de progresso</value>
   </data>
   <data name="ChangeCustomImage_Caption" xml:space="preserve">
-    <value>Change image</value>
+    <value>Alterar imagem</value>
   </data>
   <data name="Conditions_Label" xml:space="preserve">
-    <value>Conditions:</value>
+    <value>Condições:</value>
   </data>
   <data name="EndColor_Label" xml:space="preserve">
-    <value>End Color:</value>
+    <value>Cor final:</value>
   </data>
   <data name="ForeColor_Label" xml:space="preserve">
-    <value>Fore Color:</value>
+    <value>Cor da fonte:</value>
   </data>
   <data name="IgnoreAllOptions_Check" xml:space="preserve">
-    <value>Ignore All Options</value>
+    <value>Ignorar todas as opções</value>
   </data>
   <data name="Image_Label" xml:space="preserve">
-    <value>Image:</value>
+    <value>Imagem:</value>
   </data>
   <data name="LoadSettings_ToolTip" xml:space="preserve">
     <value>Load Settings</value>
   </data>
   <data name="MaxValue_Label" xml:space="preserve">
-    <value>Max Value:</value>
+    <value>Valor máximo:</value>
   </data>
   <data name="MemberUniqueName_Label" xml:space="preserve">
-    <value>Member unique name:</value>
+    <value>Nome único do membro:</value>
   </data>
   <data name="MinValue_Label" xml:space="preserve">
-    <value>Min Value:</value>
+    <value>Valor mínimo:</value>
   </data>
   <data name="SaveSettings_ToolTip" xml:space="preserve">
-    <value>Save Settings</value>
+    <value>Opções de salvamento</value>
   </data>
   <data name="ShowImage_Check" xml:space="preserve">
-    <value>Show Image</value>
+    <value>Exibir imagem</value>
   </data>
   <data name="ShowProgressBar_Check" xml:space="preserve">
-    <value>Show ProgressBar</value>
+    <value>Exibir barra de progresso</value>
   </data>
   <data name="ShowValue_Check" xml:space="preserve">
-    <value>Show Value</value>
+    <value>Exibir valor</value>
   </data>
   <data name="StartColor_Label" xml:space="preserve">
-    <value>Start Color:</value>
+    <value>Cor inicial:</value>
   </data>
   <data name="StyleDetails_Label" xml:space="preserve">
-    <value>Style Details:</value>
+    <value>Detalhes do estilo:</value>
   </data>
   <data name="Styles_Label" xml:space="preserve">
-    <value>Styles:</value>
+    <value>Estilos:</value>
   </data>
   <data name="UseAllOptions_Check" xml:space="preserve">
-    <value>Use All Options</value>
+    <value>Usar todas as opções</value>
   </data>
   <data name="UseBackColor_Check" xml:space="preserve">
-    <value>Use Back Color</value>
+    <value>Usar cor de fundo</value>
   </data>
   <data name="UseBorderColor_Check" xml:space="preserve">
-    <value>Use Border Color</value>
+    <value>Usar cor da borda</value>
   </data>
   <data name="UseForeColor_Check" xml:space="preserve">
-    <value>Use Fore Color</value>
+    <value>Usar cor da fonte</value>
   </data>
   <data name="ValueCondition_Label" xml:space="preserve">
-    <value>Value Condition:</value>
+    <value>Condição do valor:</value>
   </data>
   <data name="Assembly_Label" xml:space="preserve">
     <value>Assembly:</value>
   </data>
   <data name="ImagePreview_Label" xml:space="preserve">
-    <value>Image preview:</value>
+    <value>Pré-visualizar imagem</value>
   </data>
   <data name="Images_Label" xml:space="preserve">
-    <value>Images:</value>
+    <value>Imagems:</value>
   </data>
   <data name="ContextMenu_SortingByProperty" xml:space="preserve">
-    <value>Sorting by Property</value>
+    <value>Ordenar pela propriedade</value>
   </data>
   <data name="SortingSettingsDialog_Caption" xml:space="preserve">
-    <value>Sorting Settings</value>
+    <value>Configurações de ordenação</value>
   </data>
   <data name="ContextMenu_SortingByMeasure" xml:space="preserve">
-    <value>Sorting Axis by Measure</value>
+    <value>Ordenar o eixo pelo valor</value>
   </data>
   <data name="ContextMenu_ClearAxisSorting" xml:space="preserve">
-    <value>Remove Sorting</value>
+    <value>Limpar ordenação</value>
   </data>
   <data name="SortingPropertiesDialog_MeasureNotSelected_Message" xml:space="preserve">
     <value>Measure for sorting is not selected. Please select Measure in dropdown list.</value>
   </data>
   <data name="Measure_Label" xml:space="preserve">
-    <value>Measure:</value>
+    <value>Medida:</value>
   </data>
   <data name="Property_Label" xml:space="preserve">
-    <value>Property:</value>
+    <value>Propriedade:</value>
   </data>
   <data name="SortingBy_Label" xml:space="preserve">
-    <value>Sorting by:</value>
+    <value>Ordenando por:</value>
   </data>
   <data name="SortingDirection_Label" xml:space="preserve">
-    <value>Sorting direction:</value>
+    <value>Direção da ordenação:</value>
   </data>
   <data name="Sorting_Ascending_Label" xml:space="preserve">
-    <value>Ascending</value>
+    <value>Ascendente</value>
   </data>
   <data name="Sorting_Descending_Label" xml:space="preserve">
-    <value>Descending</value>
+    <value>Descendente</value>
   </data>
   <data name="Sorting_None_Label" xml:space="preserve">
-    <value>None</value>
+    <value>Nenhum</value>
   </data>
   <data name="ContextMenu_AutoWidthColumns" xml:space="preserve">
-    <value>Auto Width</value>
+    <value>Largura automática das colunas</value>
   </data>
   <data name="CubeNotFound_Message" xml:space="preserve">
-    <value>Cube with name '{0}' not found.</value>
+    <value>Cubo com o nome '{0}' não foi encontrado.</value>
   </data>
   <data name="MeasureGroupNotFound_Message" xml:space="preserve">
-    <value>Measure Group with name '{0}' not found in Cube '{1}'.</value>
+    <value>Grupo de medida '{0}' não encontrado no cubo '{1}'.</value>
   </data>
   <data name="KPIViewer_ColumnGoal" xml:space="preserve">
     <value>KPI goal</value>
   </data>
   <data name="KPIViewer_ColumnName" xml:space="preserve">
-    <value>Name</value>
+    <value>Nome</value>
   </data>
   <data name="KPIViewer_ColumnStatus" xml:space="preserve">
     <value>Status</value>
@@ -1128,24 +1128,24 @@ Please, recalculate data or cancel changes.</value>
     <value>Variance</value>
   </data>
   <data name="ContextMenu_DataReorganizationType" xml:space="preserve">
-    <value>Members Group Mode</value>
+    <value>Modo de agrupamento dos membros</value>
   </data>
   <data name="ContextMenu_DataReorganizationType_HitchToParent" xml:space="preserve">
-    <value>Group to Hierarchy</value>
+    <value>Grupo para hierarquia</value>
   </data>
   <data name="ContextMenu_DataReorganizationType_MergeNeighbors" xml:space="preserve">
-    <value>Group Neighbors</value>
+    <value>Agrupar vizinhos</value>
   </data>
   <data name="ContextMenu_DataReorganizationType_None" xml:space="preserve">
-    <value>None</value>
+    <value>Nenhum</value>
   </data>
   <data name="ContextMenu_SortingByValue" xml:space="preserve">
-    <value>Sorting by Value</value>
+    <value>Ordenar pelo alor</value>
   </data>
   <data name="ColumnsHeader" xml:space="preserve">
     <value>Choice columns</value>
   </data>
   <data name="ShowAll_Check" xml:space="preserve">
-    <value>Show all</value>
+    <value>Exibir todos</value>
   </data>
 </root>
