@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="c:\temp\uitest" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="08/24/2010 17:00:13" />
+    <file relUrl="ClientBin/UITest.xap" publishTime="09/01/2010 10:05:10" />
+    <file relUrl="bin/Wing.Json.pdb" publishTime="09/01/2010 15:08:58" />
+    <file relUrl="OlapWebService.asmx" publishTime="08/24/2010 11:29:35" />
+    <file relUrl="bin/Wing.Olap.Core.dll" publishTime="09/01/2010 15:08:59" />
+    <file relUrl="bin/Wing.Web.Olap.pdb" publishTime="09/01/2010 15:09:00" />
+    <file relUrl="bin/Wing.Web.Olap.dll" publishTime="09/01/2010 15:09:01" />
+    <file relUrl="httptest.aspx" publishTime="08/24/2010 11:29:35" />
+    <file relUrl="bin/UILibrary.Olap.UITestApplication.Web.dll" publishTime="09/01/2010 15:28:58" />
+    <file relUrl="bin/Wing.Json.dll" publishTime="09/01/2010 15:08:58" />
+    <file relUrl="bin/Wing.Olap.Mdx.dll" publishTime="08/24/2010 19:37:01" />
+    <file relUrl="bin/Wing.Olap.Core.pdb" publishTime="09/01/2010 15:08:59" />
+    <file relUrl="SilverliteApplication.htm" publishTime="08/24/2010 11:29:35" />
+    <file relUrl="bin/Wing.Olap.Mdx.pdb" publishTime="08/24/2010 19:37:01" />
+    <file relUrl="Global.asax" publishTime="08/24/2010 11:29:35" />
+    <file relUrl="bin/Wing.ZipCompression.Silverlight.dll" publishTime="08/25/2010 18:53:20" />
+    <file relUrl="bin/UILibrary.Olap.UITestApplication.Web.pdb" publishTime="09/01/2010 15:28:58" />
+    <file relUrl="Silverlight.js" publishTime="08/24/2010 11:29:35" />
+    <file relUrl="Default.aspx" publishTime="08/24/2010 11:29:35" />
+  </publishProfile>
+</publishData>
