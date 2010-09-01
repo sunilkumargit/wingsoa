@@ -44,7 +44,7 @@ namespace UILibrary.Olap.UITestApplication
         private void CheckConnection_Click(object sender, RoutedEventArgs e)
         {
             tbLastError.Text = "";
-            CheckedInfo.Text = "Connection checking started...";
+            CheckedInfo.Text = "Conectando...";
             Config.Init
             (ConnectionStringId, tbOLAPConnectionString.Text
             , () =>
@@ -52,7 +52,7 @@ namespace UILibrary.Olap.UITestApplication
                 try
                 {
                     tbOLAPConnectionString.Text = Config.Default.Data.OLAPConnectionString;
-                    CheckedInfo.Text = @"Connection has been succesfully set and checked.";
+                    CheckedInfo.Text = @"Conexão estabelecida";
                     //System.Windows.Browser.HtmlPage.Window.SetProperty("status","Done!");
                     //initCubeChoiceButton_Click(null, null);
                     //initmdxDesignerButton_Click(null, null);

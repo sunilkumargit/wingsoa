@@ -29,7 +29,7 @@ namespace UILibrary.Olap.UITestApplication
 
             this.pivotMdxDesignerControl.Connection = ConnectionStringId;
             this.pivotMdxDesignerControl.CanSelectCube = true;
-            this.pivotMdxDesignerControl.AutoExecuteQuery = false;
+            this.pivotMdxDesignerControl.AutoExecuteQuery = true;
             this.pivotMdxDesignerControl.UpdateScript = tbUpdateScript.Text;
 
             this.pivotMdxDesignerControl.Initialize();
@@ -37,7 +37,7 @@ namespace UILibrary.Olap.UITestApplication
         void exportMdxLayoutButton_Click(object sender, RoutedEventArgs e)
         {
             tbMdxDesignerLayout.Text = pivotMdxDesignerControl.ExportMdxLayoutInfo();
-            MessageBox.Show("Mdx Designer Layout was exported. See Mdx Designer Layout tab.", "Information", MessageBoxButton.OK);
+            MessageBox.Show("Ok", "", MessageBoxButton.OK);
         }
         void importMdxLayoutButton_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +46,7 @@ namespace UILibrary.Olap.UITestApplication
         private void exportMDXQueryButton_Click(object sender, RoutedEventArgs e)
         {
             tbMdxQuery.Text = pivotMdxDesignerControl.GetCurrentMdxQuery();
-            MessageBox.Show("Mdx query was exported. See Mdx Query tab.", "Information", MessageBoxButton.OK);
+            MessageBox.Show("Ok", "", MessageBoxButton.OK);
         }
     }
 }
