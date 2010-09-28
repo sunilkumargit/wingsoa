@@ -86,13 +86,9 @@
       <Project>{46126CDD-E535-4655-B974-EEE76830F75B}</Project>
       <Name>Wing.Server.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Wing.Soa\Wing.Soa.csproj">
-      <Project>{B3EF0841-9C77-4364-AD6D-37ADB4DF09EE}</Project>
-      <Name>Wing.Soa</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\Wing.MSBuild.Server.Common"/>
+  <Import Project="$(SolutionDir)\Wing.MSBuild.Server.Common" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
