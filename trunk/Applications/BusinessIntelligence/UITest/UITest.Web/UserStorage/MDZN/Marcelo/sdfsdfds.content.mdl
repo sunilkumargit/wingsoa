@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MdxLayoutWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeName>Adventure Works</CubeName>
+  <SubCube />
+  <Filters />
+  <Rows>
+    <AreaItemWrapper xsi:type="Level_AreaItemWrapper">
+      <CustomProperties>
+        <PropertyInfo>
+          <Name>HIERARCHY_CAPTION</Name>
+          <Value xsi:type="xsd:string">Customer Geography</Value>
+        </PropertyInfo>
+        <PropertyInfo>
+          <Name>DIMENSION_CAPTION</Name>
+          <Value xsi:type="xsd:string">Customer</Value>
+        </PropertyInfo>
+        <PropertyInfo>
+          <Name>CUBE_CAPTION</Name>
+          <Value xsi:type="xsd:string">Adventure Works</Value>
+        </PropertyInfo>
+      </CustomProperties>
+      <Caption>City</Caption>
+      <CompositeFilter>
+        <IsUsed>false</IsUsed>
+        <MembersFilter>
+          <IsUsed>false</IsUsed>
+          <SelectedInfo />
+          <FilterSet />
+        </MembersFilter>
+        <Filter>
+          <IsUsed>false</IsUsed>
+          <CurrentFilter>LabelFilter</CurrentFilter>
+          <TopFilter>
+            <FilterType>Top</FilterType>
+            <Count>10</Count>
+            <FilterTarget>Items</FilterTarget>
+            <MeasureUniqueName />
+          </TopFilter>
+          <ValueFilter>
+            <FilterType>Equal</FilterType>
+            <Num1>0</Num1>
+            <Num2>1</Num2>
+            <MeasureUniqueName />
+          </ValueFilter>
+          <LabelFilter>
+            <FilterType>Equal</FilterType>
+            <Text1 />
+            <Text2 />
+            <LevelPropertyName />
+          </LabelFilter>
+        </Filter>
+      </CompositeFilter>
+      <UniqueName>[Customer].[Customer Geography].[City]</UniqueName>
+      <HierarchyUniqueName>[Customer].[Customer Geography]</HierarchyUniqueName>
+    </AreaItemWrapper>
+  </Rows>
+  <Columns />
+  <Data>
+    <AreaItemWrapper xsi:type="Measure_AreaItemWrapper">
+      <CustomProperties />
+      <Caption>Internet Sales Amount</Caption>
+      <UniqueName>[Measures].[Internet Sales Amount]</UniqueName>
+    </AreaItemWrapper>
+  </Data>
+  <CalculatedMembers />
+  <CalculatedNamedSets />
+</MdxLayoutWrapper>
