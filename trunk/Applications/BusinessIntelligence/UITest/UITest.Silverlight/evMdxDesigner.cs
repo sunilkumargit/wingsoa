@@ -28,7 +28,8 @@ namespace UILibrary.Olap.UITestApplication
             // pivotMdxDesignerControl.URL = WSDataUrl;
 
             this.pivotMdxDesignerControl.Connection = ConnectionStringId;
-            this.pivotMdxDesignerControl.CanSelectCube = true;
+            this.pivotMdxDesignerControl.CanSelectCube = false;
+            this.pivotMdxDesignerControl.CubeName = "Adventure Works";
             this.pivotMdxDesignerControl.AutoExecuteQuery = true;
             this.pivotMdxDesignerControl.UpdateScript = tbUpdateScript.Text;
 

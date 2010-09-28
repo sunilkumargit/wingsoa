@@ -55,7 +55,8 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBIHomeViewPresenter.cs" />
+    <Compile Include="BICommandNames.cs" />
+    <Compile Include="BIMainMenuNames.cs" />
     <Compile Include="IBIRootPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,8 +82,14 @@
       <Name>Wing.Utils.Silverlight</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\cube48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
-  <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common"/>
+  <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">

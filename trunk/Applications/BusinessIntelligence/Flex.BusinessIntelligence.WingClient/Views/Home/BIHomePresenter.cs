@@ -6,6 +6,8 @@ namespace Flex.BusinessIntelligence.WingClient.Views.Home
     public class BIHomePresenter : ViewPresenter<ViewPresentationModel>
     {
         public BIHomePresenter(IBIHomeView view, IRegionManager regionManager)
-            : base(new ViewPresentationModel("Pivot table - teste", "Pivot table - teste"), view, regionManager) { }
+            : base(new ViewPresentationModel("", ""), view, regionManager)
+        {
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.Root
         {
             var button = new ToolButton();
             button.Title = "Business Intelligence";
-            button.ImageSource = new BitmapImage(new Uri("../Assets/bi-icon.png", UriKind.Relative));
+            button.ImageSource = new BitmapImage(new Uri("bi;../Assets/bi-icon.png", UriKind.Relative));
             button.OnButtonClick += new EventHandler<MouseButtonEventArgs>(button_OnButtonClick);
             return button;
         }
