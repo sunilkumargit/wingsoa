@@ -41,7 +41,7 @@ namespace Wing.Client.Sdk
             : this(model, view, null, "Content") { }
 
         public ReadOnlyObservableCollection<IViewPresenter> Views { get; private set; }
-        public void Navigate(IViewPresenter presenter, bool addToHistory, bool forceHistory)
+        public void Navigate(IViewPresenter presenter, bool addToHistory)
         {
             if (presenter.Parent == this || presenter.Parent == null)
             {
@@ -64,25 +64,21 @@ namespace Wing.Client.Sdk
                     }
                     UpdateActiveView();
                 }
-                else if (forceHistory)
-                    _history.Push(ActivePresenter);
             }
             else if (presenter.Parent != null && presenter.Parent is IViewBagPresenter)
             {
+                var activePresenter = ActivePresenter;
                 var parent = presenter.Parent as IViewBagPresenter;
                 Navigate(presenter.Parent, false);
-                parent.Navigate(presenter, addToHistory, addToHistory);
+                parent.Navigate(presenter, false);
+                if (ActivePresenter != activePresenter && activePresenter != null && addToHistory)
+                    _history.Push(activePresenter);
             }
         }
 
         public void Navigate(IViewPresenter presenter)
         {
-            Navigate(presenter, true, false);
-        }
-
-        public void Navigate(IViewPresenter presenter, bool addToHistory)
-        {
-            Navigate(presenter, addToHistory, false);
+            Navigate(presenter, true);
         }
 
         private void UpdateActiveView()

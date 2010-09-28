@@ -8,7 +8,6 @@ namespace Wing.Client.Sdk
         IViewPresenter ActivePresenter { get; }
         void Navigate(IViewPresenter presenter);
         void Navigate(IViewPresenter presenter, bool addToHistory);
-        void Navigate(IViewPresenter presenter, bool addToHistory, bool forceHistory);
     }
 
     public interface IViewBagPresenter<TModel> : IViewBagPresenter, IViewPresenter<TModel>

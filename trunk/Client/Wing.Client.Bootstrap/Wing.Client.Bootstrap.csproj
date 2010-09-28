@@ -78,6 +78,10 @@
       <Project>{28374482-C3AB-4F4C-A1DD-A8167D7F23D7}</Project>
       <Name>Wing.Client.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Wing.Client.Sdk\Wing.Client.Sdk.csproj">
+      <Project>{A52229CB-C24D-4B2E-AEB9-5E3519CD94CF}</Project>
+      <Name>Wing.Client.Sdk</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wing.Composite\Wing.Composite.csproj">
       <Project>{7A751BB0-5CB7-4429-86E6-760F47BA3369}</Project>
       <Name>Wing.Composite</Name>

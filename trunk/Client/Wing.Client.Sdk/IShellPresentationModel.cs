@@ -11,6 +11,7 @@ namespace Wing.Client.Sdk
         bool ProgressBarIsIndeterminate { get; set; }
         int ProgressMaxValue { get; set; }
         int ProgressValue { get; set; }
+        bool BackButtonEnabled { get; set; }
         List<IViewPresenter> ActiveViews { get; set; }
     }
 }

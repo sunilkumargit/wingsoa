@@ -15,6 +15,7 @@ namespace Wing.Client.Modules.Shell.Views
         private int _progressValue;
         private List<IViewPresenter> _activeViews;
         private string _activeViewsText;
+        private bool _backButtonEnabled;
 
         public ShellPresentationModel()
             : base("Shell", "Shell")
@@ -56,6 +57,12 @@ namespace Wing.Client.Modules.Shell.Views
         {
             get { return _progressValue; }
             set { _progressValue = value; NotifyPropertyChanged("ProgressValue"); }
+        }
+
+        public bool BackButtonEnabled
+        {
+            get { return _backButtonEnabled; }
+            set { _backButtonEnabled = value; NotifyPropertyChanged("BackButtonEnabled"); }
         }
 
         public Visibility ProgressBarVisibility

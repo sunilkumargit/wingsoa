@@ -15,46 +15,6 @@
                     <ColumnDefinition Width="Auto" MaxWidth="400"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Background="{StaticResource LightToolbarBrush}" Grid.Column="0">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="Business Intelligence" Grid.Row="0" Style="{StaticResource PageSideBarTitle}"/>
-                        <sdk:TreeView Background="Transparent" BorderBrush="{x:Null}" BorderThickness="0" Margin="10,0,10,10" Grid.Row="1">
-                            <sdk:TreeView.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel/>
-                                </ItemsPanelTemplate>
-                            </sdk:TreeView.ItemsPanel>
-                            <sdk:TreeViewItem Header="Vendas" FontWeight="Bold" Foreground="Navy" IsExpanded="True">
-                                <sdk:TreeViewItem Header="Vendas por cliente" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Vendas por produto" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Vendas por produto e cliente" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Curva ABC" FontWeight="Normal"/>
-                            </sdk:TreeViewItem>
-                            <sdk:TreeViewItem Header="Financeiro" FontWeight="Bold" Foreground="Navy" IsExpanded="True" >
-                                <sdk:TreeViewItem Header="Recebiveis" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Recebidos" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Despesas por classif. financeira" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Comparativo de recebimentos" FontWeight="Normal"/>
-                            </sdk:TreeViewItem>
-                            <sdk:TreeViewItem Header="Estoque" FontWeight="Bold" Foreground="Navy" IsExpanded="True">
-                                <sdk:TreeViewItem Header="Curva ABC" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Dias de permanencia" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Relação entrada x saída" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Giro de estoque" FontWeight="Normal"/>
-                            </sdk:TreeViewItem>
-                            <sdk:TreeViewItem Header="Configurações" FontWeight="Bold" Foreground="Navy" IsExpanded="True">
-                                <sdk:TreeViewItem Header="Metadados" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Extração" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Bancos de dados" FontWeight="Normal"/>
-                                <sdk:TreeViewItem Header="Agendamento" FontWeight="Normal"/>
-                            </sdk:TreeViewItem>
-                        </sdk:TreeView>
-                    </Grid>
-                </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>

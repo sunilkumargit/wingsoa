@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Wing.Client.Sdk;
+using Wing.Client.Sdk.Controls;
 
 namespace Wing.Client.Modules.Shell.Views
 {
@@ -45,9 +46,6 @@ namespace Wing.Client.Modules.Shell.Views
         {
             MaximizeButton.Visibility = System.Windows.Visibility.Collapsed;
             RestoreButton.Visibility = System.Windows.Visibility.Collapsed;
-            /*   MaximizeButton.Visibility = isMaximized ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
-               RestoreButton.Visibility = !isMaximized ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
-             */
         }
 
         public IShellPresentationModel Model
@@ -70,6 +68,12 @@ namespace Wing.Client.Modules.Shell.Views
         {
             if (HomeButtonClicked != null)
                 HomeButtonClicked.Invoke(this, new EventArgs());
+        }
+
+        private void BackButton_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            var el = ((ToolButton)sender);
+            el.Opacity = el.IsEnabled ? 1 : 0.5;
         }
     }
 }

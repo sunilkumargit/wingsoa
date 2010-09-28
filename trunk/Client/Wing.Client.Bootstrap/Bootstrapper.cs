@@ -10,6 +10,7 @@ using Wing.Events;
 using Wing.Logging;
 using Wing.Modularity;
 using Wing.ServiceLocation;
+using Wing.Client.Sdk;
 
 namespace Wing.Client.Bootstrap
 {
@@ -56,6 +57,8 @@ namespace Wing.Client.Bootstrap
             RegisterFrameworkExceptionTypes();
 
             ServiceLocator.Current.Register<IRegionManager, RegionManager>();
+
+            SdkInitializer.Initialize();
 
             //carregar os modulos
             settings.Splash.DisplayMessage("Carregando os módulos...");

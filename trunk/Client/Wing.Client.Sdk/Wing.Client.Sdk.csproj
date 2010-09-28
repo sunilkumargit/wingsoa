@@ -58,14 +58,28 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssembliesAlias.cs" />
     <Compile Include="ControlHelper.cs" />
+    <Compile Include="Controls\ExtensibleMenuController.cs" />
+    <Compile Include="Controls\IExtensibleMenu.cs" />
+    <Compile Include="Controls\IExtensibleMenuItem.cs" />
+    <Compile Include="Controls\LeftSideBar.xaml.cs">
+      <DependentUpon>LeftSideBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Toolbar.xaml.cs">
       <DependentUpon>Toolbar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ToolButton.xaml.cs">
       <DependentUpon>ToolButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TreeMenu.xaml.cs">
+      <DependentUpon>TreeMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ViewBagDefaultContainer.cs" />
+    <Compile Include="DefaultGlobalCommandsManager.cs" />
+    <Compile Include="Events\GlobalCommandExecutedEvent.cs" />
+    <Compile Include="Events\GlobalCommandExecuteEvent.cs" />
+    <Compile Include="Events\GlobalCommandExecutingEventArgs.cs" />
     <Compile Include="Events\ShellAction.cs" />
     <Compile Include="Events\ShellActionEvent.cs" />
     <Compile Include="Events\ShellActionEventArgs.cs" />
@@ -83,10 +97,17 @@
     <Compile Include="PresentationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Events\UserLoginEventArgs.cs" />
+    <Compile Include="SdkInitializer.cs" />
+    <Compile Include="Services\GlobalCommand.cs" />
+    <Compile Include="Services\GlobalDelegateCommand.cs" />
+    <Compile Include="Services\GlobalNavigateCommand.cs" />
+    <Compile Include="Services\IGlobalCommandsManager.cs" />
+    <Compile Include="Services\IGlobalCommand.cs" />
     <Compile Include="ShellRegionNames.cs" />
     <Compile Include="Services\ILoginService.cs" />
     <Compile Include="Events\ViewBagActiveViewChangedEvent.cs" />
     <Compile Include="Events\ViewBagActiveViewChangedEventArgs.cs" />
+    <Compile Include="SingleEventHandler.cs" />
     <Compile Include="ViewBagPresenter.cs" />
     <Compile Include="ViewPresentationModel.cs" />
     <Compile Include="ViewPresenter.cs" />
@@ -114,6 +135,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\LeftSideBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Toolbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,9 +147,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\TreeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
-  <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common"/>
+  <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -4,11 +4,24 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Wing.Utils;
+using System.Collections.ObjectModel;
+using System.Windows.Markup;
 
 namespace Wing.Client.Sdk
 {
     public static class ControlHelper
     {
+
+        public static SolidColorBrush GetPredefinedNamedColor(String color)
+        {
+            string xamlString = "<SolidColorBrush xmlns='http://schemas.microsoft.com/client/2007'"
+                + " xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml'"
+                + " Color='{0}'/>";
+
+            return (SolidColorBrush)XamlReader.Load(String.Format(xamlString, color));
+        }
+
         public static ImageSource ResolveImageSource(FrameworkElement element, ImageSource value)
         {
             var image = value as BitmapImage;
@@ -52,7 +65,27 @@ namespace Wing.Client.Sdk
                 if (resStream != null && resStream.Stream != null)
                     image.SetSource(resStream.Stream);
                 else
+                {
+                    var partialUri = image.UriSource.OriginalString
+                        .Replace(componentStr, "")
+                        .Replace(componentStr.ToLower(), "");
+                    // não encontrou o assembly provavelmente, procurar nos alias 
+                    var assemblyAlias = partialUri.Substring(0, partialUri.IndexOf(";"));
+                    partialUri = String.Format("{0}{1}", componentStr, partialUri.Substring(assemblyAlias.Length + 1));
+                    var assembliesByAlias = AssembliesAlias.GetAssembliesInAlias(assemblyAlias);
+                    foreach (var assemblyName in assembliesByAlias)
+                    {
+                        resStream = Application.GetResourceStream(new Uri(assemblyName + partialUri, UriKind.Relative));
+                        if (resStream != null)
+                        {
+                            image.SetSource(resStream.Stream);
+                            return;
+                        }
+                    }
+
+                    // ultimo recurso
                     image.UriSource = new Uri(uri, UriKind.Relative);
+                }
             });
 
             return image;

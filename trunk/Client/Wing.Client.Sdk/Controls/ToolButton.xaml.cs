@@ -12,6 +12,13 @@ namespace Wing.Client.Sdk.Controls
         {
             InitializeComponent();
             this.TitleForeground = new SolidColorBrush(Colors.Black);
+            this.IsEnabledChanged += new DependencyPropertyChangedEventHandler(ToolButton_IsEnabledChanged);
+        }
+
+        void ToolButton_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!this.IsEnabled)
+                this.animLeave.Begin();
         }
 
 
