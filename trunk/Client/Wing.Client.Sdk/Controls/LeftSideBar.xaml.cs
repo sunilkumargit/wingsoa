@@ -27,6 +27,6 @@ namespace Wing.Client.Sdk.Controls
 
         public String Caption { get { return Title.Text; } set { Title.Text = value; } }
 
-        public Object Content { get { return ContentHolder.Content; } set { ContentHolder.Content = value; } }
+        public Object InnerContent { get { return ContentHolder.Content; } set { ContentHolder.Content = value; } }
     }
 }

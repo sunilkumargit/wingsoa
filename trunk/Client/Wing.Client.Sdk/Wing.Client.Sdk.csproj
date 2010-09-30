@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssembliesAlias.cs" />
+    <Compile Include="CommandsManager.cs" />
     <Compile Include="ControlHelper.cs" />
     <Compile Include="Controls\ExtensibleMenuController.cs" />
     <Compile Include="Controls\IExtensibleMenu.cs" />
@@ -77,14 +78,12 @@
     </Compile>
     <Compile Include="Controls\ViewBagDefaultContainer.cs" />
     <Compile Include="DefaultGlobalCommandsManager.cs" />
-    <Compile Include="Events\GlobalCommandExecutedEvent.cs" />
-    <Compile Include="Events\GlobalCommandExecuteEvent.cs" />
-    <Compile Include="Events\GlobalCommandExecutingEventArgs.cs" />
     <Compile Include="Events\ShellAction.cs" />
     <Compile Include="Events\ShellActionEvent.cs" />
     <Compile Include="Events\ShellActionEventArgs.cs" />
     <Compile Include="Events\UserLoginAction.cs" />
     <Compile Include="Events\UserLoginEvent.cs" />
+    <Compile Include="GlobalCommandsExtensions.cs" />
     <Compile Include="INavigationHistoryService.cs" />
     <Compile Include="IPresentationModel.cs" />
     <Compile Include="IShellPresentationModel.cs" />
@@ -98,11 +97,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Events\UserLoginEventArgs.cs" />
     <Compile Include="SdkInitializer.cs" />
+    <Compile Include="Services\GblCommandExecStatus.cs" />
+    <Compile Include="Services\GblCommandStatus.cs" />
     <Compile Include="Services\GlobalCommand.cs" />
-    <Compile Include="Services\GlobalDelegateCommand.cs" />
-    <Compile Include="Services\GlobalNavigateCommand.cs" />
+    <Compile Include="Services\IGlobalCommandHandler.cs" />
     <Compile Include="Services\IGlobalCommandsManager.cs" />
     <Compile Include="Services\IGlobalCommand.cs" />
+    <Compile Include="Services\NavigateCommandHandler.cs" />
     <Compile Include="ShellRegionNames.cs" />
     <Compile Include="Services\ILoginService.cs" />
     <Compile Include="Events\ViewBagActiveViewChangedEvent.cs" />

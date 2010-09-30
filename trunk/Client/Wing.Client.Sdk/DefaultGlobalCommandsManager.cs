@@ -25,13 +25,14 @@ namespace Wing.Client.Sdk
             _commandsListReadOnly = new ReadOnlyObservableCollection<IGlobalCommand>(_commandsList);
         }
 
-        public IGlobalCommand RegisterCommand(IGlobalCommand command)
+        public IGlobalCommand CreateCommand(String name, String caption = "", String toolTip = "")
         {
-            if (GetCommand(command.Name) != null)
+            if (GetCommand(name) != null)
                 throw new Exception("Já existe um commando com este nome");
-            _commands[command.Name] = command;
-            _commandsList.Add(command);
-            return command;
+            var result = new GlobalCommand(name, caption, toolTip);
+            _commands[name] = result;
+            _commandsList.Add(result);
+            return result;
         }
 
         public void RemoveCommand(string name)
@@ -40,13 +41,6 @@ namespace Wing.Client.Sdk
             if (existing == null) return;
             _commands.Remove(existing.Name);
             _commandsList.Remove(existing);
-        }
-
-        public void ExecuteCommand(string name, object parameter)
-        {
-            var existing = GetCommand(name);
-            if (existing != null)
-                existing.Execute(parameter);
         }
 
         public IGlobalCommand GetCommand(string name)
@@ -59,6 +53,13 @@ namespace Wing.Client.Sdk
         public ReadOnlyCollection<IGlobalCommand> Commands
         {
             get { return _commandsListReadOnly; }
+        }
+
+        [System.Diagnostics.DebuggerStepThrough]
+        public void NotifyRequeryStateNeeded()
+        {
+            foreach (var cmd in _commandsList)
+                cmd.FireStateChanged();
         }
     }
 }

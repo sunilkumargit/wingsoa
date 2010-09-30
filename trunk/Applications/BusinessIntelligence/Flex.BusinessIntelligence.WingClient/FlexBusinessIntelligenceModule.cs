@@ -25,12 +25,7 @@ namespace Flex.BusinessIntelligence.WingClient
             ServiceLocator.Current.Register<BIHomePresenter, BIHomePresenter>(true);
 
             //criar os commandos basicos
-            var navigateHomeCommand = new GlobalNavigateCommand<BIHomePresenter>(BICommandNames.NavigateHome) { Caption = "Home" };
-            //var nagigateMyReports = new GlobalDelegateCommand<BIMyReportsPresenter>(BICommandNames.NavigateMyQueries) { Caption = "Minhas consultas" }
-
-            // registra-los no command manager.
-            var commandManager = ServiceLocator.Current.GetInstance<IGlobalCommandsManager>();
-            commandManager.RegisterCommand(navigateHomeCommand);
+            var navigateHomeCommand = CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Home").AddNavigateHandler<BIHomePresenter>();
         }
 
         public override void Initialized()
@@ -39,10 +34,9 @@ namespace Flex.BusinessIntelligence.WingClient
             var presenter = ServiceLocator.Current.GetInstance<IBIRootPresenter>();
             presenter.Navigate(ServiceLocator.Current.GetInstance<BIHomePresenter>());
 
-            var commandManager = ServiceLocator.Current.GetInstance<IGlobalCommandsManager>();
             // registrar os menus iniciais e vincula-los aos comandos globais
             var homeMenu = ServiceLocator.Current.GetInstance<IBIHomeView>().MainMenu;
-            var item = homeMenu.CreateItem(BIMainMenuNames.Home, commandManager.GetCommand(BICommandNames.NavigateHome));
+            var item = homeMenu.CreateItem(BIMainMenuNames.Home, CommandsManager.GetCommand(BICommandNames.NavigateHome));
         }
     }
 

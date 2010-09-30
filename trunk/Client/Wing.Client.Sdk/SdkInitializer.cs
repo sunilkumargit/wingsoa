@@ -21,6 +21,7 @@ namespace Wing.Client.Sdk
 
             //registrar os serviços default
             serviceLocator.Register<IGlobalCommandsManager, DefaultGlobalCommandsManager>(true);
+            CommandsManager.SetCommandsManager(serviceLocator.GetInstance<IGlobalCommandsManager>());
         }
     }
 }

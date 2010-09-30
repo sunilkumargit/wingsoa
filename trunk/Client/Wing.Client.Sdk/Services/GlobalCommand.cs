@@ -16,89 +16,81 @@ using Wing.Client.Sdk.Events;
 
 namespace Wing.Client.Sdk.Services
 {
-    public abstract class GlobalCommand : IGlobalCommand
+    public class GlobalCommand : IGlobalCommand
     {
-        private string _hint;
-        private string _caption;
-        private bool _isEnabled;
+        private ObservableCollection<IGlobalCommandHandler> _handlers = new ObservableCollection<IGlobalCommandHandler>();
+        private ReadOnlyObservableCollection<IGlobalCommandHandler> _handlersReadOnly;
 
-        public GlobalCommand()
+        public GlobalCommand(String name, String caption, String toolTip)
         {
-            _isEnabled = true;
-            _isVisible = true;
+            Assert.NullArgument(name, "name");
+            _handlersReadOnly = new ReadOnlyObservableCollection<IGlobalCommandHandler>(_handlers);
+            Name = name;
+            Caption = caption;
+            Tooltip = Tooltip;
         }
 
-        public void FireCanExecuteChanged()
+        public string Name { get; private set; }
+        public string Tooltip { get; private set; }
+        public string Caption { get; private set; }
+
+        public void AddHandler(IGlobalCommandHandler handler)
         {
-            if (CanExecuteChanged != null)
-                CanExecuteChanged.Invoke(this, new EventArgs());
+            if (_handlers.Contains(handler))
+                return;
+            _handlers.Add(handler);
             FireStateChanged();
         }
+
+        public void RemoveHandler(IGlobalCommandHandler handler)
+        {
+            _handlers.Remove(handler);
+            FireStateChanged();
+        }
+
+        public virtual void QueryStatus(object parameter, ref GblCommandStatus status)
+        {
+            bool handled = false;
+            status = GblCommandStatus.Enabled;
+            var en = _handlers.GetEnumerator();
+            while (en.MoveNext() && !handled)
+                en.Current.QueryStatus(this, parameter, ref status, ref handled);
+        }
+
+        public GblCommandStatus QueryStatus(Object parameter = null)
+        {
+            var status = GblCommandStatus.Enabled;
+            QueryStatus(parameter, ref status);
+            return status;
+        }
+
+        public virtual void Execute(object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+        {
+            if (QueryStatus(parameter) == GblCommandStatus.Enabled)
+            {
+                var en = _handlers.GetEnumerator();
+                while (en.MoveNext() && !handled)
+                    en.Current.Execute(this, parameter, ref execStatus, ref handled, ref outMessage);
+            }
+        }
+
+        public GblCommandExecStatus Execute(Object parameter = null)
+        {
+            var execStatus = GblCommandExecStatus.Executed;
+            var handled = false;
+            var outMessage = "";
+            Execute(parameter, ref execStatus, ref handled, ref outMessage);
+            return execStatus;
+        }
+
+        public ReadOnlyObservableCollection<IGlobalCommandHandler> Handlers { get { return _handlersReadOnly; } }
+
+        public event GblCommandStateChanged StateChanged;
 
         public void FireStateChanged()
         {
             if (StateChanged != null)
                 StateChanged.Invoke(this);
         }
-
-        protected abstract void ExecuteCommand(Object parameter);
-
-        #region IGlobalCommand Members
-
-        public abstract string Name { get; }
-
-        public string Hint { get { return _hint; } set { _hint = value; FireStateChanged(); } }
-
-        public string Caption
-        {
-            get { return _caption; }
-            set { _caption = value; FireStateChanged(); }
-        }
-
-        public bool IsEnabled
-        {
-            get { return _isEnabled; }
-            set { _isEnabled = value; FireCanExecuteChanged(); }
-        }
-
-        public bool IsVisible
-        {
-            get { return _isVisible; }
-            set { _isVisible = value; FireCanExecuteChanged(); }
-        }
-
-        public bool IsActive { get { return IsEnabled && IsVisible; } }
-
-        public event SingleEventHandler<IGlobalCommand> StateChanged;
-
-        #endregion
-
-        #region ICommand Members
-
-        public virtual bool CanExecute(object parameter)
-        {
-            return IsEnabled && IsVisible;
-        }
-
-        public event EventHandler CanExecuteChanged;
-        private bool _isVisible;
-
-        public virtual void Execute(object parameter)
-        {
-            if (CanExecute(parameter))
-            {
-                var eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
-                var commandArgs = new GlobalCommandExecutingEventArgs(this);
-                eventAggregator.GetEvent<GlobalCommandExecutingEvent>().Publish(commandArgs);
-
-                if (!commandArgs.Aborted)
-                {
-                    ExecuteCommand(parameter);
-                    eventAggregator.GetEvent<GlobalCommandExecutedEvent>().Publish(this);
-                }
-            }
-        }
-
-        #endregion
     }
 }

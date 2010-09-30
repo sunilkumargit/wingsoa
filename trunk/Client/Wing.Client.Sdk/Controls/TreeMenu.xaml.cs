@@ -73,10 +73,19 @@ namespace Wing.Client.Sdk.Controls
 
     public class TreeMenuItem : TreeViewItem, IExtensibleMenuItem
     {
+        private int cnt = 0;
+
         public TreeMenuItem(String id)
             : base()
         {
             ItemId = id;
+        }
+
+        void TreeMenuItem_LayoutUpdated(object sender, EventArgs e)
+        {
+            //  ServiceLocation.ServiceLocator.Current.GetInstance<IShellService>()
+            //      .StatusMessage(String.Format("Layout update {0}: {1}", ItemId, cnt));
+
         }
 
         internal void SetController(ExtensibleMenuController controller)
@@ -92,7 +101,7 @@ namespace Wing.Client.Sdk.Controls
                 if (OnSelect != null)
                     OnSelect.Invoke(this, new EventArgs());
                 if (Command != null)
-                    Command.Execute(null);
+                    Command.Execute();
                 IsSelected = false;
             }
             else
@@ -155,23 +164,32 @@ namespace Wing.Client.Sdk.Controls
         public void BindCommand(IGlobalCommand command)
         {
             UnbindCommand();
-            command.StateChanged += new SingleEventHandler<IGlobalCommand>(command_StateChanged);
             this.Command = command;
-            command_StateChanged(command);
+            this.Command.StateChanged += new GblCommandStateChanged(Command_StateChanged);
+            RefreshCommand();
         }
 
-        void command_StateChanged(IGlobalCommand sender)
+        void Command_StateChanged(IGlobalCommand command)
         {
+            RefreshCommand();
+        }
+
+        void RefreshCommand()
+        {
+            if (Command == null)
+                return;
             var thisE = (IExtensibleMenuItem)this;
-            thisE.IsVisible = sender.IsVisible;
-            thisE.IsEnabled = sender.IsEnabled;
-            thisE.Caption = sender.Caption;
+            var status = Command.QueryStatus();
+            thisE.IsVisible = status != GblCommandStatus.NotSupported;
+            thisE.IsEnabled = status == GblCommandStatus.Enabled;
+            thisE.Caption = Command.Caption;
         }
 
         public void UnbindCommand()
         {
-            if (this.Command == null) return;
-            Command.StateChanged -= command_StateChanged;
+            if (Command == null)
+                return;
+            Command.StateChanged -= Command_StateChanged;
             this.Command = null;
         }
 

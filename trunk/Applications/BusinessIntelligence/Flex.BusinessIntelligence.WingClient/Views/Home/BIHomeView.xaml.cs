@@ -15,7 +15,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.Home
             InitializeComponent();
             SideBar.Caption = "Business Intelligence";
             _treeMenu = new TreeMenu();
-            SideBar.Content = _treeMenu;
+            SideBar.InnerContent = _treeMenu;
         }
 
         #region IBIHomeView Members

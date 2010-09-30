@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,12 +12,10 @@ using System.Collections.ObjectModel;
 
 namespace Wing.Client.Sdk.Services
 {
-    public interface IGlobalCommandsManager
+    public enum GblCommandExecStatus
     {
-        IGlobalCommand CreateCommand(String name, String caption = "", String Tooltip = "");
-        void RemoveCommand(String name);
-        IGlobalCommand GetCommand(String name);
-        ReadOnlyCollection<IGlobalCommand> Commands { get; }
-        void RequeryStateNeeded();
+        Executed,
+        Aborted,
+        Error
     }
 }
