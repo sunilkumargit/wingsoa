@@ -26,7 +26,6 @@ namespace Wing.Server.Modules.SoaServicesManager
             var metadataBehavior = new ServiceMetadataBehavior();
             metadataBehavior.HttpGetEnabled = true;
             serviceHost.Description.Behaviors.Add(metadataBehavior);
-            //serviceHost.Description.Behaviors.Add(new Context)
             serviceHost.AddServiceEndpoint(contractType, new WSHttpBinding(), "");
             BindingElement bindingElement = new HttpTransportBindingElement();
             CustomBinding binding = new CustomBinding(bindingElement);

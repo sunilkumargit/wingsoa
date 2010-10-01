@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServerConfigSection.cs" />
     <Compile Include="IServerEntityStoreService.cs" />
+    <Compile Include="IServerConfigManagerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soa\ISoaServiceHost.cs" />
     <Compile Include="Soa\ISoaServiceHostBuilder.cs" />

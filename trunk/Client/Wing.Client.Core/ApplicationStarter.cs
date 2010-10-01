@@ -40,7 +40,7 @@ namespace Wing.Client.Core
         public void Run()
         {
             _store = new ClientAssemblyStore();
-
+            _startActions.Add(FirstConnection);
 #if !DEBUG
             _startActions.Add(CheckForUpdates);
 #endif
@@ -112,7 +112,6 @@ namespace Wing.Client.Core
 
         void GetAssembliesMetadata()
         {
-            _splash.DisplayMessage("Conectando...");
             var client = new WebClient();
 
             // uri for assemblies metadata
@@ -309,6 +308,39 @@ namespace Wing.Client.Core
             }
             else
                 PerformNextAction();
+        }
+
+        void FirstConnection()
+        {
+            _splash.DisplayMessage("Conectando...");
+            var uri = CurrentApp.Host.GetRelativeUrl("/ServerHello.aspx");
+            var tries = 20;
+            var client = new WebClient();
+            client.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, args) =>
+            {
+                if (args.Error != null)
+                {
+                    if (--tries == 0)
+                    {
+                        _splash.HideProgressBar();
+                        _splash.DisplayMessage("Ocorreu um problema ao conectar-se ao servidor.");
+                    }
+                    else
+                    {
+                        _splash.DisplayMessage("Connectando... " + tries.ToString());
+                        Helper.DelayExecution(TimeSpan.FromSeconds(3), () =>
+                        {
+                            client.DownloadStringAsync(uri);
+                            return false;
+                        });
+                    }
+                }
+                else
+                {
+                    PerformNextAction();
+                }
+            });
+            client.DownloadStringAsync(uri);
         }
     }
 }

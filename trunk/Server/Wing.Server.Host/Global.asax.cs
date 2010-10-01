@@ -37,7 +37,8 @@ namespace Wing.Server.Host
             settings.ServerAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerAssemblyStorePath"]));
             settings.ClientAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ClientAssemblyStorePath"]));
             settings.ServerDataBasePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerDataBasePath"]));
-            settings.ServicesBaseUri = new Uri("http://127.0.0.1:4305/WngServices");
+            settings.ServerDataStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerFileStorePath"]));
+            settings.UserDataStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["UserDataPath"]));
 
             PrepareServerAssemblyStore(settings);
             CreateServerBootstrapperAndRun(settings);

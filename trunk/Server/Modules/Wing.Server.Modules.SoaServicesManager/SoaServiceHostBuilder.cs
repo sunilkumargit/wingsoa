@@ -26,7 +26,9 @@ namespace Wing.Server.Modules.SoaServicesManager
         public ISoaServiceHost BuildServiceHost(SoaServiceDescriptor descriptor, object singletonInstance)
         {
             ServiceHost serviceHost = null;
-            Uri defaultAddress = ServiceLocator.Current.GetInstance<BootstrapSettings>().ServicesBaseUri;
+            var manager = ServiceLocator.Current.GetInstance<IServerConfigManagerService>();
+            var section = manager.GetSection("Services");
+            var defaultAddress = new Uri(section.GetString("baseUri"));
             foreach (var strategy in Strategies)
                 strategy.Execute(descriptor, ref serviceHost, ref singletonInstance, ref defaultAddress);
             var host = new SoaServiceHost();

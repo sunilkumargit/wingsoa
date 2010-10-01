@@ -21,7 +21,7 @@ namespace Wing.Server.Modules.SoaServicesManager
         public void Execute(SoaServiceDescriptor descriptor, ref ServiceHost serviceHost, ref object singletonInstance, ref Uri serviceDefaultAddress)
         {
             var settings = ServiceLocator.Current.GetInstance<BootstrapSettings>();
-            serviceDefaultAddress = new Uri(serviceDefaultAddress.ToString() + "/" + descriptor.ServiceName);
+            serviceDefaultAddress = new Uri(serviceDefaultAddress, descriptor.ServiceName);
             if (descriptor.IsSingletonInstance)
             {
                 serviceHost = new ServiceHost(singletonInstance, serviceDefaultAddress);
