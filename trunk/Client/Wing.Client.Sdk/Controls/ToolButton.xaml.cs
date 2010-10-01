@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Wing.Utils;
 
 namespace Wing.Client.Sdk.Controls
 {
@@ -133,6 +134,14 @@ namespace Wing.Client.Sdk.Controls
         {
             if (OnButtonClick != null)
                 OnButtonClick.Invoke(this, e);
+            if (CommandName.HasValue())
+            {
+                var command = CommandsManager.GetCommand(CommandName);
+                command.Execute(CommandParameter);
+            }
         }
+
+        public String CommandName { get; set; }
+        public Object CommandParameter { get; set; }
     }
 }

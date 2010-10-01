@@ -27,14 +27,17 @@ namespace Wing.Server.Host
         protected void Application_Start()
         {
             RegisterRoutes(RouteTable.Routes);
+            StartWingServer();
+        }
 
-
+        private void StartWingServer()
+        {
             var settings = new BootstrapSettings();
             var basePath = Server.MapPath("~");
             settings.ServerAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerAssemblyStorePath"]));
             settings.ClientAssemblyStorePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ClientAssemblyStorePath"]));
             settings.ServerDataBasePath = Path.GetFullPath(Path.Combine(basePath, ConfigurationManager.AppSettings["ServerDataBasePath"]));
-
+            settings.ServicesBaseUri = new Uri("http://127.0.0.1:4305/WngServices");
 
             PrepareServerAssemblyStore(settings);
             CreateServerBootstrapperAndRun(settings);
@@ -61,5 +64,6 @@ namespace Wing.Server.Host
 
             bootstrapperInstance.Run(settings);
         }
+
     }
 }

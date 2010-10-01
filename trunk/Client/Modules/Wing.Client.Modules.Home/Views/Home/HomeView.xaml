@@ -4,28 +4,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             xmlns:wingcontrols="clr-namespace:Wing.Client.Sdk.Controls;assembly=Wing.Client.Sdk"
     xmlns:System="clr-namespace:System;assembly=mscorlib"             
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
 
     <Grid x:Name="LayoutRoot" Background="White">
-        <Grid Grid.Row="1" x:Name="MainContent2" Margin="0" Visibility="Visible">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" MaxWidth="400"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <StackPanel Margin="7,7,7,7">
-                        <TextBlock Text="Business intelligence" Foreground="Black" FontSize="18"/>
-                        <TextBlock Text="Home" Foreground="DarkGray"/>
-                    </StackPanel>
-                </Grid>
-            </Grid>
-        </Grid>
+        <wingcontrols:HeaderedPage PageTitle="Home" SubTitle="Bem-vindo">
+            
+        </wingcontrols:HeaderedPage>
     </Grid>
 </UserControl>

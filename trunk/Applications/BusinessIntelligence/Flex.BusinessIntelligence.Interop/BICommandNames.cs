@@ -13,8 +13,9 @@ namespace Flex.BusinessIntelligence
 {
     public class BICommandNames
     {
-        public static readonly string NavigateHome = "bi.navigateHome";
-        public static readonly string NavigateConfig = "bi.navigateConfig";
-        public static readonly string NavigateCubes = "bi.navigateCubes";
+        public static readonly string NavigateHome = "BI.NavigateHome";
+        public static readonly string NavigateQueries = "BI.NavigateQueries";
+        public static readonly string NavigateConfig = "BI.NavigateConfig";
+        public static readonly string NavigateCubes = "BI.NavigateCubes";
     }
 }

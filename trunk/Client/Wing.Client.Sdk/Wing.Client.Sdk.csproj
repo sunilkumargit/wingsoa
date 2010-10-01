@@ -62,6 +62,7 @@
     <Compile Include="CommandsManager.cs" />
     <Compile Include="ControlHelper.cs" />
     <Compile Include="Controls\ExtensibleMenuController.cs" />
+    <Compile Include="Controls\HeaderedPage.cs" />
     <Compile Include="Controls\IExtensibleMenu.cs" />
     <Compile Include="Controls\IExtensibleMenuItem.cs" />
     <Compile Include="Controls\LeftSideBar.xaml.cs">
@@ -104,6 +105,7 @@
     <Compile Include="Services\IGlobalCommandsManager.cs" />
     <Compile Include="Services\IGlobalCommand.cs" />
     <Compile Include="Services\NavigateCommandHandler.cs" />
+    <Compile Include="ShellCommandsNames.cs" />
     <Compile Include="ShellRegionNames.cs" />
     <Compile Include="Services\ILoginService.cs" />
     <Compile Include="Events\ViewBagActiveViewChangedEvent.cs" />

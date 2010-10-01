@@ -1,6 +1,6 @@
 ﻿using Wing.EntityStore;
 
-namespace Wing.Server.Sdk
+namespace Wing.Server
 {
     public interface IServerEntityStoreService : IEntityStore
     {

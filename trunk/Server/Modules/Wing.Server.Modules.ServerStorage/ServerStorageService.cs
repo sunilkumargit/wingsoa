@@ -10,7 +10,7 @@ using NHibernate.Criterion;
 using NHibernate.Tool.hbm2ddl;
 using Wing.EntityStore;
 using Wing.Logging;
-using Wing.Server.Sdk;
+using Wing.Server;
 using Wing.ServiceLocation;
 using Wing.Utils;
 
@@ -26,7 +26,7 @@ namespace Wing.Server.Modules.ServerStorage
         protected Dictionary<Type, String> _hbMappings = new Dictionary<Type, string>();
 
         private const string _hbXmlTemplate = "<hibernate-mapping xmlns=\"urn:nhibernate-mapping-2.2\" default-lazy=\"false\"><class name=\"{0}\" table=\"{1}Entity\" lazy=\"false\"><id name=\"InstanceId\" access=\"field.lowercase-underscore\" column=\"Id\" type=\"System.Guid\"><generator class=\"assigned\"></generator></id>{2}</class></hibernate-mapping>";
-        private const string _hbPropertyTemplate = "<property name=\"{0}\" type=\"{1}\"><column name=\"{0}\" {2}/></property>";
+        private const string _hbPropertyTemplate = "<property name=\"{0}\" type=\"{1}\"><column name=\"{0}\" {2} {3}/></property>";
 
         public SqlCeServerStorageService(String dbPath)
         {
@@ -158,8 +158,12 @@ namespace Wing.Server.Modules.ServerStorage
             var properties = new StringBuilder();
             foreach (var propertyMeta in entityMeta.Properties)
             {
+                var isString = propertyMeta.PropertyType == typeof(String);
+                var isMaxLength = isString && propertyMeta.MaxLength == Int32.MaxValue;
+
                 var xmlStr = String.Format(_hbPropertyTemplate, propertyMeta.PropertyName, propertyMeta.PropertyType.FullName,
-                    propertyMeta.PropertyType == typeof(String) ? "length=" + propertyMeta.MaxLength.ToString().Quoted() : "");
+                    isString && !isMaxLength ? "length=" + propertyMeta.MaxLength.ToString().Quoted() : "",
+                    isString && isMaxLength ? "sql-type=" + "ntext".Quoted() : "");
                 properties.AppendLine(xmlStr);
             }
             return String.Format(_hbXmlTemplate, entityMeta.EntityType.AssemblyQualifiedName, entityMeta.EntityType.Name, properties.ToString());

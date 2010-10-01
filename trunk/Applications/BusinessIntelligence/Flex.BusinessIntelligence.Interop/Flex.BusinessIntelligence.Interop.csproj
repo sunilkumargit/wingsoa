@@ -57,6 +57,10 @@
   <ItemGroup>
     <Compile Include="BICommandNames.cs" />
     <Compile Include="BIMainMenuNames.cs" />
+    <Compile Include="Data\CubeQueryGroup.cs" />
+    <Compile Include="Data\CubeQueryInfo.cs" />
+    <Compile Include="Data\CubeRegistrationInfo.cs" />
+    <Compile Include="IBIHomePresenter.cs" />
     <Compile Include="IBIRootPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,9 +89,7 @@
   <ItemGroup>
     <Resource Include="Assets\cube48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common" />
   <ProjectExtensions>

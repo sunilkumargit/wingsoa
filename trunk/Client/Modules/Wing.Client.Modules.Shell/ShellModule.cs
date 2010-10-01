@@ -22,6 +22,11 @@ namespace Wing.Client.Modules.Shell
             ServiceLocator.Current.Register<IShellPresentationModel, ShellPresentationModel>(true);
             ServiceLocator.Current.Register<IShellViewPresenter, ShellViewPresenter>(true);
             ServiceLocator.Current.Register<IShellService, ShellService>(true);
+
+            //crior os comandos de NavigateBack e Home
+            var navigateBack = CommandsManager.CreateCommand(ShellCommandsNames.NavigateBack, "Voltar");
+            var navigateHome = CommandsManager.CreateCommand(ShellCommandsNames.NavigateHome, "Home");
+            var navigateTo = CommandsManager.CreateCommand(ShellCommandsNames.NavigateTo, "Ir para...");
         }
 
         public override void Initialized()

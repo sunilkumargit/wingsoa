@@ -8,7 +8,7 @@
     <ProjectGuid>{E9D9DA74-684D-44D9-B5C6-3B297F74B007}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wing.Server.Sdk</RootNamespace>
+    <RootNamespace>Wing.Server</RootNamespace>
     <AssemblyName>Wing.Server.Sdk</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,13 +44,22 @@
   <ItemGroup>
     <Compile Include="IServerEntityStoreService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Soa\ISoaServiceHost.cs" />
+    <Compile Include="Soa\ISoaServiceHostBuilder.cs" />
+    <Compile Include="Soa\ISoaServiceHostBuilderStrategy.cs" />
+    <Compile Include="Soa\ISoaServicesManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Wing.Core\Wing.Core.csproj">
       <Project>{0FB48CFD-AC85-4207-93B5-AB3E1F1798F4}</Project>
       <Name>Wing.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Wing.Soa.Interop\Wing.Soa.Interop.csproj">
+      <Project>{1586D13E-987D-446B-83E7-89170DE191B2}</Project>
+      <Name>Wing.Soa.Interop</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -13,7 +13,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <wngcontrols:LeftSideBar Name="SideBar">
-
+        
         </wngcontrols:LeftSideBar>
+        <wngcontrols:ViewBagDefaultContainer></wngcontrols:ViewBagDefaultContainer>
     </Grid>
 </UserControl>

@@ -2,7 +2,7 @@
 using System.IO;
 using Wing.Modularity;
 using Wing.Server.Core;
-using Wing.Server.Sdk;
+using Wing.Server;
 using Wing.ServiceLocation;
 
 namespace Wing.Server.Modules.ServerStorage

@@ -56,7 +56,7 @@ namespace Wing.Client.Sdk
         }
 
         [System.Diagnostics.DebuggerStepThrough]
-        public void NotifyRequeryStateNeeded()
+        public void RequeryStateNeeded()
         {
             foreach (var cmd in _commandsList)
                 cmd.FireStateChanged();

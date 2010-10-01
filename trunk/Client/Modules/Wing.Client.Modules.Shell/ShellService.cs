@@ -7,6 +7,8 @@ using Wing.Client.Sdk.Events;
 using Wing.Composite.Events;
 using Wing.Composite.Regions;
 using Wing.Events;
+using Wing.Client.Sdk.Services;
+using Wing.ServiceLocation;
 
 namespace Wing.Client.Modules.Shell
 {
@@ -36,8 +38,10 @@ namespace Wing.Client.Modules.Shell
             _eventAggregator.GetEvent<UserLoginEvent>().Subscribe(_UserLoginEvent, ThreadOption.UIThread);
             //registrar-se no evento de alteração de views ativas
             _eventAggregator.GetEvent<ViewBagActiveViewChangedEvent>().Subscribe(_ViewBagActiveViewChangedEvent);
-            //registrar-se no evento 'Back' do shell
-            _eventAggregator.GetEvent<ShellActionEvent>().Subscribe(_ShellActionEvent);
+            // registrar o handler de navigate back
+            CommandsManager.GetCommand(ShellCommandsNames.NavigateBack).AddHandler(new ShellNavigateBackCommandHandler());
+            // navigateTo
+            CommandsManager.GetCommand(ShellCommandsNames.NavigateTo).AddHandler(new ShellNavigateToCommandHandler());
         }
 
         public void _UserLoginEvent(UserLoginEventArgs args)
@@ -55,12 +59,6 @@ namespace Wing.Client.Modules.Shell
         public void _ViewBagActiveViewChangedEvent(ViewBagActiveViewChangedEventArgs args)
         {
             _presentationModel.ActiveViews = GetActiveViews();
-        }
-
-        public void _ShellActionEvent(ShellActionEventArgs args)
-        {
-            if (args.Action == ShellAction.NavigateBack)
-                NavigateBack();
         }
 
         private List<IViewPresenter> GetActiveViews()
@@ -129,5 +127,55 @@ namespace Wing.Client.Modules.Shell
         }
 
         public IViewBagPresenter MainContentPresenter { get; private set; }
+
+        // handler para o NavigateBack
+        private class ShellNavigateBackCommandHandler : IGlobalCommandHandler
+        {
+
+            #region IGlobalCommandHandler Members
+
+            public void QueryStatus(IGlobalCommand command, object parameter, ref GblCommandStatus status, ref bool handled)
+            {
+                status = GblCommandStatus.Enabled;
+                handled = true;
+            }
+
+            public void Execute(IGlobalCommand command, object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+            {
+                execStatus = GblCommandExecStatus.Executed;
+                handled = true;
+                ServiceLocator.Current.GetInstance<IShellService>().NavigateBack();
+            }
+
+            #endregion
+        }
+
+        // handler para o NavigateTo
+        private class ShellNavigateToCommandHandler : IGlobalCommandHandler
+        {
+
+            #region IGlobalCommandHandler Members
+
+            public void QueryStatus(IGlobalCommand command, object parameter, ref GblCommandStatus status, ref bool handled)
+            {
+                handled = true;
+                status = GblCommandStatus.Enabled;
+            }
+
+            public void Execute(IGlobalCommand command, object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+            {
+                var presenter = parameter as IViewPresenter;
+                if (presenter != null)
+                {
+                    ServiceLocator.Current.GetInstance<IShellService>().Navigate(presenter);
+                    execStatus = GblCommandExecStatus.Executed;
+                    handled = true;
+                }
+                else
+                    execStatus = GblCommandExecStatus.Error;
+            }
+
+            #endregion
+        }
     }
 }

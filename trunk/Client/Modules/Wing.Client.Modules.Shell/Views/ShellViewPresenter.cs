@@ -28,18 +28,12 @@ namespace Wing.Client.Modules.Shell.Views
 
         public void view_HomeButtonClicked(object sender, EventArgs e)
         {
-            CallShellActionEvent(ShellAction.NavigateHome);
+            CommandsManager.GetCommand(ShellCommandsNames.NavigateHome).Execute();
         }
 
         public void view_BackButtonClicked(object sender, EventArgs e)
         {
-            CallShellActionEvent(ShellAction.NavigateBack);
-        }
-
-        private void CallShellActionEvent(ShellAction shellAction)
-        {
-            _eventAggregator.GetEvent<ShellActionEvent>()
-                .Publish(new ShellActionEventArgs(shellAction));
+            CommandsManager.GetCommand(ShellCommandsNames.NavigateBack).Execute();
         }
     }
 }

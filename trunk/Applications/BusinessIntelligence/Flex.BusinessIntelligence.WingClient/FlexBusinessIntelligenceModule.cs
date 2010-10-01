@@ -4,6 +4,7 @@ using Wing.Modularity;
 using Wing.ServiceLocation;
 using Wing.Client.Sdk;
 using Wing.Client.Sdk.Services;
+using Wing.EntityStore;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -25,7 +26,11 @@ namespace Flex.BusinessIntelligence.WingClient
             ServiceLocator.Current.Register<BIHomePresenter, BIHomePresenter>(true);
 
             //criar os commandos basicos
-            var navigateHomeCommand = CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Home").AddNavigateHandler<BIHomePresenter>();
+            var navigateHomeCommand = CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Meu BI")
+                .AddNavigateHandler<BIHomePresenter>();
+
+            //consultas
+            var navigateQueriesCommand = CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas");
         }
 
         public override void Initialized()

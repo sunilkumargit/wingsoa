@@ -18,6 +18,10 @@ namespace Wing.Client.Modules.Home
             ServiceLocator.Current.Register<IHomeView, HomeView>();
             ServiceLocator.Current.Register<IHomeViewPresenter, HomeViewPresenter>(true);
             ServiceLocator.Current.Register<IHomeViewPresentationModel, HomeViewPresentationModel>(true);
+
+            // adicionar um handler para o comando de navegação para a home do shell
+            CommandsManager.GetCommand(ShellCommandsNames.NavigateHome)
+                .AddNavigateHandler<IHomeViewPresenter>();
         }
 
         public override void Run()
