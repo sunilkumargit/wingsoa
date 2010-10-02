@@ -21,10 +21,9 @@ namespace Wing.Server.Modules.SoaServicesManager
         {
             base.Initialize();
             //verificar se existe uma configuração de uri padrão
-            var configManager = ServiceLocator.Current.GetInstance<IServerConfigManagerService>();
-            var servicesSection = configManager.GetSection("Services");
+            var servicesSection = SettingsManager.GetSection("Services", "BaseConfiguration");
             if (servicesSection.GetString("baseUri").IsEmpty())
-                servicesSection.Write("baseUri", "http://127.0.0.1:4305/WngServices/");
+                servicesSection.Write("baseUri", "http://127.0.0.1:8090/WngServices/");
 
             var builder = new SoaServiceHostBuilder();
             builder.Strategies.Add(new CreateSingletonInstanceStrategy());

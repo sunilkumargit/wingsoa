@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISoaMetadataProviderService.cs" />
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="OperationStatus.cs" />
     <Compile Include="SoaServiceDescriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoaServiceHostInfo.cs" />

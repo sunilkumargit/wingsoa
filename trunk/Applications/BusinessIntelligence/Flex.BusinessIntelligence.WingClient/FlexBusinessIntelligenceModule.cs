@@ -18,7 +18,7 @@ namespace Flex.BusinessIntelligence.WingClient
         {
             //registrar primeiro este assembly com um alias bi
             AssembliesAlias.RegisterAssemblyAliasOfType("bi", this.GetType());
-            AssembliesAlias.RegisterAssemblyAlias("bi", "Flex.BusinessIntelligence.Interop");
+            AssembliesAlias.RegisterAssemblyAlias("bi", "Flex.BusinessIntelligence.Client.Interop");
 
             ServiceLocator.Current.Register<IBIRootPresenter, BIRootPresenter>(true);
 

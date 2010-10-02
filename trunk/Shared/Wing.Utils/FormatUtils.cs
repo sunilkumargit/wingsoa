@@ -72,5 +72,18 @@ namespace Wing.Utils
 
             return result;
         }
+
+        public static String CreateComponentName(String name)
+        {
+            var result = "";
+            foreach (var ch in name)
+            {
+                if (StringUtils.FilterChars(ch.ToString()) == "" && StringUtils.FilterNumbers(ch.ToString()) == "")
+                    result += "_" + Convert.ToByte(ch).ToString("X");
+                else
+                    result += ch;
+            }
+            return result;
+        }
     }
 }

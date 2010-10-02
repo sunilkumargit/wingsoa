@@ -5,6 +5,8 @@ using System.Text;
 using Wing.Modularity;
 using Wing.EntityStore;
 using Wing.ServiceLocation;
+using Wing.Server.Core;
+using System.IO;
 
 namespace Wing.Server.Modules.ServerConfigManager
 {
@@ -17,9 +19,10 @@ namespace Wing.Server.Modules.ServerConfigManager
         public override void Initialize()
         {
             base.Initialize();
-            ServiceLocator.Current.Register<IServerConfigManagerService, ServerConfigManagerService>(true);
-            var service = ServiceLocator.Current.GetInstance<IServerConfigManagerService>();
-            service.GetSection("StartUp").Write("Last", DateTime.Now);
+            ServiceLocator.Current.Register<ISettingsManager, ServerSettingsManager>(true);
+            var service = ServiceLocator.Current.GetInstance<ISettingsManager>();
+            service.GetSection("ServerSettings", "StartUp").Write("Last", DateTime.Now);
+
         }
 
     }

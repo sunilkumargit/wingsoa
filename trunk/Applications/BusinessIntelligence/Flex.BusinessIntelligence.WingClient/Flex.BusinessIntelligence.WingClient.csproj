@@ -89,9 +89,13 @@
       <Project>{800645BA-2D1E-4C5A-9CDD-8C5FF093EC31}</Project>
       <Name>Wing.Utils.Silverlight</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Flex.BusinessIntelligence.Interop\Flex.BusinessIntelligence.Interop.csproj">
+    <ProjectReference Include="..\Flex.BusinessIntelligence.Client.Interop\Flex.BusinessIntelligence.Client.Interop.csproj">
+      <Project>{EFE35C7A-969D-4424-B194-EF624770E80E}</Project>
+      <Name>Flex.BusinessIntelligence.Client.Interop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Flex.BusinessIntelligence.Interop.Silverlight\Flex.BusinessIntelligence.Interop.Silverlight.csproj">
       <Project>{ECC8FCCB-915B-45F3-A213-EA964FA68314}</Project>
-      <Name>Flex.BusinessIntelligence.Interop</Name>
+      <Name>Flex.BusinessIntelligence.Interop.Silverlight</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
