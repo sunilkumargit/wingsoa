@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Wing.Server.Core;
 using Wing.ServiceLocation;
 using Wing.Utils;
+using Wing.Server.Soa;
 
 namespace Wing.Server.Modules.WingClientSupport
 {
@@ -20,6 +21,13 @@ namespace Wing.Server.Modules.WingClientSupport
             store.ConsolidateStore();
             var data = store.GetAssemblyData(file);
             return File(data, "application/binary");
+        }
+
+        public ActionResult GetSoaMetaProviderServiceUri()
+        {
+            var servicesManager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
+            var serviceInfo = servicesManager.GetService("SoaMetadataProvider").GetConnectionInfo();
+            return Content(serviceInfo.Address.ToString(), "text/plain");
         }
     }
 }

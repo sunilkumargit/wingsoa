@@ -9,6 +9,7 @@ namespace Wing.Soa.Interop
 {
     public class SoaServiceConnectionInfo
     {
+        public String ServiceName { get; set; }
         public Uri Address { get; set; }
         public SoaServiceBindingMode ServiceBindingMode { get; set; }
     }

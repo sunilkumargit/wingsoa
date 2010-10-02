@@ -20,5 +20,6 @@ namespace Wing.Server.Soa
         void Stop();
         void Start();
         SoaServiceHostInfo GetStateInfo();
+        SoaServiceConnectionInfo GetConnectionInfo();
     }
 }

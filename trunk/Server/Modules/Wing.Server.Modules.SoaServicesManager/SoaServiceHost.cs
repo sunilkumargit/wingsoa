@@ -45,9 +45,19 @@ namespace Wing.Server.Modules.SoaServicesManager
         {
             return new SoaServiceHostInfo()
             {
-                DefaultAddress=this.ServiceAddress,
-                ServiceName=this.Descriptor.ServiceName,
+                DefaultAddress = this.ServiceAddress,
+                ServiceName = this.Descriptor.ServiceName,
                 State = this.State
+            };
+        }
+
+        public SoaServiceConnectionInfo GetConnectionInfo()
+        {
+            return new SoaServiceConnectionInfo()
+            {
+                ServiceName = this.Descriptor.ServiceName,
+                Address = this.ServiceAddress,
+                ServiceBindingMode = SoaServiceBindingMode.BasicHttp
             };
         }
 

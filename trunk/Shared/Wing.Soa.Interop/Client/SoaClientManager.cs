@@ -88,13 +88,14 @@ namespace Wing.Soa.Interop.Client
             {
                 if (!_channelFactories.ContainsKey(typeof(TChannel)))
                 {
-                    var channelDescriptor = _metadaProvider.GetServiceDescriptorByContractType(typeof(TChannel));
-                    if (channelDescriptor == null)
-                        throw new Exception("Service reference does not found. " + typeof(TChannel).FullName);
-                    var connInfo = _metadaProvider.GetServiceHostInfo(channelDescriptor.ServiceName);
-                    var binding = CreateBinding(connInfo);
-                    var endPoint = CreateEndpoint(connInfo);
-                    _channelFactories[typeof(TChannel)] = new ChannelFactory<TChannel>(binding, endPoint);
+                    _metadaProvider.GetServiceConnectionInfoByContractType(typeof(TChannel), (connInfo) =>
+                    {
+                        if (connInfo == null)
+                            throw new Exception("Service reference does not found. " + typeof(TChannel).FullName);
+                        var binding = CreateBinding(connInfo);
+                        var endPoint = CreateEndpoint(connInfo);
+                        _channelFactories[typeof(TChannel)] = new ChannelFactory<TChannel>(binding, endPoint);
+                    });
                 }
             }
             var factory = (ChannelFactory<TChannel>)_channelFactories[typeof(TChannel)];
@@ -130,6 +131,10 @@ namespace Wing.Soa.Interop.Client
                 catch (CommunicationException)
                 {
                     commObj.Abort();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }
         }

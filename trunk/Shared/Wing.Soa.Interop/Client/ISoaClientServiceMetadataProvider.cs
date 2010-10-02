@@ -9,7 +9,6 @@ namespace Wing.Soa.Interop.Client
 {
     public interface ISoaClientServiceMetadataProvider
     {
-        SoaServiceDescriptor GetServiceDescriptorByContractType(Type contractType);
-        SoaServiceConnectionInfo GetServiceHostInfo(String serviceName);
+        void GetServiceConnectionInfoByContractType(Type contractType, Action<SoaServiceConnectionInfo> callback);
     }
 }

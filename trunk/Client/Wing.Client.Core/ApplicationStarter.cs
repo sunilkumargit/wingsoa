@@ -48,6 +48,7 @@ namespace Wing.Client.Core
             _startActions.Add(CheckQuotaSize);
             _startActions.Add(DownloadAssemblies);
             _startActions.Add(LoadAssemblies);
+            _startActions.Add(ReadSoaMetadaProviderServiceUri);
             _startActions.Add(CreateBootstrapperAndRun);
 
             // startup actions
@@ -341,6 +342,41 @@ namespace Wing.Client.Core
                 }
             });
             client.DownloadStringAsync(uri);
+        }
+
+        void ReadSoaMetadaProviderServiceUri()
+        {
+            WebClient client = new WebClient();
+
+            // uri for assemblies metadata
+            var fileUri = CurrentApp.Host.GetRelativeUrl("/WingCltAppSupport/GetSoaMetaProviderServiceUri");
+
+            // bind to downstring completed event
+            client.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, e) =>
+            {
+                // someting goes wrong, stop start process.
+                if (e.Cancelled)
+                {
+                    _splash.DisplayMessage("A conexão com servidor foi cancelada. Reinice o aplicativo.");
+                    _splash.HideProgressBar();
+                }
+                // an error ocurred, display error message in ui;
+                else if (e.Error != null)
+                {
+                    _splash.DisplayMessage(String.Format("A tentativa de comunicação com servidor falhou \n " +
+                        "Mensagem:  {0} \n Caminho: {1}", e.Error.Message, fileUri.ToString()));
+                    _splash.HideProgressBar();
+                }
+                // success, perform next action
+                else
+                {
+                    _bootstrapSettings.SoaMetadataProviderUri = new Uri(e.Result);
+                    PerformNextAction();
+                }
+            });
+
+            // call server
+            client.DownloadStringAsync(fileUri);
         }
     }
 }

@@ -18,8 +18,6 @@ namespace Wing.Server.Modules.SoaServicesManager
             get { return ServiceLocator.Current.GetInstance<ISoaServicesManager>(); }
         }
 
-        #region ISoaMetadataProviderService Members
-
         public List<SoaServiceDescriptor> GetRegisteredServices()
         {
             return ServicesManager.Services.Select(s => s.Descriptor).ToList();
@@ -36,6 +34,28 @@ namespace Wing.Server.Modules.SoaServicesManager
             return ServicesManager.Services.Select(s => s.GetStateInfo()).ToList();
         }
 
-        #endregion
+        public SoaServiceDescriptor GetServiceDescriptorByContractRefTypeName(string refTypeName)
+        {
+            return ServicesManager.Services
+                .Where(s => s.Descriptor.ContractTypeRefName == refTypeName)
+                .Select(s => s.Descriptor)
+                .FirstOrDefault();
+        }
+
+        public SoaServiceConnectionInfo GetServiceConnectionInfoByContractRefTypeName(string refTypeName)
+        {
+            return ServicesManager.Services
+                .Where(s => s.Descriptor.ContractTypeRefName == refTypeName)
+                .Select(s => s.GetConnectionInfo())
+                .FirstOrDefault();
+        }
+
+        public SoaServiceConnectionInfo GetConnectionInfo(string serviceName)
+        {
+            return ServicesManager.Services
+                .Where(s => s.Descriptor.ServiceName == serviceName)
+                .Select(s => s.GetConnectionInfo())
+                .FirstOrDefault();
+        }
     }
 }

@@ -29,6 +29,8 @@ namespace Wing.Client.Bootstrap
             //registrar o locator
             ServiceLocator.Current.Register<IServiceLocator>(_serviceLocator);
 
+            ServiceLocator.Current.Register<BootstrapSettings>(settings);
+
             ServiceLocator.Current.Register<ISplashUI>(settings.Splash);
 
             //registrar o logger

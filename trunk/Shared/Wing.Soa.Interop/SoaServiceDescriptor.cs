@@ -19,8 +19,13 @@ namespace Wing.Soa.Interop
             ServiceName = serviceName;
             ContractTypeName = contractTypeName;
             ServiceTypeName = serviceTypeName;
-            ContractTypeRefName = serviceTypeName.Substring(0, serviceTypeName.IndexOf(","));
             IsSingletonInstance = isSingletonInstance;
+
+            var typeFullName = serviceTypeName.Substring(0, serviceTypeName.IndexOf(","));
+            if (typeFullName.IndexOf(".") == -1)
+                ContractTypeRefName = typeFullName;
+            else
+                ContractTypeRefName = typeFullName.Substring(typeFullName.LastIndexOf(".") + 1);
         }
 
         public SoaServiceDescriptor(String serviceName, Type contractType, Type serviceType, bool isSingletonInstance)

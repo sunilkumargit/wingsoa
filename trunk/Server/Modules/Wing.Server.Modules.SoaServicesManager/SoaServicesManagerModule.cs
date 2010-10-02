@@ -39,7 +39,7 @@ namespace Wing.Server.Modules.SoaServicesManager
             base.Initialized();
             //registrar o serviço provedor de metadados ao cliente
             var manager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
-            manager.RegisterService(new SoaServiceDescriptor("SoaMetadataProviderService", typeof(ISoaMetadataProviderService), typeof(SoaMetadataProviderService), true), true);
+            manager.RegisterService(new SoaServiceDescriptor("SoaMetadataProvider", typeof(ISoaMetadataProviderService), typeof(SoaMetadataProviderService), true), true);
         }
     }
 }

@@ -40,6 +40,8 @@ namespace Wing.Server.Modules.SoaServicesManager
         {
             ISoaServiceHost host = null;
             _services.TryGetValue(serviceName, out host);
+            if (host == null && !serviceName.EndsWith("Service"))
+                return GetService(serviceName + "Service");
             return host;
         }
 
