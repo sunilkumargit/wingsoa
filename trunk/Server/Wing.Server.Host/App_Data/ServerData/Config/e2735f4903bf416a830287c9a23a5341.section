@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ServerConfigSectionWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" section-id="e2735f4903bf416a830287c9a23a5341" section-name="Services">
-  <property name="baseUri">
-    <value xsi:type="xsd:string">http://127.0.0.1:8090/WngServices/</value>
-  </property>
-</ServerConfigSectionWrapper>

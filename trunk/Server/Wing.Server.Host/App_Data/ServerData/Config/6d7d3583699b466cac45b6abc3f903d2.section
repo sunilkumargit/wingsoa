@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ServerConfigSectionWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" section-id="6d7d3583699b466cac45b6abc3f903d2" section-name="StartUp">
-  <property name="Last">
-    <value xsi:type="xsd:dateTime">2010-10-01T19:43:38.2050466-03:00</value>
-  </property>
-</ServerConfigSectionWrapper>
