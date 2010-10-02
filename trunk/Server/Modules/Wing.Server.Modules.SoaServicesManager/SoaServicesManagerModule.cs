@@ -28,7 +28,7 @@ namespace Wing.Server.Modules.SoaServicesManager
             var builder = new SoaServiceHostBuilder();
             builder.Strategies.Add(new CreateSingletonInstanceStrategy());
             builder.Strategies.Add(new CreateServiceHostStrategy());
-            builder.Strategies.Add(new CreateNetTcpBindingStrategy());
+            builder.Strategies.Add(new CreateBasicHttpBindingStrategy());
 
             ServiceLocator.Current.Register<ISoaServiceHostBuilder>(builder);
             ServiceLocator.Current.Register<ISoaServicesManager, SoaServicesManager>(true);

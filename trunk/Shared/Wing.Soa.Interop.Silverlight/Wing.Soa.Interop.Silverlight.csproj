@@ -57,6 +57,12 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Wing.Soa.Interop\Client\ISoaClientServiceMetadataProvider.cs">
+      <Link>Client\ISoaClientServiceMetadataProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\Client\SoaClientManager.cs">
+      <Link>Client\SoaClientManager.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Soa.Interop\ISoaMetadataProviderService.cs">
       <Link>ISoaMetadataProviderService.cs</Link>
     </Compile>
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="..\Wing.Soa.Interop\OperationStatus.cs">
       <Link>OperationStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\SoaServiceBindingMode.cs">
+      <Link>SoaServiceBindingMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\SoaServiceConnectionInfo.cs">
+      <Link>SoaServiceConnectionInfo.cs</Link>
     </Compile>
     <Compile Include="..\Wing.Soa.Interop\SoaServiceDescriptor.cs">
       <Link>SoaServiceDescriptor.cs</Link>
@@ -87,6 +99,7 @@
       <Name>Wing.Utils.Silverlight</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

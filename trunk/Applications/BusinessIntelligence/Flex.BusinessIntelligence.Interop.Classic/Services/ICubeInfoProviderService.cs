@@ -14,9 +14,16 @@ namespace Flex.BusinessIntelligence.Interop.Services
     [ServiceKnownType(typeof(CubeQueryInfo))]
     public interface ICubeInfoProviderService
     {
+        [OperationContract]
         List<CubeRegistrationInfo> GetCubesInfo();
+
+        [OperationContract]
         CubeRegistrationInfo GetCubeInfo(Guid cubeId);
+
+        [OperationContract]
         OperationResult SaveCubeInfo(CubeRegistrationInfo info);
+
+        [OperationContract]
         OperationResult DeleteCubeInfo(Guid cubeId);
     }
 }

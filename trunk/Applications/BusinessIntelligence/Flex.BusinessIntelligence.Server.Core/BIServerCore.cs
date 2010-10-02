@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Wing.Modularity;
+using Wing.Server;
+using Wing.Server.Soa;
+using Wing.ServiceLocation;
+using Flex.BusinessIntelligence.Data;
+using Wing.Soa.Interop;
+using Flex.BusinessIntelligence.Interop.Services;
 
 namespace Flex.BusinessIntelligence.Server.Core
 {
@@ -12,6 +18,20 @@ namespace Flex.BusinessIntelligence.Server.Core
     [ModulePriority(ModulePriority.High)]
     public class BIServerCore : ModuleBase
     {
+        public override void Initialize()
+        {
+            base.Initialize();
 
+            // registrar as entidades de cubo
+            IServerEntityStoreService entityStore = ServiceLocator.Current.GetInstance<IServerEntityStoreService>();
+            entityStore.RegisterEntity<CubeRegistrationInfo>();
+            entityStore.RegisterEntity<CubeQueryGroup>();
+            entityStore.RegisterEntity<CubeQueryInfo>();
+
+            //registrar os servicos Soa
+            ISoaServicesManager servicesManager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
+
+            servicesManager.RegisterService(new SoaServiceDescriptor("CubeInfoProvider", typeof(ICubeInfoProviderService), typeof(CubeInfoProviderService), true), true);
+        }
     }
 }

@@ -30,8 +30,8 @@ namespace Wing.EntityStore
 
     public interface IEntityStoreQuery<TEntityType> : IEntityStoreQuery where TEntityType : IStoreEntity
     {
-        IList<TEntityType> Find();
-        IList<TEntityType> Find(int maxResults);
+        List<TEntityType> Find();
+        List<TEntityType> Find(int maxResults);
         TEntityType FindFirst();
     }
 }

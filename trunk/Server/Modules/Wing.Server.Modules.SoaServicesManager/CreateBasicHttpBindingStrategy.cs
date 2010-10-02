@@ -14,7 +14,7 @@ using Wing.Server.Core;
 
 namespace Wing.Server.Modules.SoaServicesManager
 {
-    internal class CreateNetTcpBindingStrategy : ISoaServiceHostBuilderStrategy
+    internal class CreateBasicHttpBindingStrategy : ISoaServiceHostBuilderStrategy
     {
 
         #region ISoaServiceHostBuilderStrategy Members
@@ -26,7 +26,7 @@ namespace Wing.Server.Modules.SoaServicesManager
             var metadataBehavior = new ServiceMetadataBehavior();
             metadataBehavior.HttpGetEnabled = true;
             serviceHost.Description.Behaviors.Add(metadataBehavior);
-            serviceHost.AddServiceEndpoint(contractType, new WSHttpBinding(), "");
+            serviceHost.AddServiceEndpoint(contractType, new BasicHttpBinding(), "");
             BindingElement bindingElement = new HttpTransportBindingElement();
             CustomBinding binding = new CustomBinding(bindingElement);
             serviceHost.AddServiceEndpoint(typeof(IMetadataExchange), binding, new Uri(serviceDefaultAddress.ToString() + "/MEX"));

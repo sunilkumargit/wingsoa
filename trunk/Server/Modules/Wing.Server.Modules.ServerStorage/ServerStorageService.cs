@@ -13,6 +13,7 @@ using Wing.Logging;
 using Wing.Server;
 using Wing.ServiceLocation;
 using Wing.Utils;
+using System.Linq;
 
 namespace Wing.Server.Modules.ServerStorage
 {
@@ -295,14 +296,14 @@ namespace Wing.Server.Modules.ServerStorage
             public NHibernateStoreQuery(SqlCeServerStorageService store)
                 : base(typeof(TEntityType), store) { }
 
-            public IList<TEntityType> Find()
+            public List<TEntityType> Find()
             {
                 return Find(0);
             }
 
-            public IList<TEntityType> Find(int maxResults)
+            public List<TEntityType> Find(int maxResults)
             {
-                return _store.Execute<IList<TEntityType>>((session) => { return CreateCriteria(session, maxResults).List<TEntityType>(); });
+                return _store.Execute<List<TEntityType>>((session) => { return CreateCriteria(session, maxResults).List<TEntityType>().ToList(); });
             }
 
             public TEntityType FindFirst()

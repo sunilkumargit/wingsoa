@@ -19,6 +19,7 @@ namespace Wing.Soa.Interop
             ServiceName = serviceName;
             ContractTypeName = contractTypeName;
             ServiceTypeName = serviceTypeName;
+            ContractTypeRefName = serviceTypeName.Substring(0, serviceTypeName.IndexOf(","));
             IsSingletonInstance = isSingletonInstance;
         }
 
@@ -56,6 +57,14 @@ namespace Wing.Soa.Interop
         {
             get { return _IsSingletonInstance; }
             private set { _IsSingletonInstance = value; }
+        }
+
+        [DataMember]
+        private string _ContractTypeRefName;
+        public String ContractTypeRefName
+        {
+            get { return _ContractTypeRefName; }
+            set { _ContractTypeRefName = value; }
         }
     }
 }

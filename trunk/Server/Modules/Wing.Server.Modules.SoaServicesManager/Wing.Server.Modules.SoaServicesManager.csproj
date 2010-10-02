@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="CreateServiceHostStrategy.cs" />
     <Compile Include="CreateSingletonInstanceStrategy.cs" />
-    <Compile Include="CreateNetTcpBindingStrategy.cs" />
+    <Compile Include="CreateBasicHttpBindingStrategy.cs" />
     <Compile Include="SoaMetadataProviderService.cs" />
     <Compile Include="SoaServiceHost.cs" />
     <Compile Include="SoaServiceHostBuilder.cs" />

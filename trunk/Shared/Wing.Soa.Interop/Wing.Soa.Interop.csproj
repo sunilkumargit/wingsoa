@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\ISoaClientServiceMetadataProvider.cs" />
+    <Compile Include="Client\SoaClientManager.cs" />
+    <Compile Include="SoaServiceConnectionInfo.cs" />
+    <Compile Include="SoaServiceBindingMode.cs" />
     <Compile Include="ISoaMetadataProviderService.cs" />
     <Compile Include="OperationResult.cs" />
     <Compile Include="OperationStatus.cs" />
