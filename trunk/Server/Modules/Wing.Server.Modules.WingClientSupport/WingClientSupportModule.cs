@@ -9,6 +9,7 @@ namespace Wing.Server.Modules.WingClientSupport
     [ModuleDescription("Suporte ao client Wing")]
     [ModuleCategory(ModuleCategory.Core)]
     [ModulePriority(ModulePriority.Lower)]
+    [ModuleDependency("SoaServicesManager")]
     public class WingClientSupportModule : ModuleBase
     {
         #region IModule Members
