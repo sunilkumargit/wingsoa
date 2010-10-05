@@ -37,12 +37,6 @@ namespace Wing.Client.Modules.SoaConnector
             var channel = CreateServiceChannel();
             try
             {
-                var async = channel.BeginGetServiceConnectionInfoByContractRefTypeName(contractType.Name, (r) =>
-                {
-                    var res = channel.EndGetServiceConnectionInfoByContractRefTypeName(r);
-                    callback(res);
-                }, null);
-
             }
             catch (Exception ex)
             {

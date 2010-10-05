@@ -21,13 +21,7 @@ namespace Wing.Soa.Interop
         SoaServiceHostInfo GetServiceState(String serviceName);
 
         [OperationContract]
-        SoaServiceDescriptor GetServiceDescriptorByContractRefTypeName(String refTypeName);
-
-        [OperationContract]
-        SoaServiceConnectionInfo GetConnectionInfo(String serviceName);
-
-        [OperationContract]
-        SoaServiceConnectionInfo GetServiceConnectionInfoByContractRefTypeName(String refTypeName);
+        List<SoaServiceConnectionInfo> GetServicesConnectionInfo();
 
         [OperationContract]
         List<SoaServiceHostInfo> GetServicesStates();
@@ -41,16 +35,8 @@ namespace Wing.Soa.Interop
         SoaServiceHostInfo EndGetServiceState(IAsyncResult result);
 
         [OperationContract(AsyncPattern = true)]
-        IAsyncResult BeginGetServiceDescriptorByContractRefTypeName(String refTypeName, AsyncCallback callback, Object state);
-        SoaServiceDescriptor EndGetServiceDescriptorByContractRefTypeName(IAsyncResult result);
-
-        [OperationContract(AsyncPattern = true)]
-        IAsyncResult BeginGetServiceConnectionInfoByContractRefTypeName(String refTypeName, AsyncCallback callback, Object state);
-        SoaServiceConnectionInfo EndGetServiceConnectionInfoByContractRefTypeName(IAsyncResult result);
-
-        [OperationContract(AsyncPattern = true)]
-        IAsyncResult BeginGetConnectionInfo(String serviceName, AsyncCallback callback, Object state);
-        SoaServiceConnectionInfo EndGetConnectionInfo(IAsyncResult result);
+        IAsyncResult BeginGetServicesConnectionInfo(AsyncCallback callback, Object state);
+        List<SoaServiceConnectionInfo> EndGetServicesConnectionInfo(IAsyncResult result);
 
         [OperationContract(AsyncPattern = true)]
         IAsyncResult BeginGetServicesStates(AsyncCallback callback, Object state);

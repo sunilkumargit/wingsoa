@@ -11,76 +11,12 @@ namespace Wing.Soa.Interop.Client
     {
         private static ISoaClientServiceMetadataProvider _metadaProvider;
         private static Dictionary<Type, ChannelFactory> _channelFactories = new Dictionary<Type, ChannelFactory>();
+        private static Object _lockObject = new Object();
 
         public static void SetMetadataProvider(ISoaClientServiceMetadataProvider metadataProvider)
         {
             _metadaProvider = metadataProvider;
         }
-
-        public static TResult ExecuteAndCleanUp<TChannel, TResult>(Func<TChannel, TResult> action)
-        {
-            var channel = CreateChannel<TChannel>();
-            try
-            {
-                return Execute<TChannel, TResult>(channel, action);
-            }
-            finally
-            {
-                CloseChannel(channel);
-            }
-        }
-
-        public static void ExecuteAndCleanUp<TChannel>(Action<TChannel> action)
-        {
-            ExecuteAndCleanUp<TChannel, Object>((channel) =>
-            {
-                action(channel);
-                return null;
-            });
-        }
-
-        public static TResult Execute<TChannel, TResult>(TChannel channel, Func<TChannel, TResult> action)
-        {
-            var retries = 0;
-            TResult result;
-            Exception exception = null;
-            while (++retries <= 3)
-            {
-                try
-                {
-                    result = action(channel);
-                    return result;
-                }
-                catch (TimeoutException tex)
-                {
-                    retries++;
-                    exception = tex;
-                }
-                catch (CommunicationException cex)
-                {
-                    retries++;
-                    exception = cex;
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                    break;
-                }
-            }
-            //não conseguiu executar, exception...
-            throw exception;
-        }
-
-        public static void Execute<TChannel>(TChannel channel, Action<TChannel> action)
-        {
-            Execute<TChannel, object>(channel, (channel_) =>
-            {
-                action(channel_);
-                return null;
-            });
-        }
-
-        private static object _lockObject = new Object();
 
         public static TChannel CreateChannel<TChannel>()
         {
@@ -116,6 +52,7 @@ namespace Wing.Soa.Interop.Client
             return new EndpointAddress(connInfo.Address);
         }
 
+        /*
         public static void CloseChannel(Object channel)
         {
             var commObj = channel as ICommunicationObject;
@@ -138,5 +75,6 @@ namespace Wing.Soa.Interop.Client
                 }
             }
         }
+         */
     }
 }

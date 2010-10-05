@@ -34,28 +34,9 @@ namespace Wing.Server.Modules.SoaServicesManager
             return ServicesManager.Services.Select(s => s.GetStateInfo()).ToList();
         }
 
-        public SoaServiceDescriptor GetServiceDescriptorByContractRefTypeName(string refTypeName)
+        public List<SoaServiceConnectionInfo> GetServicesConnectionInfo()
         {
-            return ServicesManager.Services
-                .Where(s => s.Descriptor.ContractTypeRefName == refTypeName)
-                .Select(s => s.Descriptor)
-                .FirstOrDefault();
-        }
-
-        public SoaServiceConnectionInfo GetServiceConnectionInfoByContractRefTypeName(string refTypeName)
-        {
-            return ServicesManager.Services
-                .Where(s => s.Descriptor.ContractTypeRefName == refTypeName)
-                .Select(s => s.GetConnectionInfo())
-                .FirstOrDefault();
-        }
-
-        public SoaServiceConnectionInfo GetConnectionInfo(string serviceName)
-        {
-            return ServicesManager.Services
-                .Where(s => s.Descriptor.ServiceName == serviceName)
-                .Select(s => s.GetConnectionInfo())
-                .FirstOrDefault();
+            return ServicesManager.Services.Select(s => s.GetConnectionInfo()).ToList();
         }
     }
 }
