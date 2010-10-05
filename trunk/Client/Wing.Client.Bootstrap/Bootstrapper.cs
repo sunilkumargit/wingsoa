@@ -11,6 +11,9 @@ using Wing.Logging;
 using Wing.Modularity;
 using Wing.ServiceLocation;
 using Wing.Client.Sdk;
+using Wing.Client.Sdk.Services;
+using System.Windows;
+using System.Threading;
 
 namespace Wing.Client.Bootstrap
 {
@@ -25,6 +28,9 @@ namespace Wing.Client.Bootstrap
             var _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
             //registrar o ServiceLocator
             ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(() => _serviceLocator));
+
+            ServiceLocator.Current.Register<ISyncContext>(new SyncContextService(Application.Current.RootVisual.Dispatcher));
+            VisualContext.SetSyncService(ServiceLocator.Current.GetInstance<ISyncContext>());
 
             //registrar o locator
             ServiceLocator.Current.Register<IServiceLocator>(_serviceLocator);
@@ -64,7 +70,11 @@ namespace Wing.Client.Bootstrap
 
             //carregar os modulos
             settings.Splash.DisplayMessage("Carregando os módulos...");
-            ServiceLocator.Current.GetInstance<IModuleManager>().Run();
+
+            ThreadPool.QueueUserWorkItem((a) =>
+            {
+                ServiceLocator.Current.GetInstance<IModuleManager>().Run();
+            }, null);
         }
 
         #endregion
@@ -137,9 +147,6 @@ namespace Wing.Client.Bootstrap
 
             ExceptionExtensions.RegisterFrameworkExceptionType(
                 typeof(Microsoft.Practices.Unity.ResolutionFailedException));
-
-            ExceptionExtensions.RegisterFrameworkExceptionType(
-                typeof(Microsoft.Practices.ObjectBuilder2.BuildFailedException));
         }
     }
 }

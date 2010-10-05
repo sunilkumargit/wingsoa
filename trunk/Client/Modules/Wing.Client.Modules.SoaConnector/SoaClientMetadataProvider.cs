@@ -37,11 +37,20 @@ namespace Wing.Client.Modules.SoaConnector
             var channel = CreateServiceChannel();
             try
             {
-                var async = channel.BeginGetServiceConnectionInfoByContractRefTypeName(contractType.Name, (r) => callback(channel.EndGetServiceConnectionInfoByContractRefTypeName(r)), null);
+                var async = channel.BeginGetServiceConnectionInfoByContractRefTypeName(contractType.Name, (r) =>
+                {
+                    var res = channel.EndGetServiceConnectionInfoByContractRefTypeName(r);
+                    callback(res);
+                }, null);
+
+            }
+            catch (Exception ex)
+            {
+                var e = ex;
             }
             finally
             {
-                SoaClientManager.CloseChannel(channel);
+                //  SoaClientManager.CloseChannel(channel);
             }
         }
     }

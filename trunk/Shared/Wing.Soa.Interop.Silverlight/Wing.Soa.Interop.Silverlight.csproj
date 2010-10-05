@@ -87,6 +87,7 @@
     <Compile Include="..\Wing.Soa.Interop\SoaServiceState.cs">
       <Link>SoaServiceState.cs</Link>
     </Compile>
+    <Compile Include="Client\ServiceSyncBroker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

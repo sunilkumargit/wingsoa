@@ -21,7 +21,7 @@ namespace Wing.Soa.Interop
             ServiceTypeName = serviceTypeName;
             IsSingletonInstance = isSingletonInstance;
 
-            var typeFullName = serviceTypeName.Substring(0, serviceTypeName.IndexOf(","));
+            var typeFullName = contractTypeName.Substring(0, contractTypeName.IndexOf(","));
             if (typeFullName.IndexOf(".") == -1)
                 ContractTypeRefName = typeFullName;
             else

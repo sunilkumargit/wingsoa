@@ -59,18 +59,30 @@ namespace Wing.Client.Sdk.Services
 
         public GblCommandStatus QueryStatus(Object parameter = null)
         {
-            var status = GblCommandStatus.Enabled;
-            QueryStatus(parameter, ref status);
-            return status;
+            return ServiceLocator.Current.GetInstance<ISyncContext>().Sync<GblCommandStatus>(() =>
+            {
+                var status = GblCommandStatus.Enabled;
+                QueryStatus(parameter, ref status);
+                return status;
+            });
         }
 
         public virtual void Execute(object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
         {
             if (QueryStatus(parameter) == GblCommandStatus.Enabled)
             {
-                var en = _handlers.GetEnumerator();
-                while (en.MoveNext() && !handled)
-                    en.Current.Execute(this, parameter, ref execStatus, ref handled, ref outMessage);
+                var _handled = handled;
+                var _execStatus = execStatus;
+                var _outMessage = outMessage;
+                ServiceLocator.Current.GetInstance<ISyncContext>().Sync(() =>
+                {
+                    var en = _handlers.GetEnumerator();
+                    while (en.MoveNext() && !_handled)
+                        en.Current.Execute(this, parameter, ref _execStatus, ref _handled, ref _outMessage);
+                });
+                handled = _handled;
+                execStatus = _execStatus;
+                outMessage = _outMessage;
             }
         }
 

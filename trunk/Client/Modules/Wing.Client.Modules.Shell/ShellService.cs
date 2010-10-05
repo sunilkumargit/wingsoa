@@ -21,7 +21,7 @@ namespace Wing.Client.Modules.Shell
         private IShellViewPresenter _shellPresenter;
         private INavigationHistoryService _navigationHistory;
 
-        public ShellService(IShellViewPresenter shellPresenter, IEventAggregator eventAggregator, INavigationHistoryService navigationHistory, IRootVisualManager rootVisualManager)
+        public ShellService(IShellViewPresenter shellPresenter, IEventAggregator eventAggregator, INavigationHistoryService navigationHistory, IRootVisualManager rootVisualManager, ISyncContext syncContext)
         {
             _presenters = new List<IViewPresenter>();
             _eventAggregator = eventAggregator;
@@ -29,6 +29,7 @@ namespace Wing.Client.Modules.Shell
             _visualManager = rootVisualManager;
             _navigationHistory = navigationHistory;
             _presentationModel = shellPresenter.Model;
+            _syncContext = syncContext;
             MainContentPresenter = new ShellMainContentPresenter((IShellView)shellPresenter.GetView(), shellPresenter.RegionManager);
         }
 
@@ -83,47 +84,56 @@ namespace Wing.Client.Modules.Shell
 
         public void StatusMessage(string message, params string[] values)
         {
-            _presentationModel.StatusMessage = String.Format(message, values);
+            _syncContext.Sync(() => _presentationModel.StatusMessage = String.Format(message, values));
         }
 
         public void DisplayProgressBar(int max)
         {
-            _presentationModel.ProgressBarIsVisible = true;
-            _presentationModel.ProgressBarIsIndeterminate = false;
-            _presentationModel.ProgressMaxValue = max;
+            _syncContext.Sync(() =>
+                {
+                    _presentationModel.ProgressBarIsVisible = true;
+                    _presentationModel.ProgressBarIsIndeterminate = false;
+                    _presentationModel.ProgressMaxValue = max;
+                });
         }
 
         public void DisplayWorkingBar()
         {
-            _presentationModel.ProgressBarIsVisible = true;
-            _presentationModel.ProgressBarIsIndeterminate = true;
+            _syncContext.Sync(() =>
+                {
+                    _presentationModel.ProgressBarIsVisible = true;
+                    _presentationModel.ProgressBarIsIndeterminate = true;
+                });
         }
 
         public void UpdateProgressBarRelative(int relative)
         {
-            _presentationModel.ProgressValue += relative;
+            _syncContext.Sync(() => _presentationModel.ProgressValue += relative);
         }
 
         public void UpdateProgressBarAbsolute(int value)
         {
-            _presentationModel.ProgressValue = value;
+            _syncContext.Sync(() => _presentationModel.ProgressValue = value);
         }
 
         public void HideProgressOrWorkingBar()
         {
-            _presentationModel.ProgressBarIsVisible = false;
+            _syncContext.Sync(() => _presentationModel.ProgressBarIsVisible = false);
         }
 
         public void Navigate(IViewPresenter viewPresenter)
         {
-            MainContentPresenter.Navigate(viewPresenter);
+            _syncContext.Sync(() => MainContentPresenter.Navigate(viewPresenter));
         }
 
         public void NavigateBack()
         {
-            var previous = _navigationHistory.Pop();
-            if (previous != null)
-                MainContentPresenter.Navigate(previous, false);
+            _syncContext.Sync(() =>
+            {
+                var previous = _navigationHistory.Pop();
+                if (previous != null)
+                    MainContentPresenter.Navigate(previous, false);
+            });
         }
 
         public IViewBagPresenter MainContentPresenter { get; private set; }
@@ -177,5 +187,7 @@ namespace Wing.Client.Modules.Shell
 
             #endregion
         }
+
+        public ISyncContext _syncContext { get; set; }
     }
 }

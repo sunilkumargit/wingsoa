@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Wing.ServiceLocation;
 
 namespace Wing.Client.Sdk
 {
@@ -15,8 +16,11 @@ namespace Wing.Client.Sdk
 
         protected void NotifyPropertyChanged(String propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            ServiceLocator.Current.GetInstance<ISyncContext>().Sync(() =>
+            {
+                if (PropertyChanged != null)
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            });
         }
 
         string IDataErrorInfo.Error

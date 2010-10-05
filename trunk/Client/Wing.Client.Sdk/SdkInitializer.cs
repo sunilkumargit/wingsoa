@@ -19,6 +19,8 @@ namespace Wing.Client.Sdk
         {
             var serviceLocator = ServiceLocator.Current;
 
+            TaskContext.Start();
+
             //registrar os serviços default
             serviceLocator.Register<IGlobalCommandsManager, DefaultGlobalCommandsManager>(true);
             CommandsManager.SetCommandsManager(serviceLocator.GetInstance<IGlobalCommandsManager>());

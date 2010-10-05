@@ -115,8 +115,11 @@ namespace Wing.Client.Sdk.Controls
 
         private void NotifyPropertyChanged(String propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            VisualContext.Sync(() =>
+                {
+                    if (PropertyChanged != null)
+                        PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                });
         }
 
         public string ItemId { get; private set; }
@@ -124,18 +127,33 @@ namespace Wing.Client.Sdk.Controls
         public string Caption
         {
             get { return this.Header.AsString(); }
-            set { this.Header = value; NotifyPropertyChanged("Caption"); }
+            set
+            {
+                VisualContext.Sync(() =>
+                    {
+                        this.Header = value; NotifyPropertyChanged("Caption");
+                    });
+            }
         }
 
         void IExtensibleMenuItem.Select()
         {
-            this.IsSelected = true;
+            VisualContext.Sync(() =>
+            {
+                this.IsSelected = true;
+            });
         }
 
         bool IExtensibleMenuItem.IsEnabled
         {
             get { return this.IsEnabled; }
-            set { this.IsEnabled = value; NotifyPropertyChanged("IsEnabled"); }
+            set
+            {
+                VisualContext.Sync(() =>
+                    {
+                        this.IsEnabled = value; NotifyPropertyChanged("IsEnabled");
+                    });
+            }
         }
 
         bool IExtensibleMenuItem.IsVisible
@@ -143,8 +161,11 @@ namespace Wing.Client.Sdk.Controls
             get { return this.Visibility == System.Windows.Visibility.Visible; }
             set
             {
-                this.Visibility = value ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
-                NotifyPropertyChanged("IsVisible");
+                VisualContext.Sync(() =>
+                {
+                    this.Visibility = value ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
+                    NotifyPropertyChanged("IsVisible");
+                });
             }
         }
 
@@ -212,17 +233,23 @@ namespace Wing.Client.Sdk.Controls
 
         protected override ExtensibleMenuController CreateItemInstance(string id, string caption)
         {
-            var treeItem = new TreeMenuItem(id);
-            _treeView.Items.Add(treeItem);
-            treeItem.Caption = caption;
-            treeItem.FontWeight = FontWeights.Bold;
-            treeItem.Foreground = ControlHelper.GetPredefinedNamedColor("DarkBlue");
-            return new TreeMenuItemController(treeItem, id);
+            return VisualContext.Sync<ExtensibleMenuController>(() =>
+            {
+                var treeItem = new TreeMenuItem(id);
+                _treeView.Items.Add(treeItem);
+                treeItem.Caption = caption;
+                treeItem.FontWeight = FontWeights.Bold;
+                treeItem.Foreground = ControlHelper.GetPredefinedNamedColor("DarkBlue");
+                return new TreeMenuItemController(treeItem, id);
+            });
         }
 
         protected override void RemoveItemInstance(ExtensibleMenuController item)
         {
-            _treeView.Items.Remove(item.VisualElement);
+            VisualContext.Sync(() =>
+            {
+                _treeView.Items.Remove(item.VisualElement);
+            });
         }
     }
 
@@ -233,21 +260,24 @@ namespace Wing.Client.Sdk.Controls
 
         protected override ExtensibleMenuController CreateItemInstance(string id, string caption)
         {
-            var item = ((TreeMenuItem)VisualElement);
-            var treeItem = new TreeMenuItem(id);
-            item.Items.Add(treeItem);
-            item.IsExpanded = true;
-            treeItem.Caption = caption;
-            treeItem.FontWeight = FontWeights.Normal;
-            treeItem.Foreground = ControlHelper.GetPredefinedNamedColor("DarkBlue");
-            var result = new TreeMenuItemController(treeItem, id);
-            treeItem.SetController(result);
-            return result;
+            return VisualContext.Sync<ExtensibleMenuController>(() =>
+            {
+                var item = ((TreeMenuItem)VisualElement);
+                var treeItem = new TreeMenuItem(id);
+                item.Items.Add(treeItem);
+                item.IsExpanded = true;
+                treeItem.Caption = caption;
+                treeItem.FontWeight = FontWeights.Normal;
+                treeItem.Foreground = ControlHelper.GetPredefinedNamedColor("DarkBlue");
+                var result = new TreeMenuItemController(treeItem, id);
+                treeItem.SetController(result);
+                return result;
+            });
         }
 
         protected override void RemoveItemInstance(ExtensibleMenuController item)
         {
-            ((TreeMenuItem)VisualElement).Items.Remove(item.VisualElement);
+            VisualContext.Sync(() => ((TreeMenuItem)VisualElement).Items.Remove(item.VisualElement));
         }
     }
 

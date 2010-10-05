@@ -27,7 +27,7 @@ namespace Wing.Soa.Interop
         SoaServiceConnectionInfo GetConnectionInfo(String serviceName);
 
         [OperationContract]
-        SoaServiceConnectionInfo GetServiceConnectionInfoByContractRefTypeName(String serviceName);
+        SoaServiceConnectionInfo GetServiceConnectionInfoByContractRefTypeName(String refTypeName);
 
         [OperationContract]
         List<SoaServiceHostInfo> GetServicesStates();

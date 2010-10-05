@@ -15,6 +15,7 @@ using System.ServiceModel;
 using Wing.ServiceLocation;
 using Wing.Client.Core;
 using System.Collections.Generic;
+using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.SoaConnector
 {
@@ -24,11 +25,21 @@ namespace Wing.Client.Modules.SoaConnector
     [ModulePriority(ModulePriority.High)]
     public class SoaConnectorModule : ModuleBase
     {
+        private SoaClientMetadataProvider metadataProvider;
         public override void Initialize()
         {
             base.Initialize();
+            metadataProvider = new SoaClientMetadataProvider();
+            SoaClientManager.SetMetadataProvider(metadataProvider);
+        }
 
-            SoaClientManager.SetMetadataProvider(new SoaClientMetadataProvider());
+        public override void Initialized()
+        {
+            base.Initialized();
+            TaskContext.Execute(() =>
+            {
+                var channel = SoaClientManager.CreateChannel<ISoaMetadataProviderService>();
+            });
         }
     }
 }

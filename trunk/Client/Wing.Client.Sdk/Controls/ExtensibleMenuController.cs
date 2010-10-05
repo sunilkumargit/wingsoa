@@ -51,14 +51,17 @@ namespace Wing.Client.Sdk.Controls
             }
             else
             {
-                var existing = FindItem(id, true);
-                if (existing != null)
-                    throw new Exception(String.Format("O item com o id {0} já existe no menu", id));
-                existing = CreateItemInstance(id, caption);
-                existing.Parent = this;
-                _items.Add(existing);
-                _visualItems.Add(existing.VisualElement);
-                return existing;
+                return VisualContext.Sync<ExtensibleMenuController>(() =>
+                {
+                    var existing = FindItem(id, true);
+                    if (existing != null)
+                        throw new Exception(String.Format("O item com o id {0} já existe no menu", id));
+                    existing = CreateItemInstance(id, caption);
+                    existing.Parent = this;
+                    _items.Add(existing);
+                    _visualItems.Add(existing.VisualElement);
+                    return existing;
+                });
             }
         }
 
@@ -86,9 +89,12 @@ namespace Wing.Client.Sdk.Controls
 
         internal void RemoveItemInstanceInternal(ExtensibleMenuController item)
         {
-            _visualItems.Remove(item.VisualElement);
-            _items.Remove(item);
-            RemoveItemInstance(item);
+            VisualContext.Sync(() =>
+            {
+                _visualItems.Remove(item.VisualElement);
+                _items.Remove(item);
+                RemoveItemInstance(item);
+            });
         }
 
         public ReadOnlyCollection<ExtensibleMenuController> Items

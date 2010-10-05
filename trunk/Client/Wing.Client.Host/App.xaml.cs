@@ -3,11 +3,13 @@ using System.Windows;
 using System.Windows.Controls;
 using Wing.Client.Core;
 using Wing.Client.Host;
+using System.Windows.Threading;
 
 namespace Wing.Client
 {
     public partial class App : Application
     {
+        private static Dispatcher _dispatcher;
 
         public App()
         {
@@ -24,6 +26,7 @@ namespace Wing.Client
             App.Current.RootVisual = rootVisual;
             var splashUi = new EntryPage();
             rootVisual.Children.Add(splashUi);
+            _dispatcher = rootVisual.Dispatcher;
             var starter = new ApplicationStarter(splashUi, new GridRootVisualManager(rootVisual));
             QuotaIncreaseWindow.CheckQuotaSize(() => starter.Run());
         }
@@ -34,6 +37,9 @@ namespace Wing.Client
 
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
+            e.Handled = true;
+            _dispatcher.BeginInvoke(() => MessageBox.Show(e.ExceptionObject.ToString()));
+            return;
             // If the app is running outside of the debugger then report the exception using
             // the browser's exception mechanism. On IE this will display it a yellow alert 
             // icon in the status bar and Firefox will display a script error.

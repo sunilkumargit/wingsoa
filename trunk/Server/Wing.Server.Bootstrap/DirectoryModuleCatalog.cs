@@ -63,12 +63,11 @@ namespace Wing.Modularity
             {
                 List<string> loadedAssemblies = new List<string>();
 
-                var assemblies = (
-                                     from Assembly assembly in AppDomain.CurrentDomain.GetAssemblies()
-                                     where !(assembly is System.Reflection.Emit.AssemblyBuilder)
-                                           && !String.IsNullOrEmpty(assembly.Location)
-                                     select assembly.Location
-                                 );
+                var assemblies = AppDomain.CurrentDomain.GetAssemblies()
+                                    .Where(asm => !(asm is System.Reflection.Emit.AssemblyBuilder))
+                                    .Where(asm => !asm.IsDynamic)
+                                    .Where(asm => !String.IsNullOrWhiteSpace(asm.Location))
+                                    .Select(asm => asm.Location);
 
                 loadedAssemblies.AddRange(assemblies);
 
