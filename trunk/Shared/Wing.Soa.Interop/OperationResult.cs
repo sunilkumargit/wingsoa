@@ -9,14 +9,14 @@ namespace Wing.Soa.Interop
     [DataContract]
     public class OperationResult
     {
-        [DataMember]
-        private OperationStatus _status;
+        [DataMember(Name = "Status")]
+        internal OperationStatus _status;
 
-        [DataMember]
-        private Exception _error;
+        [DataMember(Name = "Error")]
+        internal Exception _error;
 
-        [DataMember]
-        private string _message;
+        [DataMember(Name = "Message")]
+        internal string _message;
 
         public OperationStatus Status { get { return _status; } set { _status = value; } }
         public Exception Error

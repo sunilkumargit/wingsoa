@@ -22,17 +22,17 @@ namespace Wing.Client.Bootstrap
 
         protected override void InitializeModuleInternal(ModuleInfo moduleInfo)
         {
-            TaskContext.Execute(() => ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialize));
+            WorkContext.Sync(() => ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialize));
         }
 
         public override void PostInitializeModuleInternal(ModuleInfo moduleInfo)
         {
-            TaskContext.Execute(() => ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialized));
+            WorkContext.Sync(() => ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialized));
         }
 
         public override void RunModuleInternal(ModuleInfo moduleInfo)
         {
-            TaskContext.Execute(() => ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Run));
+            WorkContext.Sync(() => ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Run));
         }
     }
 }

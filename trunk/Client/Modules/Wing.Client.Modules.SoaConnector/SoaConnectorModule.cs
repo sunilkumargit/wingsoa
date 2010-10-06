@@ -40,6 +40,7 @@ namespace Wing.Client.Modules.SoaConnector
             var result = channel.EndGetServicesConnectionInfo(asyncResult);
             foreach (var p in result)
                 _channelFactoryFactory.ConnectionInfo.Add(p.ContractRef, p);
+            factory.Close();
         }
     }
 }

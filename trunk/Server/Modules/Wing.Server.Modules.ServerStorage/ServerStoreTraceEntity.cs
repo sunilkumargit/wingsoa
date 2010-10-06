@@ -8,7 +8,7 @@ namespace Wing.Server.Modules.ServerStorage
         [PersistentMember]
         public DateTime Date { get; set; }
 
-        [PersistentMember(maxLength: 512)]
+        [PersistentMember(512)]
         public String DBPath { get; set; }
     }
 }

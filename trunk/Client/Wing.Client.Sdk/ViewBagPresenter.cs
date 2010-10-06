@@ -55,15 +55,20 @@ namespace Wing.Client.Sdk
                         {
                             if (addToHistory)
                                 _history.Push(ActivePresenter);
+                            ((ViewPresenter)ActivePresenter).SetActiveState(false);
                             RegionManager.Regions[_contentRegion].Deactivate(ActivePresenter.GetView());
                         }
                         presenter.SetParent(this);
                         if (_views.Contains(presenter))
+                        {
+                            ((ViewPresenter)ActivePresenter).SetActiveState(true);
                             RegionManager.Regions[_contentRegion].Activate(presenter.GetView());
+                        }
                         else
                         {
                             _views.Add(presenter);
                             RegionManager.Regions[_contentRegion].Add(presenter.GetView(), presenter.RegionManager);
+                            ((ViewPresenter)ActivePresenter).SetActiveState(true);
                             RegionManager.Regions[_contentRegion].Activate(presenter.GetView());
                         }
                         UpdateActiveView();

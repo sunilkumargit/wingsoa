@@ -240,7 +240,9 @@ namespace Wing.Client.Sdk.Controls
                 treeItem.Caption = caption;
                 treeItem.FontWeight = FontWeights.Bold;
                 treeItem.Foreground = ControlHelper.GetPredefinedNamedColor("DarkBlue");
-                return new TreeMenuItemController(treeItem, id);
+                var controller = new TreeMenuItemController(treeItem, id);
+                treeItem.SetController(controller);
+                return controller;
             });
         }
 

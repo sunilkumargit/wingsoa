@@ -11,6 +11,7 @@ namespace Wing.Client.Sdk
         Object GetView();
         String Caption { get; }
         IRegionManager RegionManager { get; }
+        bool IsActive { get; }
     }
 
     public interface IViewPresenter<TModel> : IViewPresenter where TModel : IViewPresentationModel

@@ -15,6 +15,6 @@
         <wngcontrols:LeftSideBar Name="SideBar">
         
         </wngcontrols:LeftSideBar>
-        <wngcontrols:ViewBagDefaultContainer></wngcontrols:ViewBagDefaultContainer>
+        <wngcontrols:ViewBagDefaultContainer Grid.Column="1"></wngcontrols:ViewBagDefaultContainer>
     </Grid>
 </UserControl>

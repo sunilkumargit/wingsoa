@@ -13,20 +13,25 @@ using System.Threading;
 
 namespace Wing.Client.Sdk
 {
-    public static class TaskContext
+    public static class WorkContext
     {
         private static List<Action> _actions = new List<Action>();
         private static Object _lockObject = new Object();
         private static AutoResetEvent _semaphore = new AutoResetEvent(false);
         private static bool _started = false;
 
-        public static void Execute(Action action)
+        public static void Sync(Action action)
         {
             lock (_lockObject)
             {
                 _actions.Add(action);
             }
             _semaphore.Set();
+        }
+
+        public static void Async(Action action)
+        {
+            ThreadPool.QueueUserWorkItem((a) => action());
         }
 
         internal static void Start()

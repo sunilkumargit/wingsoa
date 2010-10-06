@@ -42,7 +42,7 @@ namespace Flex.BusinessIntelligence.Server.Core
             if (!_entityStore.Save(info))
             {
                 result.Status = OperationStatus.Error;
-                result.Message = "Não foi possível salvar as configurações do cube";
+                result.Message = "Não foi possível salvar as configurações do cubo";
             }
             return result;
         }

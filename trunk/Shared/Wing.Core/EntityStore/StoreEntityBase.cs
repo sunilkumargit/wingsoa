@@ -6,13 +6,9 @@ namespace Wing.EntityStore
     [DataContract]
     public class StoreEntityBase : IStoreEntity
     {
-        [DataMember]
-        private Guid _instanceid = Guid.NewGuid();
+        [DataMember(Name = "InstanceId")]
+        internal Guid _instanceid = Guid.NewGuid();
 
-        public Guid InstanceId
-        {
-            [System.Diagnostics.DebuggerStepThrough]
-            get { return _instanceid; }
-        }
+        public Guid InstanceId { get { return _instanceid; } }
     }
 }

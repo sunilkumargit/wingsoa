@@ -53,7 +53,7 @@ namespace Wing.Soa.Interop.Client
         ///			ex.Message, ex.StackTrace));
         ///	}
         /// </example>
-        public TReturn PerformAction<TReturn>(BeginAction beginAction, EndAction<TReturn> endAction)
+        public TReturn CallSync<TReturn>(BeginAction beginAction, EndAction<TReturn> endAction)
         {
             EnsureNonUIThread();
             var beginResult = beginAction(null, null);
@@ -88,7 +88,7 @@ namespace Wing.Soa.Interop.Client
         ///			ex.Message, ex.StackTrace));
         ///	}
         /// </example>
-        public TReturn PerformAction<TReturn, TActionArgument1>(
+        public TReturn CallSync<TReturn, TActionArgument1>(
             Func<TActionArgument1, AsyncCallback, object, IAsyncResult> beginAction,
             Func<IAsyncResult, TReturn> endAction, TActionArgument1 argument1)
         {
@@ -129,7 +129,7 @@ namespace Wing.Soa.Interop.Client
         ///			ex.Message, ex.StackTrace));
         ///	}
         /// </example>
-        public TReturn PerformAction<TReturn, TActionArgument1, TActionArgument2>(
+        public TReturn CallSync<TReturn, TActionArgument1, TActionArgument2>(
             BeginAction<TActionArgument1, TActionArgument2> beginAction,
             EndAction<TReturn> endAction,
             TActionArgument1 argument1, TActionArgument2 argument2)
@@ -140,7 +140,7 @@ namespace Wing.Soa.Interop.Client
             return result;
         }
 
-        public TReturn PerformAction<TReturn, TActionArgument1, TActionArgument2, TActionArgument3>(
+        public TReturn CallSync<TReturn, TActionArgument1, TActionArgument2, TActionArgument3>(
             BeginAction<TActionArgument1, TActionArgument2, TActionArgument3> action,
             EndAction<TReturn> endAction,
             TActionArgument1 argument1, TActionArgument2 argument2, TActionArgument3 argument3)
@@ -151,7 +151,7 @@ namespace Wing.Soa.Interop.Client
             return result;
         }
 
-        public TReturn PerformAction<TReturn, TActionArgument1, TActionArgument2, TActionArgument3, TActionArgument4>(
+        public TReturn CallSync<TReturn, TActionArgument1, TActionArgument2, TActionArgument3, TActionArgument4>(
             BeginAction<TActionArgument1, TActionArgument2, TActionArgument3, TActionArgument4> action,
             EndAction<TReturn> endAction,
             TActionArgument1 argument1, TActionArgument2 argument2, TActionArgument3 argument3, TActionArgument4 argument4)
@@ -186,7 +186,7 @@ namespace Wing.Soa.Interop.Client
         ///			ex.Message, ex.StackTrace));
         ///	}
         /// </example>
-        public void PerformAction(BeginAction beginAction, EndAction endAction)
+        public void CallSync(BeginAction beginAction, EndAction endAction)
         {
             EnsureNonUIThread();
             var beginResult = beginAction(null, null);
@@ -217,7 +217,7 @@ namespace Wing.Soa.Interop.Client
         ///			ex.Message, ex.StackTrace));
         ///	}
         /// </example>
-        public void PerformAction<TActionArgument1>(
+        public void CallSync<TActionArgument1>(
             BeginAction<TActionArgument1> beginAction,
             EndAction endAction,
             TActionArgument1 argument1)
@@ -227,7 +227,7 @@ namespace Wing.Soa.Interop.Client
             endAction(beginResult);
         }
 
-        public void PerformAction<TActionArgument1, TActionArgument2>(
+        public void CallSync<TActionArgument1, TActionArgument2>(
             BeginAction<TActionArgument1, TActionArgument2> action,
             EndAction endAction,
             TActionArgument1 argument1, TActionArgument2 argument2)
@@ -237,7 +237,7 @@ namespace Wing.Soa.Interop.Client
             endAction(beginResult);
         }
 
-        public void PerformAction<TActionArgument1, TActionArgument2, TActionArgument3>(
+        public void CallSync<TActionArgument1, TActionArgument2, TActionArgument3>(
             BeginAction<TActionArgument1, TActionArgument2, TActionArgument3> action,
             EndAction endAction,
             TActionArgument1 argument1, TActionArgument2 argument2, TActionArgument3 argument3)
@@ -247,7 +247,7 @@ namespace Wing.Soa.Interop.Client
             endAction(beginResult);
         }
 
-        public void PerformAction<TActionArgument1, TActionArgument2, TActionArgument3, TActionArgument4>(
+        public void CallSync<TActionArgument1, TActionArgument2, TActionArgument3, TActionArgument4>(
             BeginAction<TActionArgument1, TActionArgument2, TActionArgument3, TActionArgument4> action,
             EndAction endAction,
             TActionArgument1 argument1, TActionArgument2 argument2, TActionArgument3 argument3, TActionArgument4 argument4)

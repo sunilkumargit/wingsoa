@@ -16,6 +16,7 @@ namespace Wing.Client.Sdk.Services
     {
         private IViewPresenter _presenter;
         private Type _presenterType;
+        private Type _parentPresenterType;
 
         public NavigateCommandHandler(IViewPresenter presenter)
         {
@@ -26,6 +27,13 @@ namespace Wing.Client.Sdk.Services
         {
             _presenterType = presenterType;
         }
+
+        public NavigateCommandHandler(Type presenterType, Type parentPresenterType)
+        {
+            _presenterType = presenterType;
+            _parentPresenterType = parentPresenterType;
+        }
+
 
         public void QueryStatus(IGlobalCommand command, object parameter, ref GblCommandStatus status, ref bool handled)
         {
@@ -39,7 +47,15 @@ namespace Wing.Client.Sdk.Services
             if (_presenter != null)
                 shellService.Navigate(_presenter);
             else if (_presenterType != null)
-                shellService.Navigate((IViewPresenter)ServiceLocator.Current.GetInstance(_presenterType));
+            {
+                var presenter = (IViewPresenter)ServiceLocator.Current.GetInstance(_presenterType);
+                if (_parentPresenterType != null)
+                {
+                    var parent = (IViewBagPresenter)ServiceLocator.Current.GetInstance(_parentPresenterType);
+                    parent.Navigate(presenter);
+                }
+                shellService.Navigate(presenter);
+            }
             execStatus = GblCommandExecStatus.Executed;
             handled = true;
         }

@@ -8,6 +8,10 @@ using Wing.EntityStore;
 using Wing.Soa.Interop.Client;
 using Flex.BusinessIntelligence.Interop.Services;
 using System.Collections.Generic;
+using Flex.BusinessIntelligence.Data;
+using System;
+using Wing.Soa.Interop;
+using Flex.BusinessIntelligence.WingClient.Views.CubesConfig;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -27,6 +31,7 @@ namespace Flex.BusinessIntelligence.WingClient
 
             ServiceLocator.Current.Register<IBIHomeView, BIHomeView>(true);
             ServiceLocator.Current.Register<BIHomePresenter, BIHomePresenter>(true);
+            ServiceLocator.Current.Register<BICubesConfigPresenter, BICubesConfigPresenter>(true);
 
             //criar os commandos basicos
             var navigateHomeCommand = CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Meu BI")
@@ -34,6 +39,10 @@ namespace Flex.BusinessIntelligence.WingClient
 
             //consultas
             var navigateQueriesCommand = CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas");
+
+            //cubos
+            var navigateConfigCubosCommand = CommandsManager.CreateCommand(BICommandNames.NavigateCubes, "Cubos")
+                .AddNavigateHandler<BICubesConfigPresenter, BIHomePresenter>();
         }
 
         public override void Initialized()
@@ -44,13 +53,10 @@ namespace Flex.BusinessIntelligence.WingClient
 
             // registrar os menus iniciais e vincula-los aos comandos globais
             var homeMenu = ServiceLocator.Current.GetInstance<IBIHomeView>().MainMenu;
-            var item = homeMenu.CreateItem(BIMainMenuNames.Home, CommandsManager.GetCommand(BICommandNames.NavigateHome));
+            homeMenu.CreateItem(BIMainMenuNames.Home, CommandsManager.GetCommand(BICommandNames.NavigateHome));
+            homeMenu.CreateItem(BIMainMenuNames.Config, "Configurações").RedirectSelectionToFirstChild = true;
+            homeMenu.CreateChildItem(BIMainMenuNames.Cubes, BIMainMenuNames.Config, CommandsManager.GetCommand(BICommandNames.NavigateCubes));
 
-            //apenas para teste, invocar o servico de cubo
-            SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
-            {
-                var list = broker.PerformAction<List<Flex.BusinessIntelligence.Data.CubeRegistrationInfo>>(channel.BeginGetCubesInfo, channel.EndGetCubesInfo);
-            });
         }
     }
 

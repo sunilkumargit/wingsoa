@@ -28,11 +28,27 @@ namespace Wing.Client.Sdk
             return command;
         }
 
+        public static IGlobalCommand AddNavigateHandler(this IGlobalCommand command, Type presenterType, Type parentPresenterType)
+        {
+            command.AddHandler(new NavigateCommandHandler(presenterType, parentPresenterType));
+            return command;
+        }
+
+
         public static IGlobalCommand AddNavigateHandler<TPresenterType>(this IGlobalCommand command) where TPresenterType : IViewPresenter
         {
             command.AddNavigateHandler(typeof(TPresenterType));
             return command;
         }
+
+        public static IGlobalCommand AddNavigateHandler<TPresenterType, TParentPresenterType>(this IGlobalCommand command) 
+            where TPresenterType : IViewPresenter
+            where TParentPresenterType : IViewBagPresenter
+        {
+            command.AddNavigateHandler(typeof(TPresenterType), typeof(TParentPresenterType));
+            return command;
+        }
+
         #endregion
     }
 }

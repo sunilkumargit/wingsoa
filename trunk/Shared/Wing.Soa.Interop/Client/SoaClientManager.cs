@@ -14,12 +14,6 @@ namespace Wing.Soa.Interop.Client
 
         public static IChannelManager ChannelManager { get { return _channelManager; } }
 
-        public static TResult InvokeService<TChannel, TResult>(Func<TChannel, IServiceSyncBroker, TResult> action)
-        {
-            var channel = ChannelManager.GetChannel<TChannel>();
-            return action(channel, _syncBroker);
-        }
-
         public static void InvokeService<TChannel>(Action<TChannel, IServiceSyncBroker> action)
         {
             var channel = ChannelManager.GetChannel<TChannel>();
