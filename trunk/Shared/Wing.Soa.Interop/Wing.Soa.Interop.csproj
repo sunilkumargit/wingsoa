@@ -42,9 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\ISoaClientServiceMetadataProvider.cs" />
+    <Compile Include="Client\ChannelManager.cs" />
+    <Compile Include="Client\IChannelFactoryFactory.cs" />
+    <Compile Include="Client\IChannelManager.cs" />
+    <Compile Include="Client\IServiceSyncBroker.cs" />
     <Compile Include="Client\ServiceSyncBroker.cs" />
     <Compile Include="Client\SoaClientManager.cs" />
+    <Compile Include="Client\SoaDefaultChannelFactoryFactory.cs" />
     <Compile Include="SoaServiceConnectionInfo.cs" />
     <Compile Include="SoaServiceBindingMode.cs" />
     <Compile Include="ISoaMetadataProviderService.cs" />

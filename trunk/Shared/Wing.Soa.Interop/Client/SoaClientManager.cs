@@ -9,72 +9,21 @@ namespace Wing.Soa.Interop.Client
 {
     public static class SoaClientManager
     {
-        private static ISoaClientServiceMetadataProvider _metadaProvider;
-        private static Dictionary<Type, ChannelFactory> _channelFactories = new Dictionary<Type, ChannelFactory>();
-        private static Object _lockObject = new Object();
+        private static IServiceSyncBroker _syncBroker = new ServiceSyncBroker();
+        private static IChannelManager _channelManager = new ChannelManager();
 
-        public static void SetMetadataProvider(ISoaClientServiceMetadataProvider metadataProvider)
+        public static IChannelManager ChannelManager { get { return _channelManager; } }
+
+        public static TResult InvokeService<TChannel, TResult>(Func<TChannel, IServiceSyncBroker, TResult> action)
         {
-            _metadaProvider = metadataProvider;
+            var channel = ChannelManager.GetChannel<TChannel>();
+            return action(channel, _syncBroker);
         }
 
-        public static TChannel CreateChannel<TChannel>()
+        public static void InvokeService<TChannel>(Action<TChannel, IServiceSyncBroker> action)
         {
-            lock (_lockObject)
-            {
-                if (!_channelFactories.ContainsKey(typeof(TChannel)))
-                {
-                    _metadaProvider.GetServiceConnectionInfoByContractType(typeof(TChannel), (connInfo) =>
-                    {
-                        if (connInfo == null)
-                            throw new Exception("Service reference does not found. " + typeof(TChannel).FullName);
-                        var binding = CreateBinding(connInfo);
-                        var endPoint = CreateEndpoint(connInfo);
-                        _channelFactories[typeof(TChannel)] = new ChannelFactory<TChannel>(binding, endPoint);
-                    });
-                }
-            }
-            var factory = (ChannelFactory<TChannel>)_channelFactories[typeof(TChannel)];
-            return factory.CreateChannel();
+            var channel = ChannelManager.GetChannel<TChannel>();
+            action(channel, _syncBroker);
         }
-
-        private static Binding CreateBinding(SoaServiceConnectionInfo connInfo)
-        {
-            switch (connInfo.ServiceBindingMode)
-            {
-                case SoaServiceBindingMode.BasicHttp: return new BasicHttpBinding();
-            }
-            return null;
-        }
-
-        private static EndpointAddress CreateEndpoint(SoaServiceConnectionInfo connInfo)
-        {
-            return new EndpointAddress(connInfo.Address);
-        }
-
-        /*
-        public static void CloseChannel(Object channel)
-        {
-            var commObj = channel as ICommunicationObject;
-
-            if (commObj.State == CommunicationState.Faulted)
-                commObj.Abort();
-            else if (commObj.State != CommunicationState.Closed)
-            {
-                try
-                {
-                    commObj.Close();
-                }
-                catch (CommunicationException)
-                {
-                    commObj.Abort();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-        }
-         */
     }
 }

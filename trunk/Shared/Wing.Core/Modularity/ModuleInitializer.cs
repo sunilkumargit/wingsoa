@@ -51,18 +51,11 @@ namespace Wing.Modularity
             this.loggerFacade = loggerFacade;
         }
 
-        /// <summary>
-        /// Initializes the specified module.
-        /// </summary>
-        /// <param name="moduleInfo">The module to initialize</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Catches Exception to handle any exception thrown during the initialization process with the HandleModuleInitializationError method.")]
-        public void Initialize(ModuleInfo moduleInfo)
+        protected void ExecuteModuleMethod(ModuleInfo moduleInfo, Action method)
         {
             try
             {
-                if (moduleInfo.ModuleInstance == null)
-                    moduleInfo.ModuleInstance = this.CreateModule(moduleInfo.ModuleType);
-                moduleInfo.ModuleInstance.Initialize();
+                method();
             }
             catch (Exception ex)
             {
@@ -73,12 +66,34 @@ namespace Wing.Modularity
             }
         }
 
+        /// <summary>
+        /// Initializes the specified module.
+        /// </summary>
+        /// <param name="moduleInfo">The module to initialize</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Catches Exception to handle any exception thrown during the initialization process with the HandleModuleInitializationError method.")]
+        public void Initialize(ModuleInfo moduleInfo)
+        {
+            if (moduleInfo.ModuleInstance == null)
+                moduleInfo.ModuleInstance = this.CreateModule(moduleInfo.ModuleType);
+            InitializeModuleInternal(moduleInfo);
+        }
+
+        protected virtual void InitializeModuleInternal(ModuleInfo moduleInfo)
+        {
+            ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialize);
+        }
+
         public void PostInitialize(ModuleInfo moduleInfo)
         {
             if (moduleInfo.ModuleInstance == null)
                 throw new ModuleInitializeException(String.Format("The module {0} has no instance", moduleInfo.ModuleName));
             if (moduleInfo.State == ModuleState.Initialized)
-                moduleInfo.ModuleInstance.Initialized();
+                PostInitializeModuleInternal(moduleInfo);
+        }
+
+        public virtual void PostInitializeModuleInternal(ModuleInfo moduleInfo)
+        {
+            ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialized);
         }
 
         public void RunModule(ModuleInfo moduleInfo)
@@ -86,7 +101,12 @@ namespace Wing.Modularity
             if (moduleInfo.ModuleInstance == null)
                 throw new ModuleInitializeException(String.Format("The module {0} has no instance", moduleInfo.ModuleName));
             if (moduleInfo.State == ModuleState.Running)
-                moduleInfo.ModuleInstance.Run();
+                RunModuleInternal(moduleInfo);
+        }
+
+        public virtual void RunModuleInternal(ModuleInfo moduleInfo)
+        {
+            ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Run);
         }
 
         /// <summary>

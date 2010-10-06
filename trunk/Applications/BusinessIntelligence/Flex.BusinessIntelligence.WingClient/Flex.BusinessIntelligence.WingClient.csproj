@@ -85,6 +85,10 @@
       <Project>{A8340CDA-5F58-49DD-A30F-E65376471CAB}</Project>
       <Name>Wing.Core.Silverlight</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Shared\Wing.Soa.Interop.Silverlight\Wing.Soa.Interop.Silverlight.csproj">
+      <Project>{61163CDA-6DC3-4F0F-9CE2-FC54ADA1BC6A}</Project>
+      <Name>Wing.Soa.Interop.Silverlight</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Shared\Wing.Utils.Silverlight\Wing.Utils.Silverlight.csproj">
       <Project>{800645BA-2D1E-4C5A-9CDD-8C5FF093EC31}</Project>
       <Name>Wing.Utils.Silverlight</Name>

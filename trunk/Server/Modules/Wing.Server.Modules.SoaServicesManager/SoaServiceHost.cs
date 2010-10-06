@@ -57,6 +57,7 @@ namespace Wing.Server.Modules.SoaServicesManager
             {
                 ServiceName = this.Descriptor.ServiceName,
                 Address = this.ServiceAddress,
+                ContractRef = this.Descriptor.ContractTypeRefName,
                 ServiceBindingMode = SoaServiceBindingMode.BasicHttp
             };
         }

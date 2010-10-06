@@ -14,6 +14,7 @@ namespace Flex.BusinessIntelligence.Interop.Services
     [ServiceKnownType(typeof(CubeQueryInfo))]
     public interface ICubeInfoProviderService
     {
+#if !SILVERLIGHT
         [OperationContract]
         List<CubeRegistrationInfo> GetCubesInfo();
 
@@ -25,5 +26,23 @@ namespace Flex.BusinessIntelligence.Interop.Services
 
         [OperationContract]
         OperationResult DeleteCubeInfo(Guid cubeId);
+#else
+        [OperationContract(AsyncPattern=true)]
+        IAsyncResult BeginGetCubesInfo(AsyncCallback callback, Object state);
+        List<CubeRegistrationInfo> EndGetCubesInfo(IAsyncResult result);
+
+        [OperationContract(AsyncPattern = true)]
+        IAsyncResult BeginGetCubeInfo(Guid cubeId, AsyncCallback callback, Object state);
+        CubeRegistrationInfo EndGetCubeInfo(IAsyncResult result);
+
+        [OperationContract(AsyncPattern = true)]
+        IAsyncResult BeginSaveCubeInfo(CubeRegistrationInfo info, AsyncCallback callback, Object state);
+        OperationResult EndSaveCubeInfo(IAsyncResult result);
+
+        [OperationContract(AsyncPattern = true)]
+        IAsyncResult BeginDeleteCubeInfo(Guid cubeId, AsyncCallback callback, Object state);
+        OperationResult EndDeleteCubeInfo(IAsyncResult result);
+#endif
+
     }
 }

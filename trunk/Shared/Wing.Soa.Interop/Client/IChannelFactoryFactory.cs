@@ -7,8 +7,8 @@ using System.ServiceModel.Channels;
 
 namespace Wing.Soa.Interop.Client
 {
-    public interface ISoaClientServiceMetadataProvider
+    public interface IChannelFactoryFactory
     {
-        void GetServiceConnectionInfoByContractType(Type contractType, Action<SoaServiceConnectionInfo> callback);
+        ChannelFactory<TChannel> CreateChannelFactory<TChannel>();
     }
 }

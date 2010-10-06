@@ -57,11 +57,26 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Wing.Soa.Interop\Client\ISoaClientServiceMetadataProvider.cs">
-      <Link>Client\ISoaClientServiceMetadataProvider.cs</Link>
+    <Compile Include="..\Wing.Soa.Interop\Client\ChannelManager.cs">
+      <Link>Client\ChannelManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\Client\IChannelFactoryFactory.cs">
+      <Link>Client\IChannelFactoryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\Client\IChannelManager.cs">
+      <Link>Client\IChannelManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\Client\IServiceSyncBroker.cs">
+      <Link>Client\IServiceSyncBroker.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\Client\ServiceSyncBroker.cs">
+      <Link>Client\ServiceSyncBroker.cs</Link>
     </Compile>
     <Compile Include="..\Wing.Soa.Interop\Client\SoaClientManager.cs">
       <Link>Client\SoaClientManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Wing.Soa.Interop\Client\SoaDefaultChannelFactoryFactory.cs">
+      <Link>Client\SoaDefaultChannelFactoryFactory.cs</Link>
     </Compile>
     <Compile Include="..\Wing.Soa.Interop\ISoaMetadataProviderService.cs">
       <Link>ISoaMetadataProviderService.cs</Link>
@@ -87,7 +102,6 @@
     <Compile Include="..\Wing.Soa.Interop\SoaServiceState.cs">
       <Link>SoaServiceState.cs</Link>
     </Compile>
-    <Compile Include="Client\ServiceSyncBroker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

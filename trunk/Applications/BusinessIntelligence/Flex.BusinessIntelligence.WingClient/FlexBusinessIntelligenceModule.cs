@@ -5,6 +5,9 @@ using Wing.ServiceLocation;
 using Wing.Client.Sdk;
 using Wing.Client.Sdk.Services;
 using Wing.EntityStore;
+using Wing.Soa.Interop.Client;
+using Flex.BusinessIntelligence.Interop.Services;
+using System.Collections.Generic;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -42,6 +45,12 @@ namespace Flex.BusinessIntelligence.WingClient
             // registrar os menus iniciais e vincula-los aos comandos globais
             var homeMenu = ServiceLocator.Current.GetInstance<IBIHomeView>().MainMenu;
             var item = homeMenu.CreateItem(BIMainMenuNames.Home, CommandsManager.GetCommand(BICommandNames.NavigateHome));
+
+            //apenas para teste, invocar o servico de cubo
+            SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
+            {
+                var list = broker.PerformAction<List<Flex.BusinessIntelligence.Data.CubeRegistrationInfo>>(channel.BeginGetCubesInfo, channel.EndGetCubesInfo);
+            });
         }
     }
 

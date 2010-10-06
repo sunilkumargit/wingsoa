@@ -74,7 +74,7 @@ namespace Wing.Client.Sdk.Services
                 var _handled = handled;
                 var _execStatus = execStatus;
                 var _outMessage = outMessage;
-                ServiceLocator.Current.GetInstance<ISyncContext>().Sync(() =>
+                VisualContext.Sync(() =>
                 {
                     var en = _handlers.GetEnumerator();
                     while (en.MoveNext() && !_handled)

@@ -45,7 +45,7 @@ namespace Wing.Client.Bootstrap
             //registrar os servicos de modulos
             ServiceLocator.Current.Register<IModuleCatalog>(new InMemoryModuleCatalog(settings.Assemblies));
 
-            ServiceLocator.Current.Register<IModuleInitializer, ModuleInitializer>(true);
+            ServiceLocator.Current.Register<IModuleInitializer, ScheduledModuleInitializer>(true);
             ServiceLocator.Current.Register<IModuleManager, ModuleManager>(true);
 
             //agregador de eventos
