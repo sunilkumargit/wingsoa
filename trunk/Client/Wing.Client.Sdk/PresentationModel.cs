@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Wing.ServiceLocation;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace Wing.Client.Sdk
 {
@@ -65,5 +67,13 @@ namespace Wing.Client.Sdk
         }
 
         public Dictionary<string, string> Errors { get; private set; }
+
+        protected void RegisterObservableCollectionProperty<T>(ObservableCollection<T> collection, string propertyName)
+        {
+            collection.CollectionChanged += new NotifyCollectionChangedEventHandler((sender, args) =>
+            {
+                NotifyPropertyChanged(propertyName);
+            });
+        }
     }
 }

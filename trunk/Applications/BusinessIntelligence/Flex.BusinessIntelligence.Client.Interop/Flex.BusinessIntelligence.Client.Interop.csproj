@@ -86,6 +86,10 @@
       <Project>{800645BA-2D1E-4C5A-9CDD-8C5FF093EC31}</Project>
       <Name>Wing.Utils.Silverlight</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Flex.BusinessIntelligence.Interop.Silverlight\Flex.BusinessIntelligence.Interop.Silverlight.csproj">
+      <Project>{ECC8FCCB-915B-45F3-A213-EA964FA68314}</Project>
+      <Name>Flex.BusinessIntelligence.Interop.Silverlight</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

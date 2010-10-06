@@ -110,5 +110,40 @@ namespace Wing.Utils
                 }
             }
         }
+
+        public static void SyncCollections<T>(ICollection<T> target, ICollection<T> source, Func<T, T, bool> compareItemAction)
+        {
+            var toProcess = new List<T>();
+            foreach (var targetItem in target)
+            {
+                var exists = false;
+                foreach (var sourceItem in source)
+                {
+                    exists = compareItemAction(targetItem, sourceItem);
+                    if (exists)
+                        break;
+                }
+                if (!exists)
+                    toProcess.Add(targetItem);
+            }
+            foreach (var item in toProcess)
+                target.Remove(item);
+            toProcess.Clear();
+
+            foreach (var sourceItem in source)
+            {
+                var exists = false;
+                foreach (var targetItem in target)
+                {
+                    exists = compareItemAction(targetItem, sourceItem);
+                    if (exists)
+                        break;
+                }
+                if (!exists)
+                    toProcess.Add(sourceItem);
+            }
+            foreach (var item in toProcess)
+                target.Add(item);
+        }
     }
 }
