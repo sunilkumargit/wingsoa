@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace Wing.Client.Sdk.Controls
 {
-    public class HeaderedPage : HeaderedItemsControl
+    public class HeaderedPage : HeaderedContentControl
     {
         private TextBlock _pageTitle;
         private TextBlock _subTitle;
@@ -26,6 +26,33 @@ namespace Wing.Client.Sdk.Controls
             header.Children.Add(_pageTitle);
             header.Children.Add(_subTitle);
             this.Header = header;
+            this.VerticalContentAlignment = System.Windows.VerticalAlignment.Stretch;
+            this.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Stretch;
+            this.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
+            this.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+            this.Padding = new Thickness(5);
+
+            /*
+MemoryStream sr = null;
+
+ParserContext pc = null;
+
+string xaml = string.Empty;
+
+xaml = "<DataTemplate><TextBlock Text=\"Some Text\"/></DataTemplate>";
+
+sr = new MemoryStream(Encoding.ASCII.GetBytes(xaml));
+
+pc = new ParserContext();
+
+pc.XmlnsDictionary.Add("", "http://schemas.microsoft.com/winfx/2006/xaml/presentation");
+
+pc.XmlnsDictionary.Add("x", "http://schemas.microsoft.com/winfx/2006/xaml");
+
+DataTemplate datatemplate = (DataTemplate)XamlReader.Load(sr, pc);
+
+this.Resources.Add("dt", datatemplate);             
+             */
         }
 
         public String PageTitle { get { return _pageTitle.Text; } set { _pageTitle.Text = value; } }

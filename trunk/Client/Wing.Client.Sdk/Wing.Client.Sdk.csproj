@@ -53,6 +53,10 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
@@ -61,6 +65,8 @@
     <Compile Include="AssembliesAlias.cs" />
     <Compile Include="CommandsManager.cs" />
     <Compile Include="ControlHelper.cs" />
+    <Compile Include="Controls\Behaviors\DoubleClick.cs" />
+    <Compile Include="Controls\Behaviors\InvokeMethodAction.cs" />
     <Compile Include="Controls\ExtensibleMenuController.cs" />
     <Compile Include="Controls\HeaderedPage.cs" />
     <Compile Include="Controls\IExtensibleMenu.cs" />

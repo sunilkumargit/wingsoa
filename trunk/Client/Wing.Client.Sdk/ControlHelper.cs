@@ -22,6 +22,70 @@ namespace Wing.Client.Sdk
             return (SolidColorBrush)XamlReader.Load(String.Format(xamlString, color));
         }
 
+        public static void TryLoadImage(FrameworkElement element, ImageSource source)
+        {
+            var image = source as BitmapImage;
+            if (image == null) return;
+
+            var uri = image.UriSource.OriginalString;
+            //se não existir a ;Component/, então colocar
+            var componentStr = ";Component/";
+            if (uri.IndexOf(componentStr, StringComparison.OrdinalIgnoreCase) == -1)
+            {
+                if (uri.StartsWith("/"))
+                    uri = uri.Substring(1);
+                uri = componentStr + uri;
+            }
+
+            // falta o assembly
+            if (uri.StartsWith(";"))
+            {
+                var parents = GetParentsUserControls(element);
+
+                foreach (var userControl in parents)
+                {
+                    var asmName = userControl.GetType().Assembly.FullName;
+                    asmName = asmName.Substring(0, asmName.IndexOf(','));
+                    var resUri = new Uri(asmName + uri, UriKind.Relative);
+                    //tentar ler o resource
+                    var _resStream = Application.GetResourceStream(resUri);
+                    if (_resStream != null && _resStream.Stream != null)
+                    {
+                        image.SetSource(_resStream.Stream);
+                        return;
+                    }
+                }
+            }
+
+            //tentar ler o resource
+            var resStream = Application.GetResourceStream(new Uri(uri, UriKind.Relative));
+            if (resStream != null && resStream.Stream != null)
+                image.SetSource(resStream.Stream);
+            else
+            {
+                var partialUri = image.UriSource.OriginalString
+                    .Replace(componentStr, "")
+                    .Replace(componentStr.ToLower(), "");
+                // não encontrou o assembly provavelmente, procurar nos alias 
+                var assemblyAlias = partialUri.Substring(0, partialUri.IndexOf(";"));
+                partialUri = String.Format("{0}{1}", componentStr, partialUri.Substring(assemblyAlias.Length + 1));
+                var assembliesByAlias = AssembliesAlias.GetAssembliesInAlias(assemblyAlias);
+                foreach (var assemblyName in assembliesByAlias)
+                {
+                    resStream = Application.GetResourceStream(new Uri(assemblyName + partialUri, UriKind.Relative));
+                    if (resStream != null)
+                    {
+                        image.SetSource(resStream.Stream);
+                        return;
+                    }
+                }
+
+                // ultimo recurso
+                image.UriSource = new Uri(uri, UriKind.Relative);
+            }
+
+        }
+
         public static ImageSource ResolveImageSource(FrameworkElement element, ImageSource value)
         {
             var image = value as BitmapImage;
@@ -29,63 +93,7 @@ namespace Wing.Client.Sdk
 
             image.ImageFailed += new EventHandler<ExceptionRoutedEventArgs>((sender, args) =>
             {
-
-                var uri = image.UriSource.OriginalString;
-                //se não existir a ;Component/, então colocar
-                var componentStr = ";Component/";
-                if (uri.IndexOf(componentStr, StringComparison.OrdinalIgnoreCase) == -1)
-                {
-                    if (uri.StartsWith("/"))
-                        uri = uri.Substring(1);
-                    uri = componentStr + uri;
-                }
-
-                // falta o assembly
-                if (uri.StartsWith(";"))
-                {
-                    var parents = GetParentsUserControls(element);
-
-                    foreach (var userControl in parents)
-                    {
-                        var asmName = userControl.GetType().Assembly.FullName;
-                        asmName = asmName.Substring(0, asmName.IndexOf(','));
-                        var resUri = new Uri(asmName + uri, UriKind.Relative);
-                        //tentar ler o resource
-                        var _resStream = Application.GetResourceStream(resUri);
-                        if (_resStream != null && _resStream.Stream != null)
-                        {
-                            image.SetSource(_resStream.Stream);
-                            return;
-                        }
-                    }
-                }
-
-                //tentar ler o resource
-                var resStream = Application.GetResourceStream(new Uri(uri, UriKind.Relative));
-                if (resStream != null && resStream.Stream != null)
-                    image.SetSource(resStream.Stream);
-                else
-                {
-                    var partialUri = image.UriSource.OriginalString
-                        .Replace(componentStr, "")
-                        .Replace(componentStr.ToLower(), "");
-                    // não encontrou o assembly provavelmente, procurar nos alias 
-                    var assemblyAlias = partialUri.Substring(0, partialUri.IndexOf(";"));
-                    partialUri = String.Format("{0}{1}", componentStr, partialUri.Substring(assemblyAlias.Length + 1));
-                    var assembliesByAlias = AssembliesAlias.GetAssembliesInAlias(assemblyAlias);
-                    foreach (var assemblyName in assembliesByAlias)
-                    {
-                        resStream = Application.GetResourceStream(new Uri(assemblyName + partialUri, UriKind.Relative));
-                        if (resStream != null)
-                        {
-                            image.SetSource(resStream.Stream);
-                            return;
-                        }
-                    }
-
-                    // ultimo recurso
-                    image.UriSource = new Uri(uri, UriKind.Relative);
-                }
+                TryLoadImage(element, value);
             });
 
             return image;

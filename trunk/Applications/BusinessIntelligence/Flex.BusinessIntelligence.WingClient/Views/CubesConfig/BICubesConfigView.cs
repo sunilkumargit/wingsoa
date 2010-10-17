@@ -16,6 +16,10 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
 {
     public class BICubesConfigView : HeaderedPage
     {
-
+        public BICubesConfigView()
+        {
+            var listView = new ListView();
+            this.Content = listView;
+        }
     }
 }
