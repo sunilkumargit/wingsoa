@@ -17,7 +17,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <ContentControl VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="75" Height="55" Margin="5">
+                    <ContentControl VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="75" Margin="5">
                         <interactivity:Interaction.Triggers>
                             <behaviors:DoubleClick>
                                 <behaviors:InvokeMethodAction MethodToInvoke="ListItemDoubleClickEvent"/>

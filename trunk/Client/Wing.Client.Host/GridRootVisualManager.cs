@@ -40,7 +40,7 @@ namespace Wing.Client.Host
             });
         }
 
-        public void Dispatch(Action action)
+        private void Dispatch(Action action)
         {
             if (_grid.Dispatcher.CheckAccess())
                 action();

@@ -67,7 +67,18 @@
     <Compile Include="ControlHelper.cs" />
     <Compile Include="Controls\Behaviors\DoubleClick.cs" />
     <Compile Include="Controls\Behaviors\InvokeMethodAction.cs" />
+    <Compile Include="Controls\ButtonCloseForm.xaml.cs">
+      <DependentUpon>ButtonCloseForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonMinMaxForm.xaml.cs">
+      <DependentUpon>ButtonMinMaxForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ExtensibleMenuController.cs" />
+    <Compile Include="Controls\FloatingDialog.cs" />
+    <Compile Include="Controls\FloatingDialogBase.cs" />
+    <Compile Include="Controls\FloatingWindowControl.xaml.cs">
+      <DependentUpon>FloatingWindowControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\HeaderedPage.cs" />
     <Compile Include="Controls\IExtensibleMenu.cs" />
     <Compile Include="Controls\IExtensibleMenuItem.cs" />
@@ -77,6 +88,10 @@
     <Compile Include="Controls\ListView.xaml.cs">
       <DependentUpon>ListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ModalDialog.cs" />
+    <Compile Include="Controls\SimpleButton.cs" />
+    <Compile Include="Controls\HotButton.cs" />
+    <Compile Include="Controls\ToggleButton.cs" />
     <Compile Include="Controls\Toolbar.xaml.cs">
       <DependentUpon>Toolbar.xaml</DependentUpon>
     </Compile>
@@ -95,6 +110,8 @@
     <Compile Include="Events\UserLoginEvent.cs" />
     <Compile Include="GlobalCommandsExtensions.cs" />
     <Compile Include="INavigationHistoryService.cs" />
+    <Compile Include="IPopupWindowHandler.cs" />
+    <Compile Include="IPopupWindowPresenter.cs" />
     <Compile Include="IPresentationModel.cs" />
     <Compile Include="IShellPresentationModel.cs" />
     <Compile Include="IShellView.cs" />
@@ -104,6 +121,7 @@
     <Compile Include="IViewPresentationModel.cs" />
     <Compile Include="IShellService.cs" />
     <Compile Include="IViewPresenter.cs" />
+    <Compile Include="PopupWindowPresenter.cs" />
     <Compile Include="PresentationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Events\UserLoginEventArgs.cs" />
@@ -151,6 +169,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\ButtonCloseForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ButtonMinMaxForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FloatingWindowControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\LeftSideBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -12,9 +12,10 @@ namespace Wing.Client.Sdk
         void UpdateProgressBarRelative(int relative);
         void UpdateProgressBarAbsolute(int value);
         void HideProgressOrWorkingBar();
-        void StartShell();
         void Navigate(IViewPresenter viewPresenter);
         void NavigateBack();
+        void Alert(String message);
+        void ShowPopup(IPopupWindowPresenter presenter);
         IViewBagPresenter MainContentPresenter { get; }
     }
 }

@@ -7,6 +7,6 @@ namespace Wing.Client.Core
     {
         void SetRootElement(UIElement element);
         void AddResourceDictionary(string assemblyName, params string[] assetsNames);
-        void Dispatch(Action action);
+        //void Dispatch(Action action);
     }
 }

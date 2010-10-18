@@ -1,5 +1,6 @@
 using System;
 using Wing.Composite.Regions;
+using Wing.Client.Sdk.Controls;
 
 namespace Wing.Client.Sdk
 {

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="FlexBusinessIntelligenceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CubeProperties\CubePropertiesView.cs" />
     <Compile Include="Views\CubesConfig\BICubesConfigPresenter.cs" />
     <Compile Include="Views\CubesConfig\BICubesConfigView.cs" />
     <Compile Include="Views\Home\BIHomePresenter.cs" />

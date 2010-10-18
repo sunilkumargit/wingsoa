@@ -9,6 +9,8 @@ using Wing.Composite.Regions;
 using Wing.Events;
 using Wing.Client.Sdk.Services;
 using Wing.ServiceLocation;
+using Wing.Client.Sdk.Controls;
+using System.Windows.Controls;
 
 namespace Wing.Client.Modules.Shell
 {
@@ -20,6 +22,7 @@ namespace Wing.Client.Modules.Shell
         private List<IViewPresenter> _presenters;
         private IShellViewPresenter _shellPresenter;
         private INavigationHistoryService _navigationHistory;
+        private ModalDialog _dialog;
 
         public ShellService(IShellViewPresenter shellPresenter, IEventAggregator eventAggregator, INavigationHistoryService navigationHistory, IRootVisualManager rootVisualManager, ISyncContext syncContext)
         {
@@ -84,12 +87,50 @@ namespace Wing.Client.Modules.Shell
 
         public void StatusMessage(string message, params string[] values)
         {
-            _syncContext.Sync(() => _presentationModel.StatusMessage = String.Format(message, values));
+            _syncContext.Async(() => _presentationModel.StatusMessage = String.Format(message, values));
         }
+
+        public void Alert(String message)
+        {
+            _syncContext.Async(() =>
+            {
+                if (_dialog == null)
+                {
+                    _dialog = new ModalDialog();
+                    _dialog.Caption = "Atenção";
+                    _dialog.DialogStyle = ModalDialogStyles.OK;
+                    _dialog.Content = new TextBlock()
+                    {
+                        TextWrapping = TextWrapping.Wrap,
+                        MinHeight = 30,
+                        MinWidth = 150,
+                        MaxWidth = 450,
+                        FontSize = 11,
+                        Margin = new Thickness(5),
+                        TextAlignment = System.Windows.TextAlignment.Center,
+                        FontFamily = new System.Windows.Media.FontFamily("Tahoma")
+                    };
+
+                }
+                ((TextBlock)_dialog.Content).Text = message;
+                _dialog.Show();
+            });
+        }
+
+        public void ShowPopup(IPopupWindowPresenter presenter)
+        {
+            var dialog = new ModalDialog();
+            dialog.Caption = presenter.Caption;
+            dialog.DialogStyle = ModalDialogStyles.OK;
+            var windowPresenter = presenter as IPopupWindowPresenter;
+            if (windowPresenter != null)
+                windowPresenter.CallbackSetWindowHandler(new ModalDialogWindowHandler(dialog));
+        }
+
 
         public void DisplayProgressBar(int max)
         {
-            _syncContext.Sync(() =>
+            _syncContext.Async(() =>
                 {
                     _presentationModel.ProgressBarIsVisible = true;
                     _presentationModel.ProgressBarIsIndeterminate = false;
@@ -99,7 +140,7 @@ namespace Wing.Client.Modules.Shell
 
         public void DisplayWorkingBar()
         {
-            _syncContext.Sync(() =>
+            _syncContext.Async(() =>
                 {
                     _presentationModel.ProgressBarIsVisible = true;
                     _presentationModel.ProgressBarIsIndeterminate = true;
@@ -108,22 +149,22 @@ namespace Wing.Client.Modules.Shell
 
         public void UpdateProgressBarRelative(int relative)
         {
-            _syncContext.Sync(() => _presentationModel.ProgressValue += relative);
+            _syncContext.Async(() => _presentationModel.ProgressValue += relative);
         }
 
         public void UpdateProgressBarAbsolute(int value)
         {
-            _syncContext.Sync(() => _presentationModel.ProgressValue = value);
+            _syncContext.Async(() => _presentationModel.ProgressValue = value);
         }
 
         public void HideProgressOrWorkingBar()
         {
-            _syncContext.Sync(() => _presentationModel.ProgressBarIsVisible = false);
+            _syncContext.Async(() => _presentationModel.ProgressBarIsVisible = false);
         }
 
         public void Navigate(IViewPresenter viewPresenter)
         {
-            _syncContext.Sync(() => MainContentPresenter.Navigate(viewPresenter));
+            _syncContext.Async(() => MainContentPresenter.Navigate(viewPresenter));
         }
 
         public void NavigateBack()
@@ -187,6 +228,7 @@ namespace Wing.Client.Modules.Shell
 
             #endregion
         }
+
 
         public ISyncContext _syncContext { get; set; }
     }

@@ -61,14 +61,14 @@ namespace Wing.Client.Sdk
                         presenter.SetParent(this);
                         if (_views.Contains(presenter))
                         {
-                            ((ViewPresenter)ActivePresenter).SetActiveState(true);
+                            ((ViewPresenter)presenter).SetActiveState(true);
                             RegionManager.Regions[_contentRegion].Activate(presenter.GetView());
                         }
                         else
                         {
                             _views.Add(presenter);
                             RegionManager.Regions[_contentRegion].Add(presenter.GetView(), presenter.RegionManager);
-                            ((ViewPresenter)ActivePresenter).SetActiveState(true);
+                            ((ViewPresenter)presenter).SetActiveState(true);
                             RegionManager.Regions[_contentRegion].Activate(presenter.GetView());
                         }
                         UpdateActiveView();

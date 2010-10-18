@@ -76,4 +76,5 @@ namespace Wing.Client.Sdk
             get { return (TModel)GetPresentationModel(); }
         }
     }
+
 }

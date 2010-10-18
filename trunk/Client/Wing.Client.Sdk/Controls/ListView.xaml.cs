@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Wing.Utils;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,65 +12,19 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.Windows.Threading;
+using System.ComponentModel;
+using System.Collections;
 
 namespace Wing.Client.Sdk.Controls
 {
     public partial class ListView : UserControl
     {
+        private ObservableCollection<ListViewItemWrapper> _items = new ObservableCollection<ListViewItemWrapper>();
+
         public ListView()
         {
             InitializeComponent();
-            var list = new ObservableCollection<ListViewItemWrapper>(){
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" },
-                new ListViewItemWrapper() { IconSource = "Flex.BusinessIntelligence.WingClient;Component/../Assets/bi-icon.png", Text="BI" },
-                new ListViewItemWrapper() { IconSource = "bi;/Assets/bi-icon.png", Text="BI 2 com texto comprido pra carai mano" }
-            };
-            InnerListBox.ItemsSource = list;
-
-            var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(4) };
-            timer.Tick += (sender, args) => { list.Add(new ListViewItemWrapper() { Text = DateTime.Now.ToString() }); };
-            timer.Start();
+            InnerListBox.ItemsSource = _items;
         }
 
         private void Image_ImageFailed(object sender, ExceptionRoutedEventArgs e)
@@ -98,14 +53,70 @@ namespace Wing.Client.Sdk.Controls
             }
         }
 
+        public String IconSourcePropertyName { get; set; }
+        public String TextPropertyName { get; set; }
+        public String DefaultIconSource { get; set; }
+
+        public IEnumerable DataSource
+        {
+            get { return _dataSource; }
+            set
+            {
+                _dataSource = value;
+                BindDataSource();
+            }
+        }
+
+        public void BindDataSource()
+        {
+            VisualContext.Async(() =>
+            {
+                _items.Clear();
+                if (_dataSource != null)
+                {
+                    foreach (var o in _dataSource)
+                    {
+                        var iconSource = "";
+                        var text = "";
+                        if (IconSourcePropertyName.HasValue())
+                            iconSource = ReflectionUtils.ReadProperty<String>(o, IconSourcePropertyName);
+                        if (!iconSource.HasValue())
+                            iconSource = DefaultIconSource;
+                        if (TextPropertyName.HasValue())
+                            text = ReflectionUtils.ReadProperty<String>(o, TextPropertyName);
+                        _items.Add(new ListViewItemWrapper()
+                        {
+                            IconSource = iconSource,
+                            Text = text,
+                            Data = o
+                        });
+                    }
+                }
+            });
+        }
+
         public event SingleEventHandler<ListView, Object> ItemSelected;
         public event SingleEventHandler<ListView, Object> ItemTriggered;
+        private IEnumerable _dataSource;
     }
 
-    public class ListViewItemWrapper
+    public class ListViewItemWrapper : INotifyPropertyChanged
     {
-        public String IconSource { get; set; }
-        public String Text { get; set; }
-        public Object Data { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private string _iconSource;
+        private string _text;
+        private object _data;
+
+        public String IconSource { get { return _iconSource; } set { _iconSource = value; NotifyPropertyChanged("IconSource"); } }
+        public String Text { get { return _text; } set { _text = value; NotifyPropertyChanged("Text"); } }
+        public Object Data { get { return _data; } set { _data = value; NotifyPropertyChanged("Data"); } }
+
+        [System.Diagnostics.DebuggerStepThrough]
+        private void NotifyPropertyChanged(String propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }

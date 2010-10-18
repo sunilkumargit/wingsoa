@@ -16,7 +16,7 @@ namespace Flex.BusinessIntelligence.Server.Core
     [ModuleDescription("Nucleo de servidor do Business Intelligence")]
     [ModuleCategory(ModuleCategory.Init)]
     [ModulePriority(ModulePriority.High)]
-    public class BIServerCore : ModuleBase
+    public class BIServerCoreModule : ModuleBase
     {
         public override void Initialize()
         {
@@ -32,6 +32,7 @@ namespace Flex.BusinessIntelligence.Server.Core
             ISoaServicesManager servicesManager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
 
             servicesManager.RegisterService(new SoaServiceDescriptor("CubeInfoProvider", typeof(ICubeInfoProviderService), typeof(CubeInfoProviderService), true), true);
+       
         }
     }
 }

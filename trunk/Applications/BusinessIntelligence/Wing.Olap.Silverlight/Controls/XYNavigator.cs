@@ -31,9 +31,6 @@ namespace Wing.Olap.Controls
     public class XYNavigator : UserControl
     {
         bool m_ReverseVertical = false;
-        /// <summary>
-        /// Реверс по вертикали. т.е кнопка ВВЕРХ начинает работать на уменьшение, а ВНИЗ - на увеличение
-        /// </summary>
         public bool ReverseVertical
         {
             get { return m_ReverseVertical; }
@@ -187,7 +184,6 @@ namespace Wing.Olap.Controls
                     break;
             }
 
-            // Кнопки влево/вправо
             switch (m_ButtonsAlignment)
             {
                 case AligmentType.Bottom:
@@ -247,7 +243,6 @@ namespace Wing.Olap.Controls
             Y_CurrentValue++;
         }
 
-        #region События
         public event EventHandler CurrentValueChanged;
 
         void Raise_CurrentValueChanged()
@@ -259,13 +254,7 @@ namespace Wing.Olap.Controls
             }
         }
 
-        #endregion События
-
-        #region Свойства
         int m_X_MinValue = int.MinValue;
-        /// <summary>
-        /// Мин. значение по горизонтали
-        /// </summary>
         public int X_MinValue
         {
             get { return m_X_MinValue; }
@@ -277,9 +266,6 @@ namespace Wing.Olap.Controls
         }
 
         int m_X_MaxValue = int.MaxValue;
-        /// <summary>
-        /// Макс. значение по горизонтали
-        /// </summary>
         public int X_MaxValue
         {
             get { return m_X_MaxValue; }
@@ -291,9 +277,6 @@ namespace Wing.Olap.Controls
         }
 
         int m_X_CurrentValue = 0;
-        /// <summary>
-        /// Текущее значение по горизонтали
-        /// </summary>
         public int X_CurrentValue
         {
             get { return m_X_CurrentValue; }
@@ -328,9 +311,6 @@ namespace Wing.Olap.Controls
         }
 
         int m_Y_CurrentValue = 0;
-        /// <summary>
-        /// Текущее значение по вертикали
-        /// </summary>
         public int Y_CurrentValue
         {
             get { return m_Y_CurrentValue; }
@@ -365,9 +345,6 @@ namespace Wing.Olap.Controls
         }
 
         int m_X_DefaultValue = 0;
-        /// <summary>
-        /// Значение по умолчанию по горизонтали
-        /// </summary>
         public int X_DefaultValue
         {
             get { return m_X_DefaultValue; }
@@ -379,9 +356,6 @@ namespace Wing.Olap.Controls
         }
 
         int m_Y_DefaultValue = 0;
-        /// <summary>
-        /// Значение по умолчанию по вертикали
-        /// </summary>
         public int Y_DefaultValue
         {
             get { return m_Y_DefaultValue; }
@@ -393,9 +367,6 @@ namespace Wing.Olap.Controls
         }
 
         int m_Y_MinValue = int.MinValue;
-        /// <summary>
-        /// Мин. значение по вертикали
-        /// </summary>
         public int Y_MinValue
         {
             get { return m_Y_MinValue; }
@@ -407,9 +378,6 @@ namespace Wing.Olap.Controls
         }
 
         int m_Y_MaxValue = int.MaxValue;
-        /// <summary>
-        /// Макс. значение по вертикали
-        /// </summary>
         public int Y_MaxValue
         {
             get { return m_Y_MaxValue; }
@@ -419,7 +387,6 @@ namespace Wing.Olap.Controls
                 RefreshButtonsState();
             }
         }
-        #endregion Свойства
 
         void RefreshButtonsState()
         {

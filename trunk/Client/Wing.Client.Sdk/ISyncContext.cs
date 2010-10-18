@@ -19,5 +19,6 @@ namespace Wing.Client.Sdk
         void Sync(Action callback);
         void Sync<T>(Action<T> callback, T p1);
         void Sync<T1, T2>(Action<T1, T2> callback, T1 p1, T2 p2);
+        void Async(Action callback);
     }
 }

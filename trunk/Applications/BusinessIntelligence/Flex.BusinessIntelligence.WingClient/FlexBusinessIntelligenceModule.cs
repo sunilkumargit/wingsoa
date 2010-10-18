@@ -57,6 +57,23 @@ namespace Flex.BusinessIntelligence.WingClient
             homeMenu.CreateItem(BIMainMenuNames.Config, "Configurações").RedirectSelectionToFirstChild = true;
             homeMenu.CreateChildItem(BIMainMenuNames.Cubes, BIMainMenuNames.Config, CommandsManager.GetCommand(BICommandNames.NavigateCubes));
 
+            WorkContext.Async(() =>
+            {
+                SoaClientManager.InvokeService<ICubeInfoProviderService>((service, broker) =>
+                {
+                    broker.CallSync<OperationResult, CubeRegistrationInfo>(service.BeginSaveCubeInfo, service.EndSaveCubeInfo,
+                        new CubeRegistrationInfo()
+                            {
+                                CatalogName = "A",
+                                CubeId = Guid.NewGuid(),
+                                CubeName = DateTime.Now.ToString(),
+                                Description = "Teste",
+                                Password = "C",
+                                ServerName = "D",
+                                UserName = "E"
+                            });
+                });
+            });
         }
     }
 

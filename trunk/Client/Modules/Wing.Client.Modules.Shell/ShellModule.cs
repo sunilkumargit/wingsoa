@@ -33,7 +33,10 @@ namespace Wing.Client.Modules.Shell
         {
             //iniciar o controlador do shell;
             var shell = ServiceLocator.Current.GetInstance<IShellService>();
-            shell.StartShell();
+            if (shell is ShellService)
+            {
+                ((ShellService)shell).StartShell();
+            }
             shell.StatusMessage("Pronto");
         }
         #endregion

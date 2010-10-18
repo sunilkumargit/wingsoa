@@ -3,27 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
     xmlns:controls="clr-namespace:Wing.Olap.Controls.General" 
 MinWidth="100" MinHeight="50">
-	<!--	/*   
-    Copyright (C) 2009 Galaktika Corporation ZAO
 
-    This file is a part of Wing.UILibrary.Olap
- 
-    Wing.UILibrary.Olap is a free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-      
-    You should have received a copy of the GNU General Public License
-    along with Wing.UILibrary.Olap.  If not, see
-  	<http://www.gnu.org/licenses/> 
-  
-    If GPL v.3 is not suitable for your products or company,
-    Galaktika Corp provides Wing.UILibrary.Olap under a flexible commercial license
-    designed to meet your specific usage and distribution requirements.
-    If you have already obtained a commercial license from Galaktika Corp,
-    you can use this file under those license terms.
-*/ -->
-	<Grid x:Name="LayoutRoot" Background="#FF475A8D">
+    <Grid x:Name="LayoutRoot" Background="#FF475A8D">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -52,7 +33,6 @@ MinWidth="100" MinHeight="50">
             <Rectangle Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" MouseLeftButtonDown="DiagonalSide_MouseLeftButtonDown" Cursor="Hand" Height="2" Width="4" x:Name="BottomDiagonalSide" Fill="#00FFFFFF" />
         </Grid>
 
-        <!-- Правая граница. Для того чтобы тягать за правый нижний угол добавляем лишний грид -->
         <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" Background="#00FFFFFF">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>

@@ -26,11 +26,17 @@ namespace Wing.Client.Sdk.Services
         private void InvokeSync(Action action)
         {
             if (_dispatcher.CheckAccess())
-            {
                 action();
-            }
             else
                 _context.Send((a) => { action(); }, null);
+        }
+
+        private void InvokeAsync(Action action)
+        {
+            if (_dispatcher.CheckAccess())
+                action();
+            else
+                _dispatcher.BeginInvoke(action);
         }
 
         public TResult Sync<TResult>(Func<TResult> callback)
@@ -85,6 +91,11 @@ namespace Wing.Client.Sdk.Services
             {
                 callback(p1, p2);
             });
+        }
+
+        public void Async(Action callback)
+        {
+            InvokeAsync(callback);
         }
     }
 }

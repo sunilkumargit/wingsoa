@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace Wing.Client.Sdk
 {
-    public static class VisualContext 
+    public static class VisualContext
     {
         private static ISyncContext _syncContext;
 
@@ -48,6 +48,11 @@ namespace Wing.Client.Sdk
         public static void Sync<T1, T2>(Action<T1, T2> callback, T1 p1, T2 p2)
         {
             _syncContext.Sync(callback, p1, p2);
+        }
+
+        public static void Async(Action callback)
+        {
+            _syncContext.Async(callback);
         }
     }
 }

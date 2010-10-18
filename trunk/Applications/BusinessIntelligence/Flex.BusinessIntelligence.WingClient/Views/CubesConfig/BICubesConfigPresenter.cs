@@ -16,6 +16,7 @@ using Flex.BusinessIntelligence.Interop.Services;
 using Flex.BusinessIntelligence.Data;
 using System.Collections.Generic;
 using Wing.Utils;
+using System.Collections.ObjectModel;
 
 namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
 {
@@ -38,6 +39,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
                     {
                         var cubes = broker.CallSync<List<CubeRegistrationInfo>>(channel.BeginGetCubesInfo, channel.EndGetCubesInfo);
                         CollectionUtils.SyncCollections<CubeRegistrationInfo>(Model.Cubes, cubes, (a, b) => a.CubeId == b.CubeId);
+                        ((BICubesConfigView)GetView()).SetCubesInfo(Model.Cubes);
                     });
                 });
             }
