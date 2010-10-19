@@ -39,10 +39,18 @@ namespace Flex.BusinessIntelligence.Server.Core
         public OperationResult SaveCubeInfo(CubeRegistrationInfo info)
         {
             var result = new OperationResult();
-            if (!_entityStore.Save(info))
+            try
+            {
+                if (!_entityStore.Save(info))
+                {
+                    result.Status = OperationStatus.Error;
+                    result.Message = "Não foi possível salvar as configurações do cubo";
+                }
+            }
+            catch (Exception ex)
             {
                 result.Status = OperationStatus.Error;
-                result.Message = "Não foi possível salvar as configurações do cubo";
+                result.Message = ex.ToString();
             }
             return result;
         }
@@ -50,9 +58,19 @@ namespace Flex.BusinessIntelligence.Server.Core
         public OperationResult DeleteCubeInfo(Guid cubeId)
         {
             var info = GetCubeInfo(cubeId);
-            if (info != null)
-                _entityStore.Remove(info);
-            return new OperationResult() { Message = "O cubo foi excluído" };
+            var result = new OperationResult();
+            try
+            {
+                if (info != null)
+                    _entityStore.Remove(info);
+                result.Message = "O cubo foi excluído";
+            }
+            catch (Exception ex)
+            {
+                result.Status = OperationStatus.Error;
+                result.Message = ex.ToString();
+            }
+            return result;
         }
     }
 }

@@ -14,22 +14,22 @@ using System.Collections.ObjectModel;
 
 namespace Wing.Client.Sdk
 {
-    public class DefaultGlobalCommandsManager : IGlobalCommandsManager
+    public class DefaultGlobalCommandsManager : IGblCommandsManager
     {
-        private Dictionary<String, IGlobalCommand> _commands = new Dictionary<string, IGlobalCommand>();
-        private ObservableCollection<IGlobalCommand> _commandsList = new ObservableCollection<IGlobalCommand>();
-        private ReadOnlyObservableCollection<IGlobalCommand> _commandsListReadOnly;
+        private Dictionary<String, IGblCommand> _commands = new Dictionary<string, IGblCommand>();
+        private ObservableCollection<IGblCommand> _commandsList = new ObservableCollection<IGblCommand>();
+        private ReadOnlyObservableCollection<IGblCommand> _commandsListReadOnly;
 
         public DefaultGlobalCommandsManager()
         {
-            _commandsListReadOnly = new ReadOnlyObservableCollection<IGlobalCommand>(_commandsList);
+            _commandsListReadOnly = new ReadOnlyObservableCollection<IGblCommand>(_commandsList);
         }
 
-        public IGlobalCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "")
+        public IGblCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "")
         {
             if (GetCommand(name) != null)
                 throw new Exception("Já existe um commando com este nome");
-            var result = new GlobalCommand(name, caption, uiType, iconSource, tooltip);
+            var result = new GblCommand(name, caption, uiType, iconSource, tooltip);
             _commands[name] = result;
             _commandsList.Add(result);
             return result;
@@ -43,14 +43,14 @@ namespace Wing.Client.Sdk
             _commandsList.Remove(existing);
         }
 
-        public IGlobalCommand GetCommand(string name)
+        public IGblCommand GetCommand(string name)
         {
-            IGlobalCommand result = null;
+            IGblCommand result = null;
             _commands.TryGetValue(name, out result);
             return result;
         }
 
-        public ReadOnlyCollection<IGlobalCommand> Commands
+        public ReadOnlyCollection<IGblCommand> Commands
         {
             get { return _commandsListReadOnly; }
         }

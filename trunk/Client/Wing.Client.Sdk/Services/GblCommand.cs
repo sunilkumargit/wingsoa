@@ -16,15 +16,15 @@ using Wing.Client.Sdk.Events;
 
 namespace Wing.Client.Sdk.Services
 {
-    public class GlobalCommand : IGlobalCommand
+    public class GblCommand : IGblCommand, ICommand
     {
-        private ObservableCollection<IGlobalCommandHandler> _handlers = new ObservableCollection<IGlobalCommandHandler>();
-        private ReadOnlyObservableCollection<IGlobalCommandHandler> _handlersReadOnly;
+        private ObservableCollection<IGblCommandHandler> _handlers = new ObservableCollection<IGblCommandHandler>();
+        private ReadOnlyObservableCollection<IGblCommandHandler> _handlersReadOnly;
 
-        public GlobalCommand(String name, String caption, GblCommandUIType uiType, String iconSource, String toolTip)
+        public GblCommand(String name, String caption, GblCommandUIType uiType, String iconSource, String toolTip)
         {
             Assert.NullArgument(name, "name");
-            _handlersReadOnly = new ReadOnlyObservableCollection<IGlobalCommandHandler>(_handlers);
+            _handlersReadOnly = new ReadOnlyObservableCollection<IGblCommandHandler>(_handlers);
             Name = name;
             Caption = caption;
             Tooltip = Tooltip;
@@ -38,7 +38,7 @@ namespace Wing.Client.Sdk.Services
         public string IconSource { get; private set; }
         public GblCommandUIType UIType { get; private set; }
 
-        public void AddHandler(IGlobalCommandHandler handler)
+        public void AddHandler(IGblCommandHandler handler)
         {
             if (_handlers.Contains(handler))
                 return;
@@ -46,7 +46,7 @@ namespace Wing.Client.Sdk.Services
             FireStateChanged();
         }
 
-        public void RemoveHandler(IGlobalCommandHandler handler)
+        public void RemoveHandler(IGblCommandHandler handler)
         {
             _handlers.Remove(handler);
             FireStateChanged();
@@ -54,11 +54,12 @@ namespace Wing.Client.Sdk.Services
 
         public virtual void QueryStatus(object parameter, ref GblCommandStatus status)
         {
-            bool handled = false;
-            status = GblCommandStatus.Enabled;
             var en = _handlers.GetEnumerator();
-            while (en.MoveNext() && !handled)
-                en.Current.QueryStatus(this, ref parameter, ref status, ref handled);
+            IGblCommandQueryStatusContext ctx = new GblCommandHandlerContext(this, parameter);
+            ctx.Status = GblCommandStatus.Enabled;
+            while (en.MoveNext() && !ctx.Handled)
+                en.Current.QueryStatus(ctx);
+            status = ctx.Status;
         }
 
         public GblCommandStatus QueryStatus(Object parameter = null)
@@ -75,18 +76,19 @@ namespace Wing.Client.Sdk.Services
         {
             if (QueryStatus(parameter) == GblCommandStatus.Enabled)
             {
-                var _handled = handled;
-                var _execStatus = execStatus;
-                var _outMessage = outMessage;
+                IGblCommandExecuteContext ctx = new GblCommandHandlerContext(this, parameter);
+                ctx.Status = execStatus;
+                ctx.Handled = handled;
+                ctx.OutMessage = outMessage;
                 VisualContext.Sync(() =>
                 {
                     var en = _handlers.GetEnumerator();
-                    while (en.MoveNext() && !_handled)
-                        en.Current.Execute(this, ref parameter, ref _execStatus, ref _handled, ref _outMessage);
+                    while (en.MoveNext() && !ctx.Handled)
+                        en.Current.Execute(ctx);
                 });
-                handled = _handled;
-                execStatus = _execStatus;
-                outMessage = _outMessage;
+                handled = ctx.Handled;
+                execStatus = ctx.Status;
+                outMessage = ctx.OutMessage;
             }
         }
 
@@ -99,7 +101,7 @@ namespace Wing.Client.Sdk.Services
             return execStatus;
         }
 
-        public ReadOnlyObservableCollection<IGlobalCommandHandler> Handlers { get { return _handlersReadOnly; } }
+        public ReadOnlyObservableCollection<IGblCommandHandler> Handlers { get { return _handlersReadOnly; } }
 
         public event GblCommandStateChanged StateChanged;
 
@@ -108,5 +110,48 @@ namespace Wing.Client.Sdk.Services
             if (StateChanged != null)
                 StateChanged.Invoke(this);
         }
+
+        public ICommand GetCommandWrapper()
+        {
+            return this;
+        }
+
+        bool ICommand.CanExecute(object parameter)
+        {
+            return QueryStatus(parameter) == GblCommandStatus.Enabled;
+        }
+
+        event EventHandler ICommand.CanExecuteChanged
+        {
+            add { }
+            remove { }
+        }
+
+        void ICommand.Execute(object parameter)
+        {
+            Execute(parameter);
+        }
+    }
+
+    internal class GblCommandHandlerContext : IGblCommandQueryStatusContext, IGblCommandExecuteContext
+    {
+        public GblCommandHandlerContext(IGblCommand command, Object parameter)
+        {
+            Command = command;
+            Parameter = parameter;
+        }
+
+
+        public IGblCommand Command { get; private set; }
+
+        public object Parameter { get; set; }
+
+        public bool Handled { get; set; }
+
+        GblCommandStatus IGblCommandQueryStatusContext.Status { get; set; }
+
+        GblCommandExecStatus IGblCommandExecuteContext.Status { get; set; }
+
+        string IGblCommandExecuteContext.OutMessage { get; set; }
     }
 }

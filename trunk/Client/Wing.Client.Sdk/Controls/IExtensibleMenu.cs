@@ -21,8 +21,8 @@ namespace Wing.Client.Sdk.Controls
     {
         IExtensibleMenuItem CreateItem(String id, String caption);
         IExtensibleMenuItem CreateChildItem(String id, String caption, String parentId);
-        IExtensibleMenuItem CreateItem(String id, IGlobalCommand command);
-        IExtensibleMenuItem CreateChildItem(String id, String parentId, IGlobalCommand command);
+        IExtensibleMenuItem CreateItem(String id, IGblCommand command);
+        IExtensibleMenuItem CreateChildItem(String id, String parentId, IGblCommand command);
         IExtensibleMenuItem GetItem(String id);
         void RemoveItem(String id);
         ReadOnlyCollection<IExtensibleMenuItem> Items { get; }

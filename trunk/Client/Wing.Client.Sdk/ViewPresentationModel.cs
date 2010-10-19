@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Wing.Client.Sdk
 {
@@ -15,12 +16,14 @@ namespace Wing.Client.Sdk
         private string _caption;
         private string _title;
 
+        [Display(AutoGenerateField = false)]
         public virtual String Caption
         {
             get { return _caption; }
             set { _caption = value; NotifyPropertyChanged("Caption"); }
         }
 
+        [Display(AutoGenerateField = false)]
         public virtual String Title
         {
             get { return _title; }

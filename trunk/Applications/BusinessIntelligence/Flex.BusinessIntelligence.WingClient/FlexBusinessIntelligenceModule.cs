@@ -12,6 +12,8 @@ using Flex.BusinessIntelligence.Data;
 using System;
 using Wing.Soa.Interop;
 using Flex.BusinessIntelligence.WingClient.Views.CubesConfig;
+using Flex.BusinessIntelligence.WingClient.Views.CubeProperties;
+using Flex.BusinessIntelligence.WingClient.Views.RegisterCube;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -31,7 +33,13 @@ namespace Flex.BusinessIntelligence.WingClient
 
             ServiceLocator.Current.Register<IBIHomeView, BIHomeView>(true);
             ServiceLocator.Current.Register<BIHomePresenter, BIHomePresenter>(true);
+
+            ServiceLocator.Current.Register<BICubesConfigView, BICubesConfigView>();
             ServiceLocator.Current.Register<BICubesConfigPresenter, BICubesConfigPresenter>(true);
+
+            ServiceLocator.Current.Register<CubePropertiesPresenter, CubePropertiesPresenter>();
+
+            ServiceLocator.Current.Register<ICubeServicesProxy, CubeServicesProxy>(true);
 
             //criar os commandos basicos
             var navigateHomeCommand = CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Meu BI")
@@ -43,6 +51,41 @@ namespace Flex.BusinessIntelligence.WingClient
             //cubos
             var navigateConfigCubosCommand = CommandsManager.CreateCommand(BICommandNames.NavigateCubes, "Cubos")
                 .AddNavigateHandler<BICubesConfigPresenter, BIHomePresenter>();
+
+            //propriedades do cubo
+            var cubeShowPropertiesCommand = CommandsManager.CreateCommand(BICommandNames.CubeShowProperties, "Propriedades do cubo")
+                .AddDelegateHandler(new CommandExecuteDelegate((ctx) =>
+                {
+                    ctx.Handled = true;
+                    var info = ctx.Parameter as CubeRegistrationInfo;
+                    if (info == null)
+                    {
+                        ctx.Status = GblCommandExecStatus.Error;
+                        ctx.OutMessage = "Command parameter is null or has a invalid value";
+                    }
+                    else
+                    {
+                        var presenter = ServiceLocator.Current.GetInstance<CubePropertiesPresenter>();
+                        presenter.Model.CubeInfo = info;
+                        ServiceLocator.Current.GetInstance<IShellService>().ShowPopup(presenter);
+                    }
+                }), new CommandQueryStatusDelegate((ctx) =>
+                {
+                    if (ctx.Parameter == null)
+                    {
+                        ctx.Status = GblCommandStatus.NotSupported;
+                        ctx.Handled = true;
+                    }
+                }));
+
+            //novo cubo
+            var registerCubeCommand = CommandsManager.CreateCommand(BICommandNames.RegisterCube, "Registrar um novo cubo")
+                .AddDelegateHandler((ctx) =>
+                {
+                    ctx.Handled = true;
+                    var presenter = ServiceLocator.Current.GetInstance<CubeRegisterPresenter>();
+                    ServiceLocator.Current.GetInstance<IShellService>().ShowPopup(presenter);
+                });
         }
 
         public override void Initialized()

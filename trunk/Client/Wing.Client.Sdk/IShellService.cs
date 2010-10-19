@@ -17,5 +17,7 @@ namespace Wing.Client.Sdk
         void Alert(String message);
         void ShowPopup(IPopupWindowPresenter presenter);
         IViewBagPresenter MainContentPresenter { get; }
+        void DisplayWorkingStatus(string message, params string[] values);
+        void HideWorkingStatus();
     }
 }

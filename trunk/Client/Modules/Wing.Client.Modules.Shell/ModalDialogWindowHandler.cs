@@ -17,6 +17,7 @@ namespace Wing.Client.Modules.Shell
     public class ModalDialogWindowHandler : IPopupWindowHandler
     {
         private ModalDialog _dialog;
+        private bool _fireEvents = true;
 
         public ModalDialogWindowHandler(ModalDialog dialog)
         {
@@ -27,29 +28,42 @@ namespace Wing.Client.Modules.Shell
 
         void dialog_DialogClosed(object sender, DialogResultArgs e)
         {
-            if (Closing != null)
-                Closing.Invoke(this, e);
+            if (!_fireEvents) return;
+            VisualContext.Sync(() =>
+            {
+                if (Closed != null)
+                    Closed.Invoke(this, e);
+            });
         }
 
         void dialog_BeforeClosed(object sender, DialogResultArgs e)
         {
-            if (Closed != null)
-                Closed.Invoke(this, e);
+            if (!_fireEvents) return;
+            VisualContext.Sync(() =>
+            {
+                if (Closing != null)
+                    Closing.Invoke(this, e);
+            });
         }
 
         public void SetTitle(string title)
         {
-            _dialog.Caption = title;
+            VisualContext.Async(() => _dialog.Caption = title);
         }
 
         public void SetDialogStyle(ModalDialogStyles style)
         {
-            _dialog.DialogStyle = style;
+            VisualContext.Async(() => _dialog.DialogStyle = style);
         }
 
-        public void Close()
+        public void Close(bool fireEvents = true)
         {
-            _dialog.Close();
+            VisualContext.Sync(() =>
+            {
+                _fireEvents = fireEvents;
+                _dialog.Close();
+                _fireEvents = true;
+            });
         }
 
         public event EventHandler<DialogResultArgs> Closing;

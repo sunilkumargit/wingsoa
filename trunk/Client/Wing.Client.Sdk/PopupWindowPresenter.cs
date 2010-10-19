@@ -18,10 +18,10 @@ namespace Wing.Client.Sdk
 
         public void CallbackSetWindowHandler(IPopupWindowHandler handler)
         {
-            Handler = handler;
+            WindowHandler = handler;
         }
 
-        public IPopupWindowHandler Handler
+        public IPopupWindowHandler WindowHandler
         {
             get { return _handler; }
             set

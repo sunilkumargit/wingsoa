@@ -97,5 +97,19 @@ namespace Wing.Client.Sdk.Services
         {
             InvokeAsync(callback);
         }
+
+        public void DelayAsync(TimeSpan delay, Action action)
+        {
+            InvokeAsync(() =>
+            {
+                var timer = new DispatcherTimer() { Interval = delay };
+                timer.Tick += new EventHandler((sender, args) =>
+                {
+                    action();
+                    timer.Stop();
+                });
+                timer.Start();
+            });
+        }
     }
 }

@@ -14,12 +14,15 @@ using System.Collections.ObjectModel;
 using System.Windows.Threading;
 using System.ComponentModel;
 using System.Collections;
+using System.Collections.Specialized;
 
 namespace Wing.Client.Sdk.Controls
 {
     public partial class ListView : UserControl
     {
         private ObservableCollection<ListViewItemWrapper> _items = new ObservableCollection<ListViewItemWrapper>();
+        private bool _bindingPending = false;
+        
 
         public ListView()
         {
@@ -62,9 +65,27 @@ namespace Wing.Client.Sdk.Controls
             get { return _dataSource; }
             set
             {
+                if (_dataSource == value)
+                    return;
+                if (_dataSource != null && _dataSource is INotifyCollectionChanged)
+                    ((INotifyCollectionChanged)_dataSource).CollectionChanged -= ListView_CollectionChanged;
                 _dataSource = value;
                 BindDataSource();
+                if (_dataSource != null && _dataSource is INotifyCollectionChanged)
+                    ((INotifyCollectionChanged)_dataSource).CollectionChanged += new NotifyCollectionChangedEventHandler(ListView_CollectionChanged);
             }
+        }
+
+        void ListView_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (_bindingPending)
+                return;
+            _bindingPending = true;
+            VisualContext.DelayAsync(TimeSpan.FromMilliseconds(1000), () =>
+            {
+                _bindingPending = false;
+                BindDataSource();
+            });
         }
 
         public void BindDataSource()
@@ -76,18 +97,9 @@ namespace Wing.Client.Sdk.Controls
                 {
                     foreach (var o in _dataSource)
                     {
-                        var iconSource = "";
-                        var text = "";
-                        if (IconSourcePropertyName.HasValue())
-                            iconSource = ReflectionUtils.ReadProperty<String>(o, IconSourcePropertyName);
-                        if (!iconSource.HasValue())
-                            iconSource = DefaultIconSource;
-                        if (TextPropertyName.HasValue())
-                            text = ReflectionUtils.ReadProperty<String>(o, TextPropertyName);
                         _items.Add(new ListViewItemWrapper()
                         {
-                            IconSource = iconSource,
-                            Text = text,
+                            ListView = this,
                             Data = o
                         });
                     }
@@ -106,10 +118,75 @@ namespace Wing.Client.Sdk.Controls
         private string _iconSource;
         private string _text;
         private object _data;
+        private bool _refreshNeeded = true;
 
-        public String IconSource { get { return _iconSource; } set { _iconSource = value; NotifyPropertyChanged("IconSource"); } }
-        public String Text { get { return _text; } set { _text = value; NotifyPropertyChanged("Text"); } }
-        public Object Data { get { return _data; } set { _data = value; NotifyPropertyChanged("Data"); } }
+        private void CheckRefreshData()
+        {
+            if (!_refreshNeeded)
+                return;
+
+            var iconSource = "";
+            var text = "";
+
+            if (Data != null)
+            {
+                if (ListView.IconSourcePropertyName.HasValue())
+                    iconSource = ReflectionUtils.ReadProperty<String>(Data, ListView.IconSourcePropertyName);
+                if (!iconSource.HasValue())
+                    iconSource = ListView.DefaultIconSource;
+                if (ListView.TextPropertyName.HasValue())
+                    text = ReflectionUtils.ReadProperty<String>(Data, ListView.TextPropertyName);
+            }
+
+            _refreshNeeded = false;
+            IconSource = iconSource;
+            Text = text;
+
+        }
+
+        internal ListView ListView { get; set; }
+        public String IconSource
+        {
+            get
+            {
+                CheckRefreshData();
+                return _iconSource;
+            }
+            set { _iconSource = value; NotifyPropertyChanged("IconSource"); }
+        }
+
+        public String Text
+        {
+            get
+            {
+                CheckRefreshData();
+                return _text;
+            }
+            set { _text = value; NotifyPropertyChanged("Text"); }
+        }
+
+        public Object Data
+        {
+            get { return _data; }
+            set
+            {
+                _data = value;
+                if (_data != null && _data is INotifyPropertyChanged)
+                {
+                    ((INotifyPropertyChanged)_data).PropertyChanged += new PropertyChangedEventHandler(ListViewItemWrapper_DataPropertyChanged);
+                }
+                NotifyPropertyChanged("Data");
+            }
+        }
+
+        void ListViewItemWrapper_DataPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == ListView.TextPropertyName || e.PropertyName == ListView.IconSourcePropertyName)
+            {
+                _refreshNeeded = true;
+                CheckRefreshData();
+            }
+        }
 
         [System.Diagnostics.DebuggerStepThrough]
         private void NotifyPropertyChanged(String propertyName)

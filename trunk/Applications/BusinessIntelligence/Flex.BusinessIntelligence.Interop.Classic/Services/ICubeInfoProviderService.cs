@@ -12,6 +12,7 @@ namespace Flex.BusinessIntelligence.Interop.Services
     [ServiceKnownType(typeof(CubeRegistrationInfo))]
     [ServiceKnownType(typeof(CubeQueryGroup))]
     [ServiceKnownType(typeof(CubeQueryInfo))]
+    [ServiceKnownType(typeof(OperationResult))]
     public interface ICubeInfoProviderService
     {
 #if !SILVERLIGHT

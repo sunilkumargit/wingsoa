@@ -15,14 +15,14 @@ namespace Wing.Client.Sdk
     [System.Diagnostics.DebuggerStepThrough]
     public static class CommandsManager
     {
-        private static IGlobalCommandsManager _cmdMngr;
+        private static IGblCommandsManager _cmdMngr;
 
-        public static void SetCommandsManager(IGlobalCommandsManager commandManager)
+        public static void SetCommandsManager(IGblCommandsManager commandManager)
         {
             _cmdMngr = commandManager;
         }
 
-        public static IGlobalCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "")
+        public static IGblCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "")
         {
             return _cmdMngr.CreateCommand(name, caption, uiType, iconSource, tooltip);
         }
@@ -32,12 +32,12 @@ namespace Wing.Client.Sdk
             _cmdMngr.RemoveCommand(name);
         }
 
-        public static IGlobalCommand GetCommand(string name)
+        public static IGblCommand GetCommand(string name)
         {
             return _cmdMngr.GetCommand(name);
         }
 
-        public static System.Collections.ObjectModel.ReadOnlyCollection<IGlobalCommand> Commands
+        public static System.Collections.ObjectModel.ReadOnlyCollection<IGblCommand> Commands
         {
             get { return _cmdMngr.Commands; }
         }

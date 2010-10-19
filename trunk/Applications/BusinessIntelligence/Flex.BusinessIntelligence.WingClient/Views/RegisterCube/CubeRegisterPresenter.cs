@@ -14,21 +14,27 @@ using Flex.BusinessIntelligence.Data;
 using Wing.ServiceLocation;
 using Flex.BusinessIntelligence.Interop.Services;
 
-namespace Flex.BusinessIntelligence.WingClient.Views.CubeProperties
+namespace Flex.BusinessIntelligence.WingClient.Views.RegisterCube
 {
-    public class CubePropertiesPresenter : PopupWindowPresenter<CubePropertiesPresentationModel>
+    public class CubeRegisterPresenter : PopupWindowPresenter<CubeRegisterPresentationModel>
     {
-        private bool _closing;
-        public CubePropertiesPresenter()
-            : base(new CubePropertiesPresentationModel() { Caption = "Propriedades do cubo" }, new CubePropertiesView(), null)
+        public CubeRegisterPresenter()
+            : base(new CubeRegisterPresentationModel() { Caption = "Registrar um novo cubo" }, new CubeRegisterView(), null)
         {
+            Model.CubeInfo = new CubeRegistrationInfo()
+            {
+                CubeId = Guid.NewGuid()
+            };
         }
 
         protected override void ActiveStateChanged()
         {
             base.ActiveStateChanged();
-            WindowHandler.SetDialogStyle(ModalDialogStyles.OKCancel);
-            ((CubePropertiesView)GetView()).SetModel(Model);
+            if (IsActive)
+            {
+                WindowHandler.SetDialogStyle(ModalDialogStyles.OKCancel);
+                ((CubeRegisterView)GetView()).SetModel(Model);
+            }
         }
 
         protected override void WindowClosing(DialogResultArgs args)
@@ -37,7 +43,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubeProperties
             if (args.Result == DialogResult.OK)
             {
                 args.Cancel = true;
-                if (((CubePropertiesView)GetView()).Validate())
+                if (((CubeRegisterView)GetView()).Validate())
                 {
                     WorkContext.Sync(() =>
                     {
@@ -50,10 +56,11 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubeProperties
                                     WindowHandler.Close(false);
                             });
                     });
+
                 }
             }
             else
-                ((CubePropertiesView)GetView()).CancelEdit();
+                ((CubeRegisterView)GetView()).CancelEdit();
         }
     }
 }

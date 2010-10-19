@@ -22,9 +22,9 @@ namespace Wing.Client.Sdk.Controls
         bool IsVisible { get; set; }
         event EventHandler OnSelect;
         ReadOnlyCollection<IExtensibleMenuItem> Items { get; }
-        void BindCommand(IGlobalCommand command);
+        void BindCommand(IGblCommand command);
         void UnbindCommand();
-        IGlobalCommand Command { get; }
+        IGblCommand Command { get; }
         bool RedirectSelectionToFirstChild { get; set; }
         void Select();
     }

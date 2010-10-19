@@ -54,5 +54,10 @@ namespace Wing.Client.Sdk
         {
             _syncContext.Async(callback);
         }
+
+        public static void DelayAsync(TimeSpan delay, Action action)
+        {
+            _syncContext.DelayAsync(delay, action);
+        }
     }
 }

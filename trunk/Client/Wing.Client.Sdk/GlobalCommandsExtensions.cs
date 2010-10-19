@@ -16,32 +16,32 @@ namespace Wing.Client.Sdk
     {
         #region IGlobalCommand
 
-        public static IGlobalCommand AddNavigateHandler(this IGlobalCommand command, IViewPresenter presenterInstance)
+        public static IGblCommand AddNavigateHandler(this IGblCommand command, IViewPresenter presenterInstance)
         {
             command.AddHandler(new NavigateCommandHandler(presenterInstance));
             return command;
         }
 
-        public static IGlobalCommand AddNavigateHandler(this IGlobalCommand command, Type presenterType)
+        public static IGblCommand AddNavigateHandler(this IGblCommand command, Type presenterType)
         {
             command.AddHandler(new NavigateCommandHandler(presenterType));
             return command;
         }
 
-        public static IGlobalCommand AddNavigateHandler(this IGlobalCommand command, Type presenterType, Type parentPresenterType)
+        public static IGblCommand AddNavigateHandler(this IGblCommand command, Type presenterType, Type parentPresenterType)
         {
             command.AddHandler(new NavigateCommandHandler(presenterType, parentPresenterType));
             return command;
         }
 
 
-        public static IGlobalCommand AddNavigateHandler<TPresenterType>(this IGlobalCommand command) where TPresenterType : IViewPresenter
+        public static IGblCommand AddNavigateHandler<TPresenterType>(this IGblCommand command) where TPresenterType : IViewPresenter
         {
             command.AddNavigateHandler(typeof(TPresenterType));
             return command;
         }
 
-        public static IGlobalCommand AddNavigateHandler<TPresenterType, TParentPresenterType>(this IGlobalCommand command)
+        public static IGblCommand AddNavigateHandler<TPresenterType, TParentPresenterType>(this IGblCommand command)
             where TPresenterType : IViewPresenter
             where TParentPresenterType : IViewBagPresenter
         {
@@ -49,18 +49,18 @@ namespace Wing.Client.Sdk
             return command;
         }
 
-        public static IGlobalCommand AddDelegateHandler(this IGlobalCommand command, CommandExecuteDelegate executeDelegate, CommandQueryStatusDelegate queryStatusDelegate)
+        public static IGblCommand AddDelegateHandler(this IGblCommand command, CommandExecuteDelegate executeDelegate, CommandQueryStatusDelegate queryStatusDelegate)
         {
             command.AddHandler(new DelegateCommandHandler(queryStatusDelegate, executeDelegate));
             return command;
         }
 
-        public static IGlobalCommand AddDelegateHandler(this IGlobalCommand command, CommandExecuteDelegate executeDelegate)
+        public static IGblCommand AddDelegateHandler(this IGblCommand command, CommandExecuteDelegate executeDelegate)
         {
             command.AddHandler(new DelegateCommandHandler(
-                new CommandQueryStatusDelegate((IGlobalCommand cmd, ref object parameter, ref GblCommandStatus status, ref bool handled) =>
+                new CommandQueryStatusDelegate((ctx) =>
                 {
-                    status = GblCommandStatus.Enabled;
+                    ctx.Status = GblCommandStatus.Enabled;
                 }), executeDelegate));
             return command;
         }

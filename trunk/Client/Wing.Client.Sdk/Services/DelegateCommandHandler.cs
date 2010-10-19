@@ -13,7 +13,7 @@ using Wing.Utils;
 
 namespace Wing.Client.Sdk.Services
 {
-    public class DelegateCommandHandler : IGlobalCommandHandler
+    public class DelegateCommandHandler : IGblCommandHandler
     {
         private CommandQueryStatusDelegate _queryStatusDelegate;
         private CommandExecuteDelegate _executeDelegate;
@@ -26,17 +26,17 @@ namespace Wing.Client.Sdk.Services
             _executeDelegate = executeDelegate;
         }
 
-        public void QueryStatus(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled)
+        public void QueryStatus(IGblCommandQueryStatusContext ctx)
         {
-            _queryStatusDelegate.Invoke(command, ref parameter, ref status, ref handled);
+            _queryStatusDelegate.Invoke(ctx);
         }
 
-        public void Execute(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+        public void Execute(IGblCommandExecuteContext ctx)
         {
-            _executeDelegate.Invoke(command, ref parameter, ref execStatus, ref handled, ref outMessage);
+            _executeDelegate.Invoke(ctx);
         }
     }
 
-    public delegate void CommandQueryStatusDelegate(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled);
-    public delegate void CommandExecuteDelegate(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage);
+    public delegate void CommandQueryStatusDelegate(IGblCommandQueryStatusContext ctx);
+    public delegate void CommandExecuteDelegate(IGblCommandExecuteContext ctx);
 }

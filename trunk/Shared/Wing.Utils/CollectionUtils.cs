@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace Wing.Utils
 {
@@ -144,6 +145,12 @@ namespace Wing.Utils
             }
             foreach (var item in toProcess)
                 target.Add(item);
+        }
+
+        public static void AddRange<T>(this ObservableCollection<T> collection, IEnumerable<T> source)
+        {
+            foreach (var item in source)
+                collection.Add(item);
         }
     }
 }

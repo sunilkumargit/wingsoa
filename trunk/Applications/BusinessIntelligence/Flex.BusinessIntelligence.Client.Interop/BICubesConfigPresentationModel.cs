@@ -18,14 +18,23 @@ namespace Flex.BusinessIntelligence.Client.Interop
 {
     public class BICubesConfigPresentationModel : ViewPresentationModel
     {
+        private ObservableCollection<CubeRegistrationInfo> _cubes;
+
         public BICubesConfigPresentationModel()
             : base("Cubos", "Cubos registrados no Business Intelligence")
         {
-            Cubes = new ObservableCollection<CubeRegistrationInfo>();
-            RegisterObservableCollectionProperty(Cubes, "Cubes");
         }
 
 
-        public ObservableCollection<CubeRegistrationInfo> Cubes { get; private set; }
+        public ObservableCollection<CubeRegistrationInfo> Cubes
+        {
+            get { return _cubes; }
+            set
+            {
+                _cubes = value;
+                if (_cubes != null)
+                    RegisterObservableCollectionProperty(_cubes, "Cubes");
+            }
+        }
     }
 }

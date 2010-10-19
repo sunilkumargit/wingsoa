@@ -17,6 +17,7 @@ using Flex.BusinessIntelligence.Data;
 using System.Collections.Generic;
 using Wing.Utils;
 using System.Collections.ObjectModel;
+using Wing.ServiceLocation;
 
 namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
 {
@@ -25,6 +26,13 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
         public BICubesConfigPresenter(BICubesConfigPresentationModel presentationModel, BICubesConfigView view)
             : base(presentationModel, view, null)
         {
+            var _view = (BICubesConfigView)GetView();
+            _view.ItemTriggered += new SingleEventHandler<CubeRegistrationInfo>(_view_ItemTriggered);
+        }
+
+        void _view_ItemTriggered(CubeRegistrationInfo sender)
+        {
+            CommandsManager.GetCommand(BICommandNames.CubeShowProperties).Execute(sender);
         }
 
         protected override void ActiveStateChanged()
@@ -35,12 +43,12 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
                 //refresh nos cubos registrados
                 WorkContext.Async(() =>
                 {
-                    SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
+                    var cubeProxy = ServiceLocator.Current.GetInstance<ICubeServicesProxy>();
+                    if (Model.Cubes == null)
                     {
-                        var cubes = broker.CallSync<List<CubeRegistrationInfo>>(channel.BeginGetCubesInfo, channel.EndGetCubesInfo);
-                        CollectionUtils.SyncCollections<CubeRegistrationInfo>(Model.Cubes, cubes, (a, b) => a.CubeId == b.CubeId);
+                        Model.Cubes = cubeProxy.Cubes;
                         ((BICubesConfigView)GetView()).SetCubesInfo(Model.Cubes);
-                    });
+                    }
                 });
             }
         }

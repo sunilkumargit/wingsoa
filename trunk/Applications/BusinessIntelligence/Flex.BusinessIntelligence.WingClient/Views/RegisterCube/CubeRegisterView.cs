@@ -14,14 +14,14 @@ using Flex.BusinessIntelligence.Data;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Flex.BusinessIntelligence.WingClient.Views.CubeProperties
+namespace Flex.BusinessIntelligence.WingClient.Views.RegisterCube
 {
-    public class CubePropertiesView : HeaderedPage
+    public class CubeRegisterView : HeaderedPage
     {
-        private CubePropertiesPresentationModel _model;
+        private CubeRegisterPresentationModel _model;
         private DataForm dataForm;
 
-        public CubePropertiesView()
+        public CubeRegisterView()
         {
             dataForm = new DataForm();
             dataForm.AutoGeneratingField += new EventHandler<DataFormAutoGeneratingFieldEventArgs>(dataForm_AutoGeneratingField);
@@ -33,7 +33,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubeProperties
             e.Field.MinWidth = 400;
         }
 
-        public void SetModel(CubePropertiesPresentationModel model)
+        public void SetModel(CubeRegisterPresentationModel model)
         {
             _model = model;
             dataForm.AutoGenerateFields = true;

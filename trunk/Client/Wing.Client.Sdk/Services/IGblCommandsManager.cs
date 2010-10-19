@@ -12,12 +12,12 @@ using System.Collections.ObjectModel;
 
 namespace Wing.Client.Sdk.Services
 {
-    public interface IGlobalCommandsManager
+    public interface IGblCommandsManager
     {
-        IGlobalCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "");
+        IGblCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "");
         void RemoveCommand(String name);
-        IGlobalCommand GetCommand(String name);
-        ReadOnlyCollection<IGlobalCommand> Commands { get; }
+        IGblCommand GetCommand(String name);
+        ReadOnlyCollection<IGblCommand> Commands { get; }
         void RequeryStateNeeded();
     }
 }

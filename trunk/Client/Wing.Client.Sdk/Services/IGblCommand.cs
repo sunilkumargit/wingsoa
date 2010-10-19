@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 
 namespace Wing.Client.Sdk.Services
 {
-    public interface IGlobalCommand
+    public interface IGblCommand
     {
         String Name { get; }
         String Tooltip { get; }
@@ -23,12 +23,13 @@ namespace Wing.Client.Sdk.Services
         GblCommandStatus QueryStatus(Object parameter = null);
         void Execute(Object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage);
         GblCommandExecStatus Execute(Object parameter = null);
-        void AddHandler(IGlobalCommandHandler handler);
-        void RemoveHandler(IGlobalCommandHandler handler);
-        ReadOnlyObservableCollection<IGlobalCommandHandler> Handlers { get; }
+        void AddHandler(IGblCommandHandler handler);
+        void RemoveHandler(IGblCommandHandler handler);
+        ReadOnlyObservableCollection<IGblCommandHandler> Handlers { get; }
         event GblCommandStateChanged StateChanged;
         void FireStateChanged();
+        ICommand GetCommandWrapper();
     }
 
-    public delegate void GblCommandStateChanged(IGlobalCommand command);
+    public delegate void GblCommandStateChanged(IGblCommand command);
 }

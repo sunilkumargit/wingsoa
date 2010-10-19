@@ -69,9 +69,16 @@
     <Compile Include="..\Flex.BusinessIntelligence.Interop.Classic\Services\ICubeInfoProviderService.cs">
       <Link>Services\ICubeInfoProviderService.cs</Link>
     </Compile>
+    <Compile Include="..\Flex.BusinessIntelligence.Interop.Classic\Services\ICubeServicesProxy.cs">
+      <Link>Services\ICubeServicesProxy.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Client\Wing.Client.Sdk\Wing.Client.Sdk.csproj">
+      <Project>{A52229CB-C24D-4B2E-AEB9-5E3519CD94CF}</Project>
+      <Name>Wing.Client.Sdk</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
       <Project>{A8340CDA-5F58-49DD-A30F-E65376471CAB}</Project>
       <Name>Wing.Core.Silverlight</Name>

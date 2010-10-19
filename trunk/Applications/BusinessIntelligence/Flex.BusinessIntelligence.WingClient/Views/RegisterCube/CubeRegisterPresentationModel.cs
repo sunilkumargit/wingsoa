@@ -14,9 +14,9 @@ using Flex.BusinessIntelligence.Data;
 using System.ComponentModel.DataAnnotations;
 using Wing.Utils;
 
-namespace Flex.BusinessIntelligence.WingClient.Views.CubeProperties
+namespace Flex.BusinessIntelligence.WingClient.Views.RegisterCube
 {
-    public class CubePropertiesPresentationModel : ViewPresentationModel
+    public class CubeRegisterPresentationModel : ViewPresentationModel
     {
         private CubeRegistrationInfo _cubeInfo;
 

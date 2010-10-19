@@ -8,7 +8,7 @@ namespace Wing.Client.Sdk
     {
         void SetTitle(String title);
         void SetDialogStyle(ModalDialogStyles style);
-        void Close();
+        void Close(bool fireEvents = true);
         event EventHandler<DialogResultArgs> Closing;
         event EventHandler<DialogResultArgs> Closed;
     }

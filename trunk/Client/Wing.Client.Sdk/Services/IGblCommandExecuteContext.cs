@@ -12,9 +12,12 @@ using System.Collections.ObjectModel;
 
 namespace Wing.Client.Sdk.Services
 {
-    public interface IGlobalCommandHandler
+    public interface IGblCommandExecuteContext
     {
-        void QueryStatus(IGlobalCommand command, ref Object parameter, ref GblCommandStatus status, ref bool handled);
-        void Execute(IGlobalCommand command, ref Object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage);
+        IGblCommand Command { get; }
+        Object Parameter { get; set; }
+        GblCommandExecStatus Status { get; set; }
+        bool Handled { get; set; }
+        String OutMessage { get; set; }
     }
 }

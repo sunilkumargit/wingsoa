@@ -12,7 +12,7 @@ using Wing.ServiceLocation;
 
 namespace Wing.Client.Sdk.Services
 {
-    public class NavigateCommandHandler : IGlobalCommandHandler
+    public class NavigateCommandHandler : IGblCommandHandler
     {
         private IViewPresenter _presenter;
         private Type _presenterType;
@@ -35,13 +35,13 @@ namespace Wing.Client.Sdk.Services
         }
 
 
-        public void QueryStatus(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled)
+        public void QueryStatus(IGblCommandQueryStatusContext ctx)
         {
-            status = GblCommandStatus.Enabled;
-            handled = true;
+            ctx.Status = GblCommandStatus.Enabled;
+            ctx.Handled= true;
         }
 
-        public void Execute(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+        public void Execute(IGblCommandExecuteContext ctx)
         {
             var shellService = ServiceLocator.Current.GetInstance<IShellService>();
             if (_presenter != null)
@@ -56,8 +56,8 @@ namespace Wing.Client.Sdk.Services
                 }
                 shellService.Navigate(presenter);
             }
-            execStatus = GblCommandExecStatus.Executed;
-            handled = true;
+            ctx.Status = GblCommandExecStatus.Executed;
+            ctx.Handled = true;
         }
     }
 }

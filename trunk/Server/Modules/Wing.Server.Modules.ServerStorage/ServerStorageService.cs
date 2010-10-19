@@ -195,7 +195,9 @@ namespace Wing.Server.Modules.ServerStorage
             return Execute<bool>((session) =>
             {
                 foreach (var instance in entity)
-                    session.Save(instance);
+                {
+                    session.SaveOrUpdate(instance);
+                }
                 return true;
             });
         }

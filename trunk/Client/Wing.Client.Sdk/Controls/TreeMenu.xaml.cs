@@ -31,7 +31,7 @@ namespace Wing.Client.Sdk.Controls
             return _rootController.CreateItem(id, caption, null).VisualElement;
         }
 
-        public IExtensibleMenuItem CreateItem(string id, IGlobalCommand command)
+        public IExtensibleMenuItem CreateItem(string id, IGblCommand command)
         {
             var item = CreateItem(id, "");
             item.BindCommand(command);
@@ -43,7 +43,7 @@ namespace Wing.Client.Sdk.Controls
             return _rootController.CreateItem(id, caption, parentId).VisualElement;
         }
 
-        public IExtensibleMenuItem CreateChildItem(String id, String parentId, IGlobalCommand command)
+        public IExtensibleMenuItem CreateChildItem(String id, String parentId, IGblCommand command)
         {
             var item = CreateChildItem(id, "", parentId);
             item.BindCommand(command);
@@ -180,9 +180,9 @@ namespace Wing.Client.Sdk.Controls
         private ExtensibleMenuController _controller;
         private bool _redirectSelectionToFirstChild;
 
-        public IGlobalCommand Command { get; private set; }
+        public IGblCommand Command { get; private set; }
 
-        public void BindCommand(IGlobalCommand command)
+        public void BindCommand(IGblCommand command)
         {
             UnbindCommand();
             this.Command = command;
@@ -190,7 +190,7 @@ namespace Wing.Client.Sdk.Controls
             RefreshCommand();
         }
 
-        void Command_StateChanged(IGlobalCommand command)
+        void Command_StateChanged(IGblCommand command)
         {
             RefreshCommand();
         }

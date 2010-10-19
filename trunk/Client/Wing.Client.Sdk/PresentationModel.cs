@@ -4,6 +4,7 @@ using System.ComponentModel;
 using Wing.ServiceLocation;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations;
 
 namespace Wing.Client.Sdk
 {
@@ -18,7 +19,7 @@ namespace Wing.Client.Sdk
 
         protected void NotifyPropertyChanged(String propertyName)
         {
-            ServiceLocator.Current.GetInstance<ISyncContext>().Sync(() =>
+            VisualContext.Sync(() =>
             {
                 if (PropertyChanged != null)
                     PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -66,14 +67,16 @@ namespace Wing.Client.Sdk
             Errors.Clear();
         }
 
+        [Display(AutoGenerateField = false)]
         public Dictionary<string, string> Errors { get; private set; }
 
-        protected void RegisterObservableCollectionProperty<T>(ObservableCollection<T> collection, string propertyName)
+        protected void RegisterObservableCollectionProperty(INotifyCollectionChanged collection, string propertyName)
         {
             collection.CollectionChanged += new NotifyCollectionChangedEventHandler((sender, args) =>
             {
                 NotifyPropertyChanged(propertyName);
             });
+            NotifyPropertyChanged(propertyName);
         }
     }
 }

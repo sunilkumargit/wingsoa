@@ -7,7 +7,7 @@ namespace Wing.Client.Sdk
     public interface IPopupWindowPresenter : IViewPresenter
     {
         void CallbackSetWindowHandler(IPopupWindowHandler handler);
-        IPopupWindowHandler Handler { get; }
+        IPopupWindowHandler WindowHandler { get; }
     }
 
     public interface IPopupWindowPresenter<TModel> : IPopupWindowPresenter, IViewPresenter<TModel>

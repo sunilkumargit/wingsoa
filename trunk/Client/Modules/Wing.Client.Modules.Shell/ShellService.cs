@@ -24,7 +24,7 @@ namespace Wing.Client.Modules.Shell
         private INavigationHistoryService _navigationHistory;
         private ModalDialog _dialog;
 
-        public ShellService(IShellViewPresenter shellPresenter, IEventAggregator eventAggregator, INavigationHistoryService navigationHistory, IRootVisualManager rootVisualManager, ISyncContext syncContext)
+        public ShellService(IShellViewPresenter shellPresenter, IEventAggregator eventAggregator, INavigationHistoryService navigationHistory, IRootVisualManager rootVisualManager)
         {
             _presenters = new List<IViewPresenter>();
             _eventAggregator = eventAggregator;
@@ -32,7 +32,6 @@ namespace Wing.Client.Modules.Shell
             _visualManager = rootVisualManager;
             _navigationHistory = navigationHistory;
             _presentationModel = shellPresenter.Model;
-            _syncContext = syncContext;
             MainContentPresenter = new ShellMainContentPresenter((IShellView)shellPresenter.GetView(), shellPresenter.RegionManager);
         }
 
@@ -87,12 +86,12 @@ namespace Wing.Client.Modules.Shell
 
         public void StatusMessage(string message, params string[] values)
         {
-            _syncContext.Async(() => _presentationModel.StatusMessage = String.Format(message, values));
+            VisualContext.Async(() => _presentationModel.StatusMessage = String.Format(message, values));
         }
 
         public void Alert(String message)
         {
-            _syncContext.Async(() =>
+            VisualContext.Async(() =>
             {
                 if (_dialog == null)
                 {
@@ -119,18 +118,23 @@ namespace Wing.Client.Modules.Shell
 
         public void ShowPopup(IPopupWindowPresenter presenter)
         {
-            var dialog = new ModalDialog();
-            dialog.Caption = presenter.Caption;
-            dialog.DialogStyle = ModalDialogStyles.OK;
-            var windowPresenter = presenter as IPopupWindowPresenter;
-            if (windowPresenter != null)
-                windowPresenter.CallbackSetWindowHandler(new ModalDialogWindowHandler(dialog));
+            VisualContext.Async(() =>
+            {
+                var dialog = new ModalDialog();
+                dialog.Caption = presenter.Caption;
+                dialog.DialogStyle = ModalDialogStyles.OK;
+                dialog.Content = (UIElement)presenter.GetView();
+                var windowPresenter = presenter as IPopupWindowPresenter;
+                if (windowPresenter != null)
+                    windowPresenter.CallbackSetWindowHandler(new ModalDialogWindowHandler(dialog));
+                dialog.Show();
+            });
         }
 
 
         public void DisplayProgressBar(int max)
         {
-            _syncContext.Async(() =>
+            VisualContext.Async(() =>
                 {
                     _presentationModel.ProgressBarIsVisible = true;
                     _presentationModel.ProgressBarIsIndeterminate = false;
@@ -140,7 +144,7 @@ namespace Wing.Client.Modules.Shell
 
         public void DisplayWorkingBar()
         {
-            _syncContext.Async(() =>
+            VisualContext.Async(() =>
                 {
                     _presentationModel.ProgressBarIsVisible = true;
                     _presentationModel.ProgressBarIsIndeterminate = true;
@@ -149,27 +153,27 @@ namespace Wing.Client.Modules.Shell
 
         public void UpdateProgressBarRelative(int relative)
         {
-            _syncContext.Async(() => _presentationModel.ProgressValue += relative);
+            VisualContext.Async(() => _presentationModel.ProgressValue += relative);
         }
 
         public void UpdateProgressBarAbsolute(int value)
         {
-            _syncContext.Async(() => _presentationModel.ProgressValue = value);
+            VisualContext.Async(() => _presentationModel.ProgressValue = value);
         }
 
         public void HideProgressOrWorkingBar()
         {
-            _syncContext.Async(() => _presentationModel.ProgressBarIsVisible = false);
+            VisualContext.Async(() => _presentationModel.ProgressBarIsVisible = false);
         }
 
         public void Navigate(IViewPresenter viewPresenter)
         {
-            _syncContext.Async(() => MainContentPresenter.Navigate(viewPresenter));
+            VisualContext.Async(() => MainContentPresenter.Navigate(viewPresenter));
         }
 
         public void NavigateBack()
         {
-            _syncContext.Sync(() =>
+            VisualContext.Sync(() =>
             {
                 var previous = _navigationHistory.Pop();
                 if (previous != null)
@@ -180,21 +184,21 @@ namespace Wing.Client.Modules.Shell
         public IViewBagPresenter MainContentPresenter { get; private set; }
 
         // handler para o NavigateBack
-        private class ShellNavigateBackCommandHandler : IGlobalCommandHandler
+        private class ShellNavigateBackCommandHandler : IGblCommandHandler
         {
 
             #region IGlobalCommandHandler Members
 
-            public void QueryStatus(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled)
+            public void QueryStatus(IGblCommandQueryStatusContext ctx)
             {
-                status = GblCommandStatus.Enabled;
-                handled = true;
+                ctx.Status = GblCommandStatus.Enabled;
+                ctx.Handled = true;
             }
 
-            public void Execute(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+            public void Execute(IGblCommandExecuteContext ctx)
             {
-                execStatus = GblCommandExecStatus.Executed;
-                handled = true;
+                ctx.Status = GblCommandExecStatus.Executed;
+                ctx.Handled = true;
                 ServiceLocator.Current.GetInstance<IShellService>().NavigateBack();
             }
 
@@ -202,34 +206,44 @@ namespace Wing.Client.Modules.Shell
         }
 
         // handler para o NavigateTo
-        private class ShellNavigateToCommandHandler : IGlobalCommandHandler
+        private class ShellNavigateToCommandHandler : IGblCommandHandler
         {
 
             #region IGlobalCommandHandler Members
 
-            public void QueryStatus(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled)
+            public void QueryStatus(IGblCommandQueryStatusContext ctx)
             {
-                handled = true;
-                status = GblCommandStatus.Enabled;
+                ctx.Handled = true;
+                ctx.Status = GblCommandStatus.Enabled;
             }
 
-            public void Execute(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+            public void Execute(IGblCommandExecuteContext ctx)
             {
-                var presenter = parameter as IViewPresenter;
+                var presenter = ctx.Parameter as IViewPresenter;
                 if (presenter != null)
                 {
                     ServiceLocator.Current.GetInstance<IShellService>().Navigate(presenter);
-                    execStatus = GblCommandExecStatus.Executed;
-                    handled = true;
+                    ctx.Status = GblCommandExecStatus.Executed;
+                    ctx.Handled = true;
                 }
                 else
-                    execStatus = GblCommandExecStatus.Error;
+                    ctx.Status = GblCommandExecStatus.Error;
             }
 
             #endregion
         }
 
 
-        public ISyncContext _syncContext { get; set; }
+        public void DisplayWorkingStatus(string message, params string[] values)
+        {
+            this.DisplayWorkingBar();
+            this.StatusMessage(message);
+        }
+
+        public void HideWorkingStatus()
+        {
+            this.HideProgressOrWorkingBar();
+            this.StatusMessage("");
+        }
     }
 }

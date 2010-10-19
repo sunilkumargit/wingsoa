@@ -64,6 +64,8 @@ namespace Wing.Client.Sdk
                 throw new Exception("The presenter has a parent already.");
             Parent = parent;
         }
+
+        protected IShellService ShellService { get { return ServiceLocator.Current.GetInstance<IShellService>(); } }
     }
 
     public abstract class ViewPresenter<TModel> : ViewPresenter, IViewPresenter<TModel> where TModel : IViewPresentationModel

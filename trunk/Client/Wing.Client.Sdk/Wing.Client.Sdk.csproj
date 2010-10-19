@@ -48,11 +48,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />
     <Reference Include="mscorlib" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7" />
@@ -127,14 +132,16 @@
     <Compile Include="Events\UserLoginEventArgs.cs" />
     <Compile Include="Services\DelegateCommandHandler.cs" />
     <Compile Include="Services\GblCommandUIType.cs" />
+    <Compile Include="Services\IGblCommandExecuteContext.cs" />
+    <Compile Include="Services\IGblCommandQueryStatusContext.cs" />
     <Compile Include="WorkContext.cs" />
     <Compile Include="SdkInitializer.cs" />
     <Compile Include="Services\GblCommandExecStatus.cs" />
     <Compile Include="Services\GblCommandStatus.cs" />
-    <Compile Include="Services\GlobalCommand.cs" />
-    <Compile Include="Services\IGlobalCommandHandler.cs" />
-    <Compile Include="Services\IGlobalCommandsManager.cs" />
-    <Compile Include="Services\IGlobalCommand.cs" />
+    <Compile Include="Services\GblCommand.cs" />
+    <Compile Include="Services\IGblCommandHandler.cs" />
+    <Compile Include="Services\IGblCommandsManager.cs" />
+    <Compile Include="Services\IGblCommand.cs" />
     <Compile Include="Services\NavigateCommandHandler.cs" />
     <Compile Include="Services\SyncContextService.cs" />
     <Compile Include="ShellCommandsNames.cs" />
