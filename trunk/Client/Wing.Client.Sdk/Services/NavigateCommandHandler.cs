@@ -35,13 +35,13 @@ namespace Wing.Client.Sdk.Services
         }
 
 
-        public void QueryStatus(IGlobalCommand command, object parameter, ref GblCommandStatus status, ref bool handled)
+        public void QueryStatus(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled)
         {
             status = GblCommandStatus.Enabled;
             handled = true;
         }
 
-        public void Execute(IGlobalCommand command, object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+        public void Execute(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
         {
             var shellService = ServiceLocator.Current.GetInstance<IShellService>();
             if (_presenter != null)

@@ -21,18 +21,22 @@ namespace Wing.Client.Sdk.Services
         private ObservableCollection<IGlobalCommandHandler> _handlers = new ObservableCollection<IGlobalCommandHandler>();
         private ReadOnlyObservableCollection<IGlobalCommandHandler> _handlersReadOnly;
 
-        public GlobalCommand(String name, String caption, String toolTip)
+        public GlobalCommand(String name, String caption, GblCommandUIType uiType, String iconSource, String toolTip)
         {
             Assert.NullArgument(name, "name");
             _handlersReadOnly = new ReadOnlyObservableCollection<IGlobalCommandHandler>(_handlers);
             Name = name;
             Caption = caption;
             Tooltip = Tooltip;
+            IconSource = iconSource;
+            UIType = uiType;
         }
 
         public string Name { get; private set; }
         public string Tooltip { get; private set; }
         public string Caption { get; private set; }
+        public string IconSource { get; private set; }
+        public GblCommandUIType UIType { get; private set; }
 
         public void AddHandler(IGlobalCommandHandler handler)
         {
@@ -54,7 +58,7 @@ namespace Wing.Client.Sdk.Services
             status = GblCommandStatus.Enabled;
             var en = _handlers.GetEnumerator();
             while (en.MoveNext() && !handled)
-                en.Current.QueryStatus(this, parameter, ref status, ref handled);
+                en.Current.QueryStatus(this, ref parameter, ref status, ref handled);
         }
 
         public GblCommandStatus QueryStatus(Object parameter = null)
@@ -78,7 +82,7 @@ namespace Wing.Client.Sdk.Services
                 {
                     var en = _handlers.GetEnumerator();
                     while (en.MoveNext() && !_handled)
-                        en.Current.Execute(this, parameter, ref _execStatus, ref _handled, ref _outMessage);
+                        en.Current.Execute(this, ref parameter, ref _execStatus, ref _handled, ref _outMessage);
                 });
                 handled = _handled;
                 execStatus = _execStatus;

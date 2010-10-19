@@ -14,7 +14,7 @@ namespace Wing.Client.Sdk.Services
 {
     public interface IGlobalCommandsManager
     {
-        IGlobalCommand CreateCommand(String name, String caption = "", String Tooltip = "");
+        IGlobalCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "");
         void RemoveCommand(String name);
         IGlobalCommand GetCommand(String name);
         ReadOnlyCollection<IGlobalCommand> Commands { get; }

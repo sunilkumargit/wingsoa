@@ -41,11 +41,27 @@ namespace Wing.Client.Sdk
             return command;
         }
 
-        public static IGlobalCommand AddNavigateHandler<TPresenterType, TParentPresenterType>(this IGlobalCommand command) 
+        public static IGlobalCommand AddNavigateHandler<TPresenterType, TParentPresenterType>(this IGlobalCommand command)
             where TPresenterType : IViewPresenter
             where TParentPresenterType : IViewBagPresenter
         {
             command.AddNavigateHandler(typeof(TPresenterType), typeof(TParentPresenterType));
+            return command;
+        }
+
+        public static IGlobalCommand AddDelegateHandler(this IGlobalCommand command, CommandExecuteDelegate executeDelegate, CommandQueryStatusDelegate queryStatusDelegate)
+        {
+            command.AddHandler(new DelegateCommandHandler(queryStatusDelegate, executeDelegate));
+            return command;
+        }
+
+        public static IGlobalCommand AddDelegateHandler(this IGlobalCommand command, CommandExecuteDelegate executeDelegate)
+        {
+            command.AddHandler(new DelegateCommandHandler(
+                new CommandQueryStatusDelegate((IGlobalCommand cmd, ref object parameter, ref GblCommandStatus status, ref bool handled) =>
+                {
+                    status = GblCommandStatus.Enabled;
+                }), executeDelegate));
             return command;
         }
 

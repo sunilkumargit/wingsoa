@@ -17,6 +17,8 @@ namespace Wing.Client.Sdk.Services
         String Name { get; }
         String Tooltip { get; }
         String Caption { get; }
+        String IconSource { get; }
+        GblCommandUIType UIType { get; }
         void QueryStatus(Object parameter, ref GblCommandStatus status);
         GblCommandStatus QueryStatus(Object parameter = null);
         void Execute(Object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage);

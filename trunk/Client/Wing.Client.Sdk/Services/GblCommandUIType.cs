@@ -12,10 +12,8 @@ using System.Collections.ObjectModel;
 
 namespace Wing.Client.Sdk.Services
 {
-    public enum GblCommandStatus
+    public enum GblCommandUIType
     {
-        Enabled,
-        Disabled,
-        NotSupported
+        Button
     }
 }

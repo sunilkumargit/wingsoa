@@ -185,13 +185,13 @@ namespace Wing.Client.Modules.Shell
 
             #region IGlobalCommandHandler Members
 
-            public void QueryStatus(IGlobalCommand command, object parameter, ref GblCommandStatus status, ref bool handled)
+            public void QueryStatus(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled)
             {
                 status = GblCommandStatus.Enabled;
                 handled = true;
             }
 
-            public void Execute(IGlobalCommand command, object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+            public void Execute(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
             {
                 execStatus = GblCommandExecStatus.Executed;
                 handled = true;
@@ -207,13 +207,13 @@ namespace Wing.Client.Modules.Shell
 
             #region IGlobalCommandHandler Members
 
-            public void QueryStatus(IGlobalCommand command, object parameter, ref GblCommandStatus status, ref bool handled)
+            public void QueryStatus(IGlobalCommand command, ref object parameter, ref GblCommandStatus status, ref bool handled)
             {
                 handled = true;
                 status = GblCommandStatus.Enabled;
             }
 
-            public void Execute(IGlobalCommand command, object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
+            public void Execute(IGlobalCommand command, ref object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage)
             {
                 var presenter = parameter as IViewPresenter;
                 if (presenter != null)

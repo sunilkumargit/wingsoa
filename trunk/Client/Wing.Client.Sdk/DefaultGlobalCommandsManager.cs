@@ -25,11 +25,11 @@ namespace Wing.Client.Sdk
             _commandsListReadOnly = new ReadOnlyObservableCollection<IGlobalCommand>(_commandsList);
         }
 
-        public IGlobalCommand CreateCommand(String name, String caption = "", String toolTip = "")
+        public IGlobalCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "")
         {
             if (GetCommand(name) != null)
                 throw new Exception("Já existe um commando com este nome");
-            var result = new GlobalCommand(name, caption, toolTip);
+            var result = new GlobalCommand(name, caption, uiType, iconSource, tooltip);
             _commands[name] = result;
             _commandsList.Add(result);
             return result;

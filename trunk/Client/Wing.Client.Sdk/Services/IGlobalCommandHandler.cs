@@ -14,7 +14,7 @@ namespace Wing.Client.Sdk.Services
 {
     public interface IGlobalCommandHandler
     {
-        void QueryStatus(IGlobalCommand command, Object parameter, ref GblCommandStatus status, ref bool handled);
-        void Execute(IGlobalCommand command, Object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage);
+        void QueryStatus(IGlobalCommand command, ref Object parameter, ref GblCommandStatus status, ref bool handled);
+        void Execute(IGlobalCommand command, ref Object parameter, ref GblCommandExecStatus execStatus, ref bool handled, ref string outMessage);
     }
 }

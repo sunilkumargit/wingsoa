@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,11 +14,11 @@ using Flex.BusinessIntelligence.Data;
 
 namespace Flex.BusinessIntelligence.WingClient.Views.CubeProperties
 {
-    public class CubePropertiesView : HeaderedPage
+    public class CubePropertiesPresenter : PopupWindowPresenter<CubePropertiesPresentationModel>
     {
-        public CubePropertiesView()
+        public CubePropertiesPresenter()
+            : base(new CubePropertiesPresentationModel() { Caption = "Propriedades do cubo" }, new CubePropertiesView(), null)
         {
-
         }
     }
 }

@@ -20,12 +20,11 @@ namespace Wing.Client.Sdk
         public static void SetCommandsManager(IGlobalCommandsManager commandManager)
         {
             _cmdMngr = commandManager;
-
         }
 
-        public static IGlobalCommand CreateCommand(string name, string caption = "", string Tooltip = "")
+        public static IGlobalCommand CreateCommand(String name, String caption = "", GblCommandUIType uiType = GblCommandUIType.Button, String iconSource = "", String tooltip = "")
         {
-            return _cmdMngr.CreateCommand(name, caption, Tooltip);
+            return _cmdMngr.CreateCommand(name, caption, uiType, iconSource, tooltip);
         }
 
         public static void RemoveCommand(string name)
