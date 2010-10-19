@@ -81,7 +81,7 @@ namespace Wing.Client.Sdk.Controls
             if (_bindingPending)
                 return;
             _bindingPending = true;
-            VisualContext.DelayAsync(TimeSpan.FromMilliseconds(1000), () =>
+            VisualContext.DelayAsync(TimeSpan.FromMilliseconds(2000), () =>
             {
                 _bindingPending = false;
                 BindDataSource();

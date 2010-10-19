@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace Wing.Client.Sdk
 {
-    public interface ISyncContext
+    public interface ISyncBroker
     {
         TResult Sync<TResult>(Func<TResult> callback);
         TResult Sync<T, TResult>(Func<T, TResult> callback, T p1);

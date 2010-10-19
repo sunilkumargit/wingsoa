@@ -18,7 +18,7 @@ namespace Wing.UnityServiceLocator
 
         private TResult InvokeContainer<TResult>(Func<TResult> action)
         {
-            return _container.Resolve<ISyncContext>().Sync<TResult>(action);
+            return _container.Resolve<ISyncBroker>().Sync<TResult>(action);
         }
 
         #region IServiceLocator Members

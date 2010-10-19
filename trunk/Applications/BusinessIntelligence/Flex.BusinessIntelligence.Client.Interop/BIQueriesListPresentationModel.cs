@@ -16,24 +16,20 @@ using System.Collections.Specialized;
 
 namespace Flex.BusinessIntelligence.Client.Interop
 {
-    public class BICubesConfigPresentationModel : ViewPresentationModel
+    public class BIQueriesListPresentationModel : ViewPresentationModel
     {
-        private ObservableCollection<CubeRegistrationInfo> _cubes;
+        private ObservableCollection<CubeQueryInfo> _queries;
+        public BIQueriesListPresentationModel()
+            : base("Consultas", "Selecione uma consulta da lista ou cria uma nova consultando um cubo diretamente") { }
 
-        public BICubesConfigPresentationModel()
-            : base("Cubos", "Cubos registrados no Business Intelligence")
+        public ObservableCollection<CubeQueryInfo> Queries
         {
-        }
-
-
-        public ObservableCollection<CubeRegistrationInfo> Cubes
-        {
-            get { return _cubes; }
+            get { return _queries; }
             set
             {
-                _cubes = value;
-                if (_cubes != null)
-                    RegisterObservableCollectionProperty(_cubes, "Cubes");
+                _queries = value;
+                if (_queries != null)
+                    RegisterObservableCollectionProperty(_queries, "Queries");
             }
         }
     }

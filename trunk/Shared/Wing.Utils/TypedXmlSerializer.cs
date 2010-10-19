@@ -34,9 +34,11 @@ namespace Wing.Utils
 
         public void SerializeToFile(String path, TType instance)
         {
-            StreamWriter writer = new StreamWriter(path);
-            _serializer.Serialize(writer, instance);
-            writer.Close();
+            var sb = new StringBuilder();
+            var stream = new StringWriter(sb);
+            _serializer.Serialize(stream, instance);
+            stream.Close();
+            File.WriteAllText(path, sb.ToString());
         }
 
         public String SerializeToString(TType instance)

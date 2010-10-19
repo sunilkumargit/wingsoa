@@ -12,12 +12,12 @@ using System.Windows.Threading;
 
 namespace Wing.Client.Sdk.Services
 {
-    public class SyncContextService : ISyncContext
+    public class SyncBrokerService : ISyncBroker
     {
         private DispatcherSynchronizationContext _context;
         Dispatcher _dispatcher;
 
-        public SyncContextService(Dispatcher dispatcher)
+        public SyncBrokerService(Dispatcher dispatcher)
         {
             _dispatcher = dispatcher;
             _context = new DispatcherSynchronizationContext(dispatcher);
@@ -105,8 +105,8 @@ namespace Wing.Client.Sdk.Services
                 var timer = new DispatcherTimer() { Interval = delay };
                 timer.Tick += new EventHandler((sender, args) =>
                 {
-                    action();
                     timer.Stop();
+                    action();
                 });
                 timer.Start();
             });

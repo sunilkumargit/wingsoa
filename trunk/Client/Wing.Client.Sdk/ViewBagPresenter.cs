@@ -17,7 +17,7 @@ namespace Wing.Client.Sdk
         private IEventAggregator _eventAggregator;
         private INavigationHistoryService _history;
         private IRegionManager _regionManager;
-        private ISyncContext _syncContext;
+        private ISyncBroker _syncContext;
 
         protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, String contentRegionName)
             : base(model, view, regionManager)
@@ -26,7 +26,7 @@ namespace Wing.Client.Sdk
             _eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             _readOnlyCollection = new ReadOnlyObservableCollection<IViewPresenter>(_views);
             _regionManager = regionManager ?? ServiceLocator.Current.GetInstance<IRegionManager>();
-            _syncContext = ServiceLocator.Current.GetInstance<ISyncContext>();
+            _syncContext = ServiceLocator.Current.GetInstance<ISyncBroker>();
             _contentRegion = contentRegionName;
             regionManager.Regions[_contentRegion].ActiveViews.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(ActiveViews_CollectionChanged);
         }

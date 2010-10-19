@@ -76,6 +76,8 @@
       <DependentUpon>BIHomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\IBIHomeView.cs" />
+    <Compile Include="Views\QueriesList\BIQueriesListPresenter.cs" />
+    <Compile Include="Views\QueriesList\BIQueriesListView.cs" />
     <Compile Include="Views\RegisterCube\CubeRegisterPresentationModel.cs" />
     <Compile Include="Views\RegisterCube\CubeRegisterPresenter.cs" />
     <Compile Include="Views\RegisterCube\CubeRegisterView.cs" />

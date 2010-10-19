@@ -58,6 +58,7 @@
     <Compile Include="BICommandNames.cs" />
     <Compile Include="BICubesConfigPresentationModel.cs" />
     <Compile Include="BIMainMenuNames.cs" />
+    <Compile Include="BIQueriesListPresentationModel.cs" />
     <Compile Include="IBIHomePresenter.cs" />
     <Compile Include="IBIRootPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

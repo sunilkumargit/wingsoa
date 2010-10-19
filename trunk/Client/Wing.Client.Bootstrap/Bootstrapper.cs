@@ -29,8 +29,8 @@ namespace Wing.Client.Bootstrap
             //registrar o ServiceLocator
             ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(() => _serviceLocator));
 
-            ServiceLocator.Current.Register<ISyncContext>(new SyncContextService(Application.Current.RootVisual.Dispatcher));
-            VisualContext.SetSyncService(ServiceLocator.Current.GetInstance<ISyncContext>());
+            ServiceLocator.Current.Register<ISyncBroker>(new SyncBrokerService(Application.Current.RootVisual.Dispatcher));
+            VisualContext.SetSyncBroker(ServiceLocator.Current.GetInstance<ISyncBroker>());
 
             //registrar o locator
             ServiceLocator.Current.Register<IServiceLocator>(_serviceLocator);

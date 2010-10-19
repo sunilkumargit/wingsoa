@@ -30,7 +30,6 @@ namespace Flex.BusinessIntelligence.Server.Core
 
             //registrar os servicos Soa
             ISoaServicesManager servicesManager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
-
             servicesManager.RegisterService(new SoaServiceDescriptor("CubeInfoProvider", typeof(ICubeInfoProviderService), typeof(CubeInfoProviderService), true), true);
        
         }

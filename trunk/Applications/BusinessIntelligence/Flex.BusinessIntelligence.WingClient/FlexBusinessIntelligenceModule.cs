@@ -14,6 +14,7 @@ using Wing.Soa.Interop;
 using Flex.BusinessIntelligence.WingClient.Views.CubesConfig;
 using Flex.BusinessIntelligence.WingClient.Views.CubeProperties;
 using Flex.BusinessIntelligence.WingClient.Views.RegisterCube;
+using Flex.BusinessIntelligence.WingClient.Views.QueriesList;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -46,7 +47,8 @@ namespace Flex.BusinessIntelligence.WingClient
                 .AddNavigateHandler<BIHomePresenter>();
 
             //consultas
-            var navigateQueriesCommand = CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas");
+            var navigateQueriesCommand = CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas")
+                .AddNavigateHandler<BIQueriesListPresenter, BIHomePresenter>();
 
             //cubos
             var navigateConfigCubosCommand = CommandsManager.CreateCommand(BICommandNames.NavigateCubes, "Cubos")
@@ -97,26 +99,9 @@ namespace Flex.BusinessIntelligence.WingClient
             // registrar os menus iniciais e vincula-los aos comandos globais
             var homeMenu = ServiceLocator.Current.GetInstance<IBIHomeView>().MainMenu;
             homeMenu.CreateItem(BIMainMenuNames.Home, CommandsManager.GetCommand(BICommandNames.NavigateHome));
+            homeMenu.CreateItem(BIMainMenuNames.Queries, CommandsManager.GetCommand(BICommandNames.NavigateQueries));
             homeMenu.CreateItem(BIMainMenuNames.Config, "Configurações").RedirectSelectionToFirstChild = true;
             homeMenu.CreateChildItem(BIMainMenuNames.Cubes, BIMainMenuNames.Config, CommandsManager.GetCommand(BICommandNames.NavigateCubes));
-
-            WorkContext.Async(() =>
-            {
-                SoaClientManager.InvokeService<ICubeInfoProviderService>((service, broker) =>
-                {
-                    broker.CallSync<OperationResult, CubeRegistrationInfo>(service.BeginSaveCubeInfo, service.EndSaveCubeInfo,
-                        new CubeRegistrationInfo()
-                            {
-                                CatalogName = "A",
-                                CubeId = Guid.NewGuid(),
-                                CubeName = DateTime.Now.ToString(),
-                                Description = "Teste",
-                                Password = "C",
-                                ServerName = "D",
-                                UserName = "E"
-                            });
-                });
-            });
         }
     }
 

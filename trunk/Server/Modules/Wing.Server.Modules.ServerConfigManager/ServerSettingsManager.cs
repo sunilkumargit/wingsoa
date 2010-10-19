@@ -13,6 +13,7 @@ namespace Wing.Server.Modules.ServerConfigManager
 {
     public class ServerSettingsManager : SettingsManagerBase
     {
-        public ServerSettingsManager(BootstrapSettings bootstrapSettings) : base(Path.Combine(bootstrapSettings.ServerDataStorePath, "Settings")) { }
+        public ServerSettingsManager(BootstrapSettings bootstrapSettings) 
+            : base(Path.Combine(bootstrapSettings.ServerDataStorePath, "Settings")) { }
     }
 }

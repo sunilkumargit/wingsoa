@@ -121,7 +121,7 @@
     <Compile Include="IShellPresentationModel.cs" />
     <Compile Include="IShellView.cs" />
     <Compile Include="IShellViewPresenter.cs" />
-    <Compile Include="ISyncContext.cs" />
+    <Compile Include="ISyncBroker.cs" />
     <Compile Include="IViewBagPresenter.cs" />
     <Compile Include="IViewPresentationModel.cs" />
     <Compile Include="IShellService.cs" />
@@ -143,7 +143,7 @@
     <Compile Include="Services\IGblCommandsManager.cs" />
     <Compile Include="Services\IGblCommand.cs" />
     <Compile Include="Services\NavigateCommandHandler.cs" />
-    <Compile Include="Services\SyncContextService.cs" />
+    <Compile Include="Services\SyncBrokerService.cs" />
     <Compile Include="ShellCommandsNames.cs" />
     <Compile Include="ShellRegionNames.cs" />
     <Compile Include="Services\ILoginService.cs" />

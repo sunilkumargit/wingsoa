@@ -22,8 +22,6 @@ namespace Wing.Server.Modules.ServerConfigManager
             ServiceLocator.Current.Register<ISettingsManager, ServerSettingsManager>(true);
             var service = ServiceLocator.Current.GetInstance<ISettingsManager>();
             service.GetSection("ServerSettings", "StartUp").Write("Last", DateTime.Now);
-
         }
-
     }
 }

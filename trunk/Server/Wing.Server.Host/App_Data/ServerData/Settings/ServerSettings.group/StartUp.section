@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-16"?>
 <config-section xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" section-name="StartUp">
   <property name="Last">
-    <value xsi:type="xsd:dateTime">2010-10-02T12:38:08.708054-03:00</value>
+    <value xsi:type="xsd:dateTime">2010-10-19T18:41:15.0969179-02:00</value>
   </property>
 </config-section>
