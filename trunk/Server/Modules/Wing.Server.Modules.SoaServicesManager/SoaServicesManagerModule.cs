@@ -30,15 +30,15 @@ namespace Wing.Server.Modules.SoaServicesManager
             builder.Strategies.Add(new CreateServiceHostStrategy());
             builder.Strategies.Add(new CreateBasicHttpBindingStrategy());
 
-            ServiceLocator.Current.Register<ISoaServiceHostBuilder>(builder);
-            ServiceLocator.Current.Register<ISoaServicesManager, SoaServicesManager>(true);
+            ServiceLocator.Register<ISoaServiceHostBuilder>(builder);
+            ServiceLocator.Register<ISoaServicesManager, SoaServicesManager>(true);
         }
 
         public override void Initialized()
         {
             base.Initialized();
             //registrar o serviço provedor de metadados ao cliente
-            var manager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
+            var manager = ServiceLocator.GetInstance<ISoaServicesManager>();
             manager.RegisterService(new SoaServiceDescriptor("SoaMetadataProvider", typeof(ISoaMetadataProviderService), typeof(SoaMetadataProviderService), true), true);
         }
     }

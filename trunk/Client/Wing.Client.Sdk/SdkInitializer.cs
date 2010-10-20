@@ -17,7 +17,7 @@ namespace Wing.Client.Sdk
     {
         public static void Initialize()
         {
-            var serviceLocator = ServiceLocator.Current;
+            var serviceLocator = ServiceLocator.GetCurrent();
 
             WorkContext.Start();
 

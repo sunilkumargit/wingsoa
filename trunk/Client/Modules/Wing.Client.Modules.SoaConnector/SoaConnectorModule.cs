@@ -33,7 +33,7 @@ namespace Wing.Client.Modules.SoaConnector
             _channelFactoryFactory = new SoaDefaultChannelFactoryFactory();
             SoaClientManager.ChannelManager.ChannelFactoryFactories.Add(_channelFactoryFactory);
             //invocar o servico para retornar as informações de conexão
-            var settings = ServiceLocator.Current.GetInstance<BootstrapSettings>();
+            var settings = ServiceLocator.GetInstance<BootstrapSettings>();
             var factory = new ChannelFactory<ISoaMetadataProviderService>(new BasicHttpBinding(), new EndpointAddress(settings.SoaMetadataProviderUri));
             var channel = factory.CreateChannel();
             var asyncResult = channel.BeginGetServicesConnectionInfo(null, null);

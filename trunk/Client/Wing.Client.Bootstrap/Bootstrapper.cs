@@ -19,62 +19,96 @@ namespace Wing.Client.Bootstrap
 {
     public class Bootstrapper : IBootstrapper
     {
+        private ISplashUI _splashUi;
 
         #region IBootstrapper Members
 
         public void Run(BootstrapSettings settings)
         {
-            settings.Splash.DisplayMessage("Iniciando o bootstrapper...");
+            settings.Splash.DisplayStatusMessage("Iniciando...");
             var _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
             //registrar o ServiceLocator
             ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(() => _serviceLocator));
 
-            ServiceLocator.Current.Register<ISyncBroker>(new SyncBrokerService(Application.Current.RootVisual.Dispatcher));
-            VisualContext.SetSyncBroker(ServiceLocator.Current.GetInstance<ISyncBroker>());
+            ServiceLocator.Register<ISyncBroker>(new SyncBrokerService(Application.Current.RootVisual.Dispatcher));
+            VisualContext.SetSyncBroker(ServiceLocator.GetInstance<ISyncBroker>());
 
             //registrar o locator
-            ServiceLocator.Current.Register<IServiceLocator>(_serviceLocator);
+            ServiceLocator.Register<IServiceLocator>(_serviceLocator);
 
-            ServiceLocator.Current.Register<BootstrapSettings>(settings);
+            ServiceLocator.Register<BootstrapSettings>(settings);
 
-            ServiceLocator.Current.Register<ISplashUI>(settings.Splash);
+            ServiceLocator.Register<ISplashUI>(settings.Splash);
+            _splashUi = settings.Splash;
 
             //registrar o logger
-            ServiceLocator.Current.Register<ILogger, DebugLogger>(true);
+            ServiceLocator.Register<ILogger, DebugLogger>(true);
 
             //registrar os servicos de modulos
-            ServiceLocator.Current.Register<IModuleCatalog>(new InMemoryModuleCatalog(settings.Assemblies));
+            ServiceLocator.Register<IModuleCatalog>(new InMemoryModuleCatalog(settings.Assemblies));
 
-            ServiceLocator.Current.Register<IModuleInitializer, ScheduledModuleInitializer>(true);
-            ServiceLocator.Current.Register<IModuleManager, ModuleManager>(true);
+            ServiceLocator.Register<IModuleInitializer, ScheduledModuleInitializer>(true);
+            ServiceLocator.Register<IModuleManager, ModuleManager>(true);
 
             //agregador de eventos
-            ServiceLocator.Current.Register<IEventAggregator, EventAggregator>(true);
+            ServiceLocator.Register<IEventAggregator, EventAggregator>(true);
 
             //controlador do root visual
-            ServiceLocator.Current.Register<IRootVisualManager>(settings.RootVisualManager);
+            ServiceLocator.Register<IRootVisualManager>(settings.RootVisualManager);
 
             //composite
-            ServiceLocator.Current.Register<RegionAdapterMappings, RegionAdapterMappings>(true);
-            ServiceLocator.Current.Register<IRegionManager, RegionManager>(true);
-            ServiceLocator.Current.Register<IRegionViewRegistry, RegionViewRegistry>(true);
-            ServiceLocator.Current.Register<IRegionBehaviorFactory, RegionBehaviorFactory>(true);
+            ServiceLocator.Register<RegionAdapterMappings, RegionAdapterMappings>(true);
+            ServiceLocator.Register<IRegionManager, RegionManager>(true);
+            ServiceLocator.Register<IRegionViewRegistry, RegionViewRegistry>(true);
+            ServiceLocator.Register<IRegionBehaviorFactory, RegionBehaviorFactory>(true);
 
             ConfigureRegionAdapterMappings();
             ConfigureDefaultRegionBehaviors();
             RegisterFrameworkExceptionTypes();
 
-            ServiceLocator.Current.Register<IRegionManager, RegionManager>();
+            ServiceLocator.Register<IRegionManager, RegionManager>();
 
             SdkInitializer.Initialize();
 
-            //carregar os modulos
-            settings.Splash.DisplayMessage("Carregando os módulos...");
-
-            ThreadPool.QueueUserWorkItem((a) =>
+            WorkContext.Async(() =>
             {
-                ServiceLocator.Current.GetInstance<IModuleManager>().Run();
-            }, null);
+                // inscrever-se nos eventos do module manager para informar o usuário do andamento da inicialização
+                var moduleManager = ServiceLocator.GetInstance<IModuleManager>();
+
+                moduleManager.BeginLoadModules += new EventHandler<ModuleManagerEventArgs>(moduleManager_BeginLoadModules);
+                moduleManager.ModuleInitialized += new EventHandler<ModuleManagerEventArgs>(moduleManager_ModuleInitialized);
+                moduleManager.ModuleRunning += new EventHandler<ModuleManagerEventArgs>(moduleManager_ModuleRunning);
+                moduleManager.EndLoadModules += new EventHandler<ModuleManagerEventArgs>(moduleManager_EndLoadModules);
+
+                moduleManager.Run();
+            });
+        }
+
+        void moduleManager_EndLoadModules(object sender, ModuleManagerEventArgs e)
+        {
+            // retirar as inscrições nos eventos
+            var moduleManager = ServiceLocator.GetInstance<IModuleManager>();
+            moduleManager.BeginLoadModules -= moduleManager_BeginLoadModules;
+            moduleManager.ModuleInitialized -= moduleManager_ModuleInitialized;
+            moduleManager.ModuleRunning -= moduleManager_ModuleRunning;
+            moduleManager.EndLoadModules -= moduleManager_EndLoadModules;
+        }
+
+        void moduleManager_ModuleRunning(object sender, ModuleManagerEventArgs e)
+        {
+            _splashUi.DisplayStatusMessage(e.CurrentModule.ModuleName + " pronto");
+            _splashUi.UpdateProgressBar(0, 1);
+        }
+
+        void moduleManager_ModuleInitialized(object sender, ModuleManagerEventArgs e)
+        {
+            _splashUi.DisplayStatusMessage(e.CurrentModule.ModuleName + " iniciado");
+            _splashUi.UpdateProgressBar(0, 1);
+        }
+
+        void moduleManager_BeginLoadModules(object sender, ModuleManagerEventArgs e)
+        {
+            _splashUi.DisplayProgressBar(e.Modules.Length * 2);  //  * 2 pois o progresso será informado na inicialização do modulo e também quando este estiver pronto.
         }
 
         #endregion
@@ -87,20 +121,20 @@ namespace Wing.Client.Bootstrap
         /// <returns>The <see cref="RegionAdapterMappings"/> instance containing all the mappings.</returns>
         protected virtual RegionAdapterMappings ConfigureRegionAdapterMappings()
         {
-            RegionAdapterMappings regionAdapterMappings = ServiceLocator.Current.GetInstance<RegionAdapterMappings>();
+            RegionAdapterMappings regionAdapterMappings = ServiceLocator.GetInstance<RegionAdapterMappings>();
             if (regionAdapterMappings != null)
             {
 #if SILVERLIGHT
-                regionAdapterMappings.RegisterMapping(typeof(TabControl), ServiceLocator.Current.GetInstance<TabControlRegionAdapter>());
+                regionAdapterMappings.RegisterMapping(typeof(TabControl), ServiceLocator.GetInstance<TabControlRegionAdapter>());
 #endif
                 regionAdapterMappings.RegisterMapping(typeof(Selector),
-                    ServiceLocator.Current.GetInstance<SelectorRegionAdapter>());
+                    ServiceLocator.GetInstance<SelectorRegionAdapter>());
 
                 regionAdapterMappings.RegisterMapping(typeof(ItemsControl),
-                    ServiceLocator.Current.GetInstance<ItemsControlRegionAdapter>());
+                    ServiceLocator.GetInstance<ItemsControlRegionAdapter>());
 
                 regionAdapterMappings.RegisterMapping(typeof(ContentControl),
-                    ServiceLocator.Current.GetInstance<ContentControlRegionAdapter>());
+                    ServiceLocator.GetInstance<ContentControlRegionAdapter>());
             }
 
             return regionAdapterMappings;
@@ -112,7 +146,7 @@ namespace Wing.Client.Bootstrap
         /// </summary>
         protected virtual IRegionBehaviorFactory ConfigureDefaultRegionBehaviors()
         {
-            var defaultRegionBehaviorTypesDictionary = ServiceLocator.Current.GetInstance<IRegionBehaviorFactory>();
+            var defaultRegionBehaviorTypesDictionary = ServiceLocator.GetInstance<IRegionBehaviorFactory>();
 
             if (defaultRegionBehaviorTypesDictionary != null)
             {

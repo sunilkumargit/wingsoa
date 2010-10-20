@@ -23,13 +23,13 @@ namespace Flex.BusinessIntelligence.Server.Core
             base.Initialize();
 
             // registrar as entidades de cubo
-            IServerEntityStoreService entityStore = ServiceLocator.Current.GetInstance<IServerEntityStoreService>();
+            IServerEntityStoreService entityStore = ServiceLocator.GetInstance<IServerEntityStoreService>();
             entityStore.RegisterEntity<CubeRegistrationInfo>();
             entityStore.RegisterEntity<CubeQueryGroup>();
             entityStore.RegisterEntity<CubeQueryInfo>();
 
             //registrar os servicos Soa
-            ISoaServicesManager servicesManager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
+            ISoaServicesManager servicesManager = ServiceLocator.GetInstance<ISoaServicesManager>();
             servicesManager.RegisterService(new SoaServiceDescriptor("CubeInfoProvider", typeof(ICubeInfoProviderService), typeof(CubeInfoProviderService), true), true);
        
         }

@@ -17,11 +17,11 @@ namespace Wing.Client.Modules.Shell
         public override void Initialize()
         {
             //criar o view do shell aqui.
-            ServiceLocator.Current.Register<INavigationHistoryService, NavigationHistoryService>(true);
-            ServiceLocator.Current.Register<IShellView, ShellView>(true);
-            ServiceLocator.Current.Register<IShellPresentationModel, ShellPresentationModel>(true);
-            ServiceLocator.Current.Register<IShellViewPresenter, ShellViewPresenter>(true);
-            ServiceLocator.Current.Register<IShellService, ShellService>(true);
+            ServiceLocator.Register<INavigationHistoryService, NavigationHistoryService>(true);
+            ServiceLocator.Register<IShellView, ShellView>(true);
+            ServiceLocator.Register<IShellPresentationModel, ShellPresentationModel>(true);
+            ServiceLocator.Register<IShellViewPresenter, ShellViewPresenter>(true);
+            ServiceLocator.Register<IShellService, ShellService>(true);
 
             //crior os comandos de NavigateBack e Home
             var navigateBack = CommandsManager.CreateCommand(ShellCommandsNames.NavigateBack, "Voltar");
@@ -32,7 +32,7 @@ namespace Wing.Client.Modules.Shell
         public override void Initialized()
         {
             //iniciar o controlador do shell;
-            var shell = ServiceLocator.Current.GetInstance<IShellService>();
+            var shell = ServiceLocator.GetInstance<IShellService>();
             if (shell is ShellService)
             {
                 ((ShellService)shell).StartShell();

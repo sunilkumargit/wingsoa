@@ -115,8 +115,7 @@ namespace Wing.Server.Modules.ServerStorage
             }
             catch (System.Exception ex)
             {
-                ServiceLocator.Current
-                    .GetInstance<ILogger>()
+                ServiceLocator.GetInstance<ILogger>()
                     .LogException("Falha ao iniciar o factory de sessions do hibernate", ex, Priority.High);
                 throw;
             }

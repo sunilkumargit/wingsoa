@@ -14,6 +14,7 @@
 // organization, product, domain name, email address, logo, person,
 // places, or events is intended or should be inferred.
 //===================================================================================
+using System;
 namespace Wing.Modularity
 {
     /// <summary>
@@ -31,5 +32,16 @@ namespace Wing.Modularity
         /// </summary>
         /// <param name="moduleName">Name of the module requested for initialization.</param>
         void LoadModule(string moduleName);
+
+        event EventHandler<ModuleManagerEventArgs> BeginLoadModules;
+        event EventHandler<ModuleManagerEventArgs> EndLoadModules;
+        event EventHandler<ModuleManagerEventArgs> ModuleInitialized;
+        event EventHandler<ModuleManagerEventArgs> ModuleRunning;
+    }
+
+    public class ModuleManagerEventArgs : EventArgs
+    {
+        public ModuleInfo[] Modules { get; internal set; }
+        public ModuleInfo CurrentModule { get; internal set; }
     }
 }

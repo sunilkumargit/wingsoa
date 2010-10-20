@@ -23,23 +23,23 @@ namespace Wing.Server.Modules.WingClientSupport
 
         private void RegisterClientAssemblyStore()
         {
-            var bootSettings = ServiceLocator.Current.GetInstance<BootstrapSettings>();
+            var bootSettings = ServiceLocator.GetInstance<BootstrapSettings>();
             var clientAssemblyStore = new FileSystemAssemblyStore();
             clientAssemblyStore.SetBasePath(bootSettings.ClientAssemblyStorePath);
             clientAssemblyStore.ConsolidateStore();
-            ServiceLocator.Current.Register<IAssemblyStore>(clientAssemblyStore, "Client");
+            ServiceLocator.Register<IAssemblyStore>(clientAssemblyStore, "Client");
         }
 
         private void RegisterClientAssemblyInfo()
         {
-            var store = ServiceLocator.Current.GetInstance<IAssemblyStore>("Client");
+            var store = ServiceLocator.GetInstance<IAssemblyStore>("Client");
             var infoBuilder = new ClientAssemblyInfoBuilder();
-            ServiceLocator.Current.Register<AssemblyInfoCollection>(infoBuilder.BuildAssemblyInfo(store), "Client");
+            ServiceLocator.Register<AssemblyInfoCollection>(infoBuilder.BuildAssemblyInfo(store), "Client");
         }
 
         private void RegisterClientSupportController()
         {
-            ServiceLocator.Current.GetInstance<IMvcControllerTypeLocator>()
+            ServiceLocator.GetInstance<IMvcControllerTypeLocator>()
                 .RegisterControllerType(null, typeof(WingCltAppSupportController));
         }
 

@@ -199,7 +199,7 @@ namespace Wing.Client.Modules.Shell
             {
                 ctx.Status = GblCommandExecStatus.Executed;
                 ctx.Handled = true;
-                ServiceLocator.Current.GetInstance<IShellService>().NavigateBack();
+                ServiceLocator.GetInstance<IShellService>().NavigateBack();
             }
 
             #endregion
@@ -222,7 +222,7 @@ namespace Wing.Client.Modules.Shell
                 var presenter = ctx.Parameter as IViewPresenter;
                 if (presenter != null)
                 {
-                    ServiceLocator.Current.GetInstance<IShellService>().Navigate(presenter);
+                    ServiceLocator.GetInstance<IShellService>().Navigate(presenter);
                     ctx.Status = GblCommandExecStatus.Executed;
                     ctx.Handled = true;
                 }

@@ -10,17 +10,17 @@ namespace Wing.Server
     {
         public static string[] GetGroupsNames()
         {
-            return ServiceLocator.Current.GetInstance<ISettingsManager>().GetGroupsNames();
+            return ServiceLocator.GetInstance<ISettingsManager>().GetGroupsNames();
         }
 
         public static ISettingsGroup GetGroup(string name, bool createIfNotExists = true)
         {
-            return ServiceLocator.Current.GetInstance<ISettingsManager>().GetGroup(name, createIfNotExists);
+            return ServiceLocator.GetInstance<ISettingsManager>().GetGroup(name, createIfNotExists);
         }
 
         public static ISettingsSection GetSection(string groupName, string sectionName, bool createIfNotExists = true)
         {
-            return ServiceLocator.Current.GetInstance<ISettingsManager>().GetSection(groupName, sectionName, createIfNotExists);
+            return ServiceLocator.GetInstance<ISettingsManager>().GetSection(groupName, sectionName, createIfNotExists);
         }
     }
 }

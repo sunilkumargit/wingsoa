@@ -47,7 +47,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.RegisterCube
                 {
                     WorkContext.Sync(() =>
                     {
-                        ServiceLocator.Current.GetInstance<ICubeServicesProxy>()
+                        ServiceLocator.GetInstance<ICubeServicesProxy>()
                             .SaveCube(Model.CubeInfo, (res) =>
                             {
                                 if (res.Status == Wing.Soa.Interop.OperationStatus.Error)

@@ -13,16 +13,16 @@ namespace Wing.Client.Modules.IdentityManager
     {
         public override void Initialize()
         {
-            ServiceLocator.Current.Register<ILoginService, LoginService>(true);
+            ServiceLocator.Register<ILoginService, LoginService>(true);
 
-            ServiceLocator.Current.Register<ILoginView, LoginView>();
-            ServiceLocator.Current.Register<ILoginController, LoginController>(true);
-            ServiceLocator.Current.Register<ILoginPresentationModel, LoginPresentationModel>();
+            ServiceLocator.Register<ILoginView, LoginView>();
+            ServiceLocator.Register<ILoginController, LoginController>(true);
+            ServiceLocator.Register<ILoginPresentationModel, LoginPresentationModel>();
         }
 
         public override void Run()
         {
-            ServiceLocator.Current.GetInstance<ILoginController>().CheckLogin();
+            ServiceLocator.GetInstance<ILoginController>().CheckLogin();
         }
     }
 }

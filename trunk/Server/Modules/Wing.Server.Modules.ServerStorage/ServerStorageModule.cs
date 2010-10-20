@@ -15,13 +15,13 @@ namespace Wing.Server.Modules.ServerStorage
     {
         public override void Initialize()
         {
-            var bootSettings = ServiceLocator.Current.GetInstance<BootstrapSettings>();
+            var bootSettings = ServiceLocator.GetInstance<BootstrapSettings>();
             var dbPath = Path.Combine(bootSettings.ServerDataBasePath);
 
             var serverStorage = new SqlCeServerStorageService(dbPath);
             serverStorage.RegisterEntity<ServerStoreTraceEntity>();
 
-            ServiceLocator.Current.Register<IServerEntityStoreService>(serverStorage);
+            ServiceLocator.Register<IServerEntityStoreService>(serverStorage);
 
             // salvar uma entidade aqui para forçar a primeira conexão com o banco de dados
             serverStorage.Save(new ServerStoreTraceEntity() { Date = DateTime.Now, DBPath = dbPath });

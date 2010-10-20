@@ -116,7 +116,7 @@ namespace Wing.Composite.Presentation.Regions
 
         private static void CreateRegion(DependencyObject element)
         {
-            IServiceLocator locator = ServiceLocator.Current;
+            IServiceLocator locator = ServiceLocator.GetCurrent();
             DelayedRegionCreationBehavior regionCreationBehavior = locator.GetInstance<DelayedRegionCreationBehavior>();
             regionCreationBehavior.TargetElement = element;
             regionCreationBehavior.Attach();

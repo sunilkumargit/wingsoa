@@ -43,7 +43,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
                 //refresh nos cubos registrados
                 WorkContext.Async(() =>
                 {
-                    var cubeProxy = ServiceLocator.Current.GetInstance<ICubeServicesProxy>();
+                    var cubeProxy = ServiceLocator.GetInstance<ICubeServicesProxy>();
                     if (Model.Cubes == null)
                     {
                         Model.Cubes = cubeProxy.Cubes;

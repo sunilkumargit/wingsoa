@@ -138,6 +138,15 @@ namespace Wing.Modularity
                 }
             }
 
+            var moduleManagerArgs = new ModuleManagerEventArgs()
+            {
+                Modules = availableModules.ToArray(),
+                CurrentModule = null
+            };
+
+            if (BeginLoadModules != null)
+                BeginLoadModules.Invoke(this, moduleManagerArgs);
+
             Action<ModuleCategory> initMudulesByCategoryAction = new Action<ModuleCategory>(category =>
             {
                 bool keepLoading = true;
@@ -155,7 +164,13 @@ namespace Wing.Modularity
                             this.InitializeModule(moduleInfo);
                             loadedModules.Add(moduleInfo);
                             keepLoading = true;
+                            if (ModuleInitialized != null)
+                            {
+                                moduleManagerArgs.CurrentModule = moduleInfo;
+                                ModuleInitialized.Invoke(this, moduleManagerArgs);
+                            }
                             break;
+
                         }
                     }
                 }
@@ -169,7 +184,23 @@ namespace Wing.Modularity
                 this.PostInitializeModule(loadedModules[i]);
 
             for (var i = 0; i < loadedModules.Count; i++)
+            {
                 this.RunModule(loadedModules[i]);
+                if (loadedModules[i].State == ModuleState.Running)
+                {
+                    if (ModuleRunning != null)
+                    {
+                        moduleManagerArgs.CurrentModule = loadedModules[i];
+                        ModuleRunning.Invoke(this, moduleManagerArgs);
+                    }
+                }
+            }
+
+            if (EndLoadModules != null)
+            {
+                moduleManagerArgs.CurrentModule = null;
+                EndLoadModules.Invoke(this, moduleManagerArgs);
+            }
         }
 
         private bool AreDependenciesLoaded(ModuleInfo moduleInfo)
@@ -223,5 +254,14 @@ namespace Wing.Modularity
             if (moduleInfo.State == ModuleState.Running)
                 this.moduleInitializer.RunModule(moduleInfo);
         }
+
+
+        public event EventHandler<ModuleManagerEventArgs> BeginLoadModules;
+
+        public event EventHandler<ModuleManagerEventArgs> EndLoadModules;
+
+        public event EventHandler<ModuleManagerEventArgs> ModuleInitialized;
+
+        public event EventHandler<ModuleManagerEventArgs> ModuleRunning;
     }
 }

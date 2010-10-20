@@ -8,5 +8,6 @@ namespace Wing.Client.Core
         void DisplayProgressBar(int max);
         void UpdateProgressBar(int absoluteValue, int relativeValue);
         void HideProgressBar();
+        void DisplayStatusMessage(string statusMessage);
     }
 }

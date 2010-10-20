@@ -11,13 +11,13 @@ namespace Wing.Server.Modules.WingClientSupport
     {
         public ActionResult GetAssembliesMetadata()
         {
-            var info = ServiceLocator.Current.GetInstance<AssemblyInfoCollection>("Client");
+            var info = ServiceLocator.GetInstance<AssemblyInfoCollection>("Client");
             return Content(info.SerializeToXml(), "text/xml");
         }
 
         public ActionResult GetAssemblyData(String file)
         {
-            var store = ServiceLocator.Current.GetInstance<IAssemblyStore>("Client");
+            var store = ServiceLocator.GetInstance<IAssemblyStore>("Client");
             store.ConsolidateStore();
             var data = store.GetAssemblyData(file);
             return File(data, "application/binary");
@@ -25,7 +25,7 @@ namespace Wing.Server.Modules.WingClientSupport
 
         public ActionResult GetSoaMetaProviderServiceUri()
         {
-            var servicesManager = ServiceLocator.Current.GetInstance<ISoaServicesManager>();
+            var servicesManager = ServiceLocator.GetInstance<ISoaServicesManager>();
             var serviceInfo = servicesManager.GetService("SoaMetadataProvider").GetConnectionInfo();
             return Content(serviceInfo.Address.ToString(), "text/plain");
         }

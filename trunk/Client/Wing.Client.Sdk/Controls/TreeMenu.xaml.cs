@@ -83,7 +83,7 @@ namespace Wing.Client.Sdk.Controls
 
         void TreeMenuItem_LayoutUpdated(object sender, EventArgs e)
         {
-            //  ServiceLocation.ServiceLocator.Current.GetInstance<IShellService>()
+            //  ServiceLocation.ServiceLocator.GetInstance<IShellService>()
             //      .StatusMessage(String.Format("Layout update {0}: {1}", ItemId, cnt));
 
         }

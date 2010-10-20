@@ -13,11 +13,11 @@ namespace Wing.Client.Modules.Home
     {
         public override void Initialize()
         {
-            ServiceLocator.Current.Register<IHomeRootPresenter, HomeRootPresenter>(true);
+            ServiceLocator.Register<IHomeRootPresenter, HomeRootPresenter>(true);
 
-            ServiceLocator.Current.Register<IHomeView, HomeView>();
-            ServiceLocator.Current.Register<IHomeViewPresenter, HomeViewPresenter>(true);
-            ServiceLocator.Current.Register<IHomeViewPresentationModel, HomeViewPresentationModel>(true);
+            ServiceLocator.Register<IHomeView, HomeView>();
+            ServiceLocator.Register<IHomeViewPresenter, HomeViewPresenter>(true);
+            ServiceLocator.Register<IHomeViewPresentationModel, HomeViewPresentationModel>(true);
 
             // adicionar um handler para o comando de navegação para a home do shell
             CommandsManager.GetCommand(ShellCommandsNames.NavigateHome)
@@ -26,9 +26,9 @@ namespace Wing.Client.Modules.Home
 
         public override void Run()
         {
-            var homeRoot = ServiceLocator.Current.GetInstance<IHomeRootPresenter>();
-            homeRoot.Navigate(ServiceLocator.Current.GetInstance<IHomeViewPresenter>());
-            ServiceLocator.Current.GetInstance<IShellService>().Navigate(homeRoot);
+            var homeRoot = ServiceLocator.GetInstance<IHomeRootPresenter>();
+            homeRoot.Navigate(ServiceLocator.GetInstance<IHomeViewPresenter>());
+            ServiceLocator.GetInstance<IShellService>().Navigate(homeRoot);
         }
     }
 }

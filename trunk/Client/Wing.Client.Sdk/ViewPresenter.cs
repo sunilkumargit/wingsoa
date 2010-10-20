@@ -23,7 +23,7 @@ namespace Wing.Client.Sdk
                 page.PageTitle = model.Caption;
                 page.SubTitle = model.Title;
             }
-            _regionManager = regionManager ?? ServiceLocator.Current.GetInstance<IRegionManager>();
+            _regionManager = regionManager ?? ServiceLocator.GetInstance<IRegionManager>();
             Wing.Composite.Presentation.Regions.RegionManager.SetRegionManager((DependencyObject)view, _regionManager);
         }
 
@@ -65,7 +65,7 @@ namespace Wing.Client.Sdk
             Parent = parent;
         }
 
-        protected IShellService ShellService { get { return ServiceLocator.Current.GetInstance<IShellService>(); } }
+        protected IShellService ShellService { get { return ServiceLocator.GetInstance<IShellService>(); } }
     }
 
     public abstract class ViewPresenter<TModel> : ViewPresenter, IViewPresenter<TModel> where TModel : IViewPresentationModel

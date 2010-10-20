@@ -15,7 +15,7 @@ namespace Wing.Server.Modules.SoaServicesManager
 
         private ISoaServicesManager ServicesManager
         {
-            get { return ServiceLocator.Current.GetInstance<ISoaServicesManager>(); }
+            get { return ServiceLocator.GetInstance<ISoaServicesManager>(); }
         }
 
         public List<SoaServiceDescriptor> GetRegisteredServices()

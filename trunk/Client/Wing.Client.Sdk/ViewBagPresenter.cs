@@ -22,11 +22,11 @@ namespace Wing.Client.Sdk
         protected ViewBagPresenter(IViewPresentationModel model, Object view, IRegionManager regionManager, String contentRegionName)
             : base(model, view, regionManager)
         {
-            _history = ServiceLocator.Current.GetInstance<INavigationHistoryService>();
-            _eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
+            _history = ServiceLocator.GetInstance<INavigationHistoryService>();
+            _eventAggregator = ServiceLocator.GetInstance<IEventAggregator>();
             _readOnlyCollection = new ReadOnlyObservableCollection<IViewPresenter>(_views);
-            _regionManager = regionManager ?? ServiceLocator.Current.GetInstance<IRegionManager>();
-            _syncContext = ServiceLocator.Current.GetInstance<ISyncBroker>();
+            _regionManager = regionManager ?? ServiceLocator.GetInstance<IRegionManager>();
+            _syncContext = ServiceLocator.GetInstance<ISyncBroker>();
             _contentRegion = contentRegionName;
             regionManager.Regions[_contentRegion].ActiveViews.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(ActiveViews_CollectionChanged);
         }

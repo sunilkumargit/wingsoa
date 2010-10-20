@@ -19,8 +19,8 @@ namespace Wing.Server.Modules.ServerConfigManager
         public override void Initialize()
         {
             base.Initialize();
-            ServiceLocator.Current.Register<ISettingsManager, ServerSettingsManager>(true);
-            var service = ServiceLocator.Current.GetInstance<ISettingsManager>();
+            ServiceLocator.Register<ISettingsManager, ServerSettingsManager>(true);
+            var service = ServiceLocator.GetInstance<ISettingsManager>();
             service.GetSection("ServerSettings", "StartUp").Write("Last", DateTime.Now);
         }
     }

@@ -36,11 +36,11 @@ namespace Wing.Client
 
         public void DisplayProgressBar(int max)
         {
-            InitProgressBar.IsIndeterminate = false;
-            InitProgressBar.Maximum = max;
-            InitProgressBar.Value = 0;
             InitProgressBar.Dispatcher.BeginInvoke(() =>
             {
+                InitProgressBar.IsIndeterminate = false;
+                InitProgressBar.Maximum = max;
+                InitProgressBar.Value = 0;
                 InitProgressBar.Visibility = Visibility.Visible;
             });
         }
@@ -61,6 +61,14 @@ namespace Wing.Client
             InitProgressBar.Dispatcher.BeginInvoke(() =>
             {
                 InitProgressBar.Visibility = Visibility.Collapsed;
+            });
+        }
+
+        public void DisplayStatusMessage(string message)
+        {
+            StatusMessage.Dispatcher.BeginInvoke(() =>
+            {
+                StatusMessage.Text = message;
             });
         }
 

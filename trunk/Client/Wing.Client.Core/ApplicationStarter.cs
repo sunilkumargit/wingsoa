@@ -59,6 +59,7 @@ namespace Wing.Client.Core
         {
             if (_startActions.Count == 0)
                 return;
+            _splash.DisplayStatusMessage("");
             var action = _startActions[0];
             _startActions.Remove(action);
             action();
@@ -82,11 +83,7 @@ namespace Wing.Client.Core
                         _splash.HideProgressBar();
                         MessageBox.Show("A aplicacação foi atualizada para uma nova versão. Por favor, reinicie o aplicativo.", "Atualização", MessageBoxButton.OK);
                         _splash.DisplayMessage("Aplicação foi atualizada. Reinicie por favor.");
-                        Helper.DelayExecution(TimeSpan.FromSeconds(5), new Func<bool>(() =>
-                        {
-                            Application.Current.MainWindow.Close();
-                            return false;
-                        }));
+                        ScheduleApplicationTerminate();
                     }
 
                     // check if the version of silverlight is compatible with update, if not, notify user and stop start process.
@@ -94,6 +91,7 @@ namespace Wing.Client.Core
                     {
                         _splash.HideProgressBar();
                         MessageBox.Show("Uma nova versão da aplicação está disponível, mas não é compatível com a versão do Silverlight instalada em seu computador. Por favor, visite o site do Silverlight e baixe uma nova versão do plug-in.", "Atualização", MessageBoxButton.OK);
+                        ScheduleApplicationTerminate();
                     }
                     // if not update is available and version is compatible, continue to perform start actions.
                     else
@@ -133,6 +131,7 @@ namespace Wing.Client.Core
                     _splash.DisplayMessage(String.Format("A tentativa de comunicação com servidor falhou \n " +
                         "Mensagem:  {0} \n Caminho: {1}", e.Error.Message, fileUri.ToString()));
                     _splash.HideProgressBar();
+                    ScheduleApplicationTerminate();
                 }
                 // success, perform next action
                 else
@@ -149,19 +148,23 @@ namespace Wing.Client.Core
 
         void DownloadAssemblies()
         {
+            var assemblies = GetAssembliesToDownload();
+
+            if (assemblies.Count == 0)
+                PerformNextAction();
+
             //verificar se é a primeira vez que esta aplicação será executada neste computador, se for, exibir
             //a mensagem "Preparando para usar pela primeira vez neste computador"
             var isFirstTime = true;
             var storage = IsolatedStorageFile.GetUserStoreForApplication();
             if (storage.FileExists("firsttime.tmp"))
             {
-                _splash.DisplayMessage("Carregando...");
+                _splash.DisplayMessage("Baixando atualizações...");
                 isFirstTime = false;
             }
             else
                 _splash.DisplayMessage("O Wing está preparando a aplicação para ser executada pela primeira vez, \n isto pode levar alguns minutos, aguarde por favor...");
 
-            var assemblies = GetAssembliesToDownload();
             var downloadSize = assemblies.Sum(a => a.Size);
 
             _splash.DisplayProgressBar(downloadSize);
@@ -178,6 +181,7 @@ namespace Wing.Client.Core
                 currentInfo = assemblies.Pop();
 
                 var uri = new Uri(CurrentApp.Host.GetBaseUrl(), "WingCltAppSupport/GetAssemblyData?file=" + currentInfo.AssemblyName);
+                _splash.DisplayStatusMessage("Baixando " + currentInfo.AssemblyName);
                 _splash.UpdateProgressBar(0, currentInfo.Size);
                 client.OpenReadAsync(uri);
             });
@@ -207,6 +211,7 @@ namespace Wing.Client.Core
                 {
                     _splash.DisplayMessage("Erro ao baixar um arquivo necessário à aplicação: " + currentInfo.AssemblyName);
                     _splash.HideProgressBar();
+                    ScheduleApplicationTerminate();
                 }
                 var data = new byte[e.Result.Length];
                 e.Result.Read(data, 0, data.Length);
@@ -242,13 +247,14 @@ namespace Wing.Client.Core
 
         void LoadAssemblies()
         {
-            _splash.DisplayMessage("Inicializando...");
+            _splash.DisplayMessage("Iniciando...");
             _splash.DisplayLoadingBar();
             var assemblies = new List<Assembly>();
             try
             {
                 foreach (var asmInfo in _assemblyInfo.Assemblies)
                 {
+                    _splash.DisplayStatusMessage("Carregando " + asmInfo.AssemblyName);
                     var stream = new System.IO.MemoryStream(_store.GetAssemblyData(asmInfo.AssemblyName));
                     var part = new AssemblyPart();
                     var assembly = part.Load(stream);
@@ -260,6 +266,7 @@ namespace Wing.Client.Core
             catch (Exception ex)
             {
                 _splash.DisplayMessage("Ocorreu um erro ao carregar os arquivos: " + ex.Message);
+                ScheduleApplicationTerminate();
                 return;
             }
 
@@ -272,7 +279,6 @@ namespace Wing.Client.Core
 
         void CreateBootstrapperAndRun()
         {
-            _splash.DisplayMessage("Carregando a interface do usuário...");
             //search for bootstrapper class in assemblies
             Type bootstrapperType = null;
             foreach (var assembly in _bootstrapSettings.Assemblies)
@@ -290,6 +296,7 @@ namespace Wing.Client.Core
             {
                 _splash.DisplayMessage("Ocorreu um erro ao inicializar a aplicação: 001 - bootstrapper not found");
                 _splash.HideProgressBar();
+                ScheduleApplicationTerminate();
                 return;
             }
 
@@ -305,6 +312,7 @@ namespace Wing.Client.Core
             if (storage.Quota < Constants.ClientQuotaSize)
             {
                 _splash.DisplayMessage("Não é possível continuar: espaço insuficiente no disco.");
+                ScheduleApplicationTerminate();
                 return;
             }
             else
@@ -313,9 +321,11 @@ namespace Wing.Client.Core
 
         void FirstConnection()
         {
-            _splash.DisplayMessage("Conectando...");
+            _splash.DisplayMessage("Conectando ao servidor...");
             var uri = CurrentApp.Host.GetRelativeUrl("/ServerHello.aspx");
-            var tries = 20;
+            var tries = 10;
+            _splash.DisplayProgressBar(tries);
+            _splash.UpdateProgressBar(tries -1, 0);
             var client = new WebClient();
             client.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, args) =>
             {
@@ -325,10 +335,12 @@ namespace Wing.Client.Core
                     {
                         _splash.HideProgressBar();
                         _splash.DisplayMessage("Ocorreu um problema ao conectar-se ao servidor.");
+                        ScheduleApplicationTerminate();
                     }
                     else
                     {
-                        _splash.DisplayMessage("Connectando... " + tries.ToString());
+                        _splash.DisplayStatusMessage("Não houve resposta do servidor... tentando novamente");
+                        _splash.UpdateProgressBar(0, -1);
                         Helper.DelayExecution(TimeSpan.FromSeconds(3), () =>
                         {
                             client.DownloadStringAsync(uri);
@@ -359,6 +371,7 @@ namespace Wing.Client.Core
                 {
                     _splash.DisplayMessage("A conexão com servidor foi cancelada. Reinice o aplicativo.");
                     _splash.HideProgressBar();
+                    ScheduleApplicationTerminate();
                 }
                 // an error ocurred, display error message in ui;
                 else if (e.Error != null)
@@ -366,6 +379,7 @@ namespace Wing.Client.Core
                     _splash.DisplayMessage(String.Format("A tentativa de comunicação com servidor falhou \n " +
                         "Mensagem:  {0} \n Caminho: {1}", e.Error.Message, fileUri.ToString()));
                     _splash.HideProgressBar();
+                    ScheduleApplicationTerminate();
                 }
                 // success, perform next action
                 else
@@ -377,6 +391,25 @@ namespace Wing.Client.Core
 
             // call server
             client.DownloadStringAsync(fileUri);
+        }
+
+        private void ScheduleApplicationTerminate()
+        {
+            var cnt = 9;
+            Helper.DelayExecution(TimeSpan.FromSeconds(1), new Func<bool>(() =>
+            {
+                if (cnt == 0)
+                {
+                    Application.Current.MainWindow.Close();
+                    return false;
+                }
+                else
+                {
+                    _splash.DisplayStatusMessage("A aplicação fechará automaticamente em " + cnt.ToString() + " segundos.");
+                    cnt--;
+                    return true;
+                }
+            }));
         }
     }
 }

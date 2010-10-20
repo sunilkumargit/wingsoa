@@ -18,11 +18,11 @@ namespace Wing.Client.Modules.DefaultTheme
             // adicionar os estilos ao dicionário global
             VisualContext.Sync(() =>
             {
-                var visualManager = ServiceLocator.Current.GetInstance<IRootVisualManager>();
+                var visualManager = ServiceLocator.GetInstance<IRootVisualManager>();
                 visualManager.AddResourceDictionary("Wing.Client.Modules.DefaultTheme", "WingTheme");
             });
 
-            ServiceLocator.Current.Register<ViewBagDefaultContainer, ViewBagDefaultContainer>();
+            ServiceLocator.Register<ViewBagDefaultContainer, ViewBagDefaultContainer>();
         }
 
         public override void Run()

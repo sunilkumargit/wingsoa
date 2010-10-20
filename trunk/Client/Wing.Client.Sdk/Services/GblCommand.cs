@@ -64,7 +64,7 @@ namespace Wing.Client.Sdk.Services
 
         public GblCommandStatus QueryStatus(Object parameter = null)
         {
-            return ServiceLocator.Current.GetInstance<ISyncBroker>().Sync<GblCommandStatus>(() =>
+            return ServiceLocator.GetInstance<ISyncBroker>().Sync<GblCommandStatus>(() =>
             {
                 var status = GblCommandStatus.Enabled;
                 QueryStatus(parameter, ref status);

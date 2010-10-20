@@ -30,32 +30,39 @@ namespace Flex.BusinessIntelligence.WingClient
             AssembliesAlias.RegisterAssemblyAliasOfType("bi", this.GetType());
             AssembliesAlias.RegisterAssemblyAlias("bi", "Flex.BusinessIntelligence.Client.Interop");
 
-            ServiceLocator.Current.Register<IBIRootPresenter, BIRootPresenter>(true);
+            // root do bi
+            ServiceLocator.Register<IBIRootPresenter, BIRootPresenter>(true);
 
-            ServiceLocator.Current.Register<IBIHomeView, BIHomeView>(true);
-            ServiceLocator.Current.Register<BIHomePresenter, BIHomePresenter>(true);
+            // home do bi
+            ServiceLocator.Register<IBIHomeView, BIHomeView>(true);
+            ServiceLocator.Register<BIHomePresenter, BIHomePresenter>(true);
 
-            ServiceLocator.Current.Register<BICubesConfigView, BICubesConfigView>();
-            ServiceLocator.Current.Register<BICubesConfigPresenter, BICubesConfigPresenter>(true);
+            // configuração de cubos
+            ServiceLocator.Register<BICubesConfigView, BICubesConfigView>();
+            ServiceLocator.Register<BICubesConfigPresenter, BICubesConfigPresenter>(true);
 
-            ServiceLocator.Current.Register<CubePropertiesPresenter, CubePropertiesPresenter>();
+            // propriedades do cubo
+            ServiceLocator.Register<CubePropertiesPresenter, CubePropertiesPresenter>();
 
-            ServiceLocator.Current.Register<ICubeServicesProxy, CubeServicesProxy>(true);
+            // proxy para o servicos Soa do BI
+            ServiceLocator.Register<ICubeServicesProxy, CubeServicesProxy>(true);
 
-            //criar os commandos basicos
-            var navigateHomeCommand = CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Meu BI")
-                .AddNavigateHandler<BIHomePresenter>();
+            CreateCommands();
+        }
 
-            //consultas
-            var navigateQueriesCommand = CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas")
-                .AddNavigateHandler<BIQueriesListPresenter, BIHomePresenter>();
+        private void CreateCommands()
+        {
+            // navegar para a home
+            CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Meu BI").AddNavigateHandler<BIHomePresenter>();
 
-            //cubos
-            var navigateConfigCubosCommand = CommandsManager.CreateCommand(BICommandNames.NavigateCubes, "Cubos")
-                .AddNavigateHandler<BICubesConfigPresenter, BIHomePresenter>();
+            // navegar para consultas
+            CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas").AddNavigateHandler<BIQueriesListPresenter, BIHomePresenter>();
+
+            // navegar para os cubos
+            CommandsManager.CreateCommand(BICommandNames.NavigateCubes, "Cubos").AddNavigateHandler<BICubesConfigPresenter, BIHomePresenter>();
 
             //propriedades do cubo
-            var cubeShowPropertiesCommand = CommandsManager.CreateCommand(BICommandNames.CubeShowProperties, "Propriedades do cubo")
+            CommandsManager.CreateCommand(BICommandNames.CubeShowProperties, "Propriedades do cubo")
                 .AddDelegateHandler(new CommandExecuteDelegate((ctx) =>
                 {
                     ctx.Handled = true;
@@ -67,9 +74,9 @@ namespace Flex.BusinessIntelligence.WingClient
                     }
                     else
                     {
-                        var presenter = ServiceLocator.Current.GetInstance<CubePropertiesPresenter>();
+                        var presenter = ServiceLocator.GetInstance<CubePropertiesPresenter>();
                         presenter.Model.CubeInfo = info;
-                        ServiceLocator.Current.GetInstance<IShellService>().ShowPopup(presenter);
+                        ServiceLocator.GetInstance<IShellService>().ShowPopup(presenter);
                     }
                 }), new CommandQueryStatusDelegate((ctx) =>
                 {
@@ -80,24 +87,25 @@ namespace Flex.BusinessIntelligence.WingClient
                     }
                 }));
 
-            //novo cubo
-            var registerCubeCommand = CommandsManager.CreateCommand(BICommandNames.RegisterCube, "Registrar um novo cubo")
+            // registrar um novo cubo
+            CommandsManager.CreateCommand(BICommandNames.RegisterCube, "Registrar um novo cubo")
                 .AddDelegateHandler((ctx) =>
                 {
                     ctx.Handled = true;
-                    var presenter = ServiceLocator.Current.GetInstance<CubeRegisterPresenter>();
-                    ServiceLocator.Current.GetInstance<IShellService>().ShowPopup(presenter);
+                    var presenter = ServiceLocator.GetInstance<CubeRegisterPresenter>();
+                    ServiceLocator.GetInstance<IShellService>().ShowPopup(presenter);
                 });
+
         }
 
         public override void Initialized()
         {
             // ativar o presenter;
-            var presenter = ServiceLocator.Current.GetInstance<IBIRootPresenter>();
-            presenter.Navigate(ServiceLocator.Current.GetInstance<BIHomePresenter>());
+            var presenter = ServiceLocator.GetInstance<IBIRootPresenter>();
+            presenter.Navigate(ServiceLocator.GetInstance<BIHomePresenter>());
 
             // registrar os menus iniciais e vincula-los aos comandos globais
-            var homeMenu = ServiceLocator.Current.GetInstance<IBIHomeView>().MainMenu;
+            var homeMenu = ServiceLocator.GetInstance<IBIHomeView>().MainMenu;
             homeMenu.CreateItem(BIMainMenuNames.Home, CommandsManager.GetCommand(BICommandNames.NavigateHome));
             homeMenu.CreateItem(BIMainMenuNames.Queries, CommandsManager.GetCommand(BICommandNames.NavigateQueries));
             homeMenu.CreateItem(BIMainMenuNames.Config, "Configurações").RedirectSelectionToFirstChild = true;

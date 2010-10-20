@@ -38,20 +38,20 @@ namespace Wing.Client.Sdk.Services
         public void QueryStatus(IGblCommandQueryStatusContext ctx)
         {
             ctx.Status = GblCommandStatus.Enabled;
-            ctx.Handled= true;
+            ctx.Handled = true;
         }
 
         public void Execute(IGblCommandExecuteContext ctx)
         {
-            var shellService = ServiceLocator.Current.GetInstance<IShellService>();
+            var shellService = ServiceLocator.GetInstance<IShellService>();
             if (_presenter != null)
                 shellService.Navigate(_presenter);
             else if (_presenterType != null)
             {
-                var presenter = (IViewPresenter)ServiceLocator.Current.GetInstance(_presenterType);
+                var presenter = (IViewPresenter)ServiceLocator.GetInstance(_presenterType);
                 if (_parentPresenterType != null)
                 {
-                    var parent = (IViewBagPresenter)ServiceLocator.Current.GetInstance(_parentPresenterType);
+                    var parent = (IViewBagPresenter)ServiceLocator.GetInstance(_parentPresenterType);
                     parent.Navigate(presenter);
                 }
                 shellService.Navigate(presenter);

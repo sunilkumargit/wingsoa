@@ -14,7 +14,7 @@ namespace Wing.Server.Modules.IdentityManagament
     {
         public override void Initialize()
         {
-            var serverStore = ServiceLocator.Current.GetInstance<IServerEntityStoreService>();
+            var serverStore = ServiceLocator.GetInstance<IServerEntityStoreService>();
 
             // registrar as entidades para persistencia
             serverStore.RegisterEntity<UserEntity>();
@@ -26,7 +26,7 @@ namespace Wing.Server.Modules.IdentityManagament
 
         private void CheckSystemUser()
         {
-            var store = ServiceLocator.Current.GetInstance<IServerEntityStoreService>();
+            var store = ServiceLocator.GetInstance<IServerEntityStoreService>();
             var criteria = store.CreateQuery<UserEntity>();
             criteria.AddFilterEqual("UserName", "System");
             var existing = criteria.FindFirst();

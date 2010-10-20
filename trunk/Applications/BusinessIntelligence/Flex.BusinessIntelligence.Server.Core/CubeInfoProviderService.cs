@@ -18,7 +18,7 @@ namespace Flex.BusinessIntelligence.Server.Core
 
         public CubeInfoProviderService()
         {
-            _entityStore = ServiceLocator.Current.GetInstance<IServerEntityStoreService>();
+            _entityStore = ServiceLocator.GetInstance<IServerEntityStoreService>();
             // ler os cubos, para testar
             var cubes = GetCubesInfo();
         }

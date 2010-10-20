@@ -10,7 +10,7 @@ namespace Wing.Server.Bootstrap
     {
         protected override Type GetControllerType(RequestContext requestContext, string controllerName)
         {
-            var controllerTypeLocator = ServiceLocator.Current.GetInstance<IMvcControllerTypeLocator>();
+            var controllerTypeLocator = ServiceLocator.GetInstance<IMvcControllerTypeLocator>();
             return controllerTypeLocator.GetControllerType(controllerName)
                 ?? base.GetControllerType(requestContext, controllerName);
         }

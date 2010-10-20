@@ -58,7 +58,7 @@ namespace Wing.Composite.Regions
         /// <returns>The regionmanager, for adding several views easily</returns>
         public static IRegionManager RegisterViewWithRegion(this IRegionManager regionManager, string regionName, Type viewType)
         {
-            var regionViewRegistry = ServiceLocator.Current.GetInstance<IRegionViewRegistry>();
+            var regionViewRegistry = ServiceLocator.GetInstance<IRegionViewRegistry>();
 
             regionViewRegistry.RegisterViewWithRegion(regionName, viewType);
 
@@ -76,7 +76,7 @@ namespace Wing.Composite.Regions
         /// <returns>The regionmanager, for adding several views easily</returns>
         public static IRegionManager RegisterViewWithRegion(this IRegionManager regionManager, string regionName, Func<object> getContentDelegate)
         {
-            var regionViewRegistry = ServiceLocator.Current.GetInstance<IRegionViewRegistry>();
+            var regionViewRegistry = ServiceLocator.GetInstance<IRegionViewRegistry>();
 
             regionViewRegistry.RegisterViewWithRegion(regionName, getContentDelegate);
 
