@@ -55,8 +55,7 @@ namespace Wing.Client.Sdk
                         {
                             if (addToHistory)
                                 _history.Push(ActivePresenter);
-                            ((ViewPresenter)ActivePresenter).SetActiveState(false);
-                            RegionManager.Regions[_contentRegion].Deactivate(ActivePresenter.GetView());
+                            DeactivatePresenter(ActivePresenter);
                         }
                         presenter.SetParent(this);
                         if (_views.Contains(presenter))
@@ -104,6 +103,30 @@ namespace Wing.Client.Sdk
             else
                 ActivePresenter = null;
             _eventAggregator.GetEvent<ViewBagActiveViewChangedEvent>().Publish(new ViewBagActiveViewChangedEventArgs(this));
+        }
+
+        private void DeactivatePresenter(IViewPresenter presenter)
+        {
+            if(!presenter.IsActive)
+                return;
+
+            var viewPresenter = presenter as ViewPresenter;
+            RegionManager.Regions[_contentRegion].Deactivate(presenter.GetView());
+            if (viewPresenter != null)
+                viewPresenter.SetActiveState(false);
+        }
+
+        public void RemoveView(IViewPresenter presenter)
+        {
+            if (!_views.Contains(presenter))
+                return;
+            VisualContext.Sync(() =>
+            {
+                _views.Remove(presenter);
+                if (ActivePresenter == presenter)
+                    DeactivatePresenter(presenter);
+                UpdateActiveView();
+            });
         }
 
         public IViewPresenter ActivePresenter { get; private set; }

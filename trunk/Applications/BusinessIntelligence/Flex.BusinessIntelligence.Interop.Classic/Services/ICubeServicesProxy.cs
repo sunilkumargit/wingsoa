@@ -8,6 +8,7 @@ namespace Flex.BusinessIntelligence.Interop.Services
     public interface ICubeServicesProxy
     {
         ObservableCollection<CubeRegistrationInfo> Cubes { get; }
+        ObservableCollection<CubeQueryInfo> Queries { get; }
         void RefreshCubesInfo();
         OperationResult SaveCube(CubeRegistrationInfo cube, Action<OperationResult> callback);
         OperationResult DeleteCube(CubeRegistrationInfo cube, Action<OperationResult> callback);

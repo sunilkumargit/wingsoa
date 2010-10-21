@@ -3,6 +3,7 @@ using Wing.Logging;
 using Wing.Modularity;
 using Wing.Server.Core;
 using Wing.ServiceLocation;
+using System;
 
 namespace Wing.Server.Bootstrap
 {
@@ -14,40 +15,56 @@ namespace Wing.Server.Bootstrap
 
         public void Run(BootstrapSettings settings)
         {
-            _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
-            //registrar o ServiceLocator
-            ServiceLocator.SetLocatorProvider(() => _serviceLocator);
-
-            //registrar o locator
-            ServiceLocator.Register<IServiceLocator>(_serviceLocator);
-
-            //registrar uma assembly resolver para o AppDomain
-            ServiceLocator.Register<IAssemblyResolver>(new StoreAssemblyResolver(settings.ServerAssemblyStorePath, null));
-
-            ServiceLocator.Register<BootstrapSettings>(settings);
-
-            //registrar o logger
-            ServiceLocator.Register<ILogger, TraceLogger>(true);
-
-            //registrar os servicos de modulos
-            ServiceLocator.Register<IModuleCatalog>(new DirectoryModuleCatalog()
+            var logger = new ServerBootLoggerAdapter(settings.BootLogger);
+            logger.Log("Bootstrapper starting...", Category.Info, Priority.None);
+            try
             {
-                ModulePath = settings.ServerAssemblyStorePath
-            });
+                logger.Log("Creating services container", Category.Debug, Priority.None);
+                _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
 
-            ServiceLocator.Register<IModuleInitializer, ModuleInitializer>(true);
-            ServiceLocator.Register<IModuleManager, ModuleManager>(true);
+                logger.Log("Setting service locator provider", Category.Debug, Priority.None);
+                //registrar o ServiceLocator
+                ServiceLocator.SetLocatorProvider(() => _serviceLocator);
 
-            //agregador de eventos
-            ServiceLocator.Register<IEventAggregator, EventAggregator>(true);
+                //registrar o locator
+                ServiceLocator.Register<IServiceLocator>(_serviceLocator);
 
-            //localizador de controllers mvc
-            ServiceLocator.Register<IMvcControllerTypeLocator, MvcControllerTypeLocator>(true);
+                //registrar o logger
+                ServiceLocator.Register<ILogger>(logger);
 
-            System.Web.Mvc.ControllerBuilder.Current.SetControllerFactory(new MvcControllerFactory());
+                logger.Log("Creating server assembly store resolver", Category.Debug, Priority.None);
+                //registrar uma assembly resolver para o AppDomain
+                ServiceLocator.Register<IAssemblyResolver>(new StoreAssemblyResolver(settings.ServerAssemblyStorePath, null));
 
-            //carregar os modulos
-            ServiceLocator.GetInstance<IModuleManager>().Run();
+                ServiceLocator.Register<BootstrapSettings>(settings);
+
+                //registrar os servicos de modulos
+                ServiceLocator.Register<IModuleCatalog>(new DirectoryModuleCatalog()
+                {
+                    ModulePath = settings.ServerAssemblyStorePath
+                });
+
+                ServiceLocator.Register<IModuleInitializer, ModuleInitializer>(true);
+                ServiceLocator.Register<IModuleManager, ModuleManager>(true);
+
+                //agregador de eventos
+                ServiceLocator.Register<IEventAggregator, EventAggregator>(true);
+
+                //localizador de controllers mvc
+                ServiceLocator.Register<IMvcControllerTypeLocator, MvcControllerTypeLocator>(true);
+
+                System.Web.Mvc.ControllerBuilder.Current.SetControllerFactory(new MvcControllerFactory());
+
+                logger.Log("Loading modules", Category.Info, Priority.None);
+                //carregar os modulos
+                ServiceLocator.GetInstance<IModuleManager>().Run();
+
+                logger.Log("Server started", Category.Info, Priority.None);
+            }
+            catch (Exception ex)
+            {
+                logger.LogException("Fatal error on server bootstrap", ex, Priority.High);
+            }
         }
 
         #endregion

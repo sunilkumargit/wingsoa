@@ -111,5 +111,16 @@ namespace Wing.Client.Sdk.Services
                 timer.Start();
             });
         }
+
+        public bool IsUIThread
+        {
+            get { return _dispatcher.CheckAccess(); }
+        }
+
+        public void EnsureNonUIThred()
+        {
+            if (IsUIThread)
+                throw new InvalidOperationException("Invalid thread context.");
+        }
     }
 }

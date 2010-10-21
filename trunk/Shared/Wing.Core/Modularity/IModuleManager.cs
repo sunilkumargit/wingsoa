@@ -41,7 +41,7 @@ namespace Wing.Modularity
 
     public class ModuleManagerEventArgs : EventArgs
     {
-        public ModuleInfo[] Modules { get; internal set; }
-        public ModuleInfo CurrentModule { get; internal set; }
+        public ModuleInfo[] Modules { get; set; }
+        public ModuleInfo CurrentModule { get; set; }
     }
 }

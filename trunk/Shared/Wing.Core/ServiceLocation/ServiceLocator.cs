@@ -114,7 +114,7 @@ namespace Wing.ServiceLocation
         /// <param name="asSingleton">Register this service as a singleton or not? If true, only one instance will be created on the first request and used for subsequent requests for this service.</param>
         public static void Register<TService, TImpl>(string key, bool asSingleton) where TImpl : TService
         {
-            Register<TService, TImpl>(key, asSingleton);
+            GetCurrent().Register<TService, TImpl>(key, asSingleton);
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Wing.ServiceLocation
         /// <param name="key">The key for this service. Can be null.</param>
         public static void Register<TService, TImpl>(string key) where TImpl : TService
         {
-            Register<TService, TImpl>(key);
+            GetCurrent().Register<TService, TImpl>(key);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Wing.ServiceLocation
         /// <typeparam name="TImpl">The concrete type that implements <paramref name="TService"/></typeparam>
         public static void Register<TService, TImpl>() where TImpl : TService
         {
-            Register<TService, TImpl>();
+            GetCurrent().Register<TService, TImpl>();
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Wing.ServiceLocation
         /// <param name="asSingleton">Register this service as a singleton or not? If true, only one instance will be created on the first request and used for subsequent requests for this service.</param>
         public static void Register<TService, TImpl>(bool asSingleton) where TImpl : TService
         {
-            Register<TService, TImpl>(asSingleton);
+            GetCurrent().Register<TService, TImpl>(asSingleton);
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Wing.ServiceLocation
         /// <param name="asSingleton">Register this service as a singleton or not? If true, only one instance will be created on the first request and used for subsequent requests for this service.</param>
         public static void Register(System.Type service, System.Type impl, string key, bool asSingleton)
         {
-            Register(service, impl, key, asSingleton);
+            GetCurrent().Register(service, impl, key, asSingleton);
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Wing.ServiceLocation
         /// <param name="key">The key for this service. Can be null.</param>
         public static void Register(System.Type service, System.Type impl, string key)
         {
-            Register(service, impl, key);
+            GetCurrent().Register(service, impl, key);
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Wing.ServiceLocation
         /// <param name="asSingleton">Register this service as a singleton or not? If true, only one instance will be created on the first request and used for subsequent requests for this service.</param>
         public static void Register(System.Type service, System.Type impl, bool asSingleton)
         {
-            Register(service, impl, asSingleton);
+            GetCurrent().Register(service, impl, asSingleton);
         }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace Wing.ServiceLocation
         /// <param name="impl">The concrete type that implements <paramref name="service"/></param>
         public static void Register(System.Type service, System.Type impl)
         {
-            Register(service, impl);
+            GetCurrent().Register(service, impl);
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Wing.ServiceLocation
         /// <param name="key">The key for this service. Can be null.</param>
         public static void Register<TService>(TService impl, string key)
         {
-            Register<TService>(impl, key);
+            GetCurrent().Register<TService>(impl, key);
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Wing.ServiceLocation
         /// <param name="impl">The concrete type that implements <paramref name="service"/></param>
         public static void Register<TService>(TService impl)
         {
-            Register<TService>(impl);
+            GetCurrent().Register<TService>(impl);
         }
 
 

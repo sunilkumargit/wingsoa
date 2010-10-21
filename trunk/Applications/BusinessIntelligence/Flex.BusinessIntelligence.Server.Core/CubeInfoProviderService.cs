@@ -72,5 +72,11 @@ namespace Flex.BusinessIntelligence.Server.Core
             }
             return result;
         }
+
+        public List<CubeQueryInfo> GetQueriesInfo()
+        {
+            var query = _entityStore.CreateQuery<CubeQueryInfo>();
+            return query.Find();
+        }
     }
 }

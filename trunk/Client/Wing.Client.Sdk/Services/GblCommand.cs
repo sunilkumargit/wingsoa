@@ -109,9 +109,11 @@ namespace Wing.Client.Sdk.Services
         {
             if (StateChanged != null)
                 StateChanged.Invoke(this);
+            if (ICommandExecuteChangedEventWrapper != null)
+                ICommandExecuteChangedEventWrapper.Invoke(this, new EventArgs());
         }
 
-        public ICommand GetCommandWrapper()
+        public ICommand GetCommandAdapter()
         {
             return this;
         }
@@ -121,10 +123,12 @@ namespace Wing.Client.Sdk.Services
             return QueryStatus(parameter) == GblCommandStatus.Enabled;
         }
 
+        private event EventHandler ICommandExecuteChangedEventWrapper;
+
         event EventHandler ICommand.CanExecuteChanged
         {
-            add { }
-            remove { }
+            add { ICommandExecuteChangedEventWrapper += value; }
+            remove { ICommandExecuteChangedEventWrapper -= value;  }
         }
 
         void ICommand.Execute(object parameter)

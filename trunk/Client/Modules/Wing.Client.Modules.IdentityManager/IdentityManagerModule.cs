@@ -2,6 +2,9 @@
 using Wing.Client.Sdk.Services;
 using Wing.Modularity;
 using Wing.ServiceLocation;
+using Wing.Client.Core;
+using System;
+using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.IdentityManager
 {
@@ -22,7 +25,11 @@ namespace Wing.Client.Modules.IdentityManager
 
         public override void Run()
         {
-            ServiceLocator.GetInstance<ILoginController>().CheckLogin();
+            WorkContext.Sync(() =>
+            {
+                VisualContext.DelayAsync(TimeSpan.FromMilliseconds(2000),
+                    () => ServiceLocator.GetInstance<ILoginController>().CheckLogin());
+            });
         }
     }
 }

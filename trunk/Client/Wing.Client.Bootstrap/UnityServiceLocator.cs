@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 using Wing.ServiceLocation;
 using Wing.Client.Sdk;
+using Wing.Logging;
 
 namespace Wing.UnityServiceLocator
 {
@@ -10,6 +11,7 @@ namespace Wing.UnityServiceLocator
     public class UnityServiceLocator : IServiceLocator
     {
         private IUnityContainer _container;
+        private ISyncBroker _syncBroker;
 
         public UnityServiceLocator(IUnityContainer container)
         {
@@ -18,7 +20,9 @@ namespace Wing.UnityServiceLocator
 
         private TResult InvokeContainer<TResult>(Func<TResult> action)
         {
-            return _container.Resolve<ISyncBroker>().Sync<TResult>(action);
+            if (_syncBroker == null)
+                _syncBroker = _container.Resolve<ISyncBroker>();
+            return _syncBroker.Sync<TResult>(action);
         }
 
         #region IServiceLocator Members

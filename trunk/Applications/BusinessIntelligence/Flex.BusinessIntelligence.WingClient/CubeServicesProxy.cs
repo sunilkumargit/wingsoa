@@ -16,6 +16,7 @@ namespace Flex.BusinessIntelligence.WingClient
     public class CubeServicesProxy : ICubeServicesProxy
     {
         private ObservableCollection<CubeRegistrationInfo> _cubes;
+        private ObservableCollection<CubeQueryInfo> _queries;
         private IShellService _shellService;
 
         public CubeServicesProxy(IShellService shellService)
@@ -33,6 +34,16 @@ namespace Flex.BusinessIntelligence.WingClient
             }
         }
 
+        public ObservableCollection<CubeQueryInfo> Queries
+        {
+            get
+            {
+                if (_queries == null)
+                    LoadQueriesFromServer();
+                return _queries;
+            }
+        }
+
         public void RefreshCubesInfo()
         {
             LoadCubesFromServer();
@@ -47,8 +58,11 @@ namespace Flex.BusinessIntelligence.WingClient
             SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
             {
                 var cubes = broker.CallSync<List<CubeRegistrationInfo>>(channel.BeginGetCubesInfo, channel.EndGetCubesInfo);
-                _cubes.Clear();
-                _cubes.AddRange(cubes);
+                VisualContext.Async(() =>
+                {
+                    _cubes.Clear();
+                    _cubes.AddRange(cubes);
+                });
             });
             _shellService.HideWorkingStatus();
         }
@@ -83,6 +97,23 @@ namespace Flex.BusinessIntelligence.WingClient
             if (callback != null)
                 callback(result);
             return result;
+        }
+
+        private void LoadQueriesFromServer()
+        {
+            if (_queries == null)
+                _queries = new ObservableCollection<CubeQueryInfo>();
+            _shellService.DisplayWorkingStatus("Consultando o servidor...");
+            SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
+            {
+                var queries = broker.CallSync<List<CubeQueryInfo>>(channel.BeginGetQueriesInfo, channel.EndGetQueriesInfo);
+                VisualContext.Async(() =>
+                {
+                    _queries.Clear();
+                    _queries.AddRange(queries);
+                });
+            });
+            _shellService.HideWorkingStatus();
         }
     }
 }

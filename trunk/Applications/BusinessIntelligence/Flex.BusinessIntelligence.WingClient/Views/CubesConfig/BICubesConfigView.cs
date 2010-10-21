@@ -28,7 +28,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.CubesConfig
             var newButton = new SimpleButton()
             {
                 Content = "Registrar um cubo",
-                Command = CommandsManager.GetCommand(BICommandNames.RegisterCube).GetCommandWrapper(),
+                Command = CommandsManager.GetCommand(BICommandNames.RegisterCube).GetCommandAdapter(),
                 Width = 200
             };
             toolbar.RightItems.Add(newButton);

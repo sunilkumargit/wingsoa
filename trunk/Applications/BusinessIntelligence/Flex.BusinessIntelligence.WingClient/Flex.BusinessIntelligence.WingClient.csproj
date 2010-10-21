@@ -71,11 +71,17 @@
     <Compile Include="Views\CubeProperties\CubePropertiesView.cs" />
     <Compile Include="Views\CubesConfig\BICubesConfigPresenter.cs" />
     <Compile Include="Views\CubesConfig\BICubesConfigView.cs" />
+    <Compile Include="Views\CubeSelectorView.xaml.cs">
+      <DependentUpon>CubeSelectorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\BIHomePresenter.cs" />
     <Compile Include="Views\Home\BIHomeView.xaml.cs">
       <DependentUpon>BIHomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\IBIHomeView.cs" />
+    <Compile Include="Views\PivotGrid\PivotGridPresentationModel.cs" />
+    <Compile Include="Views\PivotGrid\PivotGridPresenter.cs" />
+    <Compile Include="Views\PivotGrid\PivotGridView.cs" />
     <Compile Include="Views\QueriesList\BIQueriesListPresenter.cs" />
     <Compile Include="Views\QueriesList\BIQueriesListView.cs" />
     <Compile Include="Views\RegisterCube\CubeRegisterPresentationModel.cs" />
@@ -100,6 +106,10 @@
       <Project>{A8340CDA-5F58-49DD-A30F-E65376471CAB}</Project>
       <Name>Wing.Core.Silverlight</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Shared\Wing.Json.Silverlight\Wing.Json.Silverlight.csproj">
+      <Project>{D00893BF-0F2E-43E0-ABCF-41EBA27E78EB}</Project>
+      <Name>Wing.Json.Silverlight</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Shared\Wing.Soa.Interop.Silverlight\Wing.Soa.Interop.Silverlight.csproj">
       <Project>{61163CDA-6DC3-4F0F-9CE2-FC54ADA1BC6A}</Project>
       <Name>Wing.Soa.Interop.Silverlight</Name>
@@ -116,12 +126,28 @@
       <Project>{ECC8FCCB-915B-45F3-A213-EA964FA68314}</Project>
       <Name>Flex.BusinessIntelligence.Interop.Silverlight</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Wing.Olap.Core.Silverlight\Wing.Olap.Core.Silverlight.csproj">
+      <Project>{47A463E4-EEB7-4FC1-AFD8-F200A29E05B6}</Project>
+      <Name>Wing.Olap.Core.Silverlight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wing.Olap.Mdx\Wing.Olap.Mdx.Silverlight.csproj">
+      <Project>{C431B16C-B74F-43FD-A60C-12B3F358E98F}</Project>
+      <Name>Wing.Olap.Mdx.Silverlight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wing.Olap.Silverlight\Wing.Olap.Silverlight.csproj">
+      <Project>{F3D7C6C7-B9FF-47E6-A347-C98891CF95A9}</Project>
+      <Name>Wing.Olap.Silverlight</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\bi-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\CubeSelectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Home\BIHomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -55,6 +55,7 @@
     <Compile Include="FileSystemAssemblyStore.cs" />
     <Compile Include="IAssemblyResolver.cs" />
     <Compile Include="IAssemblyStore.cs" />
+    <Compile Include="IBootLogger.cs" />
     <Compile Include="IBootstrapper.cs" />
     <Compile Include="IMvcControllerTypeLocator.cs" />
     <Compile Include="Messages.cs" />

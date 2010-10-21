@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Wing.Logging;
+using System.Threading;
 
 
 namespace Wing.Modularity
@@ -168,9 +169,9 @@ namespace Wing.Modularity
                             {
                                 moduleManagerArgs.CurrentModule = moduleInfo;
                                 ModuleInitialized.Invoke(this, moduleManagerArgs);
+                                Thread.Sleep(200);
                             }
                             break;
-
                         }
                     }
                 }
@@ -192,6 +193,7 @@ namespace Wing.Modularity
                     {
                         moduleManagerArgs.CurrentModule = loadedModules[i];
                         ModuleRunning.Invoke(this, moduleManagerArgs);
+                        Thread.Sleep(300);
                     }
                 }
             }
@@ -235,6 +237,15 @@ namespace Wing.Modularity
             if (moduleInfo.State == ModuleState.Initializing)
             {
                 moduleInfo.LoadOrder = ++_orderCount;
+
+                loggerFacade.Log(String.Format("Initializing module {0}, Category: {1}, Priority: {2}, IndexKey: {3}, Order: {4}",
+                        moduleInfo.ModuleName,
+                        moduleInfo.ModuleCategory.ToString(),
+                        moduleInfo.ModulePriority.ToString(),
+                        moduleInfo.LoadOrderIndex.ToString(),
+                        moduleInfo.LoadOrder.ToString()),
+                        Category.Debug, Priority.High);
+
                 this.moduleInitializer.Initialize(moduleInfo);
                 moduleInfo.State = ModuleState.Initialized;
             }

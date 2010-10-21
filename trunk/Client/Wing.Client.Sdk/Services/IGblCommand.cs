@@ -28,7 +28,7 @@ namespace Wing.Client.Sdk.Services
         ReadOnlyObservableCollection<IGblCommandHandler> Handlers { get; }
         event GblCommandStateChanged StateChanged;
         void FireStateChanged();
-        ICommand GetCommandWrapper();
+        ICommand GetCommandAdapter();
     }
 
     public delegate void GblCommandStateChanged(IGblCommand command);

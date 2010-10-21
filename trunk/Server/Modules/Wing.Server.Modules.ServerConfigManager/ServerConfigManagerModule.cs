@@ -20,8 +20,8 @@ namespace Wing.Server.Modules.ServerConfigManager
         {
             base.Initialize();
             ServiceLocator.Register<ISettingsManager, ServerSettingsManager>(true);
-            var service = ServiceLocator.GetInstance<ISettingsManager>();
-            service.GetSection("ServerSettings", "StartUp").Write("Last", DateTime.Now);
+            //var service = ServiceLocator.GetInstance<ISettingsManager>();
+            //service.GetSection("ServerSettings", "StartUp").Write("Last", DateTime.Now);
         }
     }
 }

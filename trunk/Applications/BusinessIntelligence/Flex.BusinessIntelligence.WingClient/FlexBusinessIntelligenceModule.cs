@@ -15,6 +15,8 @@ using Flex.BusinessIntelligence.WingClient.Views.CubesConfig;
 using Flex.BusinessIntelligence.WingClient.Views.CubeProperties;
 using Flex.BusinessIntelligence.WingClient.Views.RegisterCube;
 using Flex.BusinessIntelligence.WingClient.Views.QueriesList;
+using Flex.BusinessIntelligence.Client.Interop;
+using Flex.BusinessIntelligence.WingClient.Views.PivotGrid;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -37,9 +39,17 @@ namespace Flex.BusinessIntelligence.WingClient
             ServiceLocator.Register<IBIHomeView, BIHomeView>(true);
             ServiceLocator.Register<BIHomePresenter, BIHomePresenter>(true);
 
+            // presentation models publicos
+            ServiceLocator.Register<BICubesConfigPresentationModel, BICubesConfigPresentationModel>(true);
+            ServiceLocator.Register<BIQueriesListPresentationModel, BIQueriesListPresentationModel>(true);
+
             // configuração de cubos
             ServiceLocator.Register<BICubesConfigView, BICubesConfigView>();
             ServiceLocator.Register<BICubesConfigPresenter, BICubesConfigPresenter>(true);
+
+            // lista de consultas
+            ServiceLocator.Register<BIQueriesListView, BIQueriesListView>();
+            ServiceLocator.Register<BIQueriesListPresenter, BIQueriesListPresenter>(true);
 
             // propriedades do cubo
             ServiceLocator.Register<CubePropertiesPresenter, CubePropertiesPresenter>();
@@ -56,7 +66,8 @@ namespace Flex.BusinessIntelligence.WingClient
             CommandsManager.CreateCommand(BICommandNames.NavigateHome, "Meu BI").AddNavigateHandler<BIHomePresenter>();
 
             // navegar para consultas
-            CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas").AddNavigateHandler<BIQueriesListPresenter, BIHomePresenter>();
+            CommandsManager.CreateCommand(BICommandNames.NavigateQueries, "Consultas")
+                .AddNavigateHandler<BIQueriesListPresenter, BIHomePresenter>();
 
             // navegar para os cubos
             CommandsManager.CreateCommand(BICommandNames.NavigateCubes, "Cubos").AddNavigateHandler<BICubesConfigPresenter, BIHomePresenter>();
@@ -94,6 +105,21 @@ namespace Flex.BusinessIntelligence.WingClient
                     ctx.Handled = true;
                     var presenter = ServiceLocator.GetInstance<CubeRegisterPresenter>();
                     ServiceLocator.GetInstance<IShellService>().ShowPopup(presenter);
+                });
+
+            // nova consulta ao cubo
+            CommandsManager.CreateCommand(BICommandNames.NewCubeQuery, "Consultar cubo")
+                .AddDelegateHandler((ctx) =>
+                {
+                    //criar o presenter e o presentation model
+                    var presentationModel = new PivotGridPresentationModel((CubeRegistrationInfo)ctx.Parameter);
+                    var presenter = new PivotGridPresenter(presentationModel);
+                    ServiceLocator.GetInstance<IBIRootPresenter>()
+                        .Navigate(presenter);
+                }, (ctx) =>
+                {
+                    if (ctx.Parameter == null)
+                        ctx.Status = GblCommandStatus.Disabled;
                 });
 
         }
