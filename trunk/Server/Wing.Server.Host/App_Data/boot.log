@@ -936,3 +936,29 @@ File Created: 20/10/2010 12:25:07
 22/10/2010 15:49:56: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, IndexKey: 15, Order: 5
 22/10/2010 15:49:57: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, IndexKey: 22, Order: 6
 22/10/2010 15:49:57: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+22/10/2010 16:34:09: Server starting
+22/10/2010 16:34:09: Registering routes
+22/10/2010 16:34:11: Configuring server settings
+22/10/2010 16:34:11: Preparing server assembly store
+22/10/2010 16:34:11: Consolidating store
+22/10/2010 16:34:11: Server store consolidated succesfully
+22/10/2010 16:34:11: Creating bootstrapper
+22/10/2010 16:34:11: Loading bootstrapper assembly: Wing.Server.Bootstrap
+22/10/2010 16:34:11: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+22/10/2010 16:34:11: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+22/10/2010 16:34:11: Bootstrapper instance created successfully
+22/10/2010 16:34:11: Running bootstrapper
+22/10/2010 16:34:11: default   |Info     |None  : Bootstrapper starting...
+22/10/2010 16:34:11: default   |Debug    |None  : Creating services container
+22/10/2010 16:34:11: default   |Debug    |None  : Setting service locator provider
+22/10/2010 16:34:11: default   |Debug    |None  : Creating server assembly store resolver
+22/10/2010 16:34:11: default   |Info     |None  : Loading modules
+22/10/2010 16:34:12: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, IndexKey: 11, Order: 1
+22/10/2010 16:34:12: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, IndexKey: 12, Order: 2
+22/10/2010 16:34:19: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, IndexKey: 12, Order: 3
+22/10/2010 16:34:19: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, IndexKey: 12, Order: 4
+22/10/2010 16:34:20: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, IndexKey: 15, Order: 5
+22/10/2010 16:34:23: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, IndexKey: 22, Order: 6
+22/10/2010 16:34:24: default   |Info     |None  : Server started
