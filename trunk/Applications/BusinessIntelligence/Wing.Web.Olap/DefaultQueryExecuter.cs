@@ -5,18 +5,14 @@
 */
 
 using System;
-using System.Collections.Generic;
 using System.Data;
 
 using Microsoft.AnalysisServices.AdomdClient;
 
 namespace Wing.Web.Olap
 {
-    using System.Text;
-    using Wing.Olap.Core.Data;
     using Wing.Olap.Core;
     using Wing.Olap.Core.Providers;
-    using System.Xml;
 
     public class DefaultQueryExecuter : IMdxExecuter
     {

@@ -1,23 +1,18 @@
-﻿using Flex.BusinessIntelligence.WingClient.Views.Home;
+﻿using Flex.BusinessIntelligence.Client.Interop;
+using Flex.BusinessIntelligence.Data;
+using Flex.BusinessIntelligence.Interop.Services;
+using Flex.BusinessIntelligence.WingClient.Views.CubeProperties;
+using Flex.BusinessIntelligence.WingClient.Views.CubesConfig;
+using Flex.BusinessIntelligence.WingClient.Views.Home;
+using Flex.BusinessIntelligence.WingClient.Views.PivotGrid;
+using Flex.BusinessIntelligence.WingClient.Views.QueriesList;
+using Flex.BusinessIntelligence.WingClient.Views.RegisterCube;
 using Flex.BusinessIntelligence.WingClient.Views.Root;
-using Wing.Modularity;
-using Wing.ServiceLocation;
+using Wing.Client.Core;
 using Wing.Client.Sdk;
 using Wing.Client.Sdk.Services;
-using Wing.EntityStore;
-using Wing.Soa.Interop.Client;
-using Flex.BusinessIntelligence.Interop.Services;
-using System.Collections.Generic;
-using Flex.BusinessIntelligence.Data;
-using System;
-using Wing.Soa.Interop;
-using Flex.BusinessIntelligence.WingClient.Views.CubesConfig;
-using Flex.BusinessIntelligence.WingClient.Views.CubeProperties;
-using Flex.BusinessIntelligence.WingClient.Views.RegisterCube;
-using Flex.BusinessIntelligence.WingClient.Views.QueriesList;
-using Flex.BusinessIntelligence.Client.Interop;
-using Flex.BusinessIntelligence.WingClient.Views.PivotGrid;
-using Wing.Client.Core;
+using Wing.Modularity;
+using Wing.ServiceLocation;
 
 namespace Flex.BusinessIntelligence.WingClient
 {

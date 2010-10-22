@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Wing.Client.Sdk.Controls;
 
 namespace Flex.BusinessIntelligence.WingClient.Views.Home

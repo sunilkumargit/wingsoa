@@ -6,24 +6,19 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Olap.Controls.General.ClientServer;
-using Wing.Olap;
-using Wing.Olap.Core.Metadata;
-using Wing.Olap.Core.Data;
-using Wing.Olap.Core.Providers;
-using Wing.Olap.Core;
-using Wing.Olap.Core.Providers.ClientServer;
-using System.IO;
-using System.Xml;
-using Microsoft.AnalysisServices.AdomdClient;
-using Wing.Olap.Core.Storage;
-using System.Web;
 using System.Configuration;
-using Wing.ZipCompression;
+using System.Linq;
+using System.Web;
 using System.Web.Services;
-using System.Data;
+using Microsoft.AnalysisServices.AdomdClient;
+using Wing.Olap.Controls.General.ClientServer;
+using Wing.Olap.Core;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Metadata;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Core.Providers.ClientServer;
+using Wing.Olap.Core.Storage;
+using Wing.ZipCompression;
 
 namespace Wing.Web.Olap
 {

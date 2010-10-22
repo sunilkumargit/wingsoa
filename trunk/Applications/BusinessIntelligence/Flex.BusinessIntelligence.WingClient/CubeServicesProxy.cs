@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections.ObjectModel;
 using Flex.BusinessIntelligence.Data;
-using Wing.ServiceLocation;
-using Wing.Client.Sdk;
-using Wing.Soa.Interop.Client;
 using Flex.BusinessIntelligence.Interop.Services;
-using Wing.Utils;
+using Wing.Client.Sdk;
 using Wing.Soa.Interop;
+using Wing.Soa.Interop.Client;
+using Wing.Utils;
 
 namespace Flex.BusinessIntelligence.WingClient
 {

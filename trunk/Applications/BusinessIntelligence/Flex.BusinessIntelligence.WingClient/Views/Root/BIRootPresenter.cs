@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Wing.Client.Sdk;
 using Wing.Client.Sdk.Controls;
