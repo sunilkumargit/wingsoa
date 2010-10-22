@@ -5,18 +5,10 @@
 */
 
 using System;
-using System.Net;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+using Wing.Olap.Controls.Combo;
 using Wing.Olap.Controls.General.ItemControls;
 using Wing.Olap.Core.Metadata;
-using Wing.Olap.Controls.Combo;
 
 namespace Wing.Olap.Controls.MdxDesigner.Filters
 {

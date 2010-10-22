@@ -5,24 +5,13 @@
 */
 
 using System;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
 using Wing.Olap.Controls.Buttons;
-using Wing.Olap.Controls.General;
-using Wing.Olap.Controls.ValueCopy;
 using Wing.Olap.Controls.ContextMenu;
-using Wing.Olap.Core.Metadata;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Controls.MdxDesigner.Wrappers;
-using Wing.Olap.Controls.Forms;
-using Wing.Olap.Controls.MdxDesigner.Filters;
 
 namespace Wing.Olap.Controls.MdxDesigner
 {
