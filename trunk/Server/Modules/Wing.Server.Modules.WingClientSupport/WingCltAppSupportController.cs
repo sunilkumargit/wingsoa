@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
 using Wing.Server.Core;
+using Wing.Server.Soa;
 using Wing.ServiceLocation;
 using Wing.Utils;
-using Wing.Server.Soa;
 
 namespace Wing.Server.Modules.WingClientSupport
 {
@@ -27,7 +27,10 @@ namespace Wing.Server.Modules.WingClientSupport
         {
             var servicesManager = ServiceLocator.GetInstance<ISoaServicesManager>();
             var serviceInfo = servicesManager.GetService("SoaMetadataProvider").GetConnectionInfo();
-            return Content(serviceInfo.Address.ToString(), "text/plain");
+            return Content(
+                serviceInfo.Address.ToString() + "|" +
+                SettingsManager.GetSection("Services", "BaseConfiguration").GetString("baseUri")
+            , "text/plain");
         }
     }
 }

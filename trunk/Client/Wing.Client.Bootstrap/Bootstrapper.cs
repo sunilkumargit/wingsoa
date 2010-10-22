@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using Wing.Client.Core;
+using Wing.Client.Sdk;
+using Wing.Client.Sdk.Services;
 using Wing.Composite;
 using Wing.Composite.Presentation.Regions;
 using Wing.Composite.Presentation.Regions.Behaviors;
@@ -10,10 +13,6 @@ using Wing.Events;
 using Wing.Logging;
 using Wing.Modularity;
 using Wing.ServiceLocation;
-using Wing.Client.Sdk;
-using Wing.Client.Sdk.Services;
-using System.Windows;
-using System.Threading;
 
 namespace Wing.Client.Bootstrap
 {

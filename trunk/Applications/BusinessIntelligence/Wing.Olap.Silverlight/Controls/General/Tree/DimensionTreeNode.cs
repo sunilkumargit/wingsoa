@@ -4,7 +4,6 @@
   (C)2010 Marcelo R Santos (mdezem@hotmail.com)
 */
 
-using System;
 using Wing.Olap.Core.Metadata;
 
 namespace Wing.Olap.Controls.General.Tree

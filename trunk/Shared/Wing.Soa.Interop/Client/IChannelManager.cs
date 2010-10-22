@@ -1,5 +1,4 @@
-﻿using System;
-namespace Wing.Soa.Interop.Client
+﻿namespace Wing.Soa.Interop.Client
 {
     public interface IChannelManager
     {

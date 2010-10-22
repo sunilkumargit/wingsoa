@@ -9,6 +9,16 @@ namespace Wing.Olap.Services
     /// </summary>
     public static class ServiceManager
     {
+
+        public static OlapWebService.OlapWebServiceSoapClient CreateOlapService(String url)
+        {
+            var uri = new Uri(m_BaseAddress + "OlapWebService.asmx");
+            var binding = new BasicHttpBinding(BasicHttpSecurityMode.None);
+            binding.MaxBufferSize=Int32.MaxValue;
+            binding.MaxReceivedMessageSize= Int32.MaxValue;
+            return new OlapWebService.OlapWebServiceSoapClient(binding, new EndpointAddress(uri));
+        }
+
         /// <summary>
         /// Creates new service proxy instance.
         /// </summary>
@@ -68,10 +78,14 @@ namespace Wing.Olap.Services
             {
                 if (string.IsNullOrEmpty(m_BaseAddress))
                 {
-                    m_BaseAddress = new Uri(@"http://localhost:16580/Wing/OlapWebService.asmx").ToString();
+                    throw new Exception("OLAP Service base address was not setted");
                 }
 
                 return m_BaseAddress;
+            }
+            set
+            {
+                m_BaseAddress = value;
             }
         }
 

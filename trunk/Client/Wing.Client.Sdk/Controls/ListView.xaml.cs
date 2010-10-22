@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Wing.Utils;
-using System.Net;
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using System.Collections.ObjectModel;
-using System.Windows.Threading;
-using System.ComponentModel;
-using System.Collections;
-using System.Collections.Specialized;
+using Wing.Utils;
 
 namespace Wing.Client.Sdk.Controls
 {

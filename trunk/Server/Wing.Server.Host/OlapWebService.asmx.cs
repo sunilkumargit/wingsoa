@@ -36,6 +36,11 @@ namespace UILibrary.Olap.UITestApplication.Web
     // [System.Web.Script.Services.ScriptService]
     public class OlapWebService : OlapWebServiceBase
     {
+        public OlapWebService()
+        {
+            System.Diagnostics.Debug.WriteLine("Olap web service instatiated");
+        }
+
         string SetConnectionString(string argument)
         {
             try

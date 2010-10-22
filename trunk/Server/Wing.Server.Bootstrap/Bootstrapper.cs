@@ -1,9 +1,9 @@
-﻿using Wing.Events;
+﻿using System;
+using Wing.Events;
 using Wing.Logging;
 using Wing.Modularity;
 using Wing.Server.Core;
 using Wing.ServiceLocation;
-using System;
 
 namespace Wing.Server.Bootstrap
 {

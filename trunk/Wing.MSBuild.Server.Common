@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="AfterBuild">
     <ItemGroup>
-      <PublishFiles Include="$(TargetDir)*.dll;*.xml"/>
+      <PublishFiles Include="$(TargetDir)*.dll;*.xml;"/>
       <DebugFiles Include="$(TargetDir)*.*"/>
     </ItemGroup>
     <Message Text="Copying output files to debug directory..."/>

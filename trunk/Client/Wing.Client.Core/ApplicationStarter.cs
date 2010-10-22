@@ -171,6 +171,7 @@ namespace Wing.Client.Core
 
 
             var client = new WebClient();
+            var lastBytesReceivedCount = 0;
 
             AssemblyInfo currentInfo = null;
 
@@ -182,7 +183,6 @@ namespace Wing.Client.Core
 
                 var uri = new Uri(CurrentApp.Host.GetBaseUrl(), "WingCltAppSupport/GetAssemblyData?file=" + currentInfo.AssemblyName);
                 _splash.DisplayStatusMessage("Baixando " + currentInfo.AssemblyName);
-                _splash.UpdateProgressBar(0, currentInfo.Size);
                 client.OpenReadAsync(uri);
             });
 
@@ -216,7 +216,18 @@ namespace Wing.Client.Core
                 var data = new byte[e.Result.Length];
                 e.Result.Read(data, 0, data.Length);
                 _store.AddAssembly(currentInfo.AssemblyName, data);
+                var relative = Convert.ToInt32(e.Result.Length - lastBytesReceivedCount);
+                _splash.UpdateProgressBar(0, relative);
+                lastBytesReceivedCount = 0;
                 checkAndGoToNextAction();
+            });
+
+
+            client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((sender, e) =>
+            {
+                var relative = Convert.ToInt32(e.BytesReceived - lastBytesReceivedCount);
+                lastBytesReceivedCount = Convert.ToInt32(e.BytesReceived);
+                _splash.UpdateProgressBar(0, relative);
             });
 
             checkAndGoToNextAction();
@@ -325,7 +336,7 @@ namespace Wing.Client.Core
             var uri = CurrentApp.Host.GetRelativeUrl("/ServerHello.aspx");
             var tries = 10;
             _splash.DisplayProgressBar(tries);
-            _splash.UpdateProgressBar(tries -1, 0);
+            _splash.UpdateProgressBar(tries - 1, 0);
             var client = new WebClient();
             client.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, args) =>
             {
@@ -384,7 +395,9 @@ namespace Wing.Client.Core
                 // success, perform next action
                 else
                 {
-                    _bootstrapSettings.SoaMetadataProviderUri = new Uri(e.Result);
+                    var res = e.Result.Split('|');
+                    _bootstrapSettings.SoaMetadataProviderUri = new Uri(res[0]);
+                    _bootstrapSettings.SoaBaseUri = new Uri(res[1]);
                     PerformNextAction();
                 }
             });

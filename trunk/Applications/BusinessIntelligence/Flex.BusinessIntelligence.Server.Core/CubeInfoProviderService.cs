@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.ServiceModel;
+using Flex.BusinessIntelligence.Data;
 using Flex.BusinessIntelligence.Interop.Services;
 using Wing.Server;
-using Flex.BusinessIntelligence.Data;
-using Wing.Soa.Interop;
 using Wing.ServiceLocation;
-using System.ServiceModel;
+using Wing.Soa.Interop;
 
 namespace Flex.BusinessIntelligence.Server.Core
 {

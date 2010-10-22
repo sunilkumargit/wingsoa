@@ -1,16 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Windows;
-using Wing.Client.Core;
 using Wing.Client.Sdk;
-using Wing.Client.Sdk.Events;
-using Wing.Composite.Events;
-using Wing.Composite.Regions;
-using Wing.Events;
-using Wing.Client.Sdk.Services;
-using Wing.ServiceLocation;
 using Wing.Client.Sdk.Controls;
-using System.Windows.Controls;
 
 namespace Wing.Client.Modules.Shell
 {

@@ -1,6 +1,6 @@
 using System;
-using Wing.EntityStore;
 using System.Runtime.Serialization;
+using Wing.EntityStore;
 
 namespace Wing.Services.IdentityManagerService
 {

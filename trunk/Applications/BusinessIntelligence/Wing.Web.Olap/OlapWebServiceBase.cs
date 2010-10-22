@@ -178,6 +178,7 @@ namespace Wing.Web.Olap
 
         String GetConnectionString(String connection)
         {
+            return connection;
             object str = null;
             if (HttpContext.Current.Session != null)
             {
@@ -195,6 +196,7 @@ namespace Wing.Web.Olap
 
         ConnectionInfo GetConnection(String connection)
         {
+            return new ConnectionInfo(connection, connection);
             object str = null;
             // Если в сессии есть строка соединения, то берем ее. Иначе пытаемся зачитать из Application
             if (HttpContext.Current.Session != null && HttpContext.Current.Session[connection] != null)

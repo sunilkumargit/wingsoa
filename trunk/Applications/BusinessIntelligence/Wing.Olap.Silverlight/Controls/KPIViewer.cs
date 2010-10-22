@@ -5,25 +5,24 @@
 */
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
+using Wing.Olap.Commands;
 using Wing.Olap.Controls.Buttons;
+using Wing.Olap.Controls.General;
+using Wing.Olap.Controls.General.DataGrid;
 using Wing.Olap.Controls.General.Tree;
+using Wing.Olap.Controls.List;
 using Wing.Olap.Controls.ToolBar;
-using Wing.Olap.Providers;
 using Wing.Olap.Core;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Metadata;
-using System.Collections.Generic;
-using Wing.Olap.Controls.General;
-using System.Windows.Data;
-using Wing.Olap.Controls.General.DataGrid;
 using Wing.Olap.Core.Providers;
 using Wing.Olap.Core.Providers.ClientServer;
-using Wing.Olap.Commands;
-using Wing.Olap.Controls.List;
 
 namespace Wing.Olap.Controls
 {

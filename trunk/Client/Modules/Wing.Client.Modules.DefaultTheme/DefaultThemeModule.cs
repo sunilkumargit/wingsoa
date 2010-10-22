@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using Wing.Client.Core;
+using Wing.Client.Sdk;
 using Wing.Client.Sdk.Controls;
 using Wing.Modularity;
 using Wing.ServiceLocation;
-using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.DefaultTheme
 {

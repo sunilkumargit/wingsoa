@@ -8,6 +8,7 @@ namespace Wing.Client.Core
     {
         public Uri ServerBaseAddress { get; set; }
         public Uri SoaMetadataProviderUri { get; set; }
+        public Uri SoaBaseUri { get; set; }
         public IRootVisualManager RootVisualManager { get; set; }
         public List<Assembly> Assemblies { get; set; }
         public ISplashUI Splash { get; set; }

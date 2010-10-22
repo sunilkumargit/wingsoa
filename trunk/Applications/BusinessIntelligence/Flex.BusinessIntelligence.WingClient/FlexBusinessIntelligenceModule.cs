@@ -17,6 +17,7 @@ using Flex.BusinessIntelligence.WingClient.Views.RegisterCube;
 using Flex.BusinessIntelligence.WingClient.Views.QueriesList;
 using Flex.BusinessIntelligence.Client.Interop;
 using Flex.BusinessIntelligence.WingClient.Views.PivotGrid;
+using Wing.Client.Core;
 
 namespace Flex.BusinessIntelligence.WingClient
 {
@@ -56,6 +57,8 @@ namespace Flex.BusinessIntelligence.WingClient
 
             // proxy para o servicos Soa do BI
             ServiceLocator.Register<ICubeServicesProxy, CubeServicesProxy>(true);
+
+            Wing.Olap.Services.ServiceManager.BaseAddress = ServiceLocator.GetInstance<BootstrapSettings>().ServerBaseAddress.ToString();
 
             CreateCommands();
         }

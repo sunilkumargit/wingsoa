@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using Wing.Client.Core;
 using Wing.Client.Host;
-using System.Windows.Threading;
 
 namespace Wing.Client
 {

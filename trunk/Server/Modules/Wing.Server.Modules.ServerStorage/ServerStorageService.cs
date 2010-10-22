@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlServerCe;
 using System.IO;
+using System.Linq;
 using System.Text;
 using NHibernate;
 using NHibernate.Cfg;
@@ -10,10 +11,8 @@ using NHibernate.Criterion;
 using NHibernate.Tool.hbm2ddl;
 using Wing.EntityStore;
 using Wing.Logging;
-using Wing.Server;
 using Wing.ServiceLocation;
 using Wing.Utils;
-using System.Linq;
 
 namespace Wing.Server.Modules.ServerStorage
 {

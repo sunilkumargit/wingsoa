@@ -1,8 +1,6 @@
 using System;
-using System.Windows;
-using Wing.Composite.Regions;
-using Wing.ServiceLocation;
 using Wing.Client.Sdk.Controls;
+using Wing.Composite.Regions;
 
 namespace Wing.Client.Sdk
 {

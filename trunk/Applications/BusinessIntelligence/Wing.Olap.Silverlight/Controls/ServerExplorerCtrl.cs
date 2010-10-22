@@ -56,9 +56,9 @@ namespace Wing.Olap.Controls
             Cubes_ComboBox.Height = 22;
             Cubes_ComboBox.Margin = new Thickness(0, 0, 0, 5);
 
-            LayoutRoot.Children.Add(cubesComboHeader);
-            LayoutRoot.Children.Add(Cubes_ComboBox);
-            Grid.SetRow(Cubes_ComboBox, 1);
+            //LayoutRoot.Children.Add(cubesComboHeader);
+            //LayoutRoot.Children.Add(Cubes_ComboBox);
+            //Grid.SetRow(Cubes_ComboBox, 1);
             LayoutRoot.Children.Add(m_CubeBrowser);
             Grid.SetRow(m_CubeBrowser, 2);
 

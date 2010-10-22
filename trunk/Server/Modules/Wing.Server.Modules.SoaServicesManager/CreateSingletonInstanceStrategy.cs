@@ -1,14 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.ServiceModel;
 using Wing.Server.Soa;
 using Wing.Soa.Interop;
-using System.Collections.ObjectModel;
-using System.ServiceModel;
-using System.Web;
-using System.ServiceModel.Description;
-using System.ServiceModel.Channels;
 
 namespace Wing.Server.Modules.SoaServicesManager
 {

@@ -1,10 +1,9 @@
-﻿using Wing.Client.Modules.IdentityManager.Views;
+﻿using System;
+using Wing.Client.Modules.IdentityManager.Views;
+using Wing.Client.Sdk;
 using Wing.Client.Sdk.Services;
 using Wing.Modularity;
 using Wing.ServiceLocation;
-using Wing.Client.Core;
-using System;
-using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.IdentityManager
 {

@@ -27,6 +27,13 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
             // remover a consulta quando ela não estiver mais ativa no contexto do BI.
             if (!IsActive && Parent is IViewBagPresenter)
                 ((IViewBagPresenter)Parent).RemoveView(this);
+
+            if (IsActive)
+            {
+                var view = (PivotGridView)GetView();
+                view.SetModel(Model);
+            }
         }
+
     }
 }

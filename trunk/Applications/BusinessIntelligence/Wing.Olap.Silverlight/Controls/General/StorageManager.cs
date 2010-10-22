@@ -20,15 +20,6 @@
 */
 
 using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Wing.Olap.Core;
 using Wing.ZipCompression;
 
@@ -99,10 +90,7 @@ namespace Wing.Olap.Controls.General
                 throw new ArgumentNullException("schema");
 
             OlapWebService.OlapWebServiceSoapClient service =
-             Services.ServiceManager.CreateService
-                         < Wing.Olap.OlapWebService.OlapWebServiceSoapClient
-                         , Wing.Olap.OlapWebService.OlapWebServiceSoap
-                         >(URL);
+             Services.ServiceManager.CreateOlapService(URL);
             // ModifyEndPoint(service);
             service.PerformOlapServiceActionCompleted += service_PerformStorageActionCompleted;
             service.PerformOlapServiceActionAsync("StorageAction" ,schema.ToString(), state);

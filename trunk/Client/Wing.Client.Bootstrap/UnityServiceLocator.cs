@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Practices.Unity;
-using Wing.ServiceLocation;
 using Wing.Client.Sdk;
-using Wing.Logging;
+using Wing.ServiceLocation;
 
 namespace Wing.UnityServiceLocator
 {
