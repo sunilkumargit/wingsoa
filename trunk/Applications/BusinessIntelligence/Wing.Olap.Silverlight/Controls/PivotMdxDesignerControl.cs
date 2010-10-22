@@ -28,10 +28,11 @@ using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers;
 using Wing.Olap.Core.Storage;
 using Wing.Olap.Providers;
+using Wing.Client.Sdk;
 
 namespace Wing.Olap.Controls
 {
-    public class PivotMdxDesignerControl : AgControlBase
+    public class PivotMdxDesignerControl : Wing.Client.Sdk.Controls.CustomContentControl
     {
         ServerExplorerCtrl m_ServerExplorer;
 
@@ -84,12 +85,12 @@ namespace Wing.Olap.Controls
 
             LayoutRoot = new Grid();
             LayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-            LayoutRoot.RowDefinitions.Add(new RowDefinition());
+            LayoutRoot.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
             m_Input_Column = new ColumnDefinition() { Width = new GridLength(m_InputColumnWidth) };
             LayoutRoot.ColumnDefinitions.Add(m_Input_Column);
             LayoutRoot.ColumnDefinitions.Add(new ColumnDefinition() { /*Width = new GridLength(2, GridUnitType.Star)*/ });
 
-            // ТУЛБАР 
+    
             m_ToolBar = new RanetToolBar();
             m_ToolBar.Margin = new Thickness(0, 0, 0, 4);
             //LayoutRoot.Children.Add(m_ToolBar);
@@ -265,7 +266,7 @@ namespace Wing.Olap.Controls
             Grid Pivot_LayotRoot = new Grid();
             Pivot_LayotRoot.Margin = new Thickness(0, 3, 0, 0);
             Pivot_LayotRoot.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-            Pivot_LayotRoot.RowDefinitions.Add(new RowDefinition());
+            Pivot_LayotRoot.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
 
             // Заголовок
             HeaderControl pivot_Header = new HeaderControl(UriResources.Images.PivotGrid16, Localization.MdxDesigner_QueryResult) { Margin = new Thickness(0, 0, 0, 3) };
@@ -338,6 +339,7 @@ namespace Wing.Olap.Controls
             m_StorageManager = GetStorageManager();
             m_StorageManager.InvokeCompleted += new EventHandler<DataLoaderEventArgs>(StorageManager_ActionCompleted);
 
+            ControlHelper.StretchContentControl(this);
             this.Content = LayoutRoot;
         }
 
@@ -750,15 +752,15 @@ namespace Wing.Olap.Controls
             }
         }
 
-        public override string URL
+        public string URL
         {
             get
             {
-                return base.URL;
+                return _url;
             }
             set
             {
-                base.URL = value;
+                _url = value;
 
                 m_ServerExplorer.URL = value;
                 m_PivotGrid.URL = value;
@@ -3370,12 +3372,11 @@ namespace Wing.Olap.Controls
 
         #endregion Экспорт-импорт
 
-        public override ILogService LogManager
+        public ILogService LogManager
         {
-            get { return base.LogManager; }
+            get { return _logManager; }
             set
             {
-                base.LogManager = value;
                 m_ServerExplorer.LogManager = value;
                 m_PivotGrid.LogManager = value;
             }
@@ -3498,6 +3499,8 @@ namespace Wing.Olap.Controls
         #endregion Управление видимостью кнопок на тулбаре
 
         public List<List<ShortMemberInfo>> DefaultTuples;
+private  ILogService _logManager;
+private string _url;
 
         public DataReorganizationTypes DataReorganizationType
         {

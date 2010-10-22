@@ -78,6 +78,7 @@
     <Compile Include="Controls\ButtonMinMaxForm.xaml.cs">
       <DependentUpon>ButtonMinMaxForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CustomContentControl.cs" />
     <Compile Include="Controls\ExtensibleMenuController.cs" />
     <Compile Include="Controls\FloatingDialog.cs" />
     <Compile Include="Controls\FloatingDialogBase.cs" />

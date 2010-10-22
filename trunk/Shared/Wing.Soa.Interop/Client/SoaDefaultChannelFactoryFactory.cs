@@ -25,7 +25,11 @@ namespace Wing.Soa.Interop.Client
             if (ConnectionInfo.ContainsKey(contractRef))
             {
                 var info = ConnectionInfo[contractRef];
-                return new ChannelFactory<TChannel>(new BasicHttpBinding(), new EndpointAddress(info.Address));
+                return new ChannelFactory<TChannel>(new BasicHttpBinding()
+                {
+                    MaxBufferSize = Int32.MaxValue,
+                    MaxReceivedMessageSize = Int32.MaxValue
+                }, new EndpointAddress(info.Address));
             }
             return null;
         }

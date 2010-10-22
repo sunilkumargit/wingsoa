@@ -332,7 +332,7 @@ namespace Wing.Client.Core
 
         void FirstConnection()
         {
-            _splash.DisplayMessage("Conectando ao servidor...");
+            _splash.DisplayMessage("Conectando-se ao servidor...");
             var uri = CurrentApp.Host.GetRelativeUrl("/ServerHello.aspx");
             var tries = 10;
             _splash.DisplayProgressBar(tries);

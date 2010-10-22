@@ -5,7 +5,7 @@ using Wing.Composite.Presentation.Regions;
 
 namespace Wing.Client.Sdk.Controls
 {
-    public class ViewBagDefaultContainer : ContentControl
+    public class ViewBagDefaultContainer : CustomContentControl
     {
         public static DependencyProperty ContentRegionNameProperty = DependencyProperty.Register(
             "ContentRegionName", typeof(String), typeof(ViewBagDefaultContainer), new PropertyMetadata("Content", new PropertyChangedCallback(ContentRegionNameChanged)));
@@ -14,22 +14,12 @@ namespace Wing.Client.Sdk.Controls
 
         public ViewBagDefaultContainer()
         {
-            Configure(this);
-            _content = new ContentControl();
+            ControlHelper.StretchContentControl(this);
+            _content = new CustomContentControl();
             this.Content = _content;
-            Configure(_content);
+            ControlHelper.StretchContentControl(_content);
             SetContentRegionName(ContentRegionName);
         }
-
-
-        private void Configure(ContentControl control)
-        {
-            control.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-            control.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-            control.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Stretch;
-            control.VerticalContentAlignment = System.Windows.VerticalAlignment.Stretch;
-        }
-
 
         public static void ContentRegionNameChanged(DependencyObject instance, DependencyPropertyChangedEventArgs target)
         {

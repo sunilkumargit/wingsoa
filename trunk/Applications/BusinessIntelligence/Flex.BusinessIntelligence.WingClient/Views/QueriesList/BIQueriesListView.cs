@@ -11,7 +11,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.QueriesList
 
         public BIQueriesListView()
         {
-            var panel = new StackPanel();
+            var panel = new StackPanel() { Name = "ItemsHolder" };
             _cubeSelector = new CubeSelectorView();
             panel.Children.Add(_cubeSelector);
             this.Content = panel;

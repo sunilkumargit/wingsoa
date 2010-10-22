@@ -6,7 +6,7 @@ namespace Wing.Client.Sdk
 {
     public static class WorkContext
     {
-        private static List<Action> _actions = new List<Action>();
+        private static Queue<Action> _actions = new Queue<Action>();
         private static Object _lockObject = new Object();
         private static AutoResetEvent _semaphore = new AutoResetEvent(false);
         private static bool _started = false;
@@ -15,7 +15,7 @@ namespace Wing.Client.Sdk
         {
             lock (_lockObject)
             {
-                _actions.Add(action);
+                _actions.Enqueue(action);
             }
             _semaphore.Set();
         }
@@ -47,10 +47,9 @@ namespace Wing.Client.Sdk
                         wait = true;
                         continue;
                     }
-                    item = _actions[0];
-                    _actions.RemoveAt(0);
+                    item = _actions.Dequeue();
                 }
-                item();
+                item.Invoke();
                 wait = false;
             }
         }

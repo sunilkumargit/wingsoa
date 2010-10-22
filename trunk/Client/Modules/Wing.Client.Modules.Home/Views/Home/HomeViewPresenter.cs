@@ -1,5 +1,6 @@
 ﻿using Wing.Client.Sdk;
 using Wing.Composite.Regions;
+using Wing.Client.Sdk.Controls;
 
 namespace Wing.Client.Modules.Home.Views.Home
 {

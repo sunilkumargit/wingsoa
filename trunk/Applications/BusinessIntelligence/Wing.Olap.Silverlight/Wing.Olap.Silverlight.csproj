@@ -1102,6 +1102,10 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Client\Wing.Client.Sdk\Wing.Client.Sdk.csproj">
+      <Project>{A52229CB-C24D-4B2E-AEB9-5E3519CD94CF}</Project>
+      <Name>Wing.Client.Sdk</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wing.Olap.Core.Silverlight\Wing.Olap.Core.Silverlight.csproj">
       <Project>{47A463E4-EEB7-4FC1-AFD8-F200A29E05B6}</Project>
       <Name>Wing.Olap.Core.Silverlight</Name>

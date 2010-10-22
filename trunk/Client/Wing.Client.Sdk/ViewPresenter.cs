@@ -21,7 +21,7 @@ namespace Wing.Client.Sdk
             {
                 var page = (HeaderedPage)view;
                 page.PageTitle = model.Caption;
-                page.SubTitle = model.Title;
+                page.Subtitle = model.Title;
             }
             _regionManager = regionManager ?? ServiceLocator.GetInstance<IRegionManager>();
             Wing.Composite.Presentation.Regions.RegionManager.SetRegionManager((DependencyObject)view, _regionManager);

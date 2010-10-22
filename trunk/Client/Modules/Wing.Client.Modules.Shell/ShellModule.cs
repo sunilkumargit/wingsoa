@@ -5,6 +5,7 @@ using Wing.ServiceLocation;
 
 namespace Wing.Client.Modules.Shell
 {
+    [Module("Shell")]
     [ModuleCategory(ModuleCategory.Core)]
     [ModulePriority(ModulePriority.Low)]
     [ModuleDescription("Provedor do shell do usuário")]
@@ -16,7 +17,6 @@ namespace Wing.Client.Modules.Shell
 
         public override void Initialize()
         {
-            //criar o view do shell aqui.
             ServiceLocator.Register<INavigationHistoryService, NavigationHistoryService>(true);
             ServiceLocator.Register<IShellView, ShellView>(true);
             ServiceLocator.Register<IShellPresentationModel, ShellPresentationModel>(true);

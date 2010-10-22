@@ -5,11 +5,22 @@ using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Wing.Utils;
 
 namespace Wing.Client.Sdk
 {
     public static class ControlHelper
     {
+        public static void SetBorderBrushToDebug(Control element)
+        {
+#if DEBUG
+            var colors = new String[] { "Blue", "Green", "Red" };
+            var color = GetPredefinedNamedColor(colors[RandomUtils.Next(0, colors.Length - 1)]);
+            //element.BorderThickness = new Thickness(3);
+            //element.BorderBrush = color;
+#endif
+        }
+
 
         public static SolidColorBrush GetPredefinedNamedColor(String color)
         {
@@ -108,6 +119,15 @@ namespace Wing.Client.Sdk
                 parent = VisualTreeHelper.GetParent(parent);
             }
             return result;
+        }
+
+        public static void StretchContentControl(ContentControl control)
+        {
+            control.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
+            control.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+            control.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Stretch;
+            control.VerticalContentAlignment = System.Windows.VerticalAlignment.Stretch;
+            SetBorderBrushToDebug(control);
         }
     }
 }

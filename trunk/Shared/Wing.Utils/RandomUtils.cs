@@ -5,6 +5,7 @@ namespace Wing.Utils
 {
     public static class RandomUtils
     {
+        private static Random _random = new Random(DateTime.Now.Millisecond);
 
         public static int Random(int digits)
         {
@@ -44,6 +45,11 @@ namespace Wing.Utils
         public static string RandomCode()
         {
             return Guid.NewGuid().ToString("N").ToLower();
+        }
+
+        public static int Next(int min, int max)
+        {
+            return _random.Next(min, max);
         }
     }
 }
