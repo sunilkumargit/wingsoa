@@ -4,10 +4,7 @@
   (C)2010 Marcelo R Santos (mdezem@hotmail.com)
 */
 
-using System;
-using System.Net;
 using System.Collections.Generic;
-using Wing.Olap.Core.Providers.ClientServer;
 using Wing.Olap.Core.Providers;
 
 namespace Wing.Olap.Providers

@@ -1,23 +1,11 @@
 ﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Wing.Olap.Core;
-using Wing.Olap.Providers.MemberActions;
-using Wing.Olap.Mdx.Compiler;
-using System.Text;
-using Wing.Olap.Mdx;
 using System.Collections.Generic;
-using Wing.Olap.Core.Providers.ClientServer;
-using Wing.Olap.Core.Data;
-using Wing.Olap.Core.Providers;
+using System.Text;
 using Wing.Olap.Controls;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Mdx;
+using Wing.Olap.Mdx.Compiler;
+using Wing.Olap.Providers.MemberActions;
 
 namespace Wing.Olap.Providers
 {

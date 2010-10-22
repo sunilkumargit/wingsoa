@@ -5,31 +5,23 @@
 */
 
 using System;
-using System.Net;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Wing.Olap.Controls.General;
-using Wing.Olap.Controls.ToolBar;
-using Wing.Olap.Core.Providers.ClientServer;
 using Wing.Olap.Commands;
-using Wing.Olap.Core;
-using Wing.Olap.Core.Data;
-using Wing.Olap.Core.Providers;
-using System.Collections.Generic;
-using Wing.Olap.Core.Metadata;
+using Wing.Olap.Controls.Forms;
+using Wing.Olap.Controls.General;
 using Wing.Olap.Controls.General.ClientServer;
-using Wing.Olap.Controls.PivotGrid;
+using Wing.Olap.Controls.ToolBar;
 using Wing.Olap.Controls.ValueCopy;
 using Wing.Olap.Controls.ValueCopy.Wrappers;
-using System.IO.IsolatedStorage;
-using System.IO;
-using Wing.Olap.Controls.Forms;
+using Wing.Olap.Core;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Metadata;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Core.Providers.ClientServer;
 using Wing.Olap.Core.Storage;
 
 namespace Wing.Olap.Controls

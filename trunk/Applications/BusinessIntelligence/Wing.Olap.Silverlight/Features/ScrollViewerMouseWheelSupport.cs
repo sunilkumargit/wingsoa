@@ -4,12 +4,8 @@
   (C)2010 Marcelo R Santos (mdezem@hotmail.com)
 */
 
-using System;
-using System.Windows.Browser;
-using System.Windows.Controls;
 using System.Windows;
-using System.Reflection;
-using Wing.Olap.Controls.General.Tree;
+using System.Windows.Controls;
 
 namespace Wing.Olap.Features
 {

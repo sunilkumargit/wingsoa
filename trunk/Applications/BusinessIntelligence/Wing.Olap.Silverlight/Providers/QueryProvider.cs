@@ -6,13 +6,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using Wing.Olap.Core;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Metadata;
 using Wing.Olap.Core.Providers;
-using Wing.Olap.Controls;
-using Wing.Olap.Core;
 
 namespace Wing.Olap.Providers
 {

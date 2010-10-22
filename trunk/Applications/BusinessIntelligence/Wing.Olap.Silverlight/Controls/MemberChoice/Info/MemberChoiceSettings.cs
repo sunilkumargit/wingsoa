@@ -5,8 +5,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Wing.Olap.Core.Data;
 
 namespace Wing.Olap.Controls.MemberChoice.Info

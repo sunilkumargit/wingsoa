@@ -5,9 +5,8 @@
 */
 
 using System;
-using System.Collections.Generic;
-using Wing.Olap.Mdx;
 using Wing.Olap.Controls;
+using Wing.Olap.Mdx;
 
 namespace Wing.Olap.Providers.MemberActions
 {

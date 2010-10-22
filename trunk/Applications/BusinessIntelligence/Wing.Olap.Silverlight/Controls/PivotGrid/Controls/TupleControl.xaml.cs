@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Wing.Olap.Controls.ValueCopy;
 using Wing.Olap.Controls.General;
 using Wing.Olap.Controls.MemberChoice.Info;
-using System.ComponentModel;
+using Wing.Olap.Controls.ValueCopy;
 
 namespace Wing.Olap.Controls.PivotGrid.Controls
 {

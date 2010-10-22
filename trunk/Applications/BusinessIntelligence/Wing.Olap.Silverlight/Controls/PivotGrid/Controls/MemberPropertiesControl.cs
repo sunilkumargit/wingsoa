@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Net;
+using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Wing.Olap.Controls.General;
 using Wing.Olap.Controls.Tab;
 using Wing.Olap.Controls.ToolBar;
-using System.Text;
-using Wing.Olap.Features;
-using System.Collections.Generic;
 using Wing.Olap.Core.Data;
 using Wing.Olap.Core.Providers;
 

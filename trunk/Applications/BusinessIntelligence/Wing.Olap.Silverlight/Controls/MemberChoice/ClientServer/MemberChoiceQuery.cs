@@ -4,13 +4,6 @@
   (C)2010 Marcelo R Santos (mdezem@hotmail.com)
 */
 
-using System;
-using System.Net;
-using System.Collections.Generic;
-using Wing.Olap.Core.Metadata;
-using Wing.Olap.Core.Providers;
-using Wing.Olap.Controls.General.ClientServer;
-using Wing.Olap.Core.Providers.ClientServer;
 
 namespace Wing.Olap.Controls.MemberChoice.ClientServer
 {

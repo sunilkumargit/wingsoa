@@ -19,14 +19,7 @@
 */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections.ObjectModel;
 using Wing.Olap.Core.Data;
 
 namespace Wing.Olap.Providers

@@ -5,28 +5,23 @@
 */
 
 using System;
-using System.Net;
+using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Browser;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Wing.Olap.Core.Providers;
-using Wing.Olap.Controls.PivotGrid.Layout;
-using System.Collections.Generic;
-using Wing.Olap.Core.Data;
-using System.Windows.Controls.Primitives;
 using Wing.Olap.Controls.ContextMenu;
 using Wing.Olap.Controls.General;
 using Wing.Olap.Controls.PivotGrid.Conditions;
 using Wing.Olap.Controls.PivotGrid.Editors;
-using Wing.Olap.Features;
-using System.Windows.Browser;
-using Wing.Olap.Core.Providers.ClientServer;
+using Wing.Olap.Controls.PivotGrid.Layout;
 using Wing.Olap.Core;
+using Wing.Olap.Core.Data;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Features;
 using Wing.Olap.Providers;
 
 namespace Wing.Olap.Controls.PivotGrid.Controls

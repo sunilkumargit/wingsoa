@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using Wing.Olap.Core.Providers.ClientServer;
 using System.Text.RegularExpressions;
 
 namespace Wing.Olap.Providers

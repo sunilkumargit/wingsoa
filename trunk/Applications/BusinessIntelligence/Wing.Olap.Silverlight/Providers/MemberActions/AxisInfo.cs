@@ -6,11 +6,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wing.Olap.Mdx;
-using Wing.Olap.Core.Providers;
 using Wing.Olap.Controls.PivotGrid;
+using Wing.Olap.Core.Providers;
+using Wing.Olap.Mdx;
 
 namespace Wing.Olap.Providers.MemberActions
 {

@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Browser;
-using System.Windows.Controls.Primitives;
 
 namespace Wing.Olap.Features
 {
