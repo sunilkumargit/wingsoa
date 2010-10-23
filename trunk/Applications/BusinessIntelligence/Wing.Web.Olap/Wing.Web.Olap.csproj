@@ -21,7 +21,8 @@
     <SccProvider>
     </SccProvider>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -84,9 +85,6 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Wing.ZipCompression.Silverlight">
-      <HintPath>..\..\..\..\Shared\Wing.ZipCompression.Silverlight\Bin\Debug\Wing.ZipCompression.Silverlight.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Wing.Olap.Silverlight\Controls\General\ClientServer\MetadataQuery.cs">
@@ -119,6 +117,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Wing.ZipCompression\Wing.ZipCompression.csproj">
+      <Project>{7D179793-2D9E-4B6D-AEC9-25211F1F9DF0}</Project>
+      <Name>Wing.ZipCompression</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wing.Olap.Core\Wing.Olap.Core.csproj">
       <Project>{815DC245-EB7F-4C0B-A682-09065F76520A}</Project>
       <Name>Wing.Olap.Core</Name>

@@ -64,9 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\cube48.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Client\Wing.Client.Sdk\Wing.Client.Sdk.csproj">
       <Project>{A52229CB-C24D-4B2E-AEB9-5E3519CD94CF}</Project>
       <Name>Wing.Client.Sdk</Name>
@@ -94,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\cube32.png" />
+    <Resource Include="Assets\cube48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
