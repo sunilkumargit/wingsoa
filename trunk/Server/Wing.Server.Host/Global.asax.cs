@@ -32,7 +32,7 @@ namespace Wing.Server.Host
 
             routes.MapRoute(
                 "Default",                                       // Route name
-                "{controller}/{action}",                         // URL with parameters
+                "{controller}/{action}.actn",                    // URL with parameters
                 new { controller = "Loader", action = "Index" }  // Parameter defaults
             );
 

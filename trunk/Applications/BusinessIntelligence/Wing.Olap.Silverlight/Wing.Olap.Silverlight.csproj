@@ -111,12 +111,6 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Wing.Json.Silverlight">
-      <HintPath>..\..\..\..\Shared\Wing.Json.Silverlight\Bin\Debug\Wing.Json.Silverlight.dll</HintPath>
-    </Reference>
-    <Reference Include="Wing.ZipCompression.Silverlight">
-      <HintPath>..\..\..\..\Shared\Wing.ZipCompression.Silverlight\Bin\Debug\Wing.ZipCompression.Silverlight.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CommandHelper.cs" />
@@ -1105,6 +1099,14 @@
     <ProjectReference Include="..\..\..\Client\Wing.Client.Sdk\Wing.Client.Sdk.csproj">
       <Project>{A52229CB-C24D-4B2E-AEB9-5E3519CD94CF}</Project>
       <Name>Wing.Client.Sdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Shared\Wing.Json.Silverlight\Wing.Json.Silverlight.csproj">
+      <Project>{D00893BF-0F2E-43E0-ABCF-41EBA27E78EB}</Project>
+      <Name>Wing.Json.Silverlight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Shared\Wing.ZipCompression.Silverlight\Wing.ZipCompression.Silverlight.csproj">
+      <Project>{AB8D834D-DDDF-443A-AFD9-FE2C41E3724D}</Project>
+      <Name>Wing.ZipCompression.Silverlight</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wing.Olap.Core.Silverlight\Wing.Olap.Core.Silverlight.csproj">
       <Project>{47A463E4-EEB7-4FC1-AFD8-F200A29E05B6}</Project>

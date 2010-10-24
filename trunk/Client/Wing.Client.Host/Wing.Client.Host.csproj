@@ -92,6 +92,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationStarter.cs" />
     <Compile Include="GridRootVisualManager.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="EntryPage.xaml.cs">

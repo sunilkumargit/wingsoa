@@ -6,8 +6,9 @@ using System.Net;
 using System.Reflection;
 using System.Windows;
 using Wing.Utils;
+using Wing.Client.Core;
 
-namespace Wing.Client.Core
+namespace Wing.Client.Host
 {
     public class ApplicationStarter
     {
@@ -114,7 +115,7 @@ namespace Wing.Client.Core
             var client = new WebClient();
 
             // uri for assemblies metadata
-            var fileUri = CurrentApp.Host.GetRelativeUrl("/WingCltAppSupport/GetAssembliesMetadata");
+            var fileUri = MvcHelper.GetActionUri("WingCltAppSupport", "GetAssembliesMetadata");
 
             // bind to downstring completed event
             client.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, e) =>
@@ -181,7 +182,7 @@ namespace Wing.Client.Core
                 // continue load assemblies
                 currentInfo = assemblies.Pop();
 
-                var uri = new Uri(CurrentApp.Host.GetBaseUrl(), "WingCltAppSupport/GetAssemblyData?file=" + currentInfo.AssemblyName);
+                var uri = MvcHelper.GetActionUri("WingCltAppSupport", "GetAssemblyData", "file=" + currentInfo.AssemblyName);
                 _splash.DisplayStatusMessage("Baixando " + currentInfo.AssemblyName);
                 client.OpenReadAsync(uri);
             });
@@ -372,7 +373,7 @@ namespace Wing.Client.Core
             WebClient client = new WebClient();
 
             // uri for assemblies metadata
-            var fileUri = CurrentApp.Host.GetRelativeUrl("/WingCltAppSupport/GetSoaMetaProviderServiceUri");
+            var fileUri = MvcHelper.GetActionUri("WingCltAppSupport", "GetSoaMetaProviderServiceUri", "");
 
             // bind to downstring completed event
             client.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, e) =>
