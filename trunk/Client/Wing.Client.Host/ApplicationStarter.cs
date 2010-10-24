@@ -409,21 +409,26 @@ namespace Wing.Client.Host
 
         private void ScheduleApplicationTerminate()
         {
-            var cnt = 9;
-            Helper.DelayExecution(TimeSpan.FromSeconds(1), new Func<bool>(() =>
+            if (Application.Current.IsRunningOutOfBrowser)
             {
-                if (cnt == 0)
+                var cnt = 9;
+                Helper.DelayExecution(TimeSpan.FromSeconds(1), new Func<bool>(() =>
                 {
-                    Application.Current.MainWindow.Close();
-                    return false;
-                }
-                else
-                {
-                    _splash.DisplayStatusMessage("A aplicação fechará automaticamente em " + cnt.ToString() + " segundos.");
-                    cnt--;
-                    return true;
-                }
-            }));
+                    if (cnt == 0)
+                    {
+                        Application.Current.MainWindow.Close();
+                        return false;
+                    }
+                    else
+                    {
+                        _splash.DisplayStatusMessage("A aplicação fechará automaticamente em " + cnt.ToString() + " segundos.");
+                        cnt--;
+                        return true;
+                    }
+                }));
+            }
+            else
+                _splash.DisplayStatusMessage("Atualize o browser para reiniciar a aplicação");
         }
     }
 }
