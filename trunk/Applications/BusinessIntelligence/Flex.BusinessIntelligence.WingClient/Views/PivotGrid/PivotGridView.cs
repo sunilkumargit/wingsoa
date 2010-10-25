@@ -1,5 +1,9 @@
 using Wing.Client.Sdk.Controls;
 using Wing.Olap.Controls;
+using System.Windows.Controls;
+using System.Windows;
+using System;
+using Wing.Client.Sdk;
 
 namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
 {
@@ -9,12 +13,38 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
 
         public PivotGridView()
         {
+            var grid = new Grid();
+            grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(25) });
+            grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
+
+            var toolbar = new Toolbar();
+            var saveQueryButton = new SimpleButton() { Content = "Salvar esta consulta... ", Width = 200 };
+            saveQueryButton.Click += new RoutedEventHandler(saveQueryButton_Click);
+            toolbar.LeftItems.Add(saveQueryButton);
+            var exportToExcel = new SimpleButton() { Content = "Exportar para o excel... ", Width = 200 };
+            toolbar.LeftItems.Add(exportToExcel);
+            exportToExcel.Click += new RoutedEventHandler(exportToExcel_Click);
+            grid.Children.Add(toolbar);
+
             designer = new PivotMdxDesignerControl();
+            designer.SetValue(Grid.RowProperty, 1);
+            grid.Children.Add(designer);
             designer.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
             designer.VerticalContentAlignment = System.Windows.VerticalAlignment.Stretch;
             designer.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
             designer.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Stretch;
-            this.Content = designer;
+            this.Content = grid;
+        }
+
+        void exportToExcel_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        void saveQueryButton_Click(object sender, RoutedEventArgs e)
+        {
+            var layoutInfo = designer.ExportMdxLayoutInfo();
+            if (SaveQueryTriggered != null)
+                SaveQueryTriggered.Invoke(layoutInfo);
         }
 
         internal void SetModel(PivotGridPresentationModel Model)
@@ -23,5 +53,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
             designer.CubeName = Model.CubeInfo.CubeName;
             designer.Initialize();
         }
+
+        public SingleEventHandler<String> SaveQueryTriggered;
     }
 }

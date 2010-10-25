@@ -32,7 +32,7 @@ namespace Flex.BusinessIntelligence.Data
 
         public string GetConnectionString()
         {
-            return "";
+            return String.Format("Data Source={0};Catalog={1}", ServerName, CatalogName);
         }
     }
 }

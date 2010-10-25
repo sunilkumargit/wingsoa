@@ -112,5 +112,43 @@ namespace Flex.BusinessIntelligence.WingClient
             });
             _shellService.HideWorkingStatus();
         }
+
+
+        public void RefreshQueriesInfo()
+        {
+            LoadQueriesFromServer();
+        }
+
+        public OperationResult SaveQuery(CubeQueryInfo query, Action<OperationResult> callback)
+        {
+            _shellService.DisplayWorkingStatus("Excluindo as informações da consulta...");
+            OperationResult result = null;
+            SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
+            {
+                result = broker.CallSync<OperationResult, CubeQueryInfo>(channel.BeginSaveQueryInfo, channel.EndSaveQueryInfo, query);
+            });
+            _shellService.HideWorkingStatus();
+            if (result.Status == OperationStatus.Success)
+                RefreshQueriesInfo();
+            if (callback != null)
+                callback(result);
+            return result;
+        }
+
+        public OperationResult DeleteQuery(CubeQueryInfo query, Action<OperationResult> callback)
+        {
+            _shellService.DisplayWorkingStatus("Excluindo as informações do cubo...");
+            OperationResult result = null;
+            SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
+            {
+                result = broker.CallSync<OperationResult, Guid>(channel.BeginDeleteQueryInfo, channel.EndDeleteQueryInfo, query.CubeId);
+            });
+            _shellService.HideWorkingStatus();
+            if (result.Status == OperationStatus.Success)
+                RefreshQueriesInfo();
+            if (callback != null)
+                callback(result);
+            return result;
+        }
     }
 }

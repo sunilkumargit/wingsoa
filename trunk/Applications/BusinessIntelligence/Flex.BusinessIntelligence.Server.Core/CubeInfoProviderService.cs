@@ -76,5 +76,45 @@ namespace Flex.BusinessIntelligence.Server.Core
             var query = _entityStore.CreateQuery<CubeQueryInfo>();
             return query.Find();
         }
+
+
+        public OperationResult SaveQueryInfo(CubeQueryInfo query)
+        {
+            var result = new OperationResult();
+            try
+            {
+                if (!_entityStore.Save(query))
+                {
+                    result.Status = OperationStatus.Error;
+                    result.Message = "Não foi possível salvar a consulta";
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = OperationStatus.Error;
+                result.Message = ex.ToString();
+            }
+            return result;
+        }
+
+        public OperationResult DeleteQueryInfo(Guid queryId)
+        {
+            var query = _entityStore.CreateQuery<CubeQueryInfo>();
+            query.AddFilterEqual("QueryId", queryId);
+            var info = query.FindFirst();
+            var result = new OperationResult();
+            try
+            {
+                if (info != null)
+                    _entityStore.Remove(info);
+                result.Message = "A consulta foi excluída";
+            }
+            catch (Exception ex)
+            {
+                result.Status = OperationStatus.Error;
+                result.Message = ex.ToString();
+            }
+            return result;
+        }
     }
 }

@@ -28,8 +28,14 @@ namespace Flex.BusinessIntelligence.Interop.Services
 
         [OperationContract]
         List<CubeQueryInfo> GetQueriesInfo();
+
+        [OperationContract]
+        OperationResult SaveQueryInfo(CubeQueryInfo query);
+
+        [OperationContract]
+        OperationResult DeleteQueryInfo(Guid queryId);
 #else
-        [OperationContract(AsyncPattern=true)]
+        [OperationContract(AsyncPattern = true)]
         IAsyncResult BeginGetCubesInfo(AsyncCallback callback, Object state);
         List<CubeRegistrationInfo> EndGetCubesInfo(IAsyncResult result);
 
@@ -48,6 +54,14 @@ namespace Flex.BusinessIntelligence.Interop.Services
         [OperationContract(AsyncPattern = true)]
         IAsyncResult BeginGetQueriesInfo(AsyncCallback callback, Object state);
         List<CubeQueryInfo> EndGetQueriesInfo(IAsyncResult result);
+
+        [OperationContract(AsyncPattern = true)]
+        IAsyncResult BeginSaveQueryInfo(CubeQueryInfo query, AsyncCallback callback, Object state);
+        OperationResult EndSaveQueryInfo(IAsyncResult result);
+
+        [OperationContract(AsyncPattern = true)]
+        IAsyncResult BeginDeleteQueryInfo(Guid queryId, AsyncCallback callback, Object state);
+        OperationResult EndDeleteQueryInfo(IAsyncResult result);
 #endif
 
     }
