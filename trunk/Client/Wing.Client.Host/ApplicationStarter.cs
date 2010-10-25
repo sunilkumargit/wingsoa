@@ -346,10 +346,9 @@ namespace Wing.Client.Host
         void FirstConnection()
         {
             _splash.DisplayMessage("Conectando-se ao servidor...");
+            _splash.DisplayLoadingBar();
             var uri = CurrentApp.Host.GetRelativeUrl("/ServerHello.aspx");
             var tries = 10;
-            _splash.DisplayProgressBar(tries);
-            _splash.UpdateProgressBar(tries - 1, 0);
             var client = new WebClient();
             client.DownloadStringCompleted += new DownloadStringCompletedEventHandler((sender, args) =>
             {
@@ -364,7 +363,8 @@ namespace Wing.Client.Host
                     else
                     {
                         _splash.DisplayStatusMessage("Não houve resposta do servidor... tentando novamente");
-                        _splash.UpdateProgressBar(0, -1);
+                        _splash.DisplayProgressBar(tries);
+                        _splash.UpdateProgressBar(tries, 0);
                         Helper.DelayExecution(TimeSpan.FromSeconds(3), () =>
                         {
                             client.DownloadStringAsync(uri);
