@@ -26,6 +26,7 @@ namespace Wing.Client.Host
             if (rootVisualManager == null)
                 throw new ArgumentNullException("rootVisualManager");
             _splash = splashUI;
+            _splash.ShowLoadingView();
             _startActions = new List<Action>();
             _rootVisualManager = rootVisualManager;
             _bootstrapSettings = new BootstrapSettings()
@@ -41,10 +42,10 @@ namespace Wing.Client.Host
         public void Run()
         {
             _store = new ClientAssemblyStore();
-            _startActions.Add(FirstConnection);
 #if !DEBUG
             _startActions.Add(CheckForUpdates);
 #endif
+            _startActions.Add(FirstConnection);
             _startActions.Add(GetAssembliesMetadata);
             _startActions.Add(CheckQuotaSize);
             _startActions.Add(DownloadAssemblies);
@@ -63,7 +64,11 @@ namespace Wing.Client.Host
             _splash.DisplayStatusMessage("");
             var action = _startActions[0];
             _startActions.Remove(action);
-            action();
+            Helper.DelayExecution(TimeSpan.FromMilliseconds(300), () =>
+            {
+                _splash.DispatchToUI(action);
+                return false;
+            });
         }
 
         void CheckForUpdates()
@@ -323,9 +328,16 @@ namespace Wing.Client.Host
             var storage = IsolatedStorageFile.GetUserStoreForApplication();
             if (storage.Quota < Constants.ClientQuotaSize)
             {
-                _splash.DisplayMessage("Não é possível continuar: espaço insuficiente no disco.");
-                ScheduleApplicationTerminate();
-                return;
+                _splash.ShowQuotaIncreaseView(() =>
+                {
+                    if (!storage.IncreaseQuotaTo(Constants.ClientQuotaSize))
+                    {
+                        _splash.DisplayMessage("Não é possível continuar: espaço insuficiente no disco.");
+                        ScheduleApplicationTerminate();
+                    }
+                    else
+                        PerformNextAction();
+                });
             }
             else
                 PerformNextAction();

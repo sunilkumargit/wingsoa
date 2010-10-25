@@ -27,12 +27,17 @@ namespace Wing.Modularity
 #endif
     public partial class ModuleInfo : IModuleCatalogItem
     {
+        private static int _loadOrderSeqCounter = 0;
+
+        private int _loadOrderSeq = 0;
+
         /// <summary>
         /// Initializes a new empty instance of <see cref="ModuleInfo"/>.
         /// </summary>
         public ModuleInfo()
             : this(null, null, new string[0])
         {
+            _loadOrderSeq = ++_loadOrderSeqCounter;
         }
 
         /// <summary>
@@ -47,6 +52,7 @@ namespace Wing.Modularity
             this.ModulePriority = Modularity.ModulePriority.Normal;
             this.ModuleName = name;
             this.ModuleType = type;
+            this.ModuleLoadGroup = "";
             this.DependsOn = new Collection<string>();
             foreach (string dependency in dependsOn)
             {
@@ -112,7 +118,12 @@ namespace Wing.Modularity
         /// </summary>
         public ModulePriority ModulePriority { get; set; }
 
-        internal int LoadOrderIndex { get { return (int)ModuleCategory * 10 + (int)ModulePriority; } }
+        /// <summary>
+        /// Gets or sets the load group for this module.
+        /// </summary>
+        public String ModuleLoadGroup { get; set; }
+
+        internal int LoadOrderIndex { get { return (int)ModuleCategory * 10000 + (int)ModulePriority * 1000 + _loadOrderSeq; } }
 
         public int LoadOrder { get; internal set; }
 

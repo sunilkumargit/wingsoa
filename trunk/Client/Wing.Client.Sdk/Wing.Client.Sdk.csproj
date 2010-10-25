@@ -110,6 +110,9 @@
       <DependentUpon>TreeMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ViewBagDefaultContainer.cs" />
+    <Compile Include="Controls\WaitIndicator.xaml.cs">
+      <DependentUpon>WaitIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DefaultGlobalCommandsManager.cs" />
     <Compile Include="Events\ShellAction.cs" />
     <Compile Include="Events\ShellActionEvent.cs" />
@@ -137,6 +140,7 @@
     <Compile Include="Services\GblCommandUIType.cs" />
     <Compile Include="Services\IGblCommandExecuteContext.cs" />
     <Compile Include="Services\IGblCommandQueryStatusContext.cs" />
+    <Compile Include="WingClientModuleLoadGroups.cs" />
     <Compile Include="WorkContext.cs" />
     <Compile Include="SdkInitializer.cs" />
     <Compile Include="Services\GblCommandExecStatus.cs" />
@@ -212,6 +216,10 @@
     <Page Include="Controls\TreeMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WaitIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

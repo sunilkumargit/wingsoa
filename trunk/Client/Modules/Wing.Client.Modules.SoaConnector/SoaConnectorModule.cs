@@ -4,6 +4,7 @@ using Wing.Modularity;
 using Wing.ServiceLocation;
 using Wing.Soa.Interop;
 using Wing.Soa.Interop.Client;
+using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.SoaConnector
 {
@@ -11,6 +12,7 @@ namespace Wing.Client.Modules.SoaConnector
     [ModuleDescription("Conector da arquitetura de serviços do Wing")]
     [ModuleCategory(ModuleCategory.Core)]
     [ModulePriority(ModulePriority.Higher)]
+    [ModuleLoadGroup(WingClientModuleLoadGroups.Initialization)]
     public class SoaConnectorModule : ModuleBase
     {
         private SoaDefaultChannelFactoryFactory _channelFactoryFactory;

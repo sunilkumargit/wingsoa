@@ -27,6 +27,8 @@ namespace Wing.Modularity
                     moduleInfo.ModuleDescription = GetAttrParamValue<string>(attrData);
                 else if (attrDeclaringType == typeof(ModulePriorityAttribute).FullName)
                     moduleInfo.ModulePriority = GetAttrParamValue<ModulePriority>(attrData);
+                else if (attrDeclaringType == typeof(ModuleLoadGroupAttribute).FullName)
+                    moduleInfo.ModuleLoadGroup = GetAttrParamValue<String>(attrData);
             }
             moduleInfo.Ref = type.Assembly.CodeBase;
 

@@ -11,6 +11,7 @@ namespace Wing.Client.Modules.DefaultTheme
     [ModuleCategory(ModuleCategory.Core)]
     [ModulePriority(ModulePriority.Higher)]
     [ModuleDescription("Tema padrão da interface do usuário")]
+    [ModuleLoadGroup(WingClientModuleLoadGroups.Initialization)]
     public class DefaultThemeModule : ModuleBase
     {
         public override void Initialize()

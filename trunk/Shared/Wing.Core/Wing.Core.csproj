@@ -127,6 +127,7 @@
     <Compile Include="Modularity\ModuleDependencySolver.cs" />
     <Compile Include="Modularity\ModuleDescriptionAttribute.cs" />
     <Compile Include="Modularity\ModuleInfo.cs" />
+    <Compile Include="Modularity\ModuleLoadGroupAttribute.cs" />
     <Compile Include="Modularity\ReflectionOnlyModuleInfoBuilder.cs" />
     <Compile Include="Modularity\ModuleInfoBuilder.cs" />
     <Compile Include="Modularity\ModuleInitializeException.cs" />

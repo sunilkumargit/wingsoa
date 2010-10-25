@@ -26,9 +26,11 @@ namespace Wing.Client
             App.Current.RootVisual = rootVisual;
             var splashUi = new EntryPage();
             rootVisual.Children.Add(splashUi);
+            if (Application.Current.IsRunningOutOfBrowser)
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
             _dispatcher = rootVisual.Dispatcher;
             var starter = new ApplicationStarter(splashUi, new GridRootVisualManager(rootVisual));
-            QuotaIncreaseWindow.CheckQuotaSize(() => starter.Run());
+            starter.Run();
         }
 
         private void Application_Exit(object sender, EventArgs e)

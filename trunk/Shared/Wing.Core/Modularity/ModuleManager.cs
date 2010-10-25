@@ -34,6 +34,7 @@ namespace Wing.Modularity
         private readonly ILogger loggerFacade;
         private IEnumerable<IModuleTypeLoader> typeLoaders;
         private int _orderCount = 0;
+        private bool _initialized = false;
 
         /// <summary>
         /// Initializes an instance of the <see cref="ModuleManager"/> class.
@@ -66,10 +67,17 @@ namespace Wing.Modularity
         /// <summary>
         /// Initializes the modules marked as <see cref="InitializationMode.WhenAvailable"/> on the <see cref="ModuleCatalog"/>.
         /// </summary>
-        public void Run()
+        public void Run(String groupName = "")
         {
-            this.moduleCatalog.Initialize();
-            this.LoadModules();
+            lock (this)
+            {
+                if (!_initialized)
+                {
+                    this.moduleCatalog.Initialize();
+                    _initialized = true;
+                }
+                this.LoadModules(groupName);
+            }
         }
 
         /// <summary>
@@ -111,12 +119,13 @@ namespace Wing.Modularity
             throw moduleTypeLoadingException;
         }
 
-        private void LoadModules()
+        private void LoadModules(String groupName)
         {
             IEnumerable<ModuleInfo> modulesToLoadTypes = this.moduleCatalog.CompleteListWithDependencies(moduleCatalog.Modules);
             if (modulesToLoadTypes != null)
             {
-                this.LoadModuleTypes(modulesToLoadTypes);
+                this.LoadModuleTypes(modulesToLoadTypes
+                    .Where(m => m.ModuleLoadGroup == groupName || String.IsNullOrEmpty(groupName)));
             }
         }
 
@@ -214,7 +223,8 @@ namespace Wing.Modularity
             }
 
             int notReadyRequiredModuleCount =
-                requiredModules.Count(requiredModule => requiredModule.State != ModuleState.Initialized);
+                requiredModules.Count(requiredModule =>
+                    !(requiredModule.State == ModuleState.Initialized || requiredModule.State == ModuleState.Running));
 
             return notReadyRequiredModuleCount == 0;
         }
@@ -238,7 +248,7 @@ namespace Wing.Modularity
             {
                 moduleInfo.LoadOrder = ++_orderCount;
 
-                loggerFacade.Log(String.Format("Initializing module {0}, Category: {1}, Priority: {2}, IndexKey: {3}, Order: {4}",
+                loggerFacade.Log(String.Format("Initializing module {0}, Category: {1}, Priority: {2}, SortKey: {3}, Order: {4}",
                         moduleInfo.ModuleName,
                         moduleInfo.ModuleCategory.ToString(),
                         moduleInfo.ModulePriority.ToString(),

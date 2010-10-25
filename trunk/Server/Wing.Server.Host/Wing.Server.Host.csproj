@@ -13,7 +13,7 @@
     <AssemblyName>Wing.Server.Host</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <SilverlightApplicationList>{B5802382-EE85-4BFE-ADE3-2A5B82D9F1BB}|..\Wing.Client\Wing.Client.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{B5802382-EE85-4BFE-ADE3-2A5B82D9F1BB}|..\..\Client\Wing.Client.Host\Wing.Client.Host.csproj|ClientBin|False</SilverlightApplicationList>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

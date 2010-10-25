@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Wing.Client.Sdk.Events;
 using Wing.Events;
+using Wing.Client.Sdk;
 
 namespace Wing.Client.Modules.IdentityManager.Views
 {
@@ -25,16 +26,19 @@ namespace Wing.Client.Modules.IdentityManager.Views
 
         public void _UserLoginEvent(UserLoginEventArgs args)
         {
-            if (args.Action == UserLoginAction.LoggedOut || args.Action == UserLoginAction.LoggingOut)
+            VisualContext.Async(() =>
             {
-                LoginForm.Visibility = System.Windows.Visibility.Visible;
-                LoggingInMessage.Visibility = System.Windows.Visibility.Collapsed;
-            }
-            else
-            {
-                LoginForm.Visibility = System.Windows.Visibility.Collapsed;
-                LoggingInMessage.Visibility = System.Windows.Visibility.Visible;
-            }
+                if (args.Action == UserLoginAction.LoggedOut || args.Action == UserLoginAction.LoggingOut)
+                {
+                    LoginForm.Visibility = System.Windows.Visibility.Visible;
+                    LoggingInMessage.Visibility = System.Windows.Visibility.Collapsed;
+                }
+                else
+                {
+                    LoginForm.Visibility = System.Windows.Visibility.Collapsed;
+                    LoggingInMessage.Visibility = System.Windows.Visibility.Visible;
+                }
+            });
         }
 
         void TextBox_KeyUp(object sender, KeyEventArgs e)

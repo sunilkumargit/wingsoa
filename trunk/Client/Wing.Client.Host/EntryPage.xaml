@@ -3,37 +3,52 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480">
+    mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="480">
 
     <Border CornerRadius="4" BorderBrush="LightBlue" BorderThickness="1,1,1,1" Margin="0">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*">
-                </RowDefinition>
-                <RowDefinition Height="0.65*">
-                </RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid Grid.RowSpan="2">
-                <Grid.Effect>
-                    <BlurEffect Radius="7"/>
-                </Grid.Effect>
-                <Grid.Background>
-                 <ImageBrush Stretch="UniformToFill" 
-                        ImageSource="Splash/Background.jpg">
+        <Border.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Splash/background.png">
             </ImageBrush>
-                </Grid.Background>
+        </Border.Background>
+        <Grid>
+            <Grid Name="LoadInfo">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="0.65*">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.RowSpan="2">
+                    <Grid.Effect>
+                        <BlurEffect Radius="7"/>
+                    </Grid.Effect>
+                </Grid>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0">
+                    <Image Source="Splash/logocompany.png" Stretch="Uniform" Height="194" Width="404"></Image>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <TextBlock x:Name="StatusText" Text="Aguarde..." Foreground="WhiteSmoke" Margin="3" FontWeight="Bold" TextAlignment="Center"></TextBlock>
+                    <TextBlock x:Name="StatusMessage" Text="Iniciando..." Foreground="White" Margin="0,0,0,5" TextAlignment="Center" FontSize="9" FontFamily="Tahoma"></TextBlock>
+                    <ProgressBar x:Name="InitProgressBar"  IsIndeterminate="False" Width="350" Height="16" Foreground="Red"  Value="50" Background="Silver"></ProgressBar>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,10,10,10">
+                    <Image Source="Splash/logo.png" Stretch="Uniform" Height="44" Width="82"></Image>
+                </StackPanel>
             </Grid>
-            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0">
-                <Image Source="Splash/logocompany.png" Stretch="None"></Image>
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <TextBlock x:Name="StatusText" Text="Aguarde..." Foreground="White" Margin="3" FontWeight="Bold" TextAlignment="Center"></TextBlock>
-                <TextBlock x:Name="StatusMessage" Text="Iniciando..." Foreground="White" Margin="0,0,0,5" TextAlignment="Center" FontSize="9" FontFamily="Tahoma"></TextBlock>
-                <ProgressBar x:Name="InitProgressBar"  IsIndeterminate="False" Width="350" Height="16" Foreground="Navy"  Value="50" Background="White"></ProgressBar>
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,10,10,10">
-                <Image Source="Splash/logo.png" Stretch="Uniform" Height="30"></Image>
-            </StackPanel>
+            <Grid Name="QuotaIncrease" Visibility="Collapsed">
+                <Border BorderBrush="Silver" BorderThickness="1" CornerRadius="5" Width="400" Height="250" Background="White">
+                <StackPanel Margin="15">
+                        <TextBlock Text="Bem-vindo" Foreground="LightSkyBlue" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Margin="25">
+                            Para iniciar a aplicação é necessário reservar espaço em seu
+                            disco rigido para que os arquivos possam ser baixados.
+                            O espaço necessário é de 50MB.
+                            Clique no botão abaixo para continuar.
+                        </TextBlock>
+                        <Button Content="Reservar espaço no disco" Margin="25,0,150,0" Name="QuotaIncreaseButton" Click="QuotaIncreaseButton_Click"></Button>
+                    </StackPanel>
+                </Border>
+            </Grid>
         </Grid>
     </Border>
 </UserControl>

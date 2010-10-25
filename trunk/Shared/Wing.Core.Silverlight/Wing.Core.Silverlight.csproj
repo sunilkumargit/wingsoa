@@ -238,6 +238,9 @@
     <Compile Include="..\Wing.Core\Modularity\ModuleInfoBuilder.cs">
       <Link>Modularity\ModuleInfoBuilder.cs</Link>
     </Compile>
+    <Compile Include="..\Wing.Core\Modularity\ModuleLoadGroupAttribute.cs">
+      <Link>Modularity\ModuleLoadGroupAttribute.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.Core\Modularity\ModulePriority.cs">
       <Link>Modularity\ModulePriority.cs</Link>
     </Compile>

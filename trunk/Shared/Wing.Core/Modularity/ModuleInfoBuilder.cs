@@ -23,6 +23,8 @@ namespace Wing.Modularity
                     moduleInfo.ModuleDescription = ((ModuleDescriptionAttribute)attr).Description;
                 else if (attr.GetType() == typeof(ModulePriorityAttribute))
                     moduleInfo.ModulePriority = ((ModulePriorityAttribute)attr).Priority;
+                else if (attr.GetType() == typeof(ModuleLoadGroupAttribute))
+                    moduleInfo.ModuleLoadGroup = ((ModuleLoadGroupAttribute)attr).Group;
             }
             return moduleInfo;
         }

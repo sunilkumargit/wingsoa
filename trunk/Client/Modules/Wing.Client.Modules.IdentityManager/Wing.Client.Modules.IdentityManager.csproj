@@ -105,8 +105,11 @@
   <ItemGroup>
     <Resource Include="Assets\background.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\background.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
-  <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common"/>
+  <Import Project="$(SolutionDir)\Wing.MSBuild.Client.Common" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">

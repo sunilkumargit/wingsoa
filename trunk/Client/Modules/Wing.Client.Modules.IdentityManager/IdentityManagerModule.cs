@@ -11,6 +11,7 @@ namespace Wing.Client.Modules.IdentityManager
     [ModuleDescription("Cliente do gerenciador de identidades do Wing")]
     [ModuleCategory(ModuleCategory.Core)]
     [ModulePriority(ModulePriority.High)]
+    [ModuleLoadGroup(WingClientModuleLoadGroups.Initialization)]
     public class IdentityManagerModule : ModuleBase
     {
         public override void Initialize()

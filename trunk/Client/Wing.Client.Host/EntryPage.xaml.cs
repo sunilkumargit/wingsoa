@@ -1,11 +1,13 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Wing.Client.Core;
+using System;
 
 namespace Wing.Client
 {
     public partial class EntryPage : UserControl, ISplashUI
     {
+        private System.Action _quotaIncreaseCallback;
         public EntryPage()
         {
             InitializeComponent();
@@ -72,7 +74,32 @@ namespace Wing.Client
             });
         }
 
+        public void ShowLoadingView()
+        {
+            this.LoadInfo.Visibility = System.Windows.Visibility.Visible;
+            this.QuotaIncrease.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        public void ShowQuotaIncreaseView(System.Action callback)
+        {
+            this._quotaIncreaseCallback = callback;
+            this.LoadInfo.Visibility = System.Windows.Visibility.Collapsed;
+            this.QuotaIncrease.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        public void DispatchToUI(Action action)
+        {
+            this.Dispatcher.BeginInvoke(action);
+        }
+
         #endregion
+
+        private void QuotaIncreaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            _quotaIncreaseCallback();
+            ShowLoadingView();
+        }
+
     }
 }
 

@@ -10,11 +10,11 @@
 
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush ImageSource="../Assets/background.jpg"/>
+            <ImageBrush ImageSource="../Assets/background.png"/>
         </Grid.Background>
         <TextBlock Text="Flex Web Applications" Foreground="Azure" Margin="20" FontSize="30" FontFamily="Trebuchet MS"/>
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="250" x:Name="LoginForm">
-            <Border BorderThickness="0"  CornerRadius="6" Background="LightSkyBlue" Opacity=".6">
+            <Border BorderThickness="0"  CornerRadius="6" Background="Gray" Opacity=".6">
                 <Border.Effect>
                     <BlurEffect Radius="2" />
                 </Border.Effect>
@@ -40,7 +40,10 @@
             </Grid>
         </Grid >
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" x:Name="LoggingInMessage">
-            <TextBlock Text="Entrando ..." Foreground="White" FontSize="36" FontFamily="Trebuchet MS" />
+            <StackPanel Orientation="Horizontal">
+            <wingcontrols:WaitIndicator Started="True"></wingcontrols:WaitIndicator>
+            <TextBlock Text="Bem-vindo..." Foreground="White" FontSize="36" FontFamily="Trebuchet MS" Margin="5, -2,0,0"/>
+            </StackPanel>
         </Grid>
         <TextBlock Text="(c) 2010 Empflex Software ltda e Marcelo Santos. Todos os direitos reservados. Este software contém partes ou todo o código de bibliotecas públicas, para mais informações consulte a seção Sobre." Foreground="WhiteSmoke" FontSize="8.5" VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="5,5,5,5" TextAlignment="Center"/>
     </Grid>

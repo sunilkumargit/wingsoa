@@ -57,7 +57,7 @@ namespace Wing.Server.Bootstrap
 
                 logger.Log("Loading modules", Category.Info, Priority.None);
                 //carregar os modulos
-                ServiceLocator.GetInstance<IModuleManager>().Run();
+                ServiceLocator.GetInstance<IModuleManager>().Run(null);
 
                 logger.Log("Server started", Category.Info, Priority.None);
             }

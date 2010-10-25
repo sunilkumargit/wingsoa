@@ -13,18 +13,19 @@ using Wing.Events;
 using Wing.Logging;
 using Wing.Modularity;
 using Wing.ServiceLocation;
+using Wing.Client.Sdk.Events;
 
 namespace Wing.Client.Bootstrap
 {
     public class Bootstrapper : IBootstrapper
     {
         private ISplashUI _splashUi;
+        private SubscriptionToken loginEventToken;
 
         #region IBootstrapper Members
 
         public void Run(BootstrapSettings settings)
         {
-            settings.Splash.DisplayStatusMessage("Iniciando...");
             var _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
             //registrar o ServiceLocator
             ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(() => _serviceLocator));
@@ -69,48 +70,39 @@ namespace Wing.Client.Bootstrap
 
             SdkInitializer.Initialize();
 
+            //inscrever-se no evento de login, no primeiro login válido 
+            //o metodo IModuleManager.Run será invocado novamente para iniciar
+            //o restando dos módulos da aplicacação
+            loginEventToken = ServiceLocator.GetInstance<IEventAggregator>()
+                .GetEvent<UserLoginEvent>()
+                .Subscribe(UserLoginEventHandler);
+
             WorkContext.Async(() =>
             {
-                // inscrever-se nos eventos do module manager para informar o usuário do andamento da inicialização
                 var moduleManager = ServiceLocator.GetInstance<IModuleManager>();
-
-                moduleManager.BeginLoadModules += new EventHandler<ModuleManagerEventArgs>(moduleManager_BeginLoadModules);
-                moduleManager.ModuleInitialized += new EventHandler<ModuleManagerEventArgs>(moduleManager_ModuleInitialized);
-                moduleManager.ModuleRunning += new EventHandler<ModuleManagerEventArgs>(moduleManager_ModuleRunning);
-                moduleManager.EndLoadModules += new EventHandler<ModuleManagerEventArgs>(moduleManager_EndLoadModules);
-
-                moduleManager.Run();
+                _splashUi.DisplayLoadingBar();
+                moduleManager.Run(WingClientModuleLoadGroups.Initialization);
             });
         }
 
-        void moduleManager_EndLoadModules(object sender, ModuleManagerEventArgs e)
-        {
-            // retirar as inscrições nos eventos
-            var moduleManager = ServiceLocator.GetInstance<IModuleManager>();
-            moduleManager.BeginLoadModules -= moduleManager_BeginLoadModules;
-            moduleManager.ModuleInitialized -= moduleManager_ModuleInitialized;
-            moduleManager.ModuleRunning -= moduleManager_ModuleRunning;
-            moduleManager.EndLoadModules -= moduleManager_EndLoadModules;
-        }
-
-        void moduleManager_ModuleRunning(object sender, ModuleManagerEventArgs e)
-        {
-            _splashUi.DisplayStatusMessage(e.CurrentModule.ModuleName + " pronto");
-            _splashUi.UpdateProgressBar(0, 1);
-        }
-
-        void moduleManager_ModuleInitialized(object sender, ModuleManagerEventArgs e)
-        {
-            _splashUi.DisplayStatusMessage(e.CurrentModule.ModuleName + " iniciado");
-            _splashUi.UpdateProgressBar(0, 1);
-        }
-
-        void moduleManager_BeginLoadModules(object sender, ModuleManagerEventArgs e)
-        {
-            _splashUi.DisplayProgressBar(e.Modules.Length * 2);  //  * 2 pois o progresso será informado na inicialização do modulo e também quando este estiver pronto.
-        }
-
         #endregion
+
+        public void UserLoginEventHandler(UserLoginEventArgs args)
+        {
+            if (args.Action == UserLoginAction.LoggedIn)
+            {
+                var moduleManager = ServiceLocator.GetInstance<IModuleManager>();
+                moduleManager.Run(WingClientModuleLoadGroups.Application);
+                moduleManager.Run(null);
+                WorkContext.Sync(() =>
+                {
+                    //repassar o evento novamente para que os modulos recem-carregados possam recebe-lo
+                    var loginEvent = ServiceLocator.GetInstance<IEventAggregator>().GetEvent<UserLoginEvent>();
+                    loginEvent.Unsubscribe(loginEventToken);
+                    loginEvent.Publish(args);
+                });
+            }
+        }
 
         /// <summary>
         /// Configures the default region adapter mappings to use in the application, in order

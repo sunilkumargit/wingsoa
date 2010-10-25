@@ -25,7 +25,7 @@ namespace Wing.Modularity
         /// <summary>
         /// Initializes the modules marked as <see cref="InitializationMode.WhenAvailable"/> on the <see cref="ModuleCatalog"/>.
         /// </summary>
-        void Run();
+        void Run(String groupName);
 
         /// <summary>
         /// Initializes the module on the <see cref="ModuleCatalog"/> with the name <paramref name="moduleName"/>.
