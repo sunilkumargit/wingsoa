@@ -103,9 +103,6 @@
     <Resource Include="Assets\window_close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

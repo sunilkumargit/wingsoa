@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Flex.BusinessIntelligence.Data;
@@ -121,7 +122,7 @@ namespace Flex.BusinessIntelligence.WingClient
 
         public OperationResult SaveQuery(CubeQueryInfo query, Action<OperationResult> callback)
         {
-            _shellService.DisplayWorkingStatus("Excluindo as informações da consulta...");
+            _shellService.DisplayWorkingStatus("Gravando as informações da consulta...");
             OperationResult result = null;
             SoaClientManager.InvokeService<ICubeInfoProviderService>((channel, broker) =>
             {
@@ -149,6 +150,12 @@ namespace Flex.BusinessIntelligence.WingClient
             if (callback != null)
                 callback(result);
             return result;
+        }
+
+
+        public CubeRegistrationInfo GetCubeInfo(Guid cubeId)
+        {
+            return Cubes.FirstOrDefault(c => c.CubeId == cubeId);
         }
     }
 }

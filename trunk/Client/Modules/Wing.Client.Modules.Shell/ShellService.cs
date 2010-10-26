@@ -242,8 +242,11 @@ namespace Wing.Client.Modules.Shell
 
         public void HideWorkingStatus()
         {
-            this.HideProgressOrWorkingBar();
-            this.StatusMessage("");
+            VisualContext.DelayAsync(TimeSpan.FromSeconds(1), () =>
+            {
+                this.HideProgressOrWorkingBar();
+                this.StatusMessage("");
+            });
         }
     }
 }

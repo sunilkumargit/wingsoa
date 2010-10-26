@@ -416,3 +416,159 @@
 25/10/2010 16:46:02: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15000, Order: 5
 25/10/2010 16:46:03: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22000, Order: 6
 25/10/2010 16:46:03: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+26/10/2010 09:01:23: Server starting
+26/10/2010 09:01:23: Registering routes
+26/10/2010 09:01:23: Configuring server settings
+26/10/2010 09:01:23: Preparing server assembly store
+26/10/2010 09:01:23: Consolidating store
+26/10/2010 09:01:23: Server store consolidated succesfully
+26/10/2010 09:01:23: Creating bootstrapper
+26/10/2010 09:01:23: Loading bootstrapper assembly: Wing.Server.Bootstrap
+26/10/2010 09:01:23: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+26/10/2010 09:01:23: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+26/10/2010 09:01:23: Bootstrapper instance created successfully
+26/10/2010 09:01:23: Running bootstrapper
+26/10/2010 09:01:23: default   |Info     |None  : Bootstrapper starting...
+26/10/2010 09:01:23: default   |Debug    |None  : Creating services container
+26/10/2010 09:01:23: default   |Debug    |None  : Setting service locator provider
+26/10/2010 09:01:23: default   |Debug    |None  : Creating server assembly store resolver
+26/10/2010 09:01:23: default   |Info     |None  : Loading modules
+26/10/2010 09:01:24: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11000, Order: 1
+26/10/2010 09:01:24: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12000, Order: 2
+26/10/2010 09:01:27: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12000, Order: 3
+26/10/2010 09:01:28: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12000, Order: 4
+26/10/2010 09:01:28: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15000, Order: 5
+26/10/2010 09:01:29: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22000, Order: 6
+26/10/2010 09:01:29: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+26/10/2010 09:38:16: Server starting
+26/10/2010 09:38:16: Registering routes
+26/10/2010 09:38:16: Configuring server settings
+26/10/2010 09:38:16: Preparing server assembly store
+26/10/2010 09:38:16: Consolidating store
+26/10/2010 09:38:16: Server store consolidated succesfully
+26/10/2010 09:38:16: Creating bootstrapper
+26/10/2010 09:38:16: Loading bootstrapper assembly: Wing.Server.Bootstrap
+26/10/2010 09:38:16: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+26/10/2010 09:38:16: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+26/10/2010 09:38:16: Bootstrapper instance created successfully
+26/10/2010 09:38:16: Running bootstrapper
+26/10/2010 09:38:16: default   |Info     |None  : Bootstrapper starting...
+26/10/2010 09:38:16: default   |Debug    |None  : Creating services container
+26/10/2010 09:38:16: default   |Debug    |None  : Setting service locator provider
+26/10/2010 09:38:16: default   |Debug    |None  : Creating server assembly store resolver
+26/10/2010 09:38:16: default   |Info     |None  : Loading modules
+26/10/2010 09:38:17: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11000, Order: 1
+26/10/2010 09:38:17: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12000, Order: 2
+26/10/2010 09:38:20: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12000, Order: 3
+26/10/2010 09:38:21: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12000, Order: 4
+26/10/2010 09:38:21: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15000, Order: 5
+26/10/2010 09:38:22: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22000, Order: 6
+26/10/2010 09:38:22: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+26/10/2010 09:45:10: Server starting
+26/10/2010 09:45:10: Registering routes
+26/10/2010 09:45:10: Configuring server settings
+26/10/2010 09:45:10: Preparing server assembly store
+26/10/2010 09:45:10: Consolidating store
+26/10/2010 09:45:10: Server store consolidated succesfully
+26/10/2010 09:45:10: Creating bootstrapper
+26/10/2010 09:45:10: Loading bootstrapper assembly: Wing.Server.Bootstrap
+26/10/2010 09:45:10: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+26/10/2010 09:45:10: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+26/10/2010 09:45:10: Bootstrapper instance created successfully
+26/10/2010 09:45:10: Running bootstrapper
+26/10/2010 09:45:11: default   |Info     |None  : Bootstrapper starting...
+26/10/2010 09:45:11: default   |Debug    |None  : Creating services container
+26/10/2010 09:45:11: default   |Debug    |None  : Setting service locator provider
+26/10/2010 09:45:11: default   |Debug    |None  : Creating server assembly store resolver
+26/10/2010 09:45:11: default   |Info     |None  : Loading modules
+26/10/2010 09:45:11: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11000, Order: 1
+26/10/2010 09:45:11: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12000, Order: 2
+26/10/2010 09:45:14: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12000, Order: 3
+26/10/2010 09:45:14: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12000, Order: 4
+26/10/2010 09:45:15: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15000, Order: 5
+26/10/2010 09:45:15: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22000, Order: 6
+26/10/2010 09:45:16: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+26/10/2010 09:49:54: Server starting
+26/10/2010 09:49:54: Registering routes
+26/10/2010 09:49:54: Configuring server settings
+26/10/2010 09:49:54: Preparing server assembly store
+26/10/2010 09:49:54: Consolidating store
+26/10/2010 09:49:54: Server store consolidated succesfully
+26/10/2010 09:49:54: Creating bootstrapper
+26/10/2010 09:49:54: Loading bootstrapper assembly: Wing.Server.Bootstrap
+26/10/2010 09:49:54: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+26/10/2010 09:49:54: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+26/10/2010 09:49:54: Bootstrapper instance created successfully
+26/10/2010 09:49:54: Running bootstrapper
+26/10/2010 09:49:54: default   |Info     |None  : Bootstrapper starting...
+26/10/2010 09:49:54: default   |Debug    |None  : Creating services container
+26/10/2010 09:49:54: default   |Debug    |None  : Setting service locator provider
+26/10/2010 09:49:54: default   |Debug    |None  : Creating server assembly store resolver
+26/10/2010 09:49:54: default   |Info     |None  : Loading modules
+26/10/2010 09:49:55: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11000, Order: 1
+26/10/2010 09:49:55: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12000, Order: 2
+26/10/2010 09:49:57: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12000, Order: 3
+26/10/2010 09:49:58: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12000, Order: 4
+26/10/2010 09:49:58: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15000, Order: 5
+26/10/2010 09:49:59: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22000, Order: 6
+26/10/2010 09:49:59: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+26/10/2010 10:06:25: Server starting
+26/10/2010 10:06:25: Registering routes
+26/10/2010 10:06:25: Configuring server settings
+26/10/2010 10:06:25: Preparing server assembly store
+26/10/2010 10:06:25: Consolidating store
+26/10/2010 10:06:25: Server store consolidated succesfully
+26/10/2010 10:06:25: Creating bootstrapper
+26/10/2010 10:06:25: Loading bootstrapper assembly: Wing.Server.Bootstrap
+26/10/2010 10:06:25: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+26/10/2010 10:06:25: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+26/10/2010 10:06:25: Bootstrapper instance created successfully
+26/10/2010 10:06:25: Running bootstrapper
+26/10/2010 10:06:25: default   |Info     |None  : Bootstrapper starting...
+26/10/2010 10:06:25: default   |Debug    |None  : Creating services container
+26/10/2010 10:06:25: default   |Debug    |None  : Setting service locator provider
+26/10/2010 10:06:25: default   |Debug    |None  : Creating server assembly store resolver
+26/10/2010 10:06:25: default   |Info     |None  : Loading modules
+26/10/2010 10:06:26: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11000, Order: 1
+26/10/2010 10:06:26: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12000, Order: 2
+26/10/2010 10:06:28: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12000, Order: 3
+26/10/2010 10:06:29: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12000, Order: 4
+26/10/2010 10:06:29: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15000, Order: 5
+26/10/2010 10:06:30: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22000, Order: 6
+26/10/2010 10:06:30: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+26/10/2010 10:12:25: Server starting
+26/10/2010 10:12:25: Registering routes
+26/10/2010 10:12:25: Configuring server settings
+26/10/2010 10:12:25: Preparing server assembly store
+26/10/2010 10:12:25: Consolidating store
+26/10/2010 10:12:25: Server store consolidated succesfully
+26/10/2010 10:12:25: Creating bootstrapper
+26/10/2010 10:12:25: Loading bootstrapper assembly: Wing.Server.Bootstrap
+26/10/2010 10:12:25: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+26/10/2010 10:12:25: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+26/10/2010 10:12:25: Bootstrapper instance created successfully
+26/10/2010 10:12:25: Running bootstrapper
+26/10/2010 10:12:25: default   |Info     |None  : Bootstrapper starting...
+26/10/2010 10:12:25: default   |Debug    |None  : Creating services container
+26/10/2010 10:12:25: default   |Debug    |None  : Setting service locator provider
+26/10/2010 10:12:25: default   |Debug    |None  : Creating server assembly store resolver
+26/10/2010 10:12:25: default   |Info     |None  : Loading modules
+26/10/2010 10:12:25: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11000, Order: 1
+26/10/2010 10:12:26: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12000, Order: 2
+26/10/2010 10:12:28: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12000, Order: 3
+26/10/2010 10:12:28: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12000, Order: 4
+26/10/2010 10:12:28: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15000, Order: 5
+26/10/2010 10:12:29: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22000, Order: 6
+26/10/2010 10:12:29: default   |Info     |None  : Server started

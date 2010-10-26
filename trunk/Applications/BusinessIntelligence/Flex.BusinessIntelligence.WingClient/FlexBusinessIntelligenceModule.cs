@@ -110,10 +110,32 @@ namespace Flex.BusinessIntelligence.WingClient
                 .AddDelegateHandler((ctx) =>
                 {
                     //criar o presenter e o presentation model
-                    var presentationModel = new PivotGridPresentationModel((CubeRegistrationInfo)ctx.Parameter);
+                    var presentationModel = new PivotGridPresentationModel((CubeRegistrationInfo)ctx.Parameter, null);
                     var presenter = new PivotGridPresenter(presentationModel);
                     ServiceLocator.GetInstance<IBIRootPresenter>()
                         .Navigate(presenter);
+                }, (ctx) =>
+                {
+                    if (ctx.Parameter == null)
+                        ctx.Status = GblCommandStatus.Disabled;
+                });
+
+            // abrir uma consulta existente
+            CommandsManager.CreateCommand(BICommandNames.OpenCubeQuery, "Abrir a consulta")
+                .AddDelegateHandler((ctx) =>
+                {
+                    WorkContext.Async(() =>
+                    {
+                        // criar o presenter e presentation model
+                        var queryInfo = (CubeQueryInfo)ctx.Parameter;
+                        var cubeInfo = ServiceLocator.GetInstance<ICubeServicesProxy>().GetCubeInfo(queryInfo.CubeId);
+                        var presentationModel = new PivotGridPresentationModel(cubeInfo, queryInfo);
+                        VisualContext.Sync(() =>
+                        {
+                            var presenter = new PivotGridPresenter(presentationModel);
+                            ServiceLocator.GetInstance<IBIRootPresenter>().Navigate(presenter);
+                        });
+                    });
                 }, (ctx) =>
                 {
                     if (ctx.Parameter == null)

@@ -89,6 +89,9 @@
     <Compile Include="Views\RegisterCube\CubeRegisterPresenter.cs" />
     <Compile Include="Views\RegisterCube\CubeRegisterView.cs" />
     <Compile Include="Views\Root\BIRootPresenter.cs" />
+    <Compile Include="Views\SaveQuery\SaveQueryPresentationModel.cs" />
+    <Compile Include="Views\SaveQuery\SaveQueryPresenter.cs" />
+    <Compile Include="Views\SaveQuery\SaveQueryView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Client\Wing.Client.Core\Wing.Client.Core.csproj">

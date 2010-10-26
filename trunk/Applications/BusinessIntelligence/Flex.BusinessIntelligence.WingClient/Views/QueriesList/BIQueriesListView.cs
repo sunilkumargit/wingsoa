@@ -20,7 +20,7 @@ namespace Flex.BusinessIntelligence.WingClient.Views.QueriesList
             _listView = new ListView();
             _listView.Margin = new Thickness(0, 20, 0, 25);
             _listView.DefaultIconSource = "bi;/Assets/report48.png";
-            _listView.TextPropertyName = "CubeName";
+            _listView.TextPropertyName = "Name";
             _listView.ItemTriggered += new SingleEventHandler<ListView, object>(_listView_ItemTriggered);
             panel.Children.Add(_listView);
             this.Content = panel;

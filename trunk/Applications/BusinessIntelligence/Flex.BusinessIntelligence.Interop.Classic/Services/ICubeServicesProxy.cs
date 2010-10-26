@@ -11,6 +11,7 @@ namespace Flex.BusinessIntelligence.Interop.Services
         ObservableCollection<CubeQueryInfo> Queries { get; }
         void RefreshCubesInfo();
         void RefreshQueriesInfo();
+        CubeRegistrationInfo GetCubeInfo(Guid cubeId);
         OperationResult SaveCube(CubeRegistrationInfo cube, Action<OperationResult> callback);
         OperationResult DeleteCube(CubeRegistrationInfo cube, Action<OperationResult> callback);
         OperationResult SaveQuery(CubeQueryInfo query, Action<OperationResult> callback);

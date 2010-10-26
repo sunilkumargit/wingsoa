@@ -7,11 +7,13 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
     public class PivotGridPresentationModel : ViewPresentationModel
     {
         private CubeRegistrationInfo _cubeInfo;
+        private CubeQueryInfo _queryInfo;
 
-        public PivotGridPresentationModel(CubeRegistrationInfo cubeInfo)
+        public PivotGridPresentationModel(CubeRegistrationInfo cubeInfo, CubeQueryInfo queryInfo)
         {
             Assert.NullArgument(cubeInfo, "cubeInfo");
             _cubeInfo = cubeInfo;
+            _queryInfo = queryInfo;
         }
 
         public override string Caption
@@ -24,5 +26,6 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
         }
 
         public CubeRegistrationInfo CubeInfo { get { return _cubeInfo; } }
+        public CubeQueryInfo QueryInfo { get { return _queryInfo; } }
     }
 }

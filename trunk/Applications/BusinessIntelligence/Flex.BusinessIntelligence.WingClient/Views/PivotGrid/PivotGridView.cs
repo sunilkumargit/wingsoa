@@ -21,9 +21,6 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
             var saveQueryButton = new SimpleButton() { Content = "Salvar esta consulta... ", Width = 200 };
             saveQueryButton.Click += new RoutedEventHandler(saveQueryButton_Click);
             toolbar.LeftItems.Add(saveQueryButton);
-            var exportToExcel = new SimpleButton() { Content = "Exportar para o excel... ", Width = 200 };
-            toolbar.LeftItems.Add(exportToExcel);
-            exportToExcel.Click += new RoutedEventHandler(exportToExcel_Click);
             grid.Children.Add(toolbar);
 
             designer = new PivotMdxDesignerControl();
@@ -34,10 +31,6 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
             designer.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
             designer.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Stretch;
             this.Content = grid;
-        }
-
-        void exportToExcel_Click(object sender, RoutedEventArgs e)
-        {
         }
 
         void saveQueryButton_Click(object sender, RoutedEventArgs e)
@@ -52,8 +45,10 @@ namespace Flex.BusinessIntelligence.WingClient.Views.PivotGrid
             designer.Connection = Model.CubeInfo.GetConnectionString();
             designer.CubeName = Model.CubeInfo.CubeName;
             designer.Initialize();
+            if (Model.QueryInfo != null)
+                designer.ImportMdxLayoutInfo(Model.QueryInfo.QueryData);
         }
 
-        public SingleEventHandler<String> SaveQueryTriggered;
+        public event SingleEventHandler<String> SaveQueryTriggered;
     }
 }

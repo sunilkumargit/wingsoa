@@ -10,5 +10,6 @@ namespace Flex.BusinessIntelligence
         public static readonly string CubeShowProperties = "BI.CubeShowProperties";
         public static readonly string RegisterCube = "BI.RegisterCube";
         public static readonly string NewCubeQuery = "BI.NewCubeQuery";
+        public static readonly string OpenCubeQuery = "BI.OpenCubeQuery";
     }
 }
