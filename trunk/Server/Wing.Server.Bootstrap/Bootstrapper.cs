@@ -20,7 +20,7 @@ namespace Wing.Server.Bootstrap
             try
             {
                 logger.Log("Creating services container", Category.Debug, Priority.None);
-                _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
+                _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null, logger);
 
                 logger.Log("Setting service locator provider", Category.Debug, Priority.None);
                 //registrar o ServiceLocator

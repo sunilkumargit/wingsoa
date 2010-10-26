@@ -27,6 +27,7 @@ namespace Wing.Modularity
 #endif
     public partial class ModuleInfo : IModuleCatalogItem
     {
+        private Object __lockObject = new Object();
         private static int _loadOrderSeqCounter = 0;
 
         private int _loadOrderSeq = 0;
@@ -35,10 +36,7 @@ namespace Wing.Modularity
         /// Initializes a new empty instance of <see cref="ModuleInfo"/>.
         /// </summary>
         public ModuleInfo()
-            : this(null, null, new string[0])
-        {
-            _loadOrderSeq = ++_loadOrderSeqCounter;
-        }
+            : this(null, null, new string[0]) { }
 
         /// <summary>
         /// Initializes a new instance of <see cref="ModuleInfo"/>.
@@ -48,6 +46,11 @@ namespace Wing.Modularity
         /// <param name="dependsOn">The modules this instance depends on.</param>
         public ModuleInfo(string name, string type, params string[] dependsOn)
         {
+            lock (__lockObject)
+            {
+                _loadOrderSeqCounter = _loadOrderSeqCounter + 1;
+                _loadOrderSeq = _loadOrderSeqCounter;
+            }
             this.ModuleCategory = Modularity.ModuleCategory.Common;
             this.ModulePriority = Modularity.ModulePriority.Normal;
             this.ModuleName = name;
@@ -123,7 +126,7 @@ namespace Wing.Modularity
         /// </summary>
         public String ModuleLoadGroup { get; set; }
 
-        internal int LoadOrderIndex { get { return (int)ModuleCategory * 10000 + (int)ModulePriority * 1000 + _loadOrderSeq; } }
+        internal int LoadOrderIndex { get { return ((int)ModuleCategory * 10000) + ((int)ModulePriority * 1000) + _loadOrderSeq; } }
 
         public int LoadOrder { get; internal set; }
 

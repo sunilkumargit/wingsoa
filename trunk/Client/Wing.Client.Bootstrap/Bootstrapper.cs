@@ -27,9 +27,12 @@ namespace Wing.Client.Bootstrap
         public void Run(BootstrapSettings settings)
         {
             var syncBroker = new SyncBrokerService(Application.Current.RootVisual.Dispatcher);
-            var _serviceLocator = new SynchorizedServiceLocator(null, syncBroker);
+            var logger = new DebugLogger();
+            var _serviceLocator = new SynchorizedServiceLocator(null, logger, syncBroker);
             //registrar o ServiceLocator
             ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(() => _serviceLocator));
+
+            ServiceLocator.Register<ILogger>(logger);
 
             ServiceLocator.Register<ISyncBroker>(syncBroker);
             VisualContext.SetSyncBroker(ServiceLocator.GetInstance<ISyncBroker>());
@@ -42,8 +45,6 @@ namespace Wing.Client.Bootstrap
             ServiceLocator.Register<ISplashUI>(settings.Splash);
             _splashUi = settings.Splash;
 
-            //registrar o logger
-            ServiceLocator.Register<ILogger, DebugLogger>(true);
 
             //registrar os servicos de modulos
             ServiceLocator.Register<IModuleCatalog>(new InMemoryModuleCatalog(settings.Assemblies));

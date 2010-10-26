@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 using Wing.Client.Sdk;
 using Wing.ServiceLocation;
+using Wing.Logging;
 
 namespace Wing.Client.Bootstrap
 {
@@ -11,8 +12,8 @@ namespace Wing.Client.Bootstrap
     {
         private ISyncBroker _syncBroker;
 
-        public SynchorizedServiceLocator(IUnityContainer container, ISyncBroker syncBroker)
-            : base(container)
+        public SynchorizedServiceLocator(IUnityContainer container, ILogger logger, ISyncBroker syncBroker)
+            : base(container, logger)
         {
             _syncBroker = syncBroker;
         }

@@ -2,6 +2,7 @@
 
 namespace Wing.Client.Sdk
 {
+    [System.Diagnostics.DebuggerStepThrough]
     public static class VisualContext
     {
         private static ISyncBroker _syncBroker;

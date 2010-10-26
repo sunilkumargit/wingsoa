@@ -58,6 +58,9 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Wing.UnityServiceLocator\ContainerLoggerExtension.cs">
+      <Link>ContainerLoggerExtension.cs</Link>
+    </Compile>
     <Compile Include="..\Wing.UnityServiceLocator\UnityServiceLocator.cs">
       <Link>UnityServiceLocator.cs</Link>
     </Compile>

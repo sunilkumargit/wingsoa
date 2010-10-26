@@ -125,6 +125,7 @@ namespace Wing.Client.Sdk
                 _views.Remove(presenter);
                 if (ActivePresenter == presenter)
                     DeactivatePresenter(presenter);
+                _regionManager.Regions[_contentRegion].Remove(presenter.GetView());
                 UpdateActiveView();
             });
         }

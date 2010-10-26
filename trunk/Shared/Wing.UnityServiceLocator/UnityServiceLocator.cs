@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Practices.Unity;
 using Wing.ServiceLocation;
+using Wing.Logging;
 
 namespace Wing.UnityServiceLocator
 {
@@ -10,9 +11,14 @@ namespace Wing.UnityServiceLocator
     {
         private IUnityContainer _container;
 
-        public UnityServiceLocator(IUnityContainer container)
+        public UnityServiceLocator(IUnityContainer container, ILogger logger)
         {
             _container = container ?? new UnityContainer();
+            if (logger != null)
+            {
+                var extension = new UnityContainerLoggerExtension(logger);
+                _container.AddExtension(extension);
+            }
         }
 
         [System.Diagnostics.DebuggerStepThrough]

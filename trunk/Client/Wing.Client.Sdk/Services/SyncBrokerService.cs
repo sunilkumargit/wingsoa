@@ -3,6 +3,7 @@ using System.Windows.Threading;
 
 namespace Wing.Client.Sdk.Services
 {
+    [System.Diagnostics.DebuggerStepThrough]
     public class SyncBrokerService : ISyncBroker
     {
         private DispatcherSynchronizationContext _context;
