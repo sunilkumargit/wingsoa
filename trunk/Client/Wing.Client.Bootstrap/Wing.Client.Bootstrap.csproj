@@ -66,12 +66,16 @@
     <Compile Include="InMemoryModuleCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduledModuleInitializer.cs" />
-    <Compile Include="UnityServiceLocator.cs" />
+    <Compile Include="SynchonizedServiceLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Wing.Core.Silverlight\Wing.Core.Silverlight.csproj">
       <Project>{A8340CDA-5F58-49DD-A30F-E65376471CAB}</Project>
       <Name>Wing.Core.Silverlight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Wing.UnityServiceLocator.Silverlight\Wing.UnityServiceLocator.Silverlight.csproj">
+      <Project>{17F64947-F1AB-4621-AA7F-921F7721E4A3}</Project>
+      <Name>Wing.UnityServiceLocator.Silverlight</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wing.Client.Core\Wing.Client.Core.csproj">
       <Project>{28374482-C3AB-4F4C-A1DD-A8167D7F23D7}</Project>

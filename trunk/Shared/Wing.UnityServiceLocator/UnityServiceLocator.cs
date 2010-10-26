@@ -15,36 +15,42 @@ namespace Wing.UnityServiceLocator
             _container = container ?? new UnityContainer();
         }
 
+        [System.Diagnostics.DebuggerStepThrough]
+        protected virtual TResult InvokeContainer<TResult>(Func<TResult> action)
+        {
+            return action.Invoke();
+        }
+
         #region IServiceLocator Members
 
         public object GetInstance(Type serviceType)
         {
-            return _container.Resolve(serviceType);
+            return InvokeContainer<Object>(() => _container.Resolve(serviceType));
         }
 
         public object GetInstance(Type serviceType, string key)
         {
-            return _container.Resolve(serviceType, key);
+            return InvokeContainer<Object>(() => _container.Resolve(serviceType, key));
         }
 
         public IEnumerable<object> GetAllInstances(Type serviceType)
         {
-            return _container.ResolveAll(serviceType);
+            return InvokeContainer<IEnumerable<Object>>(() => _container.ResolveAll(serviceType));
         }
 
         public TService GetInstance<TService>()
         {
-            return _container.Resolve<TService>();
+            return InvokeContainer<TService>(() => _container.Resolve<TService>());
         }
 
         public TService GetInstance<TService>(string key)
         {
-            return _container.Resolve<TService>(key);
+            return InvokeContainer<TService>(() => _container.Resolve<TService>(key));
         }
 
         public IEnumerable<TService> GetAllInstances<TService>()
         {
-            return _container.ResolveAll<TService>();
+            return InvokeContainer<IEnumerable<TService>>(() => _container.ResolveAll<TService>());
         }
 
         public void Register<TService, TImpl>(string key, bool asSingleton) where TImpl : TService

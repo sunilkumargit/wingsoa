@@ -26,11 +26,12 @@ namespace Wing.Client.Bootstrap
 
         public void Run(BootstrapSettings settings)
         {
-            var _serviceLocator = new Wing.UnityServiceLocator.UnityServiceLocator(null);
+            var syncBroker = new SyncBrokerService(Application.Current.RootVisual.Dispatcher);
+            var _serviceLocator = new SynchorizedServiceLocator(null, syncBroker);
             //registrar o ServiceLocator
             ServiceLocator.SetLocatorProvider(new ServiceLocatorProvider(() => _serviceLocator));
 
-            ServiceLocator.Register<ISyncBroker>(new SyncBrokerService(Application.Current.RootVisual.Dispatcher));
+            ServiceLocator.Register<ISyncBroker>(syncBroker);
             VisualContext.SetSyncBroker(ServiceLocator.GetInstance<ISyncBroker>());
 
             //registrar o locator
