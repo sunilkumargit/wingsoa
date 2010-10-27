@@ -15,8 +15,11 @@ namespace Wing.Client.Core
     {
         public static String GetActionUrl(String controller, String action, string getParams = null)
         {
+            var baseUrl = Application.Current.Host.GetBaseUrl().ToString();
+            if (baseUrl.EndsWith("/"))
+                baseUrl = baseUrl.Remove(baseUrl.Length - 1, 1);
             return String.Format("{0}/{1}/{2}.actn?{3}",
-                Application.Current.Host.GetBaseUrl().ToString(),
+                baseUrl,
                 controller,
                 action,
                 getParams);

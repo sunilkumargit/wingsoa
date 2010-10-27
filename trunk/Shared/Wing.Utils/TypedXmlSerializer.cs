@@ -22,8 +22,26 @@ namespace Wing.Utils
         public TType DeserializeFromFile(String path)
         {
             Stream stream = File.OpenRead(path);
-            TType result = Deserialize(stream);
-            stream.Close();
+            TType result = default(TType);
+            byte[] buffer = new byte[stream.Length];
+            try
+            {
+                stream.Read(buffer, 0, buffer.Length);
+            }
+            finally
+            {
+                stream.Close();
+                stream.Dispose();
+            }
+            stream = new MemoryStream(buffer);
+            try
+            {
+                result = Deserialize(stream);
+            }
+            finally
+            {
+                stream.Dispose();
+            }
             return result;
         }
 
@@ -37,7 +55,7 @@ namespace Wing.Utils
             var sb = new StringBuilder();
             var stream = new StringWriter(sb);
             _serializer.Serialize(stream, instance);
-            stream.Close();
+            stream.Dispose();
             File.WriteAllText(path, sb.ToString());
         }
 
@@ -55,6 +73,7 @@ namespace Wing.Utils
             finally
             {
                 stream.Close();
+                stream.Dispose();
             }
         }
 
@@ -71,6 +90,7 @@ namespace Wing.Utils
             finally
             {
                 stream.Close();
+                stream.Dispose();
             }
         }
     }

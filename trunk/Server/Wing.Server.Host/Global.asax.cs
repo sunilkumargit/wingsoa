@@ -4,6 +4,7 @@ using System.IO;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Wing.Server.Core;
+using System.Web;
 
 namespace Wing.Server.Host
 {
@@ -15,6 +16,11 @@ namespace Wing.Server.Host
         private string BootLogFilePath = "";
         private BootstrapSettings _settings;
         private IBootstrapper _bootstrapperInstance;
+
+        public static String MapUrl(String url)
+        {
+            return UrlHelper.GenerateContentUrl(url, HttpContext.Current.Request.RequestContext.HttpContext);
+        }
 
         public void Log(String message, Exception ex = null)
         {

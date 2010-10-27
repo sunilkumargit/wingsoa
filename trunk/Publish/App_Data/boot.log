@@ -1,0 +1,145 @@
+
+
+-------------------------------------------------------------------------------------
+27/10/2010 11:52:35: Server starting
+27/10/2010 11:52:35: Registering routes
+27/10/2010 11:52:35: Configuring server settings
+27/10/2010 11:52:35: Preparing server assembly store
+27/10/2010 11:52:35: Consolidating store
+27/10/2010 11:52:35: Server store consolidated succesfully
+27/10/2010 11:52:35: Creating bootstrapper
+27/10/2010 11:52:35: Loading bootstrapper assembly: Wing.Server.Bootstrap
+27/10/2010 11:52:36: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+27/10/2010 11:52:36: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+27/10/2010 11:52:36: Bootstrapper instance created successfully
+27/10/2010 11:52:36: Running bootstrapper
+27/10/2010 11:52:36: default   |Info     |None  : Bootstrapper starting...
+27/10/2010 11:52:36: default   |Debug    |None  : Creating services container
+27/10/2010 11:52:36: default   |Debug    |None  : Setting service locator provider
+27/10/2010 11:52:36: default   |Debug    |None  : REG INSTANCE UnityServiceLocator
+27/10/2010 11:52:36: default   |Debug    |None  : REG INSTANCE ServerBootLoggerAdapter
+27/10/2010 11:52:36: default   |Debug    |None  : Creating server assembly store resolver
+27/10/2010 11:52:36: default   |Debug    |None  : REG INSTANCE StoreAssemblyResolver
+27/10/2010 11:52:36: default   |Debug    |None  : REG INSTANCE BootstrapSettings
+27/10/2010 11:52:36: default   |Debug    |None  : REG INSTANCE DirectoryModuleCatalog
+27/10/2010 11:52:36: default   |Debug    |None  : REG TYPE ModuleInitializer
+27/10/2010 11:52:36: default   |Debug    |None  : REG TYPE ModuleManager
+27/10/2010 11:52:36: default   |Debug    |None  : REG TYPE EventAggregator
+27/10/2010 11:52:36: default   |Debug    |None  : REG TYPE MvcControllerTypeLocator
+27/10/2010 11:52:36: default   |Info     |None  : Loading modules
+27/10/2010 11:52:36: default   |Debug    |None  : CREATING Build Key[Wing.Modularity.ModuleManager, null]
+27/10/2010 11:52:36: default   |Debug    |None  : CREATING Build Key[Wing.Modularity.ModuleInitializer, null]
+27/10/2010 11:52:36: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11003, Order: 1
+27/10/2010 11:52:36: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerConfigManager.ServerConfigManagerModule, null]
+27/10/2010 11:52:36: default   |Debug    |None  : REG TYPE ServerSettingsManager
+27/10/2010 11:52:36: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12004, Order: 2
+27/10/2010 11:52:36: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerStorage.ServerStorageModule, null]
+27/10/2010 11:52:36: default   |Debug    |None  : REG INSTANCE SqlCeServerStorageService
+27/10/2010 11:52:39: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12002, Order: 3
+27/10/2010 11:52:39: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.IdentityManagament.IdentityManagamentModule, null]
+27/10/2010 11:52:39: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12005, Order: 4
+27/10/2010 11:52:39: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.SoaServicesManager.SoaServicesManagerModule, null]
+27/10/2010 11:52:39: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerConfigManager.ServerSettingsManager, null]
+27/10/2010 11:52:39: default   |Exception|High  : Wing.Modularity.ModuleInitializeException: An exception occurred while initializing module 'SoaServicesManager'. 
+    - The exception message was: The process cannot access the file 'C:\wing\trunk\Publish\App_Data\ServerData\Settings\Services.group\BaseConfiguration.section' because it is being used by another process.
+    - The Assembly that the module was trying to be loaded from was:Wing.Server.Modules.SoaServicesManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    Check the InnerException property of the exception for more information. If the exception occurred while creating an object in a 
+    DI container, you can exception.GetRootException() to help locate the root cause of the problem. ---> System.IO.IOException: The process cannot access the file 'C:\wing\trunk\Publish\App_Data\ServerData\Settings\Services.group\BaseConfiguration.section' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+   at System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding)
+   at System.IO.File.WriteAllText(String path, String contents)
+   at Wing.Utils.TypedXmlSerializer`1.SerializeToFile(String path, TType instance)
+   at Wing.Server.Impl.SettingsGroup.SaveSection(SettingsSection configSection)
+   at Wing.Server.Impl.SettingsSection.WriteValue(String name, Object value)
+   at Wing.Server.Impl.SettingsSection.Write(String name, String value)
+   at Wing.Server.Modules.SoaServicesManager.SoaServicesManagerModule.Initialize()
+   at Wing.Modularity.ModuleInitializer.ExecuteModuleMethod(ModuleInfo moduleInfo, Action method)
+   --- End of inner exception stack trace ---
+27/10/2010 11:52:39: default   |Exception|High  : Fatal error on server bootstrap
+     Exception: Wing.Modularity.ModuleInitializeException: An exception occurred while initializing module 'SoaServicesManager'. 
+    - The exception message was: The process cannot access the file 'C:\wing\trunk\Publish\App_Data\ServerData\Settings\Services.group\BaseConfiguration.section' because it is being used by another process.
+    - The Assembly that the module was trying to be loaded from was:Wing.Server.Modules.SoaServicesManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    Check the InnerException property of the exception for more information. If the exception occurred while creating an object in a 
+    DI container, you can exception.GetRootException() to help locate the root cause of the problem. ---> System.IO.IOException: The process cannot access the file 'C:\wing\trunk\Publish\App_Data\ServerData\Settings\Services.group\BaseConfiguration.section' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+   at System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding)
+   at System.IO.File.WriteAllText(String path, String contents)
+   at Wing.Utils.TypedXmlSerializer`1.SerializeToFile(String path, TType instance)
+   at Wing.Server.Impl.SettingsGroup.SaveSection(SettingsSection configSection)
+   at Wing.Server.Impl.SettingsSection.WriteValue(String name, Object value)
+   at Wing.Server.Impl.SettingsSection.Write(String name, String value)
+   at Wing.Server.Modules.SoaServicesManager.SoaServicesManagerModule.Initialize()
+   at Wing.Modularity.ModuleInitializer.ExecuteModuleMethod(ModuleInfo moduleInfo, Action method)
+   --- End of inner exception stack trace ---
+   at Wing.Modularity.ModuleInitializer.HandleModuleInitializationError(ModuleInfo moduleInfo, String assemblyName, Exception exception)
+   at Wing.Modularity.ModuleInitializer.ExecuteModuleMethod(ModuleInfo moduleInfo, Action method)
+   at Wing.Modularity.ModuleInitializer.InitializeModuleInternal(ModuleInfo moduleInfo)
+   at Wing.Modularity.ModuleInitializer.Initialize(ModuleInfo moduleInfo)
+   at Wing.Modularity.ModuleManager.InitializeModule(ModuleInfo moduleInfo)
+   at Wing.Modularity.ModuleManager.<>c__DisplayClassb.<LoadModuleTypes>b__9(ModuleCategory category)
+   at Wing.Modularity.ModuleManager.LoadModuleTypes(IEnumerable`1 moduleInfos)
+   at Wing.Modularity.ModuleManager.LoadModules(String groupName)
+   at Wing.Modularity.ModuleManager.Run(String groupName)
+   at Wing.Server.Bootstrap.Bootstrapper.Run(BootstrapSettings settings)
+
+-------------------------------------------------------------------------------------
+27/10/2010 11:59:02: Server starting
+27/10/2010 11:59:02: Registering routes
+27/10/2010 11:59:02: Configuring server settings
+27/10/2010 11:59:02: Preparing server assembly store
+27/10/2010 11:59:02: Consolidating store
+27/10/2010 11:59:02: Server store consolidated succesfully
+27/10/2010 11:59:02: Creating bootstrapper
+27/10/2010 11:59:02: Loading bootstrapper assembly: Wing.Server.Bootstrap
+27/10/2010 11:59:02: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+27/10/2010 11:59:02: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+27/10/2010 11:59:02: Bootstrapper instance created successfully
+27/10/2010 11:59:02: Running bootstrapper
+27/10/2010 11:59:02: default   |Info     |None  : Bootstrapper starting...
+27/10/2010 11:59:02: default   |Debug    |None  : Creating services container
+27/10/2010 11:59:02: default   |Debug    |None  : Setting service locator provider
+27/10/2010 11:59:02: default   |Debug    |None  : REG INSTANCE UnityServiceLocator
+27/10/2010 11:59:02: default   |Debug    |None  : REG INSTANCE ServerBootLoggerAdapter
+27/10/2010 11:59:02: default   |Debug    |None  : Creating server assembly store resolver
+27/10/2010 11:59:02: default   |Debug    |None  : REG INSTANCE StoreAssemblyResolver
+27/10/2010 11:59:02: default   |Debug    |None  : REG INSTANCE BootstrapSettings
+27/10/2010 11:59:02: default   |Debug    |None  : REG INSTANCE DirectoryModuleCatalog
+27/10/2010 11:59:02: default   |Debug    |None  : REG TYPE ModuleInitializer
+27/10/2010 11:59:02: default   |Debug    |None  : REG TYPE ModuleManager
+27/10/2010 11:59:02: default   |Debug    |None  : REG TYPE EventAggregator
+27/10/2010 11:59:02: default   |Debug    |None  : REG TYPE MvcControllerTypeLocator
+27/10/2010 11:59:02: default   |Info     |None  : Loading modules
+27/10/2010 11:59:02: default   |Debug    |None  : CREATING Build Key[Wing.Modularity.ModuleManager, null]
+27/10/2010 11:59:03: default   |Debug    |None  : CREATING Build Key[Wing.Modularity.ModuleInitializer, null]
+27/10/2010 11:59:03: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11003, Order: 1
+27/10/2010 11:59:03: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerConfigManager.ServerConfigManagerModule, null]
+27/10/2010 11:59:03: default   |Debug    |None  : REG TYPE ServerSettingsManager
+27/10/2010 11:59:03: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: High, SortKey: 12004, Order: 2
+27/10/2010 11:59:03: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerStorage.ServerStorageModule, null]
+27/10/2010 11:59:03: default   |Debug    |None  : REG INSTANCE SqlCeServerStorageService
+27/10/2010 11:59:06: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12002, Order: 3
+27/10/2010 11:59:06: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.IdentityManagament.IdentityManagamentModule, null]
+27/10/2010 11:59:06: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12005, Order: 4
+27/10/2010 11:59:06: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.SoaServicesManager.SoaServicesManagerModule, null]
+27/10/2010 11:59:06: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerConfigManager.ServerSettingsManager, null]
+27/10/2010 11:59:06: default   |Debug    |None  : REG INSTANCE SoaServiceHostBuilder
+27/10/2010 11:59:06: default   |Debug    |None  : REG TYPE SoaServicesManager
+27/10/2010 11:59:06: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15006, Order: 5
+27/10/2010 11:59:06: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.WingClientSupport.WingClientSupportModule, null]
+27/10/2010 11:59:06: default   |Debug    |None  : REG INSTANCE FileSystemAssemblyStore
+27/10/2010 11:59:07: default   |Debug    |None  : REG INSTANCE AssemblyInfoCollection
+27/10/2010 11:59:07: default   |Debug    |None  : CREATING Build Key[Wing.Server.Bootstrap.MvcControllerTypeLocator, null]
+27/10/2010 11:59:07: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22001, Order: 6
+27/10/2010 11:59:07: default   |Debug    |None  : CREATING Build Key[Flex.BusinessIntelligence.Server.Core.BIServerCoreModule, null]
+27/10/2010 11:59:07: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.SoaServicesManager.SoaServicesManager, null]
+27/10/2010 11:59:07: default   |Info     |None  : Server started
