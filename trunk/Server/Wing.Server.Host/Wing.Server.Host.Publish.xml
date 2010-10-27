@@ -1,16 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\wing\trunk\Publish" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="Content/Scripts/Silverlight.js" publishTime="06/29/2010 22:37:42" />
-    <file relUrl="Views/Web.config" publishTime="07/09/2010 02:20:10" />
-    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/17/2010 09:22:24" />
-    <file relUrl="ClientBin/Wing.Client.xap" publishTime="08/23/2010 10:51:35" />
-    <file relUrl="Web.config" publishTime="08/23/2010 08:47:56" />
-    <file relUrl="bin/Wing.Server.Host.dll" publishTime="08/23/2010 10:51:36" />
-    <file relUrl="Global.asax" publishTime="07/01/2010 14:08:30" />
-    <file relUrl="Default.aspx" publishTime="07/01/2010 14:24:36" />
+  <publishProfile publishUrl="C:\wing\trunk\Publish" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="10/23/2010 23:10:04" />
+    <file relUrl="bin/Microsoft.AnalysisServices.AdomdClient.dll" publishTime="04/03/2010 10:55:16" />
+    <file relUrl="OlapWebService.asmx" publishTime="10/23/2010 01:36:26" />
     <file relUrl="bin/System.Web.Mvc.dll" publishTime="02/17/2010 09:24:14" />
-    <file relUrl="bin/Wing.Server.Core.dll" publishTime="08/23/2010 10:51:28" />
-    <file relUrl="Views/Shared/WingLoader.aspx" publishTime="07/06/2010 23:13:53" />
+    <file relUrl="bin/Wing.Olap.Core.dll" publishTime="10/27/2010 09:44:29" />
+    <file relUrl="bin/Wing.ZipCompression.dll" publishTime="10/27/2010 09:44:27" />
+    <file relUrl="CrossDomain.xml" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="Content/Scripts/Silverlight.js" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="Views/Shared/WingLoader.aspx" publishTime="10/23/2010 23:15:11" />
+    <file relUrl="bin/Wing.Server.Host.dll" publishTime="10/27/2010 09:44:37" />
+    <file relUrl="ServerHello.aspx" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="ClientAccessPolicy.xml" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="Views/Web.config" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/Wing.Server.Core.dll" publishTime="10/27/2010 09:44:30" />
+    <file relUrl="Global.asax" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="ClientBin/Wing.Client.xap" publishTime="10/27/2010 09:44:41" />
+    <file relUrl="Views/Shared/ServerTest.ascx" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/Wing.Json.dll" publishTime="10/27/2010 09:44:26" />
+    <file relUrl="Default.aspx" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/Wing.Web.Olap.dll" publishTime="10/27/2010 09:44:31" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/17/2010 09:22:24" />
   </publishProfile>
 </publishData>
