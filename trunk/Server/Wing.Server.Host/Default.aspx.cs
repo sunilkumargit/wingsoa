@@ -13,7 +13,7 @@ namespace Wing.Server.Host
             // can correctly process the response (if caching is enabled).
 
             string originalPath = Request.Path;
-            HttpContext.Current.RewritePath("/Loader/Index.actn", false);
+            HttpContext.Current.RewritePath("Loader/Index.actn", false);
             IHttpHandler httpHandler = new MvcHttpHandler();
             httpHandler.ProcessRequest(HttpContext.Current);
             HttpContext.Current.RewritePath(originalPath, false);
