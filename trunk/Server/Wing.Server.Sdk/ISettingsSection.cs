@@ -4,6 +4,7 @@ namespace Wing.Server
 {
     public interface ISettingsSection
     {
+        ISettingsGroup Group { get; }
         String SectionName { get; }
         String GetString(String name);
         int GetInt(String name);

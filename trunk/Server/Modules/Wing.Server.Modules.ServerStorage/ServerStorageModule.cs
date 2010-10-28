@@ -9,7 +9,7 @@ namespace Wing.Server.Modules.ServerStorage
     [Module("ServerStorage")]
     [ModuleCategory(ModuleCategory.Core)]
     [ModuleDescription("Controlador do armazenamento de dados do servidor")]
-    [ModulePriority(ModulePriority.High)]
+    [ModulePriority(ModulePriority.Higher)]
     public class ServerStorageModule : ModuleBase
     {
         public override void Initialize()

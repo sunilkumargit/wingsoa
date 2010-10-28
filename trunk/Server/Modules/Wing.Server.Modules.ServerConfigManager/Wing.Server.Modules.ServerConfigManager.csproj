@@ -40,9 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\SettingsPropertyEntityBase.cs" />
     <Compile Include="ServerConfigManagerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerSettingsManager.cs" />
+    <Compile Include="EntityStoreSettingsGroup.cs" />
+    <Compile Include="EntityStoreSettingsManagerBase.cs" />
+    <Compile Include="Entities\SettingsGroupEntityBase.cs" />
+    <Compile Include="EntityStoreSettingsSection.cs" />
+    <Compile Include="Entities\SettingsSectionEntityBase.cs" />
+    <Compile Include="ServerEntityStoreSettingsManager.cs" />
+    <Compile Include="SettingsGroup.cs" />
+    <Compile Include="SettingsProperty.cs" />
+    <Compile Include="SettingsSection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Wing.Core\Wing.Core.csproj">
