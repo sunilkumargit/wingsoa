@@ -1,0 +1,746 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+	
+	
+		xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
+		xmlns:telerikData="clr-namespace:Telerik.Windows.Data;assembly=Telerik.Windows.Data"
+		xmlns:dataPager="clr-namespace:Telerik.Windows.Controls.Data.DataPager;assembly=Telerik.Windows.Controls.Data"
+		xmlns:dataFilter="clr-namespace:Telerik.Windows.Controls.Data.DataFilter;assembly=Telerik.Windows.Controls.Data"
+	
+
+    >
+	<LinearGradientBrush x:Key="RemoveFilterButton_Background_Over" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFDE4646" Offset="1"/>
+		<GradientStop Color="#FFFF8B6A"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="RemoveFilterButton_Background_Pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF943434"/>
+		<GradientStop Color="#FFFF3800" Offset="1"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="RemoveFilterButton_Background" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF943434" Offset="1"/>
+		<GradientStop Color="#FFFF3800"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="RemoveFilterButton_Border" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="Gray" Offset="0"/>
+		<GradientStop Color="#FFB7B7B7" Offset="1"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="RemoveFilterButton_Foreground" Color="White" />
+<LinearGradientBrush x:Key="AddFilterButton_Background_Over" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF5AB13C" Offset="1"/>
+		<GradientStop Color="#FFB1FF72"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="AddFilterButton_Background_Pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF4D9434"/>
+		<GradientStop Color="#FF71FF00" Offset="1"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="AddFilterButton_Background" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF4D9434" Offset="1"/>
+		<GradientStop Color="#FF71FF00"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="AddFilterButton_Border" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="Gray" Offset="0"/>
+		<GradientStop Color="#FFB7B7B7" Offset="1"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="AddFilterButton_Foreground" Color="White" />
+<LinearGradientBrush x:Key="ToggleButton_Background_Over" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="White" Offset="0"/>
+		<GradientStop Color="#FFD5E7FF" Offset="1"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="ToggleButton_Background_Pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFEBF3FF" Offset="1"/>
+		<GradientStop Color="#FFABC9EE"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="ToggleButton_Background" Color="Transparent" />
+<SolidColorBrush x:Key="ToggleButton_Foreground" Color="Black" />
+<SolidColorBrush x:Key="ToggleButton_Border_Checked" Color="#FFB1CEF1" />
+<LinearGradientBrush x:Key="ToggleButton_Background_Checked" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFEBF4FF" Offset="0"/>
+		<GradientStop Color="White" Offset="0.5"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="ComboBoxItem_Border_Selected" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFBED3F2" Offset="0"/>
+		<GradientStop Color="#FFADBED6" Offset="1"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="ComboBoxItem_Background_Over" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFEBF3FF" Offset="0"/>
+		<GradientStop Color="#FFABC9EE" Offset="1"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="ComboBoxItem_Foreground" Color="Black" />
+<SolidColorBrush x:Key="Popup_Border" Color="#FFB1CEF1" />
+<SolidColorBrush x:Key="Popup_Background" Color="White" />
+<telerik:Office_BlueTheme x:Key="Theme" />
+<SolidColorBrush x:Key="ToggleButton_Checked" Color="Black" />
+<SolidColorBrush x:Key="FilterControl_InnerBorder" Color="#FFEFF6FF" />
+<LinearGradientBrush x:Key="SeparatorBorder" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF83A5D2"/>
+		<GradientStop Color="#3383A5D2" Offset="1"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="FilterControl_Background" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFEBF3FF" Offset="0"/>
+		<GradientStop Color="#FFD0E8FF" Offset="1"/>
+		<GradientStop Color="#FFABC9EE" Offset="0.43"/>
+		<GradientStop Color="#FFC6DFFF" Offset="0.42"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="FilterControl_Border" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FF96B3DC" Offset="0"/>
+		<GradientStop Color="#FF7CA1CD" Offset="1"/>
+		<GradientStop Color="#FF6289B9" Offset="0.5"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="FilterControl_Foreground" Color="Black" />
+
+	
+
+	<dataFilter:LogicalOperatorToCheckedConverter x:Key="LogicalOperatorToCheckedConverter" />
+	<dataFilter:FilterMemberToEnabledConverter x:Key="FilterMemberToEnabledConverter" />
+
+	<telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+	<telerik:InvertedBooleanToVisibilityConverter x:Key="InvertedBooleanToVisibilityConverter"/>
+
+	
+
+	
+	<telerikData:FilterCompositionLogicalOperatorConverter x:Key="LogicalOperatorConverter" />
+	<telerikData:FilterOperatorConverter x:Key="FilterOperatorConverter" />
+	
+
+	<DataTemplate x:Key="FilterOperatorTemplate">
+		<TextBlock Text="{Binding Converter={StaticResource FilterOperatorConverter}}" />
+	</DataTemplate>
+
+	
+
+	<!--Styles-->
+	<!--RemoveFilterButton-->
+	<ControlTemplate x:Key="RemoveFilterButtonTemplate" TargetType="telerik:RadButton">
+		<Grid>
+
+			
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Over" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Pressed">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Pressed" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused" />
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			
+
+			<Border x:Name="ButtonBorder" CornerRadius="8"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Over" CornerRadius="8" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource RemoveFilterButton_Background_Over}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Pressed" CornerRadius="8" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource RemoveFilterButton_Background_Pressed}" BorderThickness="{TemplateBinding BorderThickness}" />
+
+			<Path Stretch="Fill" Height="8" Width="8" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+				  RenderTransformOrigin="0.5,0.5" Data="M4.0551758,5.1411133 L4.9467773,5.1411133 L4.9467773,8.0683594 L7.8740234,8.0683594 L7.8740234,8.9277344 L4.9467773,8.9277344 L4.9467773,11.85498 L4.0551758,11.85498 L4.0551758,8.9277344 L1.1279297,8.9277344 L1.1279297,8.0683594 L4.0551758,8.0683594 z" 
+				  Stroke="{TemplateBinding Foreground}">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-45"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+		</Grid>
+
+		
+	</ControlTemplate>
+	<Style x:Key="RemoveFilterButtonStyle" TargetType="telerik:RadButton">
+		<Setter Property="Template" Value="{StaticResource RemoveFilterButtonTemplate}" />
+		<Setter Property="Background" Value="{StaticResource RemoveFilterButton_Background}" />
+		<Setter Property="BorderBrush" Value="{StaticResource RemoveFilterButton_Border}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Width" Value="16" />
+		<Setter Property="Height" Value="16" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Foreground" Value="{StaticResource RemoveFilterButton_Foreground}" />
+		<Setter Property="Margin" Value="1,0,4,0" />
+	</Style>
+
+	<!--AddFilterButton-->
+	<ControlTemplate x:Key="AddFilterButtonTemplate" TargetType="telerik:RadButton">
+		<Grid>
+
+			
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Over" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Pressed">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Pressed" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused" />
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			
+
+			<Border x:Name="ButtonBorder" CornerRadius="8"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Over" CornerRadius="8" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource AddFilterButton_Background_Over}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Pressed" CornerRadius="8" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource AddFilterButton_Background_Pressed}" BorderThickness="{TemplateBinding BorderThickness}" />
+
+			<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"  />
+		</Grid>
+
+		
+	</ControlTemplate>
+	<Style x:Key="AddFilterButtonStyle" TargetType="telerik:RadButton">
+		<Setter Property="Template" Value="{StaticResource AddFilterButtonTemplate}" />
+		<Setter Property="Background" Value="{StaticResource AddFilterButton_Background}" />
+		<Setter Property="BorderBrush" Value="{StaticResource AddFilterButton_Border}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Width" Value="16" />
+		<Setter Property="Height" Value="16" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Foreground" Value="{StaticResource AddFilterButton_Foreground}" />
+		<Setter Property="Margin" Value="4,0,1,0" />
+	</Style>
+
+	<!--ToggleButton-->
+	<ControlTemplate x:Key="ToggleButtonTemplate" TargetType="ToggleButton">
+		<Grid>
+
+			
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Over" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Pressed">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Pressed" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="CheckStates">
+					<VisualState x:Name="Checked" />
+					<VisualState x:Name="Unchecked"/>
+					<VisualState x:Name="Indeterminate"/>
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused" />
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			
+
+			<Border x:Name="ButtonBorder"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Over" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource ToggleButton_Background_Over}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Pressed" Opacity="0" 
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource ToggleButton_Background_Pressed}" BorderThickness="{TemplateBinding BorderThickness}" />
+
+			<ContentPresenter x:Name="Content" Margin="{TemplateBinding Padding}"
+							  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+							  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+		</Grid>
+
+		
+	</ControlTemplate>
+	<Style x:Key="ToggleButtonStyle" TargetType="telerik:RadToggleButton">
+		<!--<Setter Property="Template" Value="{StaticResource ToggleButtonTemplate}" />-->
+		<!--<Setter Property="Background" Value="{StaticResource ToggleButton_Background}" />-->
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<!--<Setter Property="Foreground" Value="{StaticResource ToggleButton_Foreground}" />-->
+		<Setter Property="FontSize" Value="10" />
+		<Setter Property="Padding" Value="2,0" />
+		<Setter Property="Height" Value="18" />
+		<Setter Property="MinWidth" Value="30" />
+	</Style>
+
+	<!--DropDownToggle-->
+	
+	<ControlTemplate x:Key="DropDownToggleTemplate" TargetType="ToggleButton">
+		<Grid>
+
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Over" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Pressed" />
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="CheckStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Checked" >
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Checked" Storyboard.TargetProperty="Opacity" />
+							<!--<ColorAnimation To="#FF5D5D5D" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="ContentPresenter" />
+							<ColorAnimation To="#FF5D5D5D" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="BtnArrow" />-->
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Unchecked"/>
+					<VisualState x:Name="Indeterminate"/>
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused" />
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+
+			<Border x:Name="ButtonBorder"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Over" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource ToggleButton_Background_Over}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Checked" Opacity="0"
+					BorderBrush="{StaticResource ToggleButton_Border_Checked}" Background="{StaticResource ToggleButton_Background_Checked}" BorderThickness="{TemplateBinding BorderThickness}" />
+
+			<Path x:Name="BtnArrow" Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z " 
+							  HorizontalAlignment="Right" Height="4" Margin="0,0,6,0" Stretch="Uniform" Width="8" Fill="{TemplateBinding Foreground}" />
+
+			<ContentControl Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" x:Name="ContentPresenter" 
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+		</Grid>
+
+	</ControlTemplate>
+	<Style x:Key="DropDownToggleStyle" TargetType="ToggleButton">
+		<Setter Property="Template" Value="{StaticResource DropDownToggleTemplate}" />
+		<Setter Property="Background" Value="{StaticResource ToggleButton_Background}" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="1,0" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Foreground" Value="{StaticResource ToggleButton_Foreground}" />
+		<Setter Property="MinWidth" Value="30" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="3,0,17,0" />
+		<Setter Property="FontSize" Value="10" />
+	</Style>
+	
+	
+
+	<!--FilterComboBox-->
+	
+	
+	<ControlTemplate x:Key="FilterComboBoxItemTemplate" TargetType="ComboBoxItem">
+		<Grid Background="{TemplateBinding Background}">
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Over" Storyboard.TargetProperty="Opacity" />
+							<!--<ColorAnimation To="White" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="contentPresenter" />-->
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="SelectionStates">
+					<VisualState x:Name="Unselected"/>
+					<VisualState x:Name="Selected" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused" />
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			<Border x:Name="ButtonBorder_Over" Opacity="0"
+					BorderBrush="{StaticResource ComboBoxItem_Border_Selected}" Background="{StaticResource ComboBoxItem_Background_Over}" BorderThickness="1" CornerRadius="2" Margin="1" />
+			<ContentControl x:Name="contentPresenter" Foreground="{TemplateBinding Foreground}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+		</Grid>
+	</ControlTemplate>
+	<Style x:Key="FilterComboBoxItemStyle" TargetType="ComboBoxItem">
+		<Setter Property="Template" Value="{StaticResource FilterComboBoxItemTemplate}" />
+		<Setter Property="Padding" Value="2"/>
+		<Setter Property="HorizontalContentAlignment" Value="Left"/>
+		<Setter Property="VerticalContentAlignment" Value="Top"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{StaticResource ComboBoxItem_Foreground}" />
+		<!--<Setter Property="Height" Value="18" />-->
+	</Style>
+	<ControlTemplate x:Key="FilterComboBoxTemplate" TargetType="ComboBox">
+		<Grid>
+			<Border x:Name="ContentPresenterBorder">
+				<ToggleButton x:Name="DropDownToggle" Style="{StaticResource DropDownToggleStyle}" Content="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}}"/>
+			</Border>
+			<Popup x:Name="Popup">
+				<Border x:Name="PopupBorder" BorderBrush="{StaticResource Popup_Border}" BorderThickness="1,0,1,1" Background="{StaticResource Popup_Background}" HorizontalAlignment="Stretch" Height="Auto">
+					<ScrollViewer x:Name="ScrollViewer" BorderThickness="0" Padding="1" telerik:StyleManager.Theme="{StaticResource Theme}">
+						<ItemsPresenter/>
+					</ScrollViewer>
+				</Border>
+			</Popup>
+		</Grid>
+	</ControlTemplate>
+	<Style x:Key="FilterComboBoxStyle" TargetType="ComboBox">
+		<Setter Property="Template" Value="{StaticResource FilterComboBoxTemplate}" />
+		<Setter Property="ItemContainerStyle" Value="{StaticResource FilterComboBoxItemStyle}" />
+		<Setter Property="FontSize" Value="10" />
+	</Style>
+	
+
+	<!--FilterTextBox-->
+	
+	
+	<ControlTemplate x:Key="FilterTextBoxTemplate" TargetType="TextBox">
+		<Grid x:Name="RootElement">
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Over" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Disabled" />
+					<VisualState x:Name="ReadOnly" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Focused">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Checked" Storyboard.TargetProperty="Opacity" />
+							<DoubleAnimation To="0" Storyboard.TargetName="ReadOnlyText" Storyboard.TargetProperty="Opacity" />
+							<DoubleAnimation To="1" Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Unfocused" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="ValidationStates">
+					<VisualState x:Name="Valid"/>
+					<VisualState x:Name="InvalidUnfocused" />
+					<VisualState x:Name="InvalidFocused" />
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			<Border x:Name="ButtonBorder"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Over" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource ToggleButton_Background_Over}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Checked" Opacity="0"
+					BorderBrush="{StaticResource ToggleButton_Border_Checked}" Background="{StaticResource ToggleButton_Background_Checked}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<TextBlock x:Name="ReadOnlyText" Text="{TemplateBinding Text}" Opacity="1" Foreground="{StaticResource ToggleButton_Foreground}" Margin="{TemplateBinding Padding}" 
+					   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+			<ScrollViewer x:Name="ContentElement" IsTabStop="False" Foreground="{TemplateBinding Foreground}" Padding="3,1,3,0"
+						  BorderBrush="{TemplateBinding BorderBrush}" Opacity="0"
+						  HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"
+						  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+		</Grid>
+	</ControlTemplate>
+	<Style x:Key="FilterTextBoxStyle" TargetType="TextBox">
+		<Setter Property="Template" Value="{StaticResource FilterTextBoxTemplate}" />
+		<Setter Property="Background" Value="{StaticResource ToggleButton_Background}" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="1,0" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Foreground" Value="{StaticResource ToggleButton_Checked}" />
+		<Setter Property="MinWidth" Value="30" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="3,0" />
+		<Setter Property="FontSize" Value="10" />
+	</Style>
+	
+
+	<!--MatchCaseToggle-->
+	<ControlTemplate x:Key="MatchCaseToggleTemplate" TargetType="ToggleButton">
+		<Grid>
+
+			
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Over" Storyboard.TargetProperty="Opacity" />
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Pressed" />
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="CheckStates">
+					<VisualStateGroup.Transitions>
+						<VisualTransition GeneratedDuration="0:0:0.2"/>
+					</VisualStateGroup.Transitions>
+					<VisualState x:Name="Checked" >
+						<Storyboard>
+							<DoubleAnimation To="1" Storyboard.TargetName="ButtonBorder_Checked" Storyboard.TargetProperty="Opacity" />
+							<!--<ColorAnimation To="#FF5D5D5D" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="ContentPresenter" />-->
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Unchecked"/>
+					<VisualState x:Name="Indeterminate"/>
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused" />
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			
+
+			<Border x:Name="ButtonBorder"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Over" Opacity="0"
+					BorderBrush="{TemplateBinding BorderBrush}" Background="{StaticResource ToggleButton_Background_Over}" BorderThickness="{TemplateBinding BorderThickness}" />
+			<Border x:Name="ButtonBorder_Checked" Opacity="0"
+					BorderBrush="{StaticResource ToggleButton_Border_Checked}" Background="{StaticResource ToggleButton_Background_Checked}" BorderThickness="{TemplateBinding BorderThickness}" />
+
+			<ContentControl Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" x:Name="ContentPresenter" 
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+		</Grid>
+
+		
+	</ControlTemplate>
+	<Style x:Key="MatchCaseToggleStyle" TargetType="ToggleButton">
+		<Setter Property="Template" Value="{StaticResource MatchCaseToggleTemplate}" />
+		<Setter Property="Background" Value="{StaticResource ToggleButton_Background}" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="1,0" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Foreground" Value="{StaticResource ToggleButton_Foreground}" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="5,0" />
+		<Setter Property="FontSize" Value="10" />
+	</Style>
+
+	<!--FilterControl-->
+	<ControlTemplate x:Key="FilterControlTemplate" TargetType="dataFilter:FilterControl">
+		<Border x:Name="OuterBorder"
+				BorderBrush="{TemplateBinding BorderBrush}" 
+				BorderThickness="{TemplateBinding BorderThickness}" 
+				CornerRadius="11">
+			<Border.OpacityMask>
+				<LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+					<GradientStop Color="Black" Offset="0"/>
+					<GradientStop Offset="0.3"/>
+				</LinearGradientBrush>
+			</Border.OpacityMask>
+			<Border.Triggers>
+				<EventTrigger RoutedEvent="Canvas.Loaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetName="OuterBorder" Storyboard.TargetProperty="(UIElement.OpacityMask).(GradientBrush.GradientStops)[1].(GradientStop.Offset)" />
+							<DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetName="OuterBorder" Storyboard.TargetProperty="(UIElement.OpacityMask).(GradientBrush.GradientStops)[0].(GradientStop.Offset)" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+			</Border.Triggers>
+			<Border x:Name="InnerBorder" Background="{TemplateBinding Background}" BorderBrush="{StaticResource FilterControl_InnerBorder}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10" >
+				
+				<StackPanel Orientation="Horizontal">
+					<telerik:RadButton Name="PART_RemoveFilterButton" Command="{Binding RemoveFilter}" Style="{StaticResource RemoveFilterButtonStyle}" />
+					<StackPanel Orientation="Horizontal"								
+								Visibility="{Binding IsComposite, Converter={StaticResource BooleanToVisibilityConverter}}">
+						<telerik:RadToggleButton Name="PART_CompositeFilterLogicalOperatorToggleButton" Height="18" FontSize="10" MinWidth="30"  telerik:StyleManager.Theme="{StaticResource Theme}"
+												 IsChecked="{Binding CompositeFilter.LogicalOperator, Mode=TwoWay, Converter={StaticResource LogicalOperatorToCheckedConverter}}" 
+												 Content="{Binding CompositeFilter.LogicalOperator, Converter={StaticResource LogicalOperatorConverter}}" />
+						<telerik:RadButton Name="PART_AddFilterButton" Command="{Binding AddFilter}" Style="{StaticResource AddFilterButtonStyle}"  >
+							<Path Stretch="Fill" Height="8" Width="8" 
+									RenderTransformOrigin="0.5,0.5" Data="M4.0551758,5.1411133 L4.9467773,5.1411133 L4.9467773,8.0683594 L7.8740234,8.0683594 L7.8740234,8.9277344 L4.9467773,8.9277344 L4.9467773,11.85498 L4.0551758,11.85498 L4.0551758,8.9277344 L1.1279297,8.9277344 L1.1279297,8.0683594 L4.0551758,8.0683594 z" 
+									Stroke="{StaticResource AddFilterButton_Foreground}">
+								<Path.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform />
+										<TranslateTransform/>
+									</TransformGroup>
+								</Path.RenderTransform>
+							</Path>
+						</telerik:RadButton>
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal"
+								Visibility="{Binding IsComposite, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+
+						<telerik:RadComboBox Name="PART_SimpleFilterMemberComboBox"  telerik:StyleManager.Theme="{StaticResource Theme}"
+											 Margin="0,0,3,0" MinWidth="100" VerticalAlignment="Center"
+											 ItemsSource="{Binding SimpleFilter.AvailableMembers}"
+											 SelectedItem="{Binding SimpleFilter.SelectedMember, Mode=TwoWay}" />
+
+						<!--<Border Width="1" BorderThickness="1" Margin="1,3" BorderBrush="{StaticResource SeparatorBorder}" />-->
+
+						<telerik:RadComboBox Name="PART_SimpleFilterOperatorComboBox" telerik:StyleManager.Theme="{StaticResource Theme}"
+											 Margin="0,0,3,0" MinWidth="100" VerticalAlignment="Center"
+											 ItemsSource="{Binding SimpleFilter.AvailableOperators}"
+											 SelectedItem="{Binding SimpleFilter.Operator, Mode=TwoWay}"
+											 IsEnabled="{Binding SimpleFilter.Member, Converter={StaticResource FilterMemberToEnabledConverter}}"
+											 ItemTemplate="{StaticResource FilterOperatorTemplate}" />
+
+						<!--<Border x:Name="Separator1" Width="1" BorderThickness="1" Margin="1,3" BorderBrush="{StaticResource SeparatorBorder}" />-->
+
+						<!--<Border Width="1" BorderThickness="1" Margin="1,3" BorderBrush="{StaticResource SeparatorBorder}" />-->
+
+						<!-- All editors created in code behind will be inserted as Content of this guy below -->
+						<dataFilter:FilterEditor DataContext="{Binding SimpleFilter}"
+												 ItemPropertyInfo="{Binding SelectedMember}"
+												 FilterOperator="{Binding Operator}"
+												 IsEnabled="{Binding Member, Converter={StaticResource FilterMemberToEnabledConverter}}"
+												 HorizontalContentAlignment="Stretch"
+												 VerticalContentAlignment="Stretch"/>
+
+						<Border Width="8" 
+								BorderBrush="Transparent" 
+								Visibility="{Binding CanUserCreateCompositeFilters, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"/>
+
+						<telerik:RadButton Name="PART_ToCompositeFilterButton" 
+										   Command="{Binding ToCompositeFilter}" 
+										   Style="{StaticResource AddFilterButtonStyle}"
+										   Visibility="{Binding CanUserCreateCompositeFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
+							<Path Fill="{StaticResource AddFilterButton_Foreground}" Stretch="Fill" Margin="4.764,3.911,0.231,0.182" RenderTransformOrigin="0.178532408309272,0.500013572224711" Data="M2.0597237,0.00011700392 C2.3919959,0.0037145019 2.7279578,0.090300739 3.0362324,0.26828307 3.9928176,0.82056788 4.3205678,2.0437487 3.7682831,3.0003339 3.5047298,3.4568219 3.0883964,3.7701081 2.6211619,3.9128945 2.5376498,3.9384158 2.606295,8.1556374 2.6448601,8.1688096 2.7661251,8.2102287 2.8851618,8.2639664 3.0003339,8.3304611 3.119907,8.3994967 3.2296547,8.479015 3.3290861,8.567185 L3.3953214,8.6289421 7.0353448,6.5273734 7.032584,6.5179721 C6.9001091,6.0235683 6.9562423,5.4786268 7.2323849,5.0003339 7.5948217,4.3725749 8.2461894,4.0156323 8.921531,4.0005015 8.9436405,4.0000061 8.9657753,3.9998771 8.9879267,4.0001169 9.3201993,4.0037147 9.6561611,4.0903007 9.9644353,4.2682832 10.921021,4.8205677 11.248771,6.0437485 10.696486,7.0003339 10.144202,7.9569193 8.9210207,8.2846695 7.9644353,7.7323848 7.7908325,7.6321552 7.6379409,7.5098292 7.5072617,7.3710103 7.457924,7.3185995 3.8905699,9.3987923&#xa;3.9225863,9.510286 4.0671648,10.013763 4.0149822,10.573039 3.7323847,11.062512 3.1801,12.019097 1.9569192,12.346847 1.0003339,11.794563 0.043748736,11.242278 -0.28400159,10.019097 0.26828313,9.062512 0.56168437,8.5543262 1.0444304,8.2236139 1.5759602,8.108039 L1.6210667,8.099353 1.6210667,3.9568464 1.5962493,3.9518846 C1.4043243,3.9085528 1.2155921,3.8359381 1.0362324,3.7323848 0.079647064,3.1801001 -0.24810326,1.9569192 0.30418158,1.0003339 0.66661841,0.37257487 1.3179861,0.015632391 1.9933276,0.00050151348 2.0154371,6.1988831E-06 2.0375722,-0.00012278557 2.0597237,0.00011700392 z">
+								<Path.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform ScaleX="-1" ScaleY="1"/>
+										<SkewTransform AngleX="0" AngleY="0"/>
+										<RotateTransform Angle="120"/>
+										<TranslateTransform X="1.7763568394002505E-15"/>
+									</TransformGroup>
+								</Path.RenderTransform>
+							</Path>
+						</telerik:RadButton>
+
+					</StackPanel>
+
+				</StackPanel>
+			</Border>
+		</Border>
+	</ControlTemplate>
+
+	<Style  TargetType="dataFilter:FilterControl">
+		<Setter Property="Template" Value="{StaticResource FilterControlTemplate}" />
+		<Setter Property="Background" Value="{StaticResource FilterControl_Background}" />
+		<Setter Property="BorderBrush" Value="{StaticResource FilterControl_Border}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="IsTabStop" Value="False" />
+		<Setter Property="Foreground" Value="{StaticResource FilterControl_Foreground}" />
+		
+	</Style>
+
+	<!--DataFilterPresenter-->
+	<ControlTemplate x:Key="DataFilterPresenterTemplate" TargetType="dataFilter:DataFilterPresenter">
+		<Border Padding="20, 2, 0, 2">
+			<Grid x:Name="Root">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<ContentControl x:Name="HeaderContent" Grid.Row="0" 
+								Content="{TemplateBinding Header}" 
+								ContentTemplate="{TemplateBinding HeaderTemplate}"
+								IsTabStop="False"/>
+				<ItemsPresenter x:Name="Items" Grid.Row="1"/>
+			</Grid>
+		</Border>
+	</ControlTemplate>
+
+	
+
+	
+	<telerik:HierarchicalDataTemplate x:Key="DataFilterPresenterItemTemplate" ItemsSource="{Binding CompositeFilter.Filters}">
+		<dataFilter:FilterControl telerik:StyleManager.Theme="{StaticResource Theme}" />
+	</telerik:HierarchicalDataTemplate>
+	
+
+	<DataTemplate x:Key="DataFilterPresenterHeaderTemplate">
+		<dataFilter:FilterControl telerik:StyleManager.Theme="{StaticResource Theme}" />
+	</DataTemplate>
+
+	<Style  TargetType="dataFilter:DataFilterPresenter">
+		<Setter Property="Template" Value="{StaticResource DataFilterPresenterTemplate}" />
+		<Setter Property="ItemTemplate" Value="{StaticResource DataFilterPresenterItemTemplate}"/>
+		<Setter Property="HeaderTemplate" Value="{StaticResource DataFilterPresenterHeaderTemplate}"/>
+		<Setter Property="IsTabStop" Value="False" />
+		
+	</Style>
+
+	<!--RadDataFilter-->
+	<ControlTemplate x:Key="RadDataFilterTemplate" TargetType="controls:RadDataFilter">
+		<ScrollViewer telerik:StyleManager.Theme="{StaticResource Theme}" 
+					  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+					  ScrollViewer.VerticalScrollBarVisibility="Auto">
+			<dataFilter:DataFilterPresenter DataContext="{TemplateBinding ViewModel}"
+											Header="{Binding .}" 
+											ItemsSource="{Binding CompositeFilter.Filters}" 
+											telerik:StyleManager.Theme="{StaticResource Theme}" />
+		</ScrollViewer>
+	</ControlTemplate>
+
+	<Style  TargetType="controls:RadDataFilter">
+		<Setter Property="Template" Value="{StaticResource RadDataFilterTemplate}" />
+		<Setter Property="IsTabStop" Value="False" />
+	</Style>
+
+	
+	
+</ResourceDictionary>

@@ -1,0 +1,168 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+	<telerik:Office_BlueTheme x:Key="Theme" />
+<SolidColorBrush x:Key="GridView_GroupPanelOuterBorder" Color="#FF83A5D2" />
+<SolidColorBrush x:Key="ControlBackground" Color="White" />
+<SolidColorBrush x:Key="ControlOuterBorder" Color="#FF83A5D2" />
+<SolidColorBrush x:Key="ControlForeground" Color="Black" />
+<SolidColorBrush x:Key="Item_AlternateBackground" Color="#FFF5FAFF" />
+<SolidColorBrush x:Key="GridView_GridLinesItemBorder" Color="#FFB3D0F3" />
+<LinearGradientBrush x:Key="GridView_GroupPanelBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFBAD8FF"/>
+		<GradientStop Color="#FFD2E6FF" Offset="1"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="GridView_GroupPanelForeground" Color="Black" />
+
+	
+	<telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+	<ControlTemplate x:Key="GridViewDataControlTemplate" TargetType="grid:GridViewDataControl">
+		<Border Name="PART_MasterGridContainer"
+				Background="{TemplateBinding Background}"
+				BorderBrush="{TemplateBinding BorderBrush}"
+				BorderThickness="{TemplateBinding BorderThickness}"
+				VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+				HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+				Padding="{TemplateBinding Padding}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<grid:GridViewGroupPanel x:Name="PART_GroupPanel" telerik:StyleManager.Theme="{StaticResource Theme}"
+										 grid:SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+										 Background="{TemplateBinding GroupPanelBackground}"  
+										 Foreground="{TemplateBinding GroupPanelForeground}"
+										 BorderBrush="{StaticResource GridView_GroupPanelOuterBorder}"/>
+
+				<StackPanel Grid.Row="1">
+					<grid:GridViewHeaderRow x:Name="PART_HeaderRow"
+											grid:SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+											telerik:StyleManager.Theme="{StaticResource Theme}" 
+											IndentLevel="{TemplateBinding GroupCount}"/>
+					<grid:GridViewNewRow Name="PART_AddNewRow" 
+										 telerik:StyleManager.Theme="{StaticResource Theme}"
+										 VerticalAlignment="Bottom" HorizontalAlignment="Left" IndentLevel="{TemplateBinding GroupCount}"
+										 Visibility="Collapsed" />
+				</StackPanel>
+
+				<grid:GridViewVirtualizingPanel x:Name="PART_GridViewVirtualizingPanel"  Grid.Row="2" />
+
+				<StackPanel Grid.Row="3">
+
+					<grid:GridViewFooterRow x:Name="PART_FooterRow"
+										telerik:StyleManager.Theme="{StaticResource Theme}" 
+										IndentLevel="{TemplateBinding GroupCount}"/>
+				</StackPanel>
+
+				<grid:ScrollPositionIndicator
+                            x:Name="PART_ScrollPositionIndicator"
+                            telerik:StyleManager.Theme="{StaticResource Theme}"
+                            Margin="0,0,28,0" 
+                            IsHitTestVisible="False" HorizontalAlignment="Right" 
+                            Grid.Row="2"
+                            ContentTemplate="{TemplateBinding ScrollPositionIndicatorTemplate}"  
+                            Visibility="{Binding IsScrolling, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            />
+
+				<Border x:Name="PART_FrozenColumnsPreview" Grid.Row="1" Visibility="Collapsed" HorizontalAlignment="Left" Grid.RowSpan="3" Background="#33000000" Width="6"/>
+
+				<grid:GridViewLoadingIndicator x:Name="PART_GridViewLoadingIndicator" Visibility="Collapsed" telerik:StyleManager.Theme="{StaticResource Theme}" />
+			</Grid>
+			
+			<vsm:VisualStateManager.VisualStateGroups>
+				<vsm:VisualStateGroup x:Name="GridViewActivity">
+					<vsm:VisualState x:Name="Idle">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_GridViewLoadingIndicator"
+                                                           Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Collapsed" />
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+					<vsm:VisualState x:Name="Busy">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_GridViewLoadingIndicator"
+                                                           Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Visible" />
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+
+				<vsm:VisualStateGroup x:Name="ColumnHeadersVisibility">
+					<vsm:VisualState x:Name="ColumnHeadersVisible" />
+					<vsm:VisualState x:Name="ColumnHeadersCollapsed">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_HeaderRow" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Collapsed" />
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+
+				<vsm:VisualStateGroup x:Name="ColumnFootersVisibility">
+					<vsm:VisualState x:Name="ColumnFootersVisible" />
+					<vsm:VisualState x:Name="ColumnFootersCollapsed">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_FooterRow" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Collapsed" />
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+
+				<vsm:VisualStateGroup x:Name="GroupPanelVisibility">
+					<vsm:VisualState x:Name="GroupPanelVisible" />
+					<vsm:VisualState x:Name="GroupPanelCollapsed">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_GroupPanel"
+                                                           Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Collapsed" />
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+			</vsm:VisualStateManager.VisualStateGroups>
+			
+		</Border>
+		
+	</ControlTemplate>
+
+	<Style 
+        
+		TargetType="grid:GridViewDataControl">
+
+		<Setter Property="Template" Value="{StaticResource GridViewDataControlTemplate}" />
+
+		<Setter Property="Background" Value="{StaticResource ControlBackground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorder}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Foreground" Value="{StaticResource ControlForeground}" />
+		<Setter Property="AlternateRowBackground" Value="{StaticResource Item_AlternateBackground}" />
+		<Setter Property="VerticalGridLinesBrush" Value="{StaticResource GridView_GridLinesItemBorder}" />
+		<Setter Property="HorizontalGridLinesBrush" Value="{StaticResource GridView_GridLinesItemBorder}" />
+		<Setter Property="GroupPanelBackground" Value="{StaticResource GridView_GroupPanelBackground}"/>
+		<Setter Property="GroupPanelForeground" Value="{StaticResource GridView_GroupPanelForeground}"/>
+		
+	</Style>
+	
+	
+</ResourceDictionary>

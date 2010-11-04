@@ -1,0 +1,458 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+		xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+        xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+					xmlns:telerikChromes="clr-namespace:Telerik.Windows.Controls.Chromes;assembly=Wing.Windows.Controls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="ButtonIconBackground_Normal" Color="#FFFFFFFF" />
+<SolidColorBrush x:Key="ButtonIconForeground_Normal" Color="#FF3C6AA3" />
+<SolidColorBrush x:Key="ButtonIconForeground_MouseOver" Color="#FF3C6AA3" />
+<SolidColorBrush x:Key="ButtonIconBackground_MouseOver" Color="#FFFFFFFF" />
+<SolidColorBrush x:Key="ButtonIconForeground_Pressed" Color="#FF000000" />
+<SolidColorBrush x:Key="ButtonIconBackground_Pressed" Color="#FFFFFFFF" />
+<SolidColorBrush x:Key="ButtonIconForeground_Disabled" Color="#FF8D8D8D" />
+<SolidColorBrush x:Key="ButtonIconBackground_Disabled" Color="#FFFFFFFF" />
+<ControlTemplate x:Key="ArrowTemplate_Up" TargetType="ContentControl">
+		<Grid Margin="5 0">
+			<Path x:Name="BackgroundIcon" Data="M0,1 L1,0 2,1 Z" Stretch="Fill" Width="5" Height="3" Fill="{TemplateBinding Background}" Margin="0 2 0 0" />
+			<Path x:Name="ForegroundIcon" Data="M0,1 L1,0 2,1 Z" Stretch="Fill" Width="5" Height="3" Fill="{TemplateBinding Foreground}" Margin="0 1 0 1" />
+		</Grid>
+	</ControlTemplate>
+<ControlTemplate x:Key="ArrowTemplate_Down" TargetType="ContentControl">
+		<Grid Margin="5 0">
+			<Path x:Name="BackgroundIcon" Data="M0,0 L2,0 1,1 Z" Stretch="Fill" Width="5" Height="3" Fill="{TemplateBinding Background}" Margin="0 2 0 0" />
+			<Path x:Name="ForegroundIcon" Data="M0,0 L2,0 1,1 Z" Stretch="Fill" Width="5" Height="3" Fill="{TemplateBinding Foreground}" Margin="0 1 0 1" />
+		</Grid>
+	</ControlTemplate>
+<SolidColorBrush x:Key="ControlOuterBorder_MouseOver" Color="#FFFFC92B" />
+<SolidColorBrush x:Key="ControlOuterBorder_Disabled" Color="#FF9BB0CD" />
+<SolidColorBrush x:Key="PickerForeground_Disabled" Color="#FF8D8D8D" />
+<SolidColorBrush x:Key="ControlBackground_Disabled" Color="#FFE2F0FD" />
+<CornerRadius x:Key="SplitButton_TopPartCornerRadius">1 1 0 0</CornerRadius>
+<CornerRadius x:Key="SplitButton_BottomPartCornerRadius">0 0 1 1</CornerRadius>
+<CornerRadius x:Key="SplitButton_SpanCornerRadius">1</CornerRadius>
+<SolidColorBrush x:Key="PickerBackground_Normal" Color="#FFFFFFFF" />
+<CornerRadius x:Key="SplitButton_LeftPartCornerRadius">1 0 0 1</CornerRadius>
+<telerik:Office_BlueTheme x:Key="Theme" />
+<SolidColorBrush x:Key="ControlOuterBorder_Focused" Color="#FFFFC92B" />
+<SolidColorBrush x:Key="ControlInnerBorder_Focused" Color="Transparent" />
+<CornerRadius x:Key="SplitButton_SpanInnerCornerRadius">0</CornerRadius>
+<CornerRadius x:Key="SplitButton_TopRightPartCornerRadius">0 1 0 0</CornerRadius>
+<CornerRadius x:Key="SplitButton_BottomRightPartCornerRadius">0 0 1 0</CornerRadius>
+<SolidColorBrush x:Key="ControlOuterBorder_Normal" Color="#FF83A5D2" />
+<SolidColorBrush x:Key="PickerForeground_Normal" Color="#FF000000" />
+
+    
+	
+	<Style x:Key="IncreaseButtonStyle" TargetType="RepeatButton">
+		<Setter Property="Background" Value="{StaticResource ButtonIconBackground_Normal}" />
+		<Setter Property="Foreground" Value="{StaticResource ButtonIconForeground_Normal}" />
+		<Setter Property="MinWidth" Value="15" />
+		
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="RepeatButton">
+					<Grid>
+						
+						<vsm:VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconForeground_MouseOver}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconBackground_MouseOver}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconForeground_Pressed}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconBackground_Pressed}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Disabled">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconForeground_Disabled}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconBackground_Disabled}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</vsm:VisualStateManager.VisualStateGroups>
+						
+						<ContentPresenter />
+						<ContentControl x:Name="Arrow" Template="{StaticResource ArrowTemplate_Up}" Foreground="{TemplateBinding Foreground}"
+										Background="{TemplateBinding Background}" IsTabStop="False"/>
+					</Grid>
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<Style x:Key="DecreaseButtonStyle" TargetType="RepeatButton">
+		<Setter Property="Background" Value="{StaticResource ButtonIconBackground_Normal}" />
+		<Setter Property="Foreground" Value="{StaticResource ButtonIconForeground_Normal}" />
+		<Setter Property="MinWidth" Value="15" />
+		
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="RepeatButton">
+					<Grid>
+						
+						<vsm:VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconForeground_MouseOver}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconBackground_MouseOver}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconForeground_Pressed}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconBackground_Pressed}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Disabled">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconForeground_Disabled}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonIconBackground_Disabled}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</vsm:VisualStateManager.VisualStateGroups>
+						
+						<ContentPresenter />
+						<ContentControl x:Name="Arrow" Template="{StaticResource ArrowTemplate_Down}" Foreground="{TemplateBinding Foreground}"
+										Background="{TemplateBinding Background}" IsTabStop="False" />
+					</Grid>
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<ControlTemplate x:Key="RadNumericUpDownTemplate" TargetType="telerikInput:RadNumericUpDown">
+		<Grid x:Name="LayoutRoot">
+			
+			<vsm:VisualStateManager.VisualStateGroups>
+				<vsm:VisualStateGroup x:Name="CommonStates">
+					<vsm:VisualState x:Name="Normal">
+						<Storyboard>
+							<DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity">
+								<LinearDoubleKeyFrame KeyTime="0:0:0.150" Value="0" />
+							</DoubleAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0.150">
+									<DiscreteObjectKeyFrame.Value>
+										<Visibility>Collapsed</Visibility>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+					<vsm:VisualState x:Name="MouseOver">
+						<Storyboard>
+							<DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity">
+								<LinearDoubleKeyFrame KeyTime="0:0:0.115" Value="1" />
+							</DoubleAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0">
+									<DiscreteObjectKeyFrame.Value>
+										<Visibility>Visible</Visibility>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="increaseButtonChrome" Storyboard.TargetProperty="RenderActive">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>True</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="decreaseButtonChrome" Storyboard.TargetProperty="RenderActive">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>True</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+					<vsm:VisualState x:Name="MouseOverTextHidden">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ControlOuterBorder_MouseOver}" />
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+					<vsm:VisualState x:Name="Disabled">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ControlOuterBorder_Disabled}" />
+							</ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="textbox" Storyboard.TargetProperty="Foreground">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PickerForeground_Disabled}" />
+							</ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ControlBackground_Disabled}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+				<vsm:VisualStateGroup x:Name="TextBoxBehavior">
+					<vsm:VisualState x:Name="ShowTextBox">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="textbox" Storyboard.TargetProperty="(UIElement.Visibility)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="colDefText" Storyboard.TargetProperty="(ColumnDefinition.Width)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="*" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="colDefButtons" Storyboard.TargetProperty="(ColumnDefinition.Width)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="auto" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="increaseButtonChrome" Storyboard.TargetProperty="RenderFocused">
+								<DiscreteObjectKeyFrame KeyTime="0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>False</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="decreaseButtonChrome" Storyboard.TargetProperty="RenderFocused">
+								<DiscreteObjectKeyFrame KeyTime="0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>False</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+					<vsm:VisualState x:Name="HideTextBox">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="textbox" Storyboard.TargetProperty="(UIElement.Visibility)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="colDefText" Storyboard.TargetProperty="(ColumnDefinition.Width)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="auto" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="colDefButtons" Storyboard.TargetProperty="(ColumnDefinition.Width)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="*" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="increaseButtonChrome" Storyboard.TargetProperty="CornerRadius">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SplitButton_TopPartCornerRadius}" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="decreaseButtonChrome" Storyboard.TargetProperty="CornerRadius">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SplitButton_BottomPartCornerRadius}" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="increaseButtonChrome" Storyboard.TargetProperty="RenderActive">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>False</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="decreaseButtonChrome" Storyboard.TargetProperty="RenderActive">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>False</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+				<VisualStateGroup x:Name="ButtonsBehavior">
+					<VisualState x:Name="ShowButtons">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="increase" Storyboard.TargetProperty="(UIElement.Visibility)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="decrease" Storyboard.TargetProperty="(UIElement.Visibility)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="HideButtons">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="increase" Storyboard.TargetProperty="(UIElement.Visibility)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="decrease" Storyboard.TargetProperty="(UIElement.Visibility)">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+							</ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Background" Storyboard.TargetProperty="CornerRadius">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SplitButton_SpanCornerRadius}"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+					</VisualState>
+				</VisualStateGroup>
+				<vsm:VisualStateGroup x:Name="ValidationStates">
+					<vsm:VisualState x:Name="Valid" />
+					<vsm:VisualState x:Name="InvalidUnfocused">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationTooltip" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+					<vsm:VisualState x:Name="InvalidFocused">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationTooltip" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationTooltip" Storyboard.TargetProperty="IsOpen">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>True</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="FocusVisual" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="increaseButtonChrome" Storyboard.TargetProperty="RenderFocused">
+								<DiscreteObjectKeyFrame KeyTime="0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>True</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="decreaseButtonChrome" Storyboard.TargetProperty="RenderFocused">
+								<DiscreteObjectKeyFrame KeyTime="0">
+									<DiscreteObjectKeyFrame.Value>
+										<sys:Boolean>True</sys:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="FocusedTextHidden" />
+					<VisualState x:Name="Unfocused" />
+				</VisualStateGroup>
+			</vsm:VisualStateManager.VisualStateGroups>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition x:Name="colDefText" Width="*" />
+				<ColumnDefinition x:Name="colDefButtons" Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+            <Border x:Name="Background" Grid.RowSpan="2" Grid.Column="0"
+                    Background="{StaticResource PickerBackground_Normal}"
+				    CornerRadius="{StaticResource SplitButton_LeftPartCornerRadius}" />
+
+            <Border Grid.RowSpan="2" Grid.ColumnSpan="2"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="{StaticResource SplitButton_SpanCornerRadius}" />
+            
+			<Border x:Name="Border" Grid.RowSpan="2" Grid.ColumnSpan="2" CornerRadius="{StaticResource SplitButton_SpanCornerRadius}"
+					BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" />
+
+			<Border x:Name="MouseOverVisual" Grid.RowSpan="2" Grid.ColumnSpan="2" CornerRadius="{StaticResource SplitButton_SpanCornerRadius}"
+					BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{StaticResource ControlOuterBorder_MouseOver}"
+					IsHitTestVisible="False" Opacity="0" Visibility="Collapsed" />
+								
+			<telerik:PickerTextBox x:Name="textbox"
+					Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+					telerik:StyleManager.Theme="{StaticResource Theme}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					Padding="{TemplateBinding Padding}"
+					HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+			<Border x:Name="FocusVisual" Visibility="Collapsed" Grid.RowSpan="2" Grid.ColumnSpan="2" BorderBrush="{StaticResource ControlOuterBorder_Focused}" CornerRadius="{StaticResource SplitButton_SpanCornerRadius}" BorderThickness="{TemplateBinding BorderThickness}">
+				<Border BorderBrush="{StaticResource ControlInnerBorder_Focused}" CornerRadius="{StaticResource SplitButton_SpanInnerCornerRadius}" BorderThickness="{TemplateBinding BorderThickness}" />
+			</Border>
+
+			<RepeatButton x:Name="increase" Grid.Row="0" Grid.Column="1" Style="{StaticResource IncreaseButtonStyle}" IsTabStop="{TemplateBinding AreButtonsTabStops}">
+				<telerikChromes:ButtonChrome x:Name="increaseButtonChrome"
+						IsTabStop="False"
+						CornerRadius="{StaticResource SplitButton_TopRightPartCornerRadius}"
+						telerik:StyleManager.Theme="{StaticResource Theme}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						RenderFocused="{Binding IsFocused, ElementName=increase}"
+						RenderMouseOver="{Binding IsMouseOver, ElementName=increase}"
+						RenderPressed="{Binding IsPressed, ElementName=increase}"
+						RenderEnabled="{Binding IsEnabled, ElementName=increase}"
+						 />
+			</RepeatButton>
+			<RepeatButton x:Name="decrease" Grid.Row="1" Grid.Column="1" Style="{StaticResource DecreaseButtonStyle}" IsTabStop="{TemplateBinding AreButtonsTabStops}">
+				<telerikChromes:ButtonChrome x:Name="decreaseButtonChrome"
+						IsTabStop="False"
+						CornerRadius="{StaticResource SplitButton_BottomRightPartCornerRadius}"
+						telerik:StyleManager.Theme="{StaticResource Theme}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						RenderFocused="{Binding IsFocused, ElementName=decrease}"
+						RenderMouseOver="{Binding IsMouseOver, ElementName=decrease}"
+						RenderPressed="{Binding IsPressed, ElementName=decrease}"
+						RenderEnabled="{Binding IsEnabled, ElementName=decrease}"
+						 />
+			</RepeatButton>
+			
+			<telerikChromes:ValidationTooltip
+					x:Name="ValidationTooltip"
+					Visibility="Collapsed"
+					Grid.RowSpan="2" Grid.ColumnSpan="2" 
+					telerik:StyleManager.Theme="{StaticResource Theme}"
+					TooltipPlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" TooltipContent="{Binding Path=(Validation.Errors), RelativeSource={RelativeSource TemplatedParent}}" />
+			
+		</Grid>
+		
+	</ControlTemplate>
+
+	<Style TargetType="telerikInput:RadNumericUpDown"  >
+		<Setter Property="Template" Value="{StaticResource RadNumericUpDownTemplate}" />
+		<Setter Property="MinHeight" Value="22" />
+		<Setter Property="MinWidth" Value="60" />
+		<Setter Property="Padding" Value="4 0" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorder_Normal}" />
+		<Setter Property="Foreground" Value="{StaticResource PickerForeground_Normal}" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="HorizontalContentAlignment" Value="Right" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="IsTabStop" Value="false" />
+		
+	</Style>
+
+	
+</ResourceDictionary>

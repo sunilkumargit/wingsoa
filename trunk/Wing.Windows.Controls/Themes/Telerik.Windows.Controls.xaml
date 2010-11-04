@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/DragDrop.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Expander.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/HeaderedContentControl.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/HeaderedItemsControl.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/ItemsControl.xaml" />
+        <!--ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/NavigationButton.xaml" /-->
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/ProgressBar.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Slider.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/PickerTextBox.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/PickerToggleButton.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Button.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/ButtonChrome.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/ShadowChrome.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/ValidationTooltip.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/BusyIndicator.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/WatermarkTextBox.xaml" />
+        <!--<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/LayoutTransformControl.xaml" />-->
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/StringFilterEditor.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Toolbar.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

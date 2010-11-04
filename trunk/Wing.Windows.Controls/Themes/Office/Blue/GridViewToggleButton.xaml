@@ -1,0 +1,138 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+    
+	<SolidColorBrush x:Key="GridView_ToggleButtonStroke" Color="#FF3C6AA3" />
+<SolidColorBrush x:Key="GridView_ToggleButtonForeground_Arrow" Color="White" />
+<SolidColorBrush x:Key="GridView_ToggleButtonStroke_Arrow" Color="#FF83A5D2"/>
+<SolidColorBrush x:Key="GridView_ToggleButtonForeground_Checked" Color="#FF83A5D2" />
+<SolidColorBrush x:Key="GridView_ToggleButtonStroke_Checked" Color="#FF3C6AA3" />
+<SolidColorBrush x:Key="GridView_ToggleButtonForeground" Color="#FF83A5D2" />
+<LinearGradientBrush x:Key="GridView_ToggleButtonBorder" EndPoint="0.854,0.854" StartPoint="0.146,0.146">
+		<GradientStop Color="#FF83A5D2" Offset="1"/>
+		<GradientStop Color="#FFC7DAF6"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="GridView_ToggleButtonBackground" EndPoint="0.854,0.854" StartPoint="0.146,0.146">
+		<GradientStop Color="#FFC7DEFC" Offset="1"/>
+		<GradientStop Color="White"/>
+	</LinearGradientBrush>
+
+	
+	
+	<!--PLUS / MINUS TEMPLATE-->
+	<ControlTemplate x:Key="GridViewToggleButtonTemplate" TargetType="controls:GridViewToggleButton">
+		<Border Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+			
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver"/>
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="CheckStates">
+					<VisualState x:Name="Checked">
+						<Storyboard>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="plus" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="minus" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Unchecked"/>
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused"/>
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			
+
+			<Border Width="9" Height="9" 
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"					
+					BorderThickness="{TemplateBinding BorderThickness}" 
+					VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+					HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+				<Grid>
+					<Path x:Name="plus" Fill="{StaticResource GridView_ToggleButtonStroke}" Stretch="Fill" Stroke="{x:Null}" Margin="{TemplateBinding Padding}" Data="M1.937,0 L2.937,0 2.937,2.0209999 5,2.0209999 5,3.0209999 2.937,3.0209999 2.937,5 1.937,5 1.937,3.0209999 0,3.0209999 0,2.0209999 1.937,2.0209999 z" Width="5" Height="5" />
+					<Rectangle x:Name="minus" Fill="{StaticResource GridView_ToggleButtonStroke}" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" Height="1" HorizontalAlignment="Center" Width="5" Opacity="0"/>
+				</Grid>
+			</Border>
+			
+		</Border>
+		
+	</ControlTemplate>
+
+	<!--ARROW TEMPLATE-->
+	<ControlTemplate x:Key="GridViewToggleButtonArrowTemplate" TargetType="controls:GridViewToggleButton">
+		<Border Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+			
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualState x:Name="Normal"/>
+					<VisualState x:Name="MouseOver"/>
+					<VisualState x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="CheckStates">
+					<VisualState x:Name="Checked">
+						<Storyboard>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="plus" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="minus" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState x:Name="Unchecked"/>
+				</VisualStateGroup>
+				<VisualStateGroup x:Name="FocusStates">
+					<VisualState x:Name="Focused"/>
+					<VisualState x:Name="Unfocused"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			
+
+			<Border Width="9" Height="9">
+				<Grid>
+					<Path x:Name="plus" Stretch="Fill" Width="6" Height="9" Data="M0.5,0.5 L6.5,3.5 0.5,6.5 z" Fill="{StaticResource GridView_ToggleButtonForeground_Arrow}" Stroke="{StaticResource GridView_ToggleButtonStroke_Arrow}" StrokeThickness="{TemplateBinding BorderThickness}" Margin="{TemplateBinding Padding}"/>
+					<Path x:Name="minus" Stretch="Fill" Width="7" Height="7" Data="M6.5,0.5 L6.5,6.5 0.5,6.5 z" Fill="{StaticResource GridView_ToggleButtonForeground_Checked}" Stroke="{StaticResource GridView_ToggleButtonStroke_Checked}" StrokeThickness="{TemplateBinding BorderThickness}" Margin="{TemplateBinding Padding}" Opacity="0"/>
+				</Grid>
+			</Border>
+
+
+		</Border>
+		
+	</ControlTemplate>
+
+	<Style TargetType="controls:GridViewToggleButton"
+		
+		>
+
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Foreground" Value="{StaticResource GridView_ToggleButtonForeground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource GridView_ToggleButtonBorder}" />
+		<Setter Property="Background" Value="{StaticResource GridView_ToggleButtonBackground}" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Template" Value="{StaticResource GridViewToggleButtonTemplate}" />
+		<Setter Property="PlusMinusTemplate" Value="{StaticResource GridViewToggleButtonTemplate}" />
+		<Setter Property="ArrowTemplate" Value="{StaticResource GridViewToggleButtonArrowTemplate}" />
+		
+	</Style>
+	
+	
+</ResourceDictionary>

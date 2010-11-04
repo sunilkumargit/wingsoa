@@ -1,0 +1,58 @@
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+	xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls">
+
+    <telerik:Office_BlueTheme x:Key="Theme" />
+
+    
+        <!-- style for TextBox -->
+        <Style TargetType="telerik:PickerTextBox"
+         >
+            <Setter Property="AcceptsReturn" Value="False" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="RootElement">
+                            
+                            <vsm:VisualStateManager.VisualStateGroups>
+                                <vsm:VisualStateGroup x:Name="CommonStates">
+                                    <vsm:VisualState x:Name="Normal" />
+                                    <vsm:VisualState x:Name="MouseOver" />
+                                    <vsm:VisualState x:Name="Disabled"/>
+									<vsm:VisualState x:Name="ReadOnly" />
+								</vsm:VisualStateGroup>
+                                <vsm:VisualStateGroup x:Name="FocusStates">
+                                    <vsm:VisualState x:Name="Focused" />
+                                    <vsm:VisualState x:Name="Unfocused" />
+                                </vsm:VisualStateGroup>
+                            </vsm:VisualStateManager.VisualStateGroups>
+                            <Border x:Name="Border" Opacity="1"
+								Cursor="IBeam"
+								Background="Transparent"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="1">
+                                <Grid>
+                                    <ScrollViewer x:Name="ContentElement" Foreground="Orange"
+										Padding="{TemplateBinding Padding}"
+										telerik:StyleManager.Theme="{StaticResource Theme}"
+										BorderBrush="Transparent" BorderThickness="0"
+										IsTabStop="False" 
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Grid>
+                            </Border>
+                            
+                            
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    
+</ResourceDictionary>

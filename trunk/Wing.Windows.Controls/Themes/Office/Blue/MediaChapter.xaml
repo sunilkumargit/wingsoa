@@ -1,0 +1,147 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		 
+        xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+		xmlns:player="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.MediaPlayer"
+		xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+        xmlns:telerikChromes="clr-namespace:Telerik.Windows.Controls.Chromes;assembly=Wing.Windows.Controls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:animation="clr-namespace:Telerik.Windows.Controls.Animation;assembly=Wing.Windows.Controls"
+>
+		
+    <SolidColorBrush x:Key="MediaChapter_IndexString_Foreground" Color="#FFFFFFFF" />
+<LinearGradientBrush x:Key="MediaChaptersItem_BorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#CCE4E4E4" />
+		<GradientStop Color="#FFB4CFF4" Offset="1" />
+	</LinearGradientBrush>
+<Thickness x:Key="MediaChaptersItem_Padding">1 2</Thickness>
+<SolidColorBrush x:Key="MediaChapterTollTip_DropShadow" Color="#99000000" />
+<LinearGradientBrush x:Key="MediaChapterTollTip_Background" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="White" />
+		<GradientStop Color="#FFC8D0DC" Offset="1" />
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="MediaChapterTollTip_BorderBrush" Color="#E5000000" />
+<SolidColorBrush x:Key="MediaChapterTollTip_ArrowBackground" Color="#FFC8D0DC" />
+<SolidColorBrush x:Key="MediaChapterTollTip_ArrowBorder" Color="#E5000000" />
+<Thickness x:Key="MediaChapterItem_BorderThickness">1</Thickness>
+<CornerRadius x:Key="MediaChapterItem_CornerRadius">1</CornerRadius>
+<SolidColorBrush x:Key="MediaChapterItem_BorderBrush_MouseOver" Color="#66FFFFFF" />
+<LinearGradientBrush x:Key="MediaChapterItem_Background_MouseOver" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#CCA1C4FF" Offset="1" />
+		<GradientStop Color="#B25278A7" />
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="MediaChapterItem_BorderBrush_Selected" Color="#66FFFFFF" />
+<LinearGradientBrush x:Key="MediaChapterItem_Background_Selected" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#CC869FC9" Offset="1" />
+		<GradientStop Color="#B2153255" />
+	</LinearGradientBrush>
+
+    
+
+	<Style TargetType="player:RadMediaChapter">
+		<Setter Property="Position" Value="00:00:00" />
+		<Setter Property="FontSize" Value="10" />
+		<Setter Property="Foreground" Value="{StaticResource MediaChapter_IndexString_Foreground}" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="player:RadMediaChapter">
+					<Grid x:Name="LayoutRoot">
+						<vsm:VisualStateManager.VisualStateGroups>
+							<vsm:VisualStateGroup x:Name="CommonStates">
+								<vsm:VisualState x:Name="Normal" />
+								<vsm:VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames
+												Storyboard.TargetName="MouseVisual"
+												Storyboard.TargetProperty="Visibility" Duration="0">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+								<vsm:VisualState x:Name="Disabled" />
+							</vsm:VisualStateGroup>
+							<vsm:VisualStateGroup x:Name="SelectionStates">
+								<vsm:VisualState x:Name="NotSelected" />
+								<vsm:VisualState x:Name="Selected">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames
+												Storyboard.TargetName="SelectedVisual"
+												Storyboard.TargetProperty="Visibility" Duration="0">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+							</vsm:VisualStateGroup>
+						</vsm:VisualStateManager.VisualStateGroups>
+
+						<Border BorderThickness="1,0,0,0"
+								BorderBrush="{StaticResource MediaChaptersItem_BorderBrush}"
+								Padding="{StaticResource MediaChaptersItem_Padding}"
+								Background="Transparent">
+
+							<ToolTipService.ToolTip>
+								<ToolTip Padding="0" BorderThickness="0" Placement="Top"
+										Background="Transparent" VerticalOffset="-13"
+										Margin="4 0 0 0">
+									<Grid Margin="-3 -3 -3 -22">
+										<StackPanel>
+											<Grid>
+												<Border
+														Background="{StaticResource MediaChapterTollTip_DropShadow}"
+														CornerRadius="4" Margin="0 2 -1 -2" />
+												<Border CornerRadius="3" BorderThickness="1"
+														Padding="5"
+														Background="{StaticResource MediaChapterTollTip_Background}"
+														BorderBrush="{StaticResource MediaChapterTollTip_BorderBrush}">
+													<ContentPresenter VerticalAlignment="Center" />
+												</Border>
+											</Grid>
+											<Grid>
+												<Path
+														Fill="{StaticResource MediaChapterTollTip_DropShadow}"
+														Stretch="Fill" Margin="5 -1.7 0 -3"
+														Width="12" HorizontalAlignment="Left"
+														VerticalAlignment="Bottom" Height="6.5"
+														Data="M30.259332,28.915334 L35.842666,34.457321 41.342669,28.957015" />
+												<Path
+														Fill="{StaticResource MediaChapterTollTip_ArrowBackground}"
+														Stretch="Fill" UseLayoutRounding="True"
+														StrokeThickness="1"
+														Stroke="{StaticResource MediaChapterTollTip_ArrowBorder}"
+														Margin="6 -1.7 0 0" Width="12"
+														HorizontalAlignment="Left"
+														VerticalAlignment="Bottom" Height="6.5"
+														Data="M30.259332,28.915334 L35.842666,34.457321 41.342669,28.957015" />
+											</Grid>
+										</StackPanel>
+									</Grid>
+								</ToolTip>
+							</ToolTipService.ToolTip>
+
+							<Grid Background="Transparent">
+								<Border x:Name="MouseVisual" Visibility="Collapsed"
+										BorderThickness="{StaticResource MediaChapterItem_BorderThickness}"
+										CornerRadius="{StaticResource MediaChapterItem_CornerRadius}"
+										BorderBrush="{StaticResource MediaChapterItem_BorderBrush_MouseOver}"
+										Background="{StaticResource MediaChapterItem_Background_MouseOver}" />
+
+								<Border x:Name="SelectedVisual" Visibility="Collapsed"
+										BorderThickness="{StaticResource MediaChapterItem_BorderThickness}"
+										CornerRadius="{StaticResource MediaChapterItem_CornerRadius}"
+										BorderBrush="{StaticResource MediaChapterItem_BorderBrush_Selected}"
+										Background="{StaticResource MediaChapterItem_Background_Selected}" />
+
+								<TextBlock Margin="2" x:Name="IndexString" FontWeight="Normal"
+										Foreground="{TemplateBinding Foreground}"
+										Text="{TemplateBinding IndexString}" />
+
+							</Grid>
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+
+</ResourceDictionary>

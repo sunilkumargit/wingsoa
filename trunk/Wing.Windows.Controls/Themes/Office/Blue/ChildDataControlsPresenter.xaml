@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+
+	<telerik:Office_BlueTheme x:Key="Theme" />
+
+	
+
+	<ControlTemplate x:Key="ChildDataControlsPresenterTemplate" TargetType="grid:ChildDataControlsPresenter">
+        <ItemsControl x:Name="PART_ChildDataItemsControl" ItemsSource="{Binding}" IsTabStop="{TemplateBinding IsTabStop}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <grid:GridViewDataControl telerik:StyleManager.Theme="{StaticResource Theme}"
+                                              IsTabStop="{Binding IsTabStop, ElementName=PART_ChildDataItemsControl}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ControlTemplate>
+    
+	<Style 
+        
+        TargetType="grid:ChildDataControlsPresenter">
+        <Setter Property="Template" Value="{StaticResource ChildDataControlsPresenterTemplate}" />
+				
+	</Style>
+    
+	
+</ResourceDictionary>

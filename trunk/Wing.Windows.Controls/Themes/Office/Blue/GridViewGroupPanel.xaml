@@ -1,0 +1,89 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+    
+	<SolidColorBrush x:Key="GridView_GroupPanelInnerBorder" Color="#FFEFF6FF" />
+<LinearGradientBrush x:Key="GridView_GroupPanelBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFBAD8FF"/>
+		<GradientStop Color="#FFD2E6FF" Offset="1"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="GridView_GroupPanelOuterBorder" Color="#FF83A5D2" />
+
+	
+
+    <ControlTemplate x:Key="GridViewGroupPanelTemplate" TargetType="grid:GridViewGroupPanel">
+        <Border  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+			
+			<vsm:VisualStateManager.VisualStateGroups>
+				<vsm:VisualStateGroup x:Name="Grouping">
+					<vsm:VisualState x:Name="NoGroups" />
+					<vsm:VisualState x:Name="HasGroups">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="panelText" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Collapsed"/>
+							</ObjectAnimationUsingKeyFrames>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="panelTextGrouped" Storyboard.TargetProperty="Visibility">
+								<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Visible"/>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+			</vsm:VisualStateManager.VisualStateGroups>
+			
+			<Border Background="{TemplateBinding Background}" 
+					BorderBrush="{StaticResource GridView_GroupPanelInnerBorder}" 
+					BorderThickness="1">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock x:Name="panelText" 
+							   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+							   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							   Margin="{TemplateBinding Padding}"
+							   FontSize="9.5"
+							   telerik:LocalizationManager.ResourceKey="GridViewGroupPanelText"
+							   IsHitTestVisible="False" />					
+					<TextBlock x:Name="panelTextGrouped" Margin="{TemplateBinding Padding}" Visibility="Collapsed"
+							   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"  
+							   telerik:LocalizationManager.ResourceKey="GridViewGroupPanelTopTextGrouped"
+							   IsHitTestVisible="False" />
+					<ItemsPresenter VerticalAlignment="Center"/>
+				</StackPanel>
+			</Border>
+		</Border> 
+        
+    </ControlTemplate>
+
+    <ItemsPanelTemplate x:Key="GridViewGroupPanelItemsPanelTemplate">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" />
+    </ItemsPanelTemplate>
+
+    <Style 
+        
+
+        TargetType="grid:GridViewGroupPanel">
+        <Setter Property="Template" Value="{StaticResource GridViewGroupPanelTemplate}" />
+        <Setter Property="ItemsPanel" Value="{StaticResource GridViewGroupPanelItemsPanelTemplate}" />
+
+		<Setter Property="MinHeight" Value="32" />
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="Padding" Value="10,0,3,0" />
+		<Setter Property="Background" Value="{StaticResource GridView_GroupPanelBackground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource GridView_GroupPanelOuterBorder}" />
+		<Setter Property="BorderThickness" Value="0,0,0,1" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		
+	</Style>
+    
+	
+</ResourceDictionary>

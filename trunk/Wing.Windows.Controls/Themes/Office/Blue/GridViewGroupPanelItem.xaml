@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+    
+	<SolidColorBrush x:Key="GridView_IndicatorPrimaryColor" Color="#FF3C6AA3" />
+<SolidColorBrush x:Key="GridView_IndicatorSecondaryColor" Color="White" />
+<telerik:Office_BlueTheme x:Key="Theme" />
+
+	
+    <ControlTemplate x:Key="GridViewGroupPanelItemTemplate" TargetType="grid:GridViewGroupPanelItem">
+        <StackPanel x:Name="PART_GroupPanelItemStackPanel" Orientation="Horizontal" 
+					VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+					Background="{TemplateBinding Background}">
+            <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="4" Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Path Name="PART_InsertionPoint" Grid.Row="0" Visibility="Collapsed" Fill="{StaticResource GridView_IndicatorPrimaryColor}" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Center" Width="6.414" Height="4.677" Data="M206.66812,170.31108 L212.08199,170.31108 209.36058,173.98834 z" />				
+				<Grid x:Name="PART_ConnectingLine" Visibility="Visible" Grid.Row="1" Margin="{TemplateBinding Padding}">
+					<Path Fill="{StaticResource GridView_IndicatorSecondaryColor}" Stretch="Fill" Stroke="{x:Null}" Width="4" Height="7" Data="M0,0 L1,0 1,1 2,1 2,2 3,2 3,3 4,3 4,4 3,4 3,5 2,5 2,6 1,6 1,7 0,7 z" Margin="1,2,0,0"/>
+					<Path Fill="{StaticResource GridView_IndicatorPrimaryColor}" Stretch="Fill" Stroke="{x:Null}" Width="4" Height="7" Data="M0,0 L1,0 1,1 2,1 2,2 3,2 3,3 4,3 4,4 3,4 3,5 2,5 2,6 1,6 1,7 0,7 z"/>
+				</Grid>
+            </Grid>
+            <grid:GridViewGroupPanelCell Content="{Binding Path=DisplayContent}"
+										 telerik:StyleManager.Theme="{StaticResource Theme}"
+										 SortDirection="{Binding Path=SortDirection}"/>
+        </StackPanel>
+    </ControlTemplate>
+
+    <Style 
+        
+        TargetType="grid:GridViewGroupPanelItem">
+        <Setter Property="Template" Value="{StaticResource GridViewGroupPanelItemTemplate}" />
+		<Setter Property="Background" Value="Transparent" />		
+		<Setter Property="Padding" Value="2,0,2,2" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+    
+	
+</ResourceDictionary>

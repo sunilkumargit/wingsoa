@@ -1,0 +1,95 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+    
+	<LinearGradientBrush x:Key="GridView_LoadingBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#B2153D6E"/>
+		<GradientStop Color="#B2153D6E" Offset="1"/>
+		<GradientStop Color="#33153D6E" Offset="0.5"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="GridView_LoadingIndicatorBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFFFBE00"/>
+		<GradientStop Color="#FFFFFBA3" Offset="0.5"/>
+		<GradientStop Offset="1" Color="#99FFFFFF"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="GridView_LoadingIndicatorBorder" Color="#4C113B70" />
+
+	
+
+	<Storyboard x:Key="FadeIn">
+		<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BusyIndicatorBackground" Storyboard.TargetProperty="Opacity">
+			<SplineDoubleKeyFrame KeyTime="00:00:00.2" Value="1"/>
+		</DoubleAnimationUsingKeyFrames>
+	</Storyboard>
+	<Storyboard x:Key="BusyAnimation" RepeatBehavior="Forever">
+		<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BusyIndicator" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+			<SplineDoubleKeyFrame KeyTime="00:00:01" Value="180"/>
+		</DoubleAnimationUsingKeyFrames>
+	</Storyboard>
+	
+	<ControlTemplate x:Key="GridViewLoadingIndicatorTemplate" TargetType="grid:GridViewLoadingIndicator" >		
+		<Border x:Name="BusyIndicatorBackground" Background="{StaticResource GridView_LoadingBackground}" 
+				
+			>
+			<Path x:Name="BusyIndicator" Stretch="Fill" 
+				  Stroke="{TemplateBinding BorderBrush}" 
+				  StrokeThickness="{TemplateBinding BorderThickness}"
+				  Fill="{TemplateBinding Background}"
+				  Margin="{TemplateBinding Padding}"
+				  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+				  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="36" Height="36" Data="M18,5.0000002 C10.820298,5 5,10.820298 5.0000002,18 5,25.179701 10.820298,31 18,31 25.179701,31 31,25.179701 31,18 31,10.820298 25.179701,5 18,5.0000002 z M18,0 C27.941126,0 36,8.0588746 36,18 36,27.941126 27.941126,36 18,36 8.0588746,36 0,27.941126 0,18 0,8.0588746 8.0588746,0 18,0 z" RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-180"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			
+			<vsm:VisualStateManager.VisualStateGroups>
+				<vsm:VisualStateGroup x:Name="CommonStates">
+					<vsm:VisualState x:Name="Idle" />
+					<vsm:VisualState x:Name="Loading">
+						<Storyboard RepeatBehavior="Forever">
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BusyIndicator" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="180"/>
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+					</vsm:VisualState>
+				</vsm:VisualStateGroup>
+			</vsm:VisualStateManager.VisualStateGroups>
+			
+		</Border>
+
+		
+		
+	</ControlTemplate>
+
+   
+    <Style  
+        TargetType="grid:GridViewLoadingIndicator">
+        <Setter Property="Template" Value="{StaticResource GridViewLoadingIndicatorTemplate}" />
+		
+		<Setter Property="Background" Value="{StaticResource GridView_LoadingIndicatorBackground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource GridView_LoadingIndicatorBorder}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+
+    </Style>
+        
+	
+</ResourceDictionary>

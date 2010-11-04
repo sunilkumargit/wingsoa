@@ -1,0 +1,137 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		
+        xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+		xmlns:player="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.MediaPlayer"
+		xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+        xmlns:telerikChromes="clr-namespace:Telerik.Windows.Controls.Chromes;assembly=Wing.Windows.Controls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:animation="clr-namespace:Telerik.Windows.Controls.Animation;assembly=Wing.Windows.Controls"
+>
+		
+    <SolidColorBrush x:Key="MediaItem_Foreground" Color="#FFFFFFFF" />
+<SolidColorBrush x:Key="MediaItem_Background_Normal" Color="Transparent" />
+<SolidColorBrush x:Key="MediaItem_Border_Normal" Color="Transparent" />
+<Thickness x:Key="MediaItem_BorderThickness">1</Thickness>
+<CornerRadius x:Key="MediaItem_CornerRadius">3</CornerRadius>
+<SolidColorBrush x:Key="MediaItem_Background_MouseOver" Color="#33A9BFFA" />
+<SolidColorBrush x:Key="MediaItem_Border_MouseOver" Color="#66FFFFFF" />
+<LinearGradientBrush x:Key="MediaItem_Background_Selected" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#CC869FC9" Offset="1" />
+		<GradientStop Color="#B2153255" />
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="MediaItem_Border_Selected" Color="#66FFFFFF" />
+<SolidColorBrush x:Key="MediaPayer_DisabledBrush" Color="#99FFFFFF" />
+
+    
+	<Style TargetType="player:RadMediaItem">
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="Foreground" Value="{StaticResource MediaItem_Foreground}" />
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="Background" Value="{StaticResource MediaItem_Background_Normal}" />
+		<Setter Property="BorderBrush" Value="{StaticResource MediaItem_Border_Normal}" />
+		<Setter Property="BorderThickness" Value="{StaticResource MediaItem_BorderThickness}" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="MinHeight" Value="54" />
+		<Setter Property="Margin" Value="13 4 5 0" />
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<player:ChaptersPanel />
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="player:RadMediaItem">
+					<Grid x:Name="LayoutRoot" MinHeight="{TemplateBinding MinHeight}">
+						<vsm:VisualStateManager.VisualStateGroups>
+							<vsm:VisualStateGroup x:Name="CommonStates">
+								<vsm:VisualState x:Name="Normal" />
+								<vsm:VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+												Duration="00:00:00.0010000"
+												Storyboard.TargetName="MouseOverVisual"
+												Storyboard.TargetProperty="(UIElement.Visibility)">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+								<vsm:VisualState x:Name="Disabled">
+									<Storyboard Duration="0">
+										<ObjectAnimationUsingKeyFrames
+												Storyboard.TargetName="DisabledVisual"
+												Storyboard.TargetProperty="Visibility">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+							</vsm:VisualStateGroup>
+
+							<vsm:VisualStateGroup x:Name="SelectionStates">
+								<vsm:VisualState x:Name="NotSelected" />
+								<vsm:VisualState x:Name="Selected">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+												Duration="00:00:00.0010000"
+												Storyboard.TargetName="SelectedVisual"
+												Storyboard.TargetProperty="(UIElement.Visibility)">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+							</vsm:VisualStateGroup>
+
+						</vsm:VisualStateManager.VisualStateGroups>
+
+						<!-- It's important to be visible at the first layout pass. It is removed from visual tree after.-->
+						<ItemsPresenter x:Name="itemsPresenter" Opacity="0" Margin="10 0"/>
+
+						<Border Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{StaticResource MediaItem_CornerRadius}" />
+
+						<Border x:Name="MouseOverVisual" Visibility="Collapsed"
+								Background="{StaticResource MediaItem_Background_MouseOver}"
+								BorderBrush="{StaticResource MediaItem_Border_MouseOver}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{StaticResource MediaItem_CornerRadius}" />
+
+						<Border x:Name="SelectedVisual" Visibility="Collapsed"
+								Background="{StaticResource MediaItem_Background_Selected}"
+								BorderBrush="{StaticResource MediaItem_Border_Selected}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{StaticResource MediaItem_CornerRadius}" />
+
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+
+							<Image MaxWidth="70" MaxHeight="40" Margin="5 10 10 10"
+									Source="{TemplateBinding ImageSource}" />
+
+							<ContentPresenter Grid.Column="1" Content="{TemplateBinding Header}"
+									ContentTemplate="{TemplateBinding HeaderTemplate}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+						</Grid>
+
+						<Border x:Name="DisabledVisual"
+								Background="{StaticResource MediaPayer_DisabledBrush}"
+								CornerRadius="{StaticResource MediaItem_CornerRadius}"
+								Visibility="Collapsed" />
+
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+
+</ResourceDictionary>

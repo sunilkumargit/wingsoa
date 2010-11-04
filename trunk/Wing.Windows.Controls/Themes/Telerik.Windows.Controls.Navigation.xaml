@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Menu.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/ToolBar.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/TreeView.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/TabControl.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Window.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/PanelBar.xaml" />
+		<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/TileView.xaml" />
+		<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/OutlookBar.xaml" />
+		<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Book.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

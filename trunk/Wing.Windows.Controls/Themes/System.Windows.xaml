@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="clr-namespace:Telerik.Windows.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.TextBox.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.ScrollViewer.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.RadioButton.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.ListBox.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.CheckBox.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.Button.xaml" />
+		<ResourceDictionary
+				Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.PasswordBox.xaml" />
+		<ResourceDictionary
+				Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/System.Windows.RepeatButton.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

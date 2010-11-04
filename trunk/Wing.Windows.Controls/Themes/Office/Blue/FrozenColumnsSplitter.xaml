@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+    
+	<LinearGradientBrush x:Key="GridView_FrozenColumnBackground" EndPoint="1,0.5" StartPoint="0,0.5">
+		<GradientStop Color="#992B568A"/>
+		<GradientStop Color="#002B568A" Offset="1"/>
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="GridView_FrozenColumnBorder" Color="White" />
+
+	
+
+    <ControlTemplate x:Key="FrozenColumnsSplitterTemplate" TargetType="grid:FrozenColumnsSplitter">
+		<Border Width="6" BorderThickness="1,0,0,0" BorderBrush="{TemplateBinding BorderBrush}">
+			<Border Margin="0" BorderThickness="0,0,2,0" Background="{TemplateBinding Background}">
+			</Border>
+		</Border>
+	</ControlTemplate>
+
+    <Style
+    
+        TargetType="grid:FrozenColumnsSplitter">
+        <Setter Property="Template" Value="{StaticResource FrozenColumnsSplitterTemplate}" />
+        <Setter Property="IsTabStop" Value="False" />
+		<Setter Property="Background" Value="{StaticResource GridView_FrozenColumnBackground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource GridView_FrozenColumnBorder}" />
+		
+    </Style>
+    
+	
+</ResourceDictionary>

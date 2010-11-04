@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					
+				
+				
+					xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+					xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"     
+					xmlns:grid="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Wing.Windows.Controls"
+					xmlns:treelist="clr-namespace:Telerik.Windows.Controls.TreeListView;assembly=Wing.Windows.Controls"
+					xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
+				
+			
+					>
+    
+	<SolidColorBrush x:Key="GridView_RowIndicatorCellBackground" Color="#FFE2F0FD" />
+<SolidColorBrush x:Key="ControlOuterBorder" Color="#FF83A5D2" />
+
+	
+
+    <ControlTemplate x:Key="GridViewIndicatorCellTemplate" TargetType="grid:GridViewIndicatorCell">
+		<Border Background="{TemplateBinding Background}" 
+				BorderBrush="{TemplateBinding BorderBrush}" 
+				BorderThickness="{TemplateBinding BorderThickness}">
+			<ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							  Margin="{TemplateBinding Padding}"
+							  Content="{TemplateBinding Content}" />
+		</Border>
+	</ControlTemplate>
+
+    <Style 
+        
+        TargetType="grid:GridViewIndicatorCell">
+        <Setter Property="Template" Value="{StaticResource GridViewIndicatorCellTemplate}" />
+		
+        <Setter Property="Background" Value="{StaticResource GridView_RowIndicatorCellBackground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorder}" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="0" />
+		
+    </Style>
+
+
+	
+</ResourceDictionary>

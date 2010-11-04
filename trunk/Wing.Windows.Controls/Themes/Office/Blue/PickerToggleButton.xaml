@@ -1,0 +1,247 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+		xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls">
+    <SolidColorBrush x:Key="PickerToggleButtonOuterBorder" Color="#FFB7B8B7" />
+<LinearGradientBrush x:Key="PickerToggleButtonInnerBorder" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFE4F0FE" Offset="0"/>
+		<GradientStop Color="#FFE8F1FD" Offset="1"/>
+		<GradientStop Color="#FFD5E3F6" Offset="0.5"/>
+		<GradientStop Color="#FFCFDFF3" Offset="0.51"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFE4F0FE" Offset="0"/>
+		<GradientStop Color="#FFE8F1FD" Offset="1"/>
+		<GradientStop Color="#FFD5E3F6" Offset="0.5"/>
+		<GradientStop Color="#FFCFDFF3" Offset="0.51"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonOuterBorderMouseOver" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFF9DF9C" Offset="0" />
+		<GradientStop Color="#FFEACC97" Offset="1" />
+	</LinearGradientBrush>
+<SolidColorBrush x:Key="PickerToggleButtonInnerBorderMouseOver" Color="#B2FFFFFF"></SolidColorBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonBackgroundMouseOver" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFFEFDF1" Offset="0" />
+		<GradientStop Color="#FFFEE699" Offset="1" />
+		<GradientStop Color="#FFFEEBAA" Offset="0.5" />
+		<GradientStop Color="#FFFED560" Offset="0.51" />
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonOuterBorderPressed" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFC8B170" Offset="0" />
+		<GradientStop Color="#FFC8B46C" Offset="1" />
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonInnerBorderPressed" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFF7EFD7" Offset="0" />
+		<GradientStop Color="#FFFEE38C" Offset="1" />
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonBackgroundPressed" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFFCE79F" Offset="1"/>
+		<GradientStop Color="#FFFDD3A8" Offset="0.07"/>
+		<GradientStop Color="#FFF9932E" Offset="0.43"/>
+		<GradientStop Color="#FFFAAD5F" Offset="0.42"/>
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonOuterBorderChecked" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFC8B170" Offset="0" />
+		<GradientStop Color="#FFC8B46C" Offset="1" />
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonInnerBorderChecked" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFF7EFD7" Offset="0" />
+		<GradientStop Color="#FFFEE38C" Offset="1" />
+	</LinearGradientBrush>
+<LinearGradientBrush x:Key="PickerToggleButtonBackgroundChecked" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="#FFFCE79F" Offset="1"/>
+		<GradientStop Color="#FFFDD3A8" Offset="0.07"/>
+		<GradientStop Color="#FFF9932E" Offset="0.43"/>
+		<GradientStop Color="#FFFAAD5F" Offset="0.42"/>
+	</LinearGradientBrush>
+<Thickness x:Key="PickerToggleButtonOuterBorderThickness">0</Thickness>
+<Thickness x:Key="PickerToggleButtonInnerBorderThickness">1</Thickness>
+<SolidColorBrush x:Key="PickerToggleButtonExpanderBrush" Color="#FF567DB1" />
+<Thickness x:Key="PickerToggleButtonExpanderMargin">4 0 6 0</Thickness>
+
+    
+
+	<!-- For TimePicker, DatePicker, ComboBox, ... -->
+	<Style
+		TargetType="telerik:PickerToggleButton"
+        
+		>
+		<Setter
+			Property="IsTabStop"
+			Value="False" />
+		<Setter
+			Property="ClickMode"
+			Value="Press" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="telerik:PickerToggleButton">
+					<Grid>
+						
+						<vsm:VisualStateManager.VisualStateGroups>
+							<vsm:VisualStateGroup
+								x:Name="CommonStates">
+								
+								<vsm:VisualState
+									x:Name="Normal">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="OuterBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonOuterBorder}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonInnerBorder}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonBackground}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+								
+								<vsm:VisualState
+									x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="OuterBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonOuterBorderMouseOver}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonInnerBorderMouseOver}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonBackgroundMouseOver}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+								
+								<vsm:VisualState
+									x:Name="Pressed">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="OuterBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonOuterBorderPressed}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonInnerBorderPressed}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonBackgroundPressed}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+
+								<vsm:VisualState
+									x:Name="Disabled" />
+
+								<vsm:VisualState
+									x:Name="Checked">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="OuterBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonOuterBorderChecked}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonInnerBorderChecked}" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames
+											Storyboard.TargetName="InnerBorder"
+											Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame
+												KeyTime="0"
+												Value="{StaticResource PickerToggleButtonBackgroundChecked}" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+
+								<vsm:VisualState
+									x:Name="Unhecked" />
+								
+							</vsm:VisualStateGroup>
+							
+							<vsm:VisualStateGroup
+								x:Name="FocusStates">
+								<vsm:VisualState
+									x:Name="Unfocused" />
+								<vsm:VisualState
+									x:Name="Focused" />
+							</vsm:VisualStateGroup>
+						</vsm:VisualStateManager.VisualStateGroups>
+						
+						
+						<Border
+							x:Name="OuterBorder"
+							BorderBrush="{StaticResource PickerToggleButtonOuterBorder}"
+							BorderThickness="{StaticResource PickerToggleButtonOuterBorderThickness}">
+							<Border
+								x:Name="InnerBorder"
+								BorderBrush="{StaticResource PickerToggleButtonInnerBorder}"
+								BorderThickness="{StaticResource PickerToggleButtonInnerBorderThickness}"
+								Background="{StaticResource PickerToggleButtonBackground}" />
+						</Border>
+
+						<Path
+							x:Name="Path"
+							Data="M0,0 L7,0 7,1 6,1 6,2 5,2 5,3 4,3 4,4 3,4 3,3 2,3 2,2 1,2 1,1 0,1 z"
+							Stretch="Fill"
+							Width="7" Height="4"
+							HorizontalAlignment="Right" VerticalAlignment="Center"
+							Fill="{StaticResource PickerToggleButtonExpanderBrush}"
+							Margin="{StaticResource PickerToggleButtonExpanderMargin}"
+							RenderTransformOrigin="0.5,0.5">
+						</Path>
+
+						<ContentPresenter
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}" />
+
+					</Grid>
+					
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	
+
+</ResourceDictionary>
