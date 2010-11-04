@@ -38,7 +38,7 @@
         private Telerik.Windows.Controls.TreeView.IndexTree indexTree;
         internal static readonly DependencyProperty IndexTreeProperty = DependencyProperty.RegisterAttached("IndexTree", typeof(Telerik.Windows.Controls.TreeView.IndexTree), typeof(TreeViewPanel), null);
         private static readonly DependencyProperty IsMeasureValidProperty = DependencyProperty.RegisterAttached("IsMeasureValid", typeof(bool), typeof(TreeViewPanel), new Telerik.Windows.PropertyMetadata(false));
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Virtualizing", Justification="The spelling is correct.")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Virtualizing", Justification = "The spelling is correct.")]
         public static readonly DependencyProperty IsVirtualizingProperty = DependencyProperty.RegisterAttached("IsVirtualizing", typeof(bool), typeof(TreeViewPanel), new Telerik.Windows.PropertyMetadata(false));
         private bool isVisualCacheEnabled;
         private int lastVisibleChildIndex;
@@ -58,7 +58,7 @@
         private const int WheelScrollLines = 3;
         private int widestIndex;
 
-        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification="This is how you register class event handlers")]
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = "This is how you register class event handlers")]
         static TreeViewPanel()
         {
             EventManager.RegisterClassHandler(typeof(TreeViewPanel), RequestBringIntoViewEvent, new RequestBringIntoViewEventHandler(TreeViewPanel.OnRequestBringIntoView));
@@ -159,7 +159,7 @@
             return measureData;
         }
 
-        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification="The instance is used for a Debug.Assert, it has to remain non-static.")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "The instance is used for a Debug.Assert, it has to remain non-static.")]
         private MeasureData AdjustViewportOffset(MeasureData givenMeasureData, Telerik.Windows.Controls.ItemsControl itemsControl)
         {
             MeasureData newMeasureData = null;
@@ -216,7 +216,7 @@
                 for (int i = 0; i < childrenCount; i++)
                 {
                     UIElement container = null;
-                    container = (UIElement) children[i];
+                    container = (UIElement)children[i];
                     Size childSize = container.DesiredSize;
                     childRectangle.Y += previousChildSize;
                     previousChildSize = childSize.Height;
@@ -329,7 +329,7 @@
             return realizedChildIndex;
         }
 
-        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification="The method can be refactored after virtualziation has been implemented.")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "The method can be refactored after virtualziation has been implemented.")]
         private void CleanupContainers(int firstViewport, Telerik.Windows.Controls.ItemsControl itemsControl)
         {
             if (itemsControl != null)
@@ -351,7 +351,7 @@
                     FrameworkElement bringIntoViewContainer = this.BringIntoViewContainer;
                     for (int childIndex = 0; childIndex < children.Count; childIndex++)
                     {
-                        UIElement child = (UIElement) children[childIndex];
+                        UIElement child = (UIElement)children[childIndex];
                         int lastItemIndex = itemIndex;
                         itemIndex = this.GetGeneratedIndex(childIndex);
                         if ((itemIndex - lastItemIndex) != 1)
@@ -403,7 +403,7 @@
             }
         }
 
-        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification="The method can be refactored after virtualziation has been implemented.")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "The method can be refactored after virtualziation has been implemented.")]
         private void CleanupContainersHierarchical(Telerik.Windows.Controls.ItemsControl itemsControl)
         {
             if (itemsControl != null)
@@ -420,7 +420,7 @@
                     FrameworkElement bringIntoViewContainer = this.BringIntoViewContainer;
                     for (int childIndex = 0; childIndex < children.Count; childIndex++)
                     {
-                        UIElement child = (UIElement) children[childIndex];
+                        UIElement child = (UIElement)children[childIndex];
                         itemIndex = (base.ItemContainerGenerator as System.Windows.Controls.ItemContainerGenerator).IndexFromContainer(child);
                         RadTreeViewItem treeViewItem = child as RadTreeViewItem;
                         if ((treeView == null) && (treeViewItem != null))
@@ -442,12 +442,12 @@
             }
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="children", Justification="The children parameter is used for a Debug.Assert, it cannot be removed.")]
+        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "children", Justification = "The children parameter is used for a Debug.Assert, it cannot be removed.")]
         private void CleanupRange(IList children, IItemContainerGenerator generator, int startIndex, int count)
         {
             if (this.InRecyclingMode)
             {
-                ((IRecyclingItemContainerGenerator) generator).Recycle(new GeneratorPosition(startIndex, 0), count);
+                ((IRecyclingItemContainerGenerator)generator).Recycle(new GeneratorPosition(startIndex, 0), count);
                 if (this.IsVisualCacheEnabled)
                 {
                     this.RemoveInternalChildRangeOverride(startIndex, count);
@@ -475,7 +475,7 @@
             IList children = this.RealizedChildren;
             for (int i = 0; i < children.Count; i++)
             {
-                UIElement child = (UIElement) children[i];
+                UIElement child = (UIElement)children[i];
                 int childIndex = itemsControl.ItemContainerGenerator.IndexFromContainer(child);
                 this.indexTree[childIndex] = child.DesiredSize.Height;
             }
@@ -574,7 +574,7 @@
             return this.ChildDefaultLength;
         }
 
-        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification="The instance is used in a Debug.Assert, it has to remain non-static.")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "The instance is used in a Debug.Assert, it has to remain non-static.")]
         private MeasureData CreateChildMeasureData(MeasureData measureData, Size layoutSlotSize, Size stackDesiredSize)
         {
             Rect viewport = measureData.Viewport;
@@ -747,7 +747,7 @@
                 WeakReference[] focusTrail = this.EnsureFocusTrail();
                 for (int i = 0; i < 2; i++)
                 {
-                    DependencyObject trailItem = (focusTrail[i] != null) ? ((DependencyObject) focusTrail[i].Target) : null;
+                    DependencyObject trailItem = (focusTrail[i] != null) ? ((DependencyObject)focusTrail[i].Target) : null;
                     if (trailItem != null)
                     {
                         FocusTrailItemField.ClearValue(trailItem);
@@ -788,29 +788,29 @@
 
         private static bool GetIsMeasureValid(DependencyObject obj)
         {
-            return (bool) obj.GetValue(IsMeasureValidProperty);
+            return (bool)obj.GetValue(IsMeasureValidProperty);
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Virtualizing", Justification="The spelling is correct.")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Virtualizing", Justification = "The spelling is correct.")]
         public static bool GetIsVirtualizing(DependencyObject element)
         {
             if (element == null)
             {
                 throw new ArgumentNullException("element");
             }
-            return (bool) element.GetValue(IsVirtualizingProperty);
+            return (bool)element.GetValue(IsVirtualizingProperty);
         }
 
         internal static MeasureData GetMeasureData(DependencyObject obj)
         {
             if (obj != null)
             {
-                return (MeasureData) obj.GetValue(MeasureDataProperty);
+                return (MeasureData)obj.GetValue(MeasureDataProperty);
             }
             return null;
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification="TransformToVisual could throw an exception.")]
+        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "TransformToVisual could throw an exception.")]
         internal static Rect GetRectangle(DependencyObject element)
         {
             UIElement d = element as UIElement;
@@ -854,7 +854,7 @@
             {
                 throw new ArgumentNullException("element");
             }
-            return (Telerik.Windows.Controls.TreeView.VirtualizationMode) element.GetValue(VirtualizationModeProperty);
+            return (Telerik.Windows.Controls.TreeView.VirtualizationMode)element.GetValue(VirtualizationModeProperty);
         }
 
         private GeneratorPosition IndexToGeneratorPositionForStart(int index, out int childIndex)
@@ -961,7 +961,7 @@
 
         internal static bool IsValidOrientation(object orientationValue)
         {
-            System.Windows.Controls.Orientation orientation = (System.Windows.Controls.Orientation) orientationValue;
+            System.Windows.Controls.Orientation orientation = (System.Windows.Controls.Orientation)orientationValue;
             if (orientation != System.Windows.Controls.Orientation.Horizontal)
             {
                 return (orientation == System.Windows.Controls.Orientation.Vertical);
@@ -989,7 +989,7 @@
             this.SetVerticalOffset(this.VerticalOffset - 24.0);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification="TransformToVisual throws a general exception.")]
+        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "TransformToVisual throws a general exception.")]
         public Rect MakeVisible(UIElement visual, Rect rectangle)
         {
             Vector newOffset = new Vector();
@@ -1057,7 +1057,7 @@
             targetRectOffset += viewportOffset;
             double minPhysicalOffset = ComputeScrollOffsetWithMinimalScroll(viewportOffset, viewportOffset + viewportSize, targetRectOffset, targetRectOffset + targetRectSize);
             double left = Math.Max(targetRectOffset, minPhysicalOffset);
-            targetRectSize = Math.Max((double) (Math.Min((double) (targetRectSize + targetRectOffset), (double) (minPhysicalOffset + viewportSize)) - left), (double) 0.0);
+            targetRectSize = Math.Max((double)(Math.Min((double)(targetRectSize + targetRectOffset), (double)(minPhysicalOffset + viewportSize)) - left), (double)0.0);
             targetRectOffset = left;
             targetRectOffset -= viewportOffset;
             if (isHorizontal)
@@ -1074,7 +1074,7 @@
             }
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId="0#", Justification="Available size exists as field as well."), SuppressMessage("Microsoft.Maintainability", "CA1505:AvoidUnmaintainableCode", Justification="Indeed, it should eb refactored."), SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification="The method can be simplified at a later stage.")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#", Justification = "Available size exists as field as well."), SuppressMessage("Microsoft.Maintainability", "CA1505:AvoidUnmaintainableCode", Justification = "Indeed, it should eb refactored."), SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "The method can be simplified at a later stage.")]
         protected override Size MeasureOverride(Size constraint)
         {
             double firstItemOffset;
@@ -1174,7 +1174,7 @@
                         }
                         if (child == null)
                         {
-                            goto Label_04DB;
+                            break;
                         }
                         this.AddContainerFromGenerator(childIndex, child, newlyRealized);
                         childIndex++;
@@ -1216,14 +1216,13 @@
                             double totalGenerated = ((stackDesiredSize.Height - virtualizedItemsSize) + firstItemOffset) - measureData.Viewport.Y;
                             if (totalGenerated > (viewportSize + 24.0))
                             {
-                                goto Label_04DB;
+                                break;
                             }
                         }
                         i++;
                     }
                 }
             }
-        Label_04DB:
             this.lastVisibleChildIndex = lastViewport;
             if (this.IsVirtualizing && this.InRecyclingMode)
             {
@@ -1389,24 +1388,24 @@
                     goto Label_013A;
 
                 case NotifyCollectionChangedAction.Remove:
-                {
-                    itemIndex = args.Position.Offset + args.Position.Index;
-                    System.Windows.Controls.ItemsControl itemsOwner = System.Windows.Controls.ItemsControl.GetItemsOwner(this);
-                    if ((itemsOwner == null) || (this.bringIntoViewIndex < itemsOwner.Items.Count))
                     {
-                        if (this.bringIntoViewIndex == itemIndex)
+                        itemIndex = args.Position.Offset + args.Position.Index;
+                        System.Windows.Controls.ItemsControl itemsOwner = System.Windows.Controls.ItemsControl.GetItemsOwner(this);
+                        if ((itemsOwner == null) || (this.bringIntoViewIndex < itemsOwner.Items.Count))
                         {
-                            this.ClearBringIntoView();
+                            if (this.bringIntoViewIndex == itemIndex)
+                            {
+                                this.ClearBringIntoView();
+                            }
+                            if ((this.bringIntoViewIndex >= 0) && (this.bringIntoViewIndex > itemIndex))
+                            {
+                                this.bringIntoViewIndex -= args.ItemCount;
+                            }
+                            break;
                         }
-                        if ((this.bringIntoViewIndex >= 0) && (this.bringIntoViewIndex > itemIndex))
-                        {
-                            this.bringIntoViewIndex -= args.ItemCount;
-                        }
+                        this.ClearBringIntoView();
                         break;
                     }
-                    this.ClearBringIntoView();
-                    break;
-                }
                 case NotifyCollectionChangedAction.Replace:
                     this.EnsureIndexTree();
                     this.OnItemsReplace(args);
@@ -1506,7 +1505,8 @@
                     this.widestIndex = -1;
                     this.maxWidth = 0.0;
                 }
-                base.Dispatcher.BeginInvoke(delegate {
+                base.Dispatcher.BeginInvoke(delegate
+                {
                     base.InvalidateMeasure();
                 });
             }
@@ -1549,7 +1549,7 @@
             this.cleanupTimer.Start();
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="itemCount", Justification="ItemCount is used in a Debug.Assert, the parameter cannot be removed.")]
+        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "itemCount", Justification = "ItemCount is used in a Debug.Assert, the parameter cannot be removed.")]
         private void RemoveChildRange(GeneratorPosition position, int itemCount, int itemUICount)
         {
             UIElementCollection children = this.InternalChildren;
@@ -1674,7 +1674,7 @@
             obj.SetValue(IsMeasureValidProperty, value);
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Virtualizing", Justification="The spelling is correct.")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Virtualizing", Justification = "The spelling is correct.")]
         public static void SetIsVirtualizing(DependencyObject element, bool value)
         {
             if (element == null)
@@ -1835,7 +1835,7 @@
         {
             get
             {
-                return (double) base.GetValue(ChildDefaultLengthProperty);
+                return (double)base.GetValue(ChildDefaultLengthProperty);
             }
             set
             {
@@ -2020,7 +2020,7 @@
                     return 0.0;
                 }
                 int minOffset = ((this.ExtentHeight > 1.0) && this.IsVirtualizing) ? 1 : 0;
-                return Math.Max(this.scrollData.ComputedOffset.Y, (double) minOffset);
+                return Math.Max(this.scrollData.ComputedOffset.Y, (double)minOffset);
             }
         }
 
@@ -2060,13 +2060,13 @@
             }
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1064:ExceptionsShouldBePublic", Justification="The interface is not an exception class.")]
+        [SuppressMessage("Microsoft.Design", "CA1064:ExceptionsShouldBePublic", Justification = "The interface is not an exception class.")]
         internal interface ICachable
         {
             bool IsCaching { get; set; }
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1064:ExceptionsShouldBePublic", Justification="The interface is not an exception classs.")]
+        [SuppressMessage("Microsoft.Design", "CA1064:ExceptionsShouldBePublic", Justification = "The interface is not an exception classs.")]
         internal interface IProvideStackingSize
         {
             double EstimatedContainerSize();

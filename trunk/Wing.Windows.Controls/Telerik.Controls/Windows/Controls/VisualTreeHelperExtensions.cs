@@ -15,8 +15,16 @@
     {
         internal static IEnumerable<T> GetAncestors<T>(this DependencyObject target) where T : class
         {
-            //.TODO.
-            return new List<T>();
+            if (target == null)
+                yield return null;
+
+            var parent = VisualTreeHelper.GetParent(target);
+            while (parent != null)
+            {
+                if (parent is T)
+                    yield return parent as T;
+                parent = VisualTreeHelper.GetParent(parent);
+            }
         }
 
         internal static List<T> GetChildren<T>(this DependencyObject parent) where T : FrameworkElement

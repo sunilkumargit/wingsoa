@@ -18,7 +18,8 @@
 
         private static void Attach(FrameworkElement element)
         {
-            HideDuringLayoutChangeHelper helper = new HideDuringLayoutChangeHelper {
+            HideDuringLayoutChangeHelper helper = new HideDuringLayoutChangeHelper
+            {
                 Parents = INotifyLayoutChangeParents(element),
                 Element = element
             };
@@ -55,9 +56,16 @@
 
         private static IEnumerable<INotifyLayoutChange> INotifyLayoutChangeParents(UIElement element)
         {
-            //.TODO.
-            return new List<INotifyLayoutChange>();
-            //return element.Paren
+            if (element == null)
+                yield return null;
+
+            var parent = VisualTreeHelper.GetParent(element);
+            while (parent != null)
+            {
+                if (parent is INotifyLayoutChange)
+                    yield return (INotifyLayoutChange)parent;
+                parent = VisualTreeHelper.GetParent(parent);
+            }
         }
 
         private void LayoutChangeEnded(object sender, EventArgs args)
@@ -86,7 +94,7 @@
         internal static void OnHideDuringLayoutChangeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             FrameworkElement element = d as FrameworkElement;
-            bool newValue = (bool) e.NewValue;
+            bool newValue = (bool)e.NewValue;
             if (element != null)
             {
                 if (newValue)

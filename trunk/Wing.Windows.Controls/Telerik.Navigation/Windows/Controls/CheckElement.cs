@@ -25,7 +25,7 @@
                     childItemContainer = (itemContainer.ItemContainerGenerator.ContainerFromIndex(itemIndex) as RadTreeViewItem) ?? (item as RadTreeViewItem);
                     if (childItemContainer == null)
                     {
-                        if (((OptionListType) parentTreeView.ItemStorage.GetValue<OptionListType>(item, RadTreeViewItem.OptionTypeProperty, OptionListType.Default)) == OptionListType.CheckList)
+                        if (((OptionListType)parentTreeView.ItemStorage.GetValue<OptionListType>(item, RadTreeViewItem.OptionTypeProperty, OptionListType.Default)) == OptionListType.CheckList)
                         {
                             parentTreeView.ItemStorage.SetValue(item, RadTreeViewItem.IsInCheckBoxPropagateStateModePropery, true);
                             parentTreeView.StoreCheckState(null, item, state);
@@ -42,15 +42,14 @@
                                 break;
 
                             case OptionListType.CheckList:
-                            {
-                                bool oldState = childItemContainer.IsInCheckBoxPropagateStateMode;
-                                childItemContainer.IsInCheckBoxPropagateStateMode = true;
-                                this.CheckItem(childItemContainer, state);
-                                childItemContainer.IsInCheckBoxPropagateStateMode = oldState;
-                                goto Label_00EA;
-                            }
+                                {
+                                    bool oldState = childItemContainer.IsInCheckBoxPropagateStateMode;
+                                    childItemContainer.IsInCheckBoxPropagateStateMode = true;
+                                    this.CheckItem(childItemContainer, state);
+                                    childItemContainer.IsInCheckBoxPropagateStateMode = oldState;
+                                    break;
+                                }
                         }
-                    Label_00EA:;
                     }
                 }
             }
@@ -102,9 +101,8 @@
                                     case OptionListType.CheckList:
                                         childItemContainer.SetCheckStateWithNoPropagation(state);
                                         this.CheckItem(childItemContainer, checkState);
-                                        goto Label_0102;
+                                        break;
                                 }
-                            Label_0102:;
                             }
                         }
                         this.PropagateStateOnParentItem(itemContainer.ParentItem);

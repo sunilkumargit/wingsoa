@@ -10,6 +10,5 @@
         <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/PanelBar.xaml" />
 		<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/TileView.xaml" />
 		<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/OutlookBar.xaml" />
-		<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Book.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -20,12 +20,10 @@
             Control placementTarget = Telerik.Windows.RoutedEvent.GetLogicalParent(this) as Control;
             if ((placementTarget != null) && (this.borderMaskElement != null))
             {
-                //.TODO.
-                /*
-                base.Dispatcher.BeginInvoke(delegate {
-                    // This item is obfuscated and can not be translated.
+                base.Dispatcher.BeginInvoke(delegate
+                {
                     this.borderMaskElement.Height = this.BorderThickness.Top;
-                    this.borderMaskElement.Width = Math.Max((double) 0.0, (double) ((placementTarget.ActualWidth - placementTarget.BorderThickness.Left) - placementTarget.BorderThickness.Right));
+                    this.borderMaskElement.Width = Math.Max((double)0.0, (double)((placementTarget.ActualWidth - placementTarget.BorderThickness.Left) - placementTarget.BorderThickness.Right));
                     double maskHorizontalOffset = 0.0;
                     if (this.IsOpen)
                     {
@@ -40,11 +38,12 @@
                     TranslateTransform translateTransform = this.borderMaskElement.RenderTransform as TranslateTransform;
                     if (translateTransform != null)
                     {
-                        goto Label_00FA;
+                        return;
                     }
-                    (this.borderMaskElement.RenderTransform = new TranslateTransform()).X = maskHorizontalOffset + placementTarget.BorderThickness.Left;
+                    translateTransform = new TranslateTransform();
+                    translateTransform.X = maskHorizontalOffset + placementTarget.BorderThickness.Left;
+                    this.borderMaskElement.RenderTransform = translateTransform;
                 });
-                 */
             }
         }
 

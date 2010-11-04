@@ -16,7 +16,8 @@
         {
         }
 
-        public MouseGesture(Telerik.Windows.Controls.MouseAction mouseAction) : this(mouseAction, ModifierKeys.None)
+        public MouseGesture(Telerik.Windows.Controls.MouseAction mouseAction)
+            : this(mouseAction, ModifierKeys.None)
         {
         }
 
@@ -61,7 +62,7 @@
                         return Telerik.Windows.Controls.MouseAction.LeftClick;
 
                     case MouseButton.Middle:
-                        goto Label_005F;
+                        return Telerik.Windows.Controls.MouseAction.MiddleClick;
 
                     case MouseButton.Right:
                         return Telerik.Windows.Controls.MouseAction.RightClick;
@@ -79,8 +80,7 @@
                 }
                 return Telerik.Windows.Controls.MouseAction.LeftDoubleClick;
             }
-        Label_005F:
-            return Telerik.Windows.Controls.MouseAction.LeftClick;
+            return none;
         }
 
         internal static bool IsDefinedMouseAction(Telerik.Windows.Controls.MouseAction mouseAction)

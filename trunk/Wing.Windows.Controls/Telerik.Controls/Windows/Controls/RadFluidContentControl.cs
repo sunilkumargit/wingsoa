@@ -8,7 +8,7 @@
     using Telerik.Windows;
     using Telerik.Windows.Controls.Animation;
 
-    [TemplateVisualState(Name="Small", GroupName="SizeStates"), TemplateVisualState(Name="Normal", GroupName="SizeStates"), TemplateVisualState(Name="Large", GroupName="SizeStates"), DefaultProperty("Content")]
+    [TemplateVisualState(Name = "Small", GroupName = "SizeStates"), TemplateVisualState(Name = "Normal", GroupName = "SizeStates"), TemplateVisualState(Name = "Large", GroupName = "SizeStates"), DefaultProperty("Content")]
     public class RadFluidContentControl : ContentControl
     {
         public static readonly DependencyProperty ContentChangeModeProperty = DependencyProperty.Register("ContentChangeMode", typeof(Telerik.Windows.Controls.ContentChangeMode), typeof(RadFluidContentControl), new System.Windows.PropertyMetadata(Telerik.Windows.Controls.ContentChangeMode.Automatic));
@@ -138,7 +138,7 @@
 
         internal static Size GetSizeDifference(Size availableSize, Size desiredSize)
         {
-            return new Size { Height = Math.Abs((double) (availableSize.Height - desiredSize.Height)), Width = Math.Abs((double) (availableSize.Width - desiredSize.Width)) };
+            return new Size { Height = Math.Abs((double)(availableSize.Height - desiredSize.Height)), Width = Math.Abs((double)(availableSize.Width - desiredSize.Width)) };
         }
 
         internal Size GetThreshold(DependencyProperty thresholdProperty)
@@ -225,44 +225,40 @@
                 switch (this.State)
                 {
                     case FluidContentControlState.Small:
-                    {
-                        if (!enoughAvailableSize)
                         {
-                            break;
+                            if (!enoughAvailableSize)
+                            {
+                                break;
+                            }
+                            stateNeedsChange = this.UpdateState(availableSize, desiredSize, SmallToNormalThresholdProperty, FluidContentControlState.Normal);
+                            continue;
                         }
-                        stateNeedsChange = this.UpdateState(availableSize, desiredSize, SmallToNormalThresholdProperty, FluidContentControlState.Normal);
-                        continue;
-                    }
                     case FluidContentControlState.Normal:
-                    {
-                        if (!enoughAvailableSize)
                         {
-                            goto Label_0088;
+                            if (!enoughAvailableSize)
+                            {
+                                stateNeedsChange = this.UpdateState(availableSize, desiredSize, NormalToSmallThresholdProperty, FluidContentControlState.Small);
+                                continue;
+                            }
+                            stateNeedsChange = this.UpdateState(availableSize, desiredSize, NormalToLargeThresholdProperty, FluidContentControlState.Large);
+                            continue;
                         }
-                        stateNeedsChange = this.UpdateState(availableSize, desiredSize, NormalToLargeThresholdProperty, FluidContentControlState.Large);
-                        continue;
-                    }
                     case FluidContentControlState.Large:
-                    {
-                        if (!enoughAvailableSize)
                         {
-                            goto Label_00A0;
+                            if (!enoughAvailableSize)
+                            {
+                                stateNeedsChange = this.UpdateState(availableSize, desiredSize, LargeToNormalThresholdProperty, FluidContentControlState.Normal);
+                                continue;
+                            }
+                            stateNeedsChange = false;
+                            continue;
                         }
-                        stateNeedsChange = false;
-                        continue;
-                    }
                     default:
-                    {
-                        continue;
-                    }
+                        {
+                            continue;
+                        }
                 }
                 stateNeedsChange = false;
-                continue;
-            Label_0088:
-                stateNeedsChange = this.UpdateState(availableSize, desiredSize, NormalToSmallThresholdProperty, FluidContentControlState.Small);
-                continue;
-            Label_00A0:
-                stateNeedsChange = this.UpdateState(availableSize, desiredSize, LargeToNormalThresholdProperty, FluidContentControlState.Normal);
             }
             return base.MeasureOverride(availableSize);
         }
@@ -281,7 +277,7 @@
 
         private static void OnStateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            RadFluidContentControl sender = (RadFluidContentControl) d;
+            RadFluidContentControl sender = (RadFluidContentControl)d;
             if (sender != null)
             {
                 if (sender.ContentChangeMode == Telerik.Windows.Controls.ContentChangeMode.Manual)
@@ -290,8 +286,8 @@
                 }
                 if (sender.StateChanged != null)
                 {
-                    FluidContentControlState oldValue = (e.OldValue is FluidContentControlState) ? ((FluidContentControlState) e.OldValue) : FluidContentControlState.Normal;
-                    FluidContentControlState newValue = (e.NewValue is FluidContentControlState) ? ((FluidContentControlState) e.NewValue) : FluidContentControlState.Normal;
+                    FluidContentControlState oldValue = (e.OldValue is FluidContentControlState) ? ((FluidContentControlState)e.OldValue) : FluidContentControlState.Normal;
+                    FluidContentControlState newValue = (e.NewValue is FluidContentControlState) ? ((FluidContentControlState)e.NewValue) : FluidContentControlState.Normal;
                     sender.StateChanged(sender, new FluidContentControlStateChangedEventArgs(oldValue, newValue));
                 }
             }
@@ -396,7 +392,7 @@
         {
             get
             {
-                return (Telerik.Windows.Controls.ContentChangeMode) base.GetValue(ContentChangeModeProperty);
+                return (Telerik.Windows.Controls.ContentChangeMode)base.GetValue(ContentChangeModeProperty);
             }
             set
             {
@@ -420,7 +416,7 @@
         {
             get
             {
-                return (DataTemplate) base.GetValue(LargeContentTemplateProperty);
+                return (DataTemplate)base.GetValue(LargeContentTemplateProperty);
             }
             set
             {
@@ -432,7 +428,7 @@
         {
             get
             {
-                return (Size) base.GetValue(LargeToNormalThresholdProperty);
+                return (Size)base.GetValue(LargeToNormalThresholdProperty);
             }
             set
             {
@@ -444,7 +440,7 @@
         {
             get
             {
-                return (Size) base.GetValue(NormalToLargeThresholdProperty);
+                return (Size)base.GetValue(NormalToLargeThresholdProperty);
             }
             set
             {
@@ -456,7 +452,7 @@
         {
             get
             {
-                return (Size) base.GetValue(NormalToSmallThresholdProperty);
+                return (Size)base.GetValue(NormalToSmallThresholdProperty);
             }
             set
             {
@@ -488,7 +484,7 @@
         {
             get
             {
-                return (DataTemplate) base.GetValue(SmallContentTemplateProperty);
+                return (DataTemplate)base.GetValue(SmallContentTemplateProperty);
             }
             set
             {
@@ -500,7 +496,7 @@
         {
             get
             {
-                return (Size) base.GetValue(SmallToNormalThresholdProperty);
+                return (Size)base.GetValue(SmallToNormalThresholdProperty);
             }
             set
             {
@@ -512,7 +508,7 @@
         {
             get
             {
-                return (FluidContentControlState) base.GetValue(StateProperty);
+                return (FluidContentControlState)base.GetValue(StateProperty);
             }
             set
             {

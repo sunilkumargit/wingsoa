@@ -49,8 +49,8 @@
             if (this.innerCollection.Any<WeakReferenceKey<object>>())
             {
                 foreach (WeakReferenceKey<object> item in from key in this.innerCollection
-                    where key.Item != null
-                    select key)
+                                                          where key.Item != null
+                                                          select key)
                 {
                     array[arrayIndex++] = item.Item;
                 }
@@ -62,16 +62,20 @@
             (this.innerCollection as ICollection).CopyTo(array, index);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification="The method implies that the return value involves computation.")]
+        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "The method implies that the return value involves computation.")]
         public IEnumerator<object> GetCheckedItemsOnly()
         {
-            //.TODO.
-            return new List<Object>().GetEnumerator();
+            ToggleState toggleState = ToggleState.Indeterminate;
+            foreach (var item in innerCollection)
+            {
+                if (item.Item != null && (this.innerDictionary.TryGetValue(item, out toggleState) || toggleState != ToggleState.Indeterminate))
+                    yield return item.Item;
+            }
         }
 
         public IEnumerator GetEnumerator()
         {
-            return ((IEnumerable<object>) this).GetEnumerator();
+            return ((IEnumerable<object>)this).GetEnumerator();
         }
 
         internal void NotifyCountChanged()
@@ -101,8 +105,10 @@
 
         IEnumerator<object> IEnumerable<object>.GetEnumerator()
         {
-            //.TODO.
-            return this.innerDictionary.Values.Cast<Object>().GetEnumerator();
+            return this.innerCollection
+                .Where(item => item.Item != null)
+                .Select(item => item.Item)
+                .GetEnumerator();
         }
 
         public int Count

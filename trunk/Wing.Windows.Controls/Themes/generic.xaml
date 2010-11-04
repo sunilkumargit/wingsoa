@@ -2,7 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Common.xaml"/>
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/System.Windows.xaml" />
         <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Telerik.Windows.Controls.xaml"/>
-        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Docking.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Telerik.Windows.Controls.Navigation.xaml" />
+        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Telerik.Windows.Controls.Docking.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

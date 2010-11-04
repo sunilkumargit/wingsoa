@@ -32,7 +32,7 @@
                 }
                 else
                 {
-                    list2 = (List<Telerik.Windows.RoutedEvent>) obj3;
+                    list2 = (List<Telerik.Windows.RoutedEvent>)obj3;
                 }
                 if (!list2.Contains(routedEvent))
                 {
@@ -54,7 +54,7 @@
                 }
                 else
                 {
-                    list = (List<Telerik.Windows.RoutedEvent>) obj2;
+                    list = (List<Telerik.Windows.RoutedEvent>)obj2;
                 }
                 if (!list.Contains(routedEvent))
                 {
@@ -77,7 +77,7 @@
 
         internal static RoutedEventHandlerInfoList GetDTypedClassListeners(DependencyObjectType dependencyType, Telerik.Windows.RoutedEvent routedEvent, out ClassHandlersStore classListenersLists, out int index)
         {
-            classListenersLists = (ClassHandlersStore) dependencyTypedClassListeners[dependencyType];
+            classListenersLists = (ClassHandlersStore)dependencyTypedClassListeners[dependencyType];
             if (classListenersLists != null)
             {
                 index = classListenersLists.GetHandlersIndex(routedEvent);
@@ -133,7 +133,7 @@
             {
                 for (DependencyObjectType type = DependencyObjectType.FromSystemTypeInternal(ownerType); type != null; type = includeSupers ? type.BaseType : null)
                 {
-                    List<Telerik.Windows.RoutedEvent> list2 = (List<Telerik.Windows.RoutedEvent>) dependencyTypedRoutedEventList[type];
+                    List<Telerik.Windows.RoutedEvent> list2 = (List<Telerik.Windows.RoutedEvent>)dependencyTypedRoutedEventList[type];
                     if (list2 != null)
                     {
                         for (int j = 0; j < list2.Count; j++)
@@ -160,7 +160,7 @@
                 int num4 = 0;
                 for (int i = 0; i < activeDTypes.Count; i++)
                 {
-                    List<Telerik.Windows.RoutedEvent> list2 = (List<Telerik.Windows.RoutedEvent>) dependencyTypedRoutedEventList[activeDTypes.List[i]];
+                    List<Telerik.Windows.RoutedEvent> list2 = (List<Telerik.Windows.RoutedEvent>)dependencyTypedRoutedEventList[activeDTypes.List[i]];
                     for (int j = 0; j < list2.Count; j++)
                     {
                         Telerik.Windows.RoutedEvent event3 = list2[j];
@@ -173,7 +173,7 @@
                 IDictionaryEnumerator enumerator = ownerTypedRoutedEventList.GetEnumerator();
                 while (enumerator.MoveNext())
                 {
-                    List<Telerik.Windows.RoutedEvent> list = (List<Telerik.Windows.RoutedEvent>) enumerator.Value;
+                    List<Telerik.Windows.RoutedEvent> list = (List<Telerik.Windows.RoutedEvent>)enumerator.Value;
                     for (int k = 0; k < list.Count; k++)
                     {
                         Telerik.Windows.RoutedEvent event2 = list[k];
@@ -192,7 +192,7 @@
             if ((ownerType == typeof(DependencyObject)) || ownerType.IsSubclassOf(typeof(DependencyObject)))
             {
                 DependencyObjectType type = DependencyObjectType.FromSystemTypeInternal(ownerType);
-                List<Telerik.Windows.RoutedEvent> list2 = (List<Telerik.Windows.RoutedEvent>) dependencyTypedRoutedEventList[type];
+                List<Telerik.Windows.RoutedEvent> list2 = (List<Telerik.Windows.RoutedEvent>)dependencyTypedRoutedEventList[type];
                 if (list2 != null)
                 {
                     return list2.ToArray();
@@ -211,7 +211,7 @@
 
         private static RoutedEventHandlerInfoList GetUpdatedDTypedClassListeners(DependencyObjectType dependencyType, Telerik.Windows.RoutedEvent routedEvent, out ClassHandlersStore classListenersLists, out int index)
         {
-            classListenersLists = (ClassHandlersStore) dependencyTypedClassListeners[dependencyType];
+            classListenersLists = (ClassHandlersStore)dependencyTypedClassListeners[dependencyType];
             if (classListenersLists != null)
             {
                 index = classListenersLists.GetHandlersIndex(routedEvent);
@@ -227,7 +227,7 @@
             while ((handlersIndex == -1) && (baseType.Id != dependencyObjectType.Id))
             {
                 baseType = baseType.BaseType;
-                store = (ClassHandlersStore) dependencyTypedClassListeners[baseType];
+                store = (ClassHandlersStore)dependencyTypedClassListeners[baseType];
                 if (store != null)
                 {
                     handlersIndex = store.GetHandlersIndex(routedEvent);
@@ -267,7 +267,7 @@
                 {
                     if (activeDTypes.List[i].IsSubclassOf(dependencyType))
                     {
-                        ((ClassHandlersStore) dependencyTypedClassListeners[activeDTypes.List[i]]).UpdateSubClassHandlers(routedEvent, baseClassListeners);
+                        ((ClassHandlersStore)dependencyTypedClassListeners[activeDTypes.List[i]]).UpdateSubClassHandlers(routedEvent, baseClassListeners);
                     }
                 }
             }

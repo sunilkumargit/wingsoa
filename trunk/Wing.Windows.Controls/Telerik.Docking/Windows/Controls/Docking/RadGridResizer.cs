@@ -11,7 +11,7 @@
     using Telerik.Windows;
     using Telerik.Windows.Controls;
 
-    [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Resizer", Justification="The name is correct."), TemplateVisualState(Name="Focused", GroupName="FocusStates"), TemplateVisualState(Name="Disabled", GroupName="CommonStates"), TemplatePart(Name="HorizontalTemplate", Type=typeof(FrameworkElement)), TemplatePart(Name="VerticalTemplate", Type=typeof(FrameworkElement)), TemplateVisualState(Name="Normal", GroupName="CommonStates"), TemplateVisualState(Name="MouseOver", GroupName="CommonStates"), TemplateVisualState(Name="Unfocused", GroupName="FocusStates")]
+    [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Resizer", Justification = "The name is correct."), TemplateVisualState(Name = "Focused", GroupName = "FocusStates"), TemplateVisualState(Name = "Disabled", GroupName = "CommonStates"), TemplatePart(Name = "HorizontalTemplate", Type = typeof(FrameworkElement)), TemplatePart(Name = "VerticalTemplate", Type = typeof(FrameworkElement)), TemplateVisualState(Name = "Normal", GroupName = "CommonStates"), TemplateVisualState(Name = "MouseOver", GroupName = "CommonStates"), TemplateVisualState(Name = "Unfocused", GroupName = "FocusStates")]
     public class RadGridResizer : Control
     {
         private DragValidator dragValidator;
@@ -260,7 +260,7 @@
         [SuppressMessage("Microsoft.Design", "CA1061:DoNotHideBaseClassMethods")]
         private void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (!((bool) e.NewValue))
+            if (!((bool)e.NewValue))
             {
                 this.IsMouseOver = false;
             }
@@ -406,7 +406,7 @@
         {
             get
             {
-                return (Dock) base.GetValue(PlacementProperty);
+                return (Dock)base.GetValue(PlacementProperty);
             }
             set
             {
@@ -435,7 +435,7 @@
         {
             get
             {
-                return (Style) base.GetValue(PreviewStyleProperty);
+                return (Style)base.GetValue(PreviewStyleProperty);
             }
             set
             {
@@ -447,7 +447,7 @@
         {
             get
             {
-                return (bool) base.GetValue(ShowsPreviewProperty);
+                return (bool)base.GetValue(ShowsPreviewProperty);
             }
             set
             {
@@ -504,22 +504,22 @@
                         case Dock.Left:
                             minSize = this.AffectedElement.MinWidth - this.AffectedElementOriginalLength;
                             maxSize = this.ResizedElementOriginalLength - this.ResizedElement.MinWidth;
-                            goto Label_0227;
+                            break;
 
                         case Dock.Top:
                             minSize = this.AffectedElement.MinHeight - this.AffectedElementOriginalLength;
                             maxSize = this.ResizedElementOriginalLength - this.ResizedElement.MinHeight;
-                            goto Label_0227;
+                            break;
 
                         case Dock.Right:
                             minSize = this.ResizedElementOriginalLength - this.ResizedElement.MinWidth;
                             maxSize = this.AffectedElementOriginalLength - this.AffectedElement.MinWidth;
-                            goto Label_0227;
+                            break;
 
                         case Dock.Bottom:
                             minSize = this.ResizedElementOriginalLength - this.ResizedElement.MinHeight;
                             maxSize = this.AffectedElementOriginalLength - this.AffectedElement.MinHeight;
-                            goto Label_0227;
+                            break;
                     }
                 }
                 else
@@ -530,25 +530,24 @@
                         case Dock.Left:
                             minSize = this.MinSize.Width - this.MaxSize.Width;
                             maxSize = this.ResizedElementOriginalLength - this.ResizedElement.MinWidth;
-                            goto Label_0227;
+                            break;
 
                         case Dock.Top:
                             minSize = this.MinSize.Height - this.MaxSize.Height;
                             maxSize = this.ResizedElementOriginalLength - this.ResizedElement.MinHeight;
-                            goto Label_0227;
+                            break;
 
                         case Dock.Right:
                             minSize = this.ResizedElement.MinWidth - this.ResizedElementOriginalLength;
-                            maxSize = Math.Min((double) (maximum.Width - this.MinSize.Width), (double) (this.ResizedElement.MaxWidth - this.ResizedElementOriginalLength));
-                            goto Label_0227;
+                            maxSize = Math.Min((double)(maximum.Width - this.MinSize.Width), (double)(this.ResizedElement.MaxWidth - this.ResizedElementOriginalLength));
+                            break;
 
                         case Dock.Bottom:
                             minSize = this.ResizedElement.MinHeight - this.ResizedElementOriginalLength;
-                            maxSize = Math.Min((double) (maximum.Height - this.MinSize.Height), (double) (this.ResizedElement.MaxHeight - this.ResizedElementOriginalLength));
-                            goto Label_0227;
+                            maxSize = Math.Min((double)(maximum.Height - this.MinSize.Height), (double)(this.ResizedElement.MaxHeight - this.ResizedElementOriginalLength));
+                            break;
                     }
                 }
-            Label_0227:;
                 return new double[] { minSize, maxSize };
             }
 

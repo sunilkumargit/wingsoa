@@ -21,6 +21,5 @@
         <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/WatermarkTextBox.xaml" />
         <!--<ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/LayoutTransformControl.xaml" />-->
         <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/StringFilterEditor.xaml" />
-        <ResourceDictionary Source="/Wing.Windows.Controls;Component/Themes/Office/Blue/Toolbar.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

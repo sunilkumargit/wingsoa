@@ -1188,8 +1188,24 @@ namespace Telerik.Windows.Controls
 
         internal IEnumerable<RadTreeViewItem> GetAllItemContainers(Telerik.Windows.Controls.ItemsControl itemsControl)
         {
-            //.TODO.
-            return null;
+            if (itemsControl != this || !this.IsVirtualizing || generatedItemCache == null)
+            {
+                for (var i = 0; i < itemsControl.Items.Count; i++)
+                {
+                    var childItemContainer = itemsControl.ItemContainerGenerator.ContainerFromIndex(i) as RadTreeViewItem;
+                    if (childItemContainer != null)
+                    {
+                        yield return childItemContainer;
+                        foreach (var item in this.GetAllItemContainers(childItemContainer))
+                            yield return item;
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in generatedItemCache.Values)
+                    yield return item.Target as RadTreeViewItem;
+            }
         }
 
         internal ToggleState GetCheckStateValue(object item)

@@ -18,7 +18,7 @@
 
     xmlns:telerikDocking="clr-namespace:Telerik.Windows.Controls;assembly=Wing.Windows.Controls"
     xmlns:dock="clr-namespace:Telerik.Windows.Controls.Docking;assembly=Wing.Windows.Controls"
-    xmlns:telerikDockingAnimations="clr-namespace:Telerik.Windows.Controls.Animations;assembly=Wing.Windows.Controls"
+    xmlns:telerikDockingAnimations="clr-namespace:Telerik.Windows.Controls.Animation;assembly=Wing.Windows.Controls"
 
 >
 

@@ -10,7 +10,7 @@
     using System.Windows.Media;
     using Telerik.Windows;
 
-    [DefaultProperty("ClickToOpen"), StyleTypedProperty(Property="ItemContainerStyle", StyleTargetType=typeof(RadMenuItem))]
+    [DefaultProperty("ClickToOpen"), StyleTypedProperty(Property = "ItemContainerStyle", StyleTargetType = typeof(RadMenuItem))]
     public class RadMenu : MenuBase
     {
         public static readonly DependencyProperty OrientationProperty = DependencyProperty.Register("Orientation", typeof(System.Windows.Controls.Orientation), typeof(RadMenu), new System.Windows.PropertyMetadata(System.Windows.Controls.Orientation.Horizontal, new PropertyChangedCallback(RadMenu.OnOrientationChanged)));
@@ -23,7 +23,7 @@
 
         public RadMenu()
         {
-            
+
             base.DefaultStyleKey = typeof(RadMenu);
             base.TabNavigation = KeyboardNavigationMode.Once;
         }
@@ -34,11 +34,11 @@
             {
                 if (this.panel is StackPanel)
                 {
-                    return new System.Windows.Controls.Orientation?((System.Windows.Controls.Orientation) this.panel.GetValue(StackPanel.OrientationProperty));
+                    return new System.Windows.Controls.Orientation?((System.Windows.Controls.Orientation)this.panel.GetValue(StackPanel.OrientationProperty));
                 }
                 if (this.panel is RadWrapPanel)
                 {
-                    return new System.Windows.Controls.Orientation?((System.Windows.Controls.Orientation) this.panel.GetValue(RadWrapPanel.OrientationProperty));
+                    return new System.Windows.Controls.Orientation?((System.Windows.Controls.Orientation)this.panel.GetValue(RadWrapPanel.OrientationProperty));
                 }
             }
             return null;
@@ -107,55 +107,53 @@
             {
                 case Key.Left:
                 case Key.Right:
-                {
-                    if (base.CurrentSelection == null)
                     {
-                        goto Label_00FD;
-                    }
-                    System.Windows.Controls.Orientation? orientation = this.GetPanelOrientation();
-                    if (!orientation.HasValue || (((System.Windows.Controls.Orientation) orientation.Value) != System.Windows.Controls.Orientation.Vertical))
-                    {
-                        int direction = (key == Key.Left) ? -1 : 1;
-                        index = base.ItemContainerGenerator.IndexFromContainer(base.CurrentSelection);
-                        base.MenuNavigate(index + direction, direction, base.CurrentSelection.IsSubmenuOpen);
+                        if (base.CurrentSelection == null)
+                        {
+                            return false;
+                        }
+                        System.Windows.Controls.Orientation? orientation = this.GetPanelOrientation();
+                        if (!orientation.HasValue || (((System.Windows.Controls.Orientation)orientation.Value) != System.Windows.Controls.Orientation.Vertical))
+                        {
+                            int direction = (key == Key.Left) ? -1 : 1;
+                            index = base.ItemContainerGenerator.IndexFromContainer(base.CurrentSelection);
+                            base.MenuNavigate(index + direction, direction, base.CurrentSelection.IsSubmenuOpen);
+                            break;
+                        }
+                        base.CurrentSelection.OpenSubmenuWithKeyboard();
                         break;
                     }
-                    base.CurrentSelection.OpenSubmenuWithKeyboard();
-                    break;
-                }
                 case Key.Up:
                 case Key.Down:
-                {
-                    if (base.CurrentSelection == null)
                     {
-                        goto Label_00FD;
+                        if (base.CurrentSelection == null)
+                        {
+                            return false;
+                        }
+                        System.Windows.Controls.Orientation? orientation = this.GetPanelOrientation();
+                        if (!orientation.HasValue || (((System.Windows.Controls.Orientation)orientation) != System.Windows.Controls.Orientation.Vertical))
+                        {
+                            base.CurrentSelection.OpenSubmenuWithKeyboard();
+                        }
+                        else
+                        {
+                            int direction = (key == Key.Up) ? -1 : 1;
+                            index = base.ItemContainerGenerator.IndexFromContainer(base.CurrentSelection);
+                            base.MenuNavigate(index + direction, direction, base.CurrentSelection.IsSubmenuOpen);
+                        }
+                        return true;
                     }
-                    System.Windows.Controls.Orientation? orientation = this.GetPanelOrientation();
-                    if (!orientation.HasValue || (((System.Windows.Controls.Orientation) orientation) != System.Windows.Controls.Orientation.Vertical))
-                    {
-                        base.CurrentSelection.OpenSubmenuWithKeyboard();
-                    }
-                    else
-                    {
-                        int direction = (key == Key.Up) ? -1 : 1;
-                        index = base.ItemContainerGenerator.IndexFromContainer(base.CurrentSelection);
-                        base.MenuNavigate(index + direction, direction, base.CurrentSelection.IsSubmenuOpen);
-                    }
-                    return true;
-                }
                 default:
-                    goto Label_00FD;
+                    return false;
             }
             return true;
-        Label_00FD:
-            return false;
         }
 
         public System.Windows.Controls.Orientation Orientation
         {
             get
             {
-                return (System.Windows.Controls.Orientation) base.GetValue(OrientationProperty);
+                return (System.Windows.Controls.Orientation)base.GetValue(OrientationProperty);
             }
             set
             {
@@ -168,7 +166,7 @@
         {
             get
             {
-                return (Duration) base.GetValue(TopLevelHideDelayProperty);
+                return (Duration)base.GetValue(TopLevelHideDelayProperty);
             }
             set
             {
@@ -181,7 +179,7 @@
         {
             get
             {
-                return (Duration) base.GetValue(TopLevelShowDelayProperty);
+                return (Duration)base.GetValue(TopLevelShowDelayProperty);
             }
             set
             {
@@ -193,7 +191,7 @@
         {
             get
             {
-                return (bool) base.GetValue(WaitForTopLevelHeaderHideDurationProperty);
+                return (bool)base.GetValue(WaitForTopLevelHeaderHideDurationProperty);
             }
             set
             {

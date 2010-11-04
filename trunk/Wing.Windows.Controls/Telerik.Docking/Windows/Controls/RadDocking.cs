@@ -2098,8 +2098,21 @@
         {
             get
             {
-                //.TODO.
-                return new List<RadSplitContainer>();
+                foreach (var item in this.Items)
+                {
+                    var container = item as RadSplitContainer;
+                    if ((container != null) && !((bool)container.GetValue(RadDocking.IsUnusedProperty)))
+                        yield return container;
+                }
+                if (this.popupPanel != null)
+                {
+                    foreach (var item in this.popupPanel.Children)
+                    {
+                        var window = item as ToolWindow;
+                        if (window != null && (window.SplitContainer != null))
+                            yield return window.SplitContainer;
+                    }
+                }
             }
         }
 

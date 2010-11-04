@@ -30,24 +30,22 @@
                 {
                     case PopupType.Window:
                         BringToFrontWindow(popup);
-                        goto Label_0046;
+                        return true;
 
                     case PopupType.TopMostWindow:
                         BringToFrontTopMostWindow(popup);
-                        goto Label_0046;
+                        return true;
 
                     case PopupType.Popup:
                         BringToFrontPopup(popup);
-                        goto Label_0046;
+                        return true;
 
                     case PopupType.DockWindow:
                         BringToFrontDockWindow(popup);
-                        goto Label_0046;
+                        return true;
                 }
             }
             return false;
-        Label_0046:
-            return true;
         }
 
         private static void BringToFrontDockWindow(Popup popup)
@@ -165,7 +163,7 @@
                         if (openedWindows != 0)
                         {
                             CloseWindow(popup, detachFromVisualRoot);
-                            goto Label_006E;
+                            return true;
                         }
                         return false;
 
@@ -173,7 +171,7 @@
                         if (openedTopWindows != 0)
                         {
                             CloseTopMostWindow(popup, detachFromVisualRoot);
-                            goto Label_006E;
+                            return true;
                         }
                         return false;
 
@@ -181,7 +179,7 @@
                         if (openedPopups != 0)
                         {
                             ClosePopup(popup, detachFromVisualRoot);
-                            goto Label_006E;
+                            return true;
                         }
                         return false;
 
@@ -189,14 +187,12 @@
                         if (openedDockWindows != 0)
                         {
                             CloseDockWindow(popup, detachFromVisualRoot);
-                            goto Label_006E;
+                            return true;
                         }
                         return false;
                 }
             }
             return false;
-        Label_006E:
-            return true;
         }
 
         private static void CloseDockWindow(Popup popup, bool detachFromVisualRoot)
@@ -384,24 +380,22 @@
                 {
                     case PopupType.Window:
                         OpenWindow(popup, attachToVisualRoot);
-                        goto Label_004A;
+                        return true;
 
                     case PopupType.TopMostWindow:
                         OpenTopMostWindow(popup, attachToVisualRoot);
-                        goto Label_004A;
+                        return true;
 
                     case PopupType.Popup:
                         OpenPopup(popup, attachToVisualRoot);
-                        goto Label_004A;
+                        return true;
 
                     case PopupType.DockWindow:
                         OpenDockWindow(popup, attachToVisualRoot);
-                        goto Label_004A;
+                        return true;
                 }
             }
             return false;
-        Label_004A:
-            return true;
         }
 
         private static void OpenDockWindow(Popup popup, bool attachToVisualRoot)

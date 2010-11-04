@@ -17,7 +17,6 @@
 	xmlns:animationNavigation="clr-namespace:Telerik.Windows.Controls.Animation;assembly=Wing.Windows.Controls"
 	xmlns:treeView="clr-namespace:Telerik.Windows.Controls.TreeView;assembly=Wing.Windows.Controls"
 	xmlns:telerikTabControl="clr-namespace:Telerik.Windows.Controls.TabControl;assembly=Wing.Windows.Controls"
-	xmlns:book="clr-namespace:Telerik.Windows.Controls.Book;assembly=Wing.Windows.Controls"
 	xmlns:outlookBarPrimitives="clr-namespace:Telerik.Windows.Controls.OutlookBar;assembly=Wing.Windows.Controls"
 	xmlns:primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows"
 	xmlns:sys="clr-namespace:System;assembly=mscorlib"

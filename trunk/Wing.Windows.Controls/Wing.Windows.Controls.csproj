@@ -884,6 +884,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\Telerik.Windows.Controls.Docking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Telerik.Windows.Controls.Editor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

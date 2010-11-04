@@ -15,7 +15,8 @@
         private object syncRoot;
         private double[] tree;
 
-        internal IndexTree(int capacity) : this(capacity, 0.0)
+        internal IndexTree(int capacity)
+            : this(capacity, 0.0)
         {
         }
 
@@ -76,7 +77,7 @@
                     index = 2 * index;
                 }
             }
-            return Math.Min((int) (index - this.size), (int) (this.count - 1));
+            return Math.Min((int)(index - this.size), (int)(this.count - 1));
         }
 
         internal double CumulativeValue(int endIndex)
@@ -204,13 +205,13 @@
 
         IEnumerator<double> IEnumerable<double>.GetEnumerator()
         {
-            //.TODO.
-            return new List<double>().GetEnumerator();
+            for (var i = this.size; i < this.size + this.Count; i++)
+                yield return tree[i];
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable<double>) this).GetEnumerator();
+            return ((IEnumerable<double>)this).GetEnumerator();
         }
 
         public int Capacity
@@ -256,6 +257,6 @@
                 return (this.syncRoot ?? (this.syncRoot = new object()));
             }
         }
-   }
+    }
 }
 

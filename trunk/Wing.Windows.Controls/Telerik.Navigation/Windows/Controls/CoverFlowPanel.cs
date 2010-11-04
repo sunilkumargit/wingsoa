@@ -21,7 +21,7 @@
         private bool isLimitExceeded;
         private bool isRecyclingMode = true;
         private bool isVirtualizing;
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Virtualizing", Justification="The spelling is correct.")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Virtualizing", Justification = "The spelling is correct.")]
         public static readonly DependencyProperty IsVirtualizingProperty = DependencyProperty.RegisterAttached("IsVirtualizing", typeof(bool), typeof(CoverFlowPanel), new PropertyMetadata(false));
         private List<UIElement> itemsToArrange = new List<UIElement>();
         internal static readonly DependencyProperty LastPositionProperty = DependencyProperty.RegisterAttached("LastPosition", typeof(Rect), typeof(CoverFlowPanel), new PropertyMetadata(Rect.Empty));
@@ -108,9 +108,9 @@
         {
             Storyboard animation;
             double itemHeight = this.IsReflectionEnabled ? (item.DesiredSize.Height * 2.0) : item.DesiredSize.Height;
-            Rect itemRect = new Rect(new Point(Math.Round(x), Math.Round((double) ((centerY - (itemHeight / 2.0)) - this.GetCameraViewPointCompensationY(item.DesiredSize)))), item.DesiredSize);
+            Rect itemRect = new Rect(new Point(Math.Round(x), Math.Round((double)((centerY - (itemHeight / 2.0)) - this.GetCameraViewPointCompensationY(item.DesiredSize)))), item.DesiredSize);
             Canvas.SetZIndex(item, zIndex);
-            Rect lastPosition = (Rect) item.GetValue(LastPositionProperty);
+            Rect lastPosition = (Rect)item.GetValue(LastPositionProperty);
             if ((this.isFirstArrange || lastPosition.IsEmpty) || !animate)
             {
                 animation = this.CreateFadeAnimation(item, scale, rotationY);
@@ -246,7 +246,7 @@
         {
             if (this.isRecyclingMode)
             {
-                ((IRecyclingItemContainerGenerator) base.ItemContainerGenerator).Recycle(new GeneratorPosition(startIndex, 0), count);
+                ((IRecyclingItemContainerGenerator)base.ItemContainerGenerator).Recycle(new GeneratorPosition(startIndex, 0), count);
                 int num = startIndex + count;
                 while (num > startIndex)
                 {
@@ -270,7 +270,7 @@
 
         private Storyboard CreateFadeAnimation(UIElement item, double scale, double rotationY)
         {
-            AnimationExtensions.AnimationContext context = AnimationExtensions.Create().Animate(new FrameworkElement[] { (FrameworkElement) item });
+            AnimationExtensions.AnimationContext context = AnimationExtensions.Create().Animate(new FrameworkElement[] { (FrameworkElement)item });
             double[] opacityData = new double[4];
             opacityData[2] = this.parentCoverFlow.ItemChangeDelay.TotalSeconds;
             opacityData[3] = 1.0;
@@ -289,7 +289,7 @@
         {
             Duration animationDuration = new Duration(this.ParentCoverFlow.ItemChangeDelay);
             IEasingFunction easingFunction = this.ParentCoverFlow.EasingFunction;
-            AnimationExtensions.AnimationContext context = AnimationExtensions.Create().Animate(new FrameworkElement[] { (FrameworkElement) item });
+            AnimationExtensions.AnimationContext context = AnimationExtensions.Create().Animate(new FrameworkElement[] { (FrameworkElement)item });
             TransformGroup group = item.RenderTransform as TransformGroup;
             (group.Children[3] as TranslateTransform).X = lastPosition.X - newPosition.X;
             double[] xCoord = new double[2];
@@ -345,7 +345,7 @@
             leftMarginalSlots = totalNumberOfSlots - value;
             if (leftMarginalSlots > 0)
             {
-                minimumStartX -= ((double) leftMarginalSlots) * this.ParentCoverFlow.DistanceBetweenItems;
+                minimumStartX -= ((double)leftMarginalSlots) * this.ParentCoverFlow.DistanceBetweenItems;
             }
             return totalNumberOfSlots;
         }
@@ -402,7 +402,7 @@
 
         private int ExpandNumberLeftMarginalOfSlots(int currentleftSlots)
         {
-            return Math.Min((int) (currentleftSlots + this.MaximumMarginalSlots), (int) (currentleftSlots * 2));
+            return Math.Min((int)(currentleftSlots + this.MaximumMarginalSlots), (int)(currentleftSlots * 2));
         }
 
         private double GetCameraViewPointCompensationY(Size desiredSize)
@@ -410,10 +410,10 @@
             switch (this.ParentCoverFlow.CameraViewpoint)
             {
                 case CameraViewpoint.Bottom:
-                    return -Math.Round((double) (desiredSize.Height / 2.0), 0);
+                    return -Math.Round((double)(desiredSize.Height / 2.0), 0);
 
                 case CameraViewpoint.Top:
-                    return Math.Round((double) (desiredSize.Height / 2.0), 0);
+                    return Math.Round((double)(desiredSize.Height / 2.0), 0);
             }
             return 0.0;
         }
@@ -437,10 +437,10 @@
             return this.ConcreteItemContainerGenerator.IndexFromGeneratorPosition(new GeneratorPosition(childIndex, 0));
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Virtualizing", Justification="The spelling is correct.")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Virtualizing", Justification = "The spelling is correct.")]
         public static bool GetIsVirtualizing(DependencyObject obj)
         {
-            return (bool) obj.GetValue(IsVirtualizingProperty);
+            return (bool)obj.GetValue(IsVirtualizingProperty);
         }
 
         private int GetNumberOfPossibleSlots(UIElement fakeElement, Size availableSize, out double minimumStartX)
@@ -619,7 +619,7 @@
             this.visibleCount = 0;
             if ((selectedIndex - this.TotalLeftSlots) < firstVisibleIndex)
             {
-                currentX += (Math.Abs((int) (selectedIndex - this.TotalLeftSlots)) * this.ParentCoverFlow.DistanceBetweenItems) + this.ParentCoverFlow.DistanceFromSelectedItem;
+                currentX += (Math.Abs((int)(selectedIndex - this.TotalLeftSlots)) * this.ParentCoverFlow.DistanceBetweenItems) + this.ParentCoverFlow.DistanceFromSelectedItem;
             }
             this.LeftItems = 0;
             using (base.ItemContainerGenerator.StartAt(position, GeneratorDirection.Forward, true))
@@ -630,7 +630,7 @@
                     UIElement element = base.ItemContainerGenerator.GenerateNext(out isNewlyRealized) as UIElement;
                     if (element == null)
                     {
-                        goto Label_02C2;
+                        break;
                     }
                     this.AddContainerFromGenerator(currentVisibleRealizedIndex, element, isNewlyRealized);
                     this.visibleCount++;
@@ -672,14 +672,13 @@
                         {
                             if (leftMarginalSlots <= 1)
                             {
-                                goto Label_02C2;
+                                break;
                             }
                             leftMarginalSlots--;
                         }
                     }
                 }
             }
-        Label_02C2:
             double num2 = availableSize.Width;
             this.visibleStart = firstVisibleIndex;
             if (this.IsVirtualizing)
@@ -709,15 +708,15 @@
             {
                 case NotifyCollectionChangedAction.Remove:
                 case NotifyCollectionChangedAction.Replace:
-                {
-                    int start = args.Position.Index;
-                    int length = start + args.ItemUICount;
-                    for (int i = start; i < length; i++)
                     {
-                        this.RealizedChildren.RemoveAt(i);
+                        int start = args.Position.Index;
+                        int length = start + args.ItemUICount;
+                        for (int i = start; i < length; i++)
+                        {
+                            this.RealizedChildren.RemoveAt(i);
+                        }
+                        return;
                     }
-                    return;
-                }
                 case (NotifyCollectionChangedAction.Replace | NotifyCollectionChangedAction.Remove):
                     break;
 
@@ -740,7 +739,7 @@
             Rad3D.SetCameraOffset(item, new Point3D(0.0, this.GetCameraViewPointCompensationY(item.DesiredSize), 0.0));
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Virtualizing", Justification="The spelling is correct.")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Virtualizing", Justification = "The spelling is correct.")]
         public static void SetIsVirtualizing(DependencyObject obj, bool value)
         {
             obj.SetValue(IsVirtualizingProperty, value);

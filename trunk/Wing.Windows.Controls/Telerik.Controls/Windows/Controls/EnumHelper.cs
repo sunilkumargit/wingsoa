@@ -33,8 +33,8 @@
 
         internal static IEnumerable GetValues(Type enumType)
         {
-            //.TODO.
-            return new List<Object>();
+            foreach (var name in GetNames(enumType))
+                yield return enumType.GetField(name).GetValue(null);
         }
 
     }

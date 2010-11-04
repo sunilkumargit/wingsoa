@@ -16,7 +16,7 @@
     using Telerik.Windows.Controls.Design;
     using Telerik.Windows.Controls.Primitives;
 
-    [TemplatePart(Name="PART_Popup", Type=typeof(System.Windows.Controls.Primitives.Popup)), DefaultProperty("StaysOpenOnClick"), StyleTypedProperty(Property="ItemContainerStyle", StyleTargetType=typeof(RadMenuItem)), DefaultEvent("Click"), TemplateVisualState(Name="Checked", GroupName="CheckStateGroup"), TemplateVisualState(Name="Unchecked", GroupName="CheckStateGroup"), TemplateVisualState(Name="HideIcon", GroupName="CheckStateGroup"), TemplateVisualState(Name="Highlighted", GroupName="CommonStateGroup"), TemplateVisualState(Name="Focused", GroupName="CommonStateGroup")]
+    [TemplatePart(Name = "PART_Popup", Type = typeof(System.Windows.Controls.Primitives.Popup)), DefaultProperty("StaysOpenOnClick"), StyleTypedProperty(Property = "ItemContainerStyle", StyleTargetType = typeof(RadMenuItem)), DefaultEvent("Click"), TemplateVisualState(Name = "Checked", GroupName = "CheckStateGroup"), TemplateVisualState(Name = "Unchecked", GroupName = "CheckStateGroup"), TemplateVisualState(Name = "HideIcon", GroupName = "CheckStateGroup"), TemplateVisualState(Name = "Highlighted", GroupName = "CommonStateGroup"), TemplateVisualState(Name = "Focused", GroupName = "CommonStateGroup")]
     public class RadMenuItem : HeaderedItemsControl, ICommandSource
     {
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
@@ -440,7 +440,7 @@
             return topLevelItem;
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="stateNames"), SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="useTransitions"), SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "stateNames"), SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "useTransitions"), SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         private void GoToState(bool useTransitions, params string[] stateNames)
         {
             if (stateNames != null)
@@ -489,7 +489,8 @@
             this.ClickItem();
             handled = true;
         Label_0031:
-            if (((role != MenuItemRole.TopLevelHeader) || (this.Menu.CurrentSelection == null)) && ((role != MenuItemRole.SubmenuHeader) || this.IsSubmenuOpen))
+            if (((role != MenuItemRole.TopLevelHeader)
+                || (this.Menu.CurrentSelection == null)) && ((role != MenuItemRole.SubmenuHeader) || this.IsSubmenuOpen))
             {
                 return handled;
             }
@@ -582,7 +583,7 @@
                     {
                         this.CloseSubMenu();
                     }
-                    goto Label_0085;
+                    break;
 
                 case MenuItemRole.TopLevelItem:
                     if (!this.ClickToOpen)
@@ -593,11 +594,11 @@
                     {
                         this.IsHighlighted = false;
                     }
-                    goto Label_0085;
+                    break;
 
                 case MenuItemRole.SubmenuItem:
                     this.UnSelectOrUnHighlight();
-                    goto Label_0085;
+                    break;
 
                 case MenuItemRole.SubmenuHeader:
                     if (!this.IsSubmenuOpen)
@@ -614,7 +615,6 @@
                     }
                     break;
             }
-        Label_0085:
             if ((role == MenuItemRole.TopLevelHeader) || (role == MenuItemRole.TopLevelItem))
             {
                 this.StopOpenTimer();
@@ -916,7 +916,7 @@
             RadMenuItem menuItem = d as RadMenuItem;
             if (menuItem != null)
             {
-                menuItem.ChangeCommand((ICommand) e.OldValue, (ICommand) e.NewValue);
+                menuItem.ChangeCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
             }
         }
 
@@ -959,12 +959,12 @@
 
         private static void OnIsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            RadMenuItem item = (RadMenuItem) d;
+            RadMenuItem item = (RadMenuItem)d;
             if (item.IsLoaded)
             {
                 item.UpdateRole();
             }
-            if ((bool) e.NewValue)
+            if ((bool)e.NewValue)
             {
                 item.OnChecked(new RadRoutedEventArgs(CheckedEvent, item));
             }
@@ -977,12 +977,12 @@
 
         private static void OnIsHighlighted(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((RadMenuItem) d).ChangeVisualState(true);
+            ((RadMenuItem)d).ChangeVisualState(true);
         }
 
         private static void OnIsSelectedChanged(object sender, Telerik.Windows.Controls.RadRoutedPropertyChangedEventArgs<Boolean> e)
         {
-            RadMenuItem item = (RadMenuItem) sender;
+            RadMenuItem item = (RadMenuItem)sender;
             RadMenuItem originalSource = e.OriginalSource as RadMenuItem;
             if ((sender != e.OriginalSource) && (originalSource != null))
             {
@@ -1031,15 +1031,15 @@
 
         private static void OnIsSelectedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            RadMenuItem item = (RadMenuItem) d;
-            bool newValue = (bool) e.NewValue;
+            RadMenuItem item = (RadMenuItem)d;
+            bool newValue = (bool)e.NewValue;
             if (!newValue)
             {
                 item.IsMouseOver = false;
             }
             item.IsHighlighted = newValue;
             item.ChangeVisualState(true);
-            if ((bool) e.OldValue)
+            if ((bool)e.OldValue)
             {
                 item.StopOpenTimer();
                 if (item.IsSubmenuOpen && (item.IsTopHeader || item.InsideContextMenu))
@@ -1047,7 +1047,7 @@
                     item.CloseMenu();
                 }
             }
-            item.RaiseEvent(new Telerik.Windows.Controls.RadRoutedPropertyChangedEventArgs<Boolean>((bool) e.OldValue, (bool) e.NewValue, MenuBase.IsSelectedChangedEvent));
+            item.RaiseEvent(new Telerik.Windows.Controls.RadRoutedPropertyChangedEventArgs<Boolean>((bool)e.OldValue, (bool)e.NewValue, MenuBase.IsSelectedChangedEvent));
         }
 
         private static void OnIsSeparatorChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -1055,23 +1055,24 @@
             RadMenuItem item = d as RadMenuItem;
             if (item != null)
             {
-                item.IsTabStop = !((bool) e.NewValue);
+                item.IsTabStop = !((bool)e.NewValue);
             }
         }
 
         private static void OnIsSubmenuOpenChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            RadMenuItem menuItem = (RadMenuItem) d;
+            RadMenuItem menuItem = (RadMenuItem)d;
             menuItem.StopOpenTimer();
             menuItem.StopCloseTimer();
-            bool newValue = (bool) e.NewValue;
-            bool oldValue = (bool) e.OldValue;
+            bool newValue = (bool)e.NewValue;
+            bool oldValue = (bool)e.OldValue;
             if (newValue)
             {
                 menuItem.IsSelected = true;
                 menuItem.CurrentSelection = null;
                 EventHandler animateOnPopupOpen = null;
-                animateOnPopupOpen = delegate (object sender, EventArgs args) {
+                animateOnPopupOpen = delegate(object sender, EventArgs args)
+                {
                     RunExpandAnimation(menuItem);
                     menuItem.wrapper.Opened -= animateOnPopupOpen;
                 };
@@ -1101,7 +1102,8 @@
                     menuItem.IsHighlighted = false;
                 }
                 AnimationManager.StopIfRunning(menuItem, "Expand");
-                AnimationManager.Play(menuItem, "Collapse", delegate {
+                AnimationManager.Play(menuItem, "Collapse", delegate
+                {
                     if (((menuItem.submenuPopup != null) && (menuItem.wrapper != null)) && (menuItem.submenuPopup.IsOpen && !menuItem.IsSubmenuOpen))
                     {
                         menuItem.wrapper.HidePopup();
@@ -1230,7 +1232,7 @@
             RadMenuItem radMenuItem = d as RadMenuItem;
             if ((radMenuItem != null) && (radMenuItem.wrapper != null))
             {
-                radMenuItem.wrapper.Placement = (((Orientation) e.NewValue) == Orientation.Horizontal) ? Telerik.Windows.Controls.PlacementMode.Bottom : Telerik.Windows.Controls.PlacementMode.Right;
+                radMenuItem.wrapper.Placement = (((Orientation)e.NewValue) == Orientation.Horizontal) ? Telerik.Windows.Controls.PlacementMode.Bottom : Telerik.Windows.Controls.PlacementMode.Right;
             }
         }
 
@@ -1257,7 +1259,7 @@
         private static void OnRoleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             RadMenuItem item = d as RadMenuItem;
-            if (((MenuItemRole) e.OldValue) == MenuItemRole.TopLevelHeader)
+            if (((MenuItemRole)e.OldValue) == MenuItemRole.TopLevelHeader)
             {
                 item.ClearValue(OrientationProperty);
             }
@@ -1613,7 +1615,7 @@
         {
             get
             {
-                return (ICommand) base.GetValue(CommandProperty);
+                return (ICommand)base.GetValue(CommandProperty);
             }
             set
             {
@@ -1637,7 +1639,7 @@
         {
             get
             {
-                return (UIElement) base.GetValue(CommandTargetProperty);
+                return (UIElement)base.GetValue(CommandTargetProperty);
             }
             set
             {
@@ -1697,7 +1699,7 @@
         {
             get
             {
-                return (DataTemplate) base.GetValue(IconTemplateProperty);
+                return (DataTemplate)base.GetValue(IconTemplateProperty);
             }
             set
             {
@@ -1718,7 +1720,7 @@
         {
             get
             {
-                return (bool) base.GetValue(IsCheckableProperty);
+                return (bool)base.GetValue(IsCheckableProperty);
             }
             set
             {
@@ -1731,7 +1733,7 @@
         {
             get
             {
-                return (bool) base.GetValue(IsCheckedProperty);
+                return (bool)base.GetValue(IsCheckedProperty);
             }
             set
             {
@@ -1744,7 +1746,7 @@
         {
             get
             {
-                return (bool) base.GetValue(IsHighlightedProperty);
+                return (bool)base.GetValue(IsHighlightedProperty);
             }
             protected set
             {
@@ -1776,7 +1778,7 @@
         {
             get
             {
-                return (bool) base.GetValue(IsSelectedProperty);
+                return (bool)base.GetValue(IsSelectedProperty);
             }
             set
             {
@@ -1788,7 +1790,7 @@
         {
             get
             {
-                return (bool) base.GetValue(IsSeparatorProperty);
+                return (bool)base.GetValue(IsSeparatorProperty);
             }
             set
             {
@@ -1817,7 +1819,7 @@
         {
             get
             {
-                return (bool) base.GetValue(IsSubmenuOpenProperty);
+                return (bool)base.GetValue(IsSubmenuOpenProperty);
             }
             internal set
             {
@@ -1845,7 +1847,7 @@
         {
             get
             {
-                return (MenuBase) base.GetValue(MenuProperty);
+                return (MenuBase)base.GetValue(MenuProperty);
             }
             internal set
             {
@@ -1887,7 +1889,7 @@
         {
             get
             {
-                return (MenuItemRole) base.GetValue(RoleProperty);
+                return (MenuItemRole)base.GetValue(RoleProperty);
             }
             private set
             {
@@ -1899,7 +1901,7 @@
         {
             get
             {
-                return (ControlTemplate) base.GetValue(SeparatorTemplateKeyProperty);
+                return (ControlTemplate)base.GetValue(SeparatorTemplateKeyProperty);
             }
             set
             {
@@ -1924,7 +1926,7 @@
         {
             get
             {
-                return (bool) base.GetValue(StaysOpenOnClickProperty);
+                return (bool)base.GetValue(StaysOpenOnClickProperty);
             }
             set
             {
@@ -1936,7 +1938,7 @@
         {
             get
             {
-                return (ControlTemplate) base.GetValue(SubmenuHeaderTemplateKeyProperty);
+                return (ControlTemplate)base.GetValue(SubmenuHeaderTemplateKeyProperty);
             }
             set
             {
@@ -1948,7 +1950,7 @@
         {
             get
             {
-                return (ControlTemplate) base.GetValue(SubmenuItemTemplateKeyProperty);
+                return (ControlTemplate)base.GetValue(SubmenuItemTemplateKeyProperty);
             }
             set
             {
@@ -1960,7 +1962,7 @@
         {
             get
             {
-                return (ControlTemplate) base.GetValue(TopLevelHeaderTemplateKeyProperty);
+                return (ControlTemplate)base.GetValue(TopLevelHeaderTemplateKeyProperty);
             }
             set
             {
@@ -1972,7 +1974,7 @@
         {
             get
             {
-                return (ControlTemplate) base.GetValue(TopLevelItemTemplateKeyProperty);
+                return (ControlTemplate)base.GetValue(TopLevelItemTemplateKeyProperty);
             }
             set
             {

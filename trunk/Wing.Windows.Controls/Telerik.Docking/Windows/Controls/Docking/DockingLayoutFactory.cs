@@ -321,11 +321,10 @@
                             LoadFloatingLocation(container, attributes);
                             ReadProperty(attributes, container, RadSplitContainer.WindowZIndexProperty, "WindowZIndex", intParser);
                             ReadProperty(attributes, container, RadSplitContainer.IsInOpenWindowProperty, "IsInOpenWindow", boolParser);
-                            goto Label_019E;
+                            break;
                     }
                 }
             }
-        Label_019E:
             if (attributes.ContainsKey("Orientation"))
             {
                 container.Orientation = ParseEnum<Orientation>(attributes["Orientation"]);
@@ -382,7 +381,7 @@
 
         private static T ParseEnum<T>(string value)
         {
-            return (T) Enum.Parse(typeof(T), value, true);
+            return (T)Enum.Parse(typeof(T), value, true);
         }
 
         private static int ParseInt(string s)

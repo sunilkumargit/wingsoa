@@ -86,10 +86,10 @@
         {
             UIElement element = d as UIElement;
             RectangleGeometry clip = d.GetValue(UIElement.ClipProperty) as RectangleGeometry;
-            if (clip != null)
-            {
-                return;
-            }
+            //if (clip != null)
+            //{
+           //     return;
+            //}
             var rect = new RectangleGeometry();
             rect.Rect = new Rect((double)e.NewValue, 0.0, Math.Max(element.DesiredSize.Width, element.RenderSize.Width), Math.Max(element.DesiredSize.Height, element.RenderSize.Height));
             element.Clip = rect;
@@ -99,10 +99,10 @@
         {
             UIElement element = d as UIElement;
             RectangleGeometry clip = d.GetValue(UIElement.ClipProperty) as RectangleGeometry;
-            if (clip != null)
-            {
-                return;
-            }
+           // if (clip != null)
+           // {
+           //     return;
+           // }
             var rect = new RectangleGeometry();
             rect.Rect = new Rect(0.0, (double)e.NewValue, Math.Max(element.DesiredSize.Width, element.RenderSize.Width), Math.Max(element.DesiredSize.Height, element.RenderSize.Height));
             element.Clip = rect;

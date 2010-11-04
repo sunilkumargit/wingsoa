@@ -63,10 +63,10 @@
 
         private static object CoerceSelectedIndex(DependencyObject d, object value)
         {
-            Selector selector = (Selector) d;
-            if ((value is int) && (((int) value) >= selector.Items.Count))
+            Selector selector = (Selector)d;
+            if ((value is int) && (((int)value) >= selector.Items.Count))
             {
-                selector.deferredSelectedIndex = (int) value;
+                selector.deferredSelectedIndex = (int)value;
                 return -1;
             }
             selector.deferredSelectedIndex = -1;
@@ -75,7 +75,7 @@
 
         private static object CoerceSelectedItem(DependencyObject d, object value)
         {
-            Selector selector = (Selector) d;
+            Selector selector = (Selector)d;
             if ((value != null) && !selector.skipCoerceSelectedItemCheck)
             {
                 int selectedIndex = selector.SelectedIndex;
@@ -109,10 +109,10 @@
         {
             if (container != null)
             {
-                return (bool) container.GetValue(IsSelectedProperty);
+                return (bool)container.GetValue(IsSelectedProperty);
             }
             DependencyObject obj2 = item as DependencyObject;
-            return ((obj2 != null) && ((bool) obj2.GetValue(IsSelectedProperty)));
+            return ((obj2 != null) && ((bool)obj2.GetValue(IsSelectedProperty)));
         }
 
         private object FindItemWithValue(object value)
@@ -141,7 +141,7 @@
             {
                 throw new ArgumentNullException("element");
             }
-            return (bool) element.GetValue(IsSelectedProperty);
+            return (bool)element.GetValue(IsSelectedProperty);
         }
 
         private static object GetItemOrContainerFromContainer(DependencyObject container)
@@ -220,8 +220,8 @@
             ISelectable selectable = d as ISelectable;
             if (selectable != null)
             {
-                selectable.IsSelected = (bool) e.NewValue;
-                if ((bool) e.NewValue)
+                selectable.IsSelected = (bool)e.NewValue;
+                if ((bool)e.NewValue)
                 {
                     selectable.OnSelected(new RadRoutedEventArgs(SelectedEvent, d));
                 }
@@ -269,10 +269,41 @@
                     return;
 
                 case NotifyCollectionChangedAction.Reset:
-                    goto Label_00F7;
+                    if (base.Items.Count == 0)
+                    {
+                        this.SelectionChange.Clear();
+                    }
+                    this.SelectionChange.Begin();
+                    try
+                    {
+                        for (int i = 0; i < this.selectedItems.Count; i++)
+                        {
+                            object item = this.selectedItems[i];
+                            if (!base.Items.Contains(item))
+                            {
+                                this.SelectionChange.Remove(item);
+                            }
+                        }
+                        if (base.ItemsSource == null)
+                        {
+                            for (int j = 0; j < base.Items.Count; j++)
+                            {
+                                object item2 = base.Items[j];
+                                if (this.IndexGetIsSelected(j, item2) && !this.selectedItems.Contains(item2))
+                                {
+                                    this.SelectionChange.Add(item2);
+                                }
+                            }
+                        }
+                        return;
+                    }
+                    finally
+                    {
+                        this.SelectionChange.End();
+                    }
 
                 default:
-                    goto Label_01BF;
+                    throw new NotSupportedException(Telerik.Windows.Controls.SR.Get("UnexpectedCollectionChangeAction", new object[] { e.Action }));
             }
             this.SelectionChange.Begin();
             try
@@ -288,41 +319,6 @@
             {
                 this.SelectionChange.End();
             }
-        Label_00F7:
-            if (base.Items.Count == 0)
-            {
-                this.SelectionChange.Clear();
-            }
-            this.SelectionChange.Begin();
-            try
-            {
-                for (int i = 0; i < this.selectedItems.Count; i++)
-                {
-                    object item = this.selectedItems[i];
-                    if (!base.Items.Contains(item))
-                    {
-                        this.SelectionChange.Remove(item);
-                    }
-                }
-                if (base.ItemsSource == null)
-                {
-                    for (int j = 0; j < base.Items.Count; j++)
-                    {
-                        object item2 = base.Items[j];
-                        if (this.IndexGetIsSelected(j, item2) && !this.selectedItems.Contains(item2))
-                        {
-                            this.SelectionChange.Add(item2);
-                        }
-                    }
-                }
-                return;
-            }
-            finally
-            {
-                this.SelectionChange.End();
-            }
-        Label_01BF:;
-            throw new NotSupportedException(Telerik.Windows.Controls.SR.Get("UnexpectedCollectionChangeAction", new object[] { e.Action }));
         }
 
         private static void OnSelected(object sender, RoutedEventArgs e)
@@ -330,16 +326,16 @@
             RadRoutedEventArgs args = e as RadRoutedEventArgs;
             if (args != null)
             {
-                ((Selector) sender).NotifyIsSelectedChanged(args.OriginalSource as FrameworkElement, true, args);
+                ((Selector)sender).NotifyIsSelectedChanged(args.OriginalSource as FrameworkElement, true, args);
             }
         }
 
         private static void OnSelectedIndexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            Selector selector = (Selector) d;
+            Selector selector = (Selector)d;
             if ((selector.SelectionChange != null) && !selector.SelectionChange.IsActive)
             {
-                int newValue = (int) e.NewValue;
+                int newValue = (int)e.NewValue;
                 object item = (newValue == -1) ? null : selector.Items[newValue];
                 selector.SelectionChange.SelectJustThisItem(item);
             }
@@ -347,7 +343,7 @@
 
         private static void OnSelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            Selector selector = (Selector) d;
+            Selector selector = (Selector)d;
             if (!selector.SelectionChange.IsActive)
             {
                 selector.SelectionChange.SelectJustThisItem(e.NewValue);
@@ -373,7 +369,7 @@
 
         private static void OnSelectedValuePathChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            (sender as Selector).OnSelectedValuePathChanged((string) e.OldValue, (string) e.NewValue);
+            (sender as Selector).OnSelectedValuePathChanged((string)e.OldValue, (string)e.NewValue);
         }
 
         protected virtual void OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs e)
@@ -391,7 +387,7 @@
             RadRoutedEventArgs args = e as RadRoutedEventArgs;
             if (args != null)
             {
-                ((Selector) sender).NotifyIsSelectedChanged(args.OriginalSource as FrameworkElement, false, args);
+                ((Selector)sender).NotifyIsSelectedChanged(args.OriginalSource as FrameworkElement, false, args);
             }
         }
 
@@ -556,7 +552,7 @@
         {
             get
             {
-                return (int) base.GetValue(SelectedIndexProperty);
+                return (int)base.GetValue(SelectedIndexProperty);
             }
             set
             {
@@ -593,7 +589,7 @@
         {
             get
             {
-                return (string) base.GetValue(SelectedValuePathProperty);
+                return (string)base.GetValue(SelectedValuePathProperty);
             }
             set
             {
@@ -629,7 +625,8 @@
                 this.InitFlags();
             }
 
-            public SelectionChanger(Selector owner, Func<T, bool> isItemValidForSelection) : this(owner)
+            public SelectionChanger(Selector owner, Func<T, bool> isItemValidForSelection)
+                : this(owner)
             {
                 this.isItemValidForSelection = isItemValidForSelection;
             }

@@ -25,8 +25,8 @@
         private List<WeakReference> requerySuggestedHandlers;
         private DispatcherOperation requerySuggestedOperation;
 
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Requery")]
-        public static  event EventHandler RequerySuggested
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Requery")]
+        public static event EventHandler RequerySuggested
         {
             add
             {
@@ -124,7 +124,7 @@
             return true;
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="inputEventArgs")]
+        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "inputEventArgs")]
         private static void ExecuteCommand(RoutedCommand routedCommand, object parameter, UIElement target, RoutedEventArgs inputEventArgs)
         {
             routedCommand.Execute(parameter, target);
@@ -143,7 +143,7 @@
             {
                 FindCommandBinding(commandBindings, sender, e, command, execute);
             }
-            lock (((ICollection) classCommandBindings).SyncRoot)
+            lock (((ICollection)classCommandBindings).SyncRoot)
             {
                 if (classCommandBindings.Count != 0)
                 {
@@ -167,20 +167,20 @@
             {
                 binding = commandBindings.FindMatch(command, ref index);
             }
-            while (((binding != null) && (!execute || !ExecuteCommandBinding(sender, (ExecutedRoutedEventArgs) e, binding))) && (execute || !CanExecuteCommandBinding(sender, (CanExecuteRoutedEventArgs) e, binding)));
+            while (((binding != null) && (!execute || !ExecuteCommandBinding(sender, (ExecutedRoutedEventArgs)e, binding))) && (execute || !CanExecuteCommandBinding(sender, (CanExecuteRoutedEventArgs)e, binding)));
         }
 
         public static CommandBindingCollection GetCommandBindings(DependencyObject element)
         {
-            return (CommandBindingCollection) element.GetValue(CommandBindingsProperty);
+            return (CommandBindingCollection)element.GetValue(CommandBindingsProperty);
         }
 
         public static InputBindingCollection GetInputBindings(DependencyObject element)
         {
-            return (InputBindingCollection) element.GetValue(InputBindingsProperty);
+            return (InputBindingCollection)element.GetValue(InputBindingsProperty);
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId="Requery")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Requery")]
         public static void InvalidateRequerySuggested()
         {
             Current.RaiseRequerySuggested();
@@ -269,14 +269,15 @@
                 Dispatcher currentDispatcher = base.Dispatcher;
                 if (currentDispatcher != null)
                 {
-                    this.requerySuggestedOperation = currentDispatcher.BeginInvoke(delegate {
+                    this.requerySuggestedOperation = currentDispatcher.BeginInvoke(delegate
+                    {
                         this.RaiseRequerySuggested(null);
                     });
                 }
             }
         }
 
-        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="obj")]
+        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "obj")]
         private object RaiseRequerySuggested(object obj)
         {
             this.requerySuggestedOperation = null;
@@ -288,7 +289,7 @@
         {
             type.TestNotNull("type");
             commandBinding.TestNotNull("commandBinding");
-            lock (((ICollection) classCommandBindings).SyncRoot)
+            lock (((ICollection)classCommandBindings).SyncRoot)
             {
                 CommandBindingCollection bindings = null;
                 if (classCommandBindings.ContainsKey(type))
@@ -308,7 +309,7 @@
         {
             type.TestNotNull("type");
             inputBinding.TestNotNull("inputBinding");
-            lock (((ICollection) classInputBindings).SyncRoot)
+            lock (((ICollection)classInputBindings).SyncRoot)
             {
                 InputBindingCollection bindings = null;
                 if (classCommandBindings.ContainsKey(type))
@@ -401,7 +402,7 @@
             }
             if (command == null)
             {
-                lock (((ICollection) classInputBindings).SyncRoot)
+                lock (((ICollection)classInputBindings).SyncRoot)
                 {
                     for (Type type = targetElement.GetType(); type != null; type = type.BaseType)
                     {
@@ -416,14 +417,13 @@
                                     command = binding.Command;
                                     target = binding.CommandTarget;
                                     parameter = binding.CommandParameter;
-                                    goto Label_00C8;
+                                    break;
                                 }
                             }
                         }
                     }
                 }
             }
-        Label_00C8:
             if (command == null)
             {
                 CommandBindingCollection commandBindings = GetCommandBindings(targetElement);
@@ -434,7 +434,7 @@
             }
             if (command == null)
             {
-                lock (((ICollection) classCommandBindings).SyncRoot)
+                lock (((ICollection)classCommandBindings).SyncRoot)
                 {
                     for (Type type = targetElement.GetType(); type != null; type = type.BaseType)
                     {
@@ -446,14 +446,13 @@
                                 command = bindings3.FindMatch(targetElement, args);
                                 if (command != null)
                                 {
-                                    goto Label_014D;
+                                    break;
                                 }
                             }
                         }
                     }
                 }
             }
-        Label_014D:
             if (command != null)
             {
                 if (target == null)
