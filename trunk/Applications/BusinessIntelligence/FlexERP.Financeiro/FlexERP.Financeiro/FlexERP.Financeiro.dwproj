@@ -6,10 +6,66 @@
     <Name>FlexERP Financeiro.database</Name>
     <FullPath>FlexERP Financeiro.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>FlexERP Financeiro.cube</Name>
+      <FullPath>FlexERP Financeiro.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>FlexERP Financeiro.partitions</Name>
+          <FullPath>FlexERP Financeiro.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Forma de Pagamento.dim</Name>
+      <FullPath>Forma de Pagamento.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Condição de Pagamento.dim</Name>
+      <FullPath>Condição de Pagamento.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>Flex ERP Financeiro DW.ds</Name>
+      <FullPath>Flex ERP Financeiro DW.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>FlexERP Financeiro.dsv</Name>
+      <FullPath>FlexERP Financeiro.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>Flex ERP Financeiro DW</Id>
+            <Name>Flex ERP Financeiro DW</Name>
+            <Value xsi:type="xsd:string">Data Source=MDZN;Initial Catalog=FlexERPFinanceiroDW;Integrated Security=True</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionProviderMappings>
+          <ConfigurationSetting>
+            <Id>Flex ERP Financeiro DW</Id>
+            <Name>Flex ERP Financeiro DW</Name>
+            <Value xsi:type="xsd:string">System.Data.SqlClient</Value>
+          </ConfigurationSetting>
+        </ConnectionProviderMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>Flex ERP Financeiro DW</Id>
+            <Name>Flex ERP Financeiro DW</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>

@@ -42,27 +42,27 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4aaf1bf5-ddc1-4435-a436-0444136f82e2">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="771bdb2c-372a-4ae2-ad9b-defb23a61c92">
     <DataSourceViewID>FlexERP Financeiro</DataSourceViewID>
   </Source>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="d13cdcd1-72b4-4ec6-ae42-a3a1f75c4c75">
+    <Attribute dwd:design-time-name="6d5937e5-1607-46e0-8e63-bb3c81f6fdb7">
       <ID>Forma de Pagamento</ID>
       <Name>Forma de Pagamento</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0363d16e-76d0-4e6b-9e33-5d21d076efd7">
+        <KeyColumn dwd:design-time-name="2ccf6625-443d-4ac4-bf0c-25bdebb0961c">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="412cf2b4-9a6f-474c-823a-f61bba41a3bc">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="535eed4f-aaee-4e0c-a00c-b951a0a80c53">
             <TableID>Forma_de_Pagamento</TableID>
             <ColumnID>Forma_de_Pagamento</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="da932e2a-65b6-40e8-b26e-ed972451c2b9">
+      <NameColumn dwd:design-time-name="5756c68a-cfd1-41f4-8d62-602ca6c727e8">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="c49f5b10-7687-42b0-8ed4-6cb10bcbd925">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="660bb57f-c59a-41ee-b3df-d72f01d56e74">
           <TableID>Forma_de_Pagamento</TableID>
           <ColumnID>Forma_de_Pagamento_Name</ColumnID>
         </Source>

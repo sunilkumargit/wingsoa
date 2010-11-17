@@ -42,27 +42,27 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="af7fc684-d8cb-4128-af25-40003e974547">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f310c83e-28ac-4ec7-94d2-fdde96a68cd5">
     <DataSourceViewID>FlexERP Financeiro</DataSourceViewID>
   </Source>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="23d6444e-f1d3-4c50-9537-dbd9bb720c3e">
+    <Attribute dwd:design-time-name="78eec0fe-a99f-4d06-b1bd-91c84e586d6e">
       <ID>Condição de Pagamento</ID>
       <Name>Condição de Pagamento</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="58f8ebb8-36f5-4141-b3ec-bdd55d43f21e">
+        <KeyColumn dwd:design-time-name="37a1838a-f316-49ef-a29b-1b65f566fe8b">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="81f36a33-ccb6-448f-8b2d-467d433f436d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b03bf485-1a12-4bbc-9f06-e867c8949f78">
             <TableID>Condição_de_Pagamento</TableID>
             <ColumnID>Condição_de_Pagamento</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="ca6a0fa0-00e1-4c84-a7e5-02cecb206613">
+      <NameColumn dwd:design-time-name="0f5c4098-3532-49ce-b5a4-d1974ad2df86">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="466cc7d2-8622-4218-9984-1a0498cd96dd">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2d1aee81-7686-48b8-b762-7756a6f5549c">
           <TableID>Condição_de_Pagamento</TableID>
           <ColumnID>Condição_de_Pagamento_Name</ColumnID>
         </Source>
