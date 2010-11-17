@@ -1,0 +1,236 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="753684e3-d876-4044-b25c-c98a8386b06e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>FlexERP Financeiro</ID>
+  <Name>FlexERP Financeiro</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Flex ERP Financeiro DW</DataSourceID>
+  <Schema>
+    <xs:schema id="FlexERP_x0020_Financeiro" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="FlexERP_x0020_Financeiro" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="5b875a8d-b9dc-4857-b0dc-297ee4649ee4" msprop:AllowGen="True">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Vencimento" msprop:FriendlyName="Vencimento" msprop:DbSchemaName="dbo" msprop:DbTableName="Vencimento" msprop:design-time-name="570c0909-2805-4fc9-aa8a-83dfc998796c" msprop:TableType="Table" msprop:AllowGen="True">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Date" msprop:FriendlyName="PK_Data" msprop:DbColumnName="PK_Data" msprop:design-time-name="5cf08600-bfb3-4372-ab87-3c4e8d709383" msprop:AllowGen="True" type="xs:dateTime" />
+                  <xs:element name="Date_Name" msprop:FriendlyName="Data_Name" msprop:DbColumnName="Data_Name" msprop:design-time-name="94dfeb93-d69b-47f0-80d6-28af77c633e8" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Year" msprop:FriendlyName="Ano" msprop:DbColumnName="Ano" msprop:design-time-name="97c0d71b-4467-44bb-8a95-f7647eb98daf" msprop:AllowGen="True" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Year_Name" msprop:FriendlyName="Ano_Name" msprop:DbColumnName="Ano_Name" msprop:design-time-name="f126db5f-7105-405c-ac53-20da8bf0683d" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Trimester" msprop:FriendlyName="Trimestre" msprop:DbColumnName="Trimestre" msprop:design-time-name="4eb7bb69-2e8c-4f9b-b060-3229c72dc71b" msprop:AllowGen="True" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Trimester_Name" msprop:FriendlyName="Trimestre_Name" msprop:DbColumnName="Trimestre_Name" msprop:design-time-name="6bbb5013-2731-4780-92c5-00aa233df89d" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Month" msprop:FriendlyName="Mês" msprop:DbColumnName="Mês" msprop:design-time-name="cbfabf81-c635-4faa-af1a-d68702ded357" msprop:AllowGen="True" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Month_Name" msprop:FriendlyName="Mês_Name" msprop:DbColumnName="Mês_Name" msprop:design-time-name="82e74d79-e9ef-4671-a1fc-e96c83cc7f8c" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Day_Of_Month" msprop:FriendlyName="Dia_do_Mês" msprop:DbColumnName="Dia_do_Mês" msprop:design-time-name="8836a45e-dbab-451d-a7bc-13bad47be9e4" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="Day_Of_Month_Name" msprop:FriendlyName="Dia_do_Mês_Name" msprop:DbColumnName="Dia_do_Mês_Name" msprop:design-time-name="2be586bd-4f24-4b31-82f4-d8acd738677d" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Month_Of_Year" msprop:FriendlyName="Mês_do_ano" msprop:DbColumnName="Mês_do_ano" msprop:design-time-name="b72aa09f-56a1-45dd-b3ae-9c2abd70e0af" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="Month_Of_Year_Name" msprop:FriendlyName="Mês_do_ano_Name" msprop:DbColumnName="Mês_do_ano_Name" msprop:design-time-name="9c5003e1-74ae-435a-9c9e-e2bd9bd69146" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Month_Of_Trimester" msprop:FriendlyName="Mês_do_Trimestre" msprop:DbColumnName="Mês_do_Trimestre" msprop:design-time-name="e131f918-965f-4568-a4f6-3982389c5370" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="Month_Of_Trimester_Name" msprop:FriendlyName="Mês_do_Trimestre_Name" msprop:DbColumnName="Mês_do_Trimestre_Name" msprop:design-time-name="4a5fa094-5f21-443c-b990-2eee4a2519f6" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Trimester_Of_Year" msprop:FriendlyName="Trimestre_do_Ano" msprop:DbColumnName="Trimestre_do_Ano" msprop:design-time-name="0567257c-706a-4491-90b8-12ed79ebda63" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="Trimester_Of_Year_Name" msprop:FriendlyName="Trimestre_do_Ano_Name" msprop:DbColumnName="Trimestre_do_Ano_Name" msprop:design-time-name="ad01d2f0-f47c-4f42-852e-f7b30973403d" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Data_de_Emissão" msprop:FriendlyName="Data_de_Emissão" msprop:DbSchemaName="dbo" msprop:DbTableName="Data_de_Emissão" msprop:design-time-name="5fb83573-03f0-43fc-a7e0-e8440c884ad7" msprop:TableType="Table" msprop:AllowGen="True">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Data_de_Emissão" msprop:FriendlyName="PK_Data_de_Emissão" msprop:DbColumnName="PK_Data_de_Emissão" msprop:design-time-name="892835b5-d189-46a9-8d01-b6d65df04276" msprop:AllowGen="True" type="xs:int" />
+                  <xs:element name="Data_de_Emissão_Name" msprop:FriendlyName="Data_de_Emissão_Name" msprop:DbColumnName="Data_de_Emissão_Name" msprop:design-time-name="194c8d9d-745f-4576-897f-0230b540e5a3" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Forma_de_Pagamento" msprop:FriendlyName="Forma_de_Pagamento" msprop:DbSchemaName="dbo" msprop:DbTableName="Forma_de_Pagamento" msprop:design-time-name="f15ec44e-c3a1-45aa-99f0-545b1690a5ca" msprop:TableType="Table" msprop:AllowGen="True">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Forma_de_Pagamento" msprop:FriendlyName="PK_Forma_de_Pagamento" msprop:DbColumnName="PK_Forma_de_Pagamento" msprop:design-time-name="ca4af908-68e2-490b-87e5-42537a8bd518" msprop:AllowGen="True" type="xs:int" />
+                  <xs:element name="Forma_de_Pagamento_Name" msprop:FriendlyName="Forma_de_Pagamento_Name" msprop:DbColumnName="Forma_de_Pagamento_Name" msprop:design-time-name="49a39584-f41f-41e5-a3b8-2f6f703afaa8" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Condição_de_Pagamento" msprop:FriendlyName="Condição_de_Pagamento" msprop:DbSchemaName="dbo" msprop:DbTableName="Condição_de_Pagamento" msprop:design-time-name="96d556d0-07fb-4bdd-bd80-2bb09a5948e6" msprop:TableType="Table" msprop:AllowGen="True">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Condição_de_Pagamento" msprop:FriendlyName="PK_Condição_de_Pagamento" msprop:DbColumnName="PK_Condição_de_Pagamento" msprop:design-time-name="36f8a6c2-1552-48e9-b266-d8577a5ce354" msprop:AllowGen="True" type="xs:int" />
+                  <xs:element name="Condição_de_Pagamento_Name" msprop:FriendlyName="Condição_de_Pagamento_Name" msprop:DbColumnName="Condição_de_Pagamento_Name" msprop:design-time-name="75feb934-a93f-4b20-bc9c-fe78e13137d0" msprop:AllowGen="True" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Recebimentos" msprop:FriendlyName="Recebimentos" msprop:DbSchemaName="dbo" msprop:DbTableName="Recebimentos" msprop:design-time-name="19324615-17ca-437a-9120-83c5c131d601" msprop:TableType="Table" msprop:AllowGen="True">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FK_Vencimento" msprop:FriendlyName="FK_Vencimento" msprop:DbColumnName="FK_Vencimento" msprop:design-time-name="a8255f75-123c-4a31-813f-317c1870c5b0" msprop:AllowGen="True" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="FK_Data_de_Emissão" msprop:FriendlyName="FK_Data_de_Emissão" msprop:DbColumnName="FK_Data_de_Emissão" msprop:design-time-name="d20d05e7-3b30-42e9-9c2d-c02c8d65b874" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="FK_Forma_de_Pagamento" msprop:FriendlyName="FK_Forma_de_Pagamento" msprop:DbColumnName="FK_Forma_de_Pagamento" msprop:design-time-name="aa5d2cc7-8430-4792-bb46-e6d2acff8e7e" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="FK_Condição_de_Pagamento" msprop:FriendlyName="FK_Condição_de_Pagamento" msprop:DbColumnName="FK_Condição_de_Pagamento" msprop:design-time-name="4752dca9-5fea-4456-9fad-b7ba4be5263b" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="Valor_nominal_a_receber" msprop:FriendlyName="Valor_nominal_a_receber" msprop:DbColumnName="Valor_nominal_a_receber" msprop:design-time-name="a484bd37-3bba-41c1-a214-64b07df92d66" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Valor_recebido" msprop:FriendlyName="Valor_recebido" msprop:DbColumnName="Valor_recebido" msprop:design-time-name="1115dc11-1fdb-4be1-ac74-68fb42c8cc42" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Encargos_recebidos" msprop:FriendlyName="Encargos_recebidos" msprop:DbColumnName="Encargos_recebidos" msprop:design-time-name="5d83e942-d345-4f24-afbb-9f9b0f743585" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Valor_a_receber_em_aberto" msprop:FriendlyName="Valor_a_receber_em_aberto" msprop:DbColumnName="Valor_a_receber_em_aberto" msprop:design-time-name="d772d29d-cd26-417b-aed6-cd8c7bcb01e3" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Valor_a_receber_em_atraso" msprop:FriendlyName="Valor_a_receber_em_atraso" msprop:DbColumnName="Valor_a_receber_em_atraso" msprop:design-time-name="48898452-85d5-44d7-87d6-807e862779c7" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Pagamentos" msprop:FriendlyName="Pagamentos" msprop:DbSchemaName="dbo" msprop:DbTableName="Pagamentos" msprop:design-time-name="39476abd-63c4-448b-b1f6-e029c7763785" msprop:TableType="Table" msprop:AllowGen="True">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FK_Vencimento" msprop:FriendlyName="FK_Vencimento" msprop:DbColumnName="FK_Vencimento" msprop:design-time-name="f9a8384a-c07b-4fdc-ab0e-6eebb05a2937" msprop:AllowGen="True" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="FK_Data_de_Emissão" msprop:FriendlyName="FK_Data_de_Emissão" msprop:DbColumnName="FK_Data_de_Emissão" msprop:design-time-name="b9c80d61-ed69-4255-83b9-4661396abf71" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="FK_Forma_de_Pagamento" msprop:FriendlyName="FK_Forma_de_Pagamento" msprop:DbColumnName="FK_Forma_de_Pagamento" msprop:design-time-name="d75b79ad-a4b1-4d82-932f-a567c43de7d4" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="FK_Condição_de_Pagamento" msprop:FriendlyName="FK_Condição_de_Pagamento" msprop:DbColumnName="FK_Condição_de_Pagamento" msprop:design-time-name="eeab04aa-94b0-45ee-9d51-33b37c448f17" msprop:AllowGen="True" type="xs:int" minOccurs="0" />
+                  <xs:element name="Valor_nominal_a_pagar" msprop:FriendlyName="Valor_nominal_a_pagar" msprop:DbColumnName="Valor_nominal_a_pagar" msprop:design-time-name="02d0c4de-6757-4a0f-a464-82624d91e8a5" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Valor_pago" msprop:FriendlyName="Valor_pago" msprop:DbColumnName="Valor_pago" msprop:design-time-name="203a52c7-32fd-4ed1-adab-2fa50d7856d3" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Encargos_pagos" msprop:FriendlyName="Encargos_pagos" msprop:DbColumnName="Encargos_pagos" msprop:design-time-name="2a6e325b-b054-497b-a3ec-a641dd0162f9" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Valor_a_pagar_em_aberto" msprop:FriendlyName="Valor_a_pagar_em_aberto" msprop:DbColumnName="Valor_a_pagar_em_aberto" msprop:design-time-name="68260cda-1845-4634-b379-28b61f9df3a8" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                  <xs:element name="Valor_a_pagar_em_atraso" msprop:FriendlyName="Valor_a_pagar_em_atraso" msprop:DbColumnName="Valor_a_pagar_em_atraso" msprop:design-time-name="0d154415-724b-44da-b39a-007aa42b21fc" msprop:AllowGen="True" type="xs:float" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="PK_Vencimento" msprop:AllowGen="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Vencimento" />
+          <xs:field xpath="Date" />
+        </xs:unique>
+        <xs:unique name="PK_Data_de_Emissão" msprop:AllowGen="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Data_de_Emissão" />
+          <xs:field xpath="Data_de_Emissão" />
+        </xs:unique>
+        <xs:unique name="PK_Forma_de_Pagamento" msprop:AllowGen="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Forma_de_Pagamento" />
+          <xs:field xpath="Forma_de_Pagamento" />
+        </xs:unique>
+        <xs:unique name="PK_Condição_de_Pagamento" msprop:AllowGen="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Condição_de_Pagamento" />
+          <xs:field xpath="Condição_de_Pagamento" />
+        </xs:unique>
+        <xs:keyref name="Pagamentos-Condição_de_Pagamento" refer="PK_Condição_de_Pagamento" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Pagamentos" />
+          <xs:field xpath="FK_Condição_de_Pagamento" />
+        </xs:keyref>
+        <xs:keyref name="Pagamentos-Forma_de_Pagamento" refer="PK_Forma_de_Pagamento" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Pagamentos" />
+          <xs:field xpath="FK_Forma_de_Pagamento" />
+        </xs:keyref>
+        <xs:keyref name="Pagamentos-Data_de_Emissão" refer="PK_Data_de_Emissão" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Pagamentos" />
+          <xs:field xpath="FK_Data_de_Emissão" />
+        </xs:keyref>
+        <xs:keyref name="Pagamentos-Vencimento" refer="PK_Vencimento" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Pagamentos" />
+          <xs:field xpath="FK_Vencimento" />
+        </xs:keyref>
+        <xs:keyref name="Recebimentos-Condição_de_Pagamento" refer="PK_Condição_de_Pagamento" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Recebimentos" />
+          <xs:field xpath="FK_Condição_de_Pagamento" />
+        </xs:keyref>
+        <xs:keyref name="Recebimentos-Forma_de_Pagamento" refer="PK_Forma_de_Pagamento" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Recebimentos" />
+          <xs:field xpath="FK_Forma_de_Pagamento" />
+        </xs:keyref>
+        <xs:keyref name="Recebimentos-Data_de_Emissão" refer="PK_Data_de_Emissão" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Recebimentos" />
+          <xs:field xpath="FK_Data_de_Emissão" />
+        </xs:keyref>
+        <xs:keyref name="Recebimentos-Vencimento" refer="PK_Vencimento" msprop:rel_AllowGen="True">
+          <xs:selector xpath=".//Recebimentos" />
+          <xs:field xpath="FK_Vencimento" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>

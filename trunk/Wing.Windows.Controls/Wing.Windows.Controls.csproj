@@ -271,7 +271,6 @@
     <Compile Include="Telerik.Docking\Windows\Controls\RadPane.cs" />
     <Compile Include="Telerik.Docking\Windows\Controls\RadPaneGroup.cs" />
     <Compile Include="Telerik.Docking\Windows\Controls\RadSplitContainer.cs" />
-    <Compile Include="Telerik.Controls\Configuration\Assemblies\AssemblyInfoHelper.cs" />
     <Compile Include="Telerik.Controls\WebUI\PopupTracker.cs" />
     <Compile Include="Telerik.Controls\Windows\ArgumentVerificationExtensions.cs" />
     <Compile Include="Telerik.Controls\Windows\AssemblyProtection.cs" />

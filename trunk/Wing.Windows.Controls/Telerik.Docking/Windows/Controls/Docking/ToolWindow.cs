@@ -472,8 +472,7 @@
         {
             if (this.IsDragging)
             {
-                Point position = new Point();
-                e.GetPosition(null);
+                Point position = e.GetPosition(null);
                 if (base.Parent != null)
                 {
                     position = e.GetPosition(this.UIParent);

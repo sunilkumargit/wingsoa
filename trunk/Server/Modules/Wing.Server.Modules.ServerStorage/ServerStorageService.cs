@@ -81,6 +81,7 @@ namespace Wing.Server.Modules.ServerStorage
                 _cfg.SetProperty("connection.driver_class", "NHibernate.Driver.SqlServerCeDriver");
                 _cfg.SetProperty("query.substitutions", "true 1, false 0");
                 _cfg.SetProperty("connection.connection_string", ConnectionString);
+                _cfg.SetProperty("use_reflection_optimizer", "false");
                 _cfg.SetProperty("proxyfactory.factory_class", "NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu");
                 _cfg.SetProperty("show_sql", "true");
 

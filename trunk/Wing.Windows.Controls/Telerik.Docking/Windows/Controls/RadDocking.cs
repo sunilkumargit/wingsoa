@@ -22,7 +22,20 @@
     using Telerik.Windows.Controls.Docking;
     using Telerik.Windows.Controls.DragDrop;
 
-    [StyleTypedProperty(Property = "VisualCueStyle", StyleTargetType = typeof(VisualCue)), SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling"), DefaultEvent("ActivePaneChanged"), TemplatePart(Name = "PART_RootCompass", Type = typeof(RootCompass)), TemplatePart(Name = "PART_Compass", Type = typeof(Compass)), TemplatePart(Name = "PART_DragCue", Type = typeof(VisualCue)), TemplatePart(Name = "PopupPanel", Type = typeof(Panel)), TemplatePart(Name = "TopAutoHide", Type = typeof(AutoHideArea)), TemplatePart(Name = "BottomAutoHide", Type = typeof(AutoHideArea)), TemplatePart(Name = "LeftAutoHide", Type = typeof(AutoHideArea)), TemplatePart(Name = "RightAutoHide", Type = typeof(AutoHideArea)), StyleTypedProperty(Property = "ItemContainerStyle", StyleTargetType = typeof(RadSplitContainer)), StyleTypedProperty(Property = "RootCompassStyle", StyleTargetType = typeof(RootCompass)), StyleTypedProperty(Property = "CompassStyle", StyleTargetType = typeof(Compass))]
+    [StyleTypedProperty(Property = "VisualCueStyle", StyleTargetType = typeof(VisualCue)),
+     SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling"),
+     DefaultEvent("ActivePaneChanged"),
+     TemplatePart(Name = "PART_RootCompass", Type = typeof(RootCompass)),
+     TemplatePart(Name = "PART_Compass", Type = typeof(Compass)),
+     TemplatePart(Name = "PART_DragCue", Type = typeof(VisualCue)),
+     TemplatePart(Name = "PopupPanel", Type = typeof(Panel)),
+     TemplatePart(Name = "TopAutoHide", Type = typeof(AutoHideArea)),
+     TemplatePart(Name = "BottomAutoHide", Type = typeof(AutoHideArea)),
+     TemplatePart(Name = "LeftAutoHide", Type = typeof(AutoHideArea)),
+     TemplatePart(Name = "RightAutoHide", Type = typeof(AutoHideArea)),
+     StyleTypedProperty(Property = "ItemContainerStyle", StyleTargetType = typeof(RadSplitContainer)),
+     StyleTypedProperty(Property = "RootCompassStyle", StyleTargetType = typeof(RootCompass)),
+     StyleTypedProperty(Property = "CompassStyle", StyleTargetType = typeof(Compass))]
     public class RadDocking : Telerik.Windows.Controls.ItemsControl, IThemable, INotifyLayoutChange
     {
         private static readonly DependencyProperty AnimationSelectorProxyProperty = DependencyProperty.Register("AnimationSelectorProxy", typeof(AnimationSelectorBase), typeof(RadDocking), null);
@@ -237,7 +250,8 @@
             EventManager.RegisterClassHandler(typeof(RadDocking), RadGridResizer.LayoutChangeEndedEvent, new EventHandler<RadRoutedEventArgs>(RadDocking.OnLayoutChangeEnded));
         }
 
-        public RadDocking():base()
+        public RadDocking()
+            : base()
         {
             base.DefaultStyleKey = typeof(RadDocking);
             base.Loaded += new RoutedEventHandler(this.RadDocking_Loaded);

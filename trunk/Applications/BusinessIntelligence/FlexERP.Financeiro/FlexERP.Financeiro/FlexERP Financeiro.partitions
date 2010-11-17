@@ -1,0 +1,11 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fd396413-0b22-4af4-af6e-5ab258557e28" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>FlexERP Financeiro</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Recebimentos</ID>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Pagamentos</ID>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
