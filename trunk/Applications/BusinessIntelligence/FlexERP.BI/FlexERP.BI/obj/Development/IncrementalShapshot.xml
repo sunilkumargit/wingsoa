@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>FlexERP BI</Database>
+    <Server>localhost</Server>
+    <ConnectionString>DataSource=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>ytCJu/W7mAoq8gbUZeR3aA==24/11/2010 10:22:5324/11/2010 10:22:53</TimeStamp>
+        <ID>
+          <String>Flex ERPDW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>QjukX5q//NmDWmocJRVXUQ==24/11/2010 12:58:4224/11/2010 10:27:53</TimeStamp>
+        <ID>
+          <String>FlexERP BI</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/KJ/mWS4R6TXBrpqtK36TA==24/11/2010 13:00:0724/11/2010 10:25:50</TimeStamp>
+        <ID>
+          <String>Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>D4QaexPl+ggIa//Pv+fQRg==24/11/2010 13:00:0724/11/2010 10:39:44</TimeStamp>
+        <ID>
+          <String>FormaPagtoDim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>72qNpg0Qk9fsn557NiRuFg==24/11/2010 13:00:0724/11/2010 12:19:41</TimeStamp>
+        <ID>
+          <String>EmpresaDim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>KBBfrvIVvCvvXNgCJTMdMw==24/11/2010 13:00:0624/11/2010 12:30:44</TimeStamp>
+        <ID>
+          <String>ClienteDim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>sAkzUc6nMnK+qb0qVKRiLQ==24/11/2010 13:03:2024/11/2010 10:25:50SjuvkgvV8KWFxkgG4l5Bag==24/11/2010 13:00:0724/11/2010 10:25:50</TimeStamp>
+        <ID>
+          <String>New cube</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>SOXfBdfD94tJjzd6FtzdZA==24/11/2010 12:58:4224/11/2010 10:15:44</TimeStamp>
+      <ID>
+        <String>FlexERP BI</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2010-11-24T15:03:52.336667Z</LastDeployed>
+</DeploymentSnapshot>

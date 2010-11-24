@@ -1,6 +1,6 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fd383019-102a-430f-98e8-9a8b3cabe4b3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
-  <ID>DataVencimento</ID>
-  <Name>DataVencimento</Name>
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a02aff33-4f0e-45ed-9737-13c71af11518" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Time</ID>
+  <Name>DateDim</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
   <Annotations>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2150" scrolltop="-5781" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8996" y="16563" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2150" scrolltop="-3188" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8996" y="11377" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -19,13 +19,13 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="DataVencimento" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4657" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="DateDim" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4657" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000800003112000088130000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="DataVencimento" vartype="8" />
+                <property name="LogicalObject" value="DateDim" vartype="8" />
               </ddsxmlobj>
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
@@ -51,7 +51,7 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-5781</Value>
+      <Value>-3188</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -88,356 +88,356 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="66916252-af29-4818-bb39-e2fc6318c486">
-    <DataSourceViewID>FlexERP Financeiro</DataSourceViewID>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="0afbdef8-e2f5-4bc8-92ef-2a9d0a7c8b12">
+    <DataSourceViewID>FlexERP BI</DataSourceViewID>
   </Source>
   <Type>Time</Type>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="41f468fc-e0da-42b9-b81a-c662902f7252">
+    <Attribute dwd:design-time-name="47e330f8-5fdb-4886-960b-2d9d1810c153">
       <ID>Date</ID>
       <Name>Date</Name>
       <Type>Days</Type>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="fbc29d62-9c6d-4855-a8a1-98f39575fbe9">
+        <KeyColumn dwd:design-time-name="3de72073-8511-4130-8e0a-5d1b71a1b428">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7c58277d-cb9c-479e-8580-9233ba8669fa">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a2b11fee-99ce-4a5c-9705-d7bc918bfb8a">
+            <TableID>DateDim</TableID>
             <ColumnID>Date</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="da10d3c1-7194-4e34-99c8-5b424e0722c3">
+      <NameColumn dwd:design-time-name="1bf84ff9-7795-43cf-beae-48d8fd313657">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="e235823f-d0e8-4416-9a04-33f86e509acf">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4a348011-27e8-40a6-b70a-1eef208bccd8">
+          <TableID>DateDim</TableID>
           <ColumnID>Date_Name</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="98bb0c6e-9088-4fc0-8174-0482f7448a54">
+        <AttributeRelationship dwd:design-time-name="81d11d77-aa61-4248-8e6e-86ffdaf1f556">
           <AttributeID>Month</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Month</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="130fafb4-f331-45ef-bf91-20138271814c">
+        <AttributeRelationship dwd:design-time-name="4331d9b5-13d7-4b85-b937-e2cf315e671c">
           <AttributeID>Month Of Year</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Month Of Year</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="5c4504fd-91a1-4723-b645-9c96bec2f407">
+        <AttributeRelationship dwd:design-time-name="2713b904-d87e-4e4f-8dcc-895a4f4d12aa">
           <AttributeID>Month Of Trimester</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Month Of Trimester</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="73989a24-7e45-449c-b4fb-5d6e14c4e3eb">
+        <AttributeRelationship dwd:design-time-name="ef9c1819-3996-4a8a-b2e3-1bbc833d6342">
           <AttributeID>Day Of Year</AttributeID>
           <Name>Day Of Year</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="4897c3bc-285b-435d-9fa3-05bae1ad4dad">
+        <AttributeRelationship dwd:design-time-name="fe4f98e1-1b8b-4421-9ce0-2bf454a1ae97">
           <AttributeID>Day Of Trimester</AttributeID>
           <Name>Day Of Trimester</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="dc1af8c4-cfe7-418b-90da-09a64331cf80">
+        <AttributeRelationship dwd:design-time-name="e8feebae-30e6-4d18-8b6b-cb5e14d5115e">
           <AttributeID>Day Of Month</AttributeID>
           <Name>Day Of Month</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="abf344ed-256b-4212-968a-e63f22de83d3">
+      <ValueColumn dwd:design-time-name="32965481-e887-42fc-a5e6-e520a9238097">
         <DataType>Date</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="6c9dfbd0-340a-44ca-b409-7f130d07c0ba">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="276062a4-6a92-43ba-a72e-694c5a7a0bf8">
+          <TableID>DateDim</TableID>
           <ColumnID>Date</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="de3ae12d-448c-48cb-a3e6-88d91876793f">
+    <Attribute dwd:design-time-name="1018cf7e-1d55-4e81-897e-935b85520c42">
       <ID>Year</ID>
       <Name>Year</Name>
       <Type>Years</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="1ce07a5b-078b-4cfb-8f15-876d5087b441">
+        <KeyColumn dwd:design-time-name="9d30e4c6-fdde-4805-80a4-2b3672cc9539">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7d115477-19ac-4294-88b2-cf34c47c6a93">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a6fd7644-4d64-4c99-9733-2baff4e87dfe">
+            <TableID>DateDim</TableID>
             <ColumnID>Year</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="cefdc6e3-8174-4d4d-b860-ee93058165fe">
+      <NameColumn dwd:design-time-name="3833d9db-a495-4552-be50-84744e0fbb30">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="ae1f0dfe-7ec9-40a3-84da-b80f5be64308">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="83507404-be3b-41f6-a4a4-ac0cb23bd0fc">
+          <TableID>DateDim</TableID>
           <ColumnID>Year_Name</ColumnID>
         </Source>
       </NameColumn>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="5c54d010-0bed-45ac-b5b9-6c4f5c490ed1">
+      <ValueColumn dwd:design-time-name="1cee5a04-7c02-4960-8ab3-198d891f5d45">
         <DataType>Date</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="554122f5-2f2e-4e98-a180-30207f18a049">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="59c14245-efbd-4b6d-80fd-168e18963156">
+          <TableID>DateDim</TableID>
           <ColumnID>Year</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="947de799-83b5-4117-9a42-7a40117c0fea">
+    <Attribute dwd:design-time-name="d05f6f0e-05a6-4572-b524-51d0092ff3aa">
       <ID>Trimester</ID>
       <Name>Trimester</Name>
       <Type>Trimesters</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="3edc94a4-1152-4185-9222-2e333cdbcf54">
+        <KeyColumn dwd:design-time-name="e715eb43-aeba-4ae3-a7fc-8cf771cda931">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d3ace130-fe9c-4781-a678-d64c69e2b581">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9b2388fc-7e4a-42c2-8b77-f44ea4eb8f29">
+            <TableID>DateDim</TableID>
             <ColumnID>Trimester</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="2bda8263-a09a-449b-9a00-52fcc434fcec">
+      <NameColumn dwd:design-time-name="59949091-9525-44f0-8eb3-d1420ba2bb40">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="285b1473-91e6-4fdf-9daf-0ed52a23470e">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="93e1dc53-370c-48dd-b910-210892b73cc6">
+          <TableID>DateDim</TableID>
           <ColumnID>Trimester_Name</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="a59c3ea5-3666-4b48-81ae-74ad2e77f059">
+        <AttributeRelationship dwd:design-time-name="f2a3e4c8-9574-457b-8c4e-c5774e363f3e">
           <AttributeID>Year</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Year</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="6edefe9c-5042-4b21-a5e2-1e79c8ecc055">
+      <ValueColumn dwd:design-time-name="290a445f-b2b6-4718-bc39-03fdc704cc85">
         <DataType>Date</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="7ace9c17-674f-44f7-b279-06077ffac000">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="baf8cf8e-4722-4784-9116-2dca49bca9a4">
+          <TableID>DateDim</TableID>
           <ColumnID>Trimester</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="25e747ef-ee7f-432e-86ae-afa95c1668a8">
+    <Attribute dwd:design-time-name="de9b7b9b-fc1f-4082-99db-e16fc3a4a9f1">
       <ID>Month</ID>
       <Name>Month</Name>
       <Type>Months</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c7c9549a-6b38-4805-b7c1-ed55972e449a">
+        <KeyColumn dwd:design-time-name="dd574650-2306-4d27-81c0-4d34f609b251">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6e1bbb7-071f-43ad-a3c9-88fd02af5f8d">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="107263a0-5aef-4210-b3dc-7370de6291c4">
+            <TableID>DateDim</TableID>
             <ColumnID>Month</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="640fb979-bb64-4e9d-8b4c-0b8074e75c6a">
+      <NameColumn dwd:design-time-name="ffb6cab8-a68b-444b-a704-c1a53675f4f6">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="9d6fd441-2016-43a5-a82a-996945ddcf8a">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c83ac87d-264c-48f7-955e-13ba96bd2d5b">
+          <TableID>DateDim</TableID>
           <ColumnID>Month_Name</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="777a559b-9880-442c-b6ac-6bf4127da96d">
+        <AttributeRelationship dwd:design-time-name="b9d12842-9dfd-40b5-816a-d9e59455ad69">
           <AttributeID>Trimester</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Trimester</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="0e20ff9d-cc15-4a78-b540-461e25e384e8">
+        <AttributeRelationship dwd:design-time-name="02af070d-e7aa-46f7-866b-39f3cd736ece">
           <AttributeID>Trimester Of Year</AttributeID>
           <RelationshipType>Rigid</RelationshipType>
           <Name>Trimester Of Year</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="70a7cc0c-579e-4872-9057-f39315f85848">
+      <ValueColumn dwd:design-time-name="7bb6d365-c291-47c9-bad5-580ce83eca21">
         <DataType>Date</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="28ffa44c-c69b-429b-a2d5-58e678fde538">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8d4583d0-b0c5-4af6-b7a5-d4f18e6c766d">
+          <TableID>DateDim</TableID>
           <ColumnID>Month</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="830d11f7-04ed-4e87-91f9-d7a31d69a1c3">
+    <Attribute dwd:design-time-name="4fe80a18-1561-456a-af27-2051d794379d">
       <ID>Day Of Year</ID>
       <Name>Day Of Year</Name>
       <Type>DayOfYear</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7a4a61e1-30c2-4873-8ca2-25d348094f36">
+        <KeyColumn dwd:design-time-name="e452b8ef-4cfa-437a-aac9-ce2416610395">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="cee22ff9-6348-4932-af06-bb4c9aa8aeba">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f7fd88d3-b982-4c3c-8535-1edbbf93daaa">
+            <TableID>DateDim</TableID>
             <ColumnID>Day_Of_Year</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="562d9208-f695-4d97-abac-fe315a361fb2">
+      <NameColumn dwd:design-time-name="fabad87d-1483-4fa8-b36f-48ba60c76a6a">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="b0a977fa-b535-44f2-9509-612130617c6d">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="58ecbd94-4bfc-475a-a05a-25540f6583d6">
+          <TableID>DateDim</TableID>
           <ColumnID>Day_Of_Year_Name</ColumnID>
         </Source>
       </NameColumn>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="6dff0254-68f2-4f40-8944-e0a8ef16f75d">
+      <ValueColumn dwd:design-time-name="3935efd2-147e-45e2-b5b0-dd926cfa8bad">
         <DataType>Integer</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="508b415a-f305-4a38-b05c-983a09ad1f94">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1232f240-8508-4681-b6c7-f759b6cdfc69">
+          <TableID>DateDim</TableID>
           <ColumnID>Day_Of_Year</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="512b5494-3b53-4218-9903-b9845a316527">
+    <Attribute dwd:design-time-name="9a44ad9c-da2c-49d3-9204-a77fa5bf231b">
       <ID>Day Of Trimester</ID>
       <Name>Day Of Trimester</Name>
       <Type>DayOfTrimester</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0f003ea5-2939-40c9-b7b7-df024be58461">
+        <KeyColumn dwd:design-time-name="50093caf-59e2-4c31-ad64-021378c3b12f">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="98856744-d401-4b18-9510-10d2df17a20b">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="de0b99ef-f02a-4ea4-832f-3c1afef0edbc">
+            <TableID>DateDim</TableID>
             <ColumnID>Day_Of_Trimester</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="2ebded8e-e683-479f-96d4-7bd18d992dc2">
+      <NameColumn dwd:design-time-name="193df88a-711e-4c9c-adb5-49690ca8ae5b">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="9b39acb0-ef3b-4b1b-890d-1c51c6c0dcb3">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6cc3e81f-700c-44ec-bc1a-79c28f33fd1b">
+          <TableID>DateDim</TableID>
           <ColumnID>Day_Of_Trimester_Name</ColumnID>
         </Source>
       </NameColumn>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="360f6508-f1c3-4356-bea8-6967b5e43251">
+      <ValueColumn dwd:design-time-name="ea63f125-eee7-46d5-b252-5913d7f38e9a">
         <DataType>Integer</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="4c3221e8-69e8-4543-bfb7-b0640c63a544">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e56e54c1-b60d-403c-b9a6-1e434801757e">
+          <TableID>DateDim</TableID>
           <ColumnID>Day_Of_Trimester</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="c2e14fd6-c7dd-488a-ab26-a9e6fb6cab6f">
+    <Attribute dwd:design-time-name="a7047232-ecf9-4ab7-893e-537e36356453">
       <ID>Day Of Month</ID>
       <Name>Day Of Month</Name>
       <Type>DayOfMonth</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="b26ed6af-3d71-4b68-87c8-8a3f66e54098">
+        <KeyColumn dwd:design-time-name="ad799d99-e2e0-44b0-b3d8-bb152c33c5cc">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e9000141-234b-4e3f-aa75-4433b2119be2">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dd4e5fc4-ed0a-4df1-8002-b5005c53036b">
+            <TableID>DateDim</TableID>
             <ColumnID>Day_Of_Month</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="66b1df74-061e-435d-9d42-8bdde36b7e38">
+      <NameColumn dwd:design-time-name="b022d0ed-60d1-4d32-b5d5-e30b2b1b3f05">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="61ed0e6e-ddb2-4fc9-8357-dc86847ab2cf">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5b96cf32-65cf-4bcc-90f3-6706a8a23502">
+          <TableID>DateDim</TableID>
           <ColumnID>Day_Of_Month_Name</ColumnID>
         </Source>
       </NameColumn>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="b7b14e23-2631-41b1-abc6-1d2a0f30a65c">
+      <ValueColumn dwd:design-time-name="55a63490-c427-42dc-82e1-a363439d5f20">
         <DataType>Integer</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="38009e10-0910-4989-bbbd-3c60ed92c45d">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9583a90e-88b1-4003-9ddb-e9f1d1e5ff60">
+          <TableID>DateDim</TableID>
           <ColumnID>Day_Of_Month</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d735bfb4-00ff-49a7-885f-8ff1e5d366b9">
+    <Attribute dwd:design-time-name="6360f58e-9c87-48b9-926a-77a5891b8c21">
       <ID>Month Of Year</ID>
       <Name>Month Of Year</Name>
       <Type>MonthOfYear</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="88e0b987-0c94-4bca-aa03-43e1816a59f5">
+        <KeyColumn dwd:design-time-name="b4c14521-4a79-41d5-bac1-d296ce1eec5d">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="77265bee-1906-44a1-8a2e-48860180c66f">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a8c65d5-6630-4c96-b6c4-ce84b4cacc3b">
+            <TableID>DateDim</TableID>
             <ColumnID>Month_Of_Year</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="80f66739-d9f8-426c-81a4-ac074f63f449">
+      <NameColumn dwd:design-time-name="7e8a5e97-1c82-4c92-86e4-d67e2b3f5f45">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="2c25fcf9-9b40-41d8-b672-81ed37aa7996">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7d6b8b18-8863-4a9c-b2d3-25f655bc7602">
+          <TableID>DateDim</TableID>
           <ColumnID>Month_Of_Year_Name</ColumnID>
         </Source>
       </NameColumn>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="b387555a-5318-4af0-83f0-4ebe2051e604">
+      <ValueColumn dwd:design-time-name="f355b1e2-b4ad-43b9-b95f-1f79730f6af5">
         <DataType>Integer</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="9692317c-8976-4da8-967b-c411134d9674">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="86158747-6ef2-4bba-b72b-673306e04cda">
+          <TableID>DateDim</TableID>
           <ColumnID>Month_Of_Year</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="502fecf3-52ec-4180-86c9-8a5d3e041f69">
+    <Attribute dwd:design-time-name="65642f57-5e44-422e-a0ae-0d9ddeda5819">
       <ID>Month Of Trimester</ID>
       <Name>Month Of Trimester</Name>
       <Type>MonthOfTrimester</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="739acf7d-76c8-46ee-a83b-37b1e0af4c63">
+        <KeyColumn dwd:design-time-name="992d4775-e0d6-45a1-99ee-9376eedde6a5">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d4857dd4-3db6-451f-8643-77c43d568c5d">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="102fa456-d1f1-42e7-bc73-3e78de5f5e0d">
+            <TableID>DateDim</TableID>
             <ColumnID>Month_Of_Trimester</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="bc4909c1-a75b-4bf7-b05e-0b1caadba5f1">
+      <NameColumn dwd:design-time-name="8cdd0c1a-e5b9-4064-8e92-12e4918a8070">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="dd4b2139-476d-4d43-9852-b9656f22040c">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="bdec4034-d279-45f7-8809-f24f4f07b1c1">
+          <TableID>DateDim</TableID>
           <ColumnID>Month_Of_Trimester_Name</ColumnID>
         </Source>
       </NameColumn>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="adf34853-0763-4296-b69a-7bc2397befeb">
+      <ValueColumn dwd:design-time-name="1408cede-39f6-44d5-8ae7-39dba7208096">
         <DataType>Integer</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="5d557a6b-eebf-474e-8147-50c6d806a308">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9c7936ce-225d-4087-bb0a-b0949f47d79c">
+          <TableID>DateDim</TableID>
           <ColumnID>Month_Of_Trimester</ColumnID>
         </Source>
       </ValueColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="e9f74519-c845-462e-b78b-ad9b1fc05877">
+    <Attribute dwd:design-time-name="c01e5056-b16c-4aab-8dd3-9c420c85104f">
       <ID>Trimester Of Year</ID>
       <Name>Trimester Of Year</Name>
       <Type>TrimesterOfYear</Type>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c01af1bc-7384-43c1-9746-9cb4d18206f9">
+        <KeyColumn dwd:design-time-name="919f000d-5a54-43c1-9ac4-1890b7b10f47">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="efbae646-591b-4cfe-a066-daa1ca6f9c7b">
-            <TableID>DataVencimento</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="209e3f9f-92b4-4ee1-b51f-fb42f037af5f">
+            <TableID>DateDim</TableID>
             <ColumnID>Trimester_Of_Year</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="d51f42f3-df4f-4c3c-ac35-834b6f116d90">
+      <NameColumn dwd:design-time-name="be7ff026-0d7e-4b1a-9228-5dc30ee70596">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="fc901d3b-ec99-46ac-b2b1-f22f2c696e9e">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="13dbeca5-f790-4b16-b6b3-129aae68c5ed">
+          <TableID>DateDim</TableID>
           <ColumnID>Trimester_Of_Year_Name</ColumnID>
         </Source>
       </NameColumn>
       <OrderBy>Key</OrderBy>
-      <ValueColumn dwd:design-time-name="e5a24b7f-6505-4d54-b460-dd118df468b3">
+      <ValueColumn dwd:design-time-name="8b8afd4d-5ba7-4dbc-bc20-5ffd2f1f4246">
         <DataType>Integer</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="2c1ac88c-747b-43ab-9770-0ae593dc621e">
-          <TableID>DataVencimento</TableID>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d16774eb-ce60-4df1-8d30-dba9542cd359">
+          <TableID>DateDim</TableID>
           <ColumnID>Trimester_Of_Year</ColumnID>
         </Source>
       </ValueColumn>
@@ -445,26 +445,26 @@
     </Attribute>
   </Attributes>
   <Hierarchies>
-    <Hierarchy dwd:design-time-name="a370b7b3-da43-4278-8c9d-3437aafd1a06">
+    <Hierarchy dwd:design-time-name="f5b6a6ba-1ac4-4296-93ec-14aae0e97269">
       <ID>Year -  Trimester -  Month -  Date</ID>
       <Name>Year -  Trimester -  Month -  Date</Name>
       <Levels>
-        <Level dwd:design-time-name="6f6b9f2d-a304-4fda-995b-e9e1d986c89f">
+        <Level dwd:design-time-name="08ca60c8-c4bd-4ff1-acbb-d5d81484bca7">
           <ID>Year</ID>
           <Name>Year</Name>
           <SourceAttributeID>Year</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="1114f77a-7540-4969-ad9e-8a48ffd47dac">
+        <Level dwd:design-time-name="d1da299c-d61d-4f5f-882e-b09a826cc188">
           <ID>Trimester</ID>
           <Name>Trimester</Name>
           <SourceAttributeID>Trimester</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="9ce00dad-3854-45ef-b679-07263344b448">
+        <Level dwd:design-time-name="4f2ec59d-0b5e-4772-9487-dbbfce4710c7">
           <ID>Month</ID>
           <Name>Month</Name>
           <SourceAttributeID>Month</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="8bb9dab4-11c8-4315-92b7-10eae5983c86">
+        <Level dwd:design-time-name="bc522db1-decc-4f5c-8b51-9cef66ee658b">
           <ID>Date</ID>
           <Name>Date</Name>
           <SourceAttributeID>Date</SourceAttributeID>
