@@ -1,5 +1,5 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0b6d9ec4-431a-4d06-8a61-29d86b37ab0b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
-  <ID>New cube</ID>
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="33b73242-1b98-4975-8d58-119d3eb9feef" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>FlexERP Financeiro</ID>
   <Name>FlexERP Financeiro</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="15" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1154" scrolltop="-1451" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="22437" y="16563" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="11" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1386" scrolltop="-4015" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="24871" y="16563" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -19,51 +19,40 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Forma_de_Pagamento" left="20" top="13002" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4948" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="DataEmissao" left="1571" top="2005" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="4710" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000800005413000057070000" />
+              <ddsxmlobjectstreaminitwrapper binary="000800006612000088130000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="Forma_de_Pagamento" vartype="8" />
+                <property name="LogicalObject" value="DataEmissao" vartype="8" />
               </ddsxmlobj>
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Pagamentos" left="7368" top="11521" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="4974" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="CondicaoPagamento" left="8549" top="-2275" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="4551" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000800006e130000ea120000" />
+              <ddsxmlobjectstreaminitwrapper binary="00080000c711000057070000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="Pagamentos" vartype="8" />
+                <property name="LogicalObject" value="CondicaoPagamento" vartype="8" />
               </ddsxmlobj>
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Condição_de_Pagamento" left="6971" top="7242" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="5371" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="factCPCR" left="8681" top="2930" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="4286" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="00080000fb14000057070000" />
+              <ddsxmlobjectstreaminitwrapper binary="00080000be1000004d0c0000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="Condição_de_Pagamento" vartype="8" />
+                <property name="LogicalObject" value="factCPCR" vartype="8" />
               </ddsxmlobj>
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Recebimentos" left="10618" top="0" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="4974" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000800006e130000ea120000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="Recebimentos" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline" left="2095" top="4542" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="10210" height="8960" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5981" top="4106" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -71,19 +60,19 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[Recebimentos-Forma_de_Pagamento]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[factCPCR-DataEmissao]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="6" sourceattachpoint="8" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="2494" y="13002" />
-              <point x="2494" y="8922" />
-              <point x="12005" y="8922" />
-              <point x="12005" y="4842" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="27" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6281" y="4505" />
+              <point x="7481" y="4505" />
+              <point x="7481" y="4504" />
+              <point x="8681" y="4504" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline" left="4668" top="13542" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10425" top="-895" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="4125" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -91,19 +80,39 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[Pagamentos-Forma_de_Pagamento]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[factCPCR-CondicaoPagamento]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="21" destattachpoint="26" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="4968" y="13941" />
-              <point x="6168" y="13941" />
-              <point x="6168" y="13942" />
-              <point x="7368" y="13942" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="4" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="10824" y="-396" />
+              <point x="10824" y="2930" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline" left="9257" top="8622" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="898" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="DataVencimento" left="15367" top="2005" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="4710" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800006612000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DataVencimento" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="FormaPagamento" left="8866" top="8479" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3916" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800004c0f000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="FormaPagamento" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12667" top="4106" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -111,19 +120,19 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[Pagamentos-Condição_de_Pagamento]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[factCPCR-DataVencimento]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="9" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="9656" y="9121" />
-              <point x="9656" y="10321" />
-              <point x="9855" y="10321" />
-              <point x="9855" y="11521" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="4" sourceattachpoint="26" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="15367" y="4505" />
+              <point x="14167" y="4505" />
+              <point x="14167" y="4504" />
+              <point x="12967" y="4504" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline" left="9257" top="4542" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3598" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10425" top="5779" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -131,16 +140,14 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[Recebimentos-Condição_de_Pagamento]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[factCPCR-FormaPagamento]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="6" sourceattachpoint="8" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="9656" y="7242" />
-              <point x="9656" y="6042" />
-              <point x="12555" y="6042" />
-              <point x="12555" y="4842" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="4" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="10824" y="8479" />
+              <point x="10824" y="6079" />
             </connector>
           </ddscontrol>
         </dds>
@@ -160,143 +167,242 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-1154</Value>
+      <Value>-1386</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-1451</Value>
+      <Value>-4015</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>20</Value>
+      <Value>1571</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
-      <Value>0</Value>
+      <Value>-2275</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
-      <Value>75</Value>
+      <Value>100</Value>
     </Annotation>
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="953d7f6e-c8de-4af9-a5ca-5d37c88dcb1f">
-      <ID>Forma de Pagamento</ID>
-      <Name>Forma de Pagamento</Name>
-      <DimensionID>Forma de Pagamento</DimensionID>
+    <Dimension dwd:design-time-name="b138753b-60ef-455b-899c-9f8ebe289a91">
+      <ID>DataEmissao</ID>
+      <Name>DataEmissao</Name>
+      <DimensionID>DataEmissao</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="0ce6e37b-d174-4990-9e2e-6846533142bb">
-          <AttributeID>Forma de Pagamento</AttributeID>
+        <Attribute dwd:design-time-name="f9c43bf1-cb58-4e27-9d03-629823c0d811">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7a7f2555-e04b-49ce-9e49-3e97906343d2">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="14cec002-088b-43d0-bbe1-1e84322a7c12">
+          <AttributeID>Trimester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9aa00613-3b80-4dd4-82ec-14c03c8b2fe6">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="34f0376a-e0ea-495c-8ebd-18fb3b19e10d">
+          <AttributeID>Day Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8d2af6db-d9d7-4ce1-95ee-1edafb96d238">
+          <AttributeID>Day Of Trimester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="76d83a3c-bfa7-4603-a09d-1c1f43a9a643">
+          <AttributeID>Day Of Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="95a66f1f-43a2-4fc0-8b5d-ef43f8aa3fa6">
+          <AttributeID>Month Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7b25863e-8829-4912-9493-e10dd89e4240">
+          <AttributeID>Month Of Trimester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="766a68a2-dc58-4c51-a8b6-a8f4af2c96a6">
+          <AttributeID>Trimester Of Year</AttributeID>
         </Attribute>
       </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="2d895643-25e9-47ee-881c-b1b6036c6091">
+          <HierarchyID>Year -  Trimester -  Month -  Date</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="10d5eb28-cbc1-4155-a48b-30b85be46fc5">
-      <ID>Condição de Pagamento</ID>
-      <Name>Condição de Pagamento</Name>
-      <DimensionID>Condição de Pagamento</DimensionID>
+    <Dimension dwd:design-time-name="b8b67e7f-e045-446c-a31d-337686d91e4f">
+      <ID>DataVencimento</ID>
+      <Name>DataVencimento</Name>
+      <DimensionID>DataVencimento</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="95f88eeb-8f82-4628-b878-68f2cabe6484">
-          <AttributeID>Condição de Pagamento</AttributeID>
+        <Attribute dwd:design-time-name="a493407c-f8fe-4bb8-bd51-6396c225c888">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0ebb9138-4001-4fa6-817f-e29850d87593">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e4444493-28d4-4989-871b-619f4619fc6c">
+          <AttributeID>Trimester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0c5ac9c7-5521-4fa7-8c0b-4b8a91bd2734">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9fe50dfe-3f54-40dc-9d35-6c85d4b61ff8">
+          <AttributeID>Day Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="13e89505-bab8-4041-900a-e0ee07ea8be3">
+          <AttributeID>Day Of Trimester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="169e11cf-435d-49ab-931b-b5ce6614f281">
+          <AttributeID>Day Of Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5a81d380-fef7-462a-b145-b46fcafb9988">
+          <AttributeID>Month Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d1b57e6c-f3db-4007-a5e1-6cd8ea36bd9d">
+          <AttributeID>Month Of Trimester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dac308f9-4656-4982-87a8-8764dea298b9">
+          <AttributeID>Trimester Of Year</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="f81c6d10-fc6f-4203-9eee-13dc6ebee5e9">
+          <HierarchyID>Year -  Trimester -  Month -  Date</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="e0d07fc7-ef58-487f-98b7-9fb2e77cc536">
+      <ID>FormaPagamento</ID>
+      <Name>FormaPagamento</Name>
+      <DimensionID>FormaPagamento</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="78780fab-eff4-434b-8f8e-2d2aac8569fd">
+          <AttributeID>New dimension ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0f0162fc-ed64-45fd-b0ec-28629ec39e3c">
+          <AttributeID>Forma</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="40aa117f-ba83-41be-b484-25df35441d45">
-      <ID>Recebimentos</ID>
-      <Name>Recebimentos</Name>
+    <MeasureGroup dwd:design-time-name="866b3e52-d842-4a7c-8656-f844fe646364">
+      <ID>New Measure Group</ID>
+      <Name>factCPCR</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
       <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="5afe5183-b37b-444e-b0e9-44a571a30424">
-          <ID>Valor nominal a receber</ID>
-          <Name>Valor nominal a receber</Name>
-          <Source dwd:design-time-name="284e302e-05a1-49a4-856e-17f60fcf1f52">
+        <Measure dwd:design-time-name="ac42fb71-f384-4f63-8899-12a833d3fdb4">
+          <ID>New Measure</ID>
+          <Name>CPVlrNomParc</Name>
+          <Source dwd:design-time-name="c77cff69-465d-4670-bca2-e36e8dde4c02">
             <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="9510f7bb-8738-4773-86a0-1324de416470">
-              <TableID>Recebimentos</TableID>
-              <ColumnID>Valor_nominal_a_receber</ColumnID>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f2b37cb6-4cc3-4da0-a4a6-2aaf52084221">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CPVlrNomParc</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="303d0818-a03b-4559-970b-7e87e673d6c0">
-          <ID>Valor recebido</ID>
-          <Name>Valor recebido</Name>
-          <Source dwd:design-time-name="e15fb928-c9fa-4c10-9179-e10caf9f4c30">
+        <Measure dwd:design-time-name="ffa09b52-9096-426a-b29b-43bb8c561c1a">
+          <ID>New Measure 1</ID>
+          <Name>CPVlrPgParc</Name>
+          <Source dwd:design-time-name="f9d8b314-7d69-4a73-82b0-5ab8f6be20db">
             <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="b99be7ef-9a20-419e-8b17-832c98ca7766">
-              <TableID>Recebimentos</TableID>
-              <ColumnID>Valor_recebido</ColumnID>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8de146e5-590d-4a7e-92e5-23a59afd8170">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CPVlrPgParc</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="3ac87daf-8605-455d-bea6-e6462d5c07b8">
-          <ID>Encargos recebidos</ID>
-          <Name>Encargos recebidos</Name>
-          <Source dwd:design-time-name="284c4b89-c199-4a87-9e35-e2279149dfaa">
+        <Measure dwd:design-time-name="c478d284-645e-4f92-b1e8-62367e69e477">
+          <ID>New Measure 2</ID>
+          <Name>CPVlrAbParc</Name>
+          <Source dwd:design-time-name="de2b718f-5a69-4fd1-a2e0-4a4ee051b4e2">
             <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="0d6fff09-3ca8-47b9-9ce9-3c01cae66a59">
-              <TableID>Recebimentos</TableID>
-              <ColumnID>Encargos_recebidos</ColumnID>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b232893f-5ee8-435f-9ece-713e6e36ef13">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CPVlrAbParc</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="328fc3a3-31af-4637-b977-ba1a233ecfea">
-          <ID>Valor a receber em aberto</ID>
-          <Name>Valor a receber em aberto</Name>
-          <Source dwd:design-time-name="49f08eae-5b39-44ff-9c9d-0bd964fa74d2">
+        <Measure dwd:design-time-name="8076177e-6e12-4d6a-9584-c0822d837244">
+          <ID>New Measure 3</ID>
+          <Name>CPVlrEncParc</Name>
+          <Source dwd:design-time-name="3c0663b8-efb1-48bb-b365-9e479ab2df8a">
             <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="6c0b00f6-e026-41c9-a765-f0cb92f18cb8">
-              <TableID>Recebimentos</TableID>
-              <ColumnID>Valor_a_receber_em_aberto</ColumnID>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3c46a18d-ee98-4947-8be2-882032a903c8">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CPVlrEncParc</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="e1432479-9af4-42c1-9db1-51c4a320136d">
-          <ID>Valor a receber em atraso</ID>
-          <Name>Valor a receber em atraso</Name>
-          <Source dwd:design-time-name="d7ef724e-3a7d-4c6c-bff5-315c3c89b852">
-            <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="d1e91563-de78-44ba-a44f-2e80a538b8fc">
-              <TableID>Recebimentos</TableID>
-              <ColumnID>Valor_a_receber_em_atraso</ColumnID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="29f46907-e2cc-4ca0-b494-29d5d8743a31">
-          <ID>Parcelas a receber</ID>
-          <Name>Parcelas a receber</Name>
+        <Measure dwd:design-time-name="e70b0d94-815d-4d5f-bb2a-22cb2719ccd6">
+          <ID>New Measure 4</ID>
+          <Name>CPParcCnt</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="804537e5-df91-43ba-adc7-185d354a33a8">
-            <DataType>Single</DataType>
-            <Source xsi:type="RowBinding" dwd:design-time-name="adb4c868-5c73-4e9c-9ad0-f8bb661d0858">
-              <TableID>Recebimentos</TableID>
+          <Source dwd:design-time-name="1f20898a-fbd5-4fb1-a9e5-8f0a9518939a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="RowBinding" dwd:design-time-name="fcc4574e-d791-4111-b17e-c059b911a0e5">
+              <TableID>factCPCR</TableID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="e0c682b6-321e-44c0-b58b-66e4e71c18c2">
-          <ID>Parcelas a receber em aberto</ID>
-          <Name>Parcelas a receber em aberto</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="9e3ad0a0-2916-4191-b067-5ae3f218a5a2">
+        <Measure dwd:design-time-name="266ecbd1-186b-41b4-9bad-9de879eb248b">
+          <ID>New Measure 5</ID>
+          <Name>CRVlrNomParc</Name>
+          <Source dwd:design-time-name="fc0986a4-d1e7-4072-9adf-feb1381046c6">
             <DataType>Single</DataType>
-            <Source xsi:type="RowBinding" dwd:design-time-name="a547337a-4253-4b74-9da1-076290fc7888">
-              <TableID>Recebimentos</TableID>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4cda56f8-39b0-4a5c-912d-4f52127368ea">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CRVlrNomParc</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="44b2514f-92f3-423a-85b4-63529ee22ab2">
-          <ID>Parcelas a receber em atraso</ID>
-          <Name>Parcelas a receber em atraso</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="3a4b23d2-909f-47c1-ae5a-a6e6c38cc79a">
+        <Measure dwd:design-time-name="1db9dfa0-1149-4e30-aae4-fb28ca883491">
+          <ID>New Measure 6</ID>
+          <Name>CRVlrRecParc</Name>
+          <Source dwd:design-time-name="e9505830-a8b9-450a-bfdf-ae6f272838e9">
             <DataType>Single</DataType>
-            <Source xsi:type="RowBinding" dwd:design-time-name="bcf449c4-1ce2-4abd-a9f4-b832fb6a1972">
-              <TableID>Recebimentos</TableID>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a0784f29-4f28-4fd6-84f3-81dffaaac8ba">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CRVlrRecParc</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="28ab7599-9db6-47f4-a214-735fa55ef8c6">
+          <ID>New Measure 7</ID>
+          <Name>CRVlrAbParc</Name>
+          <Source dwd:design-time-name="c9644f51-9d74-49d8-8944-e47d6c280a24">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bf9afe5c-6f4d-438c-b92e-a26cffe8b302">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CRVlrAbParc</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cde9de38-2635-4ff3-8966-c0489e174530">
+          <ID>New Measure 8</ID>
+          <Name>CRVlrEncParc</Name>
+          <Source dwd:design-time-name="b7334487-db48-4934-85af-86778834e6f9">
+            <DataType>Single</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="21a4aa42-0eca-465e-8c6d-43e0b2808644">
+              <TableID>factCPCR</TableID>
+              <ColumnID>CRVlrEncParc</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9178101d-f224-4b33-8241-bb688f6e570b">
+          <ID>New Measure 9</ID>
+          <Name>CRParcCnt</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="931411be-9a25-4960-923b-cc6774f521d8">
+            <DataType>Integer</DataType>
+            <Source xsi:type="RowBinding" dwd:design-time-name="f64c94df-1b53-4bed-ac6b-ea57a9270d7a">
+              <TableID>factCPCR</TableID>
             </Source>
           </Source>
         </Measure>
@@ -304,17 +410,17 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="125e9b44-9238-4d5b-bfe5-9054cbdd650d">
-          <CubeDimensionID>Forma de Pagamento</CubeDimensionID>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="52865396-fb24-4dec-bcbc-c517ed89ab75">
+          <CubeDimensionID>DataEmissao</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="7cccf557-96a3-48dc-8821-0cf233025320">
-              <AttributeID>Forma de Pagamento</AttributeID>
+            <Attribute dwd:design-time-name="98eb85e5-2efe-45c8-b1d3-89f4177e39fb">
+              <AttributeID>Date</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="4cd3a3cf-5894-456e-89ce-a3a499d4bd74">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bb690ee6-aba2-4024-bd8c-a69b991535f0">
-                    <TableID>Recebimentos</TableID>
-                    <ColumnID>FK_Forma_de_Pagamento</ColumnID>
+                <KeyColumn dwd:design-time-name="bc5a20ac-7d61-48cb-835e-aa65f1ca5da0">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4056fdf7-9e3b-4ee3-9c9b-b28504312cab">
+                    <TableID>factCPCR</TableID>
+                    <ColumnID>FK_DataEmissao</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
@@ -322,17 +428,35 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="23f567ed-12e8-4fe7-8756-acabab3ec983">
-          <CubeDimensionID>Condição de Pagamento</CubeDimensionID>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="df4b81d7-3fa4-49b6-b712-d2d025ac531e">
+          <CubeDimensionID>DataVencimento</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="4a2543ce-cd6c-418d-80f6-01e14bc27c78">
-              <AttributeID>Condição de Pagamento</AttributeID>
+            <Attribute dwd:design-time-name="8e919004-5ebd-47a2-8bca-70cb480fb089">
+              <AttributeID>Date</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="f06ec1a1-6cf0-4b60-88ab-2d5490767466">
+                <KeyColumn dwd:design-time-name="3bc095d9-8e90-41eb-9c8c-ba4f323e4d5c">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7eb0c876-e486-4dfb-aaaf-ee8ef5f7ed6f">
+                    <TableID>factCPCR</TableID>
+                    <ColumnID>FK_DataVencimento</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4d81d8a6-debf-4ab9-91d7-32e5b1bcc269">
+          <CubeDimensionID>FormaPagamento</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b5d2cd6b-19cd-452c-90d1-f6d145aaaee8">
+              <AttributeID>New dimension ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d79b63b7-f93e-457d-bf41-29df532ceda9">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="45c99452-0a4d-4d79-a9a3-d53a8d1eaf5d">
-                    <TableID>Recebimentos</TableID>
-                    <ColumnID>FK_Condição_de_Pagamento</ColumnID>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="94566887-9f84-4ebc-a042-e2af7e193aef">
+                    <TableID>factCPCR</TableID>
+                    <ColumnID>FK_FormaPagamento</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
@@ -341,183 +465,21 @@
           </Attributes>
         </Dimension>
       </Dimensions>
-      <Partitions>
-        <Partition dwd:design-time-name="01109b80-00cc-46f7-bb57-be8e27c96407">
-          <ID>Recebimentos</ID>
-          <Name>Recebimentos</Name>
-          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-          <State>Unprocessed</State>
-          <Source xsi:type="TableBinding" dwd:design-time-name="065be8fc-fec7-4cf9-abcf-b8d838dc240e">
-            <DataSourceID>Flex ERP Financeiro DW</DataSourceID>
-            <DbSchemaName>dbo</DbSchemaName>
-            <DbTableName>Recebimentos</DbTableName>
-          </Source>
-          <StorageMode>Molap</StorageMode>
-          <CurrentStorageMode>Molap</CurrentStorageMode>
-          <ProcessingMode>Regular</ProcessingMode>
-        </Partition>
-      </Partitions>
-    </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="369c0208-6104-4e0d-b373-f4287e3f1692">
-      <ID>Pagamentos</ID>
-      <Name>Pagamentos</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Measures>
-        <Measure dwd:design-time-name="c720df84-5b78-4c04-ae6d-72fd890de0a1">
-          <ID>Valor nominal a pagar</ID>
-          <Name>Valor nominal a pagar</Name>
-          <Source dwd:design-time-name="9aafb68f-0549-4e8e-bb6c-3c9e289bd4de">
-            <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="8d6e7c4c-a1da-4040-87c2-6538c0688cb7">
-              <TableID>Pagamentos</TableID>
-              <ColumnID>Valor_nominal_a_pagar</ColumnID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="930fa02a-0d2f-46cd-9b33-cda11d8328f7">
-          <ID>Valor pago</ID>
-          <Name>Valor pago</Name>
-          <Source dwd:design-time-name="90a9a2e1-dea5-4d3d-baa6-1fc2ccd07127">
-            <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="ab0c4ac5-24d8-473e-9023-7102b3825640">
-              <TableID>Pagamentos</TableID>
-              <ColumnID>Valor_pago</ColumnID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="fe19f819-9a34-4451-ae34-63d92412dee0">
-          <ID>Encargos pagos</ID>
-          <Name>Encargos pagos</Name>
-          <Source dwd:design-time-name="19622fa6-c21c-4ebc-a7e3-3a49aff535c0">
-            <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="11d62b52-b5ab-487c-872c-d491c6594610">
-              <TableID>Pagamentos</TableID>
-              <ColumnID>Encargos_pagos</ColumnID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="fcdc2f65-f449-4c42-ba4d-ef6795c85939">
-          <ID>Valor a pagar em aberto</ID>
-          <Name>Valor a pagar em aberto</Name>
-          <Source dwd:design-time-name="8594b88e-4399-43c1-8938-ca80dd0ce789">
-            <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="23246034-d226-4325-a674-e2e04cdf5448">
-              <TableID>Pagamentos</TableID>
-              <ColumnID>Valor_a_pagar_em_aberto</ColumnID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="9622fe41-b9c2-4990-b5b3-0f2d86f9b5e4">
-          <ID>Valor a pagar em atraso</ID>
-          <Name>Valor a pagar em atraso</Name>
-          <Source dwd:design-time-name="b1e63116-fa03-4c5e-90d6-0dd4f64056b7">
-            <DataType>Single</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="50050198-8ef9-4f4d-9896-ea02c41fb42a">
-              <TableID>Pagamentos</TableID>
-              <ColumnID>Valor_a_pagar_em_atraso</ColumnID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="5e2d4d7d-26b9-4d97-98d1-eec3d2033800">
-          <ID>Parcelas a pagar</ID>
-          <Name>Parcelas a pagar</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="e7455043-f1ae-4c52-a7e2-fd23d219c2c0">
-            <DataType>Single</DataType>
-            <Source xsi:type="RowBinding" dwd:design-time-name="482dd97d-34cd-4e4d-8be0-853243342e80">
-              <TableID>Pagamentos</TableID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="accf1109-ca87-4f73-a114-5bdf11b9deb9">
-          <ID>Parcelas a pagar em aberto</ID>
-          <Name>Parcelas a pagar em aberto</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="ce135d70-2953-4eec-a7f3-8ffb3512ea76">
-            <DataType>Single</DataType>
-            <Source xsi:type="RowBinding" dwd:design-time-name="a6206b35-9427-4d82-bc9c-d35214a1f4e4">
-              <TableID>Pagamentos</TableID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="139c8584-8e59-42a0-910a-ad2b6fc8bbcd">
-          <ID>Parcelas a pagar em atraso</ID>
-          <Name>Parcelas a pagar em atraso</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="6c17e8aa-6fef-49fd-bcb6-3d9cc9bb0a39">
-            <DataType>Single</DataType>
-            <Source xsi:type="RowBinding" dwd:design-time-name="b03b59d5-d65f-4be5-9c7a-4b488f5f574d">
-              <TableID>Pagamentos</TableID>
-            </Source>
-          </Source>
-        </Measure>
-      </Measures>
-      <StorageMode>Molap</StorageMode>
-      <ProcessingMode>Regular</ProcessingMode>
-      <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0f5af701-f503-4024-b6e6-5a8291ddebe8">
-          <CubeDimensionID>Forma de Pagamento</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="e822a4b5-5e66-4779-adf0-25b2460ea76d">
-              <AttributeID>Forma de Pagamento</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="85ae4978-c1c6-431b-afcd-a40a9fc3c4a4">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="aa7ecfc0-bf4c-4fc0-929e-425130cb04ba">
-                    <TableID>Pagamentos</TableID>
-                    <ColumnID>FK_Forma_de_Pagamento</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0f45094e-4a43-4a83-a66e-c7bbe73641d8">
-          <CubeDimensionID>Condição de Pagamento</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="b11e4667-cd6a-4776-bfe7-b4a5cc0f8552">
-              <AttributeID>Condição de Pagamento</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="e2c782a1-2442-4e9d-98d1-a0868caefa1a">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="617a992c-d800-4970-8687-83c0a0390fca">
-                    <TableID>Pagamentos</TableID>
-                    <ColumnID>FK_Condição_de_Pagamento</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-      </Dimensions>
-      <Partitions>
-        <Partition dwd:design-time-name="6ff516e9-4800-4841-860b-fc75bc222cc5">
-          <ID>Pagamentos</ID>
-          <Name>Pagamentos</Name>
-          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-          <State>Unprocessed</State>
-          <Source xsi:type="TableBinding" dwd:design-time-name="d781cf6b-a9a0-4d97-92eb-43ffed7aa51f">
-            <DataSourceID>Flex ERP Financeiro DW</DataSourceID>
-            <DbSchemaName>dbo</DbSchemaName>
-            <DbTableName>Pagamentos</DbTableName>
-          </Source>
-          <StorageMode>Molap</StorageMode>
-          <CurrentStorageMode>Molap</CurrentStorageMode>
-          <ProcessingMode>Regular</ProcessingMode>
-        </Partition>
-      </Partitions>
+      <Partitions />
+      <ProactiveCaching dwd:design-time-name="d8d21c0d-40d1-47db-9db1-e809c25cc21c">
+        <SilenceInterval>PT10S</SilenceInterval>
+        <Latency>PT4H</Latency>
+        <SilenceOverrideInterval>PT10M</SilenceOverrideInterval>
+        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+        <Enabled>true</Enabled>
+        <AggregationStorage>MolapOnly</AggregationStorage>
+        <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="e0e19954-19ff-477f-bd69-3cfb459302ba">
+          <NotificationTechnique>Server</NotificationTechnique>
+        </Source>
+      </ProactiveCaching>
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="ae4b539d-08cc-40d6-bb48-be04013b30aa">
+  <Source dwd:design-time-name="17b89d99-cbc6-4292-9236-15172204f1d7">
     <DataSourceViewID>FlexERP Financeiro</DataSourceViewID>
   </Source>
 </Cube>

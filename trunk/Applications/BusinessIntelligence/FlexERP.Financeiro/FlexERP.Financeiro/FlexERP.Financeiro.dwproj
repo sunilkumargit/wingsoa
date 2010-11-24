@@ -20,12 +20,16 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Forma de Pagamento.dim</Name>
-      <FullPath>Forma de Pagamento.dim</FullPath>
+      <Name>DataEmissao.dim</Name>
+      <FullPath>DataEmissao.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Condição de Pagamento.dim</Name>
-      <FullPath>Condição de Pagamento.dim</FullPath>
+      <Name>DataVencimento.dim</Name>
+      <FullPath>DataVencimento.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>FormaPagamento.dim</Name>
+      <FullPath>FormaPagamento.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -65,6 +69,8 @@
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
+        <RemovePasswords>false</RemovePasswords>
+        <DeploymentServerEdition>Enterprise</DeploymentServerEdition>
       </Options>
     </Configuration>
   </Configurations>

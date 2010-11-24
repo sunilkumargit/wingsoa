@@ -1,0 +1,75 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>FlexERP Financeiro</Database>
+    <Server>localhost</Server>
+    <ConnectionString>DataSource=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>9M5Z8+lHMsyNeszqgXFo6w==23/11/2010 23:47:1817/11/2010 15:24:49</TimeStamp>
+        <ID>
+          <String>Flex ERP Financeiro DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>1/Sq+5Nh6vXp+OHgMswo0g==23/11/2010 23:48:3117/11/2010 15:38:21</TimeStamp>
+        <ID>
+          <String>FlexERP Financeiro</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>wSjE7jr5eiw+UEvqym5xxA==23/11/2010 23:48:3823/11/2010 21:47:57</TimeStamp>
+        <ID>
+          <String>DataEmissao</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>DgkQCiK8YcB7HptmmHBWcw==23/11/2010 23:48:3823/11/2010 21:56:01</TimeStamp>
+        <ID>
+          <String>DataVencimento</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>BxDBkkj+Ddd9sdAD8rYSpg==23/11/2010 23:48:3823/11/2010 21:56:54</TimeStamp>
+        <ID>
+          <String>FormaPagamento</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>93b2Zk5xdjX865lAXo82Eg==23/11/2010 23:48:3923/11/2010 21:46:457rbg6LKt58EJzG+tS2eYvA==23/11/2010 23:48:3923/11/2010 21:46:45</TimeStamp>
+        <ID>
+          <String>FlexERP Financeiro</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>riOIh+vsjQf1Amez+3c2vw==23/11/2010 23:48:3117/11/2010 15:18:48</TimeStamp>
+      <ID>
+        <String>FlexERP Financeiro</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2010-11-24T01:48:52.493333Z</LastDeployed>
+</DeploymentSnapshot>
