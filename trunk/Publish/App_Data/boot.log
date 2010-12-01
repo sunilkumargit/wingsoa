@@ -539,3 +539,56 @@
 24/11/2010 13:39:14: default   |Debug    |None  : CREATING Build Key[Flex.BusinessIntelligence.Server.Core.BIServerCoreModule, null]
 24/11/2010 13:39:14: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.SoaServicesManager.SoaServicesManager, null]
 24/11/2010 13:39:14: default   |Info     |None  : Server started
+
+-------------------------------------------------------------------------------------
+01/12/2010 16:18:07: Server starting
+01/12/2010 16:18:07: Registering routes
+01/12/2010 16:18:07: Configuring server settings
+01/12/2010 16:18:07: Preparing server assembly store
+01/12/2010 16:18:07: Consolidating store
+01/12/2010 16:18:07: Server store consolidated succesfully
+01/12/2010 16:18:07: Creating bootstrapper
+01/12/2010 16:18:07: Loading bootstrapper assembly: Wing.Server.Bootstrap
+01/12/2010 16:18:07: Loading bootstrapper type: Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap
+01/12/2010 16:18:07: Creating bootstrapper instance from type Wing.Server.Bootstrap.Bootstrapper, Wing.Server.Bootstrap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+01/12/2010 16:18:07: Bootstrapper instance created successfully
+01/12/2010 16:18:07: Running bootstrapper
+01/12/2010 16:18:07: default   |Info     |None  : Bootstrapper starting...
+01/12/2010 16:18:07: default   |Debug    |None  : Creating services container
+01/12/2010 16:18:07: default   |Debug    |None  : Setting service locator provider
+01/12/2010 16:18:07: default   |Debug    |None  : REG INSTANCE UnityServiceLocator
+01/12/2010 16:18:07: default   |Debug    |None  : REG INSTANCE ServerBootLoggerAdapter
+01/12/2010 16:18:07: default   |Debug    |None  : Creating server assembly store resolver
+01/12/2010 16:18:07: default   |Debug    |None  : REG INSTANCE StoreAssemblyResolver
+01/12/2010 16:18:07: default   |Debug    |None  : REG INSTANCE BootstrapSettings
+01/12/2010 16:18:07: default   |Debug    |None  : REG INSTANCE DirectoryModuleCatalog
+01/12/2010 16:18:07: default   |Debug    |None  : REG TYPE ModuleInitializer
+01/12/2010 16:18:07: default   |Debug    |None  : REG TYPE ModuleManager
+01/12/2010 16:18:07: default   |Debug    |None  : REG TYPE EventAggregator
+01/12/2010 16:18:07: default   |Debug    |None  : REG TYPE MvcControllerTypeLocator
+01/12/2010 16:18:07: default   |Info     |None  : Loading modules
+01/12/2010 16:18:07: default   |Debug    |None  : CREATING Build Key[Wing.Modularity.ModuleManager, null]
+01/12/2010 16:18:07: default   |Debug    |None  : CREATING Build Key[Wing.Modularity.ModuleInitializer, null]
+01/12/2010 16:18:11: default   |Debug    |High  : Initializing module ServerStorage, Category: Core, Priority: Higher, SortKey: 11004, Order: 1
+01/12/2010 16:18:11: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerStorage.ServerStorageModule, null]
+01/12/2010 16:18:11: default   |Debug    |None  : REG INSTANCE SqlCeServerStorageService
+01/12/2010 16:18:16: default   |Debug    |High  : Initializing module ServerConfigManager, Category: Core, Priority: Higher, SortKey: 11003, Order: 2
+01/12/2010 16:18:16: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerConfigManager.ServerConfigManagerModule, null]
+01/12/2010 16:18:16: default   |Debug    |None  : REG TYPE ServerEntityStoreSettingsManager
+01/12/2010 16:18:16: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.ServerConfigManager.ServerEntityStoreSettingsManager, null]
+01/12/2010 16:18:17: default   |Debug    |High  : Initializing module IdentityManager, Category: Core, Priority: High, SortKey: 12002, Order: 3
+01/12/2010 16:18:17: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.IdentityManagament.IdentityManagamentModule, null]
+01/12/2010 16:18:17: default   |Debug    |High  : Initializing module SoaServicesManager, Category: Core, Priority: High, SortKey: 12005, Order: 4
+01/12/2010 16:18:17: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.SoaServicesManager.SoaServicesManagerModule, null]
+01/12/2010 16:18:17: default   |Info     |Medium: Soa connections base uri: http://127.0.0.1/Wing/WngServices/
+01/12/2010 16:18:17: default   |Debug    |None  : REG INSTANCE SoaServiceHostBuilder
+01/12/2010 16:18:17: default   |Debug    |None  : REG TYPE SoaServicesManager
+01/12/2010 16:18:17: default   |Debug    |High  : Initializing module WingClientSupport, Category: Core, Priority: Lower, SortKey: 15006, Order: 5
+01/12/2010 16:18:17: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.WingClientSupport.WingClientSupportModule, null]
+01/12/2010 16:18:17: default   |Debug    |None  : REG INSTANCE FileSystemAssemblyStore
+01/12/2010 16:18:21: default   |Debug    |None  : REG INSTANCE AssemblyInfoCollection
+01/12/2010 16:18:21: default   |Debug    |None  : CREATING Build Key[Wing.Server.Bootstrap.MvcControllerTypeLocator, null]
+01/12/2010 16:18:21: default   |Debug    |High  : Initializing module BIServerCore, Category: Init, Priority: High, SortKey: 22001, Order: 6
+01/12/2010 16:18:21: default   |Debug    |None  : CREATING Build Key[Flex.BusinessIntelligence.Server.Core.BIServerCoreModule, null]
+01/12/2010 16:18:21: default   |Debug    |None  : CREATING Build Key[Wing.Server.Modules.SoaServicesManager.SoaServicesManager, null]
+01/12/2010 16:18:23: default   |Info     |None  : Server started
