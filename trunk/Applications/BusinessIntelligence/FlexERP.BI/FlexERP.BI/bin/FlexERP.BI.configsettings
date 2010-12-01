@@ -24,6 +24,15 @@
       <Dimension>
         <ID>ClienteDim</ID>
       </Dimension>
+      <Dimension>
+        <ID>ClassificaoFinanDim</ID>
+      </Dimension>
+      <Dimension>
+        <ID>TituloCPDim</ID>
+      </Dimension>
+      <Dimension>
+        <ID>TituloCRDim</ID>
+      </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
@@ -34,6 +43,30 @@
             <Partitions>
               <Partition>
                 <ID>FinCP</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>New Measure Group</ID>
+            <Partitions>
+              <Partition>
+                <ID>New Measure Group</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>New Measure Group 1</ID>
+            <Partitions>
+              <Partition>
+                <ID>New Measure Group</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>New Measure Group 2</ID>
+            <Partitions>
+              <Partition>
+                <ID>New Measure Group</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

@@ -35,6 +35,18 @@
       <Name>ClienteDim.dim</Name>
       <FullPath>ClienteDim.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>ClassificaoFinanDim.dim</Name>
+      <FullPath>ClassificaoFinanDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TituloCPDim.dim</Name>
+      <FullPath>TituloCPDim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TituloCRDim.dim</Name>
+      <FullPath>TituloCRDim.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
