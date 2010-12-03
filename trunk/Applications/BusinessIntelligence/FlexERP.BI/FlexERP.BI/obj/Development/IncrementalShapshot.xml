@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -26,63 +26,63 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>i9wMBZjjGECQ1zW9JScfGg==01/12/2010 15:05:4024/11/2010 10:27:53</TimeStamp>
+        <TimeStamp>MjFNVu08TUeVa6JoMagHiw==02/12/2010 22:35:2324/11/2010 10:27:53</TimeStamp>
         <ID>
           <String>FlexERP BI</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>n4k9VmdNz52aB0kUtlM+Aw==01/12/2010 15:05:5524/11/2010 10:25:50</TimeStamp>
+        <TimeStamp>T7fsfxsgkHNJURrPjgebtQ==02/12/2010 13:23:1024/11/2010 10:25:50</TimeStamp>
         <ID>
           <String>Time</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>7beG2cFneXgMLP3+EShnxA==01/12/2010 15:05:5524/11/2010 10:39:44</TimeStamp>
+        <TimeStamp>El7V8/k475gQbo8hsZrhCA==02/12/2010 13:23:1024/11/2010 10:39:44</TimeStamp>
         <ID>
           <String>FormaPagtoDim</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>mM9/GKZ92Oz8ubp0QZ6Frg==01/12/2010 15:05:5524/11/2010 12:19:41</TimeStamp>
+        <TimeStamp>hdiTZ10OxfEC5KPYXzn9Cw==02/12/2010 13:23:1024/11/2010 12:19:41</TimeStamp>
         <ID>
           <String>EmpresaDim</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ql+YdrjXUFdMxG0dQkLvyw==01/12/2010 15:05:5524/11/2010 12:30:44</TimeStamp>
+        <TimeStamp>33jvnyqSO1SI0g/MS1UJyQ==02/12/2010 22:37:0124/11/2010 12:30:44</TimeStamp>
         <ID>
           <String>ClienteDim</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>z4T22MizANSJ/0qESI6NBA==01/12/2010 15:05:5501/12/2010 14:42:01</TimeStamp>
+        <TimeStamp>NjJYWgmU/ATT+VeaJhjexg==02/12/2010 21:58:5201/12/2010 14:42:01</TimeStamp>
         <ID>
           <String>ClassificaoFinanDim</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>BeJd51dFaPdtgkQzur009Q==01/12/2010 15:05:5501/12/2010 15:01:30</TimeStamp>
+        <TimeStamp>+dADC4wDmcgcAIpKhS574g==02/12/2010 21:57:3601/12/2010 15:01:30</TimeStamp>
         <ID>
           <String>TituloCPDim</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>xCSEVI2vKd4Wg8gOdWEZMw==01/12/2010 15:05:5501/12/2010 15:02:14</TimeStamp>
+        <TimeStamp>5arohDw2BwSH+VqJrd3FyQ==02/12/2010 13:23:1001/12/2010 15:02:14</TimeStamp>
         <ID>
           <String>TituloCRDim</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>pbXe2kWiXAlba6ECDwAYDQ==01/12/2010 15:05:5724/11/2010 10:25:50OZb0yykBn8xZfT6RZmFs7w==01/12/2010 15:05:5624/11/2010 10:25:50</TimeStamp>
+        <TimeStamp>ox6rPrZRzC8qZoRBky28vg==02/12/2010 22:37:0124/11/2010 10:25:50lPpHgpecxc2a96dbzMSW1g==02/12/2010 13:23:1524/11/2010 10:25:50</TimeStamp>
         <ID>
           <String>New cube</String>
         </ID>
@@ -90,7 +90,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>SOXfBdfD94tJjzd6FtzdZA==01/12/2010 15:05:4124/11/2010 10:15:44</TimeStamp>
+      <TimeStamp>SOXfBdfD94tJjzd6FtzdZA==02/12/2010 13:22:0624/11/2010 10:15:44</TimeStamp>
       <ID>
         <String>FlexERP BI</String>
       </ID>
@@ -99,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2010-12-01T18:20:11.203333Z</LastDeployed>
+  <LastDeployed>2010-12-03T00:38:47.366667Z</LastDeployed>
 </DeploymentSnapshot>

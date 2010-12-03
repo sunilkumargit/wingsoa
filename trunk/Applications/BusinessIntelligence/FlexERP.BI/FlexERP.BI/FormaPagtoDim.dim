@@ -57,39 +57,39 @@
   </Annotations>
   <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="be4f744f-31de-40a5-b0c4-45e9959de86c">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c0507096-4fb0-4fd9-8168-b47c95ea04a2">
     <DataSourceViewID>FlexERP BI</DataSourceViewID>
   </Source>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="973d573e-29e4-48b8-9c5e-8bc9c9f2df8c">
+    <Attribute dwd:design-time-name="ce9704cf-9538-4373-a0cd-78ba3ea6534c">
       <ID>FormaPagtoDim ID</ID>
       <Name>FormaPagto</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="744592f8-2d1b-4aa3-8309-f9d4d26fc2d8">
+        <KeyColumn dwd:design-time-name="92470a95-1b6c-42c3-b2ec-5ce44e1b0794">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6ce1a748-ffef-40ac-8eb9-faa27acc0563">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="aa2dc60f-f07a-4441-a7a9-86f93edf2425">
             <TableID>FormaPagtoDim</TableID>
             <ColumnID>FormaPagto</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="8e6f9c11-3e1f-4723-830e-c063ea651795">
+        <AttributeRelationship dwd:design-time-name="e9067c40-0603-48da-afb5-9ea9c0035d51">
           <AttributeID>FormaPagamento</AttributeID>
           <Name>FormaPagamento</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="590df51a-642a-466f-b539-a3fa3cbb0496">
+    <Attribute dwd:design-time-name="83116f19-a5c2-4bb7-aa8a-e2628e1c655c">
       <ID>FormaPagamento</ID>
       <Name>FormaPagamento</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f6a4290b-34f6-407a-8483-ca08a8234325">
+        <KeyColumn dwd:design-time-name="7dae234d-ef44-4ebf-8685-e5f82f1397db">
           <DataType>WChar</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b5d02cc5-8bb6-43ed-916d-230a6071378b">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0faa176-5297-4ce5-aab7-ac48dab2ab7a">
             <TableID>FormaPagtoDim</TableID>
             <ColumnID>FormaPagamento</ColumnID>
           </Source>

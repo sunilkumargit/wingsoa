@@ -68,39 +68,39 @@
   </Annotations>
   <LastProcessed>0001-01-01T02:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="bd7b803d-7442-4200-a068-d9b4e289840d">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="ac5f51ad-335d-4f64-a7e4-95c538975e3d">
     <DataSourceViewID>FlexERP BI</DataSourceViewID>
   </Source>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="4bdea628-cea2-469e-b8c5-c9b9672f7c3c">
+    <Attribute dwd:design-time-name="dec6da0c-7663-4260-9f30-9144433ba54c">
       <ID>New dimension ID</ID>
       <Name>Empresa</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="fb2f26b6-14af-418a-8023-6c55efa0d8bb">
+        <KeyColumn dwd:design-time-name="107acb03-2bf7-4b66-9893-95dcbfabc99f">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="94acb19f-c55b-49d1-bb45-f9091dd4bce8">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9377aeb3-fd4c-440b-b3b6-6bef5313c680">
             <TableID>EmpresaDim</TableID>
             <ColumnID>Empresa</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="b152f594-aca8-4503-b54e-d39857c510b7">
+        <AttributeRelationship dwd:design-time-name="3c130fba-5393-4b3b-a638-4f0eb9a84515">
           <AttributeID>Nome</AttributeID>
           <Name>Nome</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="ab5d76e3-4ed7-476a-9228-67f068b0082a">
+    <Attribute dwd:design-time-name="825dfd0a-6f84-44dd-a116-0438f544e889">
       <ID>Nome</ID>
       <Name>Nome</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="1fb26c21-7342-49f1-9f0b-2426278a5b8a">
+        <KeyColumn dwd:design-time-name="2c2a1b57-3286-48c7-9aa4-e607aa9270cd">
           <DataType>WChar</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="ce7d1024-1d48-4825-a3a5-1c434db7fffa">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="12902e6c-77e3-470a-ba16-d36ef05e2bc9">
             <TableID>EmpresaDim</TableID>
             <ColumnID>Nome</ColumnID>
           </Source>

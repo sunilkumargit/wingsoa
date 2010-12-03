@@ -54,22 +54,6 @@
               </Partition>
             </Partitions>
           </MeasureGroup>
-          <MeasureGroup>
-            <ID>New Measure Group 1</ID>
-            <Partitions>
-              <Partition>
-                <ID>New Measure Group</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-          <MeasureGroup>
-            <ID>New Measure Group 2</ID>
-            <Partitions>
-              <Partition>
-                <ID>New Measure Group</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
         </MeasureGroups>
       </Cube>
     </Cubes>
