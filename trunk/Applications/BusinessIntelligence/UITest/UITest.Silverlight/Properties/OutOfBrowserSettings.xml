@@ -1,7 +1,0 @@
-<OutOfBrowserSettings ShortName="Silverlight Application" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
-  <OutOfBrowserSettings.Blurb>kjljklk</OutOfBrowserSettings.Blurb>
-  <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="Application" />
-  </OutOfBrowserSettings.WindowSettings>
-  <OutOfBrowserSettings.Icons />
-</OutOfBrowserSettings>
