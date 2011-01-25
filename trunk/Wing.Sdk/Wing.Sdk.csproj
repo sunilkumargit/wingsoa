@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FDB44E9-A1B1-4705-848B-998B9C9F58F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wing</RootNamespace>
+    <AssemblyName>Wing.Sdk</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackgroundThreadPool.cs" />
+    <Compile Include="Bootstrap\IBootstrapper.cs" />
+    <Compile Include="EntityStore\IEntityStoreManager.cs" />
+    <Compile Include="IPathMapper.cs" />
+    <Compile Include="Bootstrap\IBootLogger.cs" />
+    <Compile Include="Logging\ILoggerFactory.cs" />
+    <Compile Include="Logging\ILogManager.cs" />
+    <Compile Include="Mvc\Controls\Binding.cs" />
+    <Compile Include="Mvc\Controls\BindingException.cs" />
+    <Compile Include="Mvc\Controls\BrTag.cs" />
+    <Compile Include="Mvc\Controls\CheckBoxControl.cs" />
+    <Compile Include="Mvc\Controls\ColSpanBehavior.cs" />
+    <Compile Include="Mvc\Controls\ContainerControl.cs" />
+    <Compile Include="Mvc\Controls\ContentControl.cs" />
+    <Compile Include="Mvc\Controls\ContentPresenterControl.cs" />
+    <Compile Include="Mvc\Controls\ControlFactory.cs" />
+    <Compile Include="Mvc\Controls\ControlProperty.cs" />
+    <Compile Include="Mvc\Controls\ControlPropertyApplyResult.cs" />
+    <Compile Include="Mvc\Controls\ControlPropertyChangedCallback.cs" />
+    <Compile Include="Mvc\Controls\ControlPropertyChangedEventArgs.cs" />
+    <Compile Include="Mvc\Controls\ControlPropertyMetadata.cs" />
+    <Compile Include="Mvc\Controls\ControlPropertySlot.cs" />
+    <Compile Include="Mvc\Controls\ControlPropertyTemplateBinding.cs" />
+    <Compile Include="Mvc\Controls\CssBorderStyle.cs" />
+    <Compile Include="Mvc\Controls\CssClear.cs" />
+    <Compile Include="Mvc\Controls\CssConfig.cs" />
+    <Compile Include="Mvc\Controls\CssCursor.cs" />
+    <Compile Include="Mvc\Controls\CssDisplay.cs" />
+    <Compile Include="Mvc\Controls\CssEnumPropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\CssFloat.cs" />
+    <Compile Include="Mvc\Controls\CssFontStyle.cs" />
+    <Compile Include="Mvc\Controls\CssFontWeight.cs" />
+    <Compile Include="Mvc\Controls\CssOverflow.cs" />
+    <Compile Include="Mvc\Controls\CssPosition.cs" />
+    <Compile Include="Mvc\Controls\CssProperty.cs" />
+    <Compile Include="Mvc\Controls\CssPropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\CssTextDecoration.cs" />
+    <Compile Include="Mvc\Controls\CssUnit.cs" />
+    <Compile Include="Mvc\Controls\CssWhiteSpace.cs" />
+    <Compile Include="Mvc\Controls\DataListControl.cs" />
+    <Compile Include="Mvc\Controls\DataTableColumn.cs" />
+    <Compile Include="Mvc\Controls\DataTableControl.cs" />
+    <Compile Include="Mvc\Controls\DelegateControlPropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\EmbedScript.cs" />
+    <Compile Include="Mvc\Controls\EmbedStyle.cs" />
+    <Compile Include="Mvc\Controls\ExtensionMethods.cs" />
+    <Compile Include="Mvc\Controls\ExtensionStage.cs" />
+    <Compile Include="Mvc\Controls\FormControl.cs" />
+    <Compile Include="Mvc\Controls\HiddenField.cs" />
+    <Compile Include="Mvc\Controls\HorizontalAlignment.cs" />
+    <Compile Include="Mvc\Controls\Html.cs" />
+    <Compile Include="Mvc\Controls\HtmlAttr.cs" />
+    <Compile Include="Mvc\Controls\HtmlAttributeCollection.cs" />
+    <Compile Include="Mvc\Controls\HtmlAttributeItem.cs" />
+    <Compile Include="Mvc\Controls\HtmlAttributePropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\HtmlBooleanAttributePropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\HtmlControl.cs" />
+    <Compile Include="Mvc\Controls\HtmlControlCollection.cs" />
+    <Compile Include="Mvc\Controls\HtmlControlDelegate.cs" />
+    <Compile Include="Mvc\Controls\HtmlCustomAttributePropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\HtmlFormMethod.cs" />
+    <Compile Include="Mvc\Controls\HtmlObject.cs" />
+    <Compile Include="Mvc\Controls\HtmlStyleCollection.cs" />
+    <Compile Include="Mvc\Controls\HtmlStyleItem.cs" />
+    <Compile Include="Mvc\Controls\HtmlTag.cs" />
+    <Compile Include="Mvc\Controls\HtmlTagControl.cs" />
+    <Compile Include="Mvc\Controls\HyperLinkHrefPropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\IChildrenCollectionProvider.cs" />
+    <Compile Include="Mvc\Controls\IControlBuildExtension.cs" />
+    <Compile Include="Mvc\Controls\IControlInstanceAdapter.cs" />
+    <Compile Include="Mvc\Controls\IControlPropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\IExtensible.cs" />
+    <Compile Include="Mvc\Controls\IHtmlControlCollection.cs" />
+    <Compile Include="Mvc\Controls\ImageControl.cs" />
+    <Compile Include="Mvc\Controls\IValuePropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\LabelControl.cs" />
+    <Compile Include="Mvc\Controls\Link.cs" />
+    <Compile Include="Mvc\Controls\MvcLink.cs" />
+    <Compile Include="Mvc\Controls\Base\CheckControlBase.cs" />
+    <Compile Include="Mvc\Controls\Base\ContainerControlBase.cs" />
+    <Compile Include="Mvc\Controls\Base\EmbedFileContentBase.cs" />
+    <Compile Include="Mvc\Controls\Base\IFormField.cs" />
+    <Compile Include="Mvc\Controls\Base\IListItemContainer.cs" />
+    <Compile Include="Mvc\Controls\Base\InputControlBase.cs" />
+    <Compile Include="Mvc\Controls\Base\InputValueControlBase.cs" />
+    <Compile Include="Mvc\Controls\Base\ListControlBase.cs" />
+    <Compile Include="Mvc\Controls\Base\ListItemBase.cs" />
+    <Compile Include="Mvc\Controls\Base\TableCellBase.cs" />
+    <Compile Include="Mvc\Controls\Base\TableControlBase.cs" />
+    <Compile Include="Mvc\Controls\Base\TableRowBase.cs" />
+    <Compile Include="Mvc\Controls\PanelControl.cs" />
+    <Compile Include="Mvc\Controls\RadioControl.cs" />
+    <Compile Include="Mvc\Controls\RenderContext.cs" />
+    <Compile Include="Mvc\Controls\RenderOutputWriter.cs" />
+    <Compile Include="Mvc\Controls\ScriptRef.cs" />
+    <Compile Include="Mvc\Controls\SelectListControl.cs" />
+    <Compile Include="Mvc\Controls\SelectOption.cs" />
+    <Compile Include="Mvc\Controls\SelectOptionGroup.cs" />
+    <Compile Include="Mvc\Controls\StyleLink.cs" />
+    <Compile Include="Mvc\Controls\StyleLinkCollection.cs" />
+    <Compile Include="Mvc\Controls\TableCell.cs" />
+    <Compile Include="Mvc\Controls\TableControl.cs" />
+    <Compile Include="Mvc\Controls\TableHeaderCell.cs" />
+    <Compile Include="Mvc\Controls\TableHeaderRow.cs" />
+    <Compile Include="Mvc\Controls\TableRow.cs" />
+    <Compile Include="Mvc\Controls\TemplatePartAttribute.cs" />
+    <Compile Include="Mvc\Controls\TextAreaControl.cs" />
+    <Compile Include="Mvc\Controls\TextBlock.cs" />
+    <Compile Include="Mvc\Controls\TextBoxControl.cs" />
+    <Compile Include="Mvc\Controls\TextContentApplier.cs" />
+    <Compile Include="Mvc\Controls\ThickessCssPropertyApplier.cs" />
+    <Compile Include="Mvc\Controls\Thickness.cs" />
+    <Compile Include="Mvc\Controls\TypedControlDelegate.cs" />
+    <Compile Include="Mvc\Controls\UListControl.cs" />
+    <Compile Include="Mvc\Controls\UListItem.cs" />
+    <Compile Include="Mvc\Controls\Utils.cs" />
+    <Compile Include="Mvc\Controls\VerticalAlignment.cs" />
+    <Compile Include="Mvc\Controls\Visibility.cs" />
+    <Compile Include="CustomValueProvider.cs" />
+    <Compile Include="EntityStore\ComparisonType.cs" />
+    <Compile Include="EntityStore\DefaultStoreFilter.cs" />
+    <Compile Include="EntityStore\DefaultStoreOrder.cs" />
+    <Compile Include="EntityStore\IEntityStore.cs" />
+    <Compile Include="EntityStore\IEntityStoreFilter.cs" />
+    <Compile Include="EntityStore\IEntityStoreOrder.cs" />
+    <Compile Include="EntityStore\IEntityStoreQuery.cs" />
+    <Compile Include="EntityStore\PersistentMemberAttribute.cs" />
+    <Compile Include="EntityStore\StoreEntity.cs" />
+    <Compile Include="Events\EventBase.cs" />
+    <Compile Include="Events\IDelegateReference.cs" />
+    <Compile Include="Events\IEventAggregator.cs" />
+    <Compile Include="Events\IEventSubscription.cs" />
+    <Compile Include="Events\SubscriptionToken.cs" />
+    <Compile Include="CustomFormatter.cs" />
+    <Compile Include="Formatters.cs" />
+    <Compile Include="IValueFormater.cs" />
+    <Compile Include="IValueProvider.cs" />
+    <Compile Include="ListDictionary.cs" />
+    <Compile Include="Logging\Category.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Priority.cs" />
+    <Compile Include="Modularity\IModule.cs" />
+    <Compile Include="Modularity\IModuleCatalog.cs" />
+    <Compile Include="Modularity\IModuleCatalogItem.cs" />
+    <Compile Include="Modularity\IModuleInfoBuilder.cs" />
+    <Compile Include="Modularity\IModuleInitializer.cs" />
+    <Compile Include="Modularity\IModuleManager.cs" />
+    <Compile Include="Modularity\IModuleTypeLoader.cs" />
+    <Compile Include="Modularity\ModuleAttribute.cs" />
+    <Compile Include="Modularity\ModuleBase.cs" />
+    <Compile Include="Modularity\ModuleCategory.cs" />
+    <Compile Include="Modularity\ModuleCategoryAttribute.cs" />
+    <Compile Include="Modularity\ModuleDependencyAttribute.cs" />
+    <Compile Include="Modularity\ModuleDescriptionAttribute.cs" />
+    <Compile Include="Modularity\ModuleInfo.cs" />
+    <Compile Include="Modularity\ModulePriority.cs" />
+    <Compile Include="Modularity\ModulePriorityAttribute.cs" />
+    <Compile Include="Modularity\ModuleState.cs" />
+    <Compile Include="Mvc\Controls\VisibilityAttributeApplier.cs" />
+    <Compile Include="Mvc\ExtensionMethods.cs" />
+    <Compile Include="PropertyValueProvider.cs" />
+    <Compile Include="Services\IServiceLocator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLocator.cs" />
+    <Compile Include="Services\ServiceLocatorProvider.cs" />
+    <Compile Include="Assert.cs" />
+    <Compile Include="CodeHelper.cs" />
+    <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="Settings\ISettingsGroup.cs" />
+    <Compile Include="Settings\ISettingsManager.cs" />
+    <Compile Include="Settings\ISettingsSection.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="ComparerDelegate.cs" />
+    <Compile Include="ConversionExtensions.cs" />
+    <Compile Include="ConversionHelper.cs" />
+    <Compile Include="CryptographyHelper.cs" />
+    <Compile Include="DateTimeHelper.cs" />
+    <Compile Include="EqualityComparerDelegate.cs" />
+    <Compile Include="ExceptionHelper.cs" />
+    <Compile Include="FormatHelper.cs" />
+    <Compile Include="TextAlignment.cs" />
+    <Compile Include="Utils\HashtableSerializationProxy.cs" />
+    <Compile Include="Utils\IListPager.cs" />
+    <Compile Include="ImagingHelper.cs" />
+    <Compile Include="Utils\IPager.cs" />
+    <Compile Include="Utils\IUnitConverter.cs" />
+    <Compile Include="Utils\ListPager.cs" />
+    <Compile Include="MatchHelper.cs" />
+    <Compile Include="MathHelper.cs" />
+    <Compile Include="Utils\Pager.cs" />
+    <Compile Include="PrimitiveDataGroup.cs" />
+    <Compile Include="RandomHelper.cs" />
+    <Compile Include="ReflectionHelper.cs" />
+    <Compile Include="Utils\ResourceEnumerator.cs" />
+    <Compile Include="StringHelper.cs" />
+    <Compile Include="TypedXmlSerializer.cs" />
+    <Compile Include="TypeHelper.cs" />
+    <Compile Include="Utils\UnitConverter.cs" />
+    <Compile Include="UnitsHelper.cs" />
+    <Compile Include="Utils\UnitTranslator.cs" />
+    <Compile Include="Utils\UnitType.cs" />
+    <Compile Include="UserMask.cs" />
+    <Compile Include="WeakReference%271.cs" />
+    <Compile Include="Worker\IWorkerService.cs" />
+    <Compile Include="Worker\IWorkerServiceContext.cs" />
+    <Compile Include="Worker\IWorkerServiceRecoveryPolicy.cs" />
+    <Compile Include="Worker\IWorkerServicesManager.cs" />
+    <Compile Include="Worker\IWorkerServiceController.cs" />
+    <Compile Include="Worker\WorkerServiceStatus.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
