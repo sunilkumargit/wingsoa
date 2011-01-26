@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\wing\trunk\Publish" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Views/Shared/WingLoader.aspx" publishTime="10/27/2010 10:50:27" />
+    <file relUrl="OlapWebService.asmx" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="Global.asax" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/Wing.Json.dll" publishTime="10/27/2010 11:50:13" />
+    <file relUrl="bin/Wing.Server.Core.pdb" publishTime="10/27/2010 11:50:14" />
+    <file relUrl="bin/Wing.Json.pdb" publishTime="10/27/2010 11:50:13" />
+    <file relUrl="Content/Scripts/Silverlight.js" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/Wing.Server.Host.dll" publishTime="10/27/2010 11:50:27" />
+    <file relUrl="Views/Shared/ServerTest.ascx" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="ServerHello.aspx" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/Wing.ZipCompression.dll" publishTime="10/27/2010 11:50:17" />
+    <file relUrl="bin/Wing.Web.Olap.pdb" publishTime="10/27/2010 11:50:22" />
+    <file relUrl="CrossDomain.xml" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/System.Web.Mvc.dll" publishTime="02/17/2010 09:24:14" />
+    <file relUrl="ClientBin/Wing.Client.xap" publishTime="10/27/2010 11:50:31" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/17/2010 09:22:24" />
+    <file relUrl="Default.aspx" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="bin/Microsoft.AnalysisServices.AdomdClient.dll" publishTime="04/03/2010 10:55:16" />
+    <file relUrl="bin/Wing.Olap.Core.pdb" publishTime="10/27/2010 11:50:20" />
+    <file relUrl="bin/Wing.Olap.Core.dll" publishTime="10/27/2010 11:50:20" />
+    <file relUrl="bin/Wing.Web.Olap.dll" publishTime="10/27/2010 11:50:22" />
+    <file relUrl="bin/Wing.Server.Core.dll" publishTime="10/27/2010 11:50:14" />
+    <file relUrl="ClientAccessPolicy.xml" publishTime="10/23/2010 01:36:26" />
+    <file relUrl="Web.config" publishTime="10/23/2010 23:10:04" />
+    <file relUrl="bin/Wing.ZipCompression.pdb" publishTime="10/27/2010 11:50:17" />
+    <file relUrl="Views/Web.config" publishTime="10/27/2010 10:37:50" />
+    <file relUrl="bin/Wing.Server.Host.pdb" publishTime="10/27/2010 11:50:27" />
+  </publishProfile>
+</publishData>
