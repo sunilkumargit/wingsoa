@@ -1,0 +1,37 @@
+﻿.jquery-alerts-holder {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    overflow: hidden;
+    height: 0;
+}
+
+.jquery-alert-item {
+    border-style: solid;
+    border-color: #007FFF;
+    color: white;
+    background-color: #1E90FF;
+    width: 300px;
+    min-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.jquery-alert-item-header {
+    display: block;
+    padding: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    text-align: right;
+}
+
+.jquery-alert-item-header a, .jquery-alert-item-header a:visited {
+    text-decoration: underline;
+    color: Blue;
+    font-size: x-small;
+}
+
+.jquery-alert-item-content {
+    display: block;
+    padding: 20px;
+}

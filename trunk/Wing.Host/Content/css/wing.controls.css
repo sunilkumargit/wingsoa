@@ -1,0 +1,113 @@
+﻿.wui-control { z-index: 10;  }
+
+.wui-shell-body { height: 100%; }
+
+.wui-container { position: relative; background-image: none; }
+
+.wui-grid { }
+.wui-grid-cell { position: absolute; }
+.wui-grid-cell-content { width: 100%; height: 100%; position: relative; }
+.wui-grid-cell-content > * { display: block; }
+
+.wui-stackpanel { position: absolute; }
+.wui-stackpanel-content { padding: 0; margin: 0; white-space: nowrap; }
+.wui-stackpanel-item { display: block; }
+.wui-sp-v-layout .wui-stackpanel-item { display: block; }
+.wui-sp-h-layout .wui-stackpanel-item { display: table-cell; vertical-align: top; }
+
+.wui-window-mngr, .wui-window-mngr-view { }
+.wui-window-mngr { z-index: 100; }
+.wui-window-mngr-view > div { position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+
+.wui-toolbar { overflow: hidden; min-height: 26px; }
+.wui-toolbar-items { position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: 1px; }
+.wui-toolbar-group { display: block; float: left; }
+.wui-toolbar-group-item { display: block; padding: 0; margin: 0; float: left; }
+.wui-toolbar-group-align-right { float: right !important; }
+.wui-toolbar-group-align-right .wui-toolbar-group-item { float: right !important; }
+
+.wui-toolbar-items .wui-button { display: block; height: 100%; }
+.wui-toolbar-items .wui-button .ui-button-text { white-space: nowrap; }
+/*.wui-toolbar-items .wui-button { border-color: transparent; }*/
+.wui-toolbar-items .wui-button .ui-button-text { padding: 2px 2px; }
+.wui-toolbar-items .wui-button.ui-button-text-icon-secondary .ui-button-text { padding-right: 16px; }
+.wui-toolbar-items .wui-button.ui-button-text-icons .ui-button-text { padding-right: 16px; padding-left: 16px; }
+.wui-toolbar-items .wui-button.ui-button-text-icon-secondary .ui-button-icon-secondary, .wui-toolbar-items .wui-button.ui-button-text-icons .ui-button-icon-secondary { right: -1px; top: 10px; }
+.wui-toolbar-items .wui-button.ui-button-text-icon-primary .ui-button-text { padding-left: 16px; }
+.wui-toolbar-items .wui-button.ui-button-text-icon-primary .ui-button-icon-primary, .wui-toolbar-items .wui-button.ui-button-text-icons .ui-button-icon-primary { left: -1px; top: 10px; }
+
+.wui-button { padding: 2px 2px; }
+.wui-button.ui-button-text { min-width: 60px; }
+
+.wui-toolbar-items .wui-text-block { line-height: 20px; display: block; }
+
+.wui-floating-box { position: absolute; }
+
+.wui-content-frame { position: relative; }
+
+.wui-context-window { position: absolute; z-index: 800; }
+
+.wui-context-menu { position: relative; background-color: White; }
+.wui-context-menu .wui-context-menu-bg { opacity: 0.75; position: absolute; top: 0; left: 0; bottom: 0; background-color: #DDD; width: 22px; }
+.wui-context-menu ul { padding: 0; margin: 0; }
+.wui-context-menu li { list-style: none; padding: 0px 10px 0px 0px; display: block; position: relative; height: 20px; line-height: 20px; }
+.wui-context-menu li * { cursor: pointer; }
+.wui-context-menu .wui-context-menu-item.ui-state-default { border-color: transparent; background: transparent; }
+.wui-context-menu-icon { display: block; width: 20px; position: absolute; top: 1px; left: 1px; }
+.wui-context-menu-icon.custom-icon { background-position: center center; }
+.wui-context-menu-text { display: block; margin-left: 25px; }
+
+.wui-content-frame > iframe { margin: 0; border: none; padding: 0; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px; width: 100%; height: 100%; }
+
+.wui-tabs-header { min-height: 26px; }
+.wui-tabs-header span.ui-icon { position: absolute; top: 3px; right: 2px; }
+.wui-tabs .wui-tabs-header li a { padding: .35em 24px .35em .5em; cursor: pointer !important; min-width: 50px; }
+.wui-tab-item { position: absolute; bottom: 0px; left: 0px; right: 0px; top: 37px; }
+
+.wui-content-window { position: absolute; min-height: 90px; min-width: 90px; z-index: 200; }
+
+.wui-table { }
+.wui-table-el { width: 100%; }
+.wui-table-el th, .wui-table-el td { white-space: nowrap; padding: 2px; }
+.wui-table.wui-table-row-select tr:hover { cursor: pointer; }
+
+.wui-input-control { white-space: nowrap; display: block; padding: 1px; margin-bottom: 3px; }
+.wui-input-control label { float: left; font-weight: normal; display:block; position: relative; top: 6px; padding-right: 4px; }
+.wui-input-control .input-content { display: block; float: left; border: 1px solid #ABABAB; }
+.wui-input-control .input { vertical-align: text-top; border: none; padding: 5px; }
+.wui-input-control .input[readonly] { background-color: #DFDFDF; }
+.wui-input-control.required label { font-weight: bold; }
+.wui-input-control.has-errors .input-content { border-color: Red; padding-bottom: 0px; }
+.wui-input-control .error-message {display: block; background-color: Red; color: white; padding-left: 1px; font-size: .9em; font-weight: bold; }
+
+.wui-section { padding: 10px 10px 2px 5px; font-weight: bold; font-size: 14px; border-top: none; border-left: none; border-right: none; margin-bottom: 5px; }
+
+.wui-data-form .wui-input-control label { width: 130px; text-align: right; }
+.wui-data-form .wui-input-control .input {  }
+
+div.wui-dialog div.ui-dialog-titlebar { padding: 2px 5px 2px 3px; border-top: none; border-left: none; border-right: none; }
+div.wui-dialog { padding: 0px 0px 3px 0px; }
+div.wui-dialog-content { padding: 3px 3px 10px 3px; z-index: inherit; position: relative; }
+div.wui-dialog-content-inner { z-index: inherit; position: relative; }
+div.wui-dialog div.wui-dialog-button-bar { border-bottom: none; border-left: none; border-right: none; margin-top: 10px; padding-top: 5px; text-align: right; }
+
+.op-overflow-visible { overflow: visible; }
+.op-overflow-hidden { overflow: hidden; }
+.op-overflow-auto { overflow: auto; }
+.op-hidden { display: none !important; }
+.op-fill-parent { display: block; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px; }
+
+.op-align-stretch-h { display: block; position: absolute; left: 0px; right: 0px; width: auto; }
+.op-align-center-h { display: block; position: absolute; }
+
+.op-align-stretch-v { display: block; position: absolute; top: 0px; bottom: 0px; height: auto; }
+.op-align-center-v { display: block; position: absolute; }
+
+.op-align-left { display: block; position: absolute; left: 0px; }
+.op-align-top { display: block; position: absolute; top: 0px; }
+.op-align-bottom { display: block; position: absolute; bottom: 0px; }
+.op-align-right { display: block; position: absolute; right: 0px; }
+
+.op-text-wrap { white-space: normal; }
+
+.op-box-shadow { box-shadow: 1px 1px 5px #CCCCCC, -1px -1px 7px #CCCCCC }

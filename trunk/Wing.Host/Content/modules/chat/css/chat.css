@@ -1,0 +1,4 @@
+﻿.chat-messages { padding: 5px; }
+.chat-message-item { padding-left: 2px; margin-bottom: 5px; }
+.chat-message-item-header { color: Gray; font-weight: normal; }
+.chat-message-item-text { padding-left: 20px; font-weight: normal; }

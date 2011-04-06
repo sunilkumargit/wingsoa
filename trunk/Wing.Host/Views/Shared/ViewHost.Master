@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <script type="text/javascript" src="/content/js/jquery.js"></script>
+    <script type="text/javascript" src="/content/js/jquery.ui.js"></script>
+    <script type="text/javascript" src="/content/js/wui.js"></script>
+    <link type="text/css" rel="Stylesheet" href="/content/css/wui.css" media="screen" />
+    <link type="text/css" rel="Stylesheet" href="/content/css/jquery.ui.css" media="screen" />
+    <% 
+        Response.Write(
+@"<script type='text/javascript'> 
+   __boot = {}; __boot.user = { userId: " + ViewData["userId"].AsString().Quoted()
+   + @", name: " + ViewData["username"].AsString().Quoted()
+   + @", email: " + ViewData["email"].AsString().Quoted() + " }; </script>"); %>
+    <asp:ContentPlaceHolder ID="InitContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        <%= ViewHelper.GetResourceInitString(ResourceLoadMode.Plugin) %>
+        Loader.run("SysLoader");
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="wui-shell-body">
+    <div class="wui-loading-box">
+        <div class="wui-loading-box-content">
+            Carregando...
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        // será o ultimo a ser rodado.
+        Loader.run(function ()
+        {
+            $(".wui-loading-box:first").fadeOut('fast', function () { $(this).css("display", "none"); });
+        });
+    </script>
+</body>
+</html>

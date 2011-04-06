@@ -1,0 +1,6 @@
+﻿body { overflow: hidden; }
+.wui-loading-box { position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 2000;  }
+.wui-loading-box-content { width: 120px; height: 22px; text-indent: 19px; line-height: 22px; position: absolute; top: 50%; left: 50%; 
+                       margin-top: -11px; margin-left: -60px;  background: #FFF url(/content/img/shell/loading16.gif) no-repeat left center; 
+                       color: #696E6F; font-family: Calibri, Tahoma, Sans-Serif; 
+                       font-size: 14px; font-weight: bold; border-radius: 2px; border: 7px solid #FFF }
