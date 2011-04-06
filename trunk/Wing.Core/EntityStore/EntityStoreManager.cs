@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Wing.EntityStore;
-using Wing.Server.Modules.ServerStorage;
+using Wing.Logging;
+using Wing.Adapters.EntityStore;
 
 namespace Wing.EntityStore
 {
@@ -22,12 +23,33 @@ namespace Wing.EntityStore
                     name = name.ToLower().Trim();
                     if (!_stores.TryGetValue(name, out result))
                     {
-                        result = new NHibernateSqlCeEntityStore(name);
-                        _stores[name] = result;
+                        TryLog("Creating store {0}...".Templ(name));
+                        try
+                        {
+                            result = new NHibernateSqlServerEntityStore(name);
+                            _stores[name] = result;
+                        }
+                        catch (Exception ex)
+                        {
+                            TryLog("Error on creating store {0}".Templ(name), ex);
+                        }
                     }
                 }
             }
             return result;
+        }
+
+        private void TryLog(String message, Exception ex = null)
+        {
+            var lm = ServiceLocator.TryGet<ILogManager>();
+            if (lm == null)
+                return;
+
+            var logger = lm.GetSystemLogger();
+            if (ex != null)
+                logger.LogException(message, ex, Priority.High);
+            else
+                logger.Log(message, Category.Info, Priority.Low);
         }
 
         public IEntityStore GetStore(String name)
@@ -37,11 +59,14 @@ namespace Wing.EntityStore
 
         public IEntityStore GetStoreInternal(string name, bool raiseException)
         {
-            name = name.ToLower();
-            IEntityStore result = null;
-            if (!_stores.TryGetValue(name, out result) && raiseException)
-                throw new InvalidOperationException(String.Format("The store with name {0} does not exist. Check the spell and call CreateStore() if necessary."));
-            return result;
+            lock (__lockObject)
+            {
+                name = name.ToLower();
+                IEntityStore result = null;
+                if (!_stores.TryGetValue(name, out result) && raiseException)
+                    throw new InvalidOperationException(String.Format("The store with name {0} does not exist. Check the spell and call CreateStore() if necessary."));
+                return result;
+            }
         }
     }
 }

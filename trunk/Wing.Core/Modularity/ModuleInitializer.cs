@@ -43,7 +43,7 @@ namespace Wing.Modularity
             }
 
             this.serviceLocator = serviceLocator;
-            this.loggerFacade = serviceLocator.GetInstance<ILogManager>().GetLogger("MODULE_LOADER");
+            this.loggerFacade = serviceLocator.GetInstance<ILogManager>().GetSystemLogger();
         }
 
         protected void ExecuteModuleMethod(ModuleInfo moduleInfo, Action method)
@@ -70,38 +70,16 @@ namespace Wing.Modularity
         {
             if (moduleInfo.ModuleInstance == null)
                 moduleInfo.ModuleInstance = this.CreateModule(moduleInfo.ModuleType);
-            InitializeModuleInternal(moduleInfo);
-        }
 
-        protected virtual void InitializeModuleInternal(ModuleInfo moduleInfo)
-        {
             ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialize);
-        }
-
-        public void PostInitialize(ModuleInfo moduleInfo)
-        {
-            if (moduleInfo.ModuleInstance == null)
-                throw new ModuleInitializeException(String.Format("The module {0} has no instance", moduleInfo.ModuleName));
-            if (moduleInfo.State == ModuleState.Initialized)
-                PostInitializeModuleInternal(moduleInfo);
-        }
-
-        public virtual void PostInitializeModuleInternal(ModuleInfo moduleInfo)
-        {
-            ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Initialized);
         }
 
         public void RunModule(ModuleInfo moduleInfo)
         {
             if (moduleInfo.ModuleInstance == null)
                 throw new ModuleInitializeException(String.Format("The module {0} has no instance", moduleInfo.ModuleName));
-            if (moduleInfo.State == ModuleState.Running)
-                RunModuleInternal(moduleInfo);
-        }
-
-        public virtual void RunModuleInternal(ModuleInfo moduleInfo)
-        {
-            ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Run);
+            if (moduleInfo.State == ModuleState.Initialized)
+                ExecuteModuleMethod(moduleInfo, moduleInfo.ModuleInstance.Run);
         }
 
         /// <summary>
@@ -133,8 +111,9 @@ namespace Wing.Modularity
                 }
             }
 
-            this.loggerFacade.Log(moduleException.ToString(), Category.Exception, Priority.High);
-
+            this.loggerFacade.LogException(String.Format("Error on {0} module {1}",
+                    moduleInfo.State == ModuleState.Initializing ? "initialize" : "run",
+                    moduleInfo.ModuleName), moduleException, Priority.High);
             throw moduleException;
         }
 

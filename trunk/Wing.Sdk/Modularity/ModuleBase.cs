@@ -3,10 +3,18 @@ namespace Wing.Modularity
 {
     public abstract class ModuleBase : IModule
     {
-        public virtual void Initialize() { }
+        public void Initialize()
+        {
+            InitializeInternal();
+        }
 
-        public virtual void Initialized() { }
+        protected virtual void InitializeInternal() { }
 
-        public virtual void Run() { }
+        public void Run()
+        {
+            RunInternal();
+        }
+
+        protected virtual void RunInternal() { }
     }
 }

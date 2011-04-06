@@ -55,7 +55,6 @@ namespace Wing.Modularity
             this.ModulePriority = Modularity.ModulePriority.Normal;
             this.ModuleName = name;
             this.ModuleType = type;
-            this.ModuleLoadGroup = "";
             this.DependsOn = new Collection<string>();
             foreach (string dependency in dependsOn)
             {
@@ -120,11 +119,6 @@ namespace Wing.Modularity
         /// Gets or sets the <see cref="ModulePriority"/> for this module
         /// </summary>
         public ModulePriority ModulePriority { get; set; }
-
-        /// <summary>
-        /// Gets or sets the load group for this module.
-        /// </summary>
-        public String ModuleLoadGroup { get; set; }
 
         public int LoadOrderIndex { get { return ((int)ModuleCategory * 10000) + ((int)ModulePriority * 1000) + _loadOrderSeq; } }
 

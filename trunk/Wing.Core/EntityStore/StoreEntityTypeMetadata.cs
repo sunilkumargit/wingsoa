@@ -30,7 +30,7 @@ namespace Wing.Adapters.EntityStore
                 propertyMetadata.PropertyName = property.Name;
                 propertyMetadata.PropertyType = property.PropertyType;
                 if (propertyMetadata.PropertyType == typeof(System.String))
-                    propertyMetadata.MaxLength = attr.MaxLength == 0 ? 50 : attr.MaxLength;
+                    propertyMetadata.MaxLength = attr.MaxLength == 0 ? 255 : attr.MaxLength;
                 Properties.Add(propertyMetadata);
             }
         }

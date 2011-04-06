@@ -187,16 +187,38 @@ namespace Wing
             return ToReadOnlyCollection(new List<T>(enumerable));
         }
 
-        public static void AddIfNotExists<T>(this List<T> list, T item)
+        public static bool AddIfNotExists<T>(this List<T> list, T item)
         {
             if (!list.Contains(item))
+            {
                 list.Add(item);
+                return true;
+            }
+            return false;
         }
 
         public static void Enqueue<T>(this Queue<T> queue, IEnumerable<T> items)
         {
             foreach (var item in items)
                 queue.Enqueue(item);
+        }
+
+        public static String JoinString<T>(this IEnumerable<T> enumerable, Func<T, String> selector = null, String separator = ", ", bool ignoreEmptyEntries = true)
+        {
+            if (selector == null)
+                selector = (o) => o == null ? "" : o.ToString();
+            StringBuilder result = new StringBuilder();
+            foreach (var item in enumerable)
+            {
+                var str = selector(item);
+                if (str.Length > 0 || !ignoreEmptyEntries)
+                {
+                    if (result.Length > 0)
+                        result.Append(separator);
+                    result.Append(str);
+                }
+            }
+            return result.ToString();
         }
     }
 }

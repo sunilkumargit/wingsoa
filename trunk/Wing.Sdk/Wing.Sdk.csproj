@@ -49,11 +49,23 @@
   <ItemGroup>
     <Compile Include="BackgroundThreadPool.cs" />
     <Compile Include="Bootstrap\IBootstrapper.cs" />
+    <Compile Include="Client\IClientSession.cs" />
+    <Compile Include="Client\IClientSessionManager.cs" />
+    <Compile Include="Client\IResourceMap.cs" />
+    <Compile Include="Client\IResourceMapService.cs" />
+    <Compile Include="ContextData.cs" />
     <Compile Include="EntityStore\IEntityStoreManager.cs" />
+    <Compile Include="Events\BackgroundEventSubscription.cs" />
+    <Compile Include="Events\DataEventArgs.cs" />
+    <Compile Include="Events\DelegateReference.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Events\EventSubscription.cs" />
     <Compile Include="IPathMapper.cs" />
     <Compile Include="Bootstrap\IBootLogger.cs" />
     <Compile Include="Logging\ILoggerFactory.cs" />
     <Compile Include="Logging\ILogManager.cs" />
+    <Compile Include="Mvc\AbstractController.cs" />
+    <Compile Include="Mvc\Binders\DefaultModelBinder.cs" />
     <Compile Include="Mvc\Controls\Binding.cs" />
     <Compile Include="Mvc\Controls\BindingException.cs" />
     <Compile Include="Mvc\Controls\BrTag.cs" />
@@ -207,7 +219,23 @@
     <Compile Include="Modularity\ModuleState.cs" />
     <Compile Include="Mvc\Controls\VisibilityAttributeApplier.cs" />
     <Compile Include="Mvc\ExtensionMethods.cs" />
+    <Compile Include="Pipeline\IOperationContext.cs" />
+    <Compile Include="Pipeline\IPipelineManager.cs" />
+    <Compile Include="Pipeline\IPipelineMessageItem.cs" />
+    <Compile Include="Pipeline\PipelineException.cs" />
     <Compile Include="PropertyValueProvider.cs" />
+    <Compile Include="Security\AuthenticationException.cs" />
+    <Compile Include="Security\AuthorizationStatus.cs" />
+    <Compile Include="Security\IAccountService.cs" />
+    <Compile Include="Security\IAuthenticationService.cs" />
+    <Compile Include="Security\IAuthorizationKey.cs" />
+    <Compile Include="Security\IAuthorizationService.cs" />
+    <Compile Include="Security\IRole.cs" />
+    <Compile Include="Security\ISchema.cs" />
+    <Compile Include="Security\IUser.cs" />
+    <Compile Include="Security\LoginEvent.cs" />
+    <Compile Include="Security\LoginEventAction.cs" />
+    <Compile Include="Security\SecurityExtensionMethods.cs" />
     <Compile Include="Services\IServiceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceLocator.cs" />
@@ -215,6 +243,7 @@
     <Compile Include="Assert.cs" />
     <Compile Include="CodeHelper.cs" />
     <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="ClientSession.cs" />
     <Compile Include="Settings\ISettingsGroup.cs" />
     <Compile Include="Settings\ISettingsManager.cs" />
     <Compile Include="Settings\ISettingsSection.cs" />
@@ -228,6 +257,7 @@
     <Compile Include="ExceptionHelper.cs" />
     <Compile Include="FormatHelper.cs" />
     <Compile Include="TextAlignment.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Utils\HashtableSerializationProxy.cs" />
     <Compile Include="Utils\IListPager.cs" />
     <Compile Include="ImagingHelper.cs" />
@@ -248,7 +278,7 @@
     <Compile Include="UnitsHelper.cs" />
     <Compile Include="Utils\UnitTranslator.cs" />
     <Compile Include="Utils\UnitType.cs" />
-    <Compile Include="UserMask.cs" />
+    <Compile Include="InputMask.cs" />
     <Compile Include="WeakReference%271.cs" />
     <Compile Include="Worker\IWorkerService.cs" />
     <Compile Include="Worker\IWorkerServiceContext.cs" />
@@ -257,6 +287,7 @@
     <Compile Include="Worker\IWorkerServiceController.cs" />
     <Compile Include="Worker\WorkerServiceStatus.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

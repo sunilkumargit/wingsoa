@@ -11,7 +11,10 @@ namespace Wing
 
         public static String FormatFone(String fone)
         {
-            return StuffChars(StringHelper.FilterNumbers(fone), "(xx)xxxx-xxxx");
+            fone = StringHelper.FilterNumbers(fone);
+            if (fone.Length < 10)
+                return StuffChars(fone, "xxxx-xxxx", true);
+            return StuffChars(fone, "(xx)xxxx-xxxx");
         }
 
         public static String FormatCEP(String cep)

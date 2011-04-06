@@ -7,6 +7,9 @@ using Wing.Services;
 using Wing.EntityStore;
 using Wing.Adapters.Logging;
 using Wing.Worker;
+using Wing.Security;
+using Wing.Pipeline;
+using Wing.Client;
 
 namespace Wing.Bootstrap
 {
@@ -20,7 +23,7 @@ namespace Wing.Bootstrap
             logger.Log("Bootstrapper starting...", Category.Info, Priority.None);
             try
             {
-                logger.Log("Creating services container of type " + typeof(UnityServiceLocator).FullName, Category.Debug, Priority.None);
+                logger.Log("Creating services container " + typeof(UnityServiceLocator).FullName, Category.Debug, Priority.None);
                 var serviceLocator = new UnityServiceLocator(null, logger);
 
                 logger.Log("Setting service locator provider", Category.Debug, Priority.None);
@@ -52,32 +55,45 @@ namespace Wing.Bootstrap
                 // registrar o logger do sistema
                 ServiceLocator.GetInstance<ILogManager>().RegisterLogger(logger);
 
+                // registrar o servico de gerenciamento de usuarios
+                serviceLocator.Register<IAccountService, AccountService>(true);
+
+                // serviços de autenticacao e autorização
+                ServiceLocator.Register<IAuthenticationService, AuthenticationService>(true);
+                ServiceLocator.Register<IAuthorizationService, AuthorizationService>(true);
+
+
+                // registrar o pipeline
+                serviceLocator.Register<IPipelineManager, PipelineManager>(true);
+
                 // registrar o worker que fará a gravação do log
                 ServiceLocator.GetInstance<IWorkerServicesManager>().RegisterService(
                     "LogWriter",
                     new LogWriterWorkerService(),
                     null);
 
-                //registrar os servicos de modulos
-                ServiceLocator.Register<IModuleCatalog>(new DirectoryModuleCatalog()
-                {
-                    ModulePath = pathMapper.MapPath("~/bin")
-                });
-
-                ServiceLocator.Register<IModuleInitializer, ModuleInitializer>(true);
-                ServiceLocator.Register<IModuleManager, ModuleManager>(true);
-
                 //agregador de eventos
                 ServiceLocator.Register<IEventAggregator, EventAggregator>(true);
+
+                // controlador de sessoes 
+                serviceLocator.Register<IClientSessionManager, ClientSessionManager>(true);
+
+                // recursos do cliente
+                serviceLocator.Register<IResourceMapService, ResourceMapService>(true);
+
+                //registrar os servicos de modulos
+                ServiceLocator.Register<IModuleCatalog>(new DirectoryModuleCatalog2(pathMapper.MapPath("~/bin")));
+                ServiceLocator.Register<IModuleInitializer, ModuleInitializer>(true);
+                ServiceLocator.Register<IModuleManager, ModuleManager>(true);
 
                 //localizador de controllers mvc
                 //ServiceLocator.Register<IMvcControllerTypeLocator, MvcControllerTypeLocator>(true);
 
                 //System.Web.Mvc.ControllerBuilder.Current.SetControllerFactory(new MvcControllerFactory());
 
-                logger.Log("Loading modules", Category.Info, Priority.None);
+                logger.Log("Loading modules...", Category.Info, Priority.None);
                 //carregar os modulos
-                ServiceLocator.GetInstance<IModuleManager>().Run(null);
+                ServiceLocator.GetInstance<IModuleManager>().Run();
 
                 logger.Log("Server started", Category.Info, Priority.None);
 

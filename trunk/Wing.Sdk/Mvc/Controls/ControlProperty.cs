@@ -46,6 +46,7 @@ namespace Wing.Mvc.Controls
         /// <returns></returns>
         public static ControlProperty Register(String propertyName, Type propertyType, Type ownerType, ControlPropertyMetadata propertyMetadata = null)
         {
+            Assert.EmptyString(propertyName, "propertyName");
             Assert.NullArgument(propertyType, "propertyType");
             Assert.NullArgument(ownerType, "ownerType");
 
