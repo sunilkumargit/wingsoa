@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlServerCe;
@@ -15,7 +16,7 @@ using Wing.ServiceLocation;
 using Wing.Utils;
 using Wing.Adapters.EntityStore;
 
-namespace Wing.Server.Modules.ServerStorage
+namespace Wing.Adapters.EntityStore
 {
     class NHibernateSqlCeEntityStore : IEntityStore
     {
@@ -26,22 +27,30 @@ namespace Wing.Server.Modules.ServerStorage
         protected Dictionary<Type, StoreEntityTypeMetadata> _entities = new Dictionary<Type, StoreEntityTypeMetadata>();
         protected Dictionary<Type, String> _hbMappings = new Dictionary<Type, string>();
 
-        private const string _hbXmlTemplate = "<hibernate-mapping xmlns=\"urn:nhibernate-mapping-2.2\" default-lazy=\"false\"><class name=\"{0}\" table=\"{1}Entity\" lazy=\"false\"><id name=\"InstanceId\" access=\"field.lowercase-underscore\" column=\"Id\" type=\"System.Guid\"><generator class=\"assigned\"></generator></id>{2}</class></hibernate-mapping>";
+        private const string _hbXmlTemplate = "<hibernate-mapping xmlns=\"urn:nhibernate-mapping-2.2\" default-lazy=\"false\"><class name=\"{0}\" table=\"{1}Entity\" lazy=\"false\"><id name=\"InstanceId\" access=\"field.lowercase-underscore\" column=\"Id\" type=\"System.Int32\"><generator class=\"identity\"></generator></id>{2}</class></hibernate-mapping>";
         private const string _hbPropertyTemplate = "<property name=\"{0}\" type=\"{1}\"><column name=\"{0}\" {2} {3}/></property>";
+
+        private Object _syncObject = new Object();
+        private ILogger _logger;
 
         public NHibernateSqlCeEntityStore(String name)
         {
             Assert.EmptyString(name, "name");
+            _logger = ServiceLocator.GetInstance<ILogManager>().GetSystemLogger();
             DbPath = ServiceLocator.GetInstance<IPathMapper>().MapPath(String.Format("~/App_Data/Store/{0}.sdf", CodeHelper.SafeName(name)));
             ConnectionString = String.Format("Data Source={0}", DbPath);
-            //habilitar o SqlCe para o ASP.NET
-            AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
+            _logger.Log("Inicializing entity store {0} on {1}".Templ(name, DbPath), Category.Info, Priority.Low);
             CreateDbIfNotExists();
+            try
+            {
+                //habilitar o SqlCe para o ASP.NET
+                AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
+            }
+            catch { }
         }
 
         public String Name { get; private set; }
 
-        private Object _syncObject = new Object();
         private void Sync(Action action)
         {
             while (true)
@@ -66,6 +75,7 @@ namespace Wing.Server.Modules.ServerStorage
                 if (File.Exists(DbPath))
                     return;
 
+                _logger.Log("Creating database {0}.".Templ(DbPath), Category.Info, Priority.Low);
                 var engine = new SqlCeEngine(ConnectionString);
                 Directory.CreateDirectory(Path.GetDirectoryName(DbPath));
                 engine.CreateDatabase();
@@ -206,7 +216,7 @@ namespace Wing.Server.Modules.ServerStorage
             });
         }
 
-        public TEntityType Get<TEntityType>(Guid entityId) where TEntityType : StoreEntity
+        public TEntityType Get<TEntityType>(Int32 entityId) where TEntityType : StoreEntity
         {
             return Execute<TEntityType>((session) =>
             {
@@ -214,7 +224,7 @@ namespace Wing.Server.Modules.ServerStorage
             });
         }
 
-        public object Get(Type entityType, Guid entityId)
+        public object Get(Type entityType, Int32 entityId)
         {
             return Execute<Object>((session) =>
             {
@@ -319,3 +329,4 @@ namespace Wing.Server.Modules.ServerStorage
         }
     }
 }
+*/

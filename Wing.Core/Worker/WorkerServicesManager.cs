@@ -21,7 +21,7 @@ namespace Wing.Worker
             {
                 if (GetService(serviceName, false) != null)
                     throw new InvalidOperationException("Já existe um worker service registrado com este nome: " + serviceName);
-                var controller = new WorkerServiceController(this, serviceName, instance, 
+                var controller = new WorkerServiceController(this, serviceName, instance,
                     defaultRecoveryPolicy ?? new DefaultWorkerRecoveryPolicy());
                 _services[controller.ServiceName] = controller;
                 ScheduleProcess(controller);
@@ -57,10 +57,8 @@ namespace Wing.Worker
 
         public void Start()
         {
-            var thread = new Thread(ProcessLoop);
-            thread.IsBackground = true;
-            thread.Name = "Worker Services manager";
-            thread.Start();
+            return;
+            ThreadPool.QueueUserWorkItem((state) => ProcessLoop());
         }
 
         private void ProcessLoop()

@@ -26,30 +26,18 @@ namespace Wing.Bootstrap
 
         public void Log(string message, Category category, Priority priority)
         {
-            Log("default", message, category, priority);
-        }
-
-        public void Log(string logName, string message, Category category, Priority priority)
-        {
-            _bootLogger.Log(String.Format("{0}|{1}|{2}: {3}",
-                FormatString(logName, 10),
+            _bootLogger.Log(String.Format("{0}|{1}: {2}",
                 FormatString(category.ToString(), 9),
                 FormatString(priority.ToString(), 6),
                 message));
         }
 
-        public void LogException(string logName, string message, Exception exception, Priority priority)
-        {
-            _bootLogger.Log(String.Format("{0}|{1}|{2}: {3}",
-                           FormatString(logName, 10),
-                           FormatString(Category.Exception.ToString(), 9),
-                           FormatString(priority.ToString(), 6),
-                           message), exception);
-        }
-
         public void LogException(string message, Exception exception, Priority priority)
         {
-            LogException("default", message, exception, priority);
+            _bootLogger.Log(String.Format("{0}|{1}: {2}",
+                            FormatString(Category.Exception.ToString(), 9),
+                           FormatString(priority.ToString(), 6),
+                           message), exception);
         }
     }
 }

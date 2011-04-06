@@ -56,13 +56,13 @@ namespace Wing.Modularity
 
             this.moduleInitializer = moduleInitializer;
             this.moduleCatalog = moduleCatalog;
-            this.loggerFacade = ServiceLocator.GetInstance<ILogManager>().GetLogger("MODULE_LOADER");
+            this.loggerFacade = ServiceLocator.GetInstance<ILogManager>().GetSystemLogger();
         }
 
         /// <summary>
         /// Initializes the modules marked as <see cref="InitializationMode.WhenAvailable"/> on the <see cref="ModuleCatalog"/>.
         /// </summary>
-        public void Run(String groupName = "")
+        public void Run()
         {
             lock (this)
             {
@@ -71,7 +71,7 @@ namespace Wing.Modularity
                     this.moduleCatalog.Initialize();
                     _initialized = true;
                 }
-                this.LoadModules(groupName);
+                this.LoadModules();
             }
         }
 
@@ -114,14 +114,11 @@ namespace Wing.Modularity
             throw moduleTypeLoadingException;
         }
 
-        private void LoadModules(String groupName)
+        private void LoadModules()
         {
             IEnumerable<ModuleInfo> modulesToLoadTypes = this.moduleCatalog.CompleteListWithDependencies(moduleCatalog.Modules);
             if (modulesToLoadTypes != null)
-            {
-                this.LoadModuleTypes(modulesToLoadTypes
-                    .Where(m => m.ModuleLoadGroup == groupName || String.IsNullOrEmpty(groupName)));
-            }
+                this.LoadModuleTypes(modulesToLoadTypes);
         }
 
         private void LoadModuleTypes(IEnumerable<ModuleInfo> moduleInfos)
@@ -143,15 +140,6 @@ namespace Wing.Modularity
                 }
             }
 
-            var moduleManagerArgs = new ModuleManagerEventArgs()
-            {
-                Modules = availableModules.ToArray(),
-                CurrentModule = null
-            };
-
-            if (BeginLoadModules != null)
-                BeginLoadModules.Invoke(this, moduleManagerArgs);
-
             Action<ModuleCategory> initMudulesByCategoryAction = new Action<ModuleCategory>(category =>
             {
                 bool keepLoading = true;
@@ -169,13 +157,6 @@ namespace Wing.Modularity
                             this.InitializeModule(moduleInfo);
                             loadedModules.Add(moduleInfo);
                             keepLoading = true;
-                            if (ModuleInitialized != null)
-                            {
-                                moduleManagerArgs.CurrentModule = moduleInfo;
-                                ModuleInitialized.Invoke(this, moduleManagerArgs);
-                                Thread.Sleep(200);
-                            }
-                            break;
                         }
                     }
                 }
@@ -186,27 +167,7 @@ namespace Wing.Modularity
             initMudulesByCategoryAction(ModuleCategory.Common);
 
             for (var i = loadedModules.Count - 1; i > -1; i--)
-                this.PostInitializeModule(loadedModules[i]);
-
-            for (var i = 0; i < loadedModules.Count; i++)
-            {
                 this.RunModule(loadedModules[i]);
-                if (loadedModules[i].State == ModuleState.Running)
-                {
-                    if (ModuleRunning != null)
-                    {
-                        moduleManagerArgs.CurrentModule = loadedModules[i];
-                        ModuleRunning.Invoke(this, moduleManagerArgs);
-                        Thread.Sleep(300);
-                    }
-                }
-            }
-
-            if (EndLoadModules != null)
-            {
-                moduleManagerArgs.CurrentModule = null;
-                EndLoadModules.Invoke(this, moduleManagerArgs);
-            }
         }
 
         private bool AreDependenciesLoaded(ModuleInfo moduleInfo)
@@ -256,28 +217,18 @@ namespace Wing.Modularity
             }
         }
 
-        private void PostInitializeModule(ModuleInfo moduleInfo)
+        private void RunModule(ModuleInfo moduleInfo)
         {
             if (moduleInfo.State == ModuleState.Initialized)
             {
-                this.moduleInitializer.PostInitialize(moduleInfo);
+                loggerFacade.Log(String.Format("Running module {0}, Order: {1}",
+                        moduleInfo.ModuleName,
+                        moduleInfo.LoadOrder.ToString()),
+                        Category.Debug, Priority.High);
+
+                this.moduleInitializer.RunModule(moduleInfo);
                 moduleInfo.State = ModuleState.Running;
             }
         }
-
-        private void RunModule(ModuleInfo moduleInfo)
-        {
-            if (moduleInfo.State == ModuleState.Running)
-                this.moduleInitializer.RunModule(moduleInfo);
-        }
-
-
-        public event EventHandler<ModuleManagerEventArgs> BeginLoadModules;
-
-        public event EventHandler<ModuleManagerEventArgs> EndLoadModules;
-
-        public event EventHandler<ModuleManagerEventArgs> ModuleInitialized;
-
-        public event EventHandler<ModuleManagerEventArgs> ModuleRunning;
     }
 }

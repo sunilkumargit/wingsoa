@@ -25,23 +25,12 @@ namespace Wing.Modularity
         /// <summary>
         /// Initializes the modules marked as <see cref="InitializationMode.WhenAvailable"/> on the <see cref="ModuleCatalog"/>.
         /// </summary>
-        void Run(String groupName);
+        void Run();
 
         /// <summary>
         /// Initializes the module on the <see cref="ModuleCatalog"/> with the name <paramref name="moduleName"/>.
         /// </summary>
         /// <param name="moduleName">Name of the module requested for initialization.</param>
         void LoadModule(string moduleName);
-
-        event EventHandler<ModuleManagerEventArgs> BeginLoadModules;
-        event EventHandler<ModuleManagerEventArgs> EndLoadModules;
-        event EventHandler<ModuleManagerEventArgs> ModuleInitialized;
-        event EventHandler<ModuleManagerEventArgs> ModuleRunning;
-    }
-
-    public class ModuleManagerEventArgs : EventArgs
-    {
-        public ModuleInfo[] Modules { get; set; }
-        public ModuleInfo CurrentModule { get; set; }
     }
 }

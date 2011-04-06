@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Reflection;
 using System.IO;
 using Wing.Bootstrap;
+using Wing.Mvc.Binders;
 
 namespace Wing.Host
 {
@@ -25,17 +26,21 @@ namespace Wing.Host
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Redir", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
 
+        private Object __logLockObject = new Object();
         public void Log(String message, Exception ex = null)
         {
             try
             {
-                File.AppendAllText(_bootLogFilePath, String.Format("{0}{1}: {2}", Environment.NewLine, DateTime.Now.ToString(), message)
-                    + (ex == null ? "" : String.Format("{0}     Exception: {1}", Environment.NewLine, ex.ToString())));
+                lock (__logLockObject)
+                {
+                    File.AppendAllText(_bootLogFilePath, String.Format("{0}{1}: {2}", Environment.NewLine, DateTime.Now.ToString(), message)
+                        + (ex == null ? "" : String.Format("{0}     Exception: {1}", Environment.NewLine, ex.ToString())));
+                }
             }
             catch { }
         }
@@ -78,10 +83,6 @@ namespace Wing.Host
             Log("Server starting");
             File.AppendAllText(_bootLogFilePath, Environment.NewLine + Environment.NewLine + "-------------------------------------------------------------------------------------");
 
-            AreaRegistration.RegisterAllAreas();
-
-            RegisterRoutes(RouteTable.Routes);
-
             //load wing core
             if (SafeExec("Carregando Wing.Core.dll", () => _wingCoreAssembly = Assembly.LoadFrom(MapPath("~/bin/Wing.Core.dll"))))
             {
@@ -92,6 +93,11 @@ namespace Wing.Host
                     _bootstrapper.Run(this, this);
                 }
             }
+
+
+            AreaRegistration.RegisterAllAreas();
+            RegisterRoutes(RouteTable.Routes);
+            ModelBinders.Binders.DefaultBinder = new DefaultJSONModelBinder();
         }
 
         private void CreateBootstrapperInstance()

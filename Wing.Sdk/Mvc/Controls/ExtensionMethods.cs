@@ -788,9 +788,9 @@ namespace Wing.Mvc.Controls
             return control;
         }
 
-        public static T SetMask<T>(this T control, UserMask mask) where T : TextBoxControl
+        public static T SetMask<T>(this T control, InputMask mask) where T : TextBoxControl
         {
-            control.UserMask = mask;
+            control.Mask = mask;
             return control;
         }
 

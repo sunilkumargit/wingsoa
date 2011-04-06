@@ -6,10 +6,10 @@ namespace Wing.Mvc.Controls
 {
     public class TextBoxControl : InputValueControlBase
     {
-        public static readonly ControlProperty UserMaskProperty = ControlProperty.Register("UserMask",
-            typeof(UserMask),
+        public static readonly ControlProperty MaskProperty = ControlProperty.Register("Mask",
+            typeof(InputMask),
             typeof(TextBoxControl),
-            UserMask.Default);
+            InputMask.Default);
 
         public static readonly ControlProperty CustomMaskProperty = ControlProperty.Register("CustomMask",
             typeof(String),
@@ -43,10 +43,10 @@ namespace Wing.Mvc.Controls
         public TextBoxControl() : base(HtmlTag.Input, null) { }
         public TextBoxControl(String name) : base(HtmlTag.Input, name) { }
 
-        public UserMask UserMask
+        public InputMask Mask
         {
-            get { return GetValue<UserMask>(UserMaskProperty); }
-            set { SetValue(UserMaskProperty, value); }
+            get { return GetValue<InputMask>(MaskProperty); }
+            set { SetValue(MaskProperty, value); }
         }
 
         public String CustomMask
@@ -58,9 +58,9 @@ namespace Wing.Mvc.Controls
         private static void CustomMaskPropertyChanged(ControlPropertyChangedEventArgs args)
         {
             if (args.NewValue.AsString().HasValue())
-                args.Target.SetValue(UserMaskProperty, UserMask.Custom);
-            else if (((UserMask)args.Target.GetValue(UserMaskProperty)) == UserMask.Custom)
-                args.Target.SetValue(UserMaskProperty, UserMask.Default);
+                args.Target.SetValue(MaskProperty, InputMask.Custom);
+            else if (((InputMask)args.Target.GetValue(MaskProperty)) == InputMask.Custom)
+                args.Target.SetValue(MaskProperty, InputMask.Default);
         }
 
         public bool IsReadOnly

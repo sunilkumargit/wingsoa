@@ -39,6 +39,9 @@
     <Reference Include="LinFu.DynamicProxy">
       <HintPath>..\Lib\LinFu.DynamicProxy.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
@@ -49,14 +52,16 @@
       <HintPath>..\Lib\NHibernate.ByteCode.LinFu.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\Lib\System.Data.SqlServerCe.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -67,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\EntityStore\NHibernateSqlServerEntityStore.cs" />
     <Compile Include="Adapters\EntityStore\NHibernateSqlCeEntityStore.cs" />
     <Compile Include="Adapters\Logging\EntityStoreLoggerFactory.cs" />
     <Compile Include="Adapters\Logging\EntityStoreLogWriter.cs" />
@@ -75,18 +81,20 @@
     <Compile Include="Adapters\Logging\LogWriterWorkerService.cs" />
     <Compile Include="Adapters\SqlCe\SqlCeConnectionDriverPatch.cs" />
     <Compile Include="Bootstrap\Bootstrapper.cs" />
+    <Compile Include="Bootstrap\CoreModule.cs" />
+    <Compile Include="Client\ClientSession.cs" />
+    <Compile Include="Client\ClientSessionManager.cs" />
+    <Compile Include="Client\ResourceMap.cs" />
+    <Compile Include="Client\ResourceMapService.cs" />
     <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="Modularity\DirectoryModuleCatalog2.cs" />
     <Compile Include="Modularity\DirectoryModuleCatalog.cs" />
     <Compile Include="Bootstrap\ServerBootLoggerAdapter.cs" />
     <Compile Include="EntityStore\EntityStoreManager.cs" />
     <Compile Include="EntityStore\EntityStoreQueryBase.cs" />
     <Compile Include="EntityStore\StoreEntityPropertyMetadata.cs" />
     <Compile Include="EntityStore\StoreEntityTypeMetadata.cs" />
-    <Compile Include="Events\BackgroundEventSubscription.cs" />
-    <Compile Include="Events\DataEventArgs.cs" />
-    <Compile Include="Events\DelegateReference.cs" />
     <Compile Include="Events\EventAggregator.cs" />
-    <Compile Include="Events\EventSubscription.cs" />
     <Compile Include="Events\Messages.cs" />
     <Compile Include="Logging\TraceLogger.cs" />
     <Compile Include="Modularity\CollectionExtensions.cs">
@@ -109,8 +117,6 @@
     </Compile>
     <Compile Include="Modularity\ModuleCatalog.cs" />
     <Compile Include="Modularity\ModuleDependencySolver.cs" />
-    <Compile Include="Modularity\ModuleDescriptionAttribute.cs" />
-    <Compile Include="Modularity\ModuleLoadGroupAttribute.cs" />
     <Compile Include="Modularity\ReflectionOnlyModuleInfoBuilder.cs" />
     <Compile Include="Modularity\ModuleInfoBuilder.cs" />
     <Compile Include="Modularity\ModuleInitializeException.cs" />
@@ -120,10 +126,31 @@
     <Compile Include="Modularity\ModuleNotFoundException.cs" />
     <Compile Include="Modularity\ModuleTypeLoaderNotFoundException.cs" />
     <Compile Include="Modularity\ModuleTypeLoadingException.cs" />
+    <Compile Include="Mvc\Controllers\UserControler.cs" />
+    <Compile Include="Mvc\Controllers\LoginController.cs" />
+    <Compile Include="Mvc\Controllers\RedirController.cs" />
+    <Compile Include="Mvc\Controllers\ShellController.cs" />
+    <Compile Include="Pipeline\MessageBufferItem.cs" />
+    <Compile Include="Pipeline\OperationContext.cs" />
+    <Compile Include="Pipeline\OperationWrapper.cs" />
+    <Compile Include="Pipeline\PipelineManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Adapters\ServiceLocation\ActivationException.cs" />
     <Compile Include="Adapters\ServiceLocation\ContainerLoggerExtension.cs" />
     <Compile Include="Adapters\ServiceLocation\UnityServiceLocator.cs" />
+    <Compile Include="Security\AccountService.cs" />
+    <Compile Include="Security\AuthenticationService.cs" />
+    <Compile Include="Security\AuthorizationService.cs" />
+    <Compile Include="Security\Impl\AuthorizationKeyImpl.cs" />
+    <Compile Include="Security\Impl\RoleImpl.cs" />
+    <Compile Include="Security\Impl\SchemaImpl.cs" />
+    <Compile Include="Security\Impl\UserImpl.cs" />
+    <Compile Include="Security\Model\AuthorizationKeyStatusModel.cs" />
+    <Compile Include="Security\Model\RoleModel.cs" />
+    <Compile Include="Security\Model\RoleSchemaRelation.cs" />
+    <Compile Include="Security\Model\SchemaModel.cs" />
+    <Compile Include="Security\Model\UserModel.cs" />
+    <Compile Include="Security\Model\UserRoleRelation.cs" />
     <Compile Include="Worker\DefaultWorkerRecoveryPolicy.cs" />
     <Compile Include="Worker\WorkerServiceContext.cs" />
     <Compile Include="Worker\WorkerServiceController.cs" />
@@ -135,6 +162,7 @@
       <Name>Wing.Sdk</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\Wing.MSBuild.Server.Common" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

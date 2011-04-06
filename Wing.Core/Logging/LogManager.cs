@@ -12,7 +12,7 @@ namespace Wing.Logging
 
         public ILogger GetSystemLogger()
         {
-            return GetLogger("SYSTEM");
+            return GetLoggerInternal("SYSTEM");
         }
 
         public ILogger GetLogger(string name)
