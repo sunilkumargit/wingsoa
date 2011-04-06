@@ -1,0 +1,2 @@
+﻿#wx-shell-view { }
+#wx-shell-loading { position: absolute; bottom: 1px; right: 1px; height: 19px; width: 19px; background: #4375AE url(/content/img/shell/loading16.gif) no-repeat center center; z-index: 901; }

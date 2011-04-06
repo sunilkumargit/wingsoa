@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\mdzn.net\wing\Publish" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Content/css/wui.css" publishTime="04/03/2011 00:53:40" />
+    <file relUrl="Default.aspx" publishTime="03/23/2011 20:16:31" />
+    <file relUrl="Content/css/images/ui-bg_glass_100_ffda77_1x400.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Content/css/jquery.ui.css" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Shell.htm" publishTime="03/24/2011 18:15:37" />
+    <file relUrl="bin/System.Web.Mvc.dll" publishTime="02/17/2010 08:24:14" />
+    <file relUrl="Web.config" publishTime="04/03/2011 16:58:29" />
+    <file relUrl="Content/css/images/ui-bg_highlight-soft_80_bfdbff_1x100.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Content/css/images/ui-bg_flat_100_525456_40x100.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Content/css/images/ui-icons_418ec8_256x240.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Global.asax" publishTime="01/15/2011 18:04:55" />
+    <file relUrl="bin/Wing.Sdk.pdb" publishTime="03/31/2011 14:34:15" />
+    <file relUrl="Content/modules/chat/css/chat.css" publishTime="03/30/2011 02:07:07" />
+    <file relUrl="Areas/Server/Views/Web.config" publishTime="01/26/2011 16:30:53" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/17/2010 08:22:24" />
+    <file relUrl="Content/css/images/ui-bg_highlight-soft_25_ffda77_1x100.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Restart.aspx" publishTime="02/01/2011 20:07:55" />
+    <file relUrl="Content/modules/chat/js/chat.loader.js" publishTime="04/03/2011 03:08:11" />
+    <file relUrl="Content/js/wing.shell.client.js" publishTime="04/02/2011 23:17:45" />
+    <file relUrl="Content/js/wui.enum.js" publishTime="03/28/2011 19:14:10" />
+    <file relUrl="Views/Shared/ViewHost.Master" publishTime="04/03/2011 00:52:15" />
+    <file relUrl="Views/Shared/ShellLoader.aspx" publishTime="04/03/2011 00:47:01" />
+    <file relUrl="Content/css/images/ui-icons_1f537a_256x240.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Content/css/jquery.alerts.css" publishTime="03/24/2011 00:25:57" />
+    <file relUrl="Content/js/jquery.ui.js" publishTime="03/16/2011 17:12:15" />
+    <file relUrl="Content/js/jquery.cookie.js" publishTime="01/27/2011 00:33:20" />
+    <file relUrl="bin/Wing.Sdk.dll" publishTime="03/31/2011 14:34:15" />
+    <file relUrl="Content/js/wing.pipeline.manager.js" publishTime="03/28/2011 17:58:19" />
+    <file relUrl="Content/css/wing.controls.css" publishTime="04/03/2011 03:13:35" />
+    <file relUrl="Content/css/images/ui-bg_highlight-hard_100_faa3a3_1x100.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Content/css/wing.shell.css" publishTime="03/19/2011 20:00:42" />
+    <file relUrl="Content/css/images/ui-bg_highlight-soft_100_bfdbff_1x100.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Content/img/shell/loading48.gif" publishTime="04/03/2011 00:14:33" />
+    <file relUrl="Content/img/mdzn/logo.png" publishTime="01/28/2011 01:44:14" />
+    <file relUrl="Content/js/jquery.alerts.js" publishTime="01/28/2011 11:48:29" />
+    <file relUrl="Content/css/images/ui-bg_highlight-hard_100_fdb354_1x100.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Views/Web.config" publishTime="01/15/2011 18:04:55" />
+    <file relUrl="Content/img/shell/loading16.gif" publishTime="04/03/2011 00:33:05" />
+    <file relUrl="Content/js/wui.controls.js" publishTime="04/03/2011 02:40:24" />
+    <file relUrl="Content/css/images/ui-icons_cd0a0a_256x240.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="Content/js/wui.net.js" publishTime="03/15/2011 21:38:48" />
+    <file relUrl="Views/Shared/ShellContentView.aspx" publishTime="04/01/2011 22:51:26" />
+    <file relUrl="Content/img/mdzn/logo2.png" publishTime="01/28/2011 02:01:56" />
+    <file relUrl="Content/css/images/ui-bg_flat_100_ffffff_40x100.png" publishTime="04/03/2011 01:48:55" />
+    <file relUrl="bin/Wing.Host.pdb" publishTime="04/03/2011 01:49:16" />
+    <file relUrl="Content/modules/chat/js/chat.client.js" publishTime="04/03/2011 01:32:58" />
+    <file relUrl="Content/js/wing.shell.js" publishTime="04/03/2011 01:13:49" />
+    <file relUrl="Content/js/wui.js" publishTime="04/02/2011 19:51:53" />
+    <file relUrl="Content/js/wui.json.js" publishTime="01/31/2011 21:43:03" />
+    <file relUrl="Content/modules/EmpflexCore/css/site.css" publishTime="01/27/2011 01:09:05" />
+    <file relUrl="Content/js/wing.users.api.js" publishTime="04/03/2011 02:32:32" />
+    <file relUrl="Views/Shared/Login.aspx" publishTime="04/02/2011 19:21:48" />
+    <file relUrl="Content/js/jquery.js" publishTime="02/08/2011 12:09:38" />
+    <file relUrl="bin/Wing.Host.dll" publishTime="04/03/2011 01:49:16" />
+    <file relUrl="Content/js/wing.pipeline.listener.js" publishTime="03/28/2011 18:05:21" />
+    <file relUrl="Content/js/jquery.tmpl.js" publishTime="02/02/2011 02:12:53" />
+    <file relUrl="Content/css/images/ui-bg_gloss-wave_100_c4c7c2_500x100.png" publishTime="04/03/2011 01:48:55" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,276 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FlexWeb 1.00 - Empflex Software </title>
+    <script type="text/javascript" src="/content/js/jquery.js"></script>
+    <script type="text/javascript" src="/content/js/jquery.ui.js"></script>
+    <script type="text/javascript" src="/content/js/wui.js"></script>
+    <link type="text/css" rel="Stylesheet" href="/content/css/wui.css" media="screen">
+    <link type="text/css" rel="Stylesheet" href="/content/css/jquery.ui.css" media="screen">
+    <script type="text/javascript">
+        __boot = {}; __boot.user = { userId: "system", name: "Administrador", email: "marcelo@mdzn.net" }; </script>
+    <script type="text/javascript">
+        Loader.mapResource('jquery.cookie', 'js', '/content/js/jquery.cookie.js');
+        Loader.mapResource('jquery.alerts', 'js', '/content/js/jquery.alerts.js');
+        Loader.mapResource('wui.json', 'js', '/content/js/wui.json.js');
+        Loader.mapResource('wui.net', 'js', '/content/js/wui.net.js');
+        Loader.mapResource('wui.enum', 'js', '/content/js/wui.enum.js');
+        Loader.mapResource('wui.controls.css', 'css', '/content/css/wing.controls.css');
+        Loader.mapResource('wui.controls', 'js', '/content/js/wui.controls.js');
+        Loader.mapResource('wing.shell.client', 'js', '/content/js/wing.shell.client.js');
+        Loader.mapResource('wui.shell.css', 'css', '/content/css/wing.shell.css');
+        Loader.mapResource('users.module', 'js', '/content/modules/users/js/users.module.js');
+        Loader.mapResource('chat.client', 'js', '/content/modules/chat/js/chat.client.js');
+        Loader.mapResource('chat.style', 'css', '/content/modules/chat/css/chat.css');
+        Loader.mapResource('chat.loader', 'js', '/content/modules/chat/js/chat.loader.js'); 
+
+    </script>
+    <script type="text/javascript">
+        Loader.dependsOn('jquery.cookie');
+        Loader.dependsOn('jquery.alerts');
+        Loader.dependsOn('wui.json');
+        Loader.dependsOn('wui.net');
+        Loader.dependsOn('wui.enum');
+        Loader.dependsOn('wui.controls.css');
+        Loader.dependsOn('wui.controls');
+
+        Loader.run("SysLoader");
+    </script>
+    <script type="text/javascript">
+        $(function ()
+        {
+            $(".wui-loading-box:first").addClass("ui-widget-overlay");
+        });
+
+        Loader.mapResource("wing.pipeline.manager", "js", "/content/js/wing.pipeline.manager.js");
+        Loader.mapResource("wing.pipeline.listener", "js", "/content/js/wing.pipeline.listener.js");
+        Loader.mapResource("wing.shell", "js", "/content/js/wing.shell.js");
+        Loader.mapResource("wing.users.api", "js", "/content/js/wing.users.api.js");
+        Loader.dependsOn("wing.pipeline.manager", "wing.pipeline.listener", "wing.users.api", "wing.shell");
+        Loader.dependsOn('wing.shell.client');
+
+        Loader.dependsOn('wui.shell.css');
+        Loader.dependsOn('users.module');
+        Loader.dependsOn('chat.loader');
+
+        Loader.run("ShellLoader");
+    </script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=jquery.cookie&amp;rl=/content/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=jquery.alerts&amp;rl=/content/js/jquery.alerts.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wui.json&amp;rl=/content/js/wui.json.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wui.net&amp;rl=/content/js/wui.net.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wui.enum&amp;rl=/content/js/wui.enum.js"></script>
+    <link type="text/css" rel="stylesheet" href="/content/css/wing.controls.css" media="screen">
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wui.controls&amp;rl=/content/js/wui.controls.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wing.pipeline.manager&amp;rl=/content/js/wing.pipeline.manager.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wing.pipeline.listener&amp;rl=/content/js/wing.pipeline.listener.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wing.users.api&amp;rl=/content/js/wing.users.api.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wing.shell&amp;rl=/content/js/wing.shell.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=wing.shell.client&amp;rl=/content/js/wing.shell.client.js"></script>
+    <link type="text/css" rel="stylesheet" href="/content/css/wing.shell.css" media="screen">
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=users.module&amp;rl=/content/modules/users/js/users.module.js"></script>
+    <script type="text/javascript" src="/Shell/GetScriptResource/?rn=chat.loader&amp;rl=/content/modules/chat/js/chat.loader.js"></script>
+</head>
+<body class="wui-shell-body">
+    <div class="wui-loading-box ui-widget-overlay" style="display: none;">
+        <div class="wui-loading-box-content">
+            Carregando...
+        </div>
+    </div>
+    <script type="text/javascript">
+        // será o ultimo a ser rodado.
+        Loader.run(function ()
+        {
+            $(".wui-loading-box:first").fadeOut('fast', function () { $(this).css("display", "none"); });
+        });
+    </script>
+    <div data-wui-type="wui.WindowManager" data-wui-iid="5" class="ui-widget wui-control wui-container op-align-stretch-v op-align-stretch-h wui-window-mngr">
+        <div class="wui-window-mngr-view op-fill-parent op-overflow-hidden">
+            <div data-wui-type="wing.ShellView" data-wui-iid="8" class="ui-widget wui-control op-align-stretch-v op-align-stretch-h" id="shell">
+                <div id="wx-shell-loading" class="ui-corner-all" style="display: none;">
+                </div>
+                <div data-wui-type="wui.Grid" data-wui-iid="9" class="ui-widget wui-control wui-container wui-grid op-align-stretch-v op-align-stretch-h" wcmsg-grid-child-pos-changed="1" wcmsg-control-update-ui="1">
+                    <div class="wui-grid-cell" style="height: 28px; width: 1440px; top: 0px; left: 0px;">
+                        <div class="wui-grid-cell-content op-overflow-hidden">
+                            <div data-wui-type="wui.Toolbar" data-wui-iid="b" class="ui-widget wui-control wui-container ui-widget-header wui-toolbar op-align-stretch-h op-align-stretch-v">
+                                <div class="wui-toolbar-items">
+                                    <div data-tb-group="shell_main_group" class="wui-toolbar-group">
+                                        <div class="wui-toolbar-group-item">
+                                            <div data-wui-type="wui.Button" data-wui-iid="c" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-icons" role="button" aria-disabled="false">
+                                                <span class="ui-button-icon-primary ui-icon ui-icon-gear">
+                                                </span>
+                                                <span class="ui-button-text">
+                                                    Aplicativos</span><span class="ui-button-icon-secondary ui-icon ui-icon-carat-1-s"></span></div>
+                                            <div class="ui-helper-clearfix">
+                                            </div>
+                                        </div>
+                                        <div class="wui-toolbar-group-item">
+                                            <div data-wui-type="wui.Button" data-wui-iid="d" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-icons" role="button" aria-disabled="false">
+                                                <span class="ui-button-icon-primary ui-icon ui-icon-wrench">
+                                                </span>
+                                                <span class="ui-button-text">
+                                                    Ferramentas</span><span class="ui-button-icon-secondary ui-icon ui-icon-carat-1-s"></span></div>
+                                            <div class="ui-helper-clearfix">
+                                            </div>
+                                        </div>
+                                        <div class="wui-toolbar-group-item">
+                                            <div data-wui-type="wui.Button" data-wui-iid="e" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-icons" role="button" aria-disabled="false">
+                                                <span class="ui-button-icon-primary ui-icon ui-icon-help">
+                                                </span>
+                                                <span class="ui-button-text">
+                                                    Ajuda</span><span class="ui-button-icon-secondary ui-icon ui-icon-carat-1-s"></span></div>
+                                            <div class="ui-helper-clearfix">
+                                            </div>
+                                        </div>
+                                        <div class="ui-helper-clearfix">
+                                        </div>
+                                    </div>
+                                    <div data-tb-group="curr_user" class="wui-toolbar-group wui-toolbar-group-align-right">
+                                        <div class="wui-toolbar-group-item">
+                                            <div data-wui-type="wui.Button" data-wui-iid="16" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-icon-secondary" role="button" aria-disabled="false">
+                                                <span class="ui-button-text">
+                                                    Administrador</span><span class="ui-button-icon-secondary ui-icon ui-icon-carat-1-s"></span></div>
+                                            <div class="ui-helper-clearfix">
+                                            </div>
+                                        </div>
+                                        <div class="wui-toolbar-group-item">
+                                            <div data-wui-type="wui.Button" data-wui-iid="17" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false" title="Encerrar a sessão atual">
+                                                <span class="ui-button-icon-primary ui-icon ui-icon-close">
+                                                </span>
+                                                <span class="ui-button-text">
+                                                    Sair</span></div>
+                                            <div class="ui-helper-clearfix">
+                                            </div>
+                                        </div>
+                                        <div class="ui-helper-clearfix">
+                                        </div>
+                                    </div>
+                                    <div class="ui-helper-clearfix">
+                                    </div>
+                                </div>
+                                <div class="ui-helper-clearfix">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-clear-fix">
+                        </div>
+                    </div>
+                    <div class="wui-grid-cell" style="height: 713px; width: 1440px; top: 28px; left: 0px;">
+                        <div class="wui-grid-cell-content op-overflow-hidden">
+                            <div data-wui-type="wui.Tabs" data-wui-iid="a" class="ui-widget wui-control op-align-stretch-v op-align-stretch-h wui-tabs ui-tabs ui-widget-content ui-corner-all" style="margin-top: 5px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
+                                <ul class="wui-tabs-header ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                                    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
+                                        <a href="#w-tab-item-4e28c59779a4">Home</a>
+                                        <span class="ui-icon ui-icon-close" title="Fechar">
+                                            Fechar</span></li></ul>
+                                <div data-wui-type="wui.TabItem" data-wui-iid="11" class="ui-widget wui-control wui-container wui-tab-item ui-tabs-panel ui-widget-content ui-corner-bottom" id="w-tab-item-4e28c59779a4">
+                                    <div data-wui-type="wui.DataForm" data-wui-iid="12" class="ui-widget wui-control wui-container wui-data-form">
+                                        <div data-wui-type="wui.TextBox" data-wui-iid="13" class="ui-widget wui-control wui-input-control wui-textbox" wcmsg-input-control-clear-errors="1" id="marcelo">
+                                            <label>
+                                                Nome</label><span class="input-content"><input type="text" class="input"><span class="error-message"></span></span><span class="ui-helper-clearfix"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-clear-fix">
+                        </div>
+                    </div>
+                    <div class="wui-grid-cell" style="height: 28px; width: 1440px; top: 741px; left: 0px;">
+                        <div class="wui-grid-cell-content op-overflow-hidden">
+                            <div data-wui-type="wui.Toolbar" data-wui-iid="f" class="ui-widget wui-control wui-container ui-widget-header wui-toolbar op-align-stretch-h op-align-stretch-v" id="shellSb">
+                                <div class="wui-toolbar-items">
+                                    <div data-tb-group="chat" class="wui-toolbar-group wui-toolbar-group-align-right">
+                                        <div class="wui-toolbar-group-item">
+                                            <div data-wui-type="wui.Button" data-wui-iid="18" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false">
+                                                <span class="ui-button-icon-primary ui-icon ui-icon-person">
+                                                </span>
+                                                <span class="ui-button-text">
+                                                    Comunicador</span></div>
+                                            <div class="ui-helper-clearfix">
+                                            </div>
+                                        </div>
+                                        <div class="ui-helper-clearfix">
+                                        </div>
+                                    </div>
+                                    <div class="ui-helper-clearfix">
+                                    </div>
+                                </div>
+                                <div class="ui-helper-clearfix">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-clear-fix">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wui-overlay-box" style="display: none;">
+        <div class="wui-overlay-content ui-corner-all">
+        </div>
+    </div>
+    <div data-wui-type="wui.ContentWindow" data-wui-iid="19" class="ui-widget wui-control wui-content-window ui-widget-content ui-corner-all op-box-shadow op-align-bottom op-align-right op-hidden" style="margin-right: 10px; margin-bottom: 30px; width: 600px; height: 500px;">
+        <div data-wui-type="wui.ContentFrame" data-wui-iid="1a" class="ui-widget wui-control op-align-stretch-v op-align-stretch-h wui-content-frame">
+            <iframe src="/Shell/ContentView" class="op-align-stretch-h op-align-stretch-v"></iframe>
+        </div>
+    </div>
+    <div class="ui-widget wui-context-window" style="top: 25px; left: 1333px; min-width: 98px; visibility: visible; display: none;">
+    </div>
+    <div style="outline-width: 0px; outline-style: initial; outline-color: initial; height: auto; width: auto; position: absolute; top: 225px; left: 551px; display: block; z-index: 502;" class="ui-dialog ui-widget ui-widget-content ui-corner-all wui-dialog op-box-shadow ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-1">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+            <span class="ui-dialog-title" id="ui-dialog-title-1">
+                Perfil</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">fechar</span></a></div>
+        <div data-wui-type="wing.user.ProfileDialog" data-wui-iid="23" class="ui-widget wui-control wui-container wui-dialog-content ui-dialog-content ui-widget-content" title="Perfil" style="width: auto; min-height: 116px; height: auto;">
+            <div class="wui-dialog-content-inner">
+                <div data-wui-type="wui.DataForm" data-wui-iid="24" class="ui-widget wui-control wui-container wui-data-form">
+                    <div data-wui-type="wui.TextBox" data-wui-iid="25" class="ui-widget wui-control wui-input-control wui-textbox" wcmsg-input-control-clear-errors="1" id="login">
+                        <label>
+                            Login</label><span class="input-content"><input type="text" class="input" readonly=""><span class="error-message"></span></span><span class="ui-helper-clearfix"></span></div>
+                    <div data-wui-type="wui.TextBox" data-wui-iid="26" class="ui-widget wui-control wui-input-control wui-textbox required" wcmsg-input-control-clear-errors="1" id="username">
+                        <label>
+                            Nome</label><span class="input-content"><input type="text" class="input" required="" placeholder="nome completo"><span class="error-message"></span></span><span class="ui-helper-clearfix"></span></div>
+                    <div data-wui-type="wui.EmailBox" data-wui-iid="27" class="ui-widget wui-control wui-input-control wui-emailbox required" wcmsg-input-control-clear-errors="1" id="email">
+                        <label>
+                            Email</label><span class="input-content"><input type="email" class="input" required="" placeholder="email de contato"><span class="error-message"></span></span><span class="ui-helper-clearfix"></span></div>
+                    <div data-wui-type="wui.Section" data-wui-iid="28" class="ui-widget wui-control ui-widget-content wui-section">
+                        <span class="wui-section-text">
+                            Alterar senha</span></div>
+                    <div data-wui-type="wui.PasswordBox" data-wui-iid="29" class="ui-widget wui-control wui-input-control wui-passwordbox" wcmsg-input-control-clear-errors="1" id="currentPwd">
+                        <label>
+                            Senha atual</label><span class="input-content"><input type="password" class="input" placeholder="digite sua senha atual"><span class="error-message"></span></span><span class="ui-helper-clearfix"></span></div>
+                    <div data-wui-type="wui.PasswordBox" data-wui-iid="2a" class="ui-widget wui-control wui-input-control wui-passwordbox" wcmsg-input-control-clear-errors="1" id="newPwd">
+                        <label>
+                            Nova senha</label><span class="input-content"><input type="password" class="input" placeholder="digite a nova senha"><span class="error-message"></span></span><span class="ui-helper-clearfix"></span></div>
+                    <div data-wui-type="wui.PasswordBox" data-wui-iid="2b" class="ui-widget wui-control wui-input-control wui-passwordbox" wcmsg-input-control-clear-errors="1" id="newPwdCheck">
+                        <label>
+                            Confirme a nova senha</label><span class="input-content"><input type="password" class="input" placeholder="confirme a nova senha"><span class="error-message"></span></span><span class="ui-helper-clearfix"></span></div>
+                </div>
+            </div>
+            <div class="ui-widget-content wui-dialog-button-bar">
+                <div data-wui-type="wui.Button" data-wui-iid="2c" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                    <span class="ui-button-text">
+                        Ok</span></div>
+                <div data-wui-type="wui.Button" data-wui-iid="2d" class="ui-widget wui-control wui-button ui-button ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                    <span class="ui-button-text">
+                        Cancelar</span></div>
+            </div>
+        </div>
+        <div class="ui-resizable-handle ui-resizable-n">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-e">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-s">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-w">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;">
+        </div>
+    </div>
+</body>
+</html>
